@@ -3,18 +3,22 @@
 exports[`Form Example 1`] = `
 <style>
   .progress-bar-form-example-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-6);
 }
-.progress-bar-form-example-fieldset-content {
+.progress-bar-form-example-legend {
+  /* As tall as the ProgressBar, so the bar does not overhang the legend */
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: flex-end;
-  margin-block-end: var(--ds-size-4);
+  min-height: var(--ds-size-12);
 }
 .progress-bar-form-example-progress-bar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transform: translateY(calc(var(--ds-size-4) * -1));
   width: 30%;
 }
 .progress-bar-form-example-button__group {
@@ -24,48 +28,49 @@ exports[`Form Example 1`] = `
 }
 </style>
 <div>
-  <fieldset id="<removed>">
-    <div>
-      <legend>
-        <h4>
-          Skjema
-        </h4>
-      </legend>
-      <div
-        data-color="accent"
-        tabindex="-1"
+  <fieldset
+    id="<removed>"
+    aria-labelledby="<removed>"
+  >
+    <legend id="<removed>">
+      <h4>
+        Skjema
+      </h4>
+    </legend>
+    <div
+      data-color="accent"
+      tabindex="-1"
+    >
+      <span>
+        Skjemafremgang
+      </span>
+      <span>
+        Side 1 av 7
+      </span>
+      <u-progress
+        value="1"
+        max="7"
+        aria-hidden="true"
+        aria-label="..."
+        aria-valuemin="0"
+        aria-valuemax="100"
+        role="progressbar"
+        aria-busy="false"
+        aria-valuenow="14"
+        style="<removed>"
       >
-        <span>
-          Skjemafremgang
-        </span>
-        <span>
-          Side 1 av 7
-        </span>
-        <u-progress
-          value="1"
-          max="7"
-          aria-hidden="true"
-          aria-label="..."
-          aria-valuemin="0"
-          aria-valuemax="100"
-          role="progressbar"
-          aria-busy="false"
-          aria-valuenow="14"
-          style="<removed>"
-        >
-          <template shadowrootmode="open">
-            <slot>
-            </slot>
-            <style>
-              :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
+        <template shadowrootmode="open">
+          <slot>
+          </slot>
+          <style>
+            :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
 :host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
 :host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
 @media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
 @keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-            </style>
-          </template>
-        </u-progress>
-      </div>
+          </style>
+        </template>
+      </u-progress>
     </div>
     <table data-border="true">
       <thead>
