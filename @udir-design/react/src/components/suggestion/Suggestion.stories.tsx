@@ -21,6 +21,7 @@ import { SuggestionEmpty } from './docs/FakeSuggestionEmpty';
 import { SuggestionInput } from './docs/FakeSuggestionInput';
 import { SuggestionList } from './docs/FakeSuggestionList';
 import { SuggestionOption } from './docs/FakeSuggestionOption';
+import { SuggestionToggle } from './docs/FakeSuggestionToggle';
 
 const meta = preview.meta({
   component: FakeSuggestion,
@@ -30,6 +31,7 @@ const meta = preview.meta({
     'Suggestion.Input': SuggestionInput,
     'Suggestion.List': SuggestionList,
     'Suggestion.Option': SuggestionOption,
+    'Suggestion.Toggle': SuggestionToggle,
   },
   tags: ['digdir'],
   parameters: {
@@ -72,8 +74,16 @@ const meta = preview.meta({
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */
   const input = await waitFor(() => within(el).getByRole('combobox'));
-  /* When in test mode, open suggestion by focusing input */
-  await userEvent.click(input);
+  const toggle = within(el).queryByRole('button', { name: 'Valg' });
+
+  if (toggle) {
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await userEvent.click(toggle);
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  } else {
+    /* When in test mode, open suggestion by focusing input */
+    await userEvent.click(input);
+  }
 }
 
 const DATA_PLACES = [
@@ -113,6 +123,7 @@ export const Preview = meta.story({
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args}>
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -143,6 +154,7 @@ export const ControlledSingle = meta.story({
             onSelectedChange={(item) => setValue(item?.value ?? '')}
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -212,6 +224,7 @@ export const ControlledMultiple = meta.story({
             }
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -287,6 +300,7 @@ export const ControlledIndependentLabelValue = meta.story({
             filter={false}
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
               <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -338,6 +352,7 @@ export const CustomFilterAlt1 = meta.story({
           }
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -373,6 +388,7 @@ export const CustomFilterAlt2 = meta.story({
           <Suggestion.Input
             onInput={({ currentTarget }) => setValue(currentTarget.value)}
           />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -411,6 +427,7 @@ export const AlwaysShowAll = meta.story({
           onSelectedChange={(item) => setValue(item?.value)}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -461,6 +478,7 @@ export const FetchExternal = meta.story({
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
           <Suggestion.Input onInput={handleInput} />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">
             {value ? (
@@ -507,6 +525,7 @@ export const MultipleCount = meta.story({
           defaultSelected={['Oslo', 'Sogndal']}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -533,6 +552,7 @@ export const DefaultValue = meta.story({
           defaultSelected={'Sogndal'}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
             <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -556,6 +576,7 @@ export const InDetails = meta.story({
             <Label>Velg en destinasjon</Label>
             <Suggestion {...args} autoFocus>
               <Suggestion.Input />
+              <Suggestion.Toggle />
               <Suggestion.Clear />
               <Suggestion.List>
                 <Suggestion.Empty>Tomt</Suggestion.Empty>

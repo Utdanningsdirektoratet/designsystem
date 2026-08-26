@@ -29,6 +29,15 @@ exports[`Always Show All 1`] = `
       role="combobox"
     >
     <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
+    >
+    </button>
+    <button
       aria-label="Tøm"
       type="reset"
       aria-hidden="false"
@@ -160,6 +169,15 @@ exports[`Controlled Independent Label Value 1`] = `
       enterkeyhint="done"
       role="combobox"
     >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
+    >
+    </button>
     <button
       aria-label="Tøm"
       type="reset"
@@ -293,6 +311,14 @@ exports[`Controlled Multiple 1`] = `
       list=":u-datalist3"
       popovertarget=":u-datalist3"
     >
+    <button
+      aria-expanded="false"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
     <button
       aria-label="Tøm"
       hidden
@@ -456,6 +482,15 @@ exports[`Controlled Single 1`] = `
       list=":u-datalist2"
       popovertarget=":u-datalist2"
     >
+    <button
+      aria-expanded="false"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
+    >
+    </button>
     <button
       aria-label="Tøm"
       type="reset"
@@ -621,6 +656,14 @@ exports[`Custom Filter Alt 1 1`] = `
       role="combobox"
     >
     <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <button
       aria-label="Tøm"
       hidden
       type="reset"
@@ -750,6 +793,14 @@ exports[`Custom Filter Alt 2 1`] = `
       enterkeyhint="done"
       role="combobox"
     >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
     <button
       aria-label="Tøm"
       hidden
@@ -883,6 +934,15 @@ exports[`Default Value 1`] = `
       role="combobox"
     >
     <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
+    >
+    </button>
+    <button
       aria-label="Tøm"
       type="reset"
       aria-hidden="false"
@@ -1012,6 +1072,14 @@ exports[`Fetch External 1`] = `
       role="combobox"
     >
     <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <button
       aria-label="Tøm"
       hidden
       type="reset"
@@ -1063,6 +1131,14 @@ exports[`In Details 1`] = `
           enterkeyhint="done"
           role="combobox"
         >
+        <button
+          aria-expanded="true"
+          aria-label="Valg"
+          type="button"
+          aria-hidden="false"
+          tabindex="-1"
+        >
+        </button>
         <button
           aria-label="Tøm"
           hidden
@@ -1189,6 +1265,14 @@ exports[`Multiple 1`] = `
       enterkeyhint="done"
       role="combobox"
     >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
     <button
       aria-label="Tøm"
       hidden
@@ -1370,6 +1454,14 @@ exports[`Multiple Count 1`] = `
       role="combobox"
     >
     <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <button
       aria-label="Tøm"
       hidden
       type="reset"
@@ -1529,6 +1621,14 @@ exports[`Preview 1`] = `
       enterkeyhint="done"
       role="combobox"
     >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
     <button
       aria-label="Tøm"
       hidden

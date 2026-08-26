@@ -5,6 +5,7 @@ import {
   EXPERIMENTAL_SuggestionInput as SuggestionInput,
   EXPERIMENTAL_SuggestionList as SuggestionList,
   EXPERIMENTAL_SuggestionOption as SuggestionOption,
+  EXPERIMENTAL_SuggestionToggle as SuggestionToggle,
   type SuggestionClearProps,
   type SuggestionEmptyProps,
   type SuggestionInputProps,
@@ -13,6 +14,7 @@ import {
   type SuggestionMultipleProps as DigdirSuggestionMultipleProps,
   type SuggestionOptionProps,
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
+  type SuggestionToggleProps,
 } from '@digdir/designsystemet-react';
 import {
   type ComponentRef,
@@ -68,12 +70,14 @@ const Suggestion: ForwardRefExoticComponent<
   Input: typeof SuggestionInput;
   List: typeof SuggestionList;
   Option: typeof SuggestionOption;
+  Toggle: typeof SuggestionToggle;
 } = Object.assign(SuggestionBase, {
   Clear: SuggestionClear,
   Empty: SuggestionEmpty,
   Input: SuggestionInput,
   List: SuggestionList,
   Option: SuggestionOption,
+  Toggle: SuggestionToggle,
 });
 
 Suggestion.displayName = 'Suggestion';
@@ -82,6 +86,7 @@ SuggestionEmpty.displayName = 'Suggestion.Empty';
 SuggestionInput.displayName = 'Suggestion.Input';
 SuggestionList.displayName = 'Suggestion.List';
 SuggestionOption.displayName = 'Suggestion.Option';
+SuggestionToggle.displayName = 'Suggestion.Toggle';
 
 export {
   Suggestion,
@@ -99,4 +104,6 @@ export {
   type SuggestionOptionProps,
   type SuggestionProps,
   type SuggestionSingleProps,
+  SuggestionToggle,
+  type SuggestionToggleProps,
 };

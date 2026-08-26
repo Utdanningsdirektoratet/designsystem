@@ -25,6 +25,7 @@ import { Suggestion } from '@udir-design/react/alpha';
 
 <Suggestion>
   <Suggestion.Input />
+  <Suggestion.Toggle />
   <Suggestion.Clear />
   <Suggestion.List>
     <Suggestion.Empty>Tomt</Suggestion.Empty>
@@ -37,6 +38,8 @@ import { Suggestion } from '@udir-design/react/alpha';
   </Suggestion.List>
 </Suggestion>;
 ```
+
+`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen har `aria-label="Valg"` som standard. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
 
 ## Eksempler
 

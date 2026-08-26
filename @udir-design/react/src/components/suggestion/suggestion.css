@@ -13,6 +13,8 @@
 }
 
 .ds-suggestion {
+  --_dsc-suggestion-chevron-size: 1.4em;
+
   /* u-combobox 2.0.5 changed [role="listbox"] from display:contents to inline-flex,
      so chips no longer participate in the host's flex-wrap. Restore wrapping. */
   &::part(items) {
@@ -63,13 +65,13 @@
     }
   }
 
-  &:has(input:placeholder-shown) input {
+  &:has(input:placeholder-shown):not(:has(> button[aria-expanded])) input {
     --_dsc-icon-margin-inline: 0.5em;
     /* SVG background-images can't inherit currentColor, so the chevron uses a
        pre-colored icon (see chevronIcon.css) swapped per color scheme, instead
        of using upstream's gradient trick. */
     background-image: var(--_dsc-chevron-icon-down);
-    background-size: 1.4em;
+    background-size: var(--_dsc-suggestion-chevron-size);
     background-position: calc(
       100% - var(--_dsc-icon-margin-inline) + var(--dsc-input-stroke-width)
     );
@@ -81,8 +83,16 @@
     }
   }
 
+  /* Match the input chevron without changing the centered icon box or button. */
+  & > button[aria-expanded]:empty::before {
+    scale: 1.2;
+  }
+
   /* Swap icon when listbox is open */
-  &:has(input:placeholder-shown):has(:popover-open) input {
+  &:has(input:placeholder-shown):not(:has(> button[aria-expanded])):has(
+      :popover-open
+    )
+    input {
     background-image: var(--_dsc-chevron-icon-up);
   }
 }
