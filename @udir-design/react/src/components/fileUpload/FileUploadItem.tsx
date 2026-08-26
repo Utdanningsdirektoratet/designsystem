@@ -194,15 +194,5 @@ export const FileName = ({ file, href }: FileNameProps) => {
     return <Link href={href}>{file.name}</Link>;
   }
 
-  return (
-    <Link
-      download={file.name}
-      onClick={(event) => {
-        event.preventDefault();
-        downloadFile(file);
-      }}
-    >
-      {file.name}
-    </Link>
-  );
+  return <span>{file.name}</span>;
 };
