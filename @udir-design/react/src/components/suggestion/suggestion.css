@@ -25,6 +25,8 @@
   &[data-display='count'] {
     counter-reset: selected;
 
+    row-gap: 0;
+
     /* Keep <data> in rendering tree for counter-increment but hide visually. */
     & > data {
       counter-increment: selected;
@@ -40,10 +42,10 @@
     /* NOTE: This styling should be reflected in tag.css */
     &:has(> data)::after {
       content: counter(selected) ' ' var(--dsc-suggestion-count-label);
-      position: absolute;
-      inset-inline-start: var(--ds-size-3);
-      top: 50%;
-      translate: 0 -50%;
+      grid-area: input;
+      align-self: center;
+      justify-self: start;
+      margin-inline-start: var(--ds-size-3);
       pointer-events: none;
       z-index: 1;
       align-items: center;
@@ -59,8 +61,9 @@
       display: inline-flex;
     }
 
-    /* Hide count display when focused to prevent overlap with input text. */
-    &:focus-within::after {
+    /* Hide while editing or selecting; aria-expanded stays stable when an
+       option click briefly moves focus. */
+    &:has(> input:is(:focus, [aria-expanded='true']))::after {
       display: none;
     }
   }
