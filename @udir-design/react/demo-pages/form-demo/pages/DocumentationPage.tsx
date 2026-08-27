@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { FileRejection, FileWithPath } from 'react-dropzone';
+import type { FileRejection } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field';
@@ -16,7 +16,9 @@ export const DocumentationPage = ({
 }: PageProps) => {
   const { register, setValue, watch, formState } = useFormContext<FormValues>();
 
-  const [rejected, setRejected] = useState<FileRejection[]>([]);
+  // For rejected files we need an id per upload attempt rather than per file
+  type Rejection = FileRejection & { id: string };
+  const [rejected, setRejected] = useState<Rejection[]>([]);
   const uploadedFiles = watch('documentation');
   const errors = showErrors ? formState.errors : {};
 
@@ -28,21 +30,30 @@ export const DocumentationPage = ({
     );
   };
 
-  const removeRejected = (rejectedToRemove: FileWithPath) => {
-    setRejected((prevFile) =>
-      prevFile.filter(({ file }) => file.name !== rejectedToRemove.name),
-    );
+  const removeRejected = (idToRemove: string) => {
+    setRejected((prev) => prev.filter(({ id }) => id !== idToRemove));
   };
 
   const { getRootProps, getInputProps, isDragGlobal, isDragActive } =
     useDropzone({
-      onDropAccepted: (file) => {
-        setValue('documentation', [...uploadedFiles, ...file], {
+      validator: (file) =>
+        uploadedFiles.some((uploaded) => fileId(uploaded) === fileId(file))
+          ? {
+              code: 'file-already-added',
+              message: 'Filen er allerede lagt til',
+            }
+          : null,
+      onDropAccepted: (files) => {
+        setValue('documentation', [...uploadedFiles, ...files], {
           shouldValidate: true,
         });
       },
-      onDropRejected: (rej) => {
-        setRejected((prev) => [...prev, ...rej]);
+      onDropRejected: (rejections) => {
+        const entries = rejections.map((rejection) => ({
+          ...rejection,
+          id: crypto.randomUUID(),
+        }));
+        setRejected((prev) => [...prev, ...entries]);
       },
       maxSize: 25000000,
       multiple: true,
@@ -79,9 +90,9 @@ export const DocumentationPage = ({
           </Heading>
 
           <FileUpload.List>
-            {uploadedFiles.map((file, index) => (
+            {uploadedFiles.map((file) => (
               <FileUpload.Item
-                key={index}
+                key={fileId(file)}
                 file={file}
                 onRemove={() => removeFile(file)}
               />
@@ -97,12 +108,12 @@ export const DocumentationPage = ({
           </Heading>
 
           <FileUpload.List>
-            {rejected.map(({ file, errors }, index) => (
+            {rejected.map(({ id, file, errors }) => (
               <FileUpload.Item
-                key={index}
+                key={id}
                 file={file}
-                onRemove={() => removeRejected(file)}
-                error={ErrorMessages.get(errors[0].code)}
+                onRemove={() => removeRejected(id)}
+                error={ErrorMessages.get(errors[0].code) ?? errors[0].message}
               />
             ))}
           </FileUpload.List>
@@ -131,3 +142,7 @@ const ErrorMessages = new Map<string, string>([
   ['file-too-small', 'Filen er for liten'],
   ['too-many-files', 'Du har lastet opp for mange filer'],
 ]);
+
+function fileId(file: File) {
+  return `${file.name}-${file.size}-${file.lastModified}`;
+}
