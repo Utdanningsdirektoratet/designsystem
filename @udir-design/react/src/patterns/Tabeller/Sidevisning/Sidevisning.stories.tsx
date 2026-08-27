@@ -1,4 +1,4 @@
-import { type ChangeEvent, useEffect, useState } from 'react';
+import { type ChangeEvent, useEffect, useId, useState } from 'react';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
@@ -39,6 +39,7 @@ export const Preview = meta.story({
   render: (args) => {
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [page, setCurrentPage] = useState(1);
+    const tableCaptionId = useId();
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -75,9 +76,15 @@ export const Preview = meta.story({
     };
 
     return (
-      <div className={styles['preview-main']}>
+      <section
+        className={styles['preview-main']}
+        aria-labelledby={tableCaptionId}
+      >
         <div className={styles['preview-table-scroll']}>
           <Table {...args}>
+            <caption id={tableCaptionId} className="ds-sr-only">
+              Karakterer fordelt på fylke og emne
+            </caption>
             <Table.Head>
               <Table.Row>
                 <Table.HeaderCell>Fylke</Table.HeaderCell>
@@ -151,7 +158,7 @@ export const Preview = meta.story({
             </Field>
           </div>
         </div>
-      </div>
+      </section>
     );
   },
 });

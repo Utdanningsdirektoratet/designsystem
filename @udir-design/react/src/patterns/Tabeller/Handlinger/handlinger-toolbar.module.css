@@ -185,6 +185,14 @@
   align-items: center;
 }
 
+.action-toolbar-buttons,
+.action-toolbar-actions-compact,
+.action-toolbar-actions-desktop {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .action-toolbar-select-count {
   display: none;
 }
