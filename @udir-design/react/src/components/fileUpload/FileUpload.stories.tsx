@@ -1,6 +1,6 @@
 import type { ChangeEvent } from 'react';
 import { useState } from 'react';
-import type { FileRejection, FileWithPath } from 'react-dropzone';
+import type { FileRejection } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
@@ -126,8 +126,10 @@ export const ExampleDropZone = meta.story({
     docs: advancedCodeDocs,
   },
   render: (args) => {
+    // For rejected files we need an id per upload attempt rather than per file
+    type Rejection = FileRejection & { id: string };
     const [files, setFiles] = useState<File[]>([]);
-    const [rejected, setRejected] = useState<FileRejection[]>([]);
+    const [rejected, setRejected] = useState<Rejection[]>([]);
 
     const removeFile = (fileToRemove: File) => {
       setFiles((prevItems) =>
@@ -135,19 +137,19 @@ export const ExampleDropZone = meta.story({
       );
     };
 
-    const removeRejected = (rejectedToRemove: FileWithPath) => {
-      setRejected((prevFile) =>
-        prevFile.filter(({ file }) => file.name !== rejectedToRemove.name),
-      );
+    const removeRejected = (idToRemove: string) => {
+      setRejected((prev) => prev.filter(({ id }) => id !== idToRemove));
     };
 
     const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
       useDropzone({
-        onDropAccepted: (file) => {
-          setFiles((prev) => [...prev, ...file]);
-        },
-        onDropRejected: (rej) => {
-          setRejected((prev) => [...prev, ...rej]);
+        onDropAccepted: (files) => setFiles((prev) => [...prev, ...files]),
+        onDropRejected: (rejections) => {
+          const entries = rejections.map((rejection) => ({
+            ...rejection,
+            id: crypto.randomUUID(),
+          }));
+          setRejected((prev) => [...prev, ...entries]);
         },
         maxSize: 5242880,
         accept: {
@@ -174,9 +176,9 @@ export const ExampleDropZone = meta.story({
               Vedlegg ({files.length}):
             </Heading>
             <FileUpload.List>
-              {files.map((file, index) => (
+              {files.map((file) => (
                 <FileUpload.Item
-                  key={index}
+                  key={fileId(file)}
                   file={file}
                   onRemove={() => removeFile(file)}
                 />
@@ -190,11 +192,11 @@ export const ExampleDropZone = meta.story({
               Vedlegg med feil:
             </Heading>
             <FileUpload.List>
-              {rejected.map(({ file, errors }, index) => (
+              {rejected.map(({ id, file, errors }) => (
                 <FileUpload.Item
-                  key={index}
+                  key={id}
                   file={file}
-                  onRemove={() => removeRejected(file)}
+                  onRemove={() => removeRejected(id)}
                   error={ErrorMessages.get(errors[0].code)}
                 />
               ))}
@@ -261,9 +263,7 @@ export const TooManyFiles = meta.story({
 
     const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
       useDropzone({
-        onDropAccepted: (file) => {
-          setFiles((prev) => [...prev, ...file]);
-        },
+        onDropAccepted: (files) => setFiles((prev) => [...prev, ...files]),
         multiple: true,
       });
 
@@ -299,9 +299,9 @@ export const TooManyFiles = meta.story({
                 Vedlegg ({files.length}):
               </Heading>
               <FileUpload.List>
-                {files.map((file, index) => (
+                {files.map((file) => (
                   <FileUpload.Item
-                    key={index}
+                    key={fileId(file)}
                     file={file}
                     onRemove={() => removeFile(file)}
                   />
@@ -395,30 +395,63 @@ export const ExampleTrigger = meta.story({
 export const ExampleItems = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: () => {
-    type FileInfo = { file: FileMeta; href?: string };
+    type FileInfo = FileMeta & {
+      id: string;
+      href?: string;
+      readonly?: boolean;
+      loading?: boolean;
+      description?: string;
+    };
     const dummyFiles: FileInfo[] = [
-      { file: { size: 300000, name: 'eksempel1.pdf' } },
-      { file: { size: 30000, name: 'eksempel2.docx' } },
       {
-        file: { size: 3000000, name: 'eksempel3.png' },
-        href: '/eksempel3.png',
+        size: 300000,
+        name: 'eksempel1.pdf',
+        id: 'eksempel1',
+        description: 'Filopplasting 1',
       },
-      { file: { size: 369000, name: 'eksempel4.pdf' } },
+      {
+        size: 30000,
+        name: 'eksempel2.docx',
+        id: 'eksempel2',
+        description: 'Filopplasting 2',
+      },
+      {
+        size: 3000000,
+        name: 'eksempel3.png',
+        id: 'eksempel3',
+        href: '/eksempel3.png',
+        description: 'Filopplasting 3',
+        readonly: true,
+      },
+      {
+        size: 369000,
+        name: 'eksempel4.pdf',
+        id: 'eksempel4',
+        description: 'Filopplasting 4',
+        loading: true,
+      },
     ];
-    const dummyRejected: FileMeta[] = [{ size: 864000, name: 'eksempel5.tsx' }];
+    const dummyRejected: FileInfo[] = [
+      {
+        size: 864000,
+        name: 'eksempel5.tsx',
+        id: 'eksempel5',
+        description: 'Filopplasting 5',
+      },
+    ];
 
     const [files, setFiles] = useState<FileInfo[]>(dummyFiles);
-    const [rejected, setRejected] = useState<FileMeta[]>(dummyRejected);
+    const [rejected, setRejected] = useState<FileInfo[]>(dummyRejected);
 
     const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
-        prevItems.filter((item) => item.file !== fileToRemove),
+        prevItems.filter((file) => file !== fileToRemove),
       );
     };
 
     const removeRejected = (rejectedToRemove: FileMeta) => {
       setRejected((prevFile) =>
-        prevFile.filter((file) => file.name !== rejectedToRemove.name),
+        prevFile.filter((file) => file !== rejectedToRemove),
       );
     };
 
@@ -439,20 +472,22 @@ export const ExampleItems = meta.story({
                 Vedlegg ({files.length}):
               </Heading>
               <FileUpload.List>
-                {files.map((item, index) => (
+                {files.map((file) => (
                   <FileUpload.Item
-                    key={index}
-                    file={item.file}
-                    href={item.href}
+                    key={file.id}
+                    file={file}
+                    href={file.href}
                     description={
-                      <>
-                        <span>Filopplasting {index + 1}</span> (
-                        <FileUpload.FileSize size={item.file.size} />)
-                      </>
+                      file.description ? (
+                        <>
+                          <span>{file.description}</span> (
+                          <FileUpload.FileSize size={file.size} />)
+                        </>
+                      ) : undefined
                     }
-                    readonly={index === 2 && true}
-                    loading={index === 3 && true}
-                    onRemove={() => removeFile(item.file)}
+                    readonly={file.readonly}
+                    loading={file.loading}
+                    onRemove={() => removeFile(file)}
                   />
                 ))}
               </FileUpload.List>
@@ -468,9 +503,9 @@ export const ExampleItems = meta.story({
                 Vedlegg med feil:
               </Heading>
               <FileUpload.List>
-                {rejected.map((file, index) => (
+                {rejected.map((file) => (
                   <FileUpload.Item
-                    key={index}
+                    key={file.id}
                     file={file}
                     onRemove={() => removeRejected(file)}
                     error={'Filformatet støttes ikke'}
@@ -640,14 +675,16 @@ export const CompactList = meta.story({
     'data-size': 'md',
   },
   render: (args) => {
-    type FileInfo = { file: FileMeta; error?: string };
+    type FileInfo = FileMeta & { id: string; error?: string };
     const dummyFiles: FileInfo[] = [
-      { file: { size: 300000, name: 'kandidat-12.pdf' } },
-      { file: { size: 300000, name: 'kandidat-13.pdf' } },
-      { file: { size: 300000, name: 'kandidat-14.pdf' } },
-      { file: { size: 300000, name: 'kandidat-15.pdf' } },
+      { size: 300000, name: 'kandidat-12.pdf', id: 'kandidat-12' },
+      { size: 300000, name: 'kandidat-13.pdf', id: 'kandidat-13' },
+      { size: 300000, name: 'kandidat-14.pdf', id: 'kandidat-14' },
+      { size: 300000, name: 'kandidat-15.pdf', id: 'kandidat-15' },
       {
-        file: { size: 864000, name: 'kandidat-16.tsx' },
+        size: 864000,
+        name: 'kandidat-16.tsx',
+        id: 'kandidat-16',
         error: 'Filformatet støttes ikke',
       },
     ];
@@ -655,7 +692,7 @@ export const CompactList = meta.story({
     const [files, setFiles] = useState(dummyFiles);
 
     const removeFile = (fileToRemove: FileMeta) => {
-      setFiles((prev) => prev.filter(({ file }) => file !== fileToRemove));
+      setFiles((prev) => prev.filter((file) => file !== fileToRemove));
     };
 
     return (
@@ -664,11 +701,11 @@ export const CompactList = meta.story({
           Vedlegg ({files.length}):
         </Heading>
         <FileUpload.List variant="compact" data-size={args['data-size']}>
-          {files.map(({ file, error }, index) => (
+          {files.map((file) => (
             <FileUpload.Item
-              key={index}
+              key={file.id}
               file={file}
-              error={error}
+              error={file.error}
               onRemove={() => removeFile(file)}
             />
           ))}
@@ -739,3 +776,7 @@ export const Translations = Preview.extend({
     );
   },
 });
+
+function fileId(file: FileMeta & { lastModified?: number }) {
+  return `${file.name}-${file.size}-${file.lastModified ?? ''}`;
+}
