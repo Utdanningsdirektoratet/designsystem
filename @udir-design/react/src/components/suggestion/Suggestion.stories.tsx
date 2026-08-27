@@ -440,11 +440,18 @@ export const FetchExternal = meta.story({
     };
 
     const apiCall = async (value: string) => {
-      const api = `https://restcountries.com/v2/name/${value}?fields=name`;
-      const countries = await (await fetch(api)).json();
-      setOptions(
-        Array.isArray(countries) ? countries.map(({ name }) => name) : [],
-      );
+      try {
+        const api = `https://api.first.org/data/v1/countries?q=${value}&limit=10`;
+        const response = await fetch(api);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const { data } = (await response.json()) as {
+          data: Record<string, { country: string }>;
+        };
+        setOptions(Object.values(data).map(({ country }) => country));
+      } catch {
+        setOptions([]);
+      }
     };
 
     const debounced = useDebounceCallback(apiCall, 500);
