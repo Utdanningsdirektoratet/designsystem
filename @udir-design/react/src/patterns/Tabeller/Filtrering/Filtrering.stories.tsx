@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { FilterIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
@@ -63,6 +63,7 @@ export const Preview = meta.story({
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState<Filters>(initialFilters);
+    const tableCaptionId = useId();
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -116,7 +117,10 @@ export const Preview = meta.story({
     );
 
     return (
-      <div className={previewStyles['preview-main']}>
+      <section
+        className={previewStyles['preview-main']}
+        aria-labelledby={tableCaptionId}
+      >
         <div className={previewStyles['preview-filters-section']}>
           <div className={previewStyles['preview-suggestion-section']}>
             <Field className={previewStyles['preview-suggestion-field']}>
@@ -219,6 +223,9 @@ export const Preview = meta.story({
 
         <div className={previewStyles['preview-table-scroll']}>
           <Table {...tableProps}>
+            <caption id={tableCaptionId} className="ds-sr-only">
+              Skoler
+            </caption>
             <Table.Head>
               <Table.Row>
                 <Table.HeaderCell>År</Table.HeaderCell>
@@ -300,7 +307,7 @@ export const Preview = meta.story({
             </Field>
           </div>
         </div>
-      </div>
+      </section>
     );
   },
 });
@@ -318,6 +325,7 @@ export const WithDialog = meta.story({
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState<Filters>(initialFilters);
     const [draftFilters, setDraftFilters] = useState<Filters>(initialFilters);
+    const tableCaptionId = useId();
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -389,7 +397,10 @@ export const WithDialog = meta.story({
     );
 
     return (
-      <div className={dialogStyles['dialog-main']}>
+      <section
+        className={dialogStyles['dialog-main']}
+        aria-labelledby={tableCaptionId}
+      >
         <div className={dialogStyles['dialog-filters-section']}>
           <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
@@ -609,6 +620,9 @@ export const WithDialog = meta.story({
 
         <div className={dialogStyles['dialog-table-scroll']}>
           <Table {...args}>
+            <caption id={tableCaptionId} className="ds-sr-only">
+              Skoler
+            </caption>
             <Table.Head>
               <Table.Row>
                 <Table.HeaderCell>År</Table.HeaderCell>
@@ -690,7 +704,7 @@ export const WithDialog = meta.story({
             </Field>
           </div>
         </div>
-      </div>
+      </section>
     );
   },
 });

@@ -2,7 +2,7 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -332,6 +332,9 @@ exports[`Preview 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<removed>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -580,13 +583,13 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Chips 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -977,6 +980,9 @@ exports[`With Chips 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<removed>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -1225,13 +1231,13 @@ exports[`With Chips 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Dialog 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <ds-field>
         <label for="<removed>">
@@ -1288,7 +1294,7 @@ exports[`With Dialog 1`] = `
         >
           <button
             data-icon="true"
-            commandfor="_r_9_"
+            commandfor="_r_f_"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -1871,6 +1877,9 @@ exports[`With Dialog 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<removed>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -2119,6 +2128,6 @@ exports[`With Dialog 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;

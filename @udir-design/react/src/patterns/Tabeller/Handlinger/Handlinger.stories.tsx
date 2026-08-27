@@ -77,6 +77,7 @@ const ActionTable = ({
   const [emne, setEmne] = useState<string[]>([]);
   const [fylke, setFylke] = useState<string[]>([]);
   const rowMenuPrefix = useId();
+  const tableCaptionId = useId();
   const [isMobile, setIsMobile] = useState(
     () => !window.matchMedia('(min-width: 48rem)').matches,
   );
@@ -159,7 +160,7 @@ const ActionTable = ({
   };
 
   return (
-    <div className={styles.actions}>
+    <section className={styles.actions} aria-labelledby={tableCaptionId}>
       <div className={styles['actions-filters-section']}>
         <div className={styles['actions-suggestion-section']}>
           <Field className={styles['actions-suggestion-field']}>
@@ -284,6 +285,9 @@ const ActionTable = ({
       })}
       <div className={styles['actions-table-scroll']}>
         <Table {...args}>
+          <caption id={tableCaptionId} className="ds-sr-only">
+            Karakterer fordelt på fylke og emne
+          </caption>
           <Table.Head>
             <Table.Row>
               <Table.HeaderCell>
@@ -407,7 +411,7 @@ const ActionTable = ({
           </Field>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -434,16 +438,21 @@ export const Preview = meta.story({
           <div className={styles['action-toolbar-selection']}>
             <Paragraph data-size="sm">{selectedCount} valgt</Paragraph>
             <div className={styles['action-toolbar-divider']} />
-            <div className={styles['action-toolbar-buttons']}>
-              <Button variant="tertiary" onClick={selectAll} data-size="sm">
-                Velg alle
-                <span className={styles['action-toolbar-select-count']}>
-                  {' '}
-                  {filteredCount}
-                </span>
-              </Button>
+            <ul
+              className={styles['action-toolbar-buttons']}
+              aria-label="Radvalg"
+            >
+              <li>
+                <Button variant="tertiary" onClick={selectAll} data-size="sm">
+                  Velg alle
+                  <span className={styles['action-toolbar-select-count']}>
+                    {' '}
+                    {filteredCount}
+                  </span>
+                </Button>
+              </li>
               {selectedCount > 0 && (
-                <>
+                <li>
                   <Button
                     variant="tertiary"
                     onClick={clearSelection}
@@ -451,59 +460,77 @@ export const Preview = meta.story({
                   >
                     Fjern alle
                   </Button>
-                </>
+                </li>
               )}
-            </div>
+            </ul>
           </div>
           {selectedCount > 0 && (
             <div className={styles['action-toolbar-actions']}>
-              <div className={styles['action-toolbar-actions-compact']}>
-                <Tooltip content="Rediger">
-                  <Button
-                    variant="tertiary"
-                    icon
-                    aria-label="Rediger"
-                    data-size="sm"
-                  >
+              <ul
+                className={styles['action-toolbar-actions-compact']}
+                aria-label="Handlinger for valgte rader"
+              >
+                <li>
+                  <Tooltip content="Rediger">
+                    <Button
+                      variant="tertiary"
+                      icon
+                      aria-label="Rediger"
+                      data-size="sm"
+                    >
+                      <PencilWritingIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+                <li>
+                  <Tooltip content="Eksporter">
+                    <Button
+                      variant="tertiary"
+                      icon
+                      aria-label="Eksporter"
+                      data-size="sm"
+                    >
+                      <DownloadIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+                <li>
+                  <Tooltip content="Slett">
+                    <Button
+                      variant="tertiary"
+                      data-color="danger"
+                      icon
+                      aria-label="Slett"
+                      data-size="sm"
+                    >
+                      <TrashFillIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+              </ul>
+              <ul
+                className={styles['action-toolbar-actions-desktop']}
+                aria-label="Handlinger for valgte rader"
+              >
+                <li>
+                  <Button variant="tertiary" data-size="sm">
                     <PencilWritingIcon aria-hidden />
+                    Rediger
                   </Button>
-                </Tooltip>
-                <Tooltip content="Eksporter">
-                  <Button
-                    variant="tertiary"
-                    icon
-                    aria-label="Eksporter"
-                    data-size="sm"
-                  >
+                </li>
+                <li>
+                  <Button variant="tertiary" data-size="sm">
                     <DownloadIcon aria-hidden />
+                    Eksporter
                   </Button>
-                </Tooltip>
-                <Tooltip content="Slett">
-                  <Button
-                    variant="tertiary"
-                    data-color="danger"
-                    icon
-                    aria-label="Slett"
-                    data-size="sm"
-                  >
+                </li>
+                <li>
+                  <Button variant="tertiary" data-color="danger" data-size="sm">
                     <TrashFillIcon aria-hidden />
+                    Slett
                   </Button>
-                </Tooltip>
-              </div>
-              <div className={styles['action-toolbar-actions-desktop']}>
-                <Button variant="tertiary" data-size="sm">
-                  <PencilWritingIcon aria-hidden />
-                  Rediger
-                </Button>
-                <Button variant="tertiary" data-size="sm">
-                  <DownloadIcon aria-hidden />
-                  Eksporter
-                </Button>
-                <Button variant="tertiary" data-color="danger" data-size="sm">
-                  <TrashFillIcon aria-hidden />
-                  Slett
-                </Button>
-              </div>
+                </li>
+              </ul>
             </div>
           )}
         </div>
@@ -537,16 +564,21 @@ export const Secondary = meta.story({
         <div className={styles['action-toolbar']}>
           <div className={styles['action-toolbar-selection']}>
             <Paragraph data-size="sm">{selectedCount} valgt</Paragraph>
-            <div className={styles['action-toolbar-buttons']}>
-              <Button variant="secondary" onClick={selectAll} data-size="sm">
-                Velg alle
-                <span className={styles['action-toolbar-select-count']}>
-                  {' '}
-                  {filteredCount}
-                </span>
-              </Button>
+            <ul
+              className={styles['action-toolbar-buttons']}
+              aria-label="Radvalg"
+            >
+              <li>
+                <Button variant="secondary" onClick={selectAll} data-size="sm">
+                  Velg alle
+                  <span className={styles['action-toolbar-select-count']}>
+                    {' '}
+                    {filteredCount}
+                  </span>
+                </Button>
+              </li>
               {selectedCount > 0 && (
-                <>
+                <li>
                   <Button
                     variant="secondary"
                     onClick={clearSelection}
@@ -554,59 +586,81 @@ export const Secondary = meta.story({
                   >
                     Fjern alle
                   </Button>
-                </>
+                </li>
               )}
-            </div>
+            </ul>
           </div>
           {selectedCount > 0 && (
             <div className={styles['action-toolbar-actions']}>
-              <div className={styles['action-toolbar-actions-compact']}>
-                <Tooltip content="Rediger">
-                  <Button
-                    variant="secondary"
-                    icon
-                    aria-label="Rediger"
-                    data-size="sm"
-                  >
+              <ul
+                className={styles['action-toolbar-actions-compact']}
+                aria-label="Handlinger for valgte rader"
+              >
+                <li>
+                  <Tooltip content="Rediger">
+                    <Button
+                      variant="secondary"
+                      icon
+                      aria-label="Rediger"
+                      data-size="sm"
+                    >
+                      <PencilWritingIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+                <li>
+                  <Tooltip content="Eksporter">
+                    <Button
+                      variant="secondary"
+                      icon
+                      aria-label="Eksporter"
+                      data-size="sm"
+                    >
+                      <DownloadIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+                <li>
+                  <Tooltip content="Slett">
+                    <Button
+                      variant="secondary"
+                      data-color="danger"
+                      icon
+                      aria-label="Slett"
+                      data-size="sm"
+                    >
+                      <TrashFillIcon aria-hidden />
+                    </Button>
+                  </Tooltip>
+                </li>
+              </ul>
+              <ul
+                className={styles['action-toolbar-actions-desktop']}
+                aria-label="Handlinger for valgte rader"
+              >
+                <li>
+                  <Button variant="secondary" data-size="sm">
                     <PencilWritingIcon aria-hidden />
+                    Rediger
                   </Button>
-                </Tooltip>
-                <Tooltip content="Eksporter">
-                  <Button
-                    variant="secondary"
-                    icon
-                    aria-label="Eksporter"
-                    data-size="sm"
-                  >
+                </li>
+                <li>
+                  <Button variant="secondary" data-size="sm">
                     <DownloadIcon aria-hidden />
+                    Eksporter
                   </Button>
-                </Tooltip>
-                <Tooltip content="Slett">
+                </li>
+                <li>
                   <Button
                     variant="secondary"
                     data-color="danger"
-                    icon
-                    aria-label="Slett"
                     data-size="sm"
                   >
                     <TrashFillIcon aria-hidden />
+                    Slett
                   </Button>
-                </Tooltip>
-              </div>
-              <div className={styles['action-toolbar-actions-desktop']}>
-                <Button variant="secondary" data-size="sm">
-                  <PencilWritingIcon aria-hidden />
-                  Rediger
-                </Button>
-                <Button variant="secondary" data-size="sm">
-                  <DownloadIcon aria-hidden />
-                  Eksporter
-                </Button>
-                <Button variant="secondary" data-color="danger" data-size="sm">
-                  <TrashFillIcon aria-hidden />
-                  Slett
-                </Button>
-              </div>
+                </li>
+              </ul>
             </div>
           )}
         </div>

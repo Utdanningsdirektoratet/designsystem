@@ -2,7 +2,7 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -275,18 +275,20 @@ exports[`Preview 1`] = `
         </p>
         <div>
         </div>
-        <div>
-          <button
-            data-variant="tertiary"
-            type="button"
-            data-size="sm"
-          >
-            Velg alle
-            <span>
-              48
-            </span>
-          </button>
-        </div>
+        <ul aria-label="Radvalg">
+          <li>
+            <button
+              data-variant="tertiary"
+              type="button"
+              data-size="sm"
+            >
+              Velg alle
+              <span>
+                48
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
     <div>
@@ -294,6 +296,9 @@ exports[`Preview 1`] = `
         data-hover="true"
         data-color="neutral"
       >
+        <caption id="<removed>">
+          Karakterer fordelt på fylke og emne
+        </caption>
         <thead>
           <tr>
             <th>
@@ -1172,13 +1177,13 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`Secondary 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -1449,18 +1454,20 @@ exports[`Secondary 1`] = `
         <p data-size="sm">
           0 valgt
         </p>
-        <div>
-          <button
-            data-variant="secondary"
-            type="button"
-            data-size="sm"
-          >
-            Velg alle
-            <span>
-              48
-            </span>
-          </button>
-        </div>
+        <ul aria-label="Radvalg">
+          <li>
+            <button
+              data-variant="secondary"
+              type="button"
+              data-size="sm"
+            >
+              Velg alle
+              <span>
+                48
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
     <div>
@@ -1468,6 +1475,9 @@ exports[`Secondary 1`] = `
         data-hover="true"
         data-color="neutral"
       >
+        <caption id="<removed>">
+          Karakterer fordelt på fylke og emne
+        </caption>
         <thead>
           <tr>
             <th>
@@ -1536,7 +1546,7 @@ exports[`Secondary 1`] = `
                 data-icon="true"
                 data-variant="tertiary"
                 type="button"
-                popovertarget="_r_n_-row-menu-Agder-Engelsk"
+                popovertarget="_r_o_-row-menu-Agder-Engelsk"
                 title="Handlinger"
                 aria-label="Handlinger"
                 data-size="sm"
@@ -1685,7 +1695,7 @@ exports[`Secondary 1`] = `
                 data-icon="true"
                 data-variant="tertiary"
                 type="button"
-                popovertarget="_r_n_-row-menu-Agder-Matematikk"
+                popovertarget="_r_o_-row-menu-Agder-Matematikk"
                 title="Handlinger"
                 aria-label="Handlinger"
                 data-size="sm"
@@ -1834,7 +1844,7 @@ exports[`Secondary 1`] = `
                 data-icon="true"
                 data-variant="tertiary"
                 type="button"
-                popovertarget="_r_n_-row-menu-Agder-Hovedmål"
+                popovertarget="_r_o_-row-menu-Agder-Hovedmål"
                 title="Handlinger"
                 aria-label="Handlinger"
                 data-size="sm"
@@ -1983,7 +1993,7 @@ exports[`Secondary 1`] = `
                 data-icon="true"
                 data-variant="tertiary"
                 type="button"
-                popovertarget="_r_n_-row-menu-Agder-Sidemål"
+                popovertarget="_r_o_-row-menu-Agder-Sidemål"
                 title="Handlinger"
                 aria-label="Handlinger"
                 data-size="sm"
@@ -2132,7 +2142,7 @@ exports[`Secondary 1`] = `
                 data-icon="true"
                 data-variant="tertiary"
                 type="button"
-                popovertarget="_r_n_-row-menu-Akershus-Engelsk"
+                popovertarget="_r_o_-row-menu-Akershus-Engelsk"
                 title="Handlinger"
                 aria-label="Handlinger"
                 data-size="sm"
@@ -2346,6 +2356,6 @@ exports[`Secondary 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
