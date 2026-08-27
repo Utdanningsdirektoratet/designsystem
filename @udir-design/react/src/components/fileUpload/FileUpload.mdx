@@ -55,17 +55,36 @@ Dersom du ønsker å begrense antall filer implementeres dette selv. Om brukeren
 
 Filer som er lastet opp vises med `FileUpload.List` og én `FileUpload.Item` per fil. `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange filer som er lastet opp og hvor i lista brukeren befinner seg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
 
+#### Stabil id per vedlegg
+
+Hver `FileUpload.Item` trenger en `key` som følger filen, ikke posisjonen i lista.
+
+- **Ikke bruk indeksen.** Når brukeren fjerner en fil, gjenbruker React DOM-nodene og forskyver innholdet oppover. Da kan et element arve feilmeldingen fra filen under, slik at feilen blir lest opp på nytt selv om brukeren bare fjernet en annen fil.
+- **Ikke bruk filnavnet.** Brukeren kan laste opp to filer med samme navn fra ulike mapper, og da får du duplikate nøkler.
+
+Bruk i stedet en stabil id per fil, som du lager selv. I eksemplene våre lager vi id-en fra filnavn, størrelse og `lastModified`:
+
 ```tsx
+function fileId(file: File) {
+  return `${file.name}-${file.size}-${file.lastModified}`;
+}
+
 <FileUpload.List>
-  {files.map((file, index) => (
+  {files.map((file) => (
     <FileUpload.Item
-      key={index}
+      key={fileId(file)}
       file={file}
       onRemove={() => removeFile(file)}
     />
   ))}
-</FileUpload.List>
+</FileUpload.List>;
 ```
+
+Har filene dine allerede en id fra serveren, bruk den i stedet.
+
+I lista over filer som ble avvist lager vi en unik id per opplastingsforsøk, ikke per fil. Da får brukeren en rad hver gang en fil blir avvist, også når samme fil blir forsøkt lagt ved flere ganger.
+
+#### Innhold i hvert vedlegg
 
 Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet.
 
