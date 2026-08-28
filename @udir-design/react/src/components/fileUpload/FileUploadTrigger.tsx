@@ -1,7 +1,8 @@
 import type { Size } from '@digdir/designsystemet-types';
+import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
-import { forwardRef, useEffect, useId, useRef } from 'react';
+import { forwardRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button';
 import { Field } from '../field';
@@ -12,10 +13,16 @@ import './fileUpload.css';
 
 type InputProps_ = Omit<
   InputProps,
-  'prefix' | 'className' | 'style' | 'data-color' | 'type' | 'data-size'
+  | 'prefix'
+  | 'className'
+  | 'style'
+  | 'tabIndex'
+  | 'data-color'
+  | 'type'
+  | 'data-size'
 >;
 
-export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
+export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
   /**
    * Changes size for descendant Designsystemet components.
    * Select from predefined sizes.
@@ -34,7 +41,10 @@ export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
    */
   error?: ReactNode;
   /**
-   * Props for the input field
+   * Props for the input field.
+   *
+   * Note: `style` and `tabIndex` are always set by the component, and
+   * `aria-label` is ignored when there is a `label`.
    */
   inputProps?: InputProps_;
   /**
@@ -45,7 +55,7 @@ export type FileUploadProps = HTMLAttributes<HTMLDivElement> & {
   variant?: 'primary' | 'secondary';
 };
 
-export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
+export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
   function FileUploadTrigger(
     {
       className,
@@ -59,72 +69,53 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
     },
     ref,
   ) {
-    const fileInputRef = useRef<HTMLInputElement>(null);
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const cssVar = inputProps?.multiple
-      ? '--udsc-fileUpload-chooseFiles-text'
-      : '--udsc-fileUpload-chooseFile-text';
-    // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
-    useEffect(() => {
-      if (typeof window === 'undefined' || !buttonRef.current) return;
-      const buttonAriaLabel = getComputedStyle(buttonRef.current)
-        .getPropertyValue(cssVar)
-        .replace(/^["']|["']$/g, '')
-        .trim();
-      buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
-    }, [cssVar]);
-
-    const generatedId = useId();
-    const id = rest.id ?? generatedId;
-    const buttonId = `${id}-button`;
-    const labelId = `${id}-label`;
-    const descriptionId = `${id}-description`;
-
     return (
-      <div
-        className={cl('ds-field', 'uds-file-upload', className)}
+      <Field
+        className={cl('uds-file-upload', className)}
         data-size={size}
         ref={ref}
         {...rest}
       >
-        {!!label && (
-          <Label id={labelId} htmlFor={buttonId}>
-            {label}
-          </Label>
-        )}
-        {!!description && (
-          <Field.Description id={descriptionId}>
-            {description}
-          </Field.Description>
-        )}
-        <Button
-          id={buttonId}
-          aria-labelledby={label ? labelId : undefined}
-          aria-describedby={description ? descriptionId : undefined}
-          disabled={inputProps?.readOnly ?? inputProps?.disabled}
-          variant={variant}
-          onClick={() => {
-            fileInputRef.current?.click();
-          }}
-          ref={buttonRef}
-        >
-          <UploadIcon aria-hidden />
-          {/* Text in css */}
-        </Button>
-        <input
-          className="ds-input"
-          type="file"
-          ref={fileInputRef}
-          {...inputProps}
-          onClick={(e) => {
-            if (inputProps?.readOnly) {
-              e.preventDefault();
-            }
-            inputProps?.onClick?.(e);
-          }}
-        />
+        {!!label && <Label>{label}</Label>}
+        {!!description && <Field.Description>{description}</Field.Description>}
+        {/* The input covers the button and is the only focusable control here,
+            so `ds-field` can wire the label, description and error message to
+            it. The button is presentational. `style` and `tabIndex` are
+            overridden so the input keeps covering the button and stays in the
+            tab order; if it left the tab order there would be no tab stop here
+            at all. `aria-label` is dropped when there is a `label`, so it
+            cannot silently replace the accessible name. */}
+        <span className="uds-file-upload__trigger">
+          <Button asChild variant={variant}>
+            {/* `aria-disabled` is Designsystemet's styling hook for the disabled
+                look, and also suppresses its hover and active styles. It has no
+                effect in the accessibility tree on a span without a role. */}
+            <span
+              aria-disabled={
+                (inputProps?.readOnly ?? inputProps?.disabled) || undefined
+              }
+            >
+              <UploadIcon aria-hidden />
+              {/* Text in css */}
+            </span>
+          </Button>
+          <input
+            type="file"
+            className="ds-input"
+            {...inputProps}
+            onClick={(e) => {
+              if (inputProps?.readOnly) {
+                e.preventDefault();
+              }
+              inputProps?.onClick?.(e);
+            }}
+            aria-label={label ? undefined : inputProps?.['aria-label']}
+            style={undefined}
+            tabIndex={undefined}
+          />
+        </span>
         {!!error && <ValidationMessage>{error}</ValidationMessage>}
-      </div>
+      </Field>
     );
   },
 );

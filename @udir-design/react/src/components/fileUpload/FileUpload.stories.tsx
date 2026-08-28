@@ -7,6 +7,7 @@ import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
@@ -218,6 +219,22 @@ export const ExampleDropZone = meta.story({
       await expect(dropzone).toBeTruthy();
     });
 
+    await step('Input covers the card, so the whole card is clickable', () => {
+      const card = canvas.querySelector('.ds-card') as HTMLElement;
+      const cardRect = card.getBoundingClientRect();
+      const inputRect = dropzone.getBoundingClientRect();
+      const border = parseFloat(getComputedStyle(card).borderTopWidth);
+
+      // `inset: 0` resolves against the padding box, so the overlay is inset by
+      // the card's border on each side.
+      expect(inputRect.height).toBeGreaterThanOrEqual(
+        cardRect.height - border * 2,
+      );
+      expect(inputRect.width).toBeGreaterThanOrEqual(
+        cardRect.width - border * 2,
+      );
+    });
+
     await step('File can be uploaded', async () => {
       await userEvent.upload(dropzone, dummyFile);
 
@@ -390,6 +407,40 @@ export const ExampleTrigger = meta.story({
       ).toBeInTheDocument();
     });
   },
+});
+
+export const TriggerPseudoStates = meta.story({
+  parameters: {
+    pseudo: {
+      // The input lies over the button, so the states are on the trigger and
+      // the input rather than on the button itself.
+      hover: ['.hover .uds-file-upload__trigger'],
+      active: ['.active .uds-file-upload__trigger'],
+      focusVisible: ['.focusVisible input'],
+    },
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, auto)',
+        gap: 'var(--ds-size-6)',
+        alignItems: 'end',
+      }}
+    >
+      {[
+        ['Default', ''],
+        ['Hover', 'hover'],
+        ['Pressed', 'hover active'],
+        ['Focused', 'focusVisible'],
+      ].map(([state, className]) => (
+        <div key={state}>
+          <Label data-size="sm">{state}</Label>
+          <FileUpload.Trigger label="Last opp" className={className} />
+        </div>
+      ))}
+    </div>
+  ),
 });
 
 export const ExampleItems = meta.story({
