@@ -1,4 +1,5 @@
 import { cleanup, render, screen } from '@testing-library/react';
+import type { ChangeEvent } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { userEvent } from 'vitest/browser';
@@ -6,8 +7,8 @@ import { FileUploadDropzone } from './FileUploadDropzone';
 
 afterEach(cleanup);
 
-const pdf = () =>
-  new File([new Uint8Array(64)], 'eksempel.pdf', { type: 'application/pdf' });
+const pdf = (name = 'eksempel.pdf') =>
+  new File([new Uint8Array(64)], name, { type: 'application/pdf' });
 
 const Dropzone = ({
   onDropAccepted,
@@ -144,5 +145,104 @@ describe('FileUpload.Dropzone', () => {
     input.dispatchEvent(click);
 
     expect(click.defaultPrevented).toBe(true);
+  });
+});
+
+const WithFiles = ({
+  files,
+  onChange,
+}: {
+  files?: File[];
+  onChange?: () => void;
+}) => {
+  const { getRootProps, getInputProps } = useDropzone({ multiple: true });
+
+  return (
+    <form>
+      <FileUploadDropzone
+        label="Last opp dokumentasjon"
+        cardProps={getRootProps()}
+        inputProps={getInputProps({ name: 'doc', required: true, onChange })}
+        files={files}
+      />
+    </form>
+  );
+};
+
+const input = () =>
+  screen.getByLabelText('Last opp dokumentasjon') as HTMLInputElement;
+
+/**
+ * `input.files` is what assistive technology announces as the control's value,
+ * and what native form submission sends, so it has to match the visible list.
+ */
+describe('FileUpload.Dropzone attached files', () => {
+  it('mirrors the attached files into the input', () => {
+    render(<WithFiles files={[pdf('a.pdf'), pdf('b.pdf')]} />);
+
+    expect(Array.from(input().files ?? [], (file) => file.name)).toEqual([
+      'a.pdf',
+      'b.pdf',
+    ]);
+  });
+
+  it('mirrors without re-entering the change handler', () => {
+    const onChange = vi.fn();
+    render(<WithFiles files={[pdf()]} onChange={onChange} />);
+
+    expect(input().files).toHaveLength(1);
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('lets required and native submission see files the dialog never saw', () => {
+    const { rerender } = render(<WithFiles files={[]} />);
+    expect(input().checkValidity()).toBe(false);
+
+    rerender(<WithFiles files={[pdf('a.pdf')]} />);
+
+    expect(input().checkValidity()).toBe(true);
+    const submitted = new FormData(input().form!).getAll('doc') as File[];
+    expect(submitted.map((file) => file.name)).toEqual(['a.pdf']);
+  });
+
+  it('clears the value after a selection when files is not given', async () => {
+    render(<WithFiles />);
+
+    await userEvent.upload(input(), [pdf()]);
+
+    // Consistently empty beats intermittently stale: the input cannot reflect
+    // drops or removals, so it must not claim a selection it may have lost.
+    await vi.waitFor(() => expect(input().files).toHaveLength(0));
+    expect(input().value).toBe('');
+  });
+
+  it('leaves an async getFilesFromEvent intact if it reads before awaiting', async () => {
+    const onDrop = vi.fn();
+    const Async = () => {
+      const { getRootProps, getInputProps } = useDropzone({
+        onDrop,
+        getFilesFromEvent: async (event) => {
+          const files = Array.from(
+            (event as ChangeEvent<HTMLInputElement>).target?.files ?? [],
+          );
+          await Promise.resolve();
+          return files;
+        },
+      });
+
+      return (
+        <FileUploadDropzone
+          label="Last opp dokumentasjon"
+          cardProps={getRootProps()}
+          inputProps={getInputProps()}
+        />
+      );
+    };
+    render(<Async />);
+
+    await userEvent.upload(input(), [pdf()]);
+
+    await vi.waitFor(() => expect(onDrop).toHaveBeenCalled());
+    expect(onDrop.mock.calls[0][0]).toHaveLength(1);
   });
 });
