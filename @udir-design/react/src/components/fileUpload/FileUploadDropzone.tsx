@@ -1,7 +1,7 @@
 import './fileUpload.css';
 import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, Ref } from 'react';
 import { forwardRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button';
@@ -10,6 +10,7 @@ import { Field } from '../field';
 import { Label } from '../typography/label';
 import { ValidationMessage } from '../typography/validationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
+import { useFileInput } from './useFileInput';
 
 export type FileUploadDropzoneProps = FileUploadProps & {
   /**
@@ -43,10 +44,18 @@ export const FileUploadDropzone = forwardRef<
     variant = 'secondary',
     inputProps,
     cardProps,
+    files,
     ...rest
   },
   ref,
 ) {
+  // `getInputProps()` returns a `ref` that `react-dropzone` needs in order to
+  // open the file dialog programmatically. It is not part of `InputProps`.
+  const inputRef = useFileInput(
+    files,
+    (inputProps as { ref?: Ref<HTMLInputElement> } | undefined)?.ref,
+  );
+
   return (
     <Field
       className={cl('uds-file-upload', className)}
@@ -89,6 +98,20 @@ export const FileUploadDropzone = forwardRef<
           type="file"
           className="ds-input"
           {...inputProps}
+          ref={inputRef}
+          onChange={(e) => {
+            inputProps?.onChange?.(e);
+            if (files) return;
+            // Without `files` the input cannot be kept accurate, so keep it
+            // empty rather than letting assistive technology announce a stale
+            // selection. Deferred to a microtask so `onChange` handlers
+            // further up the tree still see `event.target.files` while this
+            // event is being dispatched.
+            const input = e.currentTarget;
+            queueMicrotask(() => {
+              input.value = '';
+            });
+          }}
           onClick={(e) => {
             if (inputProps?.readOnly) {
               e.preventDefault();
