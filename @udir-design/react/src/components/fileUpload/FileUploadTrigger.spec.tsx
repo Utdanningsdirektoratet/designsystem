@@ -1,19 +1,31 @@
+import type { DSFieldElement } from '@digdir/designsystemet-web';
 import { cleanup, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import type { ChangeEvent } from 'react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { userEvent } from 'vitest/browser';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
 afterEach(cleanup);
 
+const pdf = (name = 'eksempel.pdf') =>
+  new File([new Uint8Array(64)], name, { type: 'application/pdf' });
+
 const Trigger = ({
+  files,
+  onChange,
   label = 'Last opp dokumentasjon',
   inputProps,
 }: {
+  files?: File[];
+  onChange?: (event: ChangeEvent<DSFieldElement>) => void;
   label?: string | null;
   inputProps?: Record<string, unknown>;
 }) => (
   <FileUploadTrigger
     label={label ?? undefined}
     inputProps={{ name: 'doc', ...inputProps }}
+    files={files}
+    onChange={onChange}
   />
 );
 
@@ -73,5 +85,44 @@ describe('FileUpload.Trigger', () => {
     expect(screen.getByLabelText('Last opp vedlegg')).toHaveAccessibleName(
       'Last opp vedlegg',
     );
+  });
+
+  it('mirrors the attached files into the input', () => {
+    render(<Trigger files={[pdf('a.pdf'), pdf('b.pdf')]} />);
+
+    expect(Array.from(input().files ?? [], (file) => file.name)).toEqual([
+      'a.pdf',
+      'b.pdf',
+    ]);
+  });
+
+  it('clears the value after a selection when files is not given', async () => {
+    render(<Trigger />);
+
+    await userEvent.upload(input(), [pdf()]);
+
+    expect(input().files).toHaveLength(0);
+    expect(input().value).toBe('');
+  });
+
+  it('lets a change handler on the root see the selected files', async () => {
+    const seen = vi.fn();
+    render(
+      <Trigger
+        onChange={(event) =>
+          seen(
+            Array.from(
+              (event.target as unknown as HTMLInputElement).files ?? [],
+              (file) => file.name,
+            ),
+          )
+        }
+      />,
+    );
+
+    await userEvent.upload(input(), [pdf('a.pdf')]);
+
+    // The clear must not race handlers further up the tree.
+    expect(seen).toHaveBeenCalledWith(['a.pdf']);
   });
 });

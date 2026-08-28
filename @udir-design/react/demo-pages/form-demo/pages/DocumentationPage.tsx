@@ -79,6 +79,7 @@ export const DocumentationPage = ({
           }),
           id: 'dokumentasjon-dropzone',
         }}
+        files={uploadedFiles}
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
         error={errors.documentation?.message}
