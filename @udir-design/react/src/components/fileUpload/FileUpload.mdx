@@ -142,6 +142,23 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 - Filer kan være opptil 10 MB.
 - Du kan legge ved opptil 5 filer.
 
+## Feilmeldinger
+
+Feilmeldinger hører hjemme på to nivåer, og de blir lest opp på ulike måter.
+
+### Hvor hører feilen hjemme?
+
+- Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
+- Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
+
+### Opplesing av feilmeldinger
+
+Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
+
+Feil på en enkelt fil ligger i et eget `aria-live`-område i hver `FileUpload.Item`. Det gjør at feilen blir lest opp når den kommer på en fil som allerede er synlig, og når en feilmelding erstattes av en annen.
+
+Skriv feilmeldinger som gir mening alene, siden de blir lest opp uten det som står rundt.
+
 ## Error Summary
 
 Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.
