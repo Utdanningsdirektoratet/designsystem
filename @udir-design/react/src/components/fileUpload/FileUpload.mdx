@@ -104,7 +104,7 @@ Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `Fil
 
 Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
 
-Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
+Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Se [Hvor hører feilen hjemme?](#hvor-hører-feilen-hjemme) for når feilen skal stå på vedlegget og når den skal stå på feltet.
 
 <Canvas of={FileUploadStories.ExampleItems} />
 
@@ -133,6 +133,13 @@ Dersom du ønsker å begrense antall filer, implementeres dette selv. Om brukere
 
 ## Retningslinjer
 
+### Hvor hører feilen hjemme?
+
+Feilmeldinger hører hjemme på to nivåer:
+
+- Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
+- Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
+
 ### Error Summary
 
 Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.
@@ -152,6 +159,18 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 - Du kan laste opp dokumenter i PDF- eller Word-format.
 - Filer kan være opptil 10 MB.
 - Du kan legge ved opptil 5 filer.
+
+### Meldinger på vedlegg
+
+Skjermlesere leser teksten i `error` på `FileUpload.Item` uten det som står rundt, så skriv den slik at den gir mening alene.
+
+## Tilgjengelighet
+
+### Opplesing med skjermleser
+
+Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
+
+Feilmeldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp.
 
 ## Språkstøtte
 
