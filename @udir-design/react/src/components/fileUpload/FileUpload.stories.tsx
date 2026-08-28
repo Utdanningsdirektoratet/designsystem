@@ -218,6 +218,22 @@ export const ExampleDropZone = meta.story({
       await expect(dropzone).toBeTruthy();
     });
 
+    await step('Input covers the card, so the whole card is clickable', () => {
+      const card = canvas.querySelector('.ds-card') as HTMLElement;
+      const cardRect = card.getBoundingClientRect();
+      const inputRect = dropzone.getBoundingClientRect();
+      const border = parseFloat(getComputedStyle(card).borderTopWidth);
+
+      // `inset: 0` resolves against the padding box, so the overlay is inset by
+      // the card's border on each side.
+      expect(inputRect.height).toBeGreaterThanOrEqual(
+        cardRect.height - border * 2,
+      );
+      expect(inputRect.width).toBeGreaterThanOrEqual(
+        cardRect.width - border * 2,
+      );
+    });
+
     await step('File can be uploaded', async () => {
       await userEvent.upload(dropzone, dummyFile);
 

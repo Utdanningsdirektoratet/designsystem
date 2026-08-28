@@ -307,30 +307,20 @@ exports[`Compact List 1`] = `
 `;
 
 exports[`Example Drop Zone 1`] = `
-<div>
-  <label
-    id="<generated>-label"
-    for="<generated>-button"
-  >
+<ds-field>
+  <label for="<generated>">
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="<generated>-description"
+    id="<generated>"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
   <div role="presentation">
     <div>
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg filer"
-    >
+    <span data-variant="secondary">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -349,16 +339,16 @@ exports[`Example Drop Zone 1`] = `
         >
         </path>
       </svg>
-    </button>
+    </span>
+    <input
+      accept="application/pdf"
+      multiple
+      type="file"
+      id="<generated>"
+      aria-describedby="<generated>"
+    >
   </div>
-  <input
-    accept="application/pdf"
-    multiple
-    tabindex="-1"
-    type="file"
-    style="<removed>"
-  >
-</div>
+</ds-field>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -442,30 +432,20 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 <style>
   .uds-file-upload { height: 600px; width: 100%; }
 </style>
-<div>
-  <label
-    id="<generated>-label"
-    for="<generated>-button"
-  >
+<ds-field>
+  <label for="<generated>">
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="<generated>-description"
+    id="<generated>"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
   <div role="presentation">
     <div>
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg filer"
-    >
+    <span data-variant="secondary">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -484,16 +464,16 @@ exports[`Example Dropzone With Explicit Size 1`] = `
         >
         </path>
       </svg>
-    </button>
+    </span>
+    <input
+      accept="application/pdf"
+      multiple
+      type="file"
+      id="<generated>"
+      aria-describedby="<generated>"
+    >
   </div>
-  <input
-    accept="application/pdf"
-    multiple
-    tabindex="-1"
-    type="file"
-    style="<removed>"
-  >
-</div>
+</ds-field>
 <h3 data-size="2xs">
   Vedlegg (1):
 </h3>
@@ -850,51 +830,45 @@ exports[`Example Trigger 1`] = `
         }
 </style>
 <div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field>
+    <label for="<generated>">
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
+    <span>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
-        </path>
-      </svg>
-    </button>
-    <input
-      accept="image/png, image/jpeg"
-      type="file"
-    >
-  </div>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="image/png, image/jpeg"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
@@ -979,72 +953,18 @@ exports[`Preview 1`] = `
         }
 </style>
 <div>
-  <div data-size="md">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field data-size="md">
+    <label for="<generated>">
       Label
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Beskrivelse
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-    <input type="file">
-  </div>
-  <div data-size="md">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Label
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Beskrivelse
-    </div>
-    <div role="presentation">
-      <div>
-      </div>
-      <button
-        data-variant="secondary"
-        type="button"
-        id="<generated>-button"
-        aria-labelledby="<generated>-label"
-        aria-describedby="<generated>-description"
-        aria-label="Velg fil"
-      >
+    <span>
+      <span data-variant="secondary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -1063,15 +983,55 @@ exports[`Preview 1`] = `
           >
           </path>
         </svg>
-      </button>
-    </div>
-    <input
-      accept="application/pdf"
-      tabindex="-1"
-      type="file"
-      style="<removed>"
+      </span>
+      <input
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
+  <ds-field data-size="md">
+    <label for="<generated>">
+      Label
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
     >
-  </div>
+      Beskrivelse
+    </div>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="application/pdf"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
 </div>
 `;
 
@@ -1087,110 +1047,20 @@ exports[`Readonly 1`] = `
 }
 </style>
 <div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field>
+    <label for="<generated>">
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Beskrivelse for Trigger
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      disabled
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-    <input
-      readonly
-      type="file"
-    >
-  </div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Lesemodus
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Beskrivelse for Dropzone
-    </div>
-    <div>
-      <div>
-      </div>
-    </div>
-    <input
-      readonly
-      max="2"
-      type="file"
-    >
-  </div>
-</div>
-`;
-
-exports[`Too Many Files 1`] = `
-<style>
-  .file-upload-too-many-files-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }
-</style>
-<div>
-  <div style="<removed>">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Last opp dokumentasjon
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Du kan kun laste opp 2 filer.
-    </div>
-    <div role="presentation">
-      <div>
-      </div>
-      <button
+    <span>
+      <span
+        aria-disabled="true"
         data-variant="secondary"
-        type="button"
-        id="<generated>-button"
-        aria-labelledby="<generated>-label"
-        aria-describedby="<generated>-description"
-        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1210,18 +1080,97 @@ exports[`Too Many Files 1`] = `
           >
           </path>
         </svg>
-      </button>
-    </div>
-    <input
-      multiple
-      tabindex="-1"
-      type="file"
-      style="<removed>"
+      </span>
+      <input
+        readonly
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
+  <ds-field>
+    <label for="<generated>">
+      Lesemodus
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
     >
-    <p data-field="validation">
+      Beskrivelse for Dropzone
+    </div>
+    <div>
+      <div>
+      </div>
+      <input
+        readonly
+        max="2"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
+</div>
+`;
+
+exports[`Too Many Files 1`] = `
+<style>
+  .file-upload-too-many-files-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
+  <ds-field style="<removed>">
+    <label for="<generated>">
+      Last opp dokumentasjon
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
+    >
+      Du kan kun laste opp 2 filer.
+    </div>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        multiple
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated> <generated>"
+        aria-invalid="true"
+      >
+    </div>
+    <p
+      data-field="validation"
+      id="<generated>"
+    >
       Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.
     </p>
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
@@ -1444,48 +1393,44 @@ exports[`Upload 1`] = `
         }
 </style>
 <div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field>
+    <label for="<generated>">
       Last opp rapport
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Du kan legge ved 1 fil.
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
+    <span>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
-        </path>
-      </svg>
-    </button>
-    <input type="file">
-  </div>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (1):
   </h3>
