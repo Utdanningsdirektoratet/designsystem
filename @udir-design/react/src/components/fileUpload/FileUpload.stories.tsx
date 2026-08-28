@@ -163,6 +163,7 @@ export const ExampleDropZone = meta.story({
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           inputProps={getInputProps({ multiple: true })}
+          files={files}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
           data-testid="dropzone"
@@ -369,6 +370,7 @@ export const ExampleTrigger = meta.story({
             inputProps={{
               accept: 'image/png, image/jpeg',
             }}
+            files={file ? [file] : []}
             onChange={(e) => handleOnChange(e)}
             data-testid="trigger"
             {...args}
