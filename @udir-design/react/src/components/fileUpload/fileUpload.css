@@ -52,8 +52,31 @@
   width: fit-content;
   height: fit-content;
 
-  > input {
-    display: none;
+  /*
+  * The file input is the interactive control: it covers the drop zone (or the
+  * trigger button) as a transparent overlay, so clicks, drops and focus all
+  * land on a real form control. The button inside is presentational.
+  */
+  input[type='file'] {
+    position: absolute;
+    inset: 0;
+    /* `ds-input` is here for the readonly lock on the label, and it sizes the
+       input like a text field. The overlay is sized by `inset` instead. */
+    height: auto;
+    width: auto;
+    margin: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: inherit;
+  }
+
+  &:has(input[type='file']:focus-visible) {
+    > .ds-card,
+    .uds-file-upload__trigger > .ds-button {
+      box-shadow: var(--dsc-focus-boxShadow);
+      outline: var(--dsc-focus-outline);
+      outline-offset: var(--ds-border-width-focus);
+    }
   }
 
   /* Loading state */
@@ -69,6 +92,7 @@
     flex-direction: column;
   }
   > .ds-card {
+    position: relative;
     margin-block-start: var(--ds-size-2);
     width: 100%;
     flex-basis: 100%;
@@ -79,6 +103,13 @@
     gap: var(--ds-size-2);
     --dsc-card-border-style: dashed;
     --dsc-card-border-color: var(--ds-color-border-strong);
+  }
+
+  /* Positioning context for the trigger's input overlay */
+  > .uds-file-upload__trigger {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
   }
 
   &[data-drag-global]:not([data-drag-active]),
@@ -159,7 +190,7 @@
   }
 
   /* Trigger texts */
-  > .ds-button::after {
+  > .uds-file-upload__trigger > .ds-button::after {
     content: var(--udsc-fileUpload-button-text);
   }
 

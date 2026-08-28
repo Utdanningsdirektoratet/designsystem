@@ -823,32 +823,22 @@ exports[`Form Page 3 1`] = `
       </h2>
       <div>
       </div>
-      <div>
-        <label
-          id="<generated>-label"
-          for="<generated>-button"
-        >
+      <ds-field>
+        <label for="dokumentasjon-dropzone">
           <span>
             Last opp dokumentasjon
           </span>
         </label>
         <div
           data-field="description"
-          id="<generated>-description"
+          id="<generated>"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
         <div role="presentation">
           <div>
           </div>
-          <button
-            data-variant="secondary"
-            type="button"
-            id="<generated>-button"
-            aria-labelledby="<generated>-label"
-            aria-describedby="<generated>-description"
-            aria-label="Velg filer"
-          >
+          <span data-variant="secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -867,18 +857,17 @@ exports[`Form Page 3 1`] = `
               >
               </path>
             </svg>
-          </button>
+          </span>
+          <input
+            accept="application/pdf"
+            multiple
+            required
+            id="dokumentasjon-dropzone"
+            type="file"
+            aria-describedby="<generated>"
+          >
         </div>
-        <input
-          accept="application/pdf"
-          multiple
-          tabindex="-1"
-          required
-          id="dokumentasjon-dropzone"
-          type="file"
-          style="<removed>"
-        >
-      </div>
+      </ds-field>
       <ds-field>
         <label for="addition">
           <span>
