@@ -84,6 +84,25 @@ Har filene dine allerede en id fra serveren, bruk den i stedet.
 
 I lista over filer som ble avvist lager vi en unik id per opplastingsforsøk, ikke per fil. Da får brukeren en rad hver gang en fil blir avvist, også når samme fil blir forsøkt lagt ved flere ganger.
 
+#### Fortell feltet hvilke filer som er lagt ved
+
+Send lista med filer til `files` på `FileUpload.Dropzone` eller `FileUpload.Trigger`:
+
+```tsx
+<FileUpload.Dropzone
+  label="Last opp dokumentasjon"
+  cardProps={getRootProps()}
+  inputProps={getInputProps({ multiple: true })}
+  files={files}
+/>
+```
+
+Komponenten vet ikke selv hvilke filer som er lagt ved. Det er først når du setter `files` at skjermlesere, nettleservalidering med `required` og vanlig innsending av `<form>` får vite om dem.
+
+Bare ekte `File`-objekter kan legges inn i `files`. Filer du kun har metadata om, for eksempel filer som allerede ligger på serveren, sender du ikke inn her.
+
+Setter du ikke `files`, tømmer komponenten `input`-elementet etter hvert filvalg. Ellers ville elementet bare inneholde det brukeren valgte sist i nettleserens filvelger, og det er dette skjermlesere ville lest opp, ikke filene i lista. Bruker du da `react-dropzone` og skriver din egen `getFilesFromEvent`-funksjon, må den lese `event.target.files` før den første `await`-en. Standardfunksjonen i `react-dropzone` gjør det allerede.
+
 #### Innhold i hvert vedlegg
 
 Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet.
