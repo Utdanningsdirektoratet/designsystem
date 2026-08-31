@@ -42,9 +42,9 @@ Vi bruker `Breadcrumbs` til å hjelpe brukerne å forstå hvor de er i en hierar
 
 ## Eksempler
 
-### Sti eller tilbake-knapp basert på skjermstørrelse
+### Tilpass visningen etter skjermbredden
 
-Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil en tilbake-knapp vises på skjermer smalere enn 650px, og en sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
+Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vises bare lenken til nærmeste overordnede nivå på skjermer smalere enn 650px. På bredere skjermer vises hele stien. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
 
 <Canvas of={BreadcrumbsStories.Preview} />
 
@@ -54,9 +54,9 @@ Hvis du legger en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil denne vises so
 
 <Canvas of={BreadcrumbsStories.ListOnly} />
 
-### Kun tilbake-knapp
+### Vis bare nærmeste nivå
 
-Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
+Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vises bare denne lenken til nærmeste overordnede side. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten denne varianten eller hele stien.
 
 <Canvas of={BreadcrumbsStories.BackOnly} />
 

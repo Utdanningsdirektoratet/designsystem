@@ -23,6 +23,8 @@ Med `ToggleGroup` kan brukerne velge mellom alternativer som påvirker innholdet
 <Canvas of={ToggleGroupStories.Preview} withToolbar />
 <Controls of={ToggleGroupStories.Preview} />
 
+`ToggleGroup` må ha en ledetekst som forteller hva valgene gjelder. Du oppgir den med `aria-label`, eller med `aria-labelledby` dersom teksten allerede finnes synlig på siden.
+
 Plasser helst innholdet som styres av `ToggleGroup` rett etter komponenten i DOM-en. Hvis dette ikke er mulig, bør du bruke `aria-controls` på `ToggleGroup` for å knytte den til containeren med innholdet som endrer seg.
 
 ```tsx
@@ -34,6 +36,8 @@ import { ToggleGroup } from '@udir-design/react';
   <ToggleGroup.Item value="value3">Option 3</ToggleGroup.Item>
 </ToggleGroup>;
 ```
+
+Eksempelet under [Bare tekst](#bare-tekst) viser hvordan du bruker `aria-labelledby` mot en `Fieldset.Legend`.
 
 ## Varianter av ToggleGroup
 

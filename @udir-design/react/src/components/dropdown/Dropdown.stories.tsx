@@ -394,3 +394,64 @@ export const WithoutContext = meta.story({
     await userEvent.click(button);
   },
 });
+
+export const ArrowKeyNavigation = meta.story({
+  parameters: {
+    customStyles: { story: { height: 300 } },
+  },
+  args: {
+    placement: 'bottom-end',
+  },
+  render: (args) => {
+    return (
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger variant="secondary">
+          Handlinger
+          <MenuElipsisVerticalIcon aria-hidden />
+        </Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.List focusgroup="menu">
+            <Dropdown.Item>
+              <Dropdown.Button>Rediger</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Dupliser</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Flytt</Dropdown.Button>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Dropdown.Button>Slett</Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+    );
+  },
+  play: async (ctx) => {
+    const canvas = within(ctx.canvasElement);
+    const trigger = canvas.getByRole('button', { name: /handlinger/i });
+
+    await userEvent.click(trigger);
+    const dropdown = ctx.canvasElement.querySelector('[popover]');
+    await waitFor(() => {
+      expect(dropdown?.matches(':popover-open')).toBe(true);
+    });
+
+    // We assert the focusgroup contract rather than the arrow key movement.
+    // `focusgroup` is implemented natively from Chrome 150, and native key handling
+    // ignores untrusted events, so the synthetic events from `userEvent.keyboard`
+    // never reach it. The polyfill in `@digdir/designsystemet-web` would handle them,
+    // but it stands down when the browser has native support.
+    expect(ctx.canvasElement.querySelector('ul')).toHaveAttribute(
+      'focusgroup',
+      'menu',
+    );
+    const items = canvas.getAllByRole('button', {
+      name: /rediger|dupliser|flytt|slett/i,
+    });
+    expect(items).toHaveLength(4);
+    items[0].focus();
+    expect(items[0]).toHaveFocus();
+  },
+});
