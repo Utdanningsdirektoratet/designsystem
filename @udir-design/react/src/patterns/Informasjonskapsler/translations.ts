@@ -17,6 +17,7 @@ const translations = {
     acceptAll: 'Godta alle',
     acceptSelected: 'Godta valgte',
     declineOptional: 'Avvis valgfrie',
+    acceptNecessary: 'Godta',
   },
   en: {
     necessaryExplanation:
@@ -36,6 +37,7 @@ const translations = {
     acceptAll: 'Accept all',
     acceptSelected: 'Accept selected',
     declineOptional: 'Reject optional',
+    acceptNecessary: 'Accept',
   },
 } as const;
 
