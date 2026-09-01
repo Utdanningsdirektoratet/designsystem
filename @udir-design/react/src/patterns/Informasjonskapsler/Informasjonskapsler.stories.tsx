@@ -72,6 +72,10 @@ export const Preview = meta.story({
     const categoriesWithCookies = content.categories.filter(
       (category) => category.cookies.length > 0,
     );
+    const optionalCategories = categoriesWithCookies.filter(
+      (category) => !category.necessary,
+    );
+    const necessaryOnly = optionalCategories.length === 0;
 
     return (
       <>
@@ -109,15 +113,15 @@ export const Preview = meta.story({
 
             <Paragraph>{text.necessaryExplanation}</Paragraph>
 
-            <Fieldset>
-              <Fieldset.Legend>{text.optionalLegend}</Fieldset.Legend>
-              <Fieldset.Description>{content.body}</Fieldset.Description>
-              {categoriesWithCookies
-                .filter((category) => !category.necessary)
-                .map((category) => (
+            {necessaryOnly ? null : (
+              <Fieldset>
+                <Fieldset.Legend>{text.optionalLegend}</Fieldset.Legend>
+                <Fieldset.Description>{content.body}</Fieldset.Description>
+                {optionalCategories.map((category) => (
                   <Checkbox key={category.id} label={category.name} />
                 ))}
-            </Fieldset>
+              </Fieldset>
+            )}
 
             <Dialog.TriggerContext>
               <Dialog.Trigger variant="secondary" data-size="sm">
@@ -193,15 +197,21 @@ export const Preview = meta.story({
               </Dialog>
             </Dialog.TriggerContext>
             <Paragraph>
-              {text.consentCanBeChanged} {text.consentAppliesTo}:{' '}
-              {content.websiteDomains}.
+              {necessaryOnly ? null : `${text.consentCanBeChanged} `}
+              {text.consentAppliesTo}: {content.websiteDomains}.
             </Paragraph>
           </Prose>
 
           <div className="cookies-buttons">
-            <Button variant="secondary">{text.acceptAll}</Button>
-            <Button variant="secondary">{text.acceptSelected}</Button>
-            <Button variant="secondary">{text.declineOptional}</Button>
+            {necessaryOnly ? (
+              <Button variant="secondary">{text.acceptNecessary}</Button>
+            ) : (
+              <>
+                <Button variant="secondary">{text.acceptAll}</Button>
+                <Button variant="secondary">{text.acceptSelected}</Button>
+                <Button variant="secondary">{text.declineOptional}</Button>
+              </>
+            )}
           </div>
         </Dialog>
       </>
