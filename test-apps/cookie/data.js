@@ -1,8 +1,18 @@
-const exampleData = require('../../@udir-design/react/src/patterns/Informasjonskapsler/exampleData.json');
+import fs from 'node:fs';
+
+const exampleData = JSON.parse(
+  fs.readFileSync(
+    new URL(
+      '../../@udir-design/react/src/patterns/Informasjonskapsler/exampleData.json',
+      import.meta.url,
+    ),
+    'utf8',
+  ),
+);
 
 const supportedLocales = new Set(Object.keys(exampleData));
 
-const normalizeLocale = (culture) => {
+export const normalizeLocale = (culture) => {
   const locale = String(culture ?? '')
     .trim()
     .toLowerCase()
@@ -11,7 +21,7 @@ const normalizeLocale = (culture) => {
   return supportedLocales.has(locale) ? locale : 'nb';
 };
 
-const buildData = (culture) => {
+export const buildData = (culture) => {
   const locale = normalizeLocale(culture);
   const content = exampleData[locale];
 
@@ -41,5 +51,3 @@ const buildData = (culture) => {
     })),
   };
 };
-
-module.exports = { buildData, normalizeLocale };
