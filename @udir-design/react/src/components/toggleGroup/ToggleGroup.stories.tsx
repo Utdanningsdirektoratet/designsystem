@@ -59,7 +59,6 @@ export const Preview = meta.story({
     const canvas = within(canvasElement);
     const innboksInput = canvas.getByRole('radio', { name: /innboks/i });
     const utkastInput = canvas.getByRole('radio', { name: /utkast/i });
-    const arkivInput = canvas.getByRole('radio', { name: /arkiv/i });
 
     await step('Default selection is "Innboks"', async () => {
       expect(innboksInput).toBeChecked();
@@ -73,23 +72,26 @@ export const Preview = meta.story({
       expect(activeButtons).toHaveLength(1);
     });
 
-    await step('User can navigate with arrow keys', async () => {
-      await userEvent.tab();
-      expect(innboksInput).toHaveFocus();
-
-      await userEvent.keyboard('{ArrowRight}');
-      expect(utkastInput).toHaveFocus();
-
-      await userEvent.keyboard('{ArrowRight}');
-      expect(arkivInput).toHaveFocus();
-
-      await userEvent.keyboard('{ArrowLeft}');
-      expect(utkastInput).toHaveFocus();
+    await step('Keyboard navigation is set up with focusgroup', async () => {
+      // We assert the focusgroup contract rather than the keyboard navigation
+      // itself. Both the arrow keys and the single tab stop come from the
+      // `focusgroup` attribute, implemented natively from Chrome 150 and by a
+      // polyfill in older browsers. Neither reacts to the untrusted events
+      // `userEvent` dispatches, so asserting the movement only passes where the
+      // polyfill happens to be inactive. Digdir tests the behaviour itself,
+      // across several browser engines, in
+      // packages/web/src/focusgroup/focusgroup.browser.test.ts.
+      expect(canvasElement.querySelector('fieldset')).toHaveAttribute(
+        'focusgroup',
+        'radiogroup',
+      );
+      expect(canvas.getAllByRole('radio')).toHaveLength(4);
     });
 
     await step(
       'Selecting a different option updates the active state and calls onChange',
       async () => {
+        utkastInput.focus();
         expect(utkastInput).not.toBeChecked();
         await userEvent.keyboard('{Enter}');
         expect(utkastInput).toBeChecked();
