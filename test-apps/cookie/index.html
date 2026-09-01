@@ -127,7 +127,7 @@
           Se hvilke informasjonskapsler vi bruker
         </button>
         <p class="ds-paragraph">
-          <span data-i18n="consentCanBeChanged"
+          <span id="consent-can-be-changed" data-i18n="consentCanBeChanged"
             >Du kan når som helst endre samtykket ditt via lenken i
             bunnfeltet.</span
           >
@@ -172,6 +172,18 @@
           onclick="CookieInformation.declineAllCategories()"
         >
           Avvis valgfrie
+        </button>
+        <button
+          class="ds-button"
+          data-variant="secondary"
+          data-size="md"
+          type="button"
+          id="btn-close"
+          data-i18n="close"
+          onclick="hideCookieBanner()"
+          hidden
+        >
+          Lukk
         </button>
       </div>
     </dialog>

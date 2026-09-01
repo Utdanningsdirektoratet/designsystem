@@ -16,6 +16,7 @@ const translations = {
     acceptAll: 'Godta alle',
     acceptSelected: 'Godta valgte',
     declineOptional: 'Avvis valgfrie',
+    close: 'Lukk',
     overviewHeading: 'Informasjonskapsler',
     provider: 'Leverandør: ',
     purpose: 'Formål: ',
@@ -39,6 +40,7 @@ const translations = {
     acceptAll: 'Accept all',
     acceptSelected: 'Accept selected',
     declineOptional: 'Reject optional',
+    close: 'Close',
     overviewHeading: 'Cookies',
     provider: 'Provider: ',
     purpose: 'Purpose: ',
@@ -88,6 +90,16 @@ const detailsDialog = document.getElementById('cookie-details-dialog');
 const detailsTrigger = document.getElementById('cookie-details-trigger');
 const detailsClose = document.getElementById('cookie-details-close');
 const coiRenewBtn = document.getElementById('Coi-Renew');
+
+const optionalCategories = cookieDialog.querySelectorAll('.coi__checkbox');
+const necessaryOnly = optionalCategories.length === 0;
+
+cookieDialog.querySelector('.ds-fieldset').hidden = necessaryOnly;
+document.getElementById('btn-accept-all').hidden = necessaryOnly;
+document.getElementById('btn-accept-selected').hidden = necessaryOnly;
+document.getElementById('btn-decline').hidden = necessaryOnly;
+document.getElementById('btn-close').hidden = !necessaryOnly;
+document.getElementById('consent-can-be-changed').hidden = necessaryOnly;
 
 // --- Details dialog ---
 
