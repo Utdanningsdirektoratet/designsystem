@@ -452,6 +452,92 @@ exports[`Icons With Text 1`] = `
 </ds-tabs>
 `;
 
+exports[`Nested Variants 1`] = `
+<ds-tabs data-variant="card">
+  <ds-tablist role="tablist">
+    <ds-tab
+      aria-controls="_r_g_-assessments"
+      aria-selected="true"
+      data-value="assessments"
+      role="tab"
+      tabindex="0"
+      id="<removed>"
+    >
+      Vurderinger
+    </ds-tab>
+    <ds-tab
+      aria-controls="_r_g_-absence"
+      aria-selected="false"
+      data-value="absence"
+      role="tab"
+      tabindex="-1"
+    >
+      Fravær
+    </ds-tab>
+  </ds-tablist>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="false"
+    tabindex="0"
+    aria-labelledby="<removed>"
+  >
+    <ds-tabs>
+      <ds-tablist role="tablist">
+        <ds-tab
+          aria-controls="_r_h_-final-grades"
+          aria-selected="false"
+          data-value="final-grades"
+          role="tab"
+          tabindex="-1"
+          id="<removed>"
+        >
+          Standpunkt
+        </ds-tab>
+        <ds-tab
+          aria-controls="_r_h_-exams"
+          aria-selected="true"
+          data-value="exams"
+          role="tab"
+          tabindex="0"
+          id="<removed>"
+        >
+          Eksamen
+        </ds-tab>
+      </ds-tablist>
+      <ds-tabpanel
+        id="<removed>"
+        role="tabpanel"
+        aria-hidden="true"
+        aria-labelledby="<removed>"
+        hidden
+      >
+        Norsk: 5 · Matematikk: 4
+      </ds-tabpanel>
+      <ds-tabpanel
+        id="<removed>"
+        role="tabpanel"
+        aria-hidden="false"
+        tabindex="0"
+        aria-labelledby="<removed>"
+      >
+        Skriftlig eksamen: 22. mai
+      </ds-tabpanel>
+    </ds-tabs>
+  </ds-tabpanel>
+  <ds-tabpanel
+    id="<removed>"
+    data-variant="card"
+    role="tabpanel"
+    aria-hidden="true"
+    hidden
+  >
+    Registrert fravær: 2 dager og 3 timer
+  </ds-tabpanel>
+</ds-tabs>
+`;
+
 exports[`Only Icons 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
