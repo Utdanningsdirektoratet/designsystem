@@ -18,7 +18,7 @@
   }
 
   &[data-variant='card'] {
-    :is([role='tablist'], u-tablist) {
+    > :is([role='tablist'], u-tablist) {
       overflow: visible;
 
       & > :is([role='tab'], u-tab) {
