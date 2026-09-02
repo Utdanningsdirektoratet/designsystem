@@ -2201,13 +2201,13 @@ exports[`Multiple Count 1`] = `
       popovertarget="<generated>"
       aria-autocomplete="list"
       aria-controls="<generated>"
-      aria-expanded="true"
+      aria-expanded="false"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
     >
     <button
-      aria-expanded="true"
+      aria-expanded="false"
       aria-label="Valg"
       type="button"
       aria-hidden="false"
@@ -2236,6 +2236,7 @@ exports[`Multiple Count 1`] = `
       aria-label="Velg destinasjoner"
       style="<removed>"
       data-floating="bottom"
+      hidden
     >
       <u-option
         data-empty
