@@ -127,6 +127,9 @@ catalog:
   oxlint: ^1.79.0
   oxlint-tsgolint: ^7.0.2001
   react-router: ^8.3.0
+  express: ^5.2.1
+  express-rate-limit: ^8.2.1
+  handlebars: ^4.7.9
 
 catalogMode: strict
 

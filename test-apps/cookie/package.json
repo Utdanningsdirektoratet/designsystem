@@ -1,0 +1,22 @@
+{
+  "name": "cookie",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@digdir/designsystemet-css": "catalog:",
+    "@udir-design/css": "workspace:*",
+    "@udir-design/theme": "workspace:*",
+    "express": "catalog:",
+    "express-rate-limit": "catalog:",
+    "handlebars": "catalog:"
+  }
+}
