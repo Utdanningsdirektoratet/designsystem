@@ -1,4 +1,12 @@
 .ds-chip {
+  --dsc-chip-height: var(--udsc-density-chip-height, var(--ds-size-8));
+  --dsc-chip-icon-size: var(--udsc-density-chip-icon-size, var(--ds-icon-size));
+  --dsc-chip-input-size: var(--udsc-density-chip-input-size, var(--ds-size-5));
+  --dsc-chip-padding-inline: var(
+    --udsc-density-chip-padding-inline,
+    var(--ds-size-3)
+  );
+
   padding-block: calc(
     var(--dsc-chip-height) / 2 - var(--dsc-chip-border-width) - 0.5lh
   );

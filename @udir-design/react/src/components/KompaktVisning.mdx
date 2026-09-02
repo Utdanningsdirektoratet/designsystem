@@ -1,0 +1,76 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as DensityDemoStories from '../demo/DensityDemo.stories';
+
+<Meta title="components/Kompakt visning" />
+
+# Kompakt visning
+
+Kompakt visning reduserer luft i komponenter slik at mer informasjon får plass på skjermen. Bruk visningen i avgrensede, datatunge arbeidsflater, for eksempel tabeller med søk, filtre og handlinger.
+
+Det er ofte ikke nødvendig å bruke kompakt visning som standard for hele løsningen. Normal visning gir større klikkflater og mer luft, og passer best for de fleste oppgaver.
+
+## Slik bruker du kompakt visning
+
+Sett `data-density="compact"` på elementet som omslutter arbeidsflaten. Innstillingen arves av komponentene inni elementet.
+
+```tsx
+<section data-density="compact">
+  <Search>{/* ... */}</Search>
+  <Table>{/* ... */}</Table>
+</section>
+```
+
+Bruk `data-density="default"` for å gå tilbake til normal visning i en del av en kompakt arbeidsflate.
+
+```tsx
+<section data-density="compact">
+  <Table>{/* ... */}</Table>
+
+  <form data-density="default">{/* normal visning */}</form>
+</section>
+```
+
+Du kan også la brukeren velge visning:
+
+```tsx
+const [compact, setCompact] = useState(false);
+
+<>
+  <Switch
+    label="Kompakt visning"
+    checked={compact}
+    onChange={(event) => setCompact(event.currentTarget.checked)}
+  />
+  <section data-density={compact ? 'compact' : 'default'}>
+    {/* datatung arbeidsflate */}
+  </section>
+</>;
+```
+
+## Eksempel
+
+<Canvas of={DensityDemoStories.DensityStory} />
+
+## Komponenter som støttes
+
+Kompakt visning påvirker disse komponentene:
+
+- [`Button`](/docs/components-button--docs)
+- [`Input`](/docs/components-input--docs)
+- [`Textfield`](/docs/components-textfield--docs)
+- [`Select`](/docs/components-select--docs)
+- [`Search`](/docs/components-search--docs)
+- [`Suggestion`](/docs/components-suggestion--docs)
+- [`Table`](/docs/components-table--docs)
+- [`Tabs`](/docs/components-tabs--docs)
+- [`ToggleGroup`](/docs/components-togglegroup--docs)
+- [`Tag`](/docs/components-tag--docs)
+- [`Pagination`](/docs/components-pagination--docs)
+
+Andre komponenter beholder normal størrelse. Støtte legges bare til når en komponent har et tydelig bruksområde i datatunge arbeidsflater.
+
+## Størrelse og tilgjengelighet
+
+Kompakte skjemakontroller og knapper er 40 piksler høye. Tekststørrelsen endres ikke. Komponentene reduserer i stedet høyde, padding eller avstand, avhengig av hvordan komponenten er bygget.
+
+Plasser bryteren for kompakt visning utenfor området den styrer. Da beholder bryteren normal størrelse og er enkel å finne og bruke.

@@ -1249,7 +1249,7 @@ exports[`Multiple Count 1`] = `
       popovertarget=":u-datalist10"
       aria-autocomplete="list"
       aria-controls=":u-datalist10"
-      aria-expanded="true"
+      aria-expanded="false"
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
@@ -1276,6 +1276,7 @@ exports[`Multiple Count 1`] = `
       aria-label="Velg destinasjoner"
       style="<removed>"
       data-floating="bottom"
+      hidden
     >
       <u-option
         label="Sogndal"

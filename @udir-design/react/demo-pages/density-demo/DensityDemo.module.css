@@ -1,0 +1,164 @@
+.page {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--ds-size-5);
+  width: min(100%, 75rem);
+  margin: 0 auto;
+  padding: var(--ds-size-6);
+}
+
+.header,
+.toolbar,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-size-4);
+  flex-wrap: wrap;
+}
+
+.heading {
+  display: grid;
+  gap: var(--ds-size-1);
+}
+
+.toolbar {
+  align-items: flex-end;
+  gap: var(--ds-size-2);
+}
+
+.toolbar .subtleText {
+  align-self: center;
+}
+
+.heading p,
+.subtleText {
+  margin: 0;
+  color: var(--ds-color-text-subtle);
+}
+
+.region {
+  padding-block: var(--ds-size-4);
+  border-block: 1px solid var(--ds-color-border-subtle);
+}
+
+.panel:not([hidden]) {
+  display: grid;
+  gap: var(--ds-size-5);
+  container-type: inline-size;
+}
+
+.search {
+  flex: 1 1 18rem;
+  max-width: 22rem;
+}
+
+.filterControl {
+  flex: 1 1 12rem;
+  max-width: 18rem;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+  flex-wrap: wrap;
+}
+
+.toggleGroup {
+  align-self: flex-end;
+  margin-inline-start: auto;
+}
+
+.activeFilters {
+  display: grid;
+  gap: var(--ds-size-2);
+}
+
+.activeFilters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.emptyState {
+  padding-block: var(--ds-size-6);
+  color: var(--ds-color-text-subtle);
+}
+
+.tableFrame {
+  overflow-x: auto;
+  margin-block-start: var(--ds-size-4);
+}
+
+.table {
+  min-width: 56rem;
+}
+
+.footer {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.paginationControls {
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.paginationControls,
+.itemsPerPage {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-2);
+}
+
+.itemsPerPage {
+  white-space: nowrap;
+}
+
+.itemsPerPage select {
+  margin-top: 0;
+}
+
+@container (min-width: 30rem) {
+  .paginationControls {
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+    gap: var(--ds-size-8);
+  }
+}
+
+@container (min-width: 50rem) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .paginationControls {
+    gap: var(--ds-size-6);
+  }
+}
+
+@media (max-width: 42rem) {
+  .page {
+    padding: var(--ds-size-4);
+  }
+
+  .toolbar,
+  .filters {
+    align-items: stretch;
+  }
+
+  .search {
+    max-width: none;
+  }
+
+  .filterControl {
+    max-width: none;
+  }
+}

@@ -1,0 +1,4 @@
+.ds-tag {
+  --dsc-tag-min-height: var(--udsc-density-tag-min-height, var(--ds-size-8));
+  --dsc-tag-padding: var(--udsc-density-tag-padding, 0 var(--ds-size-2));
+}

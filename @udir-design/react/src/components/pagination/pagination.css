@@ -1,4 +1,6 @@
 .ds-pagination {
+  --dsc-pagination-gap: var(--udsc-density-pagination-gap, var(--ds-size-2));
+
   button[aria-current='true'],
   a[aria-current='true'] {
     color: var(--ds-color-base-contrast-default);
