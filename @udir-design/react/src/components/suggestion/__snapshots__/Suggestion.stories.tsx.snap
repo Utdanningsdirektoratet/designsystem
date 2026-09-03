@@ -531,10 +531,10 @@ exports[`Controlled Multiple Creatable 1`] = `
       data-floating="bottom"
     >
       <u-option
-        data-empty="Legg til &quot;{value}&quot;"
+        data-empty="Legg til «{value}»"
         label="Finnes ikke"
         value="Finnes ikke"
-        data-create="Legg til &quot;Finnes ikke&quot;"
+        data-create="Legg til «Finnes ikke»"
         role="option"
         aria-disabled="false"
         aria-selected="true"
@@ -900,10 +900,10 @@ exports[`Controlled Single Creatable 1`] = `
       hidden
     >
       <u-option
-        data-empty="Legg til &quot;{value}&quot;"
+        data-empty="Legg til «{value}»"
         label="Finnes ikke"
         value="Finnes ikke"
-        data-create="Legg til &quot;Finnes ikke&quot;"
+        data-create="Legg til «Finnes ikke»"
         role="option"
         aria-disabled="false"
         aria-selected="true"
@@ -1083,10 +1083,10 @@ exports[`Creatable 1`] = `
       data-floating="bottom"
     >
       <u-option
-        data-empty="Legg til &quot;{value}&quot;"
+        data-empty="Legg til «{value}»"
         label="Finnes ikke"
         value="Finnes ikke"
-        data-create="Legg til &quot;Finnes ikke&quot;"
+        data-create="Legg til «Finnes ikke»"
         role="option"
         aria-disabled="false"
         aria-selected="false"
@@ -2238,10 +2238,10 @@ exports[`Multiple Creatable 1`] = `
       data-floating="bottom"
     >
       <u-option
-        data-empty="Legg til &quot;{value}&quot;"
+        data-empty="Legg til «{value}»"
         label="Heller ikke"
         value="Heller ikke"
-        data-create="Legg til &quot;Heller ikke&quot;"
+        data-create="Legg til «Heller ikke»"
         role="option"
         aria-disabled="false"
         aria-selected="true"

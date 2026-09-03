@@ -189,7 +189,7 @@ export const Creatable = Preview.extend({
 
         await expect(createOption).toHaveAttribute(
           'data-create',
-          'Legg til "Finnes ikke"',
+          'Legg til «Finnes ikke»',
         );
       },
     );

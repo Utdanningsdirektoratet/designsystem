@@ -1,20 +1,32 @@
-/* Translations are defined outside component class so users can easily add translations */
+/* Translations are defined outside component class so users can easily add translations. */
+
+/* Upstream sets the Norwegian texts on the element itself, which beats any inherited
+   value regardless of layer. Reset to `inherit` so the nearest [lang] ancestor decides.
+   `:where()` keeps specificity at 0 so the [lang] blocks below always win. */
+:where(.ds-search, .ds-suggestion) {
+  --dsc-suggestion-create-text: inherit;
+  --dsc-suggestion-empty-text: inherit;
+}
+
+/* No " in these values: digdir reads them via getComputedStyle without unescaping, and
+   lightningcss rewrites '..."..."' to "...\"...\"". «» and “” are correct here anyway. */
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --dsc-suggestion-count-label: 'valgt';
-  --dsc-suggestion-create-text: 'Legg til "{value}"';
+  --dsc-suggestion-create-text: 'Legg til «{value}»';
   --dsc-suggestion-empty-text: 'Tomt';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --dsc-suggestion-count-label: 'valde';
-  --dsc-suggestion-create-text: 'Legg til "{value}"';
+  --dsc-suggestion-create-text: 'Legg til «{value}»';
   --dsc-suggestion-empty-text: 'Tomt';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --dsc-suggestion-count-label: 'selected';
-  --dsc-suggestion-create-text: 'Add "{value}"';
+  --dsc-suggestion-create-text: 'Add “{value}”';
   --dsc-suggestion-empty-text: 'Empty';
 }
 
