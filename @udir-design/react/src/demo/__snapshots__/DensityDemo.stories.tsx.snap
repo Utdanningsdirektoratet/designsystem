@@ -1,0 +1,532 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Density Story 1`] = `
+<main data-color-scheme="light">
+  <header>
+    <div>
+      <h1 data-size="md">
+        Ansatte og tilganger
+      </h1>
+      <p>
+        Administrer brukere ved Solsiden videregående skole
+      </p>
+    </div>
+    <ds-field data-clickdelegatefor="<removed>">
+      <input
+        role="switch"
+        type="checkbox"
+        id="<removed>"
+      >
+      <label
+        data-weight="regular"
+        for="<removed>"
+      >
+        Kompakt visning
+      </label>
+    </ds-field>
+  </header>
+  <section
+    aria-label="Ansattoversikt"
+    data-density="default"
+  >
+    <ds-tabs>
+      <ds-tablist role="tablist">
+        <ds-tab
+          aria-controls="_r_0_-employees"
+          aria-selected="true"
+          data-value="employees"
+          role="tab"
+          tabindex="0"
+          id="<removed>"
+        >
+          Ansatte
+        </ds-tab>
+        <ds-tab
+          aria-controls="_r_0_-invitations"
+          aria-selected="false"
+          data-value="invitations"
+          role="tab"
+          tabindex="-1"
+        >
+          Invitasjoner
+        </ds-tab>
+      </ds-tablist>
+      <ds-tabpanel
+        id="<removed>"
+        role="tabpanel"
+        aria-hidden="false"
+        tabindex="0"
+        aria-labelledby="<removed>"
+      >
+        <div>
+          <ds-field>
+            <label for="<removed>">
+              Søk etter ansatte
+            </label>
+            <form>
+              <div>
+                <input
+                  placeholder
+                  type="search"
+                  value
+                  id="<removed>"
+                >
+                <button
+                  data-icon="true"
+                  data-variant="tertiary"
+                  type="reset"
+                  aria-label="Tøm"
+                >
+                </button>
+                <button
+                  type="submit"
+                  aria-label="Søk etter ansatte"
+                >
+                  Søk
+                </button>
+              </div>
+            </form>
+          </ds-field>
+          <button type="button">
+            Legg til ansatt
+          </button>
+        </div>
+        <div>
+          <ds-field>
+            <label for="<removed>">
+              Rolle
+            </label>
+            <select id="<removed>">
+              <option value="all">
+                Alle roller
+              </option>
+              <option value="Rektor">
+                Rektor
+              </option>
+              <option value="Ass. rektor">
+                Ass. rektor
+              </option>
+              <option value="Lektor">
+                Lektor
+              </option>
+              <option value="Rådgiver">
+                Rådgiver
+              </option>
+            </select>
+          </ds-field>
+          <ds-field>
+            <label for="<removed>">
+              Avdelinger
+            </label>
+            <ds-suggestion
+              data-multiple
+              data-display="count"
+            >
+              <data
+                value="Ledelse"
+                aria-label="Ledelse, Press to remove"
+                role="option"
+                slot="items"
+                tabindex="-1"
+              >
+                Ledelse
+              </data>
+              <data
+                value="Realfag"
+                aria-label="Realfag, Press to remove"
+                role="option"
+                slot="items"
+                tabindex="-1"
+              >
+                Realfag
+              </data>
+              <input
+                placeholder=" "
+                type="text"
+                id="<removed>"
+                aria-description="Navigate left to find 2 selected"
+                list=":u-datalist1"
+                popovertarget=":u-datalist1"
+                aria-autocomplete="list"
+                aria-controls=":u-datalist1"
+                aria-expanded="false"
+                autocomplete="off"
+                enterkeyhint="done"
+                role="combobox"
+              >
+              <button
+                aria-label="Tøm"
+                hidden
+                type="reset"
+                aria-hidden="false"
+                tabindex="-1"
+              >
+              </button>
+              <u-datalist
+                data-nofilter
+                data-sr-plural="%d forslag"
+                data-sr-singular="%d forslag"
+                popover="manual"
+                role="listbox"
+                data-sr-of="of"
+                tabindex="-1"
+                aria-multiselectable="true"
+                id="<removed>"
+                data-is-floating="true"
+                aria-label="Avdelinger"
+                style="<removed>"
+                data-floating="bottom"
+                hidden
+              >
+                <u-option
+                  label="Ledelse"
+                  value="Ledelse"
+                  selected
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="true"
+                  id="<removed>"
+                  aria-hidden="false"
+                >
+                  Ledelse
+                </u-option>
+                <u-option
+                  label="Realfag"
+                  value="Realfag"
+                  selected
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="true"
+                  id="<removed>"
+                  aria-hidden="false"
+                >
+                  Realfag
+                </u-option>
+                <u-option
+                  label="Språkfag"
+                  value="Språkfag"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                  aria-hidden="false"
+                >
+                  Språkfag
+                </u-option>
+                <u-option
+                  label="Samfunnsfag"
+                  value="Samfunnsfag"
+                  role="option"
+                  aria-disabled="false"
+                  aria-selected="false"
+                  id="<removed>"
+                  aria-hidden="false"
+                >
+                  Samfunnsfag
+                </u-option>
+              </u-datalist>
+            </ds-suggestion>
+          </ds-field>
+          <fieldset
+            data-toggle-group="Filtrer etter tilgangsstatus"
+            data-variant="secondary"
+            aria-label="Filtrer etter tilgangsstatus"
+          >
+            <label data-variant="tertiary">
+              <input
+                type="radio"
+                value="all"
+                checked
+                name="togglegroup-name-_r_2_"
+              >
+              Alle
+            </label>
+            <label data-variant="tertiary">
+              <input
+                type="radio"
+                value="Aktiv"
+                name="togglegroup-name-_r_2_"
+              >
+              Aktive
+            </label>
+            <label data-variant="tertiary">
+              <input
+                type="radio"
+                value="Deaktivert"
+                name="togglegroup-name-_r_2_"
+              >
+              Deaktiverte
+            </label>
+          </fieldset>
+        </div>
+        <div>
+          <label>
+            Avdelinger
+          </label>
+          <ul>
+            <li>
+              <button
+                type="button"
+                data-removable="true"
+                aria-label="Fjern Ledelse"
+              >
+                Ledelse
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-removable="true"
+                aria-label="Fjern Realfag"
+              >
+                Realfag
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <table data-hover="true">
+            <caption>
+              Ansatte ved Solsiden
+            </caption>
+            <thead>
+              <tr>
+                <th>
+                  Navn
+                </th>
+                <th>
+                  Rolle
+                </th>
+                <th>
+                  Avdeling
+                </th>
+                <th>
+                  E-post
+                </th>
+                <th>
+                  Tilgang
+                </th>
+                <th>
+                  Handling
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Rita Nordmann
+                </td>
+                <td>
+                  Rektor
+                </td>
+                <td>
+                  Ledelse
+                </td>
+                <td>
+                  rita@nordmann.no
+                </td>
+                <td>
+                  <span data-color="success">
+                    Aktiv
+                  </span>
+                </td>
+                <td>
+                  <button
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Åpne Rita Nordmann"
+                  >
+                    Åpne
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Ola Nordmann
+                </td>
+                <td>
+                  Lektor
+                </td>
+                <td>
+                  Realfag
+                </td>
+                <td>
+                  ola@nordmann.no
+                </td>
+                <td>
+                  <span data-color="success">
+                    Aktiv
+                  </span>
+                </td>
+                <td>
+                  <button
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Åpne Ola Nordmann"
+                  >
+                    Åpne
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Kai Nordmann
+                </td>
+                <td>
+                  Lektor
+                </td>
+                <td>
+                  Realfag
+                </td>
+                <td>
+                  kai@nordmann.no
+                </td>
+                <td>
+                  <span data-color="success">
+                    Aktiv
+                  </span>
+                </td>
+                <td>
+                  <button
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Åpne Kai Nordmann"
+                  >
+                    Åpne
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Mateo Nordmann
+                </td>
+                <td>
+                  Ass. rektor
+                </td>
+                <td>
+                  Ledelse
+                </td>
+                <td>
+                  mateo@nordmann.no
+                </td>
+                <td>
+                  <span data-color="warning">
+                    Deaktivert
+                  </span>
+                </td>
+                <td>
+                  <button
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Åpne Mateo Nordmann"
+                  >
+                    Åpne
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Liv Nordmann
+                </td>
+                <td>
+                  Lektor
+                </td>
+                <td>
+                  Realfag
+                </td>
+                <td>
+                  liv@nordmann.no
+                </td>
+                <td>
+                  <span data-color="success">
+                    Aktiv
+                  </span>
+                </td>
+                <td>
+                  <button
+                    data-variant="tertiary"
+                    type="button"
+                    aria-label="Åpne Liv Nordmann"
+                  >
+                    Åpne
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer>
+          <ds-pagination
+            aria-label="Sidenavigering for ansatte"
+            data-size="sm"
+            role="navigation"
+          >
+            <ul>
+              <li>
+                <button
+                  aria-disabled="true"
+                  type="button"
+                  aria-label="Forrige side"
+                >
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  aria-current="true"
+                  aria-label="Side 1"
+                >
+                  1
+                </button>
+              </li>
+              <li>
+                <button
+                  aria-disabled="true"
+                  type="button"
+                  aria-label="Neste side"
+                >
+                </button>
+              </li>
+            </ul>
+          </ds-pagination>
+          <div>
+            <span>
+              Rad 1-5 av 5
+            </span>
+            <ds-field>
+              <label for="<removed>">
+                Rader per side
+              </label>
+              <select
+                autocomplete="off"
+                id="<removed>"
+              >
+                <option value="5">
+                  5
+                </option>
+                <option value="10">
+                  10
+                </option>
+                <option value="25">
+                  25
+                </option>
+                <option value="50">
+                  50
+                </option>
+              </select>
+            </ds-field>
+          </div>
+        </footer>
+      </ds-tabpanel>
+      <ds-tabpanel
+        id="<removed>"
+        role="tabpanel"
+        aria-hidden="true"
+        hidden
+      >
+        Ingen ventende invitasjoner.
+      </ds-tabpanel>
+    </ds-tabs>
+  </section>
+</main>
+`;

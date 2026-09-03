@@ -521,6 +521,25 @@ export const MultipleCount = meta.story({
       </Field>
     );
   },
+  play: async ({ canvasElement, step }) => {
+    await testSuggestion(canvasElement);
+    const input = within(canvasElement).getByRole('combobox');
+    await userEvent.keyboard('{Escape}');
+    input.blur();
+    const suggestion = input.closest('.ds-suggestion');
+
+    await step('Count tag responds to inherited density', async () => {
+      await expect(
+        Number.parseFloat(getComputedStyle(suggestion!, '::after').minHeight),
+      ).toBe(32);
+
+      canvasElement.setAttribute('data-density', 'compact');
+      await expect(
+        Number.parseFloat(getComputedStyle(suggestion!, '::after').minHeight),
+      ).toBe(24);
+      canvasElement.removeAttribute('data-density');
+    });
+  },
 });
 
 export const DefaultValue = meta.story({

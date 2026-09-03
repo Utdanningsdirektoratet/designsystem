@@ -111,6 +111,17 @@ export function TestHeader() {
               </List.Item>
               <List.Item>
                 <Link
+                  href="/density"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <ArrowRightIcon aria-hidden />
+                  <span>Kompakt visning</span>
+                </Link>
+              </List.Item>
+              <List.Item>
+                <Link
                   href="/page"
                   style={{
                     textDecoration: 'none',

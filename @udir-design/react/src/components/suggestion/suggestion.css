@@ -13,6 +13,19 @@
 }
 
 .ds-suggestion {
+  --dsc-suggestion-count-min-height: var(
+    --udsc-density-tag-min-height,
+    var(--ds-size-8)
+  );
+  --dsc-suggestion-count-padding: var(
+    --udsc-density-tag-padding,
+    0 var(--ds-size-2)
+  );
+  --dsc-suggestion-option-padding: var(
+    --udsc-density-suggestion-option-padding,
+    var(--ds-size-3)
+  );
+
   /* u-combobox 2.0.5 changed [role="listbox"] from display:contents to inline-flex,
      so chips no longer participate in the host's flex-wrap. Restore wrapping. */
   &::part(items) {
@@ -52,8 +65,8 @@
       color: var(--ds-color-text-default);
       font-size: var(--ds-body-sm-font-size);
       line-height: var(--ds-line-height-sm);
-      min-height: var(--ds-size-8);
-      padding: 0 var(--ds-size-2);
+      min-height: var(--dsc-suggestion-count-min-height);
+      padding: var(--dsc-suggestion-count-padding);
       display: inline-flex;
     }
 

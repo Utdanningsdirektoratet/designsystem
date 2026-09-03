@@ -1,0 +1,35 @@
+@layer udir.density {
+  [data-density='compact'] {
+    --udsc-density-table-padding: var(--ds-size-1) var(--ds-size-2);
+    --udsc-density-button-size: var(--ds-size-10);
+    --udsc-density-button-padding: var(--ds-size-1) var(--ds-size-2);
+    --udsc-density-chip-height: var(--ds-size-6);
+    --udsc-density-chip-icon-size: var(--ds-size-4);
+    --udsc-density-chip-input-size: var(--ds-size-4);
+    --udsc-density-chip-padding-inline: var(--ds-size-2);
+    --udsc-density-input-size: var(--ds-size-10);
+    --udsc-density-suggestion-option-padding: var(--ds-size-2);
+    --udsc-density-toggle-group-button-size: var(--ds-size-10);
+    --udsc-density-tabs-tab-padding: var(--ds-size-2) var(--ds-size-3);
+    --udsc-density-tag-min-height: var(--ds-size-6);
+    --udsc-density-tag-padding: 0 var(--ds-size-1);
+    --udsc-density-pagination-gap: var(--ds-size-1);
+  }
+
+  [data-density='default'] {
+    --udsc-density-table-padding: initial;
+    --udsc-density-button-size: initial;
+    --udsc-density-button-padding: initial;
+    --udsc-density-chip-height: initial;
+    --udsc-density-chip-icon-size: initial;
+    --udsc-density-chip-input-size: initial;
+    --udsc-density-chip-padding-inline: initial;
+    --udsc-density-input-size: initial;
+    --udsc-density-suggestion-option-padding: initial;
+    --udsc-density-toggle-group-button-size: initial;
+    --udsc-density-tabs-tab-padding: initial;
+    --udsc-density-tag-min-height: initial;
+    --udsc-density-tag-padding: initial;
+    --udsc-density-pagination-gap: initial;
+  }
+}

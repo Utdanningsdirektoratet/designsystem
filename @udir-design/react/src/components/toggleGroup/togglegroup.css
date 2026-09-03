@@ -1,4 +1,9 @@
 :is(.ds-togglegroup, .ds-toggle-group) {
+  --dsc-togglegroup-button-size: var(
+    --udsc-density-toggle-group-button-size,
+    var(--ds-size-12)
+  );
+
   label {
     height: var(--dsc-togglegroup-button-size);
   }

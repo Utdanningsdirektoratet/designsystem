@@ -13,6 +13,10 @@
 .ds-table {
   --dsc-table-background--zebra: var(--ds-color-background-tinted);
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
+  --dsc-table-padding: var(
+    --udsc-density-table-padding,
+    var(--ds-size-2) var(--ds-size-3)
+  );
 
   td {
     font-feature-settings: 'tnum' 1;
