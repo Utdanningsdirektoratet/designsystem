@@ -2,7 +2,6 @@ import {
   type ChangeEvent,
   type HTMLAttributes,
   type SubmitEvent,
-  useEffect,
   useState,
 } from 'react';
 import { Button } from 'src/components/button';
@@ -109,17 +108,6 @@ export const DensityDemo = ({ className, ...props }: DensityDemoProps) => {
   ]);
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [page, setCurrentPage] = useState(1);
-  const [isMobile, setIsMobile] = useState(
-    () => !window.matchMedia('(min-width: 48rem)').matches,
-  );
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 48rem)');
-    const handleChange = (event: MediaQueryListEvent) =>
-      setIsMobile(!event.matches);
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
 
   const normalizedSearchQuery = searchQuery.toLocaleLowerCase('nb');
   const filteredEmployees = employees.filter((employee) => {
@@ -140,7 +128,7 @@ export const DensityDemo = ({ className, ...props }: DensityDemoProps) => {
   const { pages, nextButtonProps, prevButtonProps } = usePagination({
     currentPage: page,
     totalPages,
-    showPages: isMobile ? 3 : 6,
+    showPages: 3,
     setCurrentPage,
   });
   const rangeStart = totalRows === 0 ? 0 : (page - 1) * itemsPerPage + 1;
