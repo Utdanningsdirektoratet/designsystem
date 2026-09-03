@@ -28,7 +28,7 @@ import { Suggestion } from '@udir-design/react/alpha';
   <Suggestion.Toggle />
   <Suggestion.Clear />
   <Suggestion.List>
-    <Suggestion.Empty>Tomt</Suggestion.Empty>
+    <Suggestion.Empty />
     <Suggestion.Option label="Sogndal" value="sogndal">
       Sogndal
     </Suggestion.Option>
@@ -64,6 +64,14 @@ Dersom du vil vise alle alternativer, uavhengig av input, kan du sette `filter={
 
 <Canvas of={SuggestionStories.CustomFilterAlt1} />
 
+### Legge til nye alternativer
+
+Bruk `creatable` for å la brukeren legge til egne alternativer. Når teksten i inputfeltet ikke finnes i listen fra før, kommer det opp et alternativ for å legge den til. Brukeren velger det med <kbd>Enter</kbd> eller ved å klikke på det.
+
+Teksten på alternativet kan tilpasses med CSS-variabelen `--dsc-suggestion-create-text`, hvor `{value}` blir erstattet med teksten brukeren har skrevet inn.
+
+<Canvas of={SuggestionStories.Creatable} />
+
 ### Asynkrone data
 
 `Suggestion` har ikke en egen `loading` state, så dette må håndereres selv.
@@ -86,4 +94,10 @@ Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtt
 
 Følgende tekstvariabler er tilgjengelige for overstyring:
 
-<CssLanguageVariables variables={['--dsc-suggestion-count-label']} />
+<CssLanguageVariables
+  variables={[
+    '--dsc-suggestion-count-label',
+    '--dsc-suggestion-create-text',
+    '--dsc-suggestion-empty-text',
+  ]}
+/>

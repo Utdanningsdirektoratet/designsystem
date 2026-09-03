@@ -60,6 +60,14 @@ const meta = preview.meta({
             id: 'aria-allowed-role',
             matches: (element) => !(element instanceof HTMLInputElement),
           },
+          /* The option for creating a new value gets its accessible name from
+           * `--dsc-suggestion-create-text`. Axe doesn't take generated content
+           * into account when computing accessible names but the name is
+           * present in the accessibility tree, so this is a false positive. */
+          {
+            id: 'aria-toggle-field-name',
+            matches: (element) => !element.matches('u-option[data-create]'),
+          },
         ],
       },
     },
@@ -85,6 +93,34 @@ async function testSuggestion(el: HTMLElement) {
     await userEvent.click(input);
   }
 }
+
+/**
+ * Types a value that doesn't match any option, leaving the option for creating
+ * a new value as the only one in the list
+ */
+async function typeUnknownValue(el: HTMLElement, value: string) {
+  const input = await waitFor(() => within(el).getByRole('combobox'));
+  await userEvent.clear(input);
+  await userEvent.type(input, value);
+
+  /* Chips for selected values also have `role="option"`, and options that
+   * don't match the input are `aria-hidden`, so the option to create a new
+   * value is the only `u-option` left in the a11y tree */
+  const options = within(el)
+    .getAllByRole('option')
+    .filter((option) => option.matches('u-option'));
+  await expect(options).toHaveLength(1);
+
+  return { input, createOption: options[0] };
+}
+
+const getChipValues = (el: HTMLElement) =>
+  waitFor(() =>
+    within(el)
+      .getAllByLabelText('Press to remove', { exact: false })
+      .filter((chip) => chip instanceof HTMLDataElement)
+      .map((chip) => chip.value),
+  );
 
 const DATA_PLACES = [
   'Sogndal',
@@ -126,7 +162,7 @@ export const Preview = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -136,6 +172,26 @@ export const Preview = meta.story({
           </Suggestion.List>
         </Suggestion>
       </Field>
+    );
+  },
+});
+
+export const Creatable = Preview.extend({
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Typing an unknown value shows the option to add it',
+      async () => {
+        const { createOption } = await typeUnknownValue(
+          canvasElement,
+          'Finnes ikke',
+        );
+
+        await expect(createOption).toHaveAttribute(
+          'data-create',
+          'Legg til "Finnes ikke"',
+        );
+      },
     );
   },
 });
@@ -157,7 +213,7 @@ export const ControlledSingle = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -208,6 +264,28 @@ export const ControlledSingle = meta.story({
   },
 });
 
+export const ControlledSingleCreatable = ControlledSingle.extend({
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step('Created value becomes the controlled selection', async () => {
+      const { input, createOption } = await typeUnknownValue(
+        canvasElement,
+        'Finnes ikke',
+      );
+      await userEvent.click(createOption);
+
+      const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+        exact: false,
+      });
+      await expect(resultText).toHaveTextContent('Finnes ikke');
+      await waitFor(() => expect(input).toHaveValue('Finnes ikke'));
+    });
+  },
+});
+
 export const ControlledMultiple = meta.story({
   render: (args) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
@@ -227,7 +305,7 @@ export const ControlledMultiple = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -254,13 +332,6 @@ export const ControlledMultiple = meta.story({
     );
   },
   play: async ({ canvasElement, step }) => {
-    const getChipValues = async () =>
-      waitFor(() =>
-        within(canvasElement)
-          .getAllByLabelText('Press to remove', { exact: false })
-          .filter((el) => el instanceof HTMLDataElement)
-          .map((x) => x.value),
-      );
     const resultText = within(canvasElement).getByText('Valgte reisemål:', {
       exact: false,
     });
@@ -271,17 +342,46 @@ export const ControlledMultiple = meta.story({
 
     await step('Initial state is rendered correctly', async () => {
       await expect(resultText).toHaveTextContent('Oslo');
-      await expect(await getChipValues()).toContain('Oslo');
+      await expect(await getChipValues(canvasElement)).toContain('Oslo');
     });
 
     await step('Controlled state change renders correctly', async () => {
       await userEvent.click(button);
       await expect(resultText).toHaveTextContent('Sogndal');
       await expect(resultText).toHaveTextContent('Stavanger');
-      const chipValues = await getChipValues();
+      const chipValues = await getChipValues(canvasElement);
       await expect(chipValues).toContain('Sogndal');
       await expect(chipValues).toContain('Stavanger');
     });
+  },
+});
+
+export const ControlledMultipleCreatable = ControlledMultiple.extend({
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Created value is added to the controlled selection',
+      async () => {
+        const { createOption } = await typeUnknownValue(
+          canvasElement,
+          'Finnes ikke',
+        );
+        await userEvent.click(createOption);
+
+        const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+          exact: false,
+        });
+        await expect(resultText).toHaveTextContent('Oslo');
+        await expect(resultText).toHaveTextContent('Finnes ikke');
+        await expect(await getChipValues(canvasElement)).toEqual([
+          'Oslo',
+          'Finnes ikke',
+        ]);
+      },
+    );
   },
 });
 
@@ -303,7 +403,7 @@ export const ControlledIndependentLabelValue = meta.story({
             <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PEOPLE.map(({ label, value }) => (
                 <Suggestion.Option key={value} label={label} value={value}>
                   {label}
@@ -355,7 +455,7 @@ export const CustomFilterAlt1 = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((label) => (
               <Suggestion.Option key={label} value={label.toLowerCase()}>
                 {label}
@@ -391,7 +491,7 @@ export const CustomFilterAlt2 = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.filter(
               (_, index) => !value || index === Number(value) - 1,
             ).map((label) => (
@@ -430,7 +530,7 @@ export const AlwaysShowAll = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -513,6 +613,24 @@ export const FetchExternal = meta.story({
 
 export const Multiple = Preview.extend({ args: { multiple: true } });
 
+export const MultipleCreatable = Multiple.extend({
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step('Several values can be created in a row', async () => {
+      const first = await typeUnknownValue(canvasElement, 'Finnes ikke');
+      await userEvent.click(first.createOption);
+
+      const second = await typeUnknownValue(canvasElement, 'Heller ikke');
+      await userEvent.click(second.createOption);
+
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Finnes ikke',
+        'Heller ikke',
+      ]);
+    });
+  },
+});
+
 export const MultipleCount = meta.story({
   render(args) {
     return (
@@ -528,7 +646,7 @@ export const MultipleCount = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -555,7 +673,7 @@ export const DefaultValue = meta.story({
           <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -579,7 +697,7 @@ export const InDetails = meta.story({
               <Suggestion.Toggle />
               <Suggestion.Clear />
               <Suggestion.List>
-                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                <Suggestion.Empty />
                 {DATA_PLACES.map((place) => (
                   <Suggestion.Option key={place}>{place}</Suggestion.Option>
                 ))}

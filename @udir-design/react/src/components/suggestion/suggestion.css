@@ -2,14 +2,20 @@
 :root,
 [lang='nb'] {
   --dsc-suggestion-count-label: 'valgt';
+  --dsc-suggestion-create-text: 'Legg til "{value}"';
+  --dsc-suggestion-empty-text: 'Tomt';
 }
 
 [lang='nn'] {
   --dsc-suggestion-count-label: 'valde';
+  --dsc-suggestion-create-text: 'Legg til "{value}"';
+  --dsc-suggestion-empty-text: 'Tomt';
 }
 
 [lang='en'] {
   --dsc-suggestion-count-label: 'selected';
+  --dsc-suggestion-create-text: 'Add "{value}"';
+  --dsc-suggestion-empty-text: 'Empty';
 }
 
 .ds-suggestion {
