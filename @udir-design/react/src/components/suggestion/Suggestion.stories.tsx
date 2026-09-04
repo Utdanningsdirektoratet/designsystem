@@ -201,7 +201,7 @@ export const Creatable = Preview.extend({
    Creatable itself has to end with the list open to snapshot the create option. */
 export const CreatableSelectionSurvivesBlur = Creatable.extend({
   tags: ['!dev'], // hides the story from the sidebar
-  parameters: { chromatic: { disableSnapshot: true } },
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     await step(
       'Selecting an existing option after a substring search survives blur',
