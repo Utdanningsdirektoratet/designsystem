@@ -1,12 +1,13 @@
 /* Drilldown: language-aware level label injected by useDrilldownTable.
  * These are read by the hook via getComputedStyle, not used in CSS content. */
 :root,
-[lang='nb'],
-[lang='nn'] {
+[lang|='nb' i],
+[lang|='nn' i],
+[lang|='no' i] {
   --udsc-table-level-prefix: Nivå;
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-table-level-prefix: Level;
 }
 

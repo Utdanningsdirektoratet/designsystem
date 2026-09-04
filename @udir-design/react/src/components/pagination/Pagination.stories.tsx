@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Search } from 'src/components/search';
 import { usePagination } from 'src/hooks/usePagination';
@@ -237,6 +238,18 @@ export const WithAnchor = meta.story({
           </Pagination>
         </div>
       </>
+    );
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-pagination'),
+      ['--dsc-pagination-label'],
     );
   },
 });

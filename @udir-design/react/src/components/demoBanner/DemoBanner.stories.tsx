@@ -1,4 +1,5 @@
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { Card } from 'src/components/card';
 import { Link } from 'src/components/link';
 import { Heading } from 'src/components/typography/heading';
@@ -189,4 +190,16 @@ export const WithScroll = meta.story({
       </DemoBanner>
     </>
   ),
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.uds-demo-banner'),
+      ['--udsc-demo-banner-text'],
+    );
+  },
 });

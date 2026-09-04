@@ -1,6 +1,7 @@
 import { type InputEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { Button } from 'src/components/button';
 import { Details } from 'src/components/details';
 import { Divider } from 'src/components/divider';
@@ -744,6 +745,22 @@ export const InDetails = meta.story({
           </Field>
         </Details.Content>
       </Details>
+    );
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-suggestion'),
+      [
+        '--dsc-suggestion-count-label',
+        '--dsc-suggestion-create-text',
+        '--dsc-suggestion-empty-text',
+      ],
     );
   },
 });

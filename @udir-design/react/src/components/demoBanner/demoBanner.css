@@ -1,13 +1,14 @@
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --udsc-demo-banner-text: 'Dette er en demo';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --udsc-demo-banner-text: 'Dette er ein demo';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-demo-banner-text: 'This is a demo';
 }
 
