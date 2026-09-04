@@ -2,7 +2,7 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -352,216 +352,193 @@ exports[`Preview 1`] = `
         </ds-suggestion>
       </ds-field>
     </div>
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th>
-            År
-          </th>
-          <th>
-            Skole
-          </th>
-          <th>
-            Org.nummer
-          </th>
-          <th>
-            Skolenavn
-          </th>
-          <th>
-            Fylke
-          </th>
-          <th>
-            Kommune
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Systemnavn
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Alta ungdomsskole
-            <br>
-            10000001
-          </td>
-          <td>
-            10000001
-          </td>
-          <td>
-            Alta ungdomsskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
+    <div>
+      <table
+        data-zebra="true"
+        data-color="neutral"
+      >
+        <caption id="<removed>">
+          Skoler
+        </caption>
+        <thead>
+          <tr>
+            <th>
+              År
+            </th>
+            <th>
+              Org.nummer
+            </th>
+            <th>
+              Skolenavn
+            </th>
+            <th>
+              Fylke
+            </th>
+            <th>
+              Kommune
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Systemnavn
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              2026
+            </td>
+            <td>
+              10000001
+            </td>
+            <td>
+              Alta ungdomsskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="success"
+                >
+                </span>
+                Ferdig
               </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Arendal videregående skole
-            <br>
-            10000002
-          </td>
-          <td>
-            10000002
-          </td>
-          <td>
-            Arendal videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              Brukerstøtte
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000002
+            </td>
+            <td>
+              Arendal videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Hamar katedralskole
-            <br>
-            10000008
-          </td>
-          <td>
-            10000008
-          </td>
-          <td>
-            Hamar katedralskole
-          </td>
-          <td>
-            Rogaland
-          </td>
-          <td>
-            Sandnes
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000008
+            </td>
+            <td>
+              Hamar katedralskole
+            </td>
+            <td>
+              Rogaland
+            </td>
+            <td>
+              Sandnes
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Stavanger katedralskole
-            <br>
-            10000014
-          </td>
-          <td>
-            10000014
-          </td>
-          <td>
-            Stavanger katedralskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000014
+            </td>
+            <td>
+              Stavanger katedralskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2024
-          </td>
-          <td>
-            Tromsdalen videregående skole
-            <br>
-            10000015
-          </td>
-          <td>
-            10000015
-          </td>
-          <td>
-            Tromsdalen videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="danger"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2024
+            </td>
+            <td>
+              10000015
+            </td>
+            <td>
+              Tromsdalen videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="danger"
+                >
+                </span>
+                Avvist
               </span>
-              Avvist
-            </span>
-          </td>
-          <td>
-            Prøveadministrasjon
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+            <td>
+              Prøveadministrasjon
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div>
       <ds-pagination
         aria-label="Sidenavigering"
@@ -631,13 +608,13 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Chips 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <div>
         <ds-field>
@@ -1048,216 +1025,193 @@ exports[`With Chips 1`] = `
         </ul>
       </div>
     </div>
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th>
-            År
-          </th>
-          <th>
-            Skole
-          </th>
-          <th>
-            Org.nummer
-          </th>
-          <th>
-            Skolenavn
-          </th>
-          <th>
-            Fylke
-          </th>
-          <th>
-            Kommune
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Systemnavn
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Alta ungdomsskole
-            <br>
-            10000001
-          </td>
-          <td>
-            10000001
-          </td>
-          <td>
-            Alta ungdomsskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
+    <div>
+      <table
+        data-zebra="true"
+        data-color="neutral"
+      >
+        <caption id="<removed>">
+          Skoler
+        </caption>
+        <thead>
+          <tr>
+            <th>
+              År
+            </th>
+            <th>
+              Org.nummer
+            </th>
+            <th>
+              Skolenavn
+            </th>
+            <th>
+              Fylke
+            </th>
+            <th>
+              Kommune
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Systemnavn
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              2026
+            </td>
+            <td>
+              10000001
+            </td>
+            <td>
+              Alta ungdomsskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="success"
+                >
+                </span>
+                Ferdig
               </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Arendal videregående skole
-            <br>
-            10000002
-          </td>
-          <td>
-            10000002
-          </td>
-          <td>
-            Arendal videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              Brukerstøtte
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000002
+            </td>
+            <td>
+              Arendal videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Hamar katedralskole
-            <br>
-            10000008
-          </td>
-          <td>
-            10000008
-          </td>
-          <td>
-            Hamar katedralskole
-          </td>
-          <td>
-            Rogaland
-          </td>
-          <td>
-            Sandnes
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000008
+            </td>
+            <td>
+              Hamar katedralskole
+            </td>
+            <td>
+              Rogaland
+            </td>
+            <td>
+              Sandnes
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Stavanger katedralskole
-            <br>
-            10000014
-          </td>
-          <td>
-            10000014
-          </td>
-          <td>
-            Stavanger katedralskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000014
+            </td>
+            <td>
+              Stavanger katedralskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2024
-          </td>
-          <td>
-            Tromsdalen videregående skole
-            <br>
-            10000015
-          </td>
-          <td>
-            10000015
-          </td>
-          <td>
-            Tromsdalen videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="danger"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2024
+            </td>
+            <td>
+              10000015
+            </td>
+            <td>
+              Tromsdalen videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="danger"
+                >
+                </span>
+                Avvist
               </span>
-              Avvist
-            </span>
-          </td>
-          <td>
-            Prøveadministrasjon
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+            <td>
+              Prøveadministrasjon
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div>
       <ds-pagination
         aria-label="Sidenavigering"
@@ -1327,13 +1281,13 @@ exports[`With Chips 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Dialog 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<removed>">
     <div>
       <ds-field>
         <label for="<removed>">
@@ -1391,7 +1345,7 @@ exports[`With Dialog 1`] = `
         >
           <button
             data-icon="true"
-            commandfor="_r_9_"
+            commandfor="_r_f_"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -2017,216 +1971,193 @@ exports[`With Dialog 1`] = `
         </ul>
       </div>
     </div>
-    <table
-      data-zebra="true"
-      data-color="neutral"
-    >
-      <thead>
-        <tr>
-          <th>
-            År
-          </th>
-          <th>
-            Skole
-          </th>
-          <th>
-            Org.nummer
-          </th>
-          <th>
-            Skolenavn
-          </th>
-          <th>
-            Fylke
-          </th>
-          <th>
-            Kommune
-          </th>
-          <th>
-            Status
-          </th>
-          <th>
-            Systemnavn
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            2026
-          </td>
-          <td>
-            Alta ungdomsskole
-            <br>
-            10000001
-          </td>
-          <td>
-            10000001
-          </td>
-          <td>
-            Alta ungdomsskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="success"
-              >
+    <div>
+      <table
+        data-zebra="true"
+        data-color="neutral"
+      >
+        <caption id="<removed>">
+          Skoler
+        </caption>
+        <thead>
+          <tr>
+            <th>
+              År
+            </th>
+            <th>
+              Org.nummer
+            </th>
+            <th>
+              Skolenavn
+            </th>
+            <th>
+              Fylke
+            </th>
+            <th>
+              Kommune
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Systemnavn
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              2026
+            </td>
+            <td>
+              10000001
+            </td>
+            <td>
+              Alta ungdomsskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="success"
+                >
+                </span>
+                Ferdig
               </span>
-              Ferdig
-            </span>
-          </td>
-          <td>
-            Brukerstøtte
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Arendal videregående skole
-            <br>
-            10000002
-          </td>
-          <td>
-            10000002
-          </td>
-          <td>
-            Arendal videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              Brukerstøtte
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000002
+            </td>
+            <td>
+              Arendal videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Hamar katedralskole
-            <br>
-            10000008
-          </td>
-          <td>
-            10000008
-          </td>
-          <td>
-            Hamar katedralskole
-          </td>
-          <td>
-            Rogaland
-          </td>
-          <td>
-            Sandnes
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000008
+            </td>
+            <td>
+              Hamar katedralskole
+            </td>
+            <td>
+              Rogaland
+            </td>
+            <td>
+              Sandnes
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2025
-          </td>
-          <td>
-            Stavanger katedralskole
-            <br>
-            10000014
-          </td>
-          <td>
-            10000014
-          </td>
-          <td>
-            Stavanger katedralskole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Arendal
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="warning"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2025
+            </td>
+            <td>
+              10000014
+            </td>
+            <td>
+              Stavanger katedralskole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Arendal
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="warning"
+                >
+                </span>
+                Behandles
               </span>
-              Behandles
-            </span>
-          </td>
-          <td>
-            PAS
-          </td>
-        </tr>
-        <tr>
-          <td>
-            2024
-          </td>
-          <td>
-            Tromsdalen videregående skole
-            <br>
-            10000015
-          </td>
-          <td>
-            10000015
-          </td>
-          <td>
-            Tromsdalen videregående skole
-          </td>
-          <td>
-            Agder
-          </td>
-          <td>
-            Kristiansand
-          </td>
-          <td>
-            <span>
-              <span
-                aria-hidden="true"
-                data-color="danger"
-              >
+            </td>
+            <td>
+              PAS
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2024
+            </td>
+            <td>
+              10000015
+            </td>
+            <td>
+              Tromsdalen videregående skole
+            </td>
+            <td>
+              Agder
+            </td>
+            <td>
+              Kristiansand
+            </td>
+            <td>
+              <span>
+                <span
+                  aria-hidden="true"
+                  data-color="danger"
+                >
+                </span>
+                Avvist
               </span>
-              Avvist
-            </span>
-          </td>
-          <td>
-            Prøveadministrasjon
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            </td>
+            <td>
+              Prøveadministrasjon
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div>
       <ds-pagination
         aria-label="Sidenavigering"
@@ -2296,6 +2227,6 @@ exports[`With Dialog 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
