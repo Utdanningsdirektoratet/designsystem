@@ -18,7 +18,7 @@ document
   .getElementById('icon-arrow-link')
   ?.setAttribute('href', `${ArrowRightUrl}#icon`);
 
-const container = document.getElementById('app');
+const container = document.getElementById('component-demo');
 if (container) {
   container.innerHTML += `
 <a class="ds-link" href="#">
