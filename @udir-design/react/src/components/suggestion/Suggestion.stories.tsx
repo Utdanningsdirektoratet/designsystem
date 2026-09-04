@@ -196,6 +196,44 @@ export const Creatable = Preview.extend({
   },
 });
 
+/* Regression test only, so it leaves the list closed and is kept out of Chromatic.
+   Creatable itself has to end with the list open to snapshot the create option. */
+export const CreatableSelectionSurvivesBlur = Creatable.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true } },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Selecting an existing option after a substring search survives blur',
+      async () => {
+        const input = await waitFor(() =>
+          within(canvasElement).getByRole('combobox'),
+        );
+        await userEvent.click(input);
+        await userEvent.type(input, 'slo');
+
+        const oslo = await waitFor(() => {
+          const option = within(canvasElement)
+            .getAllByRole('option')
+            .find((o) => (o as HTMLOptionElement).value === 'Oslo');
+          if (!option) throw new Error('Oslo option not found');
+          return option;
+        });
+
+        await userEvent.click(oslo);
+        await waitFor(() => expect(input).toHaveValue('Oslo'));
+
+        /* Up to digdir 1.18 the input was reset to the typed query on blur, and
+           onSelectedChange fired again with the query as both label and value. */
+        await userEvent.click(document.body);
+        await waitFor(() =>
+          expect(input).toHaveAttribute('aria-expanded', 'false'),
+        );
+        await expect(input).toHaveValue('Oslo');
+      },
+    );
+  },
+});
+
 export const ControlledSingle = meta.story({
   render: (args) => {
     const [value, setValue] = useState<string>('');

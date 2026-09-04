@@ -19,10 +19,10 @@ exports[`Always Show All 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist10"
-      popovertarget=":u-datalist10"
+      list=":u-datalist11"
+      popovertarget=":u-datalist11"
       aria-autocomplete="list"
-      aria-controls=":u-datalist10"
+      aria-controls=":u-datalist11"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -159,10 +159,10 @@ exports[`Controlled Independent Label Value 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist7"
-      popovertarget=":u-datalist7"
+      list=":u-datalist8"
+      popovertarget=":u-datalist8"
       aria-autocomplete="list"
-      aria-controls=":u-datalist7"
+      aria-controls=":u-datalist8"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -306,8 +306,8 @@ exports[`Controlled Multiple 1`] = `
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist5"
-      popovertarget=":u-datalist5"
+      list=":u-datalist6"
+      popovertarget=":u-datalist6"
     >
     <button
       aria-expanded="false"
@@ -489,10 +489,10 @@ exports[`Controlled Multiple Creatable 1`] = `
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist6"
-      popovertarget=":u-datalist6"
+      list=":u-datalist7"
+      popovertarget=":u-datalist7"
       aria-autocomplete="list"
-      aria-controls=":u-datalist6"
+      aria-controls=":u-datalist7"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -683,8 +683,8 @@ exports[`Controlled Single 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist3"
-      popovertarget=":u-datalist3"
+      list=":u-datalist4"
+      popovertarget=":u-datalist4"
     >
     <button
       aria-expanded="false"
@@ -858,10 +858,10 @@ exports[`Controlled Single Creatable 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist4"
-      popovertarget=":u-datalist4"
+      list=":u-datalist5"
+      popovertarget=":u-datalist5"
       aria-autocomplete="list"
-      aria-controls=":u-datalist4"
+      aria-controls=":u-datalist5"
       aria-expanded="false"
       autocomplete="off"
       enterkeyhint="done"
@@ -1204,6 +1204,190 @@ exports[`Creatable 1`] = `
 </ds-field>
 `;
 
+exports[`Creatable Selection Survives Blur 1`] = `
+<ds-field>
+  <label for="<removed>">
+    Velg en destinasjon
+  </label>
+  <ds-suggestion data-creatable>
+    <data
+      value="Oslo"
+      aria-label="Oslo, Press to remove"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Oslo
+    </data>
+    <input
+      placeholder
+      type="text"
+      id="<removed>"
+      list=":u-datalist3"
+      popovertarget=":u-datalist3"
+      aria-autocomplete="list"
+      aria-controls=":u-datalist3"
+      aria-expanded="false"
+      autocomplete="off"
+      enterkeyhint="done"
+      role="combobox"
+    >
+    <button
+      aria-expanded="false"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
+    >
+    </button>
+    <button
+      aria-label="Tøm"
+      type="reset"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <u-datalist
+      data-nofilter
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
+      popover="manual"
+      role="listbox"
+      data-sr-of="of"
+      tabindex="-1"
+      aria-multiselectable="false"
+      id="<removed>"
+      data-is-floating="true"
+      aria-label="Velg en destinasjon"
+      style="<removed>"
+      data-floating="bottom"
+      hidden
+    >
+      <u-option
+        data-empty="Legg til «{value}»"
+        label="Oslo"
+        value="Oslo"
+        data-create="Legg til «Oslo»"
+        role="option"
+        aria-disabled="false"
+        aria-selected="true"
+        id="<removed>"
+        aria-hidden="false"
+        hidden
+        selected
+      >
+      </u-option>
+      <u-option
+        label="Sogndal"
+        value="Sogndal"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Sogndal
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Oslo"
+        value="Oslo"
+        role="option"
+        aria-disabled="false"
+        aria-selected="true"
+        id="<removed>"
+        aria-hidden="false"
+        selected
+      >
+        Oslo
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Brønnøysund"
+        value="Brønnøysund"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Brønnøysund
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Stavanger"
+        value="Stavanger"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Stavanger
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Trondheim"
+        value="Trondheim"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Trondheim
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Bergen"
+        value="Bergen"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Bergen
+        <div>
+          Kommune
+        </div>
+      </u-option>
+      <u-option
+        label="Lillestrøm"
+        value="Lillestrøm"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<removed>"
+        aria-hidden="true"
+        disabled
+      >
+        Lillestrøm
+        <div>
+          Kommune
+        </div>
+      </u-option>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+`;
+
 exports[`Custom Filter Alt 1 1`] = `
 <ds-field>
   <label for="<removed>">
@@ -1214,10 +1398,10 @@ exports[`Custom Filter Alt 1 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist8"
-      popovertarget=":u-datalist8"
+      list=":u-datalist9"
+      popovertarget=":u-datalist9"
       aria-autocomplete="list"
-      aria-controls=":u-datalist8"
+      aria-controls=":u-datalist9"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1351,10 +1535,10 @@ exports[`Custom Filter Alt 2 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist9"
-      popovertarget=":u-datalist9"
+      list=":u-datalist10"
+      popovertarget=":u-datalist10"
       aria-autocomplete="list"
-      aria-controls=":u-datalist9"
+      aria-controls=":u-datalist10"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1490,10 +1674,10 @@ exports[`Default Value 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist15"
-      popovertarget=":u-datalist15"
+      list=":u-datalist16"
+      popovertarget=":u-datalist16"
       aria-autocomplete="list"
-      aria-controls=":u-datalist15"
+      aria-controls=":u-datalist16"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1627,10 +1811,10 @@ exports[`Fetch External 1`] = `
       placeholder
       type="text"
       id="<removed>"
-      list=":u-datalist11"
-      popovertarget=":u-datalist11"
+      list=":u-datalist12"
+      popovertarget=":u-datalist12"
       aria-autocomplete="list"
-      aria-controls=":u-datalist11"
+      aria-controls=":u-datalist12"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1687,10 +1871,10 @@ exports[`In Details 1`] = `
           placeholder
           type="text"
           id="<removed>"
-          list=":u-datalist16"
-          popovertarget=":u-datalist16"
+          list=":u-datalist17"
+          popovertarget=":u-datalist17"
           aria-autocomplete="list"
-          aria-controls=":u-datalist16"
+          aria-controls=":u-datalist17"
           aria-expanded="true"
           autocomplete="off"
           enterkeyhint="done"
@@ -1820,10 +2004,10 @@ exports[`Multiple 1`] = `
       type="text"
       id="<removed>"
       aria-description="No selected"
-      list=":u-datalist12"
-      popovertarget=":u-datalist12"
+      list=":u-datalist13"
+      popovertarget=":u-datalist13"
       aria-autocomplete="list"
-      aria-controls=":u-datalist12"
+      aria-controls=":u-datalist13"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -2007,10 +2191,10 @@ exports[`Multiple Count 1`] = `
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist14"
-      popovertarget=":u-datalist14"
+      list=":u-datalist15"
+      popovertarget=":u-datalist15"
       aria-autocomplete="list"
-      aria-controls=":u-datalist14"
+      aria-controls=":u-datalist15"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -2196,10 +2380,10 @@ exports[`Multiple Creatable 1`] = `
       type="text"
       id="<removed>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist13"
-      popovertarget=":u-datalist13"
+      list=":u-datalist14"
+      popovertarget=":u-datalist14"
       aria-autocomplete="list"
-      aria-controls=":u-datalist13"
+      aria-controls=":u-datalist14"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
