@@ -13,24 +13,24 @@ exports[`Button 1`] = `
 }
 </style>
 <div>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="søk"
-      type="search"
+      type="text"
       value="Skole"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      tabindex="-1"
     >
     </button>
     <button type="submit">
       Søk
     </button>
-  </div>
+  </ds-suggestion>
   <div>
     <p>
       Hurtigsøk:

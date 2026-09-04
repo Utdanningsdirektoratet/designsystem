@@ -36,7 +36,7 @@ import { Search } from '@udir-design/react';
   /* håndter søk */
 }}>
   <Search>
-    <Search.Input aria-label="Søk" />
+    <Search.Input aria-label="Søk" type="text" />
     <Search.Clear />
     <Search.Button />
   </Search>
@@ -48,7 +48,7 @@ import { Search } from '@udir-design/react';
 ### Varianter
 
 Du velger selv om du vil bruke `Search.Clear` og `Search.Button`. Vi anbefaler at du bruker `Search.Clear` for å gi brukeren mulighet til å fjerne søket.
-Dersom du ikke har `Search.Button` vil input feltet få et søkeikon.
+`Search.Input` har `type="search"` som standard og viser da et søkeikon. Bruk `type="text"` når du inkluderer `Search.Button` slik at søkeikonet skjules.
 Du kan endre `variant` på `Button` for å tilpasse visningen. Eksemplene nedenfor viser varianter som inkluderer ikon, primær- og sekundærknapp.
 
 <Canvas of={SearchStories.Variants} />

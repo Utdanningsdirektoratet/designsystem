@@ -46,23 +46,25 @@ exports[`Table Story 1`] = `
           </label>
         </div>
       </fieldset>
-      <div>
+      <ds-suggestion>
         <input
-          placeholder="Søk"
           aria-label="Søk"
+          placeholder="Søk"
           autocomplete="off"
           type="search"
           value
           name="search"
         >
         <button
-          data-icon="true"
           data-variant="tertiary"
           type="reset"
           aria-label="Tøm"
+          aria-hidden="false"
+          hidden
+          tabindex="-1"
         >
         </button>
-      </div>
+      </ds-suggestion>
     </div>
     <div>
       <table data-border="true">
@@ -712,8 +714,8 @@ exports[`Table Story 1`] = `
         <ul>
           <li>
             <button
-              aria-disabled="true"
               type="button"
+              aria-disabled="true"
             >
               <span>
                 Forrige

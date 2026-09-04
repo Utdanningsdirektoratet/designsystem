@@ -42,6 +42,7 @@ export const IconDisplay = () => {
           </Search>
         </div>
         <ToggleGroup
+          aria-label="Velg ikonstil"
           defaultValue="stroke"
           onChange={(value) => {
             setIconToggle(value as 'fill' | 'stroke');

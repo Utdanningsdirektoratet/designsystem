@@ -5,9 +5,9 @@ exports[`Controlled 1`] = `
   Retting av prøver
 </h1>
 <fieldset
-  data-toggle-group="Filtrer på status"
-  data-variant="secondary"
   aria-label="Filtrer på status"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label data-variant="tertiary">
     <input
@@ -237,9 +237,9 @@ exports[`Controlled 1`] = `
 
 exports[`Only Icons 1`] = `
 <fieldset
-  data-toggle-group="Tekstjustering"
-  data-variant="secondary"
   aria-label="Tekstjustering"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label
     data-tooltip="Venstrestilt"
@@ -344,9 +344,9 @@ exports[`Only Text 1`] = `
     Filtrering av skjema
   </legend>
   <fieldset
-    data-toggle-group="Filtrering av skjema"
     data-variant="secondary"
-    aria-label="Filtrering av skjema"
+    focusgroup="radiogroup"
+    aria-labelledby="<removed>"
   >
     <label data-variant="tertiary">
       <input
@@ -379,9 +379,9 @@ exports[`Only Text 1`] = `
 
 exports[`Preview 1`] = `
 <fieldset
-  data-toggle-group="Velg epostboks"
-  data-variant="secondary"
   aria-label="Velg epostboks"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label data-variant="tertiary">
     <input
@@ -421,9 +421,9 @@ exports[`Preview 1`] = `
 
 exports[`Primary 1`] = `
 <fieldset
-  data-toggle-group="Velg epostboks"
-  data-variant="primary"
   aria-label="Velg epostboks"
+  data-variant="primary"
+  focusgroup="radiogroup"
 >
   <label data-variant="tertiary">
     <input
@@ -463,9 +463,9 @@ exports[`Primary 1`] = `
 
 exports[`Secondary 1`] = `
 <fieldset
-  data-toggle-group="Velg epostboks"
-  data-variant="secondary"
   aria-label="Velg epostboks"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label data-variant="tertiary">
     <input
@@ -505,9 +505,9 @@ exports[`Secondary 1`] = `
 
 exports[`Secondary Only Icons 1`] = `
 <fieldset
-  data-toggle-group="Tekstjustering"
-  data-variant="secondary"
   aria-label="Tekstjustering"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label
     data-tooltip="Venstrestilt"
@@ -608,9 +608,9 @@ exports[`Secondary Only Icons 1`] = `
 
 exports[`Text And Icons 1`] = `
 <fieldset
-  data-toggle-group="Filtrer på status"
-  data-variant="secondary"
   aria-label="Filtrer på status"
+  data-variant="secondary"
+  focusgroup="radiogroup"
 >
   <label data-variant="tertiary">
     <input
@@ -700,9 +700,9 @@ exports[`Toggle Group In Color Context 1`] = `
   data-color="accent"
 >
   <fieldset
-    data-toggle-group="Velg epostboks"
-    data-variant="primary"
     aria-label="Velg epostboks"
+    data-variant="primary"
+    focusgroup="radiogroup"
   >
     <label data-variant="tertiary">
       <input

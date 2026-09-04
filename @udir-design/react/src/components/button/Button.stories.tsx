@@ -203,13 +203,10 @@ export const Loading = meta.story({
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const button = canvas.getAllByRole('button')[0];
-    await step(
-      'Button should have aria-busy and aria-disabled attributes',
-      async () => {
-        expect(button).toHaveAttribute('aria-busy', 'true');
-        expect(button).toHaveAttribute('aria-disabled', 'true');
-      },
-    );
+    await step('Button should have aria-busy attribute', async () => {
+      expect(button).toHaveAttribute('aria-busy', 'true');
+      expect(button).not.toHaveAttribute('aria-disabled');
+    });
     await step('Button should be focusable', async () => {
       await userEvent.tab();
       expect(button).toHaveFocus();

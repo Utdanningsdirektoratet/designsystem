@@ -348,7 +348,7 @@ exports[`Dialog With Suggestion 1`] = `
       </label>
       <ds-suggestion>
         <input
-          placeholder=" "
+          placeholder
           type="text"
           id="<removed>"
           list=":u-datalist1"
@@ -375,6 +375,18 @@ exports[`Dialog With Suggestion 1`] = `
           id="<removed>"
           data-is-floating="true"
         >
+          <u-option
+            data-empty
+            hidden
+            label
+            value
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+            id="<removed>"
+          >
+            Tomt
+          </u-option>
           <u-option
             label="Sogndal"
             value="Sogndal"

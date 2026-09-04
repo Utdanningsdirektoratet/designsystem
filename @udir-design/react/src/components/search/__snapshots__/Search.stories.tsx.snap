@@ -15,25 +15,26 @@ exports[`Controlled 1`] = `
         }
   </style>
   <form>
-    <div>
+    <ds-suggestion>
       <input
-        placeholder
         id="<removed>"
         aria-label="Søk"
-        type="search"
+        type="text"
         value
       >
       <button
-        data-icon="true"
         data-variant="tertiary"
         type="reset"
         aria-label="Tøm"
+        aria-hidden="false"
+        hidden
+        tabindex="-1"
       >
       </button>
       <button type="submit">
         Søk
       </button>
-    </div>
+    </ds-suggestion>
     <div>
       <p data-size="sm">
         Hurtigsøk:
@@ -55,23 +56,24 @@ exports[`Controlled 1`] = `
 exports[`Form 1`] = `
 <div>
   <form>
-    <div>
+    <ds-suggestion>
       <input
-        placeholder
         aria-label="Søk"
-        type="search"
+        type="text"
       >
       <button
-        data-icon="true"
         data-variant="tertiary"
         type="reset"
         aria-label="Tøm"
+        aria-hidden="false"
+        hidden
+        tabindex="-1"
       >
       </button>
       <button type="submit">
         Søk
       </button>
-    </div>
+    </ds-suggestion>
   </form>
 </div>
 `;
@@ -85,90 +87,95 @@ exports[`Live Search 1`] = `
         }
 </style>
 <div>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
       type="search"
       value
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
     >
     </button>
-  </div>
+  </ds-suggestion>
 </div>
 `;
 
 exports[`Preview 1`] = `
 <form>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
-      type="search"
+      type="text"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
     >
     </button>
     <button type="submit">
       Søk
     </button>
-  </div>
+  </ds-suggestion>
 </form>
 `;
 
 exports[`Variants 1`] = `
 <div>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
       type="search"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
     >
     </button>
-  </div>
-  <div>
+  </ds-suggestion>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
-      type="search"
+      type="text"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
     >
     </button>
     <button type="submit">
       Søk
     </button>
-  </div>
-  <div>
+  </ds-suggestion>
+  <ds-suggestion>
     <input
-      placeholder
       aria-label="Søk"
-      type="search"
+      type="text"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
     >
     </button>
     <button
@@ -177,7 +184,7 @@ exports[`Variants 1`] = `
     >
       Søk
     </button>
-  </div>
+  </ds-suggestion>
 </div>
 `;
 
@@ -186,23 +193,24 @@ exports[`With Label 1`] = `
   <label for="<removed>">
     Søk i læreplaner
   </label>
-  <div>
+  <ds-suggestion>
     <input
-      placeholder
-      type="search"
+      type="text"
       name="cat-search"
       id="<removed>"
     >
     <button
-      data-icon="true"
       data-variant="tertiary"
       type="reset"
       aria-label="Tøm"
+      aria-hidden="false"
+      hidden
+      tabindex="-1"
     >
     </button>
     <button type="submit">
       Søk
     </button>
-  </div>
+  </ds-suggestion>
 </ds-field>
 `;
