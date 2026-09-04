@@ -1,20 +1,21 @@
 /* Translations are defined outside component class so users can easily add translations */
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --udsc-fieldNecessity-required-text: 'Må fylles ut';
   --udsc-fieldNecessity-optional-text: 'Valgfritt';
   --udsc-fieldNecessity-all-required-text: 'Alle felt må fylles ut';
   --udsc-fieldNecessity-all-optional-text: 'Alle felt er valgfri';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --udsc-fieldNecessity-required-text: 'Må fyllast ut';
   --udsc-fieldNecessity-optional-text: 'Valfritt';
   --udsc-fieldNecessity-all-required-text: 'Alle felt må fyllast ut';
   --udsc-fieldNecessity-all-optional-text: 'Alle felt er valfri';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-fieldNecessity-required-text: 'Required';
   --udsc-fieldNecessity-optional-text: 'Optional';
   --udsc-fieldNecessity-all-required-text: 'All fields are required';

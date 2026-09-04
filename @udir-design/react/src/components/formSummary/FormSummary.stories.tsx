@@ -1,5 +1,6 @@
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { FormSummary } from '.';
 import './formSummary.stories.modules.css';
 
@@ -156,4 +157,16 @@ export const ErrorStates = meta.story({
       </FormSummary.Section>
     </FormSummary>
   ),
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.uds-form-summary'),
+      ['--udsc-formSummary-empty-text'],
+    );
+  },
 });

@@ -1,13 +1,14 @@
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --udsc-formSummary-empty-text: 'Ikke besvart';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --udsc-formSummary-empty-text: 'Ikkje svart';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-formSummary-empty-text: 'Not answered';
 }
 

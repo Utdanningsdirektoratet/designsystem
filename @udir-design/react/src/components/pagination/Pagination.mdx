@@ -1,6 +1,7 @@
 import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as usePagination from '../../hooks/usePagination/usePagination.stories';
 import * as PaginationStories from './Pagination.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={PaginationStories} />
 
@@ -89,3 +90,13 @@ Bruk `Pagination` når innholdet er for omfattende for én side, for eksempel ve
 Vi bruker et fast tekstmønster for `Pagination`: «Forrige» og «Neste».
 
 Unngå derfor «Forrige side», «Neste side», «Gå tilbake», «Gå videre», «Videre» og «Tilbake».
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Teksten brukes som `aria-label` på `Pagination`, og gjelder bare når du ikke sender inn `aria-label` selv.
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--dsc-pagination-label']} />

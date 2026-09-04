@@ -21,17 +21,23 @@ Komponentene med forhåndsdefinert tekst støtter språkene `"nb"` (bokmål), `"
 
 ```css
 /* Oversettelser for nordsamisk */
-[lang='se'] {
+[lang|='se' i] {
   --udsc-fileUpload-uploading-text: 'Viežžamin…';
   --udsc-fileUpload-chooseFile-text: 'Lasit fiilla';
   /* ...flere tekstvariabler... */
 }
 ```
 
+Vi bruker `[lang|='se' i]` i stedet for `[lang='se']` slik at oversettelsen også gjelder når `lang` inneholder en region, for eksempel `se-NO`.
+
 Se hvilke tekstvariabler som er tilgjengelige for overstyring i dokumentasjonen for komponentene:
 
+- [Breadcrumbs](/docs/components-breadcrumbs--docs#språkstøtte)
+- [DemoBanner](/docs/components-demobanner--docs#språkstøtte)
+- [Field](/docs/components-field--docs#språkstøtte)
 - [FieldNecessity](/docs/components-fieldnecessity--docs#språkstøtte)
 - [FileUpload](/docs/components-fileupload--docs#språkstøtte)
-- [DemoBanner](/docs/components-demobanner--docs#språkstøtte)
 - [FormSummary](/docs/components-formsummary--docs#språkstøtte)
+- [Pagination](/docs/components-pagination--docs#språkstøtte)
 - [Suggestion](/docs/components-suggestion--docs#språkstøtte)
+- [useDrilldownTable](/docs/hooks-usedrilldowntable--docs#språkstøtte)
