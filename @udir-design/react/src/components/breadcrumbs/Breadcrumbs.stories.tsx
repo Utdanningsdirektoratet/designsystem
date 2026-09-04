@@ -1,5 +1,6 @@
 import { expect, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { Header } from '../header';
 import { Breadcrumbs } from './Breadcrumbs';
 import { BreadcrumbsItem } from './docs/FakeBreadcrumbsItem';
@@ -195,4 +196,16 @@ export const PlacementWithHeader = meta.story({
       </div>
     </>
   ),
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-breadcrumbs'),
+      ['--dsc-breadcrumbs-label'],
+    );
+  },
 });

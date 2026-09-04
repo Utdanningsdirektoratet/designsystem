@@ -1,4 +1,5 @@
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import { useRadioGroup } from 'src/hooks/useRadioGroup';
@@ -280,4 +281,21 @@ export const ManualSummaryPlacement = meta.story({
       </FieldNecessity>
     </>
   ),
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.uds-field-necessity'),
+      [
+        '--udsc-fieldNecessity-required-text',
+        '--udsc-fieldNecessity-optional-text',
+        '--udsc-fieldNecessity-all-required-text',
+        '--udsc-fieldNecessity-all-optional-text',
+      ],
+    );
+  },
 });

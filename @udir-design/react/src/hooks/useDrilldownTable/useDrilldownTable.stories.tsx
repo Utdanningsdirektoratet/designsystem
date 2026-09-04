@@ -2,6 +2,7 @@ import type React from 'react';
 import { useMemo, useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Table } from 'src/components/table';
 import { useDrilldownTable } from './useDrilldownTable';
@@ -221,5 +222,17 @@ export const Preview = meta.story({
         canvas.queryByTestId('row-np-nasjonalt-oslo-gamleoslo-tøyenskole'),
       ).not.toBeInTheDocument();
     });
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('tbody'),
+      ['--udsc-table-level-prefix'],
+    );
   },
 });

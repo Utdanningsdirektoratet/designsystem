@@ -15,6 +15,7 @@ import type {
   ChromaticParameters,
   ComponentOriginParameters,
   CustomStylesParameters,
+  SnapshotParameters,
 } from './types';
 import { argTypesEnhancer } from './utils/argTypesEnhancer';
 import { CustomStylesDecorator } from './utils/customStylesDecorator';
@@ -93,7 +94,8 @@ export default definePreview({
 interface CustomTypes {
   parameters: ComponentOriginParameters &
     CustomStylesParameters &
-    ChromaticParameters;
+    ChromaticParameters &
+    SnapshotParameters;
 }
 function customParametersAddon(): PreviewAddon<CustomTypes> {
   return {};

@@ -1,3 +1,24 @@
+/* Translations are defined outside component class so users can easily add translations.
+   Read from JS via getComputedStyle, so avoid " in the values (see suggestion.css). */
+
+/* Upstream sets the Norwegian label on the element itself, which beats any inherited
+   value regardless of layer. Reset to `inherit` so the nearest [lang] ancestor decides.
+   `:where()` keeps specificity at 0 so the [lang] blocks below always win. */
+:where(.ds-pagination) {
+  --dsc-pagination-label: inherit;
+}
+
+:root,
+[lang|='nb' i],
+[lang|='nn' i],
+[lang|='no' i] {
+  --dsc-pagination-label: 'Bla i sider';
+}
+
+[lang|='en' i] {
+  --dsc-pagination-label: 'Browse pages';
+}
+
 .ds-pagination {
   button[aria-current='true'],
   a[aria-current='true'] {

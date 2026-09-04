@@ -25,3 +25,15 @@ export type CustomStylesParameters = {
     story?: CSSProperties;
   };
 };
+
+export type SnapshotParameters = {
+  /**
+   * Set to `false` to skip the DOM snapshot that is otherwise taken after every story.
+   *
+   * Useful for stories that only assert behaviour: they still run as tests, but do not
+   * leave a baseline that has to be reviewed and kept up to date.
+   *
+   * This is a custom parameter, implemented by `preview-test.ts`.
+   * */
+  snapshot?: boolean;
+};

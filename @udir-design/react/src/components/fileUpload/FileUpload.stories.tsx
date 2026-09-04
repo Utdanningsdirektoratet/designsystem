@@ -4,6 +4,7 @@ import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
 import { Prose } from '../typography/prose';
@@ -698,5 +699,29 @@ export const CompactList = meta.story({
         canvas.queryByText('kandidat-12.pdf'),
       ).not.toBeInTheDocument();
     });
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.uds-file-upload'),
+      [
+        '--udsc-fileUpload-chooseFile-text',
+        '--udsc-fileUpload-chooseFiles-text',
+        '--udsc-fileUpload-dropFile-text',
+        '--udsc-fileUpload-dropFiles-text',
+        '--udsc-fileUpload-dropFile-active-text',
+        '--udsc-fileUpload-dropFiles-active-text',
+        '--udsc-fileUpload-or-text',
+        '--udsc-fileUpload-uploading-text',
+        '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-disabled-text-line-one',
+        '--udsc-fileUpload-disabled-text-line-two',
+      ],
+    );
   },
 });
