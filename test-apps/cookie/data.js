@@ -46,7 +46,6 @@ export const buildData = (culture) => {
         name: cookie.name,
         expiration: cookie.expiration,
         domain: cookie.domain,
-        data_processor_privacy_policy: cookie.privacyPolicyUrl,
       })),
     })),
   };
