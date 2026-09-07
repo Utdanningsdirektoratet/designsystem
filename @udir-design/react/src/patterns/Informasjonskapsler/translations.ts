@@ -9,8 +9,6 @@ const translations = {
     purpose: 'Formål',
     name: 'Navn',
     expiration: 'Utløpstid',
-    privacyPolicy: 'Personvernerklæring',
-    viewPrivacyPolicy: '{provider} - Personvernerklæring',
     consentCanBeChanged:
       'Du kan når som helst endre samtykket ditt via lenken i bunnfeltet.',
     consentAppliesTo: 'Samtykket gjelder for',
@@ -29,8 +27,6 @@ const translations = {
     purpose: 'Purpose',
     name: 'Name',
     expiration: 'Expiration',
-    privacyPolicy: 'Privacy policy',
-    viewPrivacyPolicy: '{provider} - Privacy policy',
     consentCanBeChanged:
       'You can change your consent at any time using the link in the footer.',
     consentAppliesTo: 'The consent applies to',

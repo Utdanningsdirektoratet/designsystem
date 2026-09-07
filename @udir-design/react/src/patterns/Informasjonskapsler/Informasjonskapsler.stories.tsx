@@ -31,7 +31,6 @@ type ExampleData = {
       name: string;
       expiration: string;
       domain: string;
-      privacyPolicyUrl: string;
     }>;
   }>;
 };
@@ -174,15 +173,6 @@ export const Preview = meta.story({
                                     <li>
                                       <strong>{text.expiration}: </strong>
                                       {cookie.expiration}
-                                    </li>
-                                    <li>
-                                      <strong>{text.privacyPolicy}: </strong>
-                                      <Link href={cookie.privacyPolicyUrl}>
-                                        {text.viewPrivacyPolicy.replace(
-                                          '{provider}',
-                                          cookie.provider,
-                                        )}
-                                      </Link>
                                     </li>
                                   </ul>
                                 </Prose>

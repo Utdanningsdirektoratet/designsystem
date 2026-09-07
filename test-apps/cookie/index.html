@@ -247,23 +247,6 @@
                       <strong data-i18n="expiration">Utløpstid: </strong
                       >{{{this.expiration}}}
                     </li>
-                    {{#if this.data_processor_privacy_policy}}
-                    <li>
-                      <strong data-i18n="privacyPolicy"
-                        >Personvernerklæring: </strong
-                      ><a
-                        class="ds-link"
-                        href="{{{this.data_processor_privacy_policy}}}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid="coi-banner__cookie-details__privacy-policy-link"
-                        >{{{this.data_processor_name}}} -
-                        <span data-i18n="viewPrivacyPolicy"
-                          >personvernerklæring</span
-                        ></a
-                      >
-                    </li>
-                    {{/if}}
                   </ul>
                 </div>
                 {{/each}}
