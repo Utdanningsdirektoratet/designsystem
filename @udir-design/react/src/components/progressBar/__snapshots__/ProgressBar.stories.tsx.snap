@@ -29,10 +29,10 @@ exports[`Form Example 1`] = `
 </style>
 <div>
   <fieldset
-    id="<removed>"
-    aria-labelledby="<removed>"
+    id="rankings"
+    aria-labelledby="<generated>"
   >
-    <legend id="<removed>">
+    <legend id="<generated>">
       <h4>
         Skjema
       </h4>
@@ -95,9 +95,9 @@ exports[`Form Example 1`] = `
             Første påstand
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Uenig">
               <input
-                id="<removed>"
+                id="rankings.Første påstand-Uenig"
                 aria-label="Uenig i påstand Første påstand"
                 type="radio"
                 value="Uenig"
@@ -106,9 +106,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Nøytral">
               <input
-                id="<removed>"
+                id="rankings.Første påstand-Nøytral"
                 aria-label="Nøytral i påstand Første påstand"
                 type="radio"
                 value="Nøytral"
@@ -117,9 +117,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Første påstand-Enig">
               <input
-                id="<removed>"
+                id="rankings.Første påstand-Enig"
                 aria-label="Enig i påstand Første påstand"
                 type="radio"
                 value="Enig"
@@ -133,9 +133,9 @@ exports[`Form Example 1`] = `
             Andre påstand
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Uenig">
               <input
-                id="<removed>"
+                id="rankings.Andre påstand-Uenig"
                 aria-label="Uenig i påstand Andre påstand"
                 type="radio"
                 value="Uenig"
@@ -144,9 +144,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Nøytral">
               <input
-                id="<removed>"
+                id="rankings.Andre påstand-Nøytral"
                 aria-label="Nøytral i påstand Andre påstand"
                 type="radio"
                 value="Nøytral"
@@ -155,9 +155,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Andre påstand-Enig">
               <input
-                id="<removed>"
+                id="rankings.Andre påstand-Enig"
                 aria-label="Enig i påstand Andre påstand"
                 type="radio"
                 value="Enig"
@@ -171,9 +171,9 @@ exports[`Form Example 1`] = `
             Tredje påstand
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Uenig">
               <input
-                id="<removed>"
+                id="rankings.Tredje påstand-Uenig"
                 aria-label="Uenig i påstand Tredje påstand"
                 type="radio"
                 value="Uenig"
@@ -182,9 +182,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Nøytral">
               <input
-                id="<removed>"
+                id="rankings.Tredje påstand-Nøytral"
                 aria-label="Nøytral i påstand Tredje påstand"
                 type="radio"
                 value="Nøytral"
@@ -193,9 +193,9 @@ exports[`Form Example 1`] = `
             </ds-field>
           </td>
           <td>
-            <ds-field data-clickdelegatefor="<removed>">
+            <ds-field data-clickdelegatefor="rankings.Tredje påstand-Enig">
               <input
-                id="<removed>"
+                id="rankings.Tredje påstand-Enig"
                 aria-label="Enig i påstand Tredje påstand"
                 type="radio"
                 value="Enig"

@@ -13,7 +13,7 @@ exports[`Controlled 1`] = `
     <input
       type="radio"
       value="answers"
-      name="togglegroup-name-_r_18_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ exports[`Controlled 1`] = `
     <input
       type="radio"
       value="drafts"
-      name="togglegroup-name-_r_18_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ exports[`Controlled 1`] = `
       type="radio"
       value="correctedAnswers"
       checked
-      name="togglegroup-name-_r_18_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +252,7 @@ exports[`Only Icons 1`] = `
       type="radio"
       value="venstrestilt"
       checked
-      name="togglegroup-name-_r_q_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +283,7 @@ exports[`Only Icons 1`] = `
     <input
       type="radio"
       value="midtstilt"
-      name="togglegroup-name-_r_q_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +314,7 @@ exports[`Only Icons 1`] = `
     <input
       type="radio"
       value="høyrestilt"
-      name="togglegroup-name-_r_q_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -339,21 +339,21 @@ exports[`Only Icons 1`] = `
 `;
 
 exports[`Only Text 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="form-filter-label">
+  <legend id="form-filter-label">
     Filtrering av skjema
   </legend>
   <fieldset
     data-variant="secondary"
     focusgroup="radiogroup"
-    aria-labelledby="<removed>"
+    aria-labelledby="form-filter-label"
   >
     <label data-variant="tertiary">
       <input
         type="radio"
         value="personlig"
         checked
-        name="togglegroup-name-_r_f_"
+        name="togglegroup-name-<generated>"
       >
       Personlig
     </label>
@@ -361,7 +361,7 @@ exports[`Only Text 1`] = `
       <input
         type="radio"
         value="generelt"
-        name="togglegroup-name-_r_f_"
+        name="togglegroup-name-<generated>"
       >
       Generelt
     </label>
@@ -369,7 +369,7 @@ exports[`Only Text 1`] = `
       <input
         type="radio"
         value="tilleggsinformasjon"
-        name="togglegroup-name-_r_f_"
+        name="togglegroup-name-<generated>"
       >
       Tilleggsinformasjon
     </label>
@@ -388,7 +388,7 @@ exports[`Preview 1`] = `
       type="radio"
       value="innboks"
       checked
-      name="togglegroup-name-_r_0_"
+      name="togglegroup-name-<generated>"
     >
     Innboks
   </label>
@@ -396,7 +396,7 @@ exports[`Preview 1`] = `
     <input
       type="radio"
       value="utkast"
-      name="togglegroup-name-_r_0_"
+      name="togglegroup-name-<generated>"
     >
     Utkast
   </label>
@@ -404,7 +404,7 @@ exports[`Preview 1`] = `
     <input
       type="radio"
       value="arkiv"
-      name="togglegroup-name-_r_0_"
+      name="togglegroup-name-<generated>"
     >
     Arkiv
   </label>
@@ -412,7 +412,7 @@ exports[`Preview 1`] = `
     <input
       type="radio"
       value="sendt"
-      name="togglegroup-name-_r_0_"
+      name="togglegroup-name-<generated>"
     >
     Sendt
   </label>
@@ -430,7 +430,7 @@ exports[`Primary 1`] = `
       type="radio"
       value="innboks"
       checked
-      name="togglegroup-name-_r_5_"
+      name="togglegroup-name-<generated>"
     >
     Innboks
   </label>
@@ -438,7 +438,7 @@ exports[`Primary 1`] = `
     <input
       type="radio"
       value="utkast"
-      name="togglegroup-name-_r_5_"
+      name="togglegroup-name-<generated>"
     >
     Utkast
   </label>
@@ -446,7 +446,7 @@ exports[`Primary 1`] = `
     <input
       type="radio"
       value="arkiv"
-      name="togglegroup-name-_r_5_"
+      name="togglegroup-name-<generated>"
     >
     Arkiv
   </label>
@@ -454,7 +454,7 @@ exports[`Primary 1`] = `
     <input
       type="radio"
       value="sendt"
-      name="togglegroup-name-_r_5_"
+      name="togglegroup-name-<generated>"
     >
     Sendt
   </label>
@@ -472,7 +472,7 @@ exports[`Secondary 1`] = `
       type="radio"
       value="innboks"
       checked
-      name="togglegroup-name-_r_a_"
+      name="togglegroup-name-<generated>"
     >
     Innboks
   </label>
@@ -480,7 +480,7 @@ exports[`Secondary 1`] = `
     <input
       type="radio"
       value="utkast"
-      name="togglegroup-name-_r_a_"
+      name="togglegroup-name-<generated>"
     >
     Utkast
   </label>
@@ -488,7 +488,7 @@ exports[`Secondary 1`] = `
     <input
       type="radio"
       value="arkiv"
-      name="togglegroup-name-_r_a_"
+      name="togglegroup-name-<generated>"
     >
     Arkiv
   </label>
@@ -496,7 +496,7 @@ exports[`Secondary 1`] = `
     <input
       type="radio"
       value="sendt"
-      name="togglegroup-name-_r_a_"
+      name="togglegroup-name-<generated>"
     >
     Sendt
   </label>
@@ -520,7 +520,7 @@ exports[`Secondary Only Icons 1`] = `
       type="radio"
       value="venstrestilt"
       checked
-      name="togglegroup-name-_r_11_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -551,7 +551,7 @@ exports[`Secondary Only Icons 1`] = `
     <input
       type="radio"
       value="midtstilt"
-      name="togglegroup-name-_r_11_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -582,7 +582,7 @@ exports[`Secondary Only Icons 1`] = `
     <input
       type="radio"
       value="høyrestilt"
-      name="togglegroup-name-_r_11_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -617,7 +617,7 @@ exports[`Text And Icons 1`] = `
       type="radio"
       value="aktiv"
       checked
-      name="togglegroup-name-_r_j_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -643,7 +643,7 @@ exports[`Text And Icons 1`] = `
     <input
       type="radio"
       value="advarsel"
-      name="togglegroup-name-_r_j_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -669,7 +669,7 @@ exports[`Text And Icons 1`] = `
     <input
       type="radio"
       value="kritisk"
-      name="togglegroup-name-_r_j_"
+      name="togglegroup-name-<generated>"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -709,7 +709,7 @@ exports[`Toggle Group In Color Context 1`] = `
         type="radio"
         value="innboks"
         checked
-        name="togglegroup-name-_r_1j_"
+        name="togglegroup-name-<generated>"
       >
       Innboks
     </label>
@@ -717,7 +717,7 @@ exports[`Toggle Group In Color Context 1`] = `
       <input
         type="radio"
         value="utkast"
-        name="togglegroup-name-_r_1j_"
+        name="togglegroup-name-<generated>"
       >
       Utkast
     </label>
@@ -725,7 +725,7 @@ exports[`Toggle Group In Color Context 1`] = `
       <input
         type="radio"
         value="arkiv"
-        name="togglegroup-name-_r_1j_"
+        name="togglegroup-name-<generated>"
       >
       Arkiv
     </label>
@@ -733,7 +733,7 @@ exports[`Toggle Group In Color Context 1`] = `
       <input
         type="radio"
         value="sendt"
-        name="togglegroup-name-_r_1j_"
+        name="togglegroup-name-<generated>"
       >
       Sendt
     </label>

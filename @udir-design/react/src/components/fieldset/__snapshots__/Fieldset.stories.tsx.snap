@@ -1,53 +1,53 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Legend As Heading 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     <h2 data-size="sm">
       Hvilke tjenester bruker du?
     </h2>
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Påloggingssystemer hos Udir
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
       value="feide"
       name="components-fieldset--legend-as-heading-feide"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Feide
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
       value="UIDP"
       name="components-fieldset--legend-as-heading-UIDP"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       UIDP
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
       value="UBAS"
       name="components-fieldset--legend-as-heading-UBAS"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       UBAS
     </label>
@@ -56,51 +56,51 @@ exports[`Legend As Heading 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Hvilken fjordarm bor du ved?
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Valget vil hjelpe oss å forbedre innholdet vi viser deg.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="barsnesfjorden"
       name="radio"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Barsnesfjorden
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="eidsfjorden"
       name="radio"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Eidsfjorden
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="ingen-av-dem"
       name="radio"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Ingen av dem
     </label>
@@ -109,18 +109,18 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Checkbox 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Godtar du vilkårene?
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Ja, jeg godtar
     </label>
@@ -129,17 +129,17 @@ exports[`With Checkbox 1`] = `
 `;
 
 exports[`With Textfield 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     <h2 data-size="sm">
       Adresse
     </h2>
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Skriv inn adressen din for å motta post fra oss.
   </p>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Gateadresse
     </label>
     <div>
@@ -147,12 +147,12 @@ exports[`With Textfield 1`] = `
         autocomplete="address-line1"
         type="text"
         name="components-fieldset--with-textfield-address-line1"
-        id="<removed>"
+        id="<generated>"
       >
     </div>
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Postnummer
     </label>
     <div>
@@ -163,12 +163,12 @@ exports[`With Textfield 1`] = `
         autocomplete="postal-code"
         type="text"
         name="components-fieldset--with-textfield-postal-code"
-        id="<removed>"
+        id="<generated>"
       >
     </div>
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Poststed
     </label>
     <div>
@@ -177,7 +177,7 @@ exports[`With Textfield 1`] = `
         autocomplete="address-level2"
         type="text"
         name="components-fieldset--with-textfield-address-level2"
-        id="<removed>"
+        id="<generated>"
       >
     </div>
   </ds-field>

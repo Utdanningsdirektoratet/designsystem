@@ -4,7 +4,7 @@ exports[`Container 1`] = `
 <div>
   <h1
     data-size="lg"
-    id="<removed>"
+    id="sidetittel"
     tabindex="-1"
   >
     Sidetittel (h1)
@@ -71,7 +71,7 @@ exports[`Container 1`] = `
   </div>
   <h2
     data-size="md"
-    id="<removed>"
+    id="forste-overskrift"
     tabindex="-1"
   >
     Første overskrift (h2)
@@ -84,7 +84,7 @@ exports[`Container 1`] = `
   </p>
   <h3
     data-size="sm"
-    id="<removed>"
+    id="forste-underoverskrift"
     tabindex="-1"
   >
     Første underoverskrift (h3)
@@ -94,7 +94,7 @@ exports[`Container 1`] = `
   </p>
   <h4
     data-size="xs"
-    id="<removed>"
+    id="forste-underunderoverskrift"
     tabindex="-1"
   >
     Første underunderoverskrift (h4)
@@ -104,7 +104,7 @@ exports[`Container 1`] = `
   </p>
   <h2
     data-size="md"
-    id="<removed>"
+    id="andre-overskrift"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -199,21 +199,21 @@ exports[`Default 1`] = `
   </div>
   <h2
     data-size="md"
-    id="<removed>"
+    id="first-heading"
     tabindex="-1"
   >
     Første overskrift (h2)
   </h2>
   <h3
     data-size="sm"
-    id="<removed>"
+    id="first-subheading"
     tabindex="-1"
   >
     Første underoverskrift (h3)
   </h3>
   <h2
     data-size="md"
-    id="<removed>"
+    id="second-heading"
     tabindex="-1"
   >
     Andre overskrift (h2)
@@ -282,7 +282,7 @@ exports[`Toc Ignore 1`] = `
   </div>
   <h2
     data-size="md"
-    id="<removed>"
+    id="inkluder-overskrift-1"
     tabindex="-1"
   >
     Inkluder første overskrift (h2)
@@ -290,14 +290,14 @@ exports[`Toc Ignore 1`] = `
   <h2
     data-toc-ignore="true"
     data-size="md"
-    id="<removed>"
+    id="utelat-overskrift-2"
     tabindex="-1"
   >
     Utelat andre overskrift (h2)
   </h2>
   <h2
     data-size="md"
-    id="<removed>"
+    id="inkluder-overskrift-3"
     tabindex="-1"
   >
     Inkluder tredje overskrift (h2)

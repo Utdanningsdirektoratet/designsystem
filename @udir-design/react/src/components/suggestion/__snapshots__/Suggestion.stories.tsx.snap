@@ -2,7 +2,7 @@
 
 exports[`Always Show All 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Viser alle options også når valgt
   </label>
   <ds-suggestion>
@@ -18,11 +18,11 @@ exports[`Always Show All 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist11"
-      popovertarget=":u-datalist11"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist11"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -53,7 +53,7 @@ exports[`Always Show All 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Viser alle options også når valgt"
       style="<removed>"
@@ -67,7 +67,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -76,7 +76,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -85,7 +85,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -94,7 +94,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -103,7 +103,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -112,7 +112,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -121,7 +121,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -130,7 +130,7 @@ exports[`Always Show All 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm
@@ -142,7 +142,7 @@ exports[`Always Show All 1`] = `
 
 exports[`Controlled Independent Label Value 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg person
   </label>
   <ds-suggestion>
@@ -158,11 +158,11 @@ exports[`Controlled Independent Label Value 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist8"
-      popovertarget=":u-datalist8"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist8"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -193,7 +193,7 @@ exports[`Controlled Independent Label Value 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg person"
       style="<removed>"
@@ -207,7 +207,7 @@ exports[`Controlled Independent Label Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -218,7 +218,7 @@ exports[`Controlled Independent Label Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lars
@@ -229,7 +229,7 @@ exports[`Controlled Independent Label Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         James
@@ -240,7 +240,7 @@ exports[`Controlled Independent Label Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Nina
@@ -251,7 +251,7 @@ exports[`Controlled Independent Label Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Tove
@@ -279,7 +279,7 @@ exports[`Controlled Independent Label Value 1`] = `
 
 exports[`Controlled Multiple 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg destinasjoner
   </label>
   <ds-suggestion data-multiple>
@@ -304,10 +304,10 @@ exports[`Controlled Multiple 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
+      id="<generated>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist6"
-      popovertarget=":u-datalist6"
+      list="<generated>"
+      popovertarget="<generated>"
     >
     <button
       aria-expanded="false"
@@ -335,7 +335,7 @@ exports[`Controlled Multiple 1`] = `
       hidden
       tabindex="-1"
       aria-multiselectable="true"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
     >
       <u-option
@@ -346,7 +346,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
       </u-option>
       <u-option
@@ -355,7 +355,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         selected
       >
         Sogndal
@@ -369,7 +369,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
         Oslo
         <div>
@@ -382,7 +382,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
         Brønnøysund
         <div>
@@ -395,7 +395,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         selected
       >
         Stavanger
@@ -409,7 +409,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
         Trondheim
         <div>
@@ -422,7 +422,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
         Bergen
         <div>
@@ -435,7 +435,7 @@ exports[`Controlled Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
         Lillestrøm
         <div>
@@ -459,7 +459,7 @@ exports[`Controlled Multiple 1`] = `
 
 exports[`Controlled Multiple Creatable 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg destinasjoner
   </label>
   <ds-suggestion
@@ -487,12 +487,12 @@ exports[`Controlled Multiple Creatable 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
+      id="<generated>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist7"
-      popovertarget=":u-datalist7"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist7"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -524,7 +524,7 @@ exports[`Controlled Multiple Creatable 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="true"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg destinasjoner"
       style="<removed>"
@@ -538,7 +538,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
         selected
       >
@@ -549,7 +549,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -565,7 +565,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -580,7 +580,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -595,7 +595,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -610,7 +610,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -625,7 +625,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -640,7 +640,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -666,7 +666,7 @@ exports[`Controlled Multiple Creatable 1`] = `
 
 exports[`Controlled Single 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg destinasjon
   </label>
   <ds-suggestion>
@@ -682,9 +682,9 @@ exports[`Controlled Single 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist4"
-      popovertarget=":u-datalist4"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
     >
     <button
       aria-expanded="false"
@@ -712,7 +712,7 @@ exports[`Controlled Single 1`] = `
       hidden
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
     >
       <u-option
@@ -723,7 +723,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
       >
       </u-option>
       <u-option
@@ -732,7 +732,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         selected
       >
         Sogndal
@@ -746,7 +746,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Oslo
@@ -760,7 +760,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Brønnøysund
@@ -774,7 +774,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Stavanger
@@ -788,7 +788,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Trondheim
@@ -802,7 +802,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Bergen
@@ -816,7 +816,7 @@ exports[`Controlled Single 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
       >
         Lillestrøm
@@ -841,7 +841,7 @@ exports[`Controlled Single 1`] = `
 
 exports[`Controlled Single Creatable 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg destinasjon
   </label>
   <ds-suggestion data-creatable>
@@ -857,11 +857,11 @@ exports[`Controlled Single Creatable 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist5"
-      popovertarget=":u-datalist5"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist5"
+      aria-controls="<generated>"
       aria-expanded="false"
       autocomplete="off"
       enterkeyhint="done"
@@ -892,7 +892,7 @@ exports[`Controlled Single Creatable 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg destinasjon"
       style="<removed>"
@@ -907,7 +907,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
         selected
       >
@@ -918,7 +918,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -933,7 +933,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -948,7 +948,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -963,7 +963,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -978,7 +978,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -993,7 +993,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1008,7 +1008,7 @@ exports[`Controlled Single Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1034,18 +1034,18 @@ exports[`Controlled Single Creatable 1`] = `
 
 exports[`Creatable 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg en destinasjon
   </label>
   <ds-suggestion data-creatable>
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist2"
-      popovertarget=":u-datalist2"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist2"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1076,7 +1076,7 @@ exports[`Creatable 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1090,7 +1090,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
       </u-option>
@@ -1100,7 +1100,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1115,7 +1115,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1130,7 +1130,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1145,7 +1145,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1160,7 +1160,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1175,7 +1175,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1190,7 +1190,7 @@ exports[`Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -1206,18 +1206,18 @@ exports[`Creatable 1`] = `
 
 exports[`Custom Filter Alt 1 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Skriv inn et tall mellom 1-6
   </label>
   <ds-suggestion>
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist9"
-      popovertarget=":u-datalist9"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist9"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1248,7 +1248,7 @@ exports[`Custom Filter Alt 1 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
       style="<removed>"
@@ -1262,7 +1262,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -1271,7 +1271,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -1281,7 +1281,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -1291,7 +1291,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -1301,7 +1301,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -1311,7 +1311,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -1321,7 +1321,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -1331,7 +1331,7 @@ exports[`Custom Filter Alt 1 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm
@@ -1343,18 +1343,18 @@ exports[`Custom Filter Alt 1 1`] = `
 
 exports[`Custom Filter Alt 2 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Skriv inn et tall mellom 1-6
   </label>
   <ds-suggestion>
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist10"
-      popovertarget=":u-datalist10"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist10"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1385,7 +1385,7 @@ exports[`Custom Filter Alt 2 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
       style="<removed>"
@@ -1399,7 +1399,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -1407,7 +1407,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -1416,7 +1416,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -1425,7 +1425,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -1434,7 +1434,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -1443,7 +1443,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -1452,7 +1452,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -1461,7 +1461,7 @@ exports[`Custom Filter Alt 2 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm
@@ -1473,7 +1473,7 @@ exports[`Custom Filter Alt 2 1`] = `
 
 exports[`Default Value 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg en destinasjon
   </label>
   <ds-suggestion>
@@ -1489,11 +1489,11 @@ exports[`Default Value 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist16"
-      popovertarget=":u-datalist16"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist16"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1524,7 +1524,7 @@ exports[`Default Value 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1538,7 +1538,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -1547,7 +1547,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -1556,7 +1556,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1566,7 +1566,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1576,7 +1576,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1586,7 +1586,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1596,7 +1596,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1606,7 +1606,7 @@ exports[`Default Value 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         disabled
         aria-hidden="true"
       >
@@ -1619,18 +1619,18 @@ exports[`Default Value 1`] = `
 
 exports[`Fetch External 1`] = `
 <ds-field lang="en">
-  <label for="<removed>">
+  <label for="<generated>">
     Search for countries (in english)
   </label>
   <ds-suggestion>
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist12"
-      popovertarget=":u-datalist12"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist12"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1661,7 +1661,7 @@ exports[`Fetch External 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Search for countries (in english)"
       style="<removed>"
@@ -1679,18 +1679,18 @@ exports[`In Details 1`] = `
   </summary>
   <div>
     <ds-field>
-      <label for="<removed>">
+      <label for="<generated>">
         Velg en destinasjon
       </label>
       <ds-suggestion autofocus>
         <input
           placeholder
           type="text"
-          id="<removed>"
-          list=":u-datalist17"
-          popovertarget=":u-datalist17"
+          id="<generated>"
+          list="<generated>"
+          popovertarget="<generated>"
           aria-autocomplete="list"
-          aria-controls=":u-datalist17"
+          aria-controls="<generated>"
           aria-expanded="true"
           autocomplete="off"
           enterkeyhint="done"
@@ -1721,7 +1721,7 @@ exports[`In Details 1`] = `
           data-sr-of="of"
           tabindex="-1"
           aria-multiselectable="false"
-          id="<removed>"
+          id="<generated>"
           data-is-floating="true"
           aria-label="Velg en destinasjon"
           style="<removed>"
@@ -1735,7 +1735,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="true"
           >
           </u-option>
@@ -1743,7 +1743,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Sogndal
@@ -1752,7 +1752,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Oslo
@@ -1761,7 +1761,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Brønnøysund
@@ -1770,7 +1770,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Stavanger
@@ -1779,7 +1779,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Trondheim
@@ -1788,7 +1788,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Bergen
@@ -1797,7 +1797,7 @@ exports[`In Details 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
             aria-hidden="false"
           >
             Lillestrøm
@@ -1811,19 +1811,19 @@ exports[`In Details 1`] = `
 
 exports[`Multiple 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg en destinasjon
   </label>
   <ds-suggestion data-multiple>
     <input
       placeholder
       type="text"
-      id="<removed>"
+      id="<generated>"
       aria-description="No selected"
-      list=":u-datalist13"
-      popovertarget=":u-datalist13"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist13"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -1854,7 +1854,7 @@ exports[`Multiple 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="true"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1868,7 +1868,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -1878,7 +1878,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -1892,7 +1892,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -1906,7 +1906,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -1920,7 +1920,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -1934,7 +1934,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -1948,7 +1948,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -1962,7 +1962,7 @@ exports[`Multiple 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm
@@ -1977,7 +1977,7 @@ exports[`Multiple 1`] = `
 
 exports[`Multiple Count 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg destinasjoner
   </label>
   <ds-suggestion
@@ -2005,12 +2005,12 @@ exports[`Multiple Count 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
+      id="<generated>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist15"
-      popovertarget=":u-datalist15"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist15"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -2041,7 +2041,7 @@ exports[`Multiple Count 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="true"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg destinasjoner"
       style="<removed>"
@@ -2055,7 +2055,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -2066,7 +2066,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -2081,7 +2081,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -2095,7 +2095,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -2109,7 +2109,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -2123,7 +2123,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -2137,7 +2137,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -2151,7 +2151,7 @@ exports[`Multiple Count 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm
@@ -2166,7 +2166,7 @@ exports[`Multiple Count 1`] = `
 
 exports[`Multiple Creatable 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg en destinasjon
   </label>
   <ds-suggestion
@@ -2194,12 +2194,12 @@ exports[`Multiple Creatable 1`] = `
     <input
       placeholder
       type="text"
-      id="<removed>"
+      id="<generated>"
       aria-description="Navigate left to find 2 selected"
-      list=":u-datalist14"
-      popovertarget=":u-datalist14"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist14"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -2231,7 +2231,7 @@ exports[`Multiple Creatable 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="true"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -2245,7 +2245,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="true"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
         selected
       >
@@ -2256,7 +2256,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2271,7 +2271,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2286,7 +2286,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2301,7 +2301,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2316,7 +2316,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2331,7 +2331,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2346,7 +2346,7 @@ exports[`Multiple Creatable 1`] = `
         role="option"
         aria-disabled="true"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
         disabled
       >
@@ -2362,18 +2362,18 @@ exports[`Multiple Creatable 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Velg en destinasjon
   </label>
   <ds-suggestion>
     <input
       placeholder
       type="text"
-      id="<removed>"
-      list=":u-datalist1"
-      popovertarget=":u-datalist1"
+      id="<generated>"
+      list="<generated>"
+      popovertarget="<generated>"
       aria-autocomplete="list"
-      aria-controls=":u-datalist1"
+      aria-controls="<generated>"
       aria-expanded="true"
       autocomplete="off"
       enterkeyhint="done"
@@ -2404,7 +2404,7 @@ exports[`Preview 1`] = `
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
-      id="<removed>"
+      id="<generated>"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -2418,7 +2418,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="true"
       >
       </u-option>
@@ -2428,7 +2428,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Sogndal
@@ -2442,7 +2442,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Oslo
@@ -2456,7 +2456,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Brønnøysund
@@ -2470,7 +2470,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Stavanger
@@ -2484,7 +2484,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Trondheim
@@ -2498,7 +2498,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Bergen
@@ -2512,7 +2512,7 @@ exports[`Preview 1`] = `
         role="option"
         aria-disabled="false"
         aria-selected="false"
-        id="<removed>"
+        id="<generated>"
         aria-hidden="false"
       >
         Lillestrøm

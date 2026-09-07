@@ -1,16 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checked 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="<generated>">
   <input
     role="switch"
     type="checkbox"
     checked
-    id="<removed>"
+    id="<generated>"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="<generated>"
   >
     En bryter
   </label>
@@ -18,22 +18,22 @@ exports[`Checked 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="controlled-switch">
     <input
       role="switch"
-      id="<removed>"
+      id="controlled-switch"
       type="checkbox"
       checked
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="controlled-switch"
     >
       Varsler
     </label>
@@ -41,39 +41,39 @@ exports[`Controlled 1`] = `
   <p>
     Velg hvilke typer varsler du ønsker å motta.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Lydvarsler
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
       checked
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Epostvarsler
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Popup-varsler
     </label>
@@ -82,23 +82,23 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Description 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="switch-with-description">
   <input
     role="switch"
-    id="<removed>"
+    id="switch-with-description"
     type="checkbox"
     checked
-    aria-describedby="<removed>"
+    aria-describedby="<generated>"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="switch-with-description"
   >
     Åpen prøve
   </label>
   <div
     data-field="description"
-    id="<removed>"
+    id="<generated>"
   >
     Prøven er åpen for alle som ønsker å delta.
   </div>
@@ -106,16 +106,16 @@ exports[`Description 1`] = `
 `;
 
 exports[`Disabled 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="disabled-switch">
   <input
     role="switch"
     disabled
-    id="<removed>"
+    id="disabled-switch"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="disabled-switch"
   >
     Disabled switch
   </label>
@@ -123,15 +123,15 @@ exports[`Disabled 1`] = `
 `;
 
 exports[`Focused 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="focused-switch">
   <input
     role="switch"
-    id="<removed>"
+    id="focused-switch"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="focused-switch"
   >
     En bryter
   </label>
@@ -139,70 +139,70 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Varsler
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       role="switch"
       type="checkbox"
       value="lydvarsler"
       checked
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Lydvarsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Spill av lyd når et varsel mottas.
     </div>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       role="switch"
       type="checkbox"
       value="popup-varsler"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Popup-varsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Vis popup-varsler på skjermen.
     </div>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       role="switch"
       type="checkbox"
       value="email-varsler"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       E-postvarsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Tillat e-postvarsler for viktige oppdateringer.
     </div>
@@ -211,46 +211,46 @@ exports[`Group 1`] = `
 `;
 
 exports[`Group End 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     <h2>
       Innstillinger
     </h2>
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Innstillinger som gjelder hele systemet.
   </p>
   <ds-field
     data-position="end"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       role="switch"
       type="checkbox"
       value="mork-modus"
       checked
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Mørk modus
     </label>
   </ds-field>
   <ds-field
     data-position="end"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       role="switch"
       type="checkbox"
       value="automatiske-oppdateringer"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Automatiske oppdateringer
     </label>
@@ -259,79 +259,79 @@ exports[`Group End 1`] = `
 `;
 
 exports[`Outline 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Varsler
   </legend>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       role="switch"
       type="checkbox"
       value="lydvarsler"
       checked
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Lydvarsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Spill av lyd når et varsel mottas.
     </div>
   </ds-field>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       role="switch"
       type="checkbox"
       value="popup-varsler"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Popup-varsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Vis popup-varsler på skjermen.
     </div>
   </ds-field>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       role="switch"
       type="checkbox"
       value="email-varsler"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       E-postvarsler
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Tillat e-postvarsler for viktige oppdateringer.
     </div>
@@ -340,15 +340,15 @@ exports[`Outline 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="<generated>">
   <input
     role="switch"
     type="checkbox"
-    id="<removed>"
+    id="<generated>"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="<generated>"
   >
     En bryter
   </label>
@@ -356,16 +356,16 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Read Only 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
+<ds-field data-clickdelegatefor="readonly-switch">
   <input
     role="switch"
     readonly
-    id="<removed>"
+    id="readonly-switch"
     type="checkbox"
   >
   <label
     data-weight="regular"
-    for="<removed>"
+    for="readonly-switch"
   >
     Read-only switch
   </label>
@@ -377,23 +377,23 @@ exports[`Switch In Color Context 1`] = `
   data-variant="tinted"
   data-color="accent"
 >
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="switch-in-color-context">
     <input
       role="switch"
-      id="<removed>"
+      id="switch-in-color-context"
       type="checkbox"
       checked
-      aria-describedby="<removed>"
+      aria-describedby="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="switch-in-color-context"
     >
       Radio
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>"
     >
       Description
     </div>

@@ -17,7 +17,7 @@ exports[`Controlled 1`] = `
   <form>
     <ds-suggestion>
       <input
-        id="<removed>"
+        id="search-input-controlled"
         aria-label="Søk"
         type="text"
         value
@@ -190,14 +190,14 @@ exports[`Variants 1`] = `
 
 exports[`With Label 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Søk i læreplaner
   </label>
   <ds-suggestion>
     <input
       type="text"
       name="cat-search"
-      id="<removed>"
+      id="<generated>"
     >
     <button
       data-variant="tertiary"

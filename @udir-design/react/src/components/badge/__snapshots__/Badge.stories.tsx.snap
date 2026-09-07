@@ -91,9 +91,9 @@ exports[`Custom Placement 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Meldinger
     </title>
     <path
@@ -129,9 +129,9 @@ exports[`Floating 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Meldinger
     </title>
     <path
@@ -157,9 +157,9 @@ exports[`Floating 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Meldinger
     </title>
     <path
@@ -185,9 +185,9 @@ exports[`Floating 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Meldinger
     </title>
     <path
@@ -213,9 +213,9 @@ exports[`Floating 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Meldinger
     </title>
     <path
@@ -307,9 +307,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="<removed>"
+        aria-labelledby="title-<generated>"
       >
-        <title id="<removed>">
+        <title id="title-<generated>">
           Innboks
         </title>
         <path
@@ -344,9 +344,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="<removed>"
+        aria-labelledby="title-<generated>"
       >
-        <title id="<removed>">
+        <title id="title-<generated>">
           Meldinger
         </title>
         <path
@@ -378,9 +378,9 @@ exports[`In Button 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-labelledby="<removed>"
+        aria-labelledby="title-<generated>"
       >
-        <title id="<removed>">
+        <title id="title-<generated>">
           Skru på video
         </title>
         <path
@@ -400,7 +400,7 @@ exports[`In Tabs 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_6_-value1"
+      aria-controls="<generated>-value1"
       aria-selected="true"
       data-value="value1"
       role="tab"
@@ -414,7 +414,7 @@ exports[`In Tabs 1`] = `
       </span>
     </ds-tab>
     <ds-tab
-      aria-controls="_r_6_-value2"
+      aria-controls="<generated>-value2"
       aria-selected="false"
       data-value="value2"
       role="tab"
@@ -428,7 +428,7 @@ exports[`In Tabs 1`] = `
       </span>
     </ds-tab>
     <ds-tab
-      aria-controls="_r_6_-value3"
+      aria-controls="<generated>-value3"
       aria-selected="false"
       data-value="value3"
       role="tab"
@@ -461,9 +461,9 @@ exports[`Status 1`] = `
     viewbox="0 0 24 24"
     focusable="false"
     role="img"
-    aria-labelledby="<removed>"
+    aria-labelledby="title-<generated>"
   >
-    <title id="<removed>">
+    <title id="title-<generated>">
       Lagre
     </title>
     <path

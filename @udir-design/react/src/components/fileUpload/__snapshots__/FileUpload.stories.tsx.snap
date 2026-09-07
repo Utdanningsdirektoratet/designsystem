@@ -313,14 +313,14 @@ exports[`Compact List 1`] = `
 exports[`Example Drop Zone 1`] = `
 <div>
   <label
-    id="<removed>"
-    for="<removed>"
+    id="<generated>-label"
+    for="<generated>-button"
   >
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="<removed>"
+    id="<generated>-description"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -330,9 +330,9 @@ exports[`Example Drop Zone 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       aria-label="Velg filer"
     >
       <svg
@@ -449,14 +449,14 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 </style>
 <div>
   <label
-    id="<removed>"
-    for="<removed>"
+    id="<generated>-label"
+    for="<generated>-button"
   >
     Last opp dokumentasjon
   </label>
   <div
     data-field="description"
-    id="<removed>"
+    id="<generated>-description"
   >
     Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
   </div>
@@ -466,9 +466,9 @@ exports[`Example Dropzone With Explicit Size 1`] = `
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       aria-label="Velg filer"
     >
       <svg
@@ -884,23 +884,23 @@ exports[`Example Trigger 1`] = `
 <div>
   <div>
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       aria-label="Velg fil"
     >
       <svg
@@ -1014,23 +1014,23 @@ exports[`Preview 1`] = `
 <div>
   <div data-size="md">
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Label
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Beskrivelse
     </div>
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       aria-label="Velg fil"
     >
       <svg
@@ -1056,14 +1056,14 @@ exports[`Preview 1`] = `
   </div>
   <div data-size="md">
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Label
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Beskrivelse
     </div>
@@ -1073,9 +1073,9 @@ exports[`Preview 1`] = `
       <button
         data-variant="secondary"
         type="button"
-        id="<removed>"
-        aria-labelledby="<removed>"
-        aria-describedby="<removed>"
+        id="<generated>-button"
+        aria-labelledby="<generated>-label"
+        aria-describedby="<generated>-description"
         aria-label="Velg fil"
       >
         <svg
@@ -1122,23 +1122,23 @@ exports[`Readonly 1`] = `
 <div>
   <div>
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Beskrivelse for Trigger
     </div>
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       disabled
       aria-label="Velg fil"
     >
@@ -1168,14 +1168,14 @@ exports[`Readonly 1`] = `
   </div>
   <div>
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Beskrivelse for Dropzone
     </div>
@@ -1203,14 +1203,14 @@ exports[`Too Many Files 1`] = `
 <div>
   <div style="<removed>">
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Last opp dokumentasjon
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Du kan kun laste opp 2 filer.
     </div>
@@ -1220,9 +1220,9 @@ exports[`Too Many Files 1`] = `
       <button
         data-variant="secondary"
         type="button"
-        id="<removed>"
-        aria-labelledby="<removed>"
-        aria-describedby="<removed>"
+        id="<generated>-button"
+        aria-labelledby="<generated>-label"
+        aria-describedby="<generated>-description"
         aria-label="Velg filer"
       >
         <svg
@@ -1482,23 +1482,23 @@ exports[`Upload 1`] = `
 <div>
   <div>
     <label
-      id="<removed>"
-      for="<removed>"
+      id="<generated>-label"
+      for="<generated>-button"
     >
       Last opp rapport
     </label>
     <div
       data-field="description"
-      id="<removed>"
+      id="<generated>-description"
     >
       Du kan legge ved 1 fil.
     </div>
     <button
       data-variant="secondary"
       type="button"
-      id="<removed>"
-      aria-labelledby="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>-button"
+      aria-labelledby="<generated>-label"
+      aria-describedby="<generated>-description"
       aria-label="Velg fil"
     >
       <svg
