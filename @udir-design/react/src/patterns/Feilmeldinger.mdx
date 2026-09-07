@@ -1,9 +1,170 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ErrorSummaryStories from '../components/errorSummary/ErrorSummary.stories';
+import * as FeilmeldingerStories from './Feilmeldinger.stories';
 
-<Meta title="patterns/Feilmeldinger" tags={['digdir']} />
+<Meta of={FeilmeldingerStories} />
 
 # Brukerutløste feilmeldinger
 
-Dette bruksmønsteret handler om brukerutløste feilmeldinger i selvbetjeningsløsninger og skjema. Hvordan kan vi unngå å gi feilmeldinger, og hvordan kan vi hjelpe brukerne å komme seg videre når det likevel har oppstått en feil?
+Feilmeldinger kan komme fra systemet eller være utløst av noe brukerne har gjort. Dette mønsteret handler om brukerutløste feilmeldinger i selvbetjeningsløsninger og skjema. Du finner informasjon om feil i systemet i [mønsteret om systemvarsler](/docs/patterns-systemvarsler--docs).
 
-Udir følger [bruksmønster for brukerutløste feilmeldinger i Digdirs designsystem](https://designsystemet.no/no/patterns/errors).
+Når brukerne har gjort en feil som hindrer dem i å komme videre, skal vi varsle dem om feilen slik at de kan rette den:
+
+- Beskriv problemet på en lettforståelig måte.
+- Forklar hva brukerne må gjøre for å komme videre.
+- Pass på at feilmeldingen er lett synlig.
+
+Feilmeldinger kan være knyttet til ett enkelt felt eller til flere felt. Vis en oppsummering hvis brukeren prøver å gå videre uten å ha fylt ut alt, eller hvis flere feil må rettes.
+
+### Feilmeldinger på enkeltfelt
+
+Alle typer skjemafelt skal kunne vise en feilmelding. Meldingen skal stå nær feltet som inneholder feilen.
+
+<Canvas of={FeilmeldingerStories.Enkeltfelt} />
+
+Bruk `error`-egenskapen på blant annet [`Textfield`](/docs/components-textfield--docs), [`Checkbox`](/docs/components-checkbox--docs), [`Radio`](/docs/components-radio--docs) og [`Switch`](/docs/components-switch--docs). Når du setter sammen et eget felt, kombinerer du [`Field`](/docs/components-field--docs) med [`ValidationMessage`](/docs/components-typography--docs#validationmessage).
+
+### Oppsummering av flere feilmeldinger
+
+En oppsummering kan gjelde én eller flere feil. Hvis brukerne prøver å gå videre uten å ha fylt ut alt, eller de har gjort feil, viser vi oppsummeringen like over Neste- eller Send inn-knappen.
+
+Vi anbefaler å vise oppsummeringen i nærheten av Neste-knappen for at brukerne skal forstå sammenhengen mellom feilen og hvorfor de blir hindret i å gå videre. I noen tilfeller kan det likevel være bedre å vise oppsummeringen i toppen, for eksempel hvis
+
+- den tekniske løsningen laster siden på nytt når brukeren velger Neste
+- brukeren har vært ute av et skjema og går inn igjen
+- løsningen lar brukeren gå til neste side selv om den nåværende siden inneholder feil
+
+Pass på at
+
+- oppsummeringen viser alle feilmeldingene som gjelder for siden eller trinnet
+- brukerne kan gå direkte til hvert felt, og at fokus flyttes til feltet
+- lenketeksten er den samme som feilmeldingen ved feltet
+- en feil forsvinner fra oppsummeringen når den er rettet
+- hver melding inneholder nøkkelord fra ledeteksten
+
+<Canvas of={ErrorSummaryStories.WithForm} />
+
+Les mer om oppbygning, fokus og plassering i dokumentasjonen for [`ErrorSummary`](/docs/components-errorsummary--docs).
+
+### Det er best å unngå feilmeldinger
+
+Målet bør være å hindre at feil oppstår. Ta hensyn til dette når du planlegger løsningen:
+
+- Gi all relevant informasjon før brukerne starter, i klart og tydelig språk.
+- Bruk ledetekster og beskrivelser for å hjelpe brukerne underveis.
+- Unngå å gjemme nødvendig hjelp bak et spørsmålstegn.
+- La brukerne endre svar og gå tilbake.
+- La brukerne ta en pause eller avbryte utfyllingen.
+- Godta naturlige variasjoner i formatering, for eksempel mellomrom i telefonnummer.
+- Sett svaralternativer i en rekkefølge som reduserer risikoen for feil valg.
+- Vis informasjon om maks antall tegn under ledeteksten hvis feltet har tegnbegrensning.
+
+### Ulike typer meldinger
+
+#### Systemgenererte meldinger
+
+Bruk [systemvarsler](/docs/patterns-systemvarsler--docs) for feil i systemet eller viktige hendelser brukerne må få med seg.
+
+#### Informasjon som følger av et valg
+
+Informasjon som vises på grunn av noe brukerne gjør, men som ikke hindrer dem i å gå videre, er ikke en feilmelding. Bruk for eksempel en [`Alert`](/docs/components-alert--docs) med typen `info` eller `success`.
+
+I en søknad om tilskudd kan dette være beskjed om at et valgt tiltak gir lengre behandlingstid, eller at en bestemt kostnad ikke inngår i beregningen. Vis informasjonen etter at brukeren har gjort valget som utløser den.
+
+## Språk
+
+### Skriv gode feilmeldinger
+
+Den viktigste jobben til en feilmelding er å hjelpe brukerne videre:
+
+- Skriv vennlig, klart og tydelig.
+- Hold meldingen så kort som mulig.
+- Vær konkret. «Feltet er ikke fylt ut korrekt» forklarer ikke hva som er feil.
+- Gjenta nøkkelord fra ledeteksten så tidlig som mulig.
+- Fortell hva brukeren må gjøre, ikke bare hva som gikk galt.
+
+Når feltnavnet settes inn som en variabel, kan det stå i ubestemt form:
+
+- «Organisasjonsnummer må ha 9 siffer»
+- «Søknadsbeløp må fylles ut»
+- «Velg minst ett satsingsområde»
+
+Hvis løsningen ikke setter inn feltnavnet som en variabel, anbefaler vi bestemt form: «Organisasjonsnummeret må ha 9 siffer.»
+
+## Design og opplevelse
+
+### Utseendet på feilmeldinger
+
+Når det oppstår feil i et felt er det viktig at feltet blir godt synlig, slik at det er lett for brukerne å se hvor de må fylle ut eller rette opp noe.
+
+Når den tekniske løsningen sjekker for feil, det vi kaller validerer, ønsker vi å vise hvilke felt som har feil. Til det kan vi bruke flere virkemidler.
+
+#### Visuelle endringer
+
+Vis teksten nær feltet. Udir-komponentene bruker et ikon som visuell indikator i tillegg til teksten, og fremhever feltet når komponenttypen støtter det.
+
+#### Fargevalg
+
+Vi bruker rød som varselfarge for feil, det vi si at feltet og selve feilmeldingen blir røde. Dette er et godt etablert mønster, som hjelper med å skille feltet fra andre felt. Feltets visuelle markering må ha minst 3:1 kontrast mot bakgrunnen. Feilmeldingstekst må ha minst 4,5:1 kontrast. Les mer om [kontrast hos Tilsynet for universell utforming av IKT](https://www.uutilsynet.no/veiledning/kontrast/48).
+
+#### Plassering
+
+Vis feilmeldingen under feltet med feil. Dette er mønsteret Udirs skjemakomponenter følger. Plasseringen må være konsekvent gjennom hele løsningen.
+
+### Når skal vi vise en feilmelding?
+
+Vis feilmeldinger når brukerne forlater et felt, prøver å gå videre eller sender inn. Unngå å vise feil mens de skriver.
+
+Når en verdi åpenbart har feil format, kan meldingen vises etter at brukeren forlater feltet. Det kan for eksempel være bokstaver i et organisasjonsnummer eller en e-postadresse uten krøllalfa.
+
+Ikke vis feil for et tomt obligatorisk felt før brukeren prøver å gå videre eller sende inn. Vi vet ikke om brukeren er ferdig bare fordi feltet mister fokus. Dette er spesielt viktig for brukere som navigerer med tastatur.
+
+### Kryssvalidering
+
+Noen valg påvirker kravene til andre felt. Et frivillig felt kan bli obligatorisk, eller en verdi kan måtte stå i et bestemt forhold til en annen verdi. Dette kaller vi kryssvalidering.
+
+Gjør sammenhengen tydelig:
+
+- Merk alle feltene som inngår i feilen visuelt og programmatisk.
+- Forklar hva som utløste feilen.
+- Fortell hva brukerne kan gjøre for å rette den.
+
+#### Feilmeldinger som gjelder flere felt
+
+I eksempelet må søkeren fylle ut minst én kontaktmåte. Hvis begge feltene er tomme når brukeren prøver å gå videre, markeres begge og én felles melding vises. Når ett felt er fylt ut, forsvinner gruppefeilen. En formatfeil vises bare ved feltet den gjelder.
+
+<Canvas of={FeilmeldingerStories.Kryssvalidering} />
+
+Hvis en feil som gjelder flere felt tas med i en [`ErrorSummary`](/docs/components-errorsummary--docs), skal lenken gå til det første feltet som inngår i feilen.
+
+## Kode
+
+### Feilmeldinger og tilgjengelighet
+
+Flere WCAG-kriterier gjelder for feilmeldinger:
+
+- [3.3.1 Identifikasjon av feil](https://www.uutilsynet.no/wcag-standarden/331-identifikasjon-av-feil-niva/116)
+- [3.3.3 Forslag ved feil](https://www.uutilsynet.no/wcag-standarden/333-forslag-ved-feil-niva-aa/118)
+- [1.4.3 Kontrast (minimum)](https://www.uutilsynet.no/wcag-standarden/143-kontrast-minimum-niva-aa/95)
+- [1.4.11 Kontrast for ikke-tekstlig innhold](https://www.uutilsynet.no/wcag-standarden/1411-kontrast-ikke-tekstlig-innhold-niva-aa/145)
+
+### Ikke deaktiver submit-knappen
+
+Ikke bruk en deaktivert Neste- eller Send inn-knapp for å validere skjemaet. En deaktivert knapp forklarer ikke hva som mangler. Den kan også være vanskelig å finne for brukere med nedsatt syn eller for dem som navigerer med tastatur.
+
+La brukerne aktivere knappen. Hvis noe mangler, viser du feilmeldinger ved feltene og en oppsummering over knappen.
+
+### HTML og ARIA
+
+For at alle brukere skal oppfatte feilmeldinger, er det viktig med et tydelig forhold mellom feilmeldingene og feltene de tilhører, også for dem som ser på innhold med ulike hjelpemidler.
+
+- Sett `aria-invalid="true"` på felt som inneholder feil.
+- Bruk `aria-describedby` for å koble feilmeldingen til feltet.
+
+Vi unngår foreløpig `aria-errormessage`, fordi støtten i hjelpemidler fortsatt varierer. Se [diskusjonen hos Digdir](https://github.com/digdir/designsystemet/discussions/1684).
+
+### Gi automatiske beskjeder
+
+Dynamiske meldinger må kunne oppfattes av skjermlesere. Bruk en live region når viktig informasjon dukker opp uten at fokus flyttes. I de fleste tilfeller passer `aria-live="polite"`, slik at opplesningen venter til skjermleseren er ferdig med pågående innhold.
+
+Ikke legg `ErrorSummary` i en live region. Komponenten flytter fokus til oppsummeringen når den settes inn, slik at endringen allerede formidles som en kontekstendring og brukeren kan navigere i lenkene.

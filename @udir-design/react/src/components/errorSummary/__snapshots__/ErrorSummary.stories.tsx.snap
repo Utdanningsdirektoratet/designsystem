@@ -81,6 +81,7 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="fornavn"
       type="text"
+      value
       aria-describedby="<generated>"
     >
   </div>
@@ -100,6 +101,7 @@ exports[`With Form 1`] = `
       aria-invalid="true"
       id="telefon"
       type="tel"
+      value="Abc"
       aria-describedby="<generated>"
     >
   </div>
