@@ -39,7 +39,7 @@ import { Suggestion } from '@udir-design/react/alpha';
 </Suggestion>;
 ```
 
-`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen har `aria-label="Valg"` som standard. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
+`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Angi en annen `aria-label` dersom standardteksten ikke beskriver innholdet i listen.
 
 ## Eksempler
 
@@ -92,6 +92,8 @@ Den er inspirert av [open-ui sitt combobox mønster](https://open-ui.org/compone
 
 Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
 
+Du kan angi tekstene eksplisitt med `aria-label` på `Suggestion.Clear` og `Suggestion.Toggle`, og med `singular` og `plural` på `Suggestion.List`.
+
 Følgende tekstvariabler er tilgjengelige for overstyring:
 
 <CssLanguageVariables
@@ -99,5 +101,9 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--dsc-suggestion-count-label',
     '--dsc-suggestion-create-text',
     '--dsc-suggestion-empty-text',
+    '--udsc-suggestion-clear-label',
+    '--udsc-suggestion-toggle-label',
+    '--udsc-suggestion-list-singular',
+    '--udsc-suggestion-list-plural',
   ]}
 />

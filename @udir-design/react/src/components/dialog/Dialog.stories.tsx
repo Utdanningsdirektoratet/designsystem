@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Checkbox } from '../checkbox/Checkbox';
@@ -129,6 +130,18 @@ export const Preview = meta.story({
       await expect(dialog).not.toHaveAttribute('open');
     });
     await userEvent.click(button);
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'],
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-dialog'),
+      ['--udsc-dialog-close-label'],
+    );
   },
 });
 

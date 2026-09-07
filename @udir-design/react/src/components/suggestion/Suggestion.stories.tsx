@@ -760,6 +760,10 @@ export const Translations = Preview.extend({
         '--dsc-suggestion-count-label',
         '--dsc-suggestion-create-text',
         '--dsc-suggestion-empty-text',
+        '--udsc-suggestion-clear-label',
+        '--udsc-suggestion-toggle-label',
+        '--udsc-suggestion-list-singular',
+        '--udsc-suggestion-list-plural',
       ],
     );
   },
