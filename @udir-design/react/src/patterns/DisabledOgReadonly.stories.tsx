@@ -150,8 +150,9 @@ export const VisFeilmeldinger = meta.story({
 });
 
 /**
- * For knapper: bruk `loading` med `aria-disabled` i stedet for `disabled`
- * mens noe lastes eller lagres. Da beholder knappen fokus og er synlig for hjelpemidler.
+ * For knapper: bruk `loading` i stedet for `disabled` mens noe lastes eller lagres.
+ * Da beholder knappen fokus og er synlig for hjelpemidler. `loading` setter
+ * `aria-busy`, men stopper ikke `onClick`, så handlingen må hindres i koden.
  */
 export const BrukLoadingForKnapper = meta.story({
   name: 'Bruk loading for knapper',
@@ -162,6 +163,7 @@ export const BrukLoadingForKnapper = meta.story({
     const [isLoading, setIsLoading] = useState(false);
 
     const handleClick = () => {
+      if (isLoading) return;
       args.onClick?.();
       setIsLoading(true);
       setTimeout(() => setIsLoading(false), 2000);

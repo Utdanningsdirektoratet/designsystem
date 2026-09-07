@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-imports */
+/* oxlint-disable no-restricted-imports */
 import Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
 import { getHighchartsTheme } from '@udir-design/react/beta/utilities';

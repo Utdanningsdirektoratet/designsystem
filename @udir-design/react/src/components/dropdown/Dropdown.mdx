@@ -91,9 +91,15 @@ Det er innebygd tilgjengelighet i `Dropdown.Trigger` med `aria-expanded={true/fa
 
 ### Tastatur
 
-På grunn av forskjellige bruksmønstre for `Dropdown` har vi ikke innebygd tastaturhåndtering. Dersom du lager en meny må du selv implementere tastaturhåndtering for å navigere i menyen. Se ["Menu and Menubar Pattern" hos w3c](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/).
+Uten ekstra oppsett kan fokuserbare elementer i `Dropdown.List` navigeres med <kbd>Tab</kbd>, og `Dropdown` lukkes med <kbd>Esc</kbd>.
 
-Dersom du bruker `Dropdown` uten å gjøre noe selv, vil fokuserbare elementer i `Dropdown.List` kunne navigeres med tabulator-tasten, og du kan lukke `Dropdown` med Escape-tasten.
+### Piltastnavigasjon
+
+Vil du at brukerne skal kunne flytte seg mellom elementene med piltastene, og at hele listen skal være ett tab-stopp, setter du [`focusgroup`](/docs/utilities-focusgroup--docs) på `Dropdown.List`. Bruk verdien `menu` når innholdet er en meny med handlinger.
+
+<Canvas of={DropdownStories.ArrowKeyNavigation} />
+
+Merk at verdien du oppgir også bestemmer hvilke ARIA-roller som blir satt på listen og elementene i den. Bruk derfor `menu` bare når innholdet faktisk er en meny.
 
 ## Kompatibilitet
 

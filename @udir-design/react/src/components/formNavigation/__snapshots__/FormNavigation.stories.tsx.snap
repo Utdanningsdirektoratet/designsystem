@@ -733,13 +733,13 @@ exports[`Full 1`] = `
         <dialog
           data-placement="center"
           data-modal="true"
-          id="<removed>"
+          id="<generated>"
           closedby="any"
           style="<removed>"
         >
           <button
             data-icon="true"
-            commandfor="_r_1_"
+            commandfor="<generated>"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -838,12 +838,12 @@ exports[`Full 1`] = `
       </h2>
       <form>
         <ds-field>
-          <label for="<removed>">
+          <label for="q1">
             Første spørsmål
           </label>
           <div>
             <input
-              id="<removed>"
+              id="q1"
               autocomplete="off"
               type="text"
               name="q1"
@@ -851,12 +851,12 @@ exports[`Full 1`] = `
           </div>
         </ds-field>
         <ds-field>
-          <label for="<removed>">
+          <label for="q2">
             Andre spørsmål
           </label>
           <div>
             <input
-              id="<removed>"
+              id="q2"
               autocomplete="off"
               type="text"
               name="q2"
@@ -1053,12 +1053,12 @@ exports[`Simple Navigation 1`] = `
       </h2>
       <form>
         <ds-field>
-          <label for="<removed>">
+          <label for="step1">
             Steg 1
           </label>
           <div>
             <input
-              id="<removed>"
+              id="step1"
               autocomplete="off"
               type="text"
               name="step1"

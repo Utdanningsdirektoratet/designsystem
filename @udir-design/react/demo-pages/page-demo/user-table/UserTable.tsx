@@ -41,7 +41,7 @@ export function UserTable() {
           </Popover.TriggerContext>
         </div>
         <Search className={styles.tableSearch}>
-          <Search.Input aria-label="Søk" autoComplete="off" />
+          <Search.Input aria-label="Søk" type="text" autoComplete="off" />
           <Search.Clear />
           <Search.Button />
         </Search>

@@ -19,45 +19,45 @@ exports[`Bruk loading for knapper 1`] = `
 
 exports[`Fjern feltet 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="navn">
     Fullt navn
   </label>
   <div>
     <input
-      id="<removed>"
+      id="navn"
       type="text"
     >
   </div>
 </ds-field>
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Skal du registrere en bedrift?
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="nei"
       checked
       name="bedrift"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Nei
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="ja"
       name="bedrift"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Ja
     </label>
@@ -66,43 +66,43 @@ exports[`Fjern feltet 1`] = `
 `;
 
 exports[`Merk feltet med tekst 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Velg hvilke informasjonskapsler du godtar
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
       checked
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Nødvendige (kan ikke velges bort)
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Funksjonelle
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="checkbox"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Statistiske
     </label>
@@ -112,24 +112,24 @@ exports[`Merk feltet med tekst 1`] = `
 
 exports[`Vis feilmeldinger 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="navn-feil">
     Fullt navn
   </label>
   <div>
     <input
-      id="<removed>"
+      id="navn-feil"
       type="text"
       value
     >
   </div>
 </ds-field>
 <ds-field>
-  <label for="<removed>">
+  <label for="epost-feil">
     E-postadresse
   </label>
   <div>
     <input
-      id="<removed>"
+      id="epost-feil"
       type="email"
       value
     >
@@ -161,12 +161,12 @@ exports[`Vis informasjon som ren tekst 1`] = `
   </p>
 </div>
 <ds-field>
-  <label for="<removed>">
+  <label for="telefon">
     Telefonnummer
   </label>
   <div>
     <input
-      id="<removed>"
+      id="telefon"
       type="text"
     >
   </div>

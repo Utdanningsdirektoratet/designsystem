@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="utilities/focusgroup" />
+
+# focusgroup
+
+Dette er et attributt du kan sette på et element for å gi de fokuserbare barna piltastnavigasjon, ett tab-stopp og hukommelse for hvilket element som sist hadde fokus. Dette er nyttig når du for eksempel lager en verktøylinje eller en meny, der brukerne forventer å kunne flytte seg mellom valgene med piltastene.
+
+Verdien er en liste med tokens atskilt av mellomrom. Den må inneholde ett token som beskriver oppførselen: `toolbar`, `tablist`, `radiogroup`, `listbox`, `menu` eller `menubar`. Merk at dette tokenet også bestemmer hvilke ARIA-roller som blir satt på gruppen og elementene i den.
+
+I tillegg kan du bruke `inline`, `block`, `wrap`, `nowrap` og `nomemory` for å overstyre oppførselen som følger av rollen, for eksempel `focusgroup="menu inline nowrap"`.
+
+Setter du `focusgroup="none"` på et element inne i gruppen, deles gruppen i to atskilte deler der.
+
+Attributtet er en del av biblioteket `@digdir/designsystemet-web`, som automatisk er tilgjengelig når du bruker `@udir-design/react`. `focusgroup` er foreløpig bare støttet i nyere Chrome, men biblioteket legger automatisk til en polyfill slik at oppførselen fungerer i alle nettlesere.
+
+Bruker du TypeScript, får du typer for `focusgroup` og `focusgroupstart` ved å legge til `@udir-design/react/html` i `types` i `tsconfig.json`. Se [Kom i gang som utvikler](/docs/introduksjon-kom-i-gang-som-utvikler--docs).
+
+[Se dokumentasjon på designsystemet.no](https://designsystemet.no/no/components/utilities/focusgroup).

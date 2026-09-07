@@ -48,7 +48,7 @@ export const LogoSymbol = forwardRef<HTMLDivElement, LogoSymbolProps>(
           } as React.CSSProperties
         }
       >
-        {/* eslint-disable jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
+        {/* oxlint-disable jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
         <img
           src={variant === 'pride' ? symbolPrideLogoLight : symbolLogoLight}
           alt={logoAlt}
@@ -59,7 +59,7 @@ export const LogoSymbol = forwardRef<HTMLDivElement, LogoSymbolProps>(
           alt={logoAlt}
           role="img"
         />
-        {/* eslint-enable jsx-a11y/no-redundant-roles */}
+        {/* oxlint-enable jsx-a11y/no-redundant-roles */}
       </div>
     );
   },

@@ -1,5 +1,6 @@
 import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 import * as BreadcrumbsStories from './Breadcrumbs.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={BreadcrumbsStories} />
 
@@ -42,9 +43,9 @@ Vi bruker `Breadcrumbs` til å hjelpe brukerne å forstå hvor de er i en hierar
 
 ## Eksempler
 
-### Sti eller tilbake-knapp basert på skjermstørrelse
+### Tilpass visningen etter skjermbredden
 
-Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil en tilbake-knapp vises på skjermer smalere enn 650px, og en sti vises ellers. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
+Hvis du legger både en `Breadcrumbs.Link` og en `Breadcrumbs.List` direkte i `Breadcrumbs`, vises bare lenken til nærmeste overordnede nivå på skjermer smalere enn 650px. På bredere skjermer vises hele stien. Dette er ofte den beste løsningen fordi den gir god plass og brukervennlighet på alle skjermer.
 
 <Canvas of={BreadcrumbsStories.Preview} />
 
@@ -54,9 +55,9 @@ Hvis du legger en `Breadcrumbs.List` direkte i `Breadcrumbs`, vil denne vises so
 
 <Canvas of={BreadcrumbsStories.ListOnly} />
 
-### Kun tilbake-knapp
+### Vis bare nærmeste nivå
 
-Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vil denne lenken vises som en tilbake-knapp. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten tilbake-knapp eller sti.
+Hvis du legger en `Breadcrumbs.Link` direkte i `Breadcrumbs`, vises bare denne lenken til nærmeste overordnede side. Dette kan for eksempel benyttes for å spare plass. Det er viktig at du er konsistent i din løsning og bruker enten denne varianten eller hele stien.
 
 <Canvas of={BreadcrumbsStories.BackOnly} />
 
@@ -87,3 +88,13 @@ Den siste lenken skal tilsvare den nåværende siden. Den ser ut som vanlig teks
 Pass på at det ikke ligger andre interaktive elementer for nær `Breadcrumbs`, og at det ikke er noen skjulte elementer som kan forstyrre navigasjonen.
 
 Sørg for at [`SkipLink`](/docs/components-skiplink--docs) hopper over `Breadcrumbs`, slik at tastaturnavigerende brukere slipper å tabbe seg gjennom hvert punkt før de når hovedinnholdet på siden.
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Teksten brukes som `aria-label` på `Breadcrumbs`, og gjelder bare når du ikke sender inn `aria-label` selv.
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables variables={['--dsc-breadcrumbs-label']} />

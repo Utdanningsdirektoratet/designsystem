@@ -1,20 +1,21 @@
 /* Translations are defined outside component class so users can easily add translations */
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --udsc-fieldNecessity-required-text: 'Må fylles ut';
   --udsc-fieldNecessity-optional-text: 'Valgfritt';
   --udsc-fieldNecessity-all-required-text: 'Alle felt må fylles ut';
   --udsc-fieldNecessity-all-optional-text: 'Alle felt er valgfri';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --udsc-fieldNecessity-required-text: 'Må fyllast ut';
   --udsc-fieldNecessity-optional-text: 'Valfritt';
   --udsc-fieldNecessity-all-required-text: 'Alle felt må fyllast ut';
   --udsc-fieldNecessity-all-optional-text: 'Alle felt er valfri';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-fieldNecessity-required-text: 'Required';
   --udsc-fieldNecessity-optional-text: 'Optional';
   --udsc-fieldNecessity-all-required-text: 'All fields are required';
@@ -112,11 +113,11 @@
 
     /* All fields are required */
     &:has(:is(input, textarea):required, [aria-required='true']):not(
-      :has(
-        :is(input, textarea):optional:not([aria-required='true']),
-        [aria-required='false']
-      )
-    ) {
+        :has(
+          :is(input, textarea):optional:not([aria-required='true']),
+          [aria-required='false']
+        )
+      ) {
       .uds-field-necessity-summary,
       &:not(:has(.uds-field-necessity-summary))::before {
         --dsc-tag-background: var(--ds-color-warning-surface-tinted);
@@ -135,8 +136,8 @@
 
     /* All fields are optional */
     &:has(:optional:not([aria-required='true']), [aria-required='false']):not(
-      :has(:required, [aria-required='true'])
-    ) {
+        :has(:required, [aria-required='true'])
+      ) {
       .uds-field-necessity-summary,
       &:not(:has(.uds-field-necessity-summary))::before {
         --dsc-tag-background: var(--ds-color-info-surface-tinted);

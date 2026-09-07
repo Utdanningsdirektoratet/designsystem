@@ -65,6 +65,8 @@ En `<label>` skal alltid være knyttet til et skjemaelement for å sikre god til
 
 Meldinger skal plasseres nær feltet de gjelder, slik at både visuelle brukere og brukere av hjelpemidler enkelt forstår sammenhengen. [Se mønsteret for feilmeldinger](/docs/patterns-feilmeldinger--docs) for mer informasjon om god praksis ved bruk av valideringsmeldinger.
 
+Når `ValidationMessage` brukes i en [`Field`](/docs/components-field--docs), kobles meldingen automatisk til feltet med `aria-describedby`. Feltet får `aria-invalid="true"` når meldingen har `data-color="danger"` eller ikke har en angitt farge. Andre farger kobler fortsatt meldingen til feltet, men markerer ikke feltet som ugyldig.
+
 <Canvas of={ValidationMessageStories.Preview} />
 <Controls of={ValidationMessageStories.Preview} />
 

@@ -2,7 +2,7 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="affix">
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -10,7 +10,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="<removed>"
+      id="affix"
       size="12"
       autocomplete="off"
       type="text"
@@ -24,21 +24,21 @@ exports[`Affix 1`] = `
 
 exports[`Counter 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="counter">
     Legg til en beskrivelse
   </label>
   <textarea
     rows="4"
-    id="<removed>"
+    id="counter"
     autocomplete="off"
-    aria-describedby="<removed>"
+    aria-describedby="<generated>"
     style="<removed>"
   >
   </textarea>
   <p
     data-field="counter"
     data-limit="75"
-    id="<removed>"
+    id="<generated>"
     data-label="75 tegn igjen"
     data-state="under"
   >
@@ -48,11 +48,11 @@ exports[`Counter 1`] = `
 
 exports[`Format 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="format">
     Fødselsnummer
   </label>
   <input
-    id="<removed>"
+    id="format"
     inputmode="numeric"
     autocomplete="off"
     type="text"
@@ -72,27 +72,27 @@ exports[`Position 1`] = `
   <div>
     <ds-field
       data-position="end"
-      data-clickdelegatefor="<removed>"
+      data-clickdelegatefor="airplane"
     >
-      <label for="<removed>">
+      <label for="airplane">
         Flymodus
       </label>
       <input
         role="switch"
-        id="<removed>"
+        id="airplane"
         type="checkbox"
       >
     </ds-field>
     <ds-field
       data-position="end"
-      data-clickdelegatefor="<removed>"
+      data-clickdelegatefor="sounds"
     >
-      <label for="<removed>">
+      <label for="sounds">
         Lydløs
       </label>
       <input
         role="switch"
-        id="<removed>"
+        id="sounds"
         type="checkbox"
       >
     </ds-field>
@@ -102,26 +102,26 @@ exports[`Position 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="preview">
     E-post
   </label>
   <div
     data-field="description"
-    id="<removed>"
+    id="<generated>"
   >
     E-posten din brukes til å logge inn og motta varsler
   </div>
   <input
-    id="<removed>"
+    id="preview"
     autocomplete="email"
     aria-invalid="true"
     type="text"
     value="ola nordmann@udir.no"
-    aria-describedby="<removed>"
+    aria-describedby="<generated> <generated>"
   >
   <p
     data-field="validation"
-    id="<removed>"
+    id="<generated>"
   >
     Du må oppgi en gyldig e-postadresse
   </p>

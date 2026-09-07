@@ -254,6 +254,7 @@ export const Button = meta.story({
           <Search>
             <Search.Input
               aria-label="søk"
+              type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />

@@ -53,11 +53,38 @@ Dersom du ønsker å begrense antall filer implementeres dette selv. Om brukeren
 
 ### Vedlegg
 
-Delkomponenten `FileUpload.Item` brukes til å vise status for filer som er lastet opp. Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Teksten under filnavnet kan settes med `description`, for eksempel til en kort beskrivelse av filen. Hvis `description` ikke er satt, vises filstørrelsen automatisk. Du kan skjule teksten helt ved å sette `description` til `null`.
+Filer som er lastet opp vises med `FileUpload.List` og én `FileUpload.Item` per fil. `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange filer som er lastet opp og hvor i lista brukeren befinner seg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
+
+```tsx
+<FileUpload.List>
+  {files.map((file, index) => (
+    <FileUpload.Item
+      key={index}
+      file={file}
+      onRemove={() => removeFile(file)}
+    />
+  ))}
+</FileUpload.List>
+```
 
 Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
 
+Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`. Du kan fjerne filstørrelsen ved å sette `description` til `null`.
+
+Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
+
 <Canvas of={FileUploadStories.ExampleItems} />
+
+### Visningsvarianter
+
+`FileUpload.List` har to visninger, som du velger med `variant`:
+
+- `default` viser hver fil som sitt eget kort.
+- `compact` samler filene i ett kort, med linjer mellom hver fil. Denne visningen egner seg godt når mange filer skal vises.
+
+Visningene støtter det samme, så du kan bytte mellom dem uten å endre på `FileUpload.Item`.
+
+<Canvas of={FileUploadStories.CompactList} />
 
 ### Tilstand for lasting
 

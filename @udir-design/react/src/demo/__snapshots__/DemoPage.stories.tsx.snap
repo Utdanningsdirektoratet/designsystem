@@ -35,103 +35,103 @@ exports[`Page Story 1`] = `
       </li>
     </ol>
   </ds-breadcrumbs>
-  <div id="<removed>">
+  <div id="main-content">
     <div>
-      <fieldset aria-labelledby="<removed>">
-        <legend id="<removed>">
+      <fieldset aria-labelledby="<generated>">
+        <legend id="<generated>">
           Handleliste
         </legend>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="potet">
           <input
-            id="<removed>"
+            id="potet"
             type="checkbox"
             value="potet"
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="potet"
           >
             En kilo poteter
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="farris">
           <input
-            id="<removed>"
+            id="farris"
             type="checkbox"
             value="farris"
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="farris"
           >
             To liter Farris
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="blomkol">
           <input
-            id="<removed>"
+            id="blomkol"
             type="checkbox"
             value="blomkol"
             checked
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="blomkol"
           >
             Blomkål
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="pizza">
           <input
-            id="<removed>"
+            id="pizza"
             type="checkbox"
             value="pizza"
             checked
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="pizza"
           >
             Pizza
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="melk">
           <input
-            id="<removed>"
+            id="melk"
             type="checkbox"
             value="melk"
             checked
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="melk"
           >
             Tre liter lettmelk
           </label>
         </ds-field>
         <hr aria-hidden="true">
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="smagodt">
           <input
-            id="<removed>"
+            id="smagodt"
             type="checkbox"
             value="smagodt"
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="smagodt"
           >
             2kg smågodt
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="smash">
           <input
-            id="<removed>"
+            id="smash"
             type="checkbox"
             value="smash"
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="smash"
           >
             10 poser med Smash
           </label>
@@ -143,12 +143,12 @@ exports[`Page Story 1`] = `
         Opprett ny bruker
       </h2>
       <ds-field>
-        <label for="<removed>">
+        <label for="name">
           Navn
         </label>
         <div>
           <input
-            id="<removed>"
+            id="name"
             placeholder="Ola Normann"
             autocomplete="name"
             type="text"
@@ -156,12 +156,12 @@ exports[`Page Story 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label for="<removed>">
+        <label for="email">
           E-post
         </label>
         <div>
           <input
-            id="<removed>"
+            id="email"
             placeholder="ola@norge.no"
             autocomplete="email"
             type="email"
@@ -268,7 +268,7 @@ exports[`Page Story 1`] = `
               </path>
             </g>
             <defs>
-              <clipPath id="<removed>">
+              <clipPath id="SikkerhetFill_svg__a">
                 <path
                   fill="#fff"
                   d="M0 0h35.881v42H0z"
@@ -473,12 +473,12 @@ exports[`Page Story 1`] = `
           </select>
           <button
             type="button"
-            popovertarget="_r_3_"
+            popovertarget="<generated>"
           >
             Utfør
           </button>
           <div
-            id="<removed>"
+            id="<generated>"
             popover="manual"
             data-placement="top"
           >
@@ -500,24 +500,25 @@ exports[`Page Story 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <ds-suggestion>
           <input
-            placeholder
             aria-label="Søk"
             autocomplete="off"
-            type="search"
+            type="text"
           >
           <button
-            data-icon="true"
             data-variant="tertiary"
             type="reset"
             aria-label="Tøm"
+            aria-hidden="false"
+            hidden
+            tabindex="-1"
           >
           </button>
           <button type="submit">
             Søk
           </button>
-        </div>
+        </ds-suggestion>
       </div>
       <div>
         <table>

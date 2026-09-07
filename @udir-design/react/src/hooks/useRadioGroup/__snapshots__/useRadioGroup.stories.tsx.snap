@@ -7,65 +7,65 @@ exports[`Controlled 1`] = `
           gap: var(--ds-size-2);
         }
 </style>
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Utdanningsnivå
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Velg det høyeste utdanningsnivået du har fullført.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="kindergarten"
-      name="_r_7_"
-      id="<removed>"
+      name="<generated>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Barnehage
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="primary"
-      name="_r_7_"
-      id="<removed>"
+      name="<generated>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Grunnskole
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="secondary"
-      name="_r_7_"
-      id="<removed>"
+      name="<generated>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Videregående
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="higher"
-      name="_r_7_"
-      id="<removed>"
+      name="<generated>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       Høyere utdanning
     </label>
@@ -94,48 +94,48 @@ exports[`Controlled 1`] = `
 `;
 
 exports[`Default 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="10-20"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="21-45"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="46-80"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
@@ -143,61 +143,61 @@ exports[`Default 1`] = `
   <p
     data-field="validation"
     hidden
-    id="<removed>"
+    id="<generated>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Disabled 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       value="10-20"
       name="my-disabled"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       value="21-45"
       name="my-disabled"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       value="46-80"
       name="my-disabled"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
@@ -205,58 +205,58 @@ exports[`Disabled 1`] = `
   <p
     data-field="validation"
     hidden
-    id="<removed>"
+    id="<generated>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Group 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="10-20"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="21-45"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       value="46-80"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
@@ -264,67 +264,67 @@ exports[`Group 1`] = `
   <p
     data-field="validation"
     hidden
-    id="<removed>"
+    id="<generated>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Outline 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       type="radio"
       value="10-20"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       type="radio"
       value="21-45"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
   <ds-field
     data-variant="outline"
-    data-clickdelegatefor="<removed>"
+    data-clickdelegatefor="<generated>"
   >
     <input
       type="radio"
       value="46-80"
       name="my-group"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
@@ -332,61 +332,61 @@ exports[`Outline 1`] = `
   <p
     data-field="validation"
     hidden
-    id="<removed>"
+    id="<generated>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`Read Only 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       value="10-20"
       name="my-readonly"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       value="21-45"
       name="my-readonly"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       value="46-80"
       name="my-readonly"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
@@ -394,71 +394,71 @@ exports[`Read Only 1`] = `
   <p
     data-field="validation"
     hidden
-    id="<removed>"
+    id="<generated>"
   >
   </p>
 </fieldset>
 `;
 
 exports[`With Error 1`] = `
-<fieldset aria-labelledby="<removed>">
-  <legend id="<removed>">
+<fieldset aria-labelledby="<generated> <generated>">
+  <legend id="<generated>">
     Velg din aldersgruppe
   </legend>
-  <p id="<removed>">
+  <p id="<generated>">
     Informasjonen blir brukt til å tilpasse innholdet på siden.
   </p>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
-      aria-describedby="<removed>"
+      aria-describedby="<generated> <generated>"
       aria-invalid="true"
       type="radio"
       value="10-20"
       name="my-error"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       10-20 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
-      aria-describedby="<removed>"
+      aria-describedby="<generated> <generated>"
       aria-invalid="true"
       type="radio"
       value="21-45"
       name="my-error"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       21-45 år
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
-      aria-describedby="<removed>"
+      aria-describedby="<generated> <generated>"
       aria-invalid="true"
       type="radio"
       value="46-80"
       name="my-error"
-      id="<removed>"
+      id="<generated>"
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="<generated>"
     >
       46-80 år
     </label>
   </ds-field>
   <p
     data-field="validation"
-    id="<removed>"
+    id="<generated>"
   >
     Du må velge en aldersgruppe
   </p>

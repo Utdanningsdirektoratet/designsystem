@@ -1,6 +1,7 @@
 import { type InputEvent, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { Button } from 'src/components/button';
 import { Details } from 'src/components/details';
 import { Divider } from 'src/components/divider';
@@ -21,6 +22,7 @@ import { SuggestionEmpty } from './docs/FakeSuggestionEmpty';
 import { SuggestionInput } from './docs/FakeSuggestionInput';
 import { SuggestionList } from './docs/FakeSuggestionList';
 import { SuggestionOption } from './docs/FakeSuggestionOption';
+import { SuggestionToggle } from './docs/FakeSuggestionToggle';
 
 const meta = preview.meta({
   component: FakeSuggestion,
@@ -30,6 +32,7 @@ const meta = preview.meta({
     'Suggestion.Input': SuggestionInput,
     'Suggestion.List': SuggestionList,
     'Suggestion.Option': SuggestionOption,
+    'Suggestion.Toggle': SuggestionToggle,
   },
   tags: ['digdir'],
   parameters: {
@@ -58,6 +61,14 @@ const meta = preview.meta({
             id: 'aria-allowed-role',
             matches: (element) => !(element instanceof HTMLInputElement),
           },
+          /* The option for creating a new value gets its accessible name from
+           * `--dsc-suggestion-create-text`. Axe doesn't take generated content
+           * into account when computing accessible names but the name is
+           * present in the accessibility tree, so this is a false positive. */
+          {
+            id: 'aria-toggle-field-name',
+            matches: (element) => !element.matches('u-option[data-create]'),
+          },
         ],
       },
     },
@@ -72,9 +83,45 @@ const meta = preview.meta({
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */
   const input = await waitFor(() => within(el).getByRole('combobox'));
-  /* When in test mode, open suggestion by focusing input */
-  await userEvent.click(input);
+  const toggle = within(el).queryByRole('button', { name: 'Valg' });
+
+  if (toggle) {
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await userEvent.click(toggle);
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  } else {
+    /* When in test mode, open suggestion by focusing input */
+    await userEvent.click(input);
+  }
 }
+
+/**
+ * Types a value that doesn't match any option, leaving the option for creating
+ * a new value as the only one in the list
+ */
+async function typeUnknownValue(el: HTMLElement, value: string) {
+  const input = await waitFor(() => within(el).getByRole('combobox'));
+  await userEvent.clear(input);
+  await userEvent.type(input, value);
+
+  /* Chips for selected values also have `role="option"`, and options that
+   * don't match the input are `aria-hidden`, so the option to create a new
+   * value is the only `u-option` left in the a11y tree */
+  const options = within(el)
+    .getAllByRole('option')
+    .filter((option) => option.matches('u-option'));
+  await expect(options).toHaveLength(1);
+
+  return { input, createOption: options[0] };
+}
+
+const getChipValues = (el: HTMLElement) =>
+  waitFor(() =>
+    within(el)
+      .getAllByLabelText('Press to remove', { exact: false })
+      .filter((chip) => chip instanceof HTMLDataElement)
+      .map((chip) => chip.value),
+  );
 
 const DATA_PLACES = [
   'Sogndal',
@@ -113,9 +160,10 @@ export const Preview = meta.story({
         <Label>Velg en destinasjon</Label>
         <Suggestion {...args}>
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -125,6 +173,64 @@ export const Preview = meta.story({
           </Suggestion.List>
         </Suggestion>
       </Field>
+    );
+  },
+});
+
+export const Creatable = Preview.extend({
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Typing an unknown value shows the option to add it',
+      async () => {
+        const { createOption } = await typeUnknownValue(
+          canvasElement,
+          'Finnes ikke',
+        );
+
+        await expect(createOption).toHaveAttribute(
+          'data-create',
+          'Legg til «Finnes ikke»',
+        );
+      },
+    );
+  },
+});
+
+/* Regression test only, so it leaves the list closed and is kept out of Chromatic.
+   Creatable itself has to end with the list open to snapshot the create option. */
+export const CreatableSelectionSurvivesBlur = Creatable.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Selecting an existing option after a substring search survives blur',
+      async () => {
+        const input = await waitFor(() =>
+          within(canvasElement).getByRole('combobox'),
+        );
+        await userEvent.click(input);
+        await userEvent.type(input, 'slo');
+
+        const oslo = await waitFor(() => {
+          const option = within(canvasElement)
+            .getAllByRole('option')
+            .find((o) => (o as HTMLOptionElement).value === 'Oslo');
+          if (!option) throw new Error('Oslo option not found');
+          return option;
+        });
+
+        await userEvent.click(oslo);
+        await waitFor(() => expect(input).toHaveValue('Oslo'));
+
+        /* Up to digdir 1.18 the input was reset to the typed query on blur, and
+           onSelectedChange fired again with the query as both label and value. */
+        await userEvent.click(document.body);
+        await waitFor(() =>
+          expect(input).toHaveAttribute('aria-expanded', 'false'),
+        );
+        await expect(input).toHaveValue('Oslo');
+      },
     );
   },
 });
@@ -143,9 +249,10 @@ export const ControlledSingle = meta.story({
             onSelectedChange={(item) => setValue(item?.value ?? '')}
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -196,6 +303,28 @@ export const ControlledSingle = meta.story({
   },
 });
 
+export const ControlledSingleCreatable = ControlledSingle.extend({
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step('Created value becomes the controlled selection', async () => {
+      const { input, createOption } = await typeUnknownValue(
+        canvasElement,
+        'Finnes ikke',
+      );
+      await userEvent.click(createOption);
+
+      const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+        exact: false,
+      });
+      await expect(resultText).toHaveTextContent('Finnes ikke');
+      await waitFor(() => expect(input).toHaveValue('Finnes ikke'));
+    });
+  },
+});
+
 export const ControlledMultiple = meta.story({
   render: (args) => {
     const [value, setValue] = useState<string[]>(['Oslo']);
@@ -212,9 +341,10 @@ export const ControlledMultiple = meta.story({
             }
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PLACES.map((place) => (
                 <Suggestion.Option key={place} label={place} value={place}>
                   {place}
@@ -241,13 +371,6 @@ export const ControlledMultiple = meta.story({
     );
   },
   play: async ({ canvasElement, step }) => {
-    const getChipValues = async () =>
-      waitFor(() =>
-        within(canvasElement)
-          .getAllByLabelText('Press to remove', { exact: false })
-          .filter((el) => el instanceof HTMLDataElement)
-          .map((x) => x.value),
-      );
     const resultText = within(canvasElement).getByText('Valgte reisemål:', {
       exact: false,
     });
@@ -258,17 +381,46 @@ export const ControlledMultiple = meta.story({
 
     await step('Initial state is rendered correctly', async () => {
       await expect(resultText).toHaveTextContent('Oslo');
-      await expect(await getChipValues()).toContain('Oslo');
+      await expect(await getChipValues(canvasElement)).toContain('Oslo');
     });
 
     await step('Controlled state change renders correctly', async () => {
       await userEvent.click(button);
       await expect(resultText).toHaveTextContent('Sogndal');
       await expect(resultText).toHaveTextContent('Stavanger');
-      const chipValues = await getChipValues();
+      const chipValues = await getChipValues(canvasElement);
       await expect(chipValues).toContain('Sogndal');
       await expect(chipValues).toContain('Stavanger');
     });
+  },
+});
+
+export const ControlledMultipleCreatable = ControlledMultiple.extend({
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Created value is added to the controlled selection',
+      async () => {
+        const { createOption } = await typeUnknownValue(
+          canvasElement,
+          'Finnes ikke',
+        );
+        await userEvent.click(createOption);
+
+        const resultText = within(canvasElement).getByText('Valgte reisemål:', {
+          exact: false,
+        });
+        await expect(resultText).toHaveTextContent('Oslo');
+        await expect(resultText).toHaveTextContent('Finnes ikke');
+        await expect(await getChipValues(canvasElement)).toEqual([
+          'Oslo',
+          'Finnes ikke',
+        ]);
+      },
+    );
   },
 });
 
@@ -287,9 +439,10 @@ export const ControlledIndependentLabelValue = meta.story({
             filter={false}
           >
             <Suggestion.Input />
+            <Suggestion.Toggle />
             <Suggestion.Clear />
             <Suggestion.List>
-              <Suggestion.Empty>Tomt</Suggestion.Empty>
+              <Suggestion.Empty />
               {DATA_PEOPLE.map(({ label, value }) => (
                 <Suggestion.Option key={value} label={label} value={value}>
                   {label}
@@ -338,9 +491,10 @@ export const CustomFilterAlt1 = meta.story({
           }
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((label) => (
               <Suggestion.Option key={label} value={label.toLowerCase()}>
                 {label}
@@ -373,9 +527,10 @@ export const CustomFilterAlt2 = meta.story({
           <Suggestion.Input
             onInput={({ currentTarget }) => setValue(currentTarget.value)}
           />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.filter(
               (_, index) => !value || index === Number(value) - 1,
             ).map((label) => (
@@ -411,9 +566,10 @@ export const AlwaysShowAll = meta.story({
           onSelectedChange={(item) => setValue(item?.value)}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -440,11 +596,18 @@ export const FetchExternal = meta.story({
     };
 
     const apiCall = async (value: string) => {
-      const api = `https://restcountries.com/v2/name/${value}?fields=name`;
-      const countries = await (await fetch(api)).json();
-      setOptions(
-        Array.isArray(countries) ? countries.map(({ name }) => name) : [],
-      );
+      try {
+        const api = `https://api.first.org/data/v1/countries?q=${value}&limit=10`;
+        const response = await fetch(api);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const { data } = (await response.json()) as {
+          data: Record<string, { country: string }>;
+        };
+        setOptions(Object.values(data).map(({ country }) => country));
+      } catch {
+        setOptions([]);
+      }
     };
 
     const debounced = useDebounceCallback(apiCall, 500);
@@ -454,6 +617,7 @@ export const FetchExternal = meta.story({
         <Label>Search for countries (in english)</Label>
         <Suggestion {...args} filter={false}>
           <Suggestion.Input onInput={handleInput} />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List singular="%d country" plural="%d countries">
             {value ? (
@@ -488,6 +652,24 @@ export const FetchExternal = meta.story({
 
 export const Multiple = Preview.extend({ args: { multiple: true } });
 
+export const MultipleCreatable = Multiple.extend({
+  args: { creatable: true },
+  play: async ({ canvasElement, step }) => {
+    await step('Several values can be created in a row', async () => {
+      const first = await typeUnknownValue(canvasElement, 'Finnes ikke');
+      await userEvent.click(first.createOption);
+
+      const second = await typeUnknownValue(canvasElement, 'Heller ikke');
+      await userEvent.click(second.createOption);
+
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Finnes ikke',
+        'Heller ikke',
+      ]);
+    });
+  },
+});
+
 export const MultipleCount = meta.story({
   render(args) {
     return (
@@ -500,9 +682,10 @@ export const MultipleCount = meta.story({
           defaultSelected={['Oslo', 'Sogndal']}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -526,9 +709,10 @@ export const DefaultValue = meta.story({
           defaultSelected={'Sogndal'}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place}>{place}</Suggestion.Option>
             ))}
@@ -549,9 +733,10 @@ export const InDetails = meta.story({
             <Label>Velg en destinasjon</Label>
             <Suggestion {...args} autoFocus>
               <Suggestion.Input />
+              <Suggestion.Toggle />
               <Suggestion.Clear />
               <Suggestion.List>
-                <Suggestion.Empty>Tomt</Suggestion.Empty>
+                <Suggestion.Empty />
                 {DATA_PLACES.map((place) => (
                   <Suggestion.Option key={place}>{place}</Suggestion.Option>
                 ))}
@@ -560,6 +745,22 @@ export const InDetails = meta.story({
           </Field>
         </Details.Content>
       </Details>
+    );
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-suggestion'),
+      [
+        '--dsc-suggestion-count-label',
+        '--dsc-suggestion-create-text',
+        '--dsc-suggestion-empty-text',
+      ],
     );
   },
 });

@@ -3,7 +3,7 @@
 exports[`Form Page 2 1`] = `
 <div
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div>
@@ -92,13 +92,13 @@ exports[`Form Page 2 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
-      id="<removed>"
+      id="<generated>"
       closedby="any"
       style="<removed>"
     >
       <button
         data-icon="true"
-        commandfor="_r_6_"
+        commandfor="<generated>"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -182,14 +182,14 @@ exports[`Form Page 2 1`] = `
       <div>
       </div>
       <ds-field>
-        <label for="<removed>">
+        <label for="projectTitle">
           <span>
             Tittel på prosjektet
           </span>
         </label>
         <div>
           <input
-            id="<removed>"
+            id="projectTitle"
             autocomplete="off"
             required
             type="text"
@@ -198,14 +198,14 @@ exports[`Form Page 2 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label for="<removed>">
+        <label for="projectDescription">
           <span>
             Beskrivelse av prosjektet
           </span>
         </label>
         <div>
           <textarea
-            id="<removed>"
+            id="projectDescription"
             rows="4"
             name="projectDescription"
             autocomplete="off"
@@ -216,21 +216,21 @@ exports[`Form Page 2 1`] = `
         </div>
       </ds-field>
       <fieldset
-        id="<removed>"
+        id="projectCategory"
         tabindex="-1"
-        aria-labelledby="<removed>"
+        aria-labelledby="<generated> <generated>"
       >
-        <legend id="<removed>">
+        <legend id="<generated>">
           <span>
             Kategori
           </span>
         </legend>
-        <p id="<removed>">
+        <p id="<generated>">
           Hvilken kategori hører prosjektet til?
         </p>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="radio-learning">
           <input
-            id="<removed>"
+            id="radio-learning"
             required
             type="radio"
             value="Learning"
@@ -238,16 +238,16 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="radio-learning"
           >
             <span>
               Opplæring
             </span>
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="radio-social">
           <input
-            id="<removed>"
+            id="radio-social"
             required
             type="radio"
             value="social"
@@ -255,16 +255,16 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="radio-social"
           >
             <span>
               Sosialt
             </span>
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="radio-activity">
           <input
-            id="<removed>"
+            id="radio-activity"
             required
             type="radio"
             value="activity"
@@ -272,7 +272,7 @@ exports[`Form Page 2 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="radio-activity"
           >
             <span>
               Aktivitet
@@ -289,27 +289,27 @@ exports[`Form Page 2 1`] = `
         </details>
       </fieldset>
       <ds-field>
-        <label for="<removed>">
+        <label for="county">
           <span>
             Gjennomføringssted
           </span>
         </label>
         <div
           data-field="description"
-          id="<removed>"
+          id="<generated>"
         >
           Hvilket fylke vil prosjektet gjennomføres i?
         </div>
         <ds-suggestion>
           <input
-            placeholder=" "
+            placeholder
             autocomplete="off"
-            id="<removed>"
+            id="county"
             required
             type="text"
-            aria-describedby="<removed>"
-            list=":u-datalist1"
-            popovertarget=":u-datalist1"
+            aria-describedby="<generated>"
+            list="<generated>"
+            popovertarget="<generated>"
           >
           <button
             aria-label="Tøm"
@@ -329,16 +329,28 @@ exports[`Form Page 2 1`] = `
             hidden
             tabindex="-1"
             aria-multiselectable="false"
-            id="<removed>"
+            id="<generated>"
             data-is-floating="true"
           >
+            <u-option
+              data-empty
+              hidden
+              label
+              value
+              role="option"
+              aria-disabled="false"
+              aria-selected="false"
+              id="<generated>"
+            >
+              Ingen resultater
+            </u-option>
             <u-option
               label="Agder"
               value="Agder"
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Agder
             </u-option>
@@ -348,7 +360,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Akershus
             </u-option>
@@ -358,7 +370,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Buskerud
             </u-option>
@@ -368,7 +380,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Finnmark
             </u-option>
@@ -378,7 +390,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Innlandet
             </u-option>
@@ -388,7 +400,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Møre og Romsdal
             </u-option>
@@ -398,7 +410,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Nordland
             </u-option>
@@ -408,7 +420,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Oslo
             </u-option>
@@ -418,7 +430,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Rogaland
             </u-option>
@@ -428,7 +440,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Telemark
             </u-option>
@@ -438,7 +450,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Troms
             </u-option>
@@ -448,7 +460,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Trøndelag
             </u-option>
@@ -458,7 +470,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Vestfold
             </u-option>
@@ -468,7 +480,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Vestland
             </u-option>
@@ -478,7 +490,7 @@ exports[`Form Page 2 1`] = `
               role="option"
               aria-disabled="false"
               aria-selected="false"
-              id="<removed>"
+              id="<generated>"
             >
               Østfold
             </u-option>
@@ -486,30 +498,30 @@ exports[`Form Page 2 1`] = `
           <select
             name="county"
             hidden
-            id="<removed>"
+            id="<generated>"
           >
           </select>
         </ds-suggestion>
       </ds-field>
       <ds-field>
-        <label for="<removed>">
+        <label for="ageGroup">
           <span>
             Aldersgruppe
           </span>
         </label>
         <div
           data-field="description"
-          id="<removed>"
+          id="<generated>"
         >
           Hvilken aldersgruppe er prosjektet rettet mot?
         </div>
         <select
           aria-readonly="false"
-          id="<removed>"
+          id="ageGroup"
           name="ageGroup"
           autocomplete="off"
           required
-          aria-describedby="<removed>"
+          aria-describedby="<generated>"
         >
           <option
             value="blank"
@@ -583,7 +595,7 @@ exports[`Form Page 2 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
         style="<removed>"
       >
         <div>
@@ -633,7 +645,7 @@ exports[`Form Page 2 1`] = `
 exports[`Form Page 3 1`] = `
 <div
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div>
@@ -722,13 +734,13 @@ exports[`Form Page 3 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
-      id="<removed>"
+      id="<generated>"
       closedby="any"
       style="<removed>"
     >
       <button
         data-icon="true"
-        commandfor="_r_d_"
+        commandfor="<generated>"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -813,8 +825,8 @@ exports[`Form Page 3 1`] = `
       </div>
       <div>
         <label
-          id="<removed>"
-          for="<removed>"
+          id="<generated>-label"
+          for="<generated>-button"
         >
           <span>
             Last opp dokumentasjon
@@ -822,7 +834,7 @@ exports[`Form Page 3 1`] = `
         </label>
         <div
           data-field="description"
-          id="<removed>"
+          id="<generated>-description"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
@@ -832,9 +844,9 @@ exports[`Form Page 3 1`] = `
           <button
             data-variant="secondary"
             type="button"
-            id="<removed>"
-            aria-labelledby="<removed>"
-            aria-describedby="<removed>"
+            id="<generated>-button"
+            aria-labelledby="<generated>-label"
+            aria-describedby="<generated>-description"
             aria-label="Velg filer"
           >
             <svg
@@ -862,27 +874,27 @@ exports[`Form Page 3 1`] = `
           multiple
           tabindex="-1"
           required
-          id="<removed>"
+          id="dokumentasjon-dropzone"
           type="file"
           style="<removed>"
         >
       </div>
       <ds-field>
-        <label for="<removed>">
+        <label for="addition">
           <span>
             Kommentarer til dokumentasjon
           </span>
         </label>
         <div
           data-field="description"
-          id="<removed>"
+          id="<generated>"
         >
           Ytterlige kommentarer til dokumentasjonen du har lastet opp.
         </div>
         <textarea
-          id="<removed>"
+          id="addition"
           name="addition"
-          aria-describedby="<removed>"
+          aria-describedby="<generated>"
           style="<removed>"
         >
         </textarea>
@@ -938,7 +950,7 @@ exports[`Form Page 3 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
         style="<removed>"
       >
         <div>
@@ -988,7 +1000,7 @@ exports[`Form Page 3 1`] = `
 exports[`Form Page 4 1`] = `
 <div
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div>
@@ -1077,13 +1089,13 @@ exports[`Form Page 4 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
-      id="<removed>"
+      id="<generated>"
       closedby="any"
       style="<removed>"
     >
       <button
         data-icon="true"
-        commandfor="_r_m_"
+        commandfor="<generated>"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1219,7 +1231,7 @@ exports[`Form Page 4 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
         style="<removed>"
       >
         <div>
@@ -1269,7 +1281,7 @@ exports[`Form Page 4 1`] = `
 exports[`Form Page 5 1`] = `
 <div
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div>
@@ -1358,13 +1370,13 @@ exports[`Form Page 5 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
-      id="<removed>"
+      id="<generated>"
       closedby="any"
       style="<removed>"
     >
       <button
         data-icon="true"
-        commandfor="_r_s_"
+        commandfor="<generated>"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1458,7 +1470,7 @@ exports[`Form Page 5 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
         style="<removed>"
       >
         <div>
@@ -1508,7 +1520,7 @@ exports[`Form Page 5 1`] = `
 exports[`Form Story 1`] = `
 <div
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div>
@@ -1597,13 +1609,13 @@ exports[`Form Story 1`] = `
     <dialog
       data-placement="center"
       data-modal="true"
-      id="<removed>"
+      id="<generated>"
       closedby="any"
       style="<removed>"
     >
       <button
         data-icon="true"
-        commandfor="_r_1_"
+        commandfor="<generated>"
         data-variant="tertiary"
         type="button"
         aria-label="Lukk dialogvindu"
@@ -1687,14 +1699,14 @@ exports[`Form Story 1`] = `
       <div>
       </div>
       <ds-field>
-        <label for="<removed>">
+        <label for="firstName">
           <span>
             Fornavn
           </span>
         </label>
         <div>
           <input
-            id="<removed>"
+            id="firstName"
             autocomplete="given-name"
             required
             type="text"
@@ -1703,13 +1715,13 @@ exports[`Form Story 1`] = `
         </div>
       </ds-field>
       <ds-field>
-        <label for="<removed>">
+        <label for="lastName">
           <span>
             Etternavn
           </span>
         </label>
         <input
-          id="<removed>"
+          id="lastName"
           required
           autocomplete="family-name"
           type="text"
@@ -1717,21 +1729,21 @@ exports[`Form Story 1`] = `
         >
       </ds-field>
       <fieldset
-        id="<removed>"
+        id="contactMethods"
         tabindex="-1"
-        aria-labelledby="<removed>"
+        aria-labelledby="<generated> <generated>"
       >
-        <legend id="<removed>">
+        <legend id="<generated>">
           <span>
             Hvordan ønsker du at vi skal kontakte deg?
           </span>
         </legend>
-        <p id="<removed>">
+        <p id="<generated>">
           Velg ett eller flere alternativer
         </p>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="contactMethodsEmail">
           <input
-            id="<removed>"
+            id="contactMethodsEmail"
             required
             type="checkbox"
             value="epost"
@@ -1739,16 +1751,16 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="contactMethodsEmail"
           >
             <span>
               E-post
             </span>
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="contactMethodsTelefon">
           <input
-            id="<removed>"
+            id="contactMethodsTelefon"
             required
             type="checkbox"
             value="telefon"
@@ -1756,16 +1768,16 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="contactMethodsTelefon"
           >
             <span>
               Telefon
             </span>
           </label>
         </ds-field>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="contactMethodsSms">
           <input
-            id="<removed>"
+            id="contactMethodsSms"
             required
             type="checkbox"
             value="sms"
@@ -1773,7 +1785,7 @@ exports[`Form Story 1`] = `
           >
           <label
             data-weight="regular"
-            for="<removed>"
+            for="contactMethodsSms"
           >
             <span>
               SMS
@@ -1809,7 +1821,7 @@ exports[`Form Story 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
         style="<removed>"
       >
         <div>

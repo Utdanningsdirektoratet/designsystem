@@ -261,7 +261,7 @@ export const FormDemo = ({
             Testsøknad
           </Heading>
           <FieldNecessity variant="outline" asChild>
-            {/* eslint-disable-next-line react/react-compiler --
+            {/* oxlint-disable-next-line react/refs --
                 False positive with react-hook-form: handleSubmit(onSubmit)
                 returns a submit event handler that only invokes onSubmit on
                 actual form submission, not during render. The compiler cannot

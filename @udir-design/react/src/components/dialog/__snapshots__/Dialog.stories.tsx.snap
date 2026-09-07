@@ -11,13 +11,13 @@ exports[`Backdrop Closedby Any 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   closedby="any"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_5_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -52,7 +52,7 @@ exports[`Custom Close Button 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="custom-close-button-dialog"
   open
 >
   <button
@@ -88,13 +88,13 @@ exports[`Dialog Non Modal 1`] = `
 }
 </style>
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Besvarelse
   </label>
   <textarea
     rows="8"
     autocomplete="off"
-    id="<removed>"
+    id="<generated>"
     style="<removed>"
   >
   </textarea>
@@ -108,12 +108,12 @@ exports[`Dialog Non Modal 1`] = `
 <dialog
   data-placement="center"
   data-modal="false"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_b_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -163,7 +163,7 @@ exports[`Dialog With Form 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="dialog-with-form"
   closedby="any"
   open
 >
@@ -182,7 +182,7 @@ exports[`Dialog With Form 1`] = `
       Skjemainnsending
     </h2>
     <ds-field>
-      <label for="<removed>">
+      <label for="<generated>">
         Navn
       </label>
       <div>
@@ -191,7 +191,7 @@ exports[`Dialog With Form 1`] = `
           autocomplete="name"
           type="text"
           value
-          id="<removed>"
+          id="<generated>"
         >
       </div>
     </ds-field>
@@ -232,12 +232,12 @@ exports[`Dialog With Max Width 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_8_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -266,12 +266,12 @@ exports[`Dialog With Open Prop 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_3_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -323,12 +323,12 @@ exports[`Dialog With Suggestion 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_9_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -343,16 +343,16 @@ exports[`Dialog With Suggestion 1`] = `
   </div>
   <div>
     <ds-field>
-      <label for="<removed>">
+      <label for="<generated>">
         Velg en kommune
       </label>
       <ds-suggestion>
         <input
-          placeholder=" "
+          placeholder
           type="text"
-          id="<removed>"
-          list=":u-datalist1"
-          popovertarget=":u-datalist1"
+          id="<generated>"
+          list="<generated>"
+          popovertarget="<generated>"
         >
         <button
           aria-label="Tøm"
@@ -372,16 +372,28 @@ exports[`Dialog With Suggestion 1`] = `
           hidden
           tabindex="-1"
           aria-multiselectable="false"
-          id="<removed>"
+          id="<generated>"
           data-is-floating="true"
         >
+          <u-option
+            data-empty
+            hidden
+            label
+            value
+            role="option"
+            aria-disabled="false"
+            aria-selected="false"
+            id="<generated>"
+          >
+            Tomt
+          </u-option>
           <u-option
             label="Sogndal"
             value="Sogndal"
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Sogndal
             <div>
@@ -394,7 +406,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Oslo
             <div>
@@ -407,7 +419,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Brønnøysund
             <div>
@@ -420,7 +432,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Stavanger
             <div>
@@ -433,7 +445,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Trondheim
             <div>
@@ -446,7 +458,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Bergen
             <div>
@@ -459,7 +471,7 @@ exports[`Dialog With Suggestion 1`] = `
             role="option"
             aria-disabled="false"
             aria-selected="false"
-            id="<removed>"
+            id="<generated>"
           >
             Lillestrøm
             <div>
@@ -502,90 +514,90 @@ exports[`Drawer 1`] = `
 }
 </style>
 <div>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="modal-checkbox">
     <input
-      id="<removed>"
+      id="modal-checkbox"
       type="checkbox"
       checked
     >
     <label
       data-weight="regular"
-      for="<removed>"
+      for="modal-checkbox"
     >
       Modal
     </label>
   </ds-field>
-  <fieldset aria-labelledby="<removed>">
-    <legend id="<removed>">
+  <fieldset aria-labelledby="<generated>">
+    <legend id="<generated>">
       Velg plassering for dialogen
     </legend>
     <div>
-      <ds-field data-clickdelegatefor="<removed>">
+      <ds-field data-clickdelegatefor="center-radio">
         <input
-          id="<removed>"
+          id="center-radio"
           type="radio"
           value="center"
           name="drawer"
         >
         <label
           data-weight="regular"
-          for="<removed>"
+          for="center-radio"
         >
           Midten
         </label>
       </ds-field>
-      <ds-field data-clickdelegatefor="<removed>">
+      <ds-field data-clickdelegatefor="top-radio">
         <input
-          id="<removed>"
+          id="top-radio"
           type="radio"
           value="top"
           name="drawer"
         >
         <label
           data-weight="regular"
-          for="<removed>"
+          for="top-radio"
         >
           Topp
         </label>
       </ds-field>
-      <ds-field data-clickdelegatefor="<removed>">
+      <ds-field data-clickdelegatefor="bottom-radio">
         <input
-          id="<removed>"
+          id="bottom-radio"
           type="radio"
           value="bottom"
           name="drawer"
         >
         <label
           data-weight="regular"
-          for="<removed>"
+          for="bottom-radio"
         >
           Bunn
         </label>
       </ds-field>
-      <ds-field data-clickdelegatefor="<removed>">
+      <ds-field data-clickdelegatefor="left-radio">
         <input
-          id="<removed>"
+          id="left-radio"
           type="radio"
           value="left"
           name="drawer"
         >
         <label
           data-weight="regular"
-          for="<removed>"
+          for="left-radio"
         >
           Venstre
         </label>
       </ds-field>
-      <ds-field data-clickdelegatefor="<removed>">
+      <ds-field data-clickdelegatefor="right-radio">
         <input
-          id="<removed>"
+          id="right-radio"
           type="radio"
           value="right"
           name="drawer"
         >
         <label
           data-weight="regular"
-          for="<removed>"
+          for="right-radio"
         >
           Høyre
         </label>
@@ -601,13 +613,13 @@ exports[`Drawer 1`] = `
   <dialog
     data-placement="bottom"
     data-modal="true"
-    id="<removed>"
+    id="<generated>"
     closedby="any"
     open
   >
     <button
       data-icon="true"
-      commandfor="_r_c_"
+      commandfor="<generated>"
       data-variant="tertiary"
       type="button"
       aria-label="Lukk dialogvindu"
@@ -642,13 +654,13 @@ exports[`Preview 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   closedby="any"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_0_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -680,12 +692,12 @@ exports[`With Header And Footer 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_6_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -728,12 +740,12 @@ exports[`Without Dialog Trigger Context 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="<generated>"
   open
 >
   <button
     data-icon="true"
-    commandfor="_r_1_"
+    commandfor="<generated>"
     data-variant="tertiary"
     type="button"
     aria-label="Lukk dialogvindu"
@@ -780,7 +792,7 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
 <dialog
   data-placement="center"
   data-modal="true"
-  id="<removed>"
+  id="dialog-with-command"
   open
 >
   <button

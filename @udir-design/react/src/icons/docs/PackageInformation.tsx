@@ -45,6 +45,7 @@ function MyComponent () {
         </div>
       </div>
       <ToggleGroup
+        aria-label="Velg kodeformat"
         data-size="sm"
         variant="secondary"
         value={codeType}

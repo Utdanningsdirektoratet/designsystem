@@ -45,10 +45,7 @@ exports[`List Only 1`] = `
 `;
 
 exports[`Long Items 1`] = `
-<ds-breadcrumbs
-  role="navigation"
-  aria-label="Du er her:"
->
+<ds-breadcrumbs role="navigation">
   <a
     href="#"
     aria-label="Tilbake til helsesertifikat for sjømat"
@@ -167,10 +164,7 @@ exports[`Placement With Header 1`] = `
   </div>
 </header>
 <div>
-  <ds-breadcrumbs
-    role="navigation"
-    aria-label="Du er her:"
-  >
+  <ds-breadcrumbs role="navigation">
     <a
       href="#"
       aria-label="Tilbake til Utdanningsløpet"

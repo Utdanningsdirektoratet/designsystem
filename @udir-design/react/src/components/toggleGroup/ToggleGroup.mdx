@@ -23,17 +23,21 @@ Med `ToggleGroup` kan brukerne velge mellom alternativer som påvirker innholdet
 <Canvas of={ToggleGroupStories.Preview} withToolbar />
 <Controls of={ToggleGroupStories.Preview} />
 
+`ToggleGroup` må ha en ledetekst som forteller hva valgene gjelder. Du oppgir den med `aria-label`, eller med `aria-labelledby` dersom teksten allerede finnes synlig på siden.
+
 Plasser helst innholdet som styres av `ToggleGroup` rett etter komponenten i DOM-en. Hvis dette ikke er mulig, bør du bruke `aria-controls` på `ToggleGroup` for å knytte den til containeren med innholdet som endrer seg.
 
 ```tsx
 import { ToggleGroup } from '@udir-design/react';
 
-<ToggleGroup defaultValue="value1">
+<ToggleGroup aria-label="Visning" defaultValue="value1">
   <ToggleGroup.Item value="value1">Option 1</ToggleGroup.Item>
   <ToggleGroup.Item value="value2">Option 2</ToggleGroup.Item>
   <ToggleGroup.Item value="value3">Option 3</ToggleGroup.Item>
 </ToggleGroup>;
 ```
+
+Eksempelet under [Bare tekst](#bare-tekst) viser hvordan du bruker `aria-labelledby` mot en `Fieldset.Legend`.
 
 ## Varianter av ToggleGroup
 
@@ -96,7 +100,7 @@ Ha gjerne med en ledetekst som forklarer hva valgene gjelder. Skriv tydelige tek
 ## Tilgjengelighet
 
 `ToggleGroup` har standard fokusindikator med ramme.
-Komponenten bruker [roving tabindex](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets#managing_focus_inside_groups) for å håndtere fokusbevegelse mellom knappene. I praksis gjør dette at <kbd>Tab</kbd> flytter fokus til den aktive knappen, eller videre ut av `ToggleGroup`, mens piltastene flytter fokus mellom knappene i gruppen.
+Komponenten bruker `focusgroup` for å håndtere fokusbevegelse mellom knappene. Siden `focusgroup` ikke har bred innebygd nettleserstøtte, leveres oppførselen med en polyfill. I praksis gjør dette at <kbd>Tab</kbd> flytter fokus til den aktive knappen, eller videre ut av `ToggleGroup`, mens piltastene flytter fokus mellom knappene i gruppen.
 
 `ToggleGroup` brytes ikke over flere linjer. For mange valg eller lange tekster kan det føre til at deler av komponenten havner utenfor den synlige rammen. Kontroller derfor at alle valg fortsatt er synlige og brukbare ved smal viewport eller høy zoom uten horisontal scrolling.
 

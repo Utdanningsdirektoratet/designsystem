@@ -1,6 +1,12 @@
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
-import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
 import type { FormNavigationState } from './FormNavigation';
 import '@u-elements/u-details/polyfill';
 import { STEP_STATE_ATTRIBUTE } from './FormNavigationStep';
@@ -33,11 +39,11 @@ export const FormNavigationGroup = forwardRef<
   // Ensure we can use a ref internally and also expose it to consumers
   useImperativeHandle(ref, () => innerRef.current as HTMLDetailsElement);
 
-  const setActiveStepLabel = (label?: string | null) => {
+  const setActiveStepLabel = useCallback((label?: string | null) => {
     if (label) {
       innerRef.current?.setAttribute(ACTIVE_STEP_ATTRIBUTE, label);
     }
-  };
+  }, []);
 
   useEffect(() => {
     // Automatically set the current active step as data-active-step-label
@@ -66,7 +72,7 @@ export const FormNavigationGroup = forwardRef<
         observer.disconnect();
       };
     }
-  }, []);
+  }, [setActiveStepLabel]);
 
   return (
     <details

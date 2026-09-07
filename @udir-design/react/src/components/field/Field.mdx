@@ -1,6 +1,7 @@
 import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
 
 import * as FieldStories from './Field.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={FieldStories} />
 
@@ -61,3 +62,15 @@ Bruk `position="end"` når du ønsker å plassere [`Input`](/docs/components-inp
 ## Tilgjengelighet
 
 `Field` hjelper deg med å strukturere skjemafelt på en tilgjengelig og konsistent måte. Komponenten kobler automatisk sammen [`Label`](/docs/components-typography--docs#label), `Field.Description`, [`ValidationMessage`](/docs/components-typography--docs#validationmessage) og `Field.Counter` med det tilhørende feltet via riktige ARIA-attributter.
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Tekstene brukes av `Field.Counter`, hvor `%d` blir erstattet med antall tegn.
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables
+  variables={['--dsc-field-counter-over', '--dsc-field-counter-under']}
+/>

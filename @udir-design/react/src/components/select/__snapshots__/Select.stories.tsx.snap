@@ -5,10 +5,10 @@ exports[`Controlled 1`] = `
   Hvor bor du?
 </h2>
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Fylke
   </label>
-  <select id="<removed>">
+  <select id="<generated>">
     <option value>
       Velg et fylke …
     </option>
@@ -60,10 +60,10 @@ exports[`Controlled 1`] = `
   </select>
 </ds-field>
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     By
   </label>
-  <select id="<removed>">
+  <select id="<generated>">
     <option value>
       Velg en by …
     </option>
@@ -73,12 +73,12 @@ exports[`Controlled 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Fylke
   </label>
   <select
     disabled
-    id="<removed>"
+    id="<generated>"
   >
     <option
       value
@@ -137,12 +137,12 @@ exports[`Disabled 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Fylke
   </label>
   <select
     data-width="full"
-    id="<removed>"
+    id="<generated>"
   >
     <option
       value
@@ -201,12 +201,12 @@ exports[`Preview 1`] = `
 
 exports[`Read Only 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Fylke
   </label>
   <select
     aria-readonly="true"
-    id="<removed>"
+    id="<generated>"
   >
     <option
       value
@@ -265,12 +265,12 @@ exports[`Read Only 1`] = `
 
 exports[`With Error 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Fylke
   </label>
   <select
-    id="<removed>"
-    aria-describedby="<removed>"
+    id="<generated>"
+    aria-describedby="<generated>"
     aria-invalid="true"
   >
     <option value>
@@ -324,7 +324,7 @@ exports[`With Error 1`] = `
   </select>
   <p
     data-field="validation"
-    id="<removed>"
+    id="<generated>"
   >
     Velg et fylke
   </p>
@@ -333,10 +333,10 @@ exports[`With Error 1`] = `
 
 exports[`With Optgroup 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Klassetrinn
   </label>
-  <select id="<removed>">
+  <select id="<generated>">
     <option value>
       Velg klassetrinn …
     </option>

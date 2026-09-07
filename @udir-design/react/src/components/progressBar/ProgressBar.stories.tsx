@@ -99,18 +99,22 @@ export const FormExample = meta.story({
         <style>
           {`
 .progress-bar-form-example-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-6);
 }
-.progress-bar-form-example-fieldset-content {
+.progress-bar-form-example-legend {
+  /* As tall as the ProgressBar, so the bar does not overhang the legend */
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: flex-end;
-  margin-block-end: var(--ds-size-4);
+  min-height: var(--ds-size-12);
 }
 .progress-bar-form-example-progress-bar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transform: translateY(calc(var(--ds-size-4) * -1));
   width: 30%;
 }
 .progress-bar-form-example-button__group {
@@ -120,20 +124,21 @@ export const FormExample = meta.story({
 }`}
         </style>
         <div className="progress-bar-form-example-main">
-          <Fieldset id="rankings">
-            <div className="progress-bar-form-example-fieldset-content">
-              <Fieldset.Legend>
-                <Heading level={4}>Skjema</Heading>
-              </Fieldset.Legend>
-              <ProgressBar
-                className="progress-bar-form-example-progress-bar"
-                {...args}
-                tabIndex={-1}
-                ref={progressRef}
-                value={page}
-                aria-label="Skjemafremgang"
-              />
-            </div>
+          <Fieldset
+            id="rankings"
+            className="progress-bar-form-example-fieldset"
+          >
+            <Fieldset.Legend className="progress-bar-form-example-legend">
+              <Heading level={4}>Skjema</Heading>
+            </Fieldset.Legend>
+            <ProgressBar
+              className="progress-bar-form-example-progress-bar"
+              {...args}
+              tabIndex={-1}
+              ref={progressRef}
+              value={page}
+              aria-label="Skjemafremgang"
+            />
             <Table border>
               <Table.Head>
                 <Table.Row>

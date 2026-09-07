@@ -420,10 +420,10 @@ Vi bruker Storybook til å skrive [interaksjonstester for komponenter](https://s
 
 #### Enhetstester
 
-Hjelpefunksjoner og hooks tester vi med [Vitest](https://vitest.dev/). Disse kjører mye raskere enn interaksjonstester, og er mer egnet til å teste logikk eller intern oppførsel. Enhetstester skrives i egne filer som slutter på `.spec.tsx`.
+Hjelpefunksjoner og hooks tester vi med [Vitest](https://vitest.dev/). Disse kjører mye raskere enn interaksjonstester, og er mer egnet til å teste logikk eller intern oppførsel. Enhetstester skrives i egne filer som slutter på `.spec.ts` (eller `.spec.tsx` hvis testen trenger JSX, for eksempel ved bruk av `render`).
 
 > [!WARNING]
-> Det er foreløpig ingen egentlige enhetstester i monorepoet, kun et eksempel i Button.spec.tsx, men vi bør skrive enhetstester for alle våre egne hooks og hjelpefunksjoner
+> Enhetstestene kjører i en ekte nettleser (Playwright/Chromium), ikke i en simulert DOM. Å bruke `vi.mock` til å mocke et eksternt pre-bundled bibliotek er upålitelig i denne konteksten. Mocken kan sporadisk ikke bli tatt i bruk, og testen feiler med f.eks. `mockReset is not a function`. Vi unngår derfor å mocke eksterne avhengigheter. Trekk heller ut den rene logikken i en egen funksjon og test den direkte.
 
 #### Automatiske tester
 

@@ -1,10 +1,80 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Arrow Key Navigation 1`] = `
+<button
+  data-variant="secondary"
+  type="button"
+  popovertarget="<generated>"
+>
+  Handlinger
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    fill="none"
+    viewbox="0 0 24 24"
+    focusable="false"
+    role="img"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      fill-rule="evenodd"
+      d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0m1.5 4.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"
+      clip-rule="evenodd"
+    >
+    </path>
+  </svg>
+</button>
+<div
+  id="<generated>"
+  popover="manual"
+  data-placement="bottom-end"
+  data-floating="bottom-end"
+  style="<removed>"
+>
+  <ul focusgroup="menu">
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Rediger
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Dupliser
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Flytt
+      </button>
+    </li>
+    <li>
+      <button
+        data-variant="tertiary"
+        type="button"
+      >
+        Slett
+      </button>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Avatars 1`] = `
 <button
   data-variant="tertiary"
   type="button"
-  popovertarget="_r_5_"
+  popovertarget="<generated>"
 >
   <span
     role="img"
@@ -32,7 +102,7 @@ exports[`Avatars 1`] = `
   </svg>
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -124,7 +194,7 @@ exports[`Controlled 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  popovertarget="_r_b_"
+  popovertarget="<generated>"
 >
   Utdanningsløp
   <svg
@@ -147,7 +217,7 @@ exports[`Controlled 1`] = `
   </svg>
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -202,7 +272,7 @@ exports[`Controlled Without Context 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  popovertarget="_r_f_"
+  popovertarget="<generated>"
 >
   Utdanningsløp
   <svg
@@ -225,7 +295,7 @@ exports[`Controlled Without Context 1`] = `
   </svg>
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -279,12 +349,12 @@ exports[`Controlled Without Context 1`] = `
 exports[`Icons 1`] = `
 <button
   type="button"
-  popovertarget="_r_2_"
+  popovertarget="<generated>"
 >
   Nyttige lenker
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -354,7 +424,7 @@ exports[`Icons 1`] = `
 exports[`Preview 1`] = `
 <button
   type="button"
-  popovertarget="_r_0_"
+  popovertarget="<generated>"
 >
   Last ned
   <svg
@@ -377,7 +447,7 @@ exports[`Preview 1`] = `
   </svg>
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -411,12 +481,12 @@ exports[`Selected 1`] = `
 <button
   data-variant="secondary"
   type="button"
-  popovertarget="_r_a_"
+  popovertarget="<generated>"
 >
   Velg bakgrunnsfarge
 </button>
 <div
-  id="<removed>"
+  id="<generated>"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"
@@ -479,7 +549,7 @@ exports[`Without Context 1`] = `
   </svg>
 </button>
 <div
-  id="<removed>"
+  id="dropdown"
   popover="manual"
   data-placement="bottom-end"
   data-floating="bottom-end"

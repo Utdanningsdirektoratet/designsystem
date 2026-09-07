@@ -409,3 +409,59 @@ export const CardPanel = meta.story({
     </>
   ),
 });
+
+export const NestedVariants = meta.story({
+  parameters: {
+    customStyles: {
+      width: '500px',
+    },
+  },
+  render: () => (
+    <Tabs defaultValue="assessments" variant="card">
+      <Tabs.List>
+        <Tabs.Tab value="assessments">Vurderinger</Tabs.Tab>
+        <Tabs.Tab value="absence">Fravær</Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel value="assessments" variant="card">
+        <Tabs defaultValue="final-grades">
+          <Tabs.List>
+            <Tabs.Tab value="final-grades">Standpunkt</Tabs.Tab>
+            <Tabs.Tab value="exams">Eksamen</Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel value="final-grades">Norsk: 5 · Matematikk: 4</Tabs.Panel>
+          <Tabs.Panel value="exams">Skriftlig eksamen: 22. mai</Tabs.Panel>
+        </Tabs>
+      </Tabs.Panel>
+      <Tabs.Panel value="absence" variant="card">
+        Registrert fravær: 2 dager og 3 timer
+      </Tabs.Panel>
+    </Tabs>
+  ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const [outerTabList, innerTabList] = canvas.getAllByRole('tablist');
+    const outerTab = within(outerTabList).getByRole('tab', {
+      name: 'Vurderinger',
+    });
+    const innerGeneralTab = within(innerTabList).getByRole('tab', {
+      name: 'Standpunkt',
+    });
+    const innerAdvancedTab = within(innerTabList).getByRole('tab', {
+      name: 'Eksamen',
+    });
+
+    await step('Variants are scoped to their own Tabs', async () => {
+      expect(getComputedStyle(outerTab, '::after').display).toBe('none');
+      expect(getComputedStyle(innerGeneralTab, '::after').display).not.toBe(
+        'none',
+      );
+    });
+
+    await step('Inner tabs change independently', async () => {
+      await userEvent.click(innerAdvancedTab);
+      expect(innerAdvancedTab).toHaveAttribute('aria-selected', 'true');
+      expect(canvas.getByText('Skriftlig eksamen: 22. mai')).toBeVisible();
+      expect(outerTab).toHaveAttribute('aria-selected', 'true');
+    });
+  },
+});

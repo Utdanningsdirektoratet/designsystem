@@ -42,7 +42,7 @@ export const Preview = meta.story({
   render: (args) => (
     <form onSubmit={onSubmit}>
       <Search {...args}>
-        <Search.Input aria-label="Søk" />
+        <Search.Input aria-label="Søk" type="text" />
         <Search.Clear />
         <Search.Button />
       </Search>
@@ -50,7 +50,7 @@ export const Preview = meta.story({
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByRole('searchbox');
+    const input = canvas.getByRole('textbox');
 
     await step('Search input is rendered', async () => {
       expect(input).toBeInTheDocument();
@@ -123,6 +123,7 @@ export const Controlled = meta.story({
             <Search.Input
               id="search-input-controlled"
               aria-label="Søk"
+              type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
@@ -183,12 +184,12 @@ export const Variants = meta.story({
         <Search.Clear />
       </Search>
       <Search {...args}>
-        <Search.Input aria-label="Søk" />
+        <Search.Input aria-label="Søk" type="text" />
         <Search.Clear />
         <Search.Button />
       </Search>
       <Search {...args}>
-        <Search.Input aria-label="Søk" />
+        <Search.Input aria-label="Søk" type="text" />
         <Search.Clear />
         <Search.Button variant="secondary" />
       </Search>
@@ -201,7 +202,7 @@ export const WithLabel = meta.story({
     <Field>
       <Label>Søk i læreplaner</Label>
       <Search {...args}>
-        <Search.Input name="cat-search" />
+        <Search.Input name="cat-search" type="text" />
         <Search.Clear />
         <Search.Button />
       </Search>
@@ -229,6 +230,7 @@ export const Form = meta.story({
           <Search {...args}>
             <Search.Input
               aria-label="Søk"
+              type="text"
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />

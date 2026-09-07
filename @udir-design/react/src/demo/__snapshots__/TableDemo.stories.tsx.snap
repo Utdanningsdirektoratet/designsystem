@@ -4,7 +4,7 @@ exports[`Table Story 1`] = `
 <div
   data-color-scheme="light"
   data-size="auto"
-  id="<removed>"
+  id="main-content"
 >
   <div>
     <div data-color="info">
@@ -15,8 +15,8 @@ exports[`Table Story 1`] = `
     </h2>
     <hr aria-hidden="true">
     <div>
-      <fieldset aria-labelledby="<removed>">
-        <legend id="<removed>">
+      <fieldset aria-labelledby="<generated>">
+        <legend id="<generated>">
           Filtrer på utdanningsnivå
         </legend>
         <div>
@@ -46,32 +46,34 @@ exports[`Table Story 1`] = `
           </label>
         </div>
       </fieldset>
-      <div>
+      <ds-suggestion>
         <input
-          placeholder="Søk"
           aria-label="Søk"
+          placeholder="Søk"
           autocomplete="off"
           type="search"
           value
           name="search"
         >
         <button
-          data-icon="true"
           data-variant="tertiary"
           type="reset"
           aria-label="Tøm"
+          aria-hidden="false"
+          hidden
+          tabindex="-1"
         >
         </button>
-      </div>
+      </ds-suggestion>
     </div>
     <div>
       <table data-border="true">
         <thead>
           <tr>
             <th>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-select-all">
                 <input
-                  id="<removed>"
+                  id="checkbox-select-all"
                   aria-label="Select all"
                   type="checkbox"
                   value="all"
@@ -106,9 +108,9 @@ exports[`Table Story 1`] = `
         <tbody>
           <tr>
             <td>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-1">
                 <input
-                  id="<removed>"
+                  id="checkbox-1"
                   aria-label="Check Lise Nordmann"
                   type="checkbox"
                   value="1"
@@ -174,11 +176,11 @@ exports[`Table Story 1`] = `
               <dialog
                 data-placement="center"
                 data-modal="true"
-                id="<removed>"
+                id="<generated>"
               >
                 <button
                   data-icon="true"
-                  commandfor="_r_3_"
+                  commandfor="<generated>"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
@@ -210,9 +212,9 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-2">
                 <input
-                  id="<removed>"
+                  id="checkbox-2"
                   aria-label="Check Ola Nordmann"
                   type="checkbox"
                   value="2"
@@ -278,11 +280,11 @@ exports[`Table Story 1`] = `
               <dialog
                 data-placement="center"
                 data-modal="true"
-                id="<removed>"
+                id="<generated>"
               >
                 <button
                   data-icon="true"
-                  commandfor="_r_5_"
+                  commandfor="<generated>"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
@@ -314,9 +316,9 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-3">
                 <input
-                  id="<removed>"
+                  id="checkbox-3"
                   aria-label="Check Kari Nordmann"
                   type="checkbox"
                   value="3"
@@ -382,11 +384,11 @@ exports[`Table Story 1`] = `
               <dialog
                 data-placement="center"
                 data-modal="true"
-                id="<removed>"
+                id="<generated>"
               >
                 <button
                   data-icon="true"
-                  commandfor="_r_7_"
+                  commandfor="<generated>"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
@@ -418,9 +420,9 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-4">
                 <input
-                  id="<removed>"
+                  id="checkbox-4"
                   aria-label="Check Per Nordmann"
                   type="checkbox"
                   value="4"
@@ -486,11 +488,11 @@ exports[`Table Story 1`] = `
               <dialog
                 data-placement="center"
                 data-modal="true"
-                id="<removed>"
+                id="<generated>"
               >
                 <button
                   data-icon="true"
-                  commandfor="_r_9_"
+                  commandfor="<generated>"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
@@ -522,9 +524,9 @@ exports[`Table Story 1`] = `
           </tr>
           <tr>
             <td>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="checkbox-5">
                 <input
-                  id="<removed>"
+                  id="checkbox-5"
                   aria-label="Check Anne Nordmann"
                   type="checkbox"
                   value="5"
@@ -590,11 +592,11 @@ exports[`Table Story 1`] = `
               <dialog
                 data-placement="center"
                 data-modal="true"
-                id="<removed>"
+                id="<generated>"
               >
                 <button
                   data-icon="true"
-                  commandfor="_r_b_"
+                  commandfor="<generated>"
                   data-variant="tertiary"
                   type="button"
                   aria-label="Lukk dialogvindu"
@@ -634,11 +636,11 @@ exports[`Table Story 1`] = `
       <dialog
         data-placement="center"
         data-modal="true"
-        id="<removed>"
+        id="<generated>"
       >
         <button
           data-icon="true"
-          commandfor="_r_c_"
+          commandfor="<generated>"
           data-variant="tertiary"
           type="button"
           aria-label="Lukk dialogvindu"
@@ -712,8 +714,8 @@ exports[`Table Story 1`] = `
         <ul>
           <li>
             <button
-              aria-disabled="true"
               type="button"
+              aria-disabled="true"
             >
               <span>
                 Forrige

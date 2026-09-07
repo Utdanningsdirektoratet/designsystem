@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Input } from '../input/Input';
 import { Textarea } from '../textarea/Textarea';
@@ -162,7 +163,7 @@ export const Position = meta.story({
 }`}
       </style>
       <div className="field-position-main">
-        {/* eslint-disable jsx-a11y/role-has-required-aria-props --
+        {/* oxlint-disable jsx-a11y/role-has-required-aria-props --
             False positive: <input type="checkbox" role="switch"> is
             spec-compliant. WAI-ARIA §5.2.2 says host-language attributes
             fulfill "required states" requirements, and §8.4 confirms
@@ -177,7 +178,7 @@ export const Position = meta.story({
           <Label>Lydløs</Label>
           <Input type="checkbox" role="switch" id={'sounds'} />
         </Field>
-        {/* eslint-enable jsx-a11y/role-has-required-aria-props */}
+        {/* oxlint-enable jsx-a11y/role-has-required-aria-props */}
       </div>
     </>
   ),
@@ -207,4 +208,16 @@ export const Position = meta.story({
       </div>
     ),
   ],
+});
+
+export const Translations = Counter.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector("[data-field='counter']"),
+      ['--dsc-field-counter-over', '--dsc-field-counter-under'],
+    );
+  },
 });

@@ -215,7 +215,7 @@ exports[`Preview 1`] = `
     </div>
     <h2
       data-size="md"
-      id="<removed>"
+      id="first-heading"
       tabindex="-1"
     >
       Første overskrift (h2)
@@ -225,7 +225,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="<removed>"
+      id="first-subheading"
       tabindex="-1"
     >
       Første underoverskrift (h3)
@@ -235,7 +235,7 @@ exports[`Preview 1`] = `
     </p>
     <h3
       data-size="sm"
-      id="<removed>"
+      id="second-subheading"
       tabindex="-1"
     >
       Andre underoverskrift (h3)
@@ -298,7 +298,7 @@ exports[`Preview 1`] = `
     </table>
     <h2
       data-size="md"
-      id="<removed>"
+      id="second-heading"
       tabindex="-1"
     >
       Andre overskrift (h2)
@@ -325,7 +325,7 @@ exports[`Preview 1`] = `
     </ul>
     <h2
       data-size="md"
-      id="<removed>"
+      id="third-heading"
       tabindex="-1"
     >
       Tredje overskrift (h2)
@@ -386,13 +386,13 @@ exports[`With Dialog 1`] = `
   <dialog
     data-placement="center"
     data-modal="true"
-    id="<removed>"
+    id="<generated>"
     closedby="any"
     open
   >
     <button
       data-icon="true"
-      commandfor="_r_6_"
+      commandfor="<generated>"
       data-variant="tertiary"
       type="button"
       aria-label="Lukk dialogvindu"
@@ -430,7 +430,7 @@ exports[`With Popover 1`] = `
   <button
     data-variant="tertiary"
     type="button"
-    popovertarget="_r_7_"
+    popovertarget="<generated>"
   >
     Fjern
     <svg
@@ -451,7 +451,7 @@ exports[`With Popover 1`] = `
     </svg>
   </button>
   <div
-    id="<removed>"
+    id="<generated>"
     popover="manual"
     data-placement="top"
     data-floating="bottom"

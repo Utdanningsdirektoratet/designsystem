@@ -20,140 +20,140 @@ exports[`Checkbox 1`] = `
     <h2 data-size="2xs">
       Small
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         name="sm-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         checked
         name="sm-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         data-indeterminate="true"
         type="checkbox"
         name="sm-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         name="sm-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         checked
         name="sm-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         data-indeterminate="true"
         type="checkbox"
         name="sm-disabled-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         name="sm-invalid"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         checked
         name="sm-invalid-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
         type="checkbox"
         name="sm-invalid-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         name="sm-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         checked
         name="sm-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         data-indeterminate="true"
         type="checkbox"
         name="sm-read-only-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only indeterminate
       </label>
     </ds-field>
@@ -162,140 +162,140 @@ exports[`Checkbox 1`] = `
     <h2 data-size="2xs">
       Medium
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         name="md-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         checked
         name="md-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         data-indeterminate="true"
         type="checkbox"
         name="md-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         name="md-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         checked
         name="md-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         data-indeterminate="true"
         type="checkbox"
         name="md-disabled-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         name="md-invalid"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         checked
         name="md-invalid-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
         type="checkbox"
         name="md-invalid-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         name="md-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         checked
         name="md-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         data-indeterminate="true"
         type="checkbox"
         name="md-read-only-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only indeterminate
       </label>
     </ds-field>
@@ -304,140 +304,140 @@ exports[`Checkbox 1`] = `
     <h2 data-size="2xs">
       Large
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         name="lg-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         type="checkbox"
         checked
         name="lg-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         data-indeterminate="true"
         type="checkbox"
         name="lg-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         name="lg-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         type="checkbox"
         checked
         name="lg-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         disabled
         data-indeterminate="true"
         type="checkbox"
         name="lg-disabled-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         name="lg-invalid"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         type="checkbox"
         checked
         name="lg-invalid-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         aria-invalid="true"
         data-indeterminate="true"
         type="checkbox"
         name="lg-invalid-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Invalid indeterminate
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         name="lg-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         type="checkbox"
         checked
         name="lg-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         readonly
         data-indeterminate="true"
         type="checkbox"
         name="lg-read-only-indeterminate"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only indeterminate
       </label>
     </ds-field>
@@ -457,13 +457,13 @@ exports[`Controlled 1`] = `
 <div>
   <div>
     <ds-field>
-      <label for="<removed>">
+      <label for="<generated>">
         Skriv inn verdi
       </label>
       <input
         type="text"
         value
-        id="<removed>"
+        id="<generated>"
       >
     </ds-field>
     <button
@@ -478,44 +478,44 @@ exports[`Controlled 1`] = `
 
 exports[`Html Size 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="<generated>">
     Input with size
   </label>
   <input
     size="10"
     type="text"
-    id="<removed>"
+    id="<generated>"
   >
 </ds-field>
 `;
 
 exports[`Input Types 1`] = `
-<ds-field data-clickdelegatefor="<removed>">
-  <label for="<removed>">
+<ds-field data-clickdelegatefor="<generated>">
+  <label for="<generated>">
     Checkbox
   </label>
   <input
     type="checkbox"
-    id="<removed>"
+    id="<generated>"
   >
 </ds-field>
-<ds-field data-clickdelegatefor="<removed>">
-  <label for="<removed>">
+<ds-field data-clickdelegatefor="<generated>">
+  <label for="<generated>">
     Radio
   </label>
   <input
     type="radio"
-    id="<removed>"
+    id="<generated>"
   >
 </ds-field>
-<ds-field data-clickdelegatefor="<removed>">
-  <label for="<removed>">
+<ds-field data-clickdelegatefor="<generated>">
+  <label for="<generated>">
     Switch
   </label>
   <input
     role="switch"
     type="checkbox"
-    id="<removed>"
+    id="<generated>"
   >
 </ds-field>
 `;
@@ -545,93 +545,93 @@ exports[`Radio 1`] = `
   <h2 data-size="2xs">
     Small
   </h2>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       name="sm-Default"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       checked
       name="sm-Checked"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       name="sm-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       checked
       name="sm-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       name="sm-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       checked
       name="sm-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       name="sm-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       checked
       name="sm-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only checked
     </label>
   </ds-field>
@@ -640,93 +640,93 @@ exports[`Radio 1`] = `
   <h2 data-size="2xs">
     Medium
   </h2>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       name="md-Default"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       checked
       name="md-Checked"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       name="md-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       checked
       name="md-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       name="md-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       checked
       name="md-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       name="md-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       checked
       name="md-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only checked
     </label>
   </ds-field>
@@ -735,93 +735,93 @@ exports[`Radio 1`] = `
   <h2 data-size="2xs">
     Large
   </h2>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       name="lg-Default"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       type="radio"
       checked
       name="lg-Checked"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       name="lg-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       disabled
       type="radio"
       checked
       name="lg-Disabled"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       name="lg-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       aria-invalid="true"
       type="radio"
       checked
       name="lg-Invalid"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid checked
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       name="lg-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
   </ds-field>
-  <ds-field data-clickdelegatefor="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
     <input
       readonly
       type="radio"
       checked
       name="lg-Read-only"
-      id="<removed>"
+      id="<generated>"
     >
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only checked
     </label>
   </ds-field>
@@ -849,76 +849,76 @@ exports[`Switch 1`] = `
     <h2 data-size="2xs">
       Small
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         name="sm-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         checked
         name="sm-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         name="sm-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         checked
         name="sm-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         name="sm-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         checked
         name="sm-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
@@ -927,76 +927,76 @@ exports[`Switch 1`] = `
     <h2 data-size="2xs">
       Medium
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         name="md-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         checked
         name="md-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         name="md-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         checked
         name="md-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         name="md-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         checked
         name="md-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
@@ -1005,76 +1005,76 @@ exports[`Switch 1`] = `
     <h2 data-size="2xs">
       Large
     </h2>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         name="lg-default"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Default
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         type="checkbox"
         checked
         name="lg-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         name="lg-disabled"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         disabled
         type="checkbox"
         checked
         name="lg-disabled-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Disabled checked
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         name="lg-read-only"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only
       </label>
     </ds-field>
-    <ds-field data-clickdelegatefor="<removed>">
+    <ds-field data-clickdelegatefor="<generated>">
       <input
         role="switch"
         readonly
         type="checkbox"
         checked
         name="lg-read-only-checked"
-        id="<removed>"
+        id="<generated>"
       >
-      <label for="<removed>">
+      <label for="<generated>">
         Read-only checked
       </label>
     </ds-field>
@@ -1099,7 +1099,7 @@ exports[`Text 1`] = `
     Small
   </h2>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
     <input
@@ -1107,11 +1107,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="sm-default"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
     <input
@@ -1120,11 +1120,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="sm-disabled"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
     <input
@@ -1132,19 +1132,19 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="sm-invalid"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
       aria-invalid="true"
     >
     <p
       data-field="validation"
-      id="<removed>"
+      id="<generated>"
     >
       Feilmelding
     </p>
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
     <input
@@ -1153,7 +1153,7 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="sm-read-only"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
 </div>
@@ -1162,7 +1162,7 @@ exports[`Text 1`] = `
     Medium
   </h2>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
     <input
@@ -1170,11 +1170,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="md-default"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
     <input
@@ -1183,11 +1183,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="md-disabled"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
     <input
@@ -1195,19 +1195,19 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="md-invalid"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
       aria-invalid="true"
     >
     <p
       data-field="validation"
-      id="<removed>"
+      id="<generated>"
     >
       Feilmelding
     </p>
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
     <input
@@ -1216,7 +1216,7 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="md-read-only"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
 </div>
@@ -1225,7 +1225,7 @@ exports[`Text 1`] = `
     Large
   </h2>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Default
     </label>
     <input
@@ -1233,11 +1233,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="lg-default"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Disabled
     </label>
     <input
@@ -1246,11 +1246,11 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="lg-disabled"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Invalid
     </label>
     <input
@@ -1258,19 +1258,19 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="lg-invalid"
-      id="<removed>"
-      aria-describedby="<removed>"
+      id="<generated>"
+      aria-describedby="<generated>"
       aria-invalid="true"
     >
     <p
       data-field="validation"
-      id="<removed>"
+      id="<generated>"
     >
       Feilmelding
     </p>
   </ds-field>
   <ds-field>
-    <label for="<removed>">
+    <label for="<generated>">
       Read-only
     </label>
     <input
@@ -1279,7 +1279,7 @@ exports[`Text 1`] = `
       type="text"
       value="Value"
       name="lg-read-only"
-      id="<removed>"
+      id="<generated>"
     >
   </ds-field>
 </div>

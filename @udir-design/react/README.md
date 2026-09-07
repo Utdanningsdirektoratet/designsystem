@@ -75,6 +75,8 @@ Hvis du bruker TypeScript, anbefaler vi å legge til typene for `@udir-design/th
 
 Da får du typesjekking og autoutfylling for Udirs farger og størrelser (`data-color` og `data-size`) både på komponenter fra biblioteket og vanlige HTML-elementer.
 
+Du får også typer for HTML-attributter som React ikke dekker selv: `popover` og `popovertarget`, samt `focusgroup` og `focusgroupstart`.
+
 Et enkelt eksempel:
 
 ```jsonc

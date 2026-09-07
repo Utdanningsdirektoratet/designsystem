@@ -2,7 +2,7 @@
 
 exports[`Affix 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-affix">
     Hvor mange kroner koster det per måned?
   </label>
   <div>
@@ -10,7 +10,7 @@ exports[`Affix 1`] = `
       NOK
     </span>
     <input
-      id="<removed>"
+      id="textfield-affix"
       inputmode="numeric"
       type="text"
     >
@@ -35,12 +35,12 @@ exports[`Controlled 1`] = `
 </style>
 <div>
   <ds-field>
-    <label for="<removed>">
+    <label for="textfield-controlled">
       Fullt navn
     </label>
     <div>
       <input
-        id="<removed>"
+        id="textfield-controlled"
         autocomplete="name"
         type="text"
         value
@@ -58,14 +58,14 @@ exports[`Controlled 1`] = `
 
 exports[`Counter 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-counter">
     Legg til en beskrivelse
   </label>
   <div>
     <textarea
-      id="<removed>"
+      id="textfield-counter"
       rows="4"
-      aria-describedby="<removed>"
+      aria-describedby="<generated>"
       style="<removed>"
     >
     </textarea>
@@ -73,7 +73,7 @@ exports[`Counter 1`] = `
   <p
     data-field="counter"
     data-limit="75"
-    id="<removed>"
+    id="<generated>"
     data-label="75 tegn igjen"
     data-state="under"
   >
@@ -83,24 +83,24 @@ exports[`Counter 1`] = `
 
 exports[`Disabled 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-disabled">
     Disabled Textfield
   </label>
   <div>
     <input
-      id="<removed>"
+      id="textfield-disabled"
       disabled
       type="text"
     >
   </div>
 </ds-field>
 <ds-field>
-  <label for="<removed>">
+  <label for="multiline-textfield-disabled">
     Disabled multiline Textfield
   </label>
   <div>
     <textarea
-      id="<removed>"
+      id="multiline-textfield-disabled"
       rows="4"
       disabled
       style="<removed>"
@@ -112,12 +112,12 @@ exports[`Disabled 1`] = `
 
 exports[`Focused 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-preview">
     Label
   </label>
   <div>
     <input
-      id="<removed>"
+      id="textfield-preview"
       type="text"
     >
   </div>
@@ -126,13 +126,13 @@ exports[`Focused 1`] = `
 
 exports[`Format 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="format">
     Fødselsnummer
   </label>
   <div>
     <input
       autocomplete="off"
-      id="<removed>"
+      id="format"
       inputmode="numeric"
       type="text"
     >
@@ -142,12 +142,12 @@ exports[`Format 1`] = `
 
 exports[`Preview 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-preview">
     Label
   </label>
   <div>
     <input
-      id="<removed>"
+      id="textfield-preview"
       type="text"
     >
   </div>
@@ -156,24 +156,24 @@ exports[`Preview 1`] = `
 
 exports[`Read Only 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-readonly">
     ReadOnly Textfield
   </label>
   <div>
     <input
-      id="<removed>"
+      id="textfield-readonly"
       readonly
       type="text"
     >
   </div>
 </ds-field>
 <ds-field>
-  <label for="<removed>">
+  <label for="multiline-textfield-readonly">
     ReadOnly multiline Textfield
   </label>
   <div>
     <textarea
-      id="<removed>"
+      id="multiline-textfield-readonly"
       rows="4"
       readonly
       style="<removed>"
@@ -185,13 +185,13 @@ exports[`Read Only 1`] = `
 
 exports[`Rows 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="textfield-rows">
     Beskrivelse
   </label>
   <div>
     <textarea
       rows="4"
-      id="<removed>"
+      id="textfield-rows"
       style="<removed>"
     >
     </textarea>

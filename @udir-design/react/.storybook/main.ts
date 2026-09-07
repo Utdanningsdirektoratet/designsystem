@@ -4,6 +4,14 @@ import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
 import { createTierIndexers } from './utils/createTierIndexers.js';
 
+/** Keep in sync with the React.HTMLAttributes augmentation in src/html.ts */
+const GLOBAL_HTML_ATTRIBUTES = new Set([
+  'popover',
+  'popovertarget',
+  'focusgroup',
+  'focusgroupstart',
+]);
+
 const isFromDependency = (fileName: string) =>
   fileName.includes('node_modules');
 const isFromAllowedDependency = (fileName: string) =>
@@ -111,8 +119,12 @@ export default defineMain({
       include: ['src/**/*.{ts,tsx}'],
       setDisplayName: false,
       propFilter: (prop) => {
-        // Remove popovertarget prop which @digdir/designsystemet-react adds to all elements
-        if (prop.name === 'popovertarget') {
+        // Remove global HTML attributes that end up on every component, since they
+        // are not part of any component's own API. They come from two augmentations
+        // of React.HTMLAttributes: @digdir/designsystemet-react declares popovertarget
+        // in suggestion-input.tsx, and src/html.ts declares the rest. Both are always
+        // loaded. Document these in prose instead, see Dropdown.mdx and utilities/focusgroup.mdx.
+        if (GLOBAL_HTML_ATTRIBUTES.has(prop.name)) {
           return false;
         }
 
