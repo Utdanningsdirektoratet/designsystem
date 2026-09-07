@@ -1,3 +1,17 @@
+[lang|='nb' i],
+[lang|='no' i],
+:root {
+  --udsc-dialog-close-label: 'Lukk dialogvindu';
+}
+
+[lang|='nn' i] {
+  --udsc-dialog-close-label: 'Lukk dialogvindauge';
+}
+
+[lang|='en' i] {
+  --udsc-dialog-close-label: 'Close dialog';
+}
+
 .ds-dialog {
   @media (max-width: 40rem) {
     min-width: unset;

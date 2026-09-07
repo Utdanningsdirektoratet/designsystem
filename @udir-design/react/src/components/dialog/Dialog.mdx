@@ -2,6 +2,7 @@ import { Meta, Controls, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
 import * as DialogStories from './Dialog.stories';
 import { Dialog } from './Dialog';
 import { SimpleAlert } from '.storybook/docs/components';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={DialogStories} />
 
@@ -120,6 +121,12 @@ For å fjerne lukkeknappen, sett `closeButton={false}` på `Dialog`-elementet. H
 I eksempelet under bytter vi ut lukkeknappen med en egen knapp med tekst.
 
 <Canvas of={DialogStories.CustomCloseButton} />
+
+#### Språkstøtte
+
+Standardteksten på lukkeknappen støtter bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs). En verdi du sender til `closeButton` overstyrer standardteksten.
+
+<CssLanguageVariables variables={['--udsc-dialog-close-label']} />
 
 #### Lukk med Esc-tast eller ved klikk utenfor
 

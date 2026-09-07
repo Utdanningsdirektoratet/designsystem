@@ -1,11 +1,11 @@
 import {
   EXPERIMENTAL_Suggestion as DigdirSuggestion,
-  EXPERIMENTAL_SuggestionClear as SuggestionClear,
+  EXPERIMENTAL_SuggestionClear as DigdirSuggestionClear,
   EXPERIMENTAL_SuggestionEmpty as SuggestionEmpty,
   EXPERIMENTAL_SuggestionInput as SuggestionInput,
-  EXPERIMENTAL_SuggestionList as SuggestionList,
+  EXPERIMENTAL_SuggestionList as DigdirSuggestionList,
   EXPERIMENTAL_SuggestionOption as SuggestionOption,
-  EXPERIMENTAL_SuggestionToggle as SuggestionToggle,
+  EXPERIMENTAL_SuggestionToggle as DigdirSuggestionToggle,
   type SuggestionClearProps,
   type SuggestionEmptyProps,
   type SuggestionInputProps,
@@ -21,7 +21,9 @@ import {
   type ForwardRefExoticComponent,
   type RefAttributes,
   forwardRef,
+  useImperativeHandle,
 } from 'react';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import './suggestion.css';
 
 type SuggestionDisplayProps = {
@@ -61,6 +63,66 @@ const SuggestionBase = forwardRef<
     />
   );
 });
+
+const SuggestionClear = forwardRef<HTMLButtonElement, SuggestionClearProps>(
+  function SuggestionClear(props, ref) {
+    const [clearRef, defaultLabel] = useLanguageVariable<HTMLButtonElement>(
+      '--udsc-suggestion-clear-label',
+      'Tøm',
+    );
+    useImperativeHandle(ref, () => clearRef.current as HTMLButtonElement);
+
+    return (
+      <DigdirSuggestionClear
+        aria-label={defaultLabel}
+        {...props}
+        ref={clearRef}
+      />
+    );
+  },
+);
+
+const SuggestionToggle = forwardRef<HTMLButtonElement, SuggestionToggleProps>(
+  function SuggestionToggle(props, ref) {
+    const [toggleRef, defaultLabel] = useLanguageVariable<HTMLButtonElement>(
+      '--udsc-suggestion-toggle-label',
+      'Valg',
+    );
+    useImperativeHandle(ref, () => toggleRef.current as HTMLButtonElement);
+
+    return (
+      <DigdirSuggestionToggle
+        aria-label={defaultLabel}
+        {...props}
+        ref={toggleRef}
+      />
+    );
+  },
+);
+
+const SuggestionList = forwardRef<HTMLDataListElement, SuggestionListProps>(
+  function SuggestionList({ singular, plural, ...rest }, ref) {
+    const [listRef, defaultSingular] = useLanguageVariable<HTMLDataListElement>(
+      '--udsc-suggestion-list-singular',
+      '%d forslag',
+    );
+    const [, defaultPlural] = useLanguageVariable(
+      '--udsc-suggestion-list-plural',
+      '%d forslag',
+      listRef,
+    );
+    useImperativeHandle(ref, () => listRef.current as HTMLDataListElement);
+
+    return (
+      <DigdirSuggestionList
+        singular={singular ?? defaultSingular}
+        plural={plural ?? defaultPlural}
+        {...rest}
+        ref={listRef}
+      />
+    );
+  },
+);
 
 const Suggestion: ForwardRefExoticComponent<
   SuggestionProps & RefAttributes<ComponentRef<typeof DigdirSuggestion>>

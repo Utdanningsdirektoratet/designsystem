@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
 import { useDebounceCallback } from '../../utilities/useDebounceCallback';
@@ -82,6 +83,18 @@ export const Preview = meta.story({
     });
 
     await userEvent.keyboard('{Tab}');
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'],
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-search'),
+      ['--udsc-search-button-text', '--udsc-search-clear-label'],
+    );
   },
 });
 
