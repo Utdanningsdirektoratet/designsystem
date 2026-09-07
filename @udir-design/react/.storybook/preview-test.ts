@@ -25,6 +25,10 @@ export const testLifecycleHooks = {
     if (!viteExpect) {
       return;
     }
+    /* Stories that only assert behaviour opt out with `parameters.snapshot: false` */
+    if (storyContext.parameters['snapshot'] === false) {
+      return;
+    }
 
     const canvasElement = removeDecorators(storyContext.canvasElement);
 

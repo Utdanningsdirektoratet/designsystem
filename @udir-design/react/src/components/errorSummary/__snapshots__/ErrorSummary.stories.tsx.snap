@@ -4,9 +4,9 @@ exports[`Preview 1`] = `
 <ds-error-summary
   role="group"
   tabindex="-1"
-  aria-labelledby="<removed>"
+  aria-labelledby="<generated>"
 >
-  <h2 id="<removed>">
+  <h2 id="<generated>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -45,9 +45,9 @@ exports[`Show Hide 1`] = `
 <ds-error-summary
   role="group"
   tabindex="-1"
-  aria-labelledby="<removed>"
+  aria-labelledby="<generated>"
 >
-  <h2 id="<removed>">
+  <h2 id="<generated>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>
@@ -73,39 +73,39 @@ exports[`Show Hide 1`] = `
 
 exports[`With Form 1`] = `
 <ds-field>
-  <label for="<removed>">
+  <label for="fornavn">
     Fornavn
   </label>
   <div>
     <input
       aria-invalid="true"
-      id="<removed>"
+      id="fornavn"
       type="text"
-      aria-describedby="<removed>"
+      aria-describedby="<generated>"
     >
   </div>
   <p
     data-field="validation"
-    id="<removed>"
+    id="<generated>"
   >
     Fornavn må være minst 2 tegn
   </p>
 </ds-field>
 <ds-field>
-  <label for="<removed>">
+  <label for="telefon">
     Telefon
   </label>
   <div>
     <input
       aria-invalid="true"
-      id="<removed>"
+      id="telefon"
       type="tel"
-      aria-describedby="<removed>"
+      aria-describedby="<generated>"
     >
   </div>
   <p
     data-field="validation"
-    id="<removed>"
+    id="<generated>"
   >
     Telefonnummer kan kun inneholde siffer
   </p>
@@ -113,9 +113,9 @@ exports[`With Form 1`] = `
 <ds-error-summary
   role="group"
   tabindex="-1"
-  aria-labelledby="<removed>"
+  aria-labelledby="<generated>"
 >
-  <h2 id="<removed>">
+  <h2 id="<generated>">
     For å gå videre må du rette opp følgende feil:
   </h2>
   <ul>

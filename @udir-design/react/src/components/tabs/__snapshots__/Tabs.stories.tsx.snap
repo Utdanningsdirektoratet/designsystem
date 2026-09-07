@@ -13,17 +13,17 @@ exports[`Card Panel 1`] = `
 <ds-tabs data-variant="card">
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_f_-value1"
+      aria-controls="<generated>-value1"
       aria-selected="true"
       data-value="value1"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       Farger
     </ds-tab>
     <ds-tab
-      aria-controls="_r_f_-value2"
+      aria-controls="<generated>-value2"
       aria-selected="false"
       data-value="value2"
       role="tab"
@@ -32,7 +32,7 @@ exports[`Card Panel 1`] = `
       Størrelser
     </ds-tab>
     <ds-tab
-      aria-controls="_r_f_-value3"
+      aria-controls="<generated>-value3"
       aria-selected="false"
       data-value="value3"
       role="tab"
@@ -41,7 +41,7 @@ exports[`Card Panel 1`] = `
       Responsivitet
     </ds-tab>
     <ds-tab
-      aria-controls="_r_f_-value4"
+      aria-controls="<generated>-value4"
       aria-selected="false"
       data-value="value4"
       role="tab"
@@ -51,12 +51,12 @@ exports[`Card Panel 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value1"
     data-variant="card"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     <div>
       <p>
@@ -68,7 +68,7 @@ exports[`Card Panel 1`] = `
     </div>
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value2"
     data-variant="card"
     role="tabpanel"
     aria-hidden="true"
@@ -81,7 +81,7 @@ exports[`Card Panel 1`] = `
     </div>
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value3"
     data-variant="card"
     role="tabpanel"
     aria-hidden="true"
@@ -106,7 +106,7 @@ exports[`Card Panel 1`] = `
     </div>
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value4"
     data-variant="card"
     role="tabpanel"
     aria-hidden="true"
@@ -125,17 +125,17 @@ exports[`Card Variant 1`] = `
 <ds-tabs data-variant="card">
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_e_-value1"
+      aria-controls="<generated>-value1"
       aria-selected="true"
       data-value="value1"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       Tab 1
     </ds-tab>
     <ds-tab
-      aria-controls="_r_e_-value2"
+      aria-controls="<generated>-value2"
       aria-selected="false"
       data-value="value2"
       role="tab"
@@ -144,7 +144,7 @@ exports[`Card Variant 1`] = `
       Tab 2
     </ds-tab>
     <ds-tab
-      aria-controls="_r_e_-value3"
+      aria-controls="<generated>-value3"
       aria-selected="false"
       data-value="value3"
       role="tab"
@@ -154,16 +154,16 @@ exports[`Card Variant 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value1"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     Innhold for tab 1
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value2"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -171,7 +171,7 @@ exports[`Card Variant 1`] = `
     Innhold for tab 2
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value3"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -203,12 +203,12 @@ exports[`Controlled 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_b_-users"
+      aria-controls="<generated>-users"
       aria-selected="true"
       data-value="users"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +231,7 @@ exports[`Controlled 1`] = `
       Brukere
     </ds-tab>
     <ds-tab
-      aria-controls="_r_b_-profile"
+      aria-controls="<generated>-profile"
       aria-selected="false"
       data-value="profile"
       role="tab"
@@ -259,11 +259,11 @@ exports[`Controlled 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-users"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     <ul>
       <li>
@@ -305,7 +305,7 @@ exports[`Controlled 1`] = `
     </ul>
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-profile"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -342,12 +342,12 @@ exports[`Icons With Text 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_2_-barnehage"
+      aria-controls="<generated>-barnehage"
       aria-selected="true"
       data-value="barnehage"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +370,7 @@ exports[`Icons With Text 1`] = `
       Barnehage
     </ds-tab>
     <ds-tab
-      aria-controls="_r_2_-grunnskole"
+      aria-controls="<generated>-grunnskole"
       aria-selected="false"
       data-value="grunnskole"
       role="tab"
@@ -397,7 +397,7 @@ exports[`Icons With Text 1`] = `
       Grunnskole
     </ds-tab>
     <ds-tab
-      aria-controls="_r_2_-videregående"
+      aria-controls="<generated>-videregående"
       aria-selected="false"
       data-value="videregående"
       role="tab"
@@ -425,16 +425,16 @@ exports[`Icons With Text 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-barnehage"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     Innhold for barnehage
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-grunnskole"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -442,7 +442,7 @@ exports[`Icons With Text 1`] = `
     Innhold for grunnskole
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-videregående"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -456,17 +456,17 @@ exports[`Nested Variants 1`] = `
 <ds-tabs data-variant="card">
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_g_-assessments"
+      aria-controls="<generated>-assessments"
       aria-selected="true"
       data-value="assessments"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       Vurderinger
     </ds-tab>
     <ds-tab
-      aria-controls="_r_g_-absence"
+      aria-controls="<generated>-absence"
       aria-selected="false"
       data-value="absence"
       role="tab"
@@ -476,58 +476,58 @@ exports[`Nested Variants 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-assessments"
     data-variant="card"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     <ds-tabs>
       <ds-tablist role="tablist">
         <ds-tab
-          aria-controls="_r_h_-final-grades"
+          aria-controls="<generated>-final-grades"
           aria-selected="false"
           data-value="final-grades"
           role="tab"
           tabindex="-1"
-          id="<removed>"
+          id="<generated>"
         >
           Standpunkt
         </ds-tab>
         <ds-tab
-          aria-controls="_r_h_-exams"
+          aria-controls="<generated>-exams"
           aria-selected="true"
           data-value="exams"
           role="tab"
           tabindex="0"
-          id="<removed>"
+          id="<generated>"
         >
           Eksamen
         </ds-tab>
       </ds-tablist>
       <ds-tabpanel
-        id="<removed>"
+        id="<generated>-final-grades"
         role="tabpanel"
         aria-hidden="true"
-        aria-labelledby="<removed>"
+        aria-labelledby="<generated>"
         hidden
       >
         Norsk: 5 · Matematikk: 4
       </ds-tabpanel>
       <ds-tabpanel
-        id="<removed>"
+        id="<generated>-exams"
         role="tabpanel"
         aria-hidden="false"
         tabindex="0"
-        aria-labelledby="<removed>"
+        aria-labelledby="<generated>"
       >
         Skriftlig eksamen: 22. mai
       </ds-tabpanel>
     </ds-tabs>
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-absence"
     data-variant="card"
     role="tabpanel"
     aria-hidden="true"
@@ -542,7 +542,7 @@ exports[`Only Icons 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_6_-gallery"
+      aria-controls="<generated>-gallery"
       aria-selected="false"
       data-value="gallery"
       role="tab"
@@ -572,7 +572,7 @@ exports[`Only Icons 1`] = `
       </svg>
     </ds-tab>
     <ds-tab
-      aria-controls="_r_6_-profile"
+      aria-controls="<generated>-profile"
       aria-selected="true"
       data-value="profile"
       role="tab"
@@ -580,7 +580,7 @@ exports[`Only Icons 1`] = `
       data-placement="top"
       data-autoplacement
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
       aria-label="Profilen din"
     >
       <svg
@@ -603,7 +603,7 @@ exports[`Only Icons 1`] = `
       </svg>
     </ds-tab>
     <ds-tab
-      aria-controls="_r_6_-notifications"
+      aria-controls="<generated>-notifications"
       aria-selected="false"
       data-value="notifications"
       role="tab"
@@ -633,7 +633,7 @@ exports[`Only Icons 1`] = `
       </svg>
     </ds-tab>
     <ds-tab
-      aria-controls="_r_6_-settings"
+      aria-controls="<generated>-settings"
       aria-selected="false"
       data-value="settings"
       role="tab"
@@ -664,7 +664,7 @@ exports[`Only Icons 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-gallery"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -672,16 +672,16 @@ exports[`Only Icons 1`] = `
     Innhold for galleri
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-profile"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     Innhold for profilen din
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-notifications"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -689,7 +689,7 @@ exports[`Only Icons 1`] = `
     Innhold for varsler
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-settings"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -703,17 +703,17 @@ exports[`Only Text 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_1_-oversikt"
+      aria-controls="<generated>-oversikt"
       aria-selected="true"
       data-value="oversikt"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       Oversikt
     </ds-tab>
     <ds-tab
-      aria-controls="_r_1_-prøver"
+      aria-controls="<generated>-prøver"
       aria-selected="false"
       data-value="prøver"
       role="tab"
@@ -722,7 +722,7 @@ exports[`Only Text 1`] = `
       Prøver
     </ds-tab>
     <ds-tab
-      aria-controls="_r_1_-prøvesvar"
+      aria-controls="<generated>-prøvesvar"
       aria-selected="false"
       data-value="prøvesvar"
       role="tab"
@@ -732,16 +732,16 @@ exports[`Only Text 1`] = `
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-oversikt"
     role="tabpanel"
     aria-hidden="false"
     tabindex="0"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
   >
     Innhold for oversikt
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-prøver"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -749,7 +749,7 @@ exports[`Only Text 1`] = `
     Innhold for prøver
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-prøvesvar"
     role="tabpanel"
     aria-hidden="true"
     hidden
@@ -763,59 +763,59 @@ exports[`Preview 1`] = `
 <ds-tabs>
   <ds-tablist role="tablist">
     <ds-tab
-      aria-controls="_r_0_-value1"
+      aria-controls="<generated>-value1"
       aria-selected="true"
       data-value="value1"
       role="tab"
       tabindex="0"
-      id="<removed>"
+      id="<generated>"
     >
       Tab 1
     </ds-tab>
     <ds-tab
-      aria-controls="_r_0_-value2"
+      aria-controls="<generated>-value2"
       aria-selected="false"
       data-value="value2"
       role="tab"
       tabindex="-1"
-      id="<removed>"
+      id="<generated>"
     >
       Tab 2
     </ds-tab>
     <ds-tab
-      aria-controls="_r_0_-value3"
+      aria-controls="<generated>-value3"
       aria-selected="false"
       data-value="value3"
       role="tab"
       tabindex="-1"
-      id="<removed>"
+      id="<generated>"
     >
       Tab 3
     </ds-tab>
   </ds-tablist>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value1"
     role="tabpanel"
     aria-hidden="false"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
     tabindex="0"
   >
     Innhold for Tab 1
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value2"
     role="tabpanel"
     aria-hidden="true"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
     hidden
   >
     Innhold for Tab 2
   </ds-tabpanel>
   <ds-tabpanel
-    id="<removed>"
+    id="<generated>-value3"
     role="tabpanel"
     aria-hidden="true"
-    aria-labelledby="<removed>"
+    aria-labelledby="<generated>"
     hidden
   >
     Innhold for Tab 3

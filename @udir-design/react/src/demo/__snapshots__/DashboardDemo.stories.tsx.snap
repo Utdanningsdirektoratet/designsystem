@@ -61,7 +61,7 @@ exports[`Dashboard Page 2 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenu2"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -170,7 +170,7 @@ exports[`Dashboard Page 2 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenuSmall"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -265,7 +265,7 @@ exports[`Dashboard Page 2 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
-  id="<removed>"
+  id="main-content"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -273,7 +273,7 @@ exports[`Dashboard Page 2 1`] = `
   <ds-tabs>
     <ds-tablist role="tablist">
       <ds-tab
-        aria-controls="_r_i_-overview"
+        aria-controls="<generated>-overview"
         aria-selected="false"
         data-value="overview"
         role="tab"
@@ -282,17 +282,17 @@ exports[`Dashboard Page 2 1`] = `
         Oversikt
       </ds-tab>
       <ds-tab
-        aria-controls="_r_i_-tests"
+        aria-controls="<generated>-tests"
         aria-selected="true"
         data-value="tests"
         role="tab"
         tabindex="0"
-        id="<removed>"
+        id="<generated>"
       >
         Prøver
       </ds-tab>
       <ds-tab
-        aria-controls="_r_i_-test-answers"
+        aria-controls="<generated>-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
@@ -301,7 +301,7 @@ exports[`Dashboard Page 2 1`] = `
         Prøvesvar
       </ds-tab>
       <ds-tab
-        aria-controls="_r_i_-settings"
+        aria-controls="<generated>-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
@@ -311,7 +311,7 @@ exports[`Dashboard Page 2 1`] = `
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-overview"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -383,11 +383,11 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-tests"
       role="tabpanel"
       aria-hidden="false"
       tabindex="0"
-      aria-labelledby="<removed>"
+      aria-labelledby="<generated>"
     >
       <p>
         Oversikt over prøver for Schweigaardsgate skole.
@@ -474,7 +474,7 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-test-answers"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -546,7 +546,7 @@ exports[`Dashboard Page 2 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-settings"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -579,44 +579,44 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="dark-mode">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="dark-mode"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="auto-updates">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="auto-updates"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
@@ -629,16 +629,16 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset aria-labelledby="<removed>">
-                <legend id="<removed>">
+              <fieldset aria-labelledby="<generated> <generated>">
+                <legend id="<generated>">
                   Hvem kan se profilen din?
                 </legend>
-                <p id="<removed>">
+                <p id="<generated>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-public">
                   <input
-                    id="<removed>"
+                    id="privacy-public"
                     type="radio"
                     value="public"
                     checked
@@ -646,42 +646,42 @@ exports[`Dashboard Page 2 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-public"
                   >
                     Alle
                   </label>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-friends">
                   <input
-                    id="<removed>"
+                    id="privacy-friends"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="<removed>"
+                    aria-describedby="<generated>"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-friends"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="<removed>"
+                    id="<generated>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-private">
                   <input
-                    id="<removed>"
+                    id="privacy-private"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-private"
                   >
                     Kun meg
                   </label>
@@ -689,7 +689,7 @@ exports[`Dashboard Page 2 1`] = `
                 <p
                   data-field="validation"
                   hidden
-                  id="<removed>"
+                  id="validation-privacy"
                 >
                 </p>
               </fieldset>
@@ -701,65 +701,65 @@ exports[`Dashboard Page 2 1`] = `
               <h2>
                 Varsler
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="sound-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="sound-notifications"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="popup-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="popup-notifications"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="email-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="email-notifications"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
@@ -834,7 +834,7 @@ exports[`Dashboard Page 3 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenu2"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -943,7 +943,7 @@ exports[`Dashboard Page 3 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenuSmall"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -1038,7 +1038,7 @@ exports[`Dashboard Page 3 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
-  id="<removed>"
+  id="main-content"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -1046,7 +1046,7 @@ exports[`Dashboard Page 3 1`] = `
   <ds-tabs>
     <ds-tablist role="tablist">
       <ds-tab
-        aria-controls="_r_10_-overview"
+        aria-controls="<generated>-overview"
         aria-selected="false"
         data-value="overview"
         role="tab"
@@ -1055,7 +1055,7 @@ exports[`Dashboard Page 3 1`] = `
         Oversikt
       </ds-tab>
       <ds-tab
-        aria-controls="_r_10_-tests"
+        aria-controls="<generated>-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
@@ -1064,17 +1064,17 @@ exports[`Dashboard Page 3 1`] = `
         Prøver
       </ds-tab>
       <ds-tab
-        aria-controls="_r_10_-test-answers"
+        aria-controls="<generated>-test-answers"
         aria-selected="true"
         data-value="test-answers"
         role="tab"
         tabindex="0"
-        id="<removed>"
+        id="<generated>"
       >
         Prøvesvar
       </ds-tab>
       <ds-tab
-        aria-controls="_r_10_-settings"
+        aria-controls="<generated>-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
@@ -1084,7 +1084,7 @@ exports[`Dashboard Page 3 1`] = `
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-overview"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -1156,7 +1156,7 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-tests"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -1246,11 +1246,11 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-test-answers"
       role="tabpanel"
       aria-hidden="false"
       tabindex="0"
-      aria-labelledby="<removed>"
+      aria-labelledby="<generated>"
     >
       <p>
         Oversikt over prøvesvar for Schweigaardsgate skole.
@@ -1319,7 +1319,7 @@ exports[`Dashboard Page 3 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-settings"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -1352,44 +1352,44 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="dark-mode">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="dark-mode"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="auto-updates">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="auto-updates"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
@@ -1402,16 +1402,16 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset aria-labelledby="<removed>">
-                <legend id="<removed>">
+              <fieldset aria-labelledby="<generated> <generated>">
+                <legend id="<generated>">
                   Hvem kan se profilen din?
                 </legend>
-                <p id="<removed>">
+                <p id="<generated>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-public">
                   <input
-                    id="<removed>"
+                    id="privacy-public"
                     type="radio"
                     value="public"
                     checked
@@ -1419,42 +1419,42 @@ exports[`Dashboard Page 3 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-public"
                   >
                     Alle
                   </label>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-friends">
                   <input
-                    id="<removed>"
+                    id="privacy-friends"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="<removed>"
+                    aria-describedby="<generated>"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-friends"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="<removed>"
+                    id="<generated>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-private">
                   <input
-                    id="<removed>"
+                    id="privacy-private"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-private"
                   >
                     Kun meg
                   </label>
@@ -1462,7 +1462,7 @@ exports[`Dashboard Page 3 1`] = `
                 <p
                   data-field="validation"
                   hidden
-                  id="<removed>"
+                  id="validation-privacy"
                 >
                 </p>
               </fieldset>
@@ -1474,65 +1474,65 @@ exports[`Dashboard Page 3 1`] = `
               <h2>
                 Varsler
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="sound-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="sound-notifications"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="popup-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="popup-notifications"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="email-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="email-notifications"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
@@ -1607,7 +1607,7 @@ exports[`Dashboard Page 4 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenu2"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -1716,7 +1716,7 @@ exports[`Dashboard Page 4 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenuSmall"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -1811,7 +1811,7 @@ exports[`Dashboard Page 4 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
-  id="<removed>"
+  id="main-content"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -1819,7 +1819,7 @@ exports[`Dashboard Page 4 1`] = `
   <ds-tabs>
     <ds-tablist role="tablist">
       <ds-tab
-        aria-controls="_r_1e_-overview"
+        aria-controls="<generated>-overview"
         aria-selected="false"
         data-value="overview"
         role="tab"
@@ -1828,7 +1828,7 @@ exports[`Dashboard Page 4 1`] = `
         Oversikt
       </ds-tab>
       <ds-tab
-        aria-controls="_r_1e_-tests"
+        aria-controls="<generated>-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
@@ -1837,7 +1837,7 @@ exports[`Dashboard Page 4 1`] = `
         Prøver
       </ds-tab>
       <ds-tab
-        aria-controls="_r_1e_-test-answers"
+        aria-controls="<generated>-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
@@ -1846,18 +1846,18 @@ exports[`Dashboard Page 4 1`] = `
         Prøvesvar
       </ds-tab>
       <ds-tab
-        aria-controls="_r_1e_-settings"
+        aria-controls="<generated>-settings"
         aria-selected="true"
         data-value="settings"
         role="tab"
         tabindex="0"
-        id="<removed>"
+        id="<generated>"
       >
         Innstillinger
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-overview"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -1929,7 +1929,7 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-tests"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -2019,7 +2019,7 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-test-answers"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -2091,11 +2091,11 @@ exports[`Dashboard Page 4 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-settings"
       role="tabpanel"
       aria-hidden="false"
       tabindex="0"
-      aria-labelledby="<removed>"
+      aria-labelledby="<generated>"
     >
       <div>
         <div>
@@ -2125,44 +2125,44 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="dark-mode">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="dark-mode"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="auto-updates">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="auto-updates"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
@@ -2175,16 +2175,16 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset aria-labelledby="<removed>">
-                <legend id="<removed>">
+              <fieldset aria-labelledby="<generated> <generated>">
+                <legend id="<generated>">
                   Hvem kan se profilen din?
                 </legend>
-                <p id="<removed>">
+                <p id="<generated>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-public">
                   <input
-                    id="<removed>"
+                    id="privacy-public"
                     type="radio"
                     value="public"
                     checked
@@ -2192,42 +2192,42 @@ exports[`Dashboard Page 4 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-public"
                   >
                     Alle
                   </label>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-friends">
                   <input
-                    id="<removed>"
+                    id="privacy-friends"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="<removed>"
+                    aria-describedby="<generated>"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-friends"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="<removed>"
+                    id="<generated>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-private">
                   <input
-                    id="<removed>"
+                    id="privacy-private"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-private"
                   >
                     Kun meg
                   </label>
@@ -2235,7 +2235,7 @@ exports[`Dashboard Page 4 1`] = `
                 <p
                   data-field="validation"
                   hidden
-                  id="<removed>"
+                  id="validation-privacy"
                 >
                 </p>
               </fieldset>
@@ -2247,65 +2247,65 @@ exports[`Dashboard Page 4 1`] = `
               <h2>
                 Varsler
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="sound-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="sound-notifications"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="popup-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="popup-notifications"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="email-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="email-notifications"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>
@@ -2380,7 +2380,7 @@ exports[`Dashboard Story 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenu2"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -2489,7 +2489,7 @@ exports[`Dashboard Story 1`] = `
         </span>
       </button>
       <div
-        id="<removed>"
+        id="usermenuSmall"
         popover="manual"
         data-placement="bottom-end"
       >
@@ -2584,7 +2584,7 @@ exports[`Dashboard Story 1`] = `
   data-color-scheme="light"
   data-size="auto"
   lang="nb"
-  id="<removed>"
+  id="main-content"
 >
   <h1 data-size="md">
     Schweigaardsgate skole
@@ -2592,17 +2592,17 @@ exports[`Dashboard Story 1`] = `
   <ds-tabs>
     <ds-tablist role="tablist">
       <ds-tab
-        aria-controls="_r_4_-overview"
+        aria-controls="<generated>-overview"
         aria-selected="true"
         data-value="overview"
         role="tab"
         tabindex="0"
-        id="<removed>"
+        id="<generated>"
       >
         Oversikt
       </ds-tab>
       <ds-tab
-        aria-controls="_r_4_-tests"
+        aria-controls="<generated>-tests"
         aria-selected="false"
         data-value="tests"
         role="tab"
@@ -2611,7 +2611,7 @@ exports[`Dashboard Story 1`] = `
         Prøver
       </ds-tab>
       <ds-tab
-        aria-controls="_r_4_-test-answers"
+        aria-controls="<generated>-test-answers"
         aria-selected="false"
         data-value="test-answers"
         role="tab"
@@ -2620,7 +2620,7 @@ exports[`Dashboard Story 1`] = `
         Prøvesvar
       </ds-tab>
       <ds-tab
-        aria-controls="_r_4_-settings"
+        aria-controls="<generated>-settings"
         aria-selected="false"
         data-value="settings"
         role="tab"
@@ -2630,11 +2630,11 @@ exports[`Dashboard Story 1`] = `
       </ds-tab>
     </ds-tablist>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-overview"
       role="tabpanel"
       aria-hidden="false"
       tabindex="0"
-      aria-labelledby="<removed>"
+      aria-labelledby="<generated>"
     >
       <p>
         Her får du en oversikt over all den overordnede informasjonen.
@@ -2703,7 +2703,7 @@ exports[`Dashboard Story 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-tests"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -2793,7 +2793,7 @@ exports[`Dashboard Story 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-test-answers"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -2865,7 +2865,7 @@ exports[`Dashboard Story 1`] = `
       </div>
     </ds-tabpanel>
     <ds-tabpanel
-      id="<removed>"
+      id="<generated>-settings"
       role="tabpanel"
       aria-hidden="true"
       hidden
@@ -2898,44 +2898,44 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Generelle innstillinger
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="dark-mode">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="dark-mode"
                   type="checkbox"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="dark-mode"
                 >
                   Mørk modus
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Et mørkere grensesnitt for å spare øynene.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="auto-updates">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="auto-updates"
                   type="checkbox"
                   value="auto-updates"
                   checked
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="auto-updates"
                 >
                   Automatiske oppdateringer
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Bruk automatisk oppdateringer for å holde systemet oppdatert.
                 </div>
@@ -2948,16 +2948,16 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Personvern
               </h2>
-              <fieldset aria-labelledby="<removed>">
-                <legend id="<removed>">
+              <fieldset aria-labelledby="<generated> <generated>">
+                <legend id="<generated>">
                   Hvem kan se profilen din?
                 </legend>
-                <p id="<removed>">
+                <p id="<generated>">
                   Velg hvem som har tilgang til å se profilen din.
                 </p>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-public">
                   <input
-                    id="<removed>"
+                    id="privacy-public"
                     type="radio"
                     value="public"
                     checked
@@ -2965,42 +2965,42 @@ exports[`Dashboard Story 1`] = `
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-public"
                   >
                     Alle
                   </label>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-friends">
                   <input
-                    id="<removed>"
+                    id="privacy-friends"
                     type="radio"
                     value="friends"
                     name="privacy"
-                    aria-describedby="<removed>"
+                    aria-describedby="<generated>"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-friends"
                   >
                     Kun venner
                   </label>
                   <div
                     data-field="description"
-                    id="<removed>"
+                    id="<generated>"
                   >
                     Bare personer du har lagt til kan se profilen din.
                   </div>
                 </ds-field>
-                <ds-field data-clickdelegatefor="<removed>">
+                <ds-field data-clickdelegatefor="privacy-private">
                   <input
-                    id="<removed>"
+                    id="privacy-private"
                     type="radio"
                     value="private"
                     name="privacy"
                   >
                   <label
                     data-weight="regular"
-                    for="<removed>"
+                    for="privacy-private"
                   >
                     Kun meg
                   </label>
@@ -3008,7 +3008,7 @@ exports[`Dashboard Story 1`] = `
                 <p
                   data-field="validation"
                   hidden
-                  id="<removed>"
+                  id="validation-privacy"
                 >
                 </p>
               </fieldset>
@@ -3020,65 +3020,65 @@ exports[`Dashboard Story 1`] = `
               <h2>
                 Varsler
               </h2>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="sound-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="sound-notifications"
                   type="checkbox"
                   value="sound-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="sound-notifications"
                 >
                   Lydvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Spill av lyd når et varsel mottas.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="popup-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="popup-notifications"
                   type="checkbox"
                   value="popup-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="popup-notifications"
                 >
                   Popup-varsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Vis popup-varsler på skjermen.
                 </div>
               </ds-field>
-              <ds-field data-clickdelegatefor="<removed>">
+              <ds-field data-clickdelegatefor="email-notifications">
                 <input
                   role="switch"
-                  id="<removed>"
+                  id="email-notifications"
                   type="checkbox"
                   value="email-notifications"
-                  aria-describedby="<removed>"
+                  aria-describedby="<generated>"
                 >
                 <label
                   data-weight="regular"
-                  for="<removed>"
+                  for="email-notifications"
                 >
                   E-postvarsler
                 </label>
                 <div
                   data-field="description"
-                  id="<removed>"
+                  id="<generated>"
                 >
                   Tillat e-postvarsler for viktige oppdateringer.
                 </div>

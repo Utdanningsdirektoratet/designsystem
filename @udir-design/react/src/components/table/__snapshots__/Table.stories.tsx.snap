@@ -222,7 +222,7 @@ exports[`Fixed Table 1`] = `
   font-feature-settings: "tnum" 1;
 }
 </style>
-<table id="<removed>">
+<table id="myTable">
   <caption>
     Tildeling skolebibliotek 2024
   </caption>
@@ -476,10 +476,10 @@ exports[`Preview 1`] = `
   <thead>
     <tr>
       <th>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-select-all">
           <input
             aria-label="Velg alle ansatte"
-            id="<removed>"
+            id="checkbox-select-all"
             type="checkbox"
             value
             name="my-checkbox"
@@ -505,9 +505,9 @@ exports[`Preview 1`] = `
   <tbody>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-1">
           <input
-            id="<removed>"
+            id="checkbox-1"
             aria-label="Velg checkbox 1"
             type="checkbox"
             value="1"
@@ -532,9 +532,9 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-2">
           <input
-            id="<removed>"
+            id="checkbox-2"
             aria-label="Velg checkbox 2"
             type="checkbox"
             value="2"
@@ -559,9 +559,9 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-3">
           <input
-            id="<removed>"
+            id="checkbox-3"
             aria-label="Velg checkbox 3"
             type="checkbox"
             value="3"
@@ -586,9 +586,9 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-4">
           <input
-            id="<removed>"
+            id="checkbox-4"
             aria-label="Velg checkbox 4"
             type="checkbox"
             value="4"
@@ -613,9 +613,9 @@ exports[`Preview 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="checkbox-5">
           <input
-            id="<removed>"
+            id="checkbox-5"
             aria-label="Velg checkbox 5"
             type="checkbox"
             value="5"
@@ -1033,10 +1033,10 @@ exports[`With Form Elements 1`] = `
   <thead>
     <tr>
       <th>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-selectAll">
           <input
             aria-label="Select all"
-            id="<removed>"
+            id="components-table--with-form-elements-selectAll"
             type="checkbox"
             value
             name="components-table--with-form-elements-checkboxGroup"
@@ -1060,10 +1060,10 @@ exports[`With Form Elements 1`] = `
   <tbody>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-select1">
           <input
             aria-label="Check 1"
-            id="<removed>"
+            id="components-table--with-form-elements-select1"
             type="checkbox"
             value="1"
             name="components-table--with-form-elements-checkboxGroup"
@@ -1112,10 +1112,10 @@ exports[`With Form Elements 1`] = `
     </tr>
     <tr>
       <td>
-        <ds-field data-clickdelegatefor="<removed>">
+        <ds-field data-clickdelegatefor="components-table--with-form-elements-select2">
           <input
             aria-label="Check 2"
-            id="<removed>"
+            id="components-table--with-form-elements-select2"
             type="checkbox"
             value="2"
             checked

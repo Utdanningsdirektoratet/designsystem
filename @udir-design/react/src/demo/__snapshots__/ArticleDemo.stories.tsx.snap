@@ -38,15 +38,15 @@ exports[`Article Story 1`] = `
             Meny
           </button>
           <div
-            id="<removed>"
+            id="uds-header-menu"
             popover="auto"
             data-placement="none"
           >
             <nav
-              aria-labelledby="<removed>"
+              aria-labelledby="header-menu-navigation"
               style="<removed>"
             >
-              <h2 id="<removed>">
+              <h2 id="header-menu-navigation">
                 Menynavigasjon
               </h2>
               <div>
@@ -122,7 +122,7 @@ exports[`Article Story 1`] = `
         </ol>
       </ds-breadcrumbs>
       <div
-        id="<removed>"
+        id="main-content"
         tabindex="-1"
       >
         <div>
@@ -304,7 +304,7 @@ exports[`Article Story 1`] = `
           </p>
           <h2
             data-size="md"
-            id="<removed>"
+            id="follow-development"
             tabindex="-1"
           >
             Følg med på utviklingen
@@ -328,7 +328,7 @@ exports[`Article Story 1`] = `
           </div>
           <h2
             data-size="md"
-            id="<removed>"
+            id="curriculum-framework"
             tabindex="-1"
           >
             Læreplanverket gir et stort handlingsrom til å tilpasse opplæringen
@@ -338,7 +338,7 @@ exports[`Article Story 1`] = `
           </p>
           <h2
             data-size="md"
-            id="<removed>"
+            id="examples-of-measures"
             tabindex="-1"
           >
             Eksempler på virkemidler
@@ -377,7 +377,7 @@ exports[`Article Story 1`] = `
           </div>
           <h2
             data-size="md"
-            id="<removed>"
+            id="intensive-education"
             tabindex="-1"
           >
             Intensiv opplæring
@@ -390,7 +390,7 @@ exports[`Article Story 1`] = `
           </p>
           <h2
             data-size="md"
-            id="<removed>"
+            id="useful-links"
             tabindex="-1"
           >
             Nyttige lenker

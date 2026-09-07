@@ -6,7 +6,7 @@ exports[`Preview 1`] = `
     <div>
       <div>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Velg fylker
           </label>
           <ds-suggestion
@@ -34,10 +34,10 @@ exports[`Preview 1`] = `
             <input
               placeholder
               type="text"
-              id="<removed>"
+              id="<generated>"
               aria-description="Navigate left to find 2 selected"
-              list=":u-datalist1"
-              popovertarget=":u-datalist1"
+              list="<generated>"
+              popovertarget="<generated>"
             >
             <button
               aria-label="Tøm"
@@ -57,7 +57,7 @@ exports[`Preview 1`] = `
               hidden
               tabindex="-1"
               aria-multiselectable="true"
-              id="<removed>"
+              id="<generated>"
               data-is-floating="true"
             >
               <u-option
@@ -68,7 +68,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Tomt
               </u-option>
@@ -79,7 +79,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Agder
               </u-option>
@@ -89,7 +89,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Akershus
               </u-option>
@@ -99,7 +99,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Buskerud
               </u-option>
@@ -109,7 +109,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Finnmark
               </u-option>
@@ -119,7 +119,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Innlandet
               </u-option>
@@ -129,7 +129,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Nordland
               </u-option>
@@ -139,7 +139,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Oslo
               </u-option>
@@ -150,7 +150,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Rogaland
               </u-option>
@@ -160,7 +160,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Telemark
               </u-option>
@@ -170,7 +170,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Troms
               </u-option>
@@ -180,7 +180,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Trøndelag
               </u-option>
@@ -190,7 +190,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Vestland
               </u-option>
@@ -198,7 +198,7 @@ exports[`Preview 1`] = `
           </ds-suggestion>
         </ds-field>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Velg kommuner
           </label>
           <ds-suggestion
@@ -235,10 +235,10 @@ exports[`Preview 1`] = `
             <input
               placeholder
               type="text"
-              id="<removed>"
+              id="<generated>"
               aria-description="Navigate left to find 3 selected"
-              list=":u-datalist2"
-              popovertarget=":u-datalist2"
+              list="<generated>"
+              popovertarget="<generated>"
             >
             <button
               aria-label="Tøm"
@@ -258,7 +258,7 @@ exports[`Preview 1`] = `
               hidden
               tabindex="-1"
               aria-multiselectable="true"
-              id="<removed>"
+              id="<generated>"
               data-is-floating="true"
             >
               <u-option
@@ -269,7 +269,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Tomt
               </u-option>
@@ -280,7 +280,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Arendal
               </u-option>
@@ -291,7 +291,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Kristiansand
               </u-option>
@@ -302,7 +302,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Sandnes
               </u-option>
@@ -312,7 +312,7 @@ exports[`Preview 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Stavanger
               </u-option>
@@ -330,7 +330,7 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
       <ds-field>
-        <label for="<removed>">
+        <label for="<generated>">
           Søk
         </label>
         <ds-suggestion>
@@ -338,7 +338,7 @@ exports[`Preview 1`] = `
             aria-label="Søk"
             type="search"
             value
-            id="<removed>"
+            id="<generated>"
           >
           <button
             data-variant="tertiary"
@@ -608,12 +608,12 @@ exports[`Preview 1`] = `
           Rad 1-5 av 9
         </span>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Rader per side
           </label>
           <select
             autocomplete="off"
-            id="<removed>"
+            id="<generated>"
           >
             <option value="5">
               5
@@ -641,7 +641,7 @@ exports[`With Chips 1`] = `
     <div>
       <div>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Velg fylker
           </label>
           <ds-suggestion
@@ -669,10 +669,10 @@ exports[`With Chips 1`] = `
             <input
               placeholder
               type="text"
-              id="<removed>"
+              id="<generated>"
               aria-description="Navigate left to find 2 selected"
-              list=":u-datalist3"
-              popovertarget=":u-datalist3"
+              list="<generated>"
+              popovertarget="<generated>"
             >
             <button
               aria-label="Tøm"
@@ -692,7 +692,7 @@ exports[`With Chips 1`] = `
               hidden
               tabindex="-1"
               aria-multiselectable="true"
-              id="<removed>"
+              id="<generated>"
               data-is-floating="true"
             >
               <u-option
@@ -703,7 +703,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Tomt
               </u-option>
@@ -714,7 +714,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Agder
               </u-option>
@@ -724,7 +724,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Akershus
               </u-option>
@@ -734,7 +734,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Buskerud
               </u-option>
@@ -744,7 +744,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Finnmark
               </u-option>
@@ -754,7 +754,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Innlandet
               </u-option>
@@ -764,7 +764,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Nordland
               </u-option>
@@ -774,7 +774,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Oslo
               </u-option>
@@ -785,7 +785,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Rogaland
               </u-option>
@@ -795,7 +795,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Telemark
               </u-option>
@@ -805,7 +805,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Troms
               </u-option>
@@ -815,7 +815,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Trøndelag
               </u-option>
@@ -825,7 +825,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Vestland
               </u-option>
@@ -833,7 +833,7 @@ exports[`With Chips 1`] = `
           </ds-suggestion>
         </ds-field>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Velg kommuner
           </label>
           <ds-suggestion
@@ -870,10 +870,10 @@ exports[`With Chips 1`] = `
             <input
               placeholder
               type="text"
-              id="<removed>"
+              id="<generated>"
               aria-description="Navigate left to find 3 selected"
-              list=":u-datalist4"
-              popovertarget=":u-datalist4"
+              list="<generated>"
+              popovertarget="<generated>"
             >
             <button
               aria-label="Tøm"
@@ -893,7 +893,7 @@ exports[`With Chips 1`] = `
               hidden
               tabindex="-1"
               aria-multiselectable="true"
-              id="<removed>"
+              id="<generated>"
               data-is-floating="true"
             >
               <u-option
@@ -904,7 +904,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Tomt
               </u-option>
@@ -915,7 +915,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Arendal
               </u-option>
@@ -926,7 +926,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Kristiansand
               </u-option>
@@ -937,7 +937,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="true"
-                id="<removed>"
+                id="<generated>"
               >
                 Sandnes
               </u-option>
@@ -947,7 +947,7 @@ exports[`With Chips 1`] = `
                 role="option"
                 aria-disabled="false"
                 aria-selected="false"
-                id="<removed>"
+                id="<generated>"
               >
                 Stavanger
               </u-option>
@@ -965,7 +965,7 @@ exports[`With Chips 1`] = `
         </ds-field>
       </div>
       <ds-field>
-        <label for="<removed>">
+        <label for="<generated>">
           Søk
         </label>
         <ds-suggestion>
@@ -973,7 +973,7 @@ exports[`With Chips 1`] = `
             aria-label="Søk"
             type="search"
             value
-            id="<removed>"
+            id="<generated>"
           >
           <button
             data-variant="tertiary"
@@ -1304,12 +1304,12 @@ exports[`With Chips 1`] = `
           Rad 1-5 av 9
         </span>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Rader per side
           </label>
           <select
             autocomplete="off"
-            id="<removed>"
+            id="<generated>"
           >
             <option value="5">
               5
@@ -1336,7 +1336,7 @@ exports[`With Dialog 1`] = `
   <div>
     <div>
       <ds-field>
-        <label for="<removed>">
+        <label for="<generated>">
           Søk
         </label>
         <ds-suggestion>
@@ -1344,7 +1344,7 @@ exports[`With Dialog 1`] = `
             aria-label="Søk"
             type="search"
             value
-            id="<removed>"
+            id="<generated>"
           >
           <button
             data-variant="tertiary"
@@ -1386,12 +1386,12 @@ exports[`With Dialog 1`] = `
         <dialog
           data-placement="center"
           data-modal="true"
-          id="<removed>"
+          id="<generated>"
           closedby="any"
         >
           <button
             data-icon="true"
-            commandfor="_r_9_"
+            commandfor="<generated>"
             data-variant="tertiary"
             type="button"
             aria-label="Lukk dialogvindu"
@@ -1406,7 +1406,7 @@ exports[`With Dialog 1`] = `
             <div>
               <div>
                 <ds-field>
-                  <label for="<removed>">
+                  <label for="<generated>">
                     År
                   </label>
                   <ds-suggestion
@@ -1416,10 +1416,10 @@ exports[`With Dialog 1`] = `
                     <input
                       placeholder
                       type="text"
-                      id="<removed>"
+                      id="<generated>"
                       aria-description="No selected"
-                      list=":u-datalist5"
-                      popovertarget=":u-datalist5"
+                      list="<generated>"
+                      popovertarget="<generated>"
                     >
                     <button
                       aria-label="Tøm"
@@ -1439,7 +1439,7 @@ exports[`With Dialog 1`] = `
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
-                      id="<removed>"
+                      id="<generated>"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1450,7 +1450,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Tomt
                       </u-option>
@@ -1460,7 +1460,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         2026
                       </u-option>
@@ -1470,7 +1470,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         2025
                       </u-option>
@@ -1480,7 +1480,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         2024
                       </u-option>
@@ -1488,7 +1488,7 @@ exports[`With Dialog 1`] = `
                   </ds-suggestion>
                 </ds-field>
                 <ds-field>
-                  <label for="<removed>">
+                  <label for="<generated>">
                     Fylke
                   </label>
                   <ds-suggestion
@@ -1516,10 +1516,10 @@ exports[`With Dialog 1`] = `
                     <input
                       placeholder
                       type="text"
-                      id="<removed>"
+                      id="<generated>"
                       aria-description="Navigate left to find 2 selected"
-                      list=":u-datalist6"
-                      popovertarget=":u-datalist6"
+                      list="<generated>"
+                      popovertarget="<generated>"
                     >
                     <button
                       aria-label="Tøm"
@@ -1539,7 +1539,7 @@ exports[`With Dialog 1`] = `
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
-                      id="<removed>"
+                      id="<generated>"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1550,7 +1550,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Tomt
                       </u-option>
@@ -1561,7 +1561,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="true"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Agder
                       </u-option>
@@ -1571,7 +1571,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Akershus
                       </u-option>
@@ -1581,7 +1581,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Buskerud
                       </u-option>
@@ -1591,7 +1591,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Finnmark
                       </u-option>
@@ -1601,7 +1601,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Innlandet
                       </u-option>
@@ -1611,7 +1611,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Nordland
                       </u-option>
@@ -1621,7 +1621,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Oslo
                       </u-option>
@@ -1632,7 +1632,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="true"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Rogaland
                       </u-option>
@@ -1642,7 +1642,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Telemark
                       </u-option>
@@ -1652,7 +1652,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Troms
                       </u-option>
@@ -1662,7 +1662,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Trøndelag
                       </u-option>
@@ -1672,7 +1672,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Vestland
                       </u-option>
@@ -1680,7 +1680,7 @@ exports[`With Dialog 1`] = `
                   </ds-suggestion>
                 </ds-field>
                 <ds-field>
-                  <label for="<removed>">
+                  <label for="<generated>">
                     Kommune
                   </label>
                   <ds-suggestion
@@ -1717,10 +1717,10 @@ exports[`With Dialog 1`] = `
                     <input
                       placeholder
                       type="text"
-                      id="<removed>"
+                      id="<generated>"
                       aria-description="Navigate left to find 3 selected"
-                      list=":u-datalist7"
-                      popovertarget=":u-datalist7"
+                      list="<generated>"
+                      popovertarget="<generated>"
                     >
                     <button
                       aria-label="Tøm"
@@ -1740,7 +1740,7 @@ exports[`With Dialog 1`] = `
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
-                      id="<removed>"
+                      id="<generated>"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1751,7 +1751,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Tomt
                       </u-option>
@@ -1762,7 +1762,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="true"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Arendal
                       </u-option>
@@ -1773,7 +1773,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="true"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Kristiansand
                       </u-option>
@@ -1784,7 +1784,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="true"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Sandnes
                       </u-option>
@@ -1794,7 +1794,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Stavanger
                       </u-option>
@@ -1803,55 +1803,55 @@ exports[`With Dialog 1`] = `
                 </ds-field>
               </div>
               <div>
-                <fieldset aria-labelledby="<removed>">
-                  <legend id="<removed>">
+                <fieldset aria-labelledby="<generated>">
+                  <legend id="<generated>">
                     Status
                   </legend>
-                  <ds-field data-clickdelegatefor="<removed>">
+                  <ds-field data-clickdelegatefor="<generated>">
                     <input
                       type="checkbox"
                       value="Ferdig"
                       name="dialog-status"
-                      id="<removed>"
+                      id="<generated>"
                     >
                     <label
                       data-weight="regular"
-                      for="<removed>"
+                      for="<generated>"
                     >
                       Ferdig
                     </label>
                   </ds-field>
-                  <ds-field data-clickdelegatefor="<removed>">
+                  <ds-field data-clickdelegatefor="<generated>">
                     <input
                       type="checkbox"
                       value="Behandles"
                       name="dialog-status"
-                      id="<removed>"
+                      id="<generated>"
                     >
                     <label
                       data-weight="regular"
-                      for="<removed>"
+                      for="<generated>"
                     >
                       Behandles
                     </label>
                   </ds-field>
-                  <ds-field data-clickdelegatefor="<removed>">
+                  <ds-field data-clickdelegatefor="<generated>">
                     <input
                       type="checkbox"
                       value="Avvist"
                       name="dialog-status"
-                      id="<removed>"
+                      id="<generated>"
                     >
                     <label
                       data-weight="regular"
-                      for="<removed>"
+                      for="<generated>"
                     >
                       Avvist
                     </label>
                   </ds-field>
                 </fieldset>
                 <ds-field>
-                  <label for="<removed>">
+                  <label for="<generated>">
                     Systemnavn
                   </label>
                   <ds-suggestion
@@ -1861,10 +1861,10 @@ exports[`With Dialog 1`] = `
                     <input
                       placeholder
                       type="text"
-                      id="<removed>"
+                      id="<generated>"
                       aria-description="No selected"
-                      list=":u-datalist8"
-                      popovertarget=":u-datalist8"
+                      list="<generated>"
+                      popovertarget="<generated>"
                     >
                     <button
                       aria-label="Tøm"
@@ -1884,7 +1884,7 @@ exports[`With Dialog 1`] = `
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
-                      id="<removed>"
+                      id="<generated>"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1895,7 +1895,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Tomt
                       </u-option>
@@ -1905,7 +1905,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Brukerstøtte
                       </u-option>
@@ -1915,7 +1915,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         PAS
                       </u-option>
@@ -1925,7 +1925,7 @@ exports[`With Dialog 1`] = `
                         role="option"
                         aria-disabled="false"
                         aria-selected="false"
-                        id="<removed>"
+                        id="<generated>"
                       >
                         Prøveadministrasjon
                       </u-option>
@@ -2273,12 +2273,12 @@ exports[`With Dialog 1`] = `
           Rad 1-5 av 9
         </span>
         <ds-field>
-          <label for="<removed>">
+          <label for="<generated>">
             Rader per side
           </label>
           <select
             autocomplete="off"
-            id="<removed>"
+            id="<generated>"
           >
             <option value="5">
               5

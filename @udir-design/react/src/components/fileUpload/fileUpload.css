@@ -1,5 +1,6 @@
 :root,
-[lang='nb'] {
+[lang|='nb' i],
+[lang|='no' i] {
   --udsc-fileUpload-chooseFile-text: 'Velg fil';
   --udsc-fileUpload-chooseFiles-text: 'Velg filer';
   --udsc-fileUpload-dropFile-text: 'Dra og slipp filen her';
@@ -13,7 +14,7 @@
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
 
-[lang='nn'] {
+[lang|='nn' i] {
   --udsc-fileUpload-chooseFile-text: 'Vel fil';
   --udsc-fileUpload-chooseFiles-text: 'Vel filer';
   --udsc-fileUpload-dropFile-text: 'Dra og slepp fila her';
@@ -27,7 +28,7 @@
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
 
-[lang='en'] {
+[lang|='en' i] {
   --udsc-fileUpload-chooseFile-text: 'Choose file';
   --udsc-fileUpload-chooseFiles-text: 'Choose files';
   --udsc-fileUpload-dropFile-text: 'Drag and drop file here';

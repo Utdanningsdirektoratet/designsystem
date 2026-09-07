@@ -52,7 +52,11 @@ export default defineConfig({
             headless: true,
           },
           setupFiles: ['./vitest.setup.ts'],
-          include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+          include: [
+            'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+            // the snapshot serializer lives next to the Storybook config it serves
+            '.storybook/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+          ],
         },
       },
       {
