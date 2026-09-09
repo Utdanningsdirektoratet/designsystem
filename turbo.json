@@ -3,7 +3,8 @@
   "globalDependencies": [
     "tsconfig.base.json",
     "oxlint.config.ts",
-    "oxlint.shared.ts"
+    "oxlint.shared.ts",
+    "@internal/oxlint-plugin/src/*.ts"
   ],
   "futureFlags": {
     "affectedUsingTaskInputs": true

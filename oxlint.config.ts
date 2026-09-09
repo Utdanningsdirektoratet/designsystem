@@ -29,9 +29,10 @@ export default defineConfig({
     builtin: true,
   },
 
-  // `eslint-plugin-import` loaded through the JS-plugin bridge and aliased to
-  // `importx` (see the import override below).
-  jsPlugins: [{ name: 'importx', specifier: 'eslint-plugin-import' }],
+  // Our own JS plugin, loaded straight from source with no dependencies of its
+  // own. It declares the plugin name `workspace`, so its rules are
+  // `workspace/*` (see the import override below).
+  jsPlugins: ['@internal/oxlint-plugin'],
 
   // No `ignorePatterns`: Oxlint honors `.gitignore` automatically. Add
   // package-local exceptions in nested configs when needed.
@@ -81,12 +82,13 @@ export default defineConfig({
       rules: coreRulesForTypeScript,
     },
     {
-      // Custom import hygiene (eslint-plugin-import, via the `importx` alias).
+      // Custom import hygiene: Oxlint's own `import` plugin plus our
+      // `workspace` plugin.
       files: JS_TS_FILES,
       plugins: ['import'],
       rules: {
         'import/newline-after-import': 'error',
-        'importx/no-relative-packages': 'error',
+        'workspace/no-relative-packages': 'error',
       },
     },
     {
@@ -95,7 +97,7 @@ export default defineConfig({
       // `oxlint.shared.ts`, so `no-relative-packages` doesn't apply here.
       files: ['**/oxlint.config.ts', '**/oxlint.config.mts'],
       rules: {
-        'importx/no-relative-packages': 'off',
+        'workspace/no-relative-packages': 'off',
       },
     },
     {

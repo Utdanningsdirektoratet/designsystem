@@ -72,8 +72,6 @@ catalog:
   clsx: 2.1.1
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
-  eslint: ^9.39.5
-  eslint-plugin-import: ^2.32.0
   eslint-plugin-storybook: ^10.5.10
   fast-glob: ^3.3.3
   fuse.js: ^7.5.0
@@ -174,6 +172,28 @@ overrides:
   sharp@<0.35.0: ^0.35.0
 
 packageExtensions:
+  # These ESLint-related packages support the Storybook rules loaded through
+  # Oxlint, but do not require the `eslint` package at runtime. Mark their
+  # required `eslint` peers optional to avoid installing ESLint solely for
+  # `strictPeerDependencies`.
+  "@eslint-community/eslint-utils":
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  "@typescript-eslint/utils":
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  eslint-plugin-storybook:
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  # @navikt/aksel-icons does not declare React as a dependency, but it looks up
+  # `useId` at runtime and uses an internal id counter if React is not present.
+  # Listing it as an optional peer dependency ensures that it resolves a
+  # consistent React version, without which we would sometimes get an "Invalid
+  # Hook Call" warning. See
+  # https://react.dev/warnings/invalid-hook-call-warning#duplicate-react.
   "@navikt/aksel-icons":
     peerDependencies:
       "@types/react": ^18.3.11 || ^19.0.0
@@ -197,9 +217,6 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   # ast-v8-to-istanbul@1.0.2 is safe according to https://socket.dev/npm/package/ast-v8-to-istanbul/overview/1.0.2
   - ast-v8-to-istanbul@1.0.2
-  # eslint-import-resolver-typescript@3.10.1 was published manually 1 year ago,
-  # and was already in our lock file due to being a dependency of eslint-config-next
-  - eslint-import-resolver-typescript@3.10.1
   # tinyexec@1.2.2 is safe according to https://github.com/tinylibs/tinyexec/issues/136
   # and https://socket.dev/npm/package/tinyexec/overview/1.2.2
   - tinyexec@1.2.2

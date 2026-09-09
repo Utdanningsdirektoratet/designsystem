@@ -22,7 +22,7 @@ const STORY_ALL_FILES = [
   '**/*.story.{ts,tsx,js,jsx,mjs,cjs}',
 ];
 
-// `categories` and `env` are inherited from the root config. The importx
+// `categories` and `env` are inherited from the root config. The `workspace`
 // jsPlugin is inherited too and merges with the storybook plugin added here.
 export default defineConfig({
   extends: [baseConfig],
