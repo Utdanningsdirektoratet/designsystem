@@ -260,6 +260,9 @@ catalogs:
     dpdm:
       specifier: ^4.3.0
       version: 4.3.0
+    eslint:
+      specifier: ^9.39.5
+      version: 9.39.5
     eslint-plugin-import:
       specifier: ^2.32.0
       version: 2.32.0
@@ -478,6 +481,9 @@ importers:
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.5(jiti@2.6.1)(supports-color@8.1.1)
       eslint-plugin-import:
         specifier: 'catalog:'
         version: 2.32.0(@typescript-eslint/parser@8.64.0(@typescript/typescript6@6.0.2)(eslint@9.39.5(jiti@2.6.1)(supports-color@8.1.1))(supports-color@8.1.1))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.5(jiti@2.6.1)(supports-color@8.1.1))(supports-color@8.1.1)
@@ -4882,6 +4888,7 @@ packages:
   eslint@9.39.5:
     resolution: {integrity: sha512-DgZS62aPLXKlnxILS/AYCoRvHaZeXceIzlXPkkGGzJWSow1aEk0lbTlxUSlyjC8jcaKxAdOnTDz+o1JFSBsyjw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
