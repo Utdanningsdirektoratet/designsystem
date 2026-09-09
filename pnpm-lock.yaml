@@ -472,6 +472,9 @@ importers:
       '@commitlint/types':
         specifier: 'catalog:'
         version: 21.2.0
+      '@internal/oxlint-plugin':
+        specifier: workspace:*
+        version: link:@internal/oxlint-plugin
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.4(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -559,6 +562,21 @@ importers:
       yargs:
         specifier: 'catalog:'
         version: 18.1.0
+
+  '@internal/oxlint-plugin':
+    devDependencies:
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.79.0(oxlint-tsgolint@7.0.2001)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2001
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.11(@types/node@24.13.3)(@vitest/browser-playwright@4.1.11)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(esbuild@0.28.2)(jiti@2.6.1)(jsdom@29.1.1)(sass@1.103.1)(tsx@4.23.12)(yaml@2.9.0)
 
   '@udir-design/css':
     dependencies:
