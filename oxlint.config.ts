@@ -4,7 +4,6 @@ import {
   TS_FILES,
   TS_TSX_FILES,
   coreRulesForTypeScript,
-  importOrder,
   noUnusedVars,
 } from './oxlint.shared.ts';
 
@@ -31,11 +30,8 @@ export default defineConfig({
   },
 
   // `eslint-plugin-import` loaded through the JS-plugin bridge and aliased to
-  // `importx` (see the import override below and `settings` here).
+  // `importx` (see the import override below).
   jsPlugins: [{ name: 'importx', specifier: 'eslint-plugin-import' }],
-  settings: {
-    'import/internal-regex': '^(@udir-design|src)/',
-  },
 
   // No `ignorePatterns`: Oxlint honors `.gitignore` automatically. Add
   // package-local exceptions in nested configs when needed.
@@ -91,7 +87,6 @@ export default defineConfig({
       rules: {
         'import/newline-after-import': 'error',
         'importx/no-relative-packages': 'error',
-        'importx/order': importOrder(),
       },
     },
     {
