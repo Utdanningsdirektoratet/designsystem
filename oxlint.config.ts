@@ -29,14 +29,10 @@ export default defineConfig({
     builtin: true,
   },
 
-  // JS plugins. `eslint-plugin-import` is loaded through the JS-plugin bridge
-  // and aliased to `importx`. `@internal/oxlint-plugin` is our own
-  // dependency-free plugin; it declares the plugin name `workspace`, so its
-  // rules are `workspace/*` (see the import override below).
-  jsPlugins: [
-    { name: 'importx', specifier: 'eslint-plugin-import' },
-    '@internal/oxlint-plugin',
-  ],
+  // Our own JS plugin, loaded straight from source with no dependencies of its
+  // own. It declares the plugin name `workspace`, so its rules are
+  // `workspace/*` (see the import override below).
+  jsPlugins: ['@internal/oxlint-plugin'],
 
   // No `ignorePatterns`: Oxlint honors `.gitignore` automatically. Add
   // package-local exceptions in nested configs when needed.
