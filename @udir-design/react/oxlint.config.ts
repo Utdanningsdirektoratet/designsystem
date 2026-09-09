@@ -4,7 +4,6 @@ import {
   JS_TS_FILES,
   TS_TSX_FILES,
   barrelFileRestrictionPattern,
-  importOrder,
   jsxA11yOptionRules,
   noRestrictedImports,
   noUnusedVars,
@@ -51,9 +50,6 @@ export default defineConfig({
         ]),
         'typescript/consistent-type-imports': 'error',
         'typescript/consistent-type-exports': 'error',
-        'importx/order': importOrder([
-          { pattern: '.storybook/**', group: 'internal' },
-        ]),
       },
     },
     {

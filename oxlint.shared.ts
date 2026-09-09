@@ -2,7 +2,7 @@
  * Shared building blocks for the repo's `oxlint.config.ts` files.
  */
 
-import type { AllowWarnDeny, DummyRuleMap, OxlintConfig } from 'oxlint';
+import type { DummyRuleMap, OxlintConfig } from 'oxlint';
 
 // ---------------------------------------------------------------------------
 // Types re-derived from oxlint's rule interface (types not exported directly).
@@ -82,34 +82,6 @@ export const noRestrictedImports = (
 ];
 
 // ---------------------------------------------------------------------------
-// importx/order (import ordering) building blocks
-// ---------------------------------------------------------------------------
-
-type PathGroup = { pattern: string; group: string; position?: string };
-
-/**
- * Build an `importx/order` rule value. `@udir-design/**` sits after other
- * externals and `src/**` counts as internal; callers can pass extra path groups
- * (e.g. Storybook's `.storybook/**`).
- */
-export const importOrder = (
-  extraPathGroups: readonly PathGroup[] = [],
-): [AllowWarnDeny, unknown] => [
-  'error',
-  {
-    groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-    named: true,
-    alphabetize: { order: 'asc' },
-    'newlines-between': 'never',
-    pathGroups: [
-      { pattern: '@udir-design/**', group: 'external', position: 'after' },
-      { pattern: 'src/**', group: 'internal' },
-      ...extraPathGroups,
-    ],
-  },
-];
-
-// ---------------------------------------------------------------------------
 // no-unused-vars building block
 // ---------------------------------------------------------------------------
 
@@ -178,7 +150,6 @@ export const reactPackagePlugins: NonNullable<OxlintConfig['plugins']> = [
 /** Shared `settings` for React-using packages. */
 export const reactPackageSettings: NonNullable<OxlintConfig['settings']> = {
   react: { version: '19' },
-  'import/internal-regex': '^(@udir-design|src)/',
 };
 
 /**

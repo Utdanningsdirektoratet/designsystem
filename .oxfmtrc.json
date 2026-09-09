@@ -2,6 +2,32 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "singleQuote": true,
   "printWidth": 80,
+  "sortImports": {
+    "groups": [
+      "builtin",
+      "external",
+      "udir-design",
+      ["internal", "storybook"],
+      "parent",
+      "sibling",
+      "index",
+      "unknown"
+    ],
+    "customGroups": [
+      {
+        "groupName": "udir-design",
+        "elementNamePattern": ["@udir-design", "@udir-design/**"]
+      },
+      {
+        "groupName": "storybook",
+        "elementNamePattern": [".storybook", ".storybook/**"]
+      }
+    ],
+    "internalPattern": ["src/"],
+    "newlinesBetween": false,
+    "order": "asc",
+    "ignoreCase": false
+  },
   "ignorePatterns": [
     "pnpm-lock.yaml",
     "design-tokens/src",
