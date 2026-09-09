@@ -151,9 +151,6 @@ cleanupUnusedCatalogs: true
 
 disallowWorkspaceCycles: true
 
-ignoredOptionalDependencies:
-  - "@parcel/watcher"
-
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
@@ -166,6 +163,8 @@ minimumReleaseAgeExclude:
   - next@16.2.11
 
 overrides:
+  # `sass` only needs this for `--watch`, which nothing here uses.
+  "@parcel/watcher": "-"
   axios@>=1.0.0 <1.15.0: ">=1.15.0"
   brace-expansion@<=5.0.7: ^5.0.8
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
