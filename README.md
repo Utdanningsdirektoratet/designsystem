@@ -155,26 +155,29 @@ Før du kan bidra med kode i designsystemet trenger du å gjøre noe oppsett lok
 
 ## Oppsett lokalt
 
-Du trenger å sette opp Node.js og pnpm dersom du ikke har dette fra før.
-
-### Node.js
-
-pnpm sørger for at vi alltid bruker riktig versjon av Node.js i monorepoet, som definert i `.npmrc`, men for å installere pnpm trenger du minst Node.js versjon 18.12.
-
-Om du ikke har Node.js fra før, eller `corepack`-kommandoen ikke finnes, er det enkleste å installere nyeste LTS-versjon ved å følge [de offisielle instruksene](https://nodejs.org/en/download/). Bruk helst den anbefalte installasjonsmetoden: `nvm` eller `fnm` på macOS, og `fnm` på Windows.
+Du trenger bare å installere pnpm. pnpm laster selv ned den versjonen av Node.js vi bruker i monorepoet.
 
 ### pnpm
 
-For å installere pnpm, kjør følgende kommandoer fra en kommandolinje i rot av monorepoet.
+pnpm er et selvstendig program som ikke krever Node.js. Installer det ved å følge [de offisielle instruksene](https://pnpm.io/installation). På macOS og Linux:
 
+```sh
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
-corepack enable pnpm
-corepack prepare
+
+På Windows anbefaler pnpm å installere med npm i stedet, siden Windows Defender kan blokkere installasjonsskriptet. Da trenger du Node.js 22.13 eller nyere for å installere pnpm, men ikke for å kjøre det etterpå:
+
+```sh
+npx get-pnpm
 ```
 
 > [!TIP]
-> corepack er en del av Node.js, og sørger for at vi til enhver tid bruker samme versjon av pnpm hos alle utviklere.
-> Versjonsnummeret er spesifisert i feltet `"packageManager"` i filen `package.json`.
+> Versjonen av pnpm vi bruker er spesifisert i feltet `"packageManager"` i filen `package.json`, slik at alle utviklere bruker samme versjon.
+> Kjører du `pnpm self-update` inne i monorepoet, oppdaterer den dette feltet i stedet for å installere pnpm globalt.
+
+### Node.js
+
+Du trenger ikke å installere Node.js selv. Versjonen vi bruker er spesifisert i feltet `"devEngines"` i `package.json`, og pnpm laster den ned automatisk første gang den trengs.
 
 ### Lokal cache
 
@@ -776,12 +779,10 @@ pnpm update -r --latest storybook "@storybook/*"
 > [!IMPORTANT]
 > Vi oppgraderer kun til partallsversjoner av Node, siden dette er LTS-versjonene.
 
-For å endre hvilken versjon av Node som faktisk blir brukt setter vi `useNodeVersion` i `pnpm-workspace.yaml`.
-Dette leses av `pnpm`, som automatisk laster ned riktig versjon.
+Versjonen av Node som blir brukt er spesifisert i feltet `devEngines.runtime` i `package.json`.
+Dette leses av `pnpm`, som automatisk laster ned riktig versjon, og av `actions/setup-node` i GitHub Actions.
 
 Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer med versjonen av Node som vi har spesifisert over.
-
-I tillegg finnes feltet `engines.node` i `package.json`, som leses av GitHub Actions. Denne trenger kun å være en versjon som inneholder `corepack`, for å installere `pnpm`, så vi trenger kun å oppdatere dette feltet når en node-versjon ikke lenger er støttet.
 
 #### Fikse sikkerhetsadvarsler
 

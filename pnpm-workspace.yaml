@@ -16,6 +16,14 @@ allowBuilds:
   style-dictionary: false
   unrs-resolver: false
 
+# Peer dependencies are declared explicitly rather than auto-installed, so that
+# optional peers for features we don't use (such as unplugin-dts's api-extractor
+# rollup, or standalone rollup, since Vite builds with rolldown) are simply left
+# out. `strictPeerDependencies` turns a genuinely unmet peer into an install
+# error; use `packageExtensions` to mark a peer optional if it is wrongly
+# declared as required.
+autoInstallPeers: false
+
 catalog:
   "@babel/types": ^7.29.8
   "@types/js-yaml": ^4.0.9
@@ -178,6 +186,8 @@ packageExtensions:
 
 patchedDependencies:
   remark-heading-id@1.0.1: patches/remark-heading-id@1.0.1.patch
+
+strictPeerDependencies: true
 
 syncInjectedDepsAfterScripts:
   - inject
