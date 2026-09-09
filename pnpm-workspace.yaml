@@ -172,6 +172,28 @@ overrides:
   sharp@<0.35.0: ^0.35.0
 
 packageExtensions:
+  # These ESLint-related packages support the Storybook rules loaded through
+  # Oxlint, but do not require the `eslint` package at runtime. Mark their
+  # required `eslint` peers optional to avoid installing ESLint solely for
+  # `strictPeerDependencies`.
+  "@eslint-community/eslint-utils":
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  "@typescript-eslint/utils":
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  eslint-plugin-storybook:
+    peerDependenciesMeta:
+      eslint:
+        optional: true
+  # @navikt/aksel-icons does not declare React as a dependency, but it looks up
+  # `useId` at runtime and uses an internal id counter if React is not present.
+  # Listing it as an optional peer dependency ensures that it resolves a
+  # consistent React version, without which we would sometimes get an "Invalid
+  # Hook Call" warning. See
+  # https://react.dev/warnings/invalid-hook-call-warning#duplicate-react.
   "@navikt/aksel-icons":
     peerDependencies:
       "@types/react": ^18.3.11 || ^19.0.0
