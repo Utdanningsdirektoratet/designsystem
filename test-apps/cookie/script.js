@@ -124,13 +124,11 @@ function showCookieBanner() {
 
 function hideCookieBanner() {
   cookieDialog.close();
-  document.documentElement.classList.remove('no-scroll');
-  coiRenewBtn.style.display = '';
 }
 
-cookieDialog.addEventListener('cancel', (event) => {
-  event.preventDefault();
-  window.CookieInformation.declineAllCategories();
+cookieDialog.addEventListener('close', () => {
+  document.documentElement.classList.remove('no-scroll');
+  coiRenewBtn.style.display = '';
 });
 
 // Close main dialog on backdrop click (don't close for consent — just ignore)
