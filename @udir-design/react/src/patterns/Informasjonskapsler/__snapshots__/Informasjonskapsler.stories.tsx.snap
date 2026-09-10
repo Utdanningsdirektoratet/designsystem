@@ -1,5 +1,202 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Necessary Only 1`] = `
+<div data-size="auto">
+  <style>
+    /* Styles defined in application-specific css */
+            .cookies-buttons {
+              display: flex;
+              gap: var(--ds-size-4);
+              flex-wrap: wrap;
+            }
+            .cookies-details ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            .cookies-details li > strong {
+              font-weight: 600;
+            }
+            @media (max-width: 40rem) {
+              .cookies-buttons > button {
+                flex: 1 1 auto;
+              }
+            }
+  </style>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="<generated>"
+    open
+  >
+    <button
+      data-icon="true"
+      commandfor="<generated>"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      command="close"
+    >
+    </button>
+    <div>
+      <h2>
+        [Tjenestenavn] bruker informasjonskapsler
+      </h2>
+      <p>
+        Nødvendige informasjonskapsler bidrar til at tjenesten fungerer og er sikker, og kan ikke velges bort.
+      </p>
+      <button
+        data-variant="secondary"
+        type="button"
+        aria-haspopup="dialog"
+        data-size="sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M3.25 4A.75.75 0 0 1 4 3.25h16a.75.75 0 0 1 .75.75v16a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75zM11 7.75a1 1 0 1 1 2 0 1 1 0 0 1-2 0m-1.25 3a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 .75.75v4.75h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75v-4h-.75a.75.75 0 0 1-.75-.75"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+        Se hvilke informasjonskapsler vi bruker
+      </button>
+      <dialog
+        data-placement="center"
+        data-modal="true"
+        id="<generated>"
+      >
+        <button
+          data-icon="true"
+          commandfor="<generated>"
+          data-variant="tertiary"
+          type="button"
+          aria-label="Lukk dialogvindu"
+          data-color="neutral"
+          command="close"
+        >
+        </button>
+        <div>
+          <h2>
+            Informasjonskapsler
+          </h2>
+          <p>
+            Les om hvordan vi behandler personopplysninger og hvilke rettigheter du har i
+            <a href="https://example.com/privacy">
+              vår personvernerklæring
+            </a>
+            .
+          </p>
+          <div>
+            <div>
+              <h3 data-size="xs">
+                Nødvendige
+              </h3>
+              <p>
+                Nødvendige informasjonskapsler hjelper med å gjøre tjenesten brukbar ved å aktivere grunnleggende funksjoner knyttet til [sett inn relevante funksjoner i tjenesten, f.eks. navigasjon, sikkerhet og ytelse]. Tjenesten kan ikke fungere optimalt uten disse informasjonskapslene.
+              </p>
+              <details>
+                <summary>
+                  2 nødvendige
+                </summary>
+                <div>
+                  <div>
+                    <div>
+                      <h4 data-size="2xs">
+                        1
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cookie Information
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Støtter nettstedets tekniske funksjoner.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          CookieConsent
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          1 år
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 data-size="2xs">
+                        2
+                      </h4>
+                      <ul>
+                        <li>
+                          <strong>
+                            Leverandør:
+                          </strong>
+                          Cloudflare
+                        </li>
+                        <li>
+                          <strong>
+                            Formål:
+                          </strong>
+                          Beskytter mot ondsinnede besøkende og begrenser risikoen for serveroverbelastning.
+                        </li>
+                        <li>
+                          <strong>
+                            Navn:
+                          </strong>
+                          __cfruid, cf_clearance
+                        </li>
+                        <li>
+                          <strong>
+                            Utløpstid:
+                          </strong>
+                          Sesjon / 30 minutter
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </dialog>
+      <p>
+        Samtykket gjelder for: [abc].udir.no, [xyz].udir.no.
+      </p>
+    </div>
+    <div>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Lukk
+      </button>
+    </div>
+  </dialog>
+</div>
+`;
+
 exports[`Preview 1`] = `
 <div data-size="auto">
   <style>
@@ -19,13 +216,13 @@ exports[`Preview 1`] = `
             }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
-          flex: 1 1 auto;
+                flex: 1 1 auto;
               }
             }
   </style>
   <dialog
     data-placement="center"
-    data-modal="false"
+    data-modal="true"
     id="<generated>"
     open
   >
