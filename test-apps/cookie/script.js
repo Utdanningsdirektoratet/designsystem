@@ -128,6 +128,11 @@ function hideCookieBanner() {
   coiRenewBtn.style.display = '';
 }
 
+cookieDialog.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  window.CookieInformation.declineAllCategories();
+});
+
 // Close main dialog on backdrop click (don't close for consent — just ignore)
 cookieDialog.addEventListener('click', (e) => {
   if (e.target === cookieDialog) {

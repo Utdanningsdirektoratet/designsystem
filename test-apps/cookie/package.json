@@ -1,12 +1,9 @@
 {
   "name": "cookie",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "private": true,
+  "description": "Static Cookie Information template example for local development.",
   "type": "module",
-  "main": "script.js",
   "scripts": {
     "dev": "node --watch server.js",
     "start": "node server.js"

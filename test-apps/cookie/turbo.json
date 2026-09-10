@@ -1,0 +1,17 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "dev": {
+      "with": ["@udir-design/css#watch"],
+      "persistent": true,
+      "cache": false,
+      "dependsOn": ["^build", "^inject"]
+    },
+    "start": {
+      "persistent": true,
+      "cache": false,
+      "dependsOn": ["^build", "^inject"]
+    }
+  }
+}

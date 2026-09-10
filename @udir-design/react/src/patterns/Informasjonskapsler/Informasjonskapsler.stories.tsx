@@ -4,7 +4,13 @@ import {
   Link,
   Paragraph,
 } from '@digdir/designsystemet-react';
+import { useState } from 'react';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { InformationSquareFillIcon } from '@udir-design/icons';
+import {
+  WithInertInitialRender,
+  useIsInert,
+} from '.storybook/decorators/WithInertInitialRender';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { Details } from 'src/components/details';
@@ -47,24 +53,14 @@ const meta = preview.meta({
       originator: 'self',
     },
   },
-  decorators: [
-    withResponsiveDataSize,
-    (Story, context) => {
-      // Hacky way to detect docs mode in iframe-rendered story
-      const isInDocsPage =
-        window.parent.location.search.includes('viewMode=docs');
-      if (isInDocsPage) {
-        // Set viewMode since Storybook doesn't detect it properly when rendered with "inline: false" (iframe mode)
-        context.viewMode = 'docs';
-      }
-      return <Story />;
-    },
-  ],
+  decorators: [withResponsiveDataSize, WithInertInitialRender],
 });
 
 export const Preview = meta.story({
   args: {},
-  render: (args, context) => {
+  render: (args) => {
+    const [open, setOpen] = useState(true);
+    const isInert = useIsInert();
     const locale = getPageLocale();
     const content = localizedExampleData[locale];
     const text = translations[locale];
@@ -102,10 +98,10 @@ export const Preview = meta.story({
           `}
         </style>
         <Dialog
-          open={true}
-          modal={false}
           {...args}
-          {...(context.viewMode === 'docs' && { inert: true })}
+          open={open}
+          onClose={() => setOpen(false)}
+          {...(isInert && { inert: true })}
         >
           <Prose>
             <Heading>{content.heading}</Heading>
@@ -131,10 +127,9 @@ export const Preview = meta.story({
                 <Prose>
                   <Heading level={2}>{text.overviewHeading}</Heading>
                   <Paragraph>
-                    Les om hvordan vi behandler personopplysninger og hvilke
-                    rettigheter du har i{' '}
+                    {text.privacyPolicyText}{' '}
                     <Link href="https://example.com/privacy">
-                      vår personvernerklæring
+                      {text.privacyPolicyLinkText}
                     </Link>
                     .
                   </Paragraph>
@@ -194,17 +189,50 @@ export const Preview = meta.story({
 
           <div className="cookies-buttons">
             {necessaryOnly ? (
-              <Button variant="secondary">{text.acceptNecessary}</Button>
+              <Button variant="secondary" onClick={() => setOpen(false)}>
+                {text.acceptNecessary}
+              </Button>
             ) : (
               <>
-                <Button variant="secondary">{text.acceptAll}</Button>
-                <Button variant="secondary">{text.acceptSelected}</Button>
-                <Button variant="secondary">{text.declineOptional}</Button>
+                <Button variant="secondary" onClick={() => setOpen(false)}>
+                  {text.acceptAll}
+                </Button>
+                <Button variant="secondary" onClick={() => setOpen(false)}>
+                  {text.acceptSelected}
+                </Button>
+                <Button variant="secondary" onClick={() => setOpen(false)}>
+                  {text.declineOptional}
+                </Button>
               </>
             )}
           </div>
         </Dialog>
+        {open ? null : (
+          <Button
+            variant="tertiary"
+            onClick={() => setOpen(true)}
+            aria-haspopup="dialog"
+          >
+            {text.renewConsent}
+          </Button>
+        )}
       </>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const acceptAll = canvas.getByRole('button', { name: 'Godta alle' });
+
+    await userEvent.click(acceptAll);
+
+    const renewConsent = canvas.getByRole('button', {
+      name: 'Endre samtykke',
+    });
+    await expect(renewConsent).toBeVisible();
+
+    await userEvent.click(renewConsent);
+    await waitFor(() =>
+      expect(canvas.getByRole('button', { name: 'Godta alle' })).toBeVisible(),
     );
   },
 });
