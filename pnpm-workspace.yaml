@@ -209,6 +209,8 @@ patchedDependencies:
 
 strictPeerDependencies: true
 
+# Keep this on the uncached `inject` task. Turbo may restore a cached `build`
+# output without running its package script, leaving injected dependencies stale.
 syncInjectedDepsAfterScripts:
   - inject
 
