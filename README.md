@@ -204,6 +204,7 @@ Monorepoet vårt består av
 - [`@udir-design/theme`](./@udir-design/theme/): CSS-bibliotek som definerer vårt tema — altså farger, størrelser, typografi osv.
 - [`@udir-design/icons`](./@udir-design/icons/): Ikonbibliotek for bruk med React
 - [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, og dokumentasjon for designsystemet.
+- [`@internal/*`](./@internal/): Interne pakker og konfigurasjon som brukes i utviklingen av designsystemet, men ikke publiseres på npm.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
 
 Avhengighetsforholdene kan illustreres slik:

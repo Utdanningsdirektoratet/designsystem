@@ -563,6 +563,27 @@ importers:
         specifier: 'catalog:'
         version: 18.1.0
 
+  '@internal/cookie-information-template':
+    dependencies:
+      '@digdir/designsystemet-css':
+        specifier: 'catalog:'
+        version: 1.21.0
+      '@udir-design/css':
+        specifier: workspace:*
+        version: link:../../@udir-design/css
+      '@udir-design/theme':
+        specifier: workspace:*
+        version: link:../../@udir-design/theme
+      express:
+        specifier: 'catalog:'
+        version: 5.2.1(supports-color@7.2.0)
+      express-rate-limit:
+        specifier: 'catalog:'
+        version: 8.7.0(express@5.2.1(supports-color@7.2.0))(supports-color@7.2.0)
+      handlebars:
+        specifier: 'catalog:'
+        version: 4.7.9
+
   '@internal/oxlint-plugin':
     devDependencies:
       oxlint:
@@ -924,27 +945,6 @@ importers:
       style-dictionary:
         specifier: 'catalog:'
         version: 5.5.3
-
-  test-apps/cookie:
-    dependencies:
-      '@digdir/designsystemet-css':
-        specifier: 'catalog:'
-        version: 1.21.0
-      '@udir-design/css':
-        specifier: workspace:*
-        version: link:../../@udir-design/css
-      '@udir-design/theme':
-        specifier: workspace:*
-        version: link:../../@udir-design/theme
-      express:
-        specifier: 'catalog:'
-        version: 5.2.1(supports-color@7.2.0)
-      express-rate-limit:
-        specifier: 'catalog:'
-        version: 8.7.0(express@5.2.1(supports-color@7.2.0))(supports-color@7.2.0)
-      handlebars:
-        specifier: 'catalog:'
-        version: 4.7.9
 
   test-apps/nextjs:
     dependencies:

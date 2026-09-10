@@ -7,8 +7,14 @@ import { buildData } from './data.js';
 
 const app = express();
 const port = Number(process.env.PORT) || 3000;
-const template = Handlebars.compile(
-  fs.readFileSync(path.join(import.meta.dirname, 'index.html'), 'utf8'),
+const previewTemplate = Handlebars.compile(
+  fs.readFileSync(path.join(import.meta.dirname, 'preview/index.html'), 'utf8'),
+);
+const cookieTemplate = Handlebars.compile(
+  fs.readFileSync(
+    path.join(import.meta.dirname, 'template/html-code.html'),
+    'utf8',
+  ),
 );
 
 app.use(
@@ -21,14 +27,19 @@ app.use(
 );
 
 app.get('/', (request, response) => {
-  response.send(template(buildData(request.query.culture)));
+  const data = buildData(request.query.culture);
+  response.send(
+    previewTemplate({ ...data, cookieTemplate: cookieTemplate(data) }),
+  );
 });
 
-app.get('/style.css', (_request, response) => {
-  response.sendFile(path.join(import.meta.dirname, 'style.css'));
+app.get('/template/css-code.css', (_request, response) => {
+  response.sendFile(path.join(import.meta.dirname, 'template/css-code.css'));
 });
-app.get('/script.js', (_request, response) => {
-  response.sendFile(path.join(import.meta.dirname, 'script.js'));
+app.get('/template/javascript-code.js', (_request, response) => {
+  response.sendFile(
+    path.join(import.meta.dirname, 'template/javascript-code.js'),
+  );
 });
 app.get('/css/theme/dist/index.css', (_request, response) => {
   response.sendFile(

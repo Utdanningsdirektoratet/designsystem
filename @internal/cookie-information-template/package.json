@@ -1,8 +1,8 @@
 {
-  "name": "cookie",
-  "version": "1.0.0",
+  "name": "@internal/cookie-information-template",
+  "version": "0.0.0",
   "private": true,
-  "description": "Static Cookie Information template example for local development.",
+  "description": "Source code and local preview for Udir's Cookie Information template.",
   "type": "module",
   "scripts": {
     "dev": "node --watch server.js",
