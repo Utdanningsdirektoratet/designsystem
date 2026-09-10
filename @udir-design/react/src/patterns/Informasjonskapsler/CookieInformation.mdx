@@ -15,9 +15,12 @@ Udir har avtale med [Cookie Information](https://cookieinformation.com/) som lev
 
 Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med ansvarlig for Cookie Information. Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
 
+> [!WARNING]
+> **Forvaltningen av malen er ikke avklart.** Vi har ikke bekreftet om endringer i den delte malen blir overført til eksisterende tjenestekopier, eller hvordan slike endringer skal rulles ut.
+
 ## Oppsett
 
-I dashbordet til Cookie Information velger du "Udir Design Informasjonskapsler" som designmal for tjenesten din. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
+Under "Consent popup" i dashbordet til Cookie Information velger du malen "Udir Design mal (ikke endre - lag en kopi)" og lager en kopi til tjenesten din. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
 
 Under "Copy and translations" i dashbordet finner du tekst for samtykke til informasjonskapsler som kan brukes i tjenesten. Teksten bør tilpasses tjenesten din, og kvalitetssikres av internjuridisk. Under følger hvilke felter som må fylles ut, med eksempler på innhold. Felter som ikke er listet opp her brukes ikke i malen.
 
@@ -187,8 +190,9 @@ Samtykkehåndteringen vil dukke opp på siden din innen 10 minutter.
 
 Verdien i `data-culture` velger språk for både innholdet fra Cookie Information
 og de faste tekstene i designmalen. Malen støtter `NB` og `EN`. Ukjente eller
-manglende språkverdier bruker `NB`. Støtte for flere språk krever at språket
-legges til i oversettelsesobjektet i JavaScript-filen for designmalen.
+manglende språkverdier bruker `NB`. Støtte for flere språk krever at innholdet
+konfigureres under "Copy and translations", og at språket legges til i
+oversettelsesobjektet i JavaScript-filen for designmalen.
 
 ## Åpne samtykkedialogen igjen
 
