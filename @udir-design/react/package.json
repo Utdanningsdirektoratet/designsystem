@@ -44,7 +44,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
+    "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
     "lint": "oxlint",
     "lint:cycles": "pnpm dpdm --no-warning --no-tree --exit-code circular:1 ./src/alpha.ts",
     "typecheck": "tsc --build",
