@@ -33,7 +33,7 @@
       ]
     },
     "build:storybook": {
-      "dependsOn": ["build"],
+      "dependsOn": ["build", "inject"],
       "inputs": ["$TURBO_DEFAULT$", "!**/*.test.*", "!**/*.spec.*"],
       "env": ["GITHUB_HEAD_REF"],
       "outputs": ["storybook-static/**"]
