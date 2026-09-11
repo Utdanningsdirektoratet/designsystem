@@ -1,0 +1,4 @@
+.ds-error-summary {
+  /* adjust border radius to before Digdir v1.21.1 */
+  --dsc-errorsummary-border-radius: var(--ds-border-radius-md);
+}
