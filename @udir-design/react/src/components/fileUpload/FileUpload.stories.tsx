@@ -151,7 +151,7 @@ export const ExampleDropZone = meta.story({
           }));
           setRejected((prev) => [...prev, ...entries]);
         },
-        maxSize: 5242880,
+        maxSize: 524288, // 0.5 MB, as described below
         accept: {
           'application/pdf': [],
         },
