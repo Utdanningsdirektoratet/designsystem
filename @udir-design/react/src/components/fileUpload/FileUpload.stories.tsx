@@ -130,6 +130,8 @@ export const ExampleDropZone = meta.story({
     type Rejection = FileRejection & { id: string };
     const [files, setFiles] = useState<File[]>([]);
     const [rejected, setRejected] = useState<Rejection[]>([]);
+    // One number for both the limit and the description, so they agree.
+    const maxSize = 512 * 1024;
 
     const removeFile = (fileToRemove: File) => {
       setFiles((prevItems) =>
@@ -151,7 +153,7 @@ export const ExampleDropZone = meta.story({
           }));
           setRejected((prev) => [...prev, ...entries]);
         },
-        maxSize: 5242880,
+        maxSize,
         accept: {
           'application/pdf': [],
         },
@@ -161,7 +163,12 @@ export const ExampleDropZone = meta.story({
       <>
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
-          description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
+          description={
+            <>
+              Du kan laste opp filer i PDF-format. Filer kan være opptil{' '}
+              <FileUpload.FileSize size={maxSize} />.
+            </>
+          }
           inputProps={getInputProps({ multiple: true })}
           files={files}
           isDragGlobal={isDragGlobal}
