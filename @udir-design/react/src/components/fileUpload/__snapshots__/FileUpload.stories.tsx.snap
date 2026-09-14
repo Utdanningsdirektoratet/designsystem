@@ -315,7 +315,11 @@ exports[`Example Drop Zone 1`] = `
     data-field="description"
     id="<generated>"
   >
-    Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
+    Du kan laste opp filer i PDF-format. Filer kan være opptil
+    <span>
+      512 KB
+    </span>
+    .
   </div>
   <div role="presentation">
     <div>
@@ -440,7 +444,11 @@ exports[`Example Dropzone With Explicit Size 1`] = `
     data-field="description"
     id="<generated>"
   >
-    Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
+    Du kan laste opp filer i PDF-format. Filer kan være opptil
+    <span>
+      512 KB
+    </span>
+    .
   </div>
   <div role="presentation">
     <div>
