@@ -193,11 +193,11 @@ Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for e
 
 Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
 
-Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedlegg i lista har feil. Ikke send inn kun vedleggene uten feil, siden brukeren kanskje ikke har fått med seg feilmeldingene og tror at alt har gått bra. `ErrorSummary` kan da lenke til vedleggene det gjelder.
+Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedlegg i lista har feil. Ikke send inn kun vedleggene uten feil, siden brukeren kanskje ikke har fått med seg feilmeldingene og tror at alt har gått bra. `ErrorSummary` kan da lenke tilbake til feltet slik at brukeren får rettet problemene.
 
 ### Error Summary
 
-Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.
+Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per vedlegg ville fylt oppsummeringen med det samme problemet om igjen.
 
 ## Tekst i FileUpload
 
