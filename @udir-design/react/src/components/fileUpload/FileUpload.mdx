@@ -174,9 +174,9 @@ Feilmeldinger hører hjemme på to nivåer, og de blir lest opp på ulike måter
 
 Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
 
-Feil på en enkelt fil ligger i et eget `aria-live`-område i hver `FileUpload.Item`. Det gjør at feilen blir lest opp når den kommer på en fil som allerede er synlig, og når en feilmelding erstattes av en annen.
+Feil som dukker opp på en fil som allerede ligger i lista, for eksempel når serveren avviser den etter opplasting, blir lest opp med det samme. Filnavnet blir lest opp sammen med feilen, så du trenger ikke gjenta det i teksten.
 
-Skriv feilmeldinger som gir mening alene, siden de blir lest opp uten det som står rundt.
+Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen kommer da samtidig, og en skjermleser leser bare opp feil som dukker opp senere.
 
 ## Error Summary
 
