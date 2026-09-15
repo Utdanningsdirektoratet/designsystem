@@ -177,6 +177,8 @@ Feilmeldinger hører hjemme på to nivåer, og de blir lest opp på ulike måter
 - Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
 - Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
 
+La feilmeldingen på feltet si at noe må ses på og hvor, og la feilmeldingen på hver fil si hva. Da er meldingen på feltet korrekt uansett hva som er galt med den enkelte filen.
+
 Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
 
 Stopp innsendingen så lenge en fil i lista har feil. Da kan ikke brukeren sende inn i den tro at flere filer blir med enn det som stemmer, og `ErrorSummary` kan lenke til filene det gjelder.
@@ -189,7 +191,7 @@ Feil som dukker opp på en fil som allerede ligger i lista, for eksempel når se
 
 Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen kommer da samtidig, og en skjermleser leser bare opp feil som dukker opp senere.
 
-Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "To av filene kunne ikke lastes opp". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Se lista under for hva som må gjøres.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
 ### Feil og innsending
 

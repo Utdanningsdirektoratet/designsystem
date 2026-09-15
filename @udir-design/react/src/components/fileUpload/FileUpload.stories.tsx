@@ -165,7 +165,7 @@ export const ExampleDropZone = meta.story({
     // there is one slot, so the messages have to share it.
     const fieldError =
       (entries.some(({ error }) => error) &&
-        'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.') ||
+        'Noen av vedleggene har feil. Se lista under for hva som må gjøres.') ||
       (valid.length > 2 && 'Du har lastet opp for mange filer.');
 
     return (
