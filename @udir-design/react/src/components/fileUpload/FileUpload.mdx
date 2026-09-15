@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FileUploadStories from './FileUpload.stories';
+import * as useFileUploadStories from '../../hooks/useFileUpload/useFileUpload.stories';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={FileUploadStories} />
@@ -34,6 +35,8 @@ import { FileUpload } from '@udir-design/react';
 - `FileUpload.Item` viser ett vedlegg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
 - `FileUpload.FileSize` viser en filstørrelse, for eksempel i beskrivelsen av et vedlegg.
 
+Komponentene holder ikke styr på vedleggene selv. Det gjør [`useFileUpload`](/docs/hooks-usefileupload--docs) for deg: den gir hvert vedlegg en id, skiller ut filene som skal sendes inn, og kjenner igjen en fil som allerede er lagt ved, slik at du kan si fra til brukeren i stedet for å legge den ved to ganger.
+
 ### Stabil id per vedlegg
 
 Hver `FileUpload.Item` trenger en `key` som følger vedlegget, ikke posisjonen i lista eller filen.
@@ -41,7 +44,9 @@ Hver `FileUpload.Item` trenger en `key` som følger vedlegget, ikke posisjonen i
 - **Ikke bruk indeksen.** Når brukeren fjerner et vedlegg, gjenbruker React DOM-nodene og forskyver innholdet oppover. Da kan et element arve feilmeldingen fra vedlegget under, slik at feilen blir lest opp på nytt selv om brukeren bare fjernet et annet vedlegg.
 - **Ikke lag id-en fra filen.** To filer kan ha samme navn, og den samme filen kan bli forsøkt lagt ved flere ganger. Brukeren skal se hva som skjedde med hvert forsøk, så hvert forsøk må få sin egen id.
 
-Lag id-en idet vedlegget legges til:
+Bruker du [`useFileUpload`](/docs/hooks-usefileupload--docs), får du id-en derfra og trenger ikke lage den selv.
+
+Holder du styr på vedleggene på egen hånd, lager du id-en idet vedlegget legges til:
 
 ```tsx
 type Entry = { id: string; file: File; error?: string };
@@ -140,6 +145,8 @@ Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet 
 
 `FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil. Mens `loading` er satt, vises en tekst om at filen blir lastet opp i stedet for beskrivelsen, og vedlegget har ingen knapper.
 
+`loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
+
 <Canvas of={FileUploadStories.Upload} />
 
 ### Visningsvarianter
@@ -169,7 +176,9 @@ Eksempelet under viser hvordan feil henger sammen med innsendingen. Last opp fil
 
 Alle havner i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
 
-<Canvas of={FileUploadStories.SubmittingWithErrors} />
+Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
+
+<Canvas of={useFileUploadStories.SubmittingWithErrors} />
 
 ## Retningslinjer
 
