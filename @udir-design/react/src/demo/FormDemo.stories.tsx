@@ -112,7 +112,7 @@ export const FormPage3WithFileError = FormPage3.extend({
       // Validation knows about it, so it reaches the error summary too.
       await expect(
         canvas.getAllByText(
-          'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.',
+          'Noen av vedleggene har feil. Se lista under for hva som må gjøres.',
         ).length,
       ).toBeGreaterThan(0);
     });
