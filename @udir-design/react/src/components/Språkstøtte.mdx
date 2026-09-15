@@ -9,6 +9,8 @@ Udirs designsystem støtter flerspråklige løsninger. I de fleste komponentene 
 
 Noen komponenter har tekst som er forhåndsdefinert. Disse komponentene vil bruke riktig språk dersom [`lang`-attributtet](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/lang) i løsningen er satt til et språk vi har oversettelser for.
 
+Det er bare de forhåndsdefinerte tekstene som styres av `lang` og CSS-variablene. Tekst du sender inn gjennom props eller `children`, må du oversette selv. En eksplisitt verdi i en prop overstyrer alltid komponentens standardtekst.
+
 Det vil fungere å sette `lang` på hvilken som helst forelder, men gjerne sett det på `<html>` for å sikre konsistens.
 
 ```jsx
@@ -34,10 +36,13 @@ Se hvilke tekstvariabler som er tilgjengelige for overstyring i dokumentasjonen 
 
 - [Breadcrumbs](/docs/components-breadcrumbs--docs#språkstøtte)
 - [DemoBanner](/docs/components-demobanner--docs#språkstøtte)
+- [Dialog](/docs/components-dialog--docs#språkstøtte)
 - [Field](/docs/components-field--docs#språkstøtte)
 - [FieldNecessity](/docs/components-fieldnecessity--docs#språkstøtte)
 - [FileUpload](/docs/components-fileupload--docs#språkstøtte)
 - [FormSummary](/docs/components-formsummary--docs#språkstøtte)
 - [Pagination](/docs/components-pagination--docs#språkstøtte)
+- [Search](/docs/components-search--docs#språkstøtte)
 - [Suggestion](/docs/components-suggestion--docs#språkstøtte)
+- [TableOfContents](/docs/components-tableofcontents--docs#språkstøtte)
 - [useDrilldownTable](/docs/hooks-usedrilldowntable--docs#språkstøtte)

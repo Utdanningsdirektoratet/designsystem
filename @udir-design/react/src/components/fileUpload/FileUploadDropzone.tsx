@@ -1,8 +1,9 @@
 import './fileUpload.css';
 import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
-import { forwardRef, useEffect, useId, useRef } from 'react';
+import { forwardRef, useId } from 'react';
 import { UploadIcon } from '@udir-design/icons';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import { Button } from '../button';
 import { Card } from '../card';
 import { Field } from '../field';
@@ -46,19 +47,13 @@ export const FileUploadDropzone = forwardRef<
   },
   ref,
 ) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const cssVar = inputProps?.multiple
     ? '--udsc-fileUpload-chooseFiles-text'
     : '--udsc-fileUpload-chooseFile-text';
-  // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
-  useEffect(() => {
-    if (typeof window === 'undefined' || !buttonRef.current) return;
-    const buttonAriaLabel = getComputedStyle(buttonRef.current)
-      .getPropertyValue(cssVar)
-      .replace(/^["']|["']$/g, '')
-      .trim();
-    buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
-  }, [cssVar]);
+  const [buttonRef, buttonAriaLabel] = useLanguageVariable<HTMLButtonElement>(
+    cssVar,
+    inputProps?.multiple ? 'Velg filer' : 'Velg fil',
+  );
 
   const generatedId = useId();
   const id = rest.id ?? generatedId;
@@ -99,6 +94,7 @@ export const FileUploadDropzone = forwardRef<
         {!inputProps?.readOnly && (
           <Button
             id={buttonId}
+            aria-label={buttonAriaLabel}
             aria-labelledby={label ? labelId : undefined}
             aria-describedby={description ? descriptionId : undefined}
             variant={variant}

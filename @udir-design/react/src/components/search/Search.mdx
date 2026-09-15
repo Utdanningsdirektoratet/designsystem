@@ -1,4 +1,5 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 import * as SearchStories from './Search.stories';
 
 <Meta of={SearchStories} />
@@ -107,3 +108,15 @@ Hvis du vil eksponere søket for hjelpemidler som et ARIA søk-landemerke, legge
 - <kbd>Tab</kbd> - lar brukere bevege seg mellom inputfelt, clear-knapp og
   søkeknapp.
 - <kbd>Enter</kbd> - sender inn søket når fokus er i inputfeltet.
+
+## Språkstøtte
+
+`Search.Button` og `Search.Clear` har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+Send innhold til `Search.Button` eller `aria-label` til `Search.Clear` dersom du vil angi tekstene eksplisitt.
+
+Følgende tekstvariabler er tilgjengelige for overstyring:
+
+<CssLanguageVariables
+  variables={['--udsc-search-button-text', '--udsc-search-clear-label']}
+/>

@@ -1,3 +1,17 @@
+[lang|='nb' i],
+[lang|='no' i],
+:root {
+  --udsc-tableOfContents-summary-text: 'Innhold på denne siden';
+}
+
+[lang|='nn' i] {
+  --udsc-tableOfContents-summary-text: 'Innhald på denne sida';
+}
+
+[lang|='en' i] {
+  --udsc-tableOfContents-summary-text: 'On this page';
+}
+
 .uds-table-of-contents {
   width: 100%;
 
