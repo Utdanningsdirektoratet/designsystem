@@ -81,7 +81,7 @@ export const SubmittingWithErrors = meta.story({
     // is one slot, so the messages have to share it.
     const fieldError =
       (hasErrors &&
-        'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.') ||
+        'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.') ||
       (uploading && 'Vent til opplastingen er ferdig.');
 
     return (
@@ -213,7 +213,7 @@ export const SubmittingWithErrors = meta.story({
       await expect(canvas.getByText('Filen er for stor')).toBeInTheDocument();
       await expect(
         canvas.getByText(
-          'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.',
+          'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
         ),
       ).toBeInTheDocument();
 
@@ -248,7 +248,7 @@ export const SubmittingWithErrors = meta.story({
         // The same field message as a file that was refused on arrival.
         await expect(
           canvas.getByText(
-            'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.',
+            'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
           ),
         ).toBeInTheDocument();
 

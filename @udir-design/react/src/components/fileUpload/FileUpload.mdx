@@ -189,7 +189,9 @@ Feilmeldinger hører hjemme på to nivåer:
 - Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
 - Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
 
-Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "To av filene kunne ikke lastes opp". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+La feilmeldingen på feltet si at noe må ses på og hvor, og la feilmeldingen på hvert vedlegg si hva. Da er meldingen på feltet korrekt uansett hva som er galt med den enkelte filen.
+
+Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
 Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
 
@@ -198,6 +200,8 @@ Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedleg
 ### Error Summary
 
 Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per vedlegg ville fylt oppsummeringen med det samme problemet om igjen.
+
+Punktet i oppsummeringen gjentar som regel feilmeldingen fra feltet. Skriv derfor meldingen slik at den også gir mening der.
 
 ## Tekst i FileUpload
 
