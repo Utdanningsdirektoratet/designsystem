@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FileUploadStories from './FileUpload.stories';
+import * as useFileUploadStories from '../../hooks/useFileUpload/useFileUpload.stories';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={FileUploadStories} />
@@ -62,7 +63,9 @@ Hver `FileUpload.Item` trenger en `key` som følger filen, ikke posisjonen i lis
 - **Ikke bruk indeksen.** Når brukeren fjerner en fil, gjenbruker React DOM-nodene og forskyver innholdet oppover. Da kan et element arve feilmeldingen fra filen under, slik at feilen blir lest opp på nytt selv om brukeren bare fjernet en annen fil.
 - **Ikke bruk filnavnet.** Brukeren kan laste opp to filer med samme navn fra ulike mapper, og da får du duplikate nøkler.
 
-Bruk i stedet en stabil id per fil, som du lager selv. I eksemplene våre lager vi id-en fra filnavn, størrelse og `lastModified`:
+Bruker du [`useFileUpload`](/docs/hooks-usefileupload--docs), får du id-en derfra og trenger ikke lage den selv.
+
+Holder du styr på filene på egen hånd, lager du en stabil id per fil. I eksemplene våre lager vi id-en fra filnavn, størrelse og `lastModified`:
 
 ```tsx
 function fileId(file: File) {
@@ -147,6 +150,8 @@ Visningene støtter det samme, så du kan bytte mellom dem uten å endre på `Fi
 
 `FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil.
 
+`loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
+
 <Canvas of={FileUploadStories.Upload} />
 
 ## Tekst i FileUpload
@@ -190,7 +195,9 @@ Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil,
 
 Eksempelet under viser hvordan feil henger sammen med innsendingen: en fil som blir avvist med en gang, en fil serveren avviser etterpå, og en opplasting som ikke er ferdig. Alle tre ligger i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
 
-<Canvas of={FileUploadStories.SubmittingWithErrors} />
+Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
+
+<Canvas of={useFileUploadStories.SubmittingWithErrors} />
 
 ## Error Summary
 
