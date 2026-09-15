@@ -181,7 +181,7 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 
 ### Meldinger på vedlegg
 
-Skjermlesere leser teksten i `error` på `FileUpload.Item` uten det som står rundt, så skriv den slik at den gir mening alene.
+Skjermlesere leser teksten i `error` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
 
 ## Tilgjengelighet
 
@@ -189,7 +189,9 @@ Skjermlesere leser teksten i `error` på `FileUpload.Item` uten det som står ru
 
 Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
 
-Feilmeldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp.
+Feilmeldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp, med filnavnet foran.
+
+Skjermlesere leser ikke opp feilmeldingen på et vedlegg som legges til med feilen, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere.
 
 ## Språkstøtte
 
