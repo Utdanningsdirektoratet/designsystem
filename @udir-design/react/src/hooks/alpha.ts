@@ -6,3 +6,9 @@
  */
 
 export { useDrilldownTable } from './useDrilldownTable';
+export {
+  type FileUploadEntry,
+  type UseFileUploadProps,
+  type UseFileUploadReturn,
+  useFileUpload,
+} from './useFileUpload';
