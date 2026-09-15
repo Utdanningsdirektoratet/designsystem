@@ -80,7 +80,27 @@ const FormSchema = z.object({
   ageGroup: z.string().refine((v) => v !== 'blank', {
     message: 'Velg en aldersgruppe',
   }),
-  documentation: z.array(z.instanceof(File)).min(1, 'Last opp dokumentasjon'),
+  // The field holds every file the user tried to attach, failures included,
+  // the same way a text field holds text that does not pass validation. Drop
+  // them here and nothing can validate them, and the user loses them when they
+  // leave the page.
+  //
+  // `loading` is deliberately not here: an upload in progress belongs to the
+  // page doing it, not to the form. Remembering it would leave a file stuck
+  // uploading for good if the user left the page part way through.
+  documentation: z
+    .array(
+      z.object({
+        id: z.string(),
+        file: z.instanceof(File),
+        error: z.string().optional(),
+      }),
+    )
+    .min(1, 'Last opp dokumentasjon')
+    .refine((entries) => entries.every(({ error }) => !error), {
+      message:
+        'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.',
+    }),
   addition: z.string().optional(),
 });
 
