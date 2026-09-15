@@ -584,7 +584,7 @@ exports[`Example Dropzone With Explicit Size 1`] = `
 exports[`Example Items 1`] = `
 <div>
   <h3 data-size="2xs">
-    Vedlegg (3):
+    Vedlegg (4):
   </h3>
   <ul
     role="list"
@@ -745,17 +745,6 @@ exports[`Example Items 1`] = `
       >
       </div>
     </li>
-  </ul>
-  <h3
-    data-size="2xs"
-    style="<removed>"
-  >
-    Vedlegg med feil:
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
     <li data-invalid="true">
       <div>
         <div>
@@ -783,9 +772,11 @@ exports[`Example Items 1`] = `
             eksempel5.tsx
           </span>
           <div>
+            Filopplasting 5 (
             <span>
               844 KB
             </span>
+            )
           </div>
         </div>
         <button
