@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import type { FileRejection } from 'react-dropzone';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field';
@@ -8,84 +7,61 @@ import { FileUpload } from 'src/components/fileUpload';
 import { Textarea } from 'src/components/textarea';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
+import type { FileUploadEntry } from 'src/hooks/useFileUpload';
+import { useFileUpload } from 'src/hooks/useFileUpload';
 import type { FormValues, PageProps } from '../FormDemo';
 
 export const DocumentationPage = ({
   isSubmitSuccessful,
   showErrors,
 }: PageProps) => {
-  const { register, setValue, watch, formState } = useFormContext<FormValues>();
-
-  // For rejected files we need an id per upload attempt rather than per file
-  type Rejection = FileRejection & { id: string };
-  const [rejected, setRejected] = useState<Rejection[]>([]);
-  const uploadedFiles = watch('documentation');
+  const { register, setValue, getValues, formState } =
+    useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
 
-  const removeFile = (fileToRemove: File) => {
-    setValue(
-      'documentation',
-      uploadedFiles.filter((file) => file !== fileToRemove),
-      { shouldValidate: true },
-    );
-  };
-
-  const removeRejected = (idToRemove: string) => {
-    setRejected((prev) => prev.filter(({ id }) => id !== idToRemove));
-  };
+  // The whole list lives in the form, so validation can see the files that
+  // failed and the user still has them after visiting another page.
+  const onEntriesChange = useCallback(
+    (entries: FileUploadEntry[]) =>
+      setValue(
+        'documentation',
+        // Whether a file is uploading right now is not something the form
+        // should remember; see the schema.
+        entries.map(({ loading: _, ...entry }) => entry),
+        { shouldValidate: true },
+      ),
+    [setValue],
+  );
+  const { entries, files, add, addRejected, remove } = useFileUpload({
+    initialEntries: getValues('documentation'),
+    onEntriesChange,
+  });
 
   const { getRootProps, getInputProps, isDragGlobal, isDragActive } =
     useDropzone({
-      validator: (file) =>
-        uploadedFiles.some((uploaded) => fileId(uploaded) === fileId(file))
-          ? {
-              code: 'file-already-added',
-              message: 'Filen er allerede lagt til',
-            }
-          : null,
-      onDropAccepted: (files) => {
-        setValue('documentation', [...uploadedFiles, ...files], {
-          shouldValidate: true,
-        });
+      onDropAccepted: (accepted) => {
+        const { duplicates } = add(accepted);
+        // The hook spots them; the wording is ours.
+        addRejected(
+          duplicates.map((file) => ({
+            file,
+            error: 'Filen er allerede lagt til',
+          })),
+        );
       },
-      onDropRejected: (rejections) => {
-        const entries = rejections.map((rejection) => ({
-          ...rejection,
-          id: crypto.randomUUID(),
-        }));
-        setRejected((prev) => [...prev, ...entries]);
-      },
+      onDropRejected: (rejections) =>
+        addRejected(
+          rejections.map(({ file, errors }) => ({
+            file,
+            error: ErrorMessages.get(errors[0].code) ?? errors[0].message,
+          })),
+        ),
       maxSize: 25000000,
       multiple: true,
       accept: {
         'application/pdf': [],
       },
     });
-
-  // The form owns the real attachments and rejected files sit on their own,
-  // but the user sees one list: everything they tried to attach.
-  const rows = [
-    ...uploadedFiles.map((file) => ({
-      id: fileId(file),
-      file,
-      error: undefined,
-      onRemove: () => removeFile(file),
-    })),
-    ...rejected.map(({ id, file, errors }) => ({
-      id,
-      file,
-      error: ErrorMessages.get(errors[0].code) ?? errors[0].message,
-      onRemove: () => removeRejected(id),
-    })),
-  ];
-
-  // Validation does not know about the rejected files, so without this there
-  // is nothing telling the user they were not attached.
-  const rejectedError =
-    rejected.length > 0 &&
-    (rejected.length === 1
-      ? 'Én fil kunne ikke lastes opp.'
-      : `${rejected.length} filer kunne ikke lastes opp.`);
 
   return (
     <>
@@ -104,24 +80,24 @@ export const DocumentationPage = ({
           }),
           id: 'dokumentasjon-dropzone',
         }}
-        files={uploadedFiles}
+        files={files}
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
-        error={errors.documentation?.message || rejectedError}
+        error={errors.documentation?.message}
       />
-      {rows.length > 0 && (
+      {entries.length > 0 && (
         <>
           <Heading level={3} data-size="2xs">
-            Vedlegg ({rows.length}):
+            Vedlegg ({entries.length}):
           </Heading>
 
           <FileUpload.List>
-            {rows.map(({ id, file, error, onRemove }) => (
+            {entries.map(({ id, file, error }) => (
               <FileUpload.Item
                 key={id}
                 file={file}
                 error={error}
-                onRemove={onRemove}
+                onRemove={() => remove(id)}
               />
             ))}
           </FileUpload.List>
@@ -150,7 +126,3 @@ const ErrorMessages = new Map<string, string>([
   ['file-too-small', 'Filen er for liten'],
   ['too-many-files', 'Du har lastet opp for mange filer'],
 ]);
-
-function fileId(file: File) {
-  return `${file.name}-${file.size}-${file.lastModified}`;
-}
