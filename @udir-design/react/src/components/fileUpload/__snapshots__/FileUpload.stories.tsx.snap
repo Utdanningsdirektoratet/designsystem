@@ -76,7 +76,10 @@ exports[`Compact List 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li>
@@ -145,7 +148,10 @@ exports[`Compact List 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li>
@@ -214,7 +220,10 @@ exports[`Compact List 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li data-invalid="true">
@@ -278,7 +287,10 @@ exports[`Compact List 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -298,6 +310,9 @@ exports[`Compact List 1`] = `
             >
             </path>
           </svg>
+          <span>
+            kandidat-16.tsx:
+          </span>
           Filformatet støttes ikke
         </p>
       </div>
@@ -422,7 +437,10 @@ exports[`Example Drop Zone 1`] = `
         </svg>
       </button>
     </div>
-    <div aria-live="polite">
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
     </div>
   </li>
 </ul>
@@ -547,7 +565,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
         </svg>
       </button>
     </div>
-    <div aria-live="polite">
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
     </div>
   </li>
 </ul>
@@ -640,7 +661,10 @@ exports[`Example Items 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li>
@@ -681,7 +705,10 @@ exports[`Example Items 1`] = `
           </div>
         </div>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li aria-busy="true">
@@ -718,7 +745,10 @@ exports[`Example Items 1`] = `
           </div>
         </div>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
   </ul>
@@ -793,7 +823,10 @@ exports[`Example Items 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -813,6 +846,9 @@ exports[`Example Items 1`] = `
             >
             </path>
           </svg>
+          <span>
+            eksempel5.tsx:
+          </span>
           Filformatet støttes ikke
         </p>
       </div>
@@ -937,7 +973,10 @@ exports[`Example Trigger 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
   </ul>
@@ -1244,7 +1283,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li>
@@ -1313,7 +1355,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
     <li>
@@ -1377,7 +1422,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </button>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
   </ul>
@@ -1472,7 +1520,10 @@ exports[`Upload 1`] = `
           </div>
         </div>
       </div>
-      <div aria-live="polite">
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
       </div>
     </li>
   </ul>

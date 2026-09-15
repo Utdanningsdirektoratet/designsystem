@@ -114,10 +114,24 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </Tooltip>
           )}
         </div>
-        <div aria-live="polite" className="uds-file-upload__item-error">
+        {/* Announces an error that appears after the file is already listed,
+            such as one the server reports once the upload finishes. An item
+            that is added with an error cannot announce: the region and the
+            error arrive together, and a region only announces what reaches it
+            after it is in the dom. `aria-atomic` keeps the file name in the
+            announcement when one error replaces another, where only the
+            message itself would otherwise be new. */}
+        <div
+          aria-live="polite"
+          aria-atomic="true"
+          className="uds-file-upload__item-error"
+        >
           {Boolean(error) && (
             <Paragraph>
               <XMarkOctagonFillIcon aria-hidden />
+              {/* The announcement is heard on its own, away from the file name
+                  above it, so it has to carry the name itself. */}
+              <span className="ds-sr-only">{`${file.name}: `}</span>
               {error}
             </Paragraph>
           )}
