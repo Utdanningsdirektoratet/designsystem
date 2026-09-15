@@ -1,12 +1,13 @@
 import type { ChangeEvent } from 'react';
 import { useState } from 'react';
-import type { FileRejection } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
+import { Button } from '../button';
+import { Paragraph } from '../typography/paragraph';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
@@ -116,6 +117,9 @@ export const Readonly = meta.story({
   },
 });
 
+/** One row in the attachment list, whatever happened to it. */
+type Entry = { id: string; file: File; loading?: boolean; error?: string };
+
 export const ExampleDropZone = meta.story({
   parameters: {
     customStyles: {
@@ -126,36 +130,45 @@ export const ExampleDropZone = meta.story({
     docs: advancedCodeDocs,
   },
   render: (args) => {
-    // For rejected files we need an id per upload attempt rather than per file
-    type Rejection = FileRejection & { id: string };
-    const [files, setFiles] = useState<File[]>([]);
-    const [rejected, setRejected] = useState<Rejection[]>([]);
+    // Accepted and rejected files go in the same list: to the user they are
+    // both files that were dropped, and one of them did not work. The id is per
+    // attempt rather than per file, since the same file can be dropped twice.
+    const [entries, setEntries] = useState<Entry[]>([]);
 
-    const removeFile = (fileToRemove: File) => {
-      setFiles((prevItems) =>
-        prevItems.filter((file) => file !== fileToRemove),
-      );
-    };
-
-    const removeRejected = (idToRemove: string) => {
-      setRejected((prev) => prev.filter(({ id }) => id !== idToRemove));
+    const removeEntry = (idToRemove: string) => {
+      setEntries((prev) => prev.filter(({ id }) => id !== idToRemove));
     };
 
     const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
       useDropzone({
-        onDropAccepted: (files) => setFiles((prev) => [...prev, ...files]),
-        onDropRejected: (rejections) => {
-          const entries = rejections.map((rejection) => ({
-            ...rejection,
-            id: crypto.randomUUID(),
-          }));
-          setRejected((prev) => [...prev, ...entries]);
-        },
+        onDropAccepted: (files) =>
+          setEntries((prev) => [
+            ...prev,
+            ...files.map((file) => ({ id: crypto.randomUUID(), file })),
+          ]),
+        onDropRejected: (rejections) =>
+          setEntries((prev) => [
+            ...prev,
+            ...rejections.map(({ file, errors }) => ({
+              id: crypto.randomUUID(),
+              file,
+              error: ErrorMessages.get(errors[0].code),
+            })),
+          ]),
         maxSize: 524288, // 0.5 MB, as described below
         accept: {
           'application/pdf': [],
         },
       });
+
+    const valid = entries.filter(({ error }) => !error);
+
+    // The field is the only part of this that a screen reader reads out, and
+    // there is one slot, so the messages have to share it.
+    const fieldError =
+      (entries.some(({ error }) => error) &&
+        'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.') ||
+      (valid.length > 2 && 'Du har lastet opp for mange filer.');
 
     return (
       <>
@@ -163,42 +176,26 @@ export const ExampleDropZone = meta.story({
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           inputProps={getInputProps({ multiple: true })}
-          files={files}
+          files={valid.map(({ file }) => file)}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
           data-testid="dropzone"
-          error={files.length > 2 && 'Du har lastet opp for mange filer.'}
+          error={fieldError}
           cardProps={getRootProps()}
           {...args}
         />
-        {files.length > 0 && (
+        {entries.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
+              Vedlegg ({entries.length}):
             </Heading>
             <FileUpload.List>
-              {files.map((file) => (
-                <FileUpload.Item
-                  key={fileId(file)}
-                  file={file}
-                  onRemove={() => removeFile(file)}
-                />
-              ))}
-            </FileUpload.List>
-          </>
-        )}
-        {rejected.length > 0 && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg med feil:
-            </Heading>
-            <FileUpload.List>
-              {rejected.map(({ id, file, errors }) => (
+              {entries.map(({ id, file, error }) => (
                 <FileUpload.Item
                   key={id}
                   file={file}
-                  onRemove={() => removeRejected(id)}
-                  error={ErrorMessages.get(errors[0].code)}
+                  error={error}
+                  onRemove={() => removeEntry(id)}
                 />
               ))}
             </FileUpload.List>
@@ -419,6 +416,7 @@ export const ExampleItems = meta.story({
       readonly?: boolean;
       loading?: boolean;
       description?: string;
+      error?: string;
     };
     const dummyFiles: FileInfo[] = [
       {
@@ -448,28 +446,20 @@ export const ExampleItems = meta.story({
         description: 'Filopplasting 4',
         loading: true,
       },
-    ];
-    const dummyRejected: FileInfo[] = [
       {
         size: 864000,
         name: 'eksempel5.tsx',
         id: 'eksempel5',
         description: 'Filopplasting 5',
+        error: 'Filformatet støttes ikke',
       },
     ];
 
     const [files, setFiles] = useState<FileInfo[]>(dummyFiles);
-    const [rejected, setRejected] = useState<FileInfo[]>(dummyRejected);
 
     const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
         prevItems.filter((file) => file !== fileToRemove),
-      );
-    };
-
-    const removeRejected = (rejectedToRemove: FileMeta) => {
-      setRejected((prevFile) =>
-        prevFile.filter((file) => file !== rejectedToRemove),
       );
     };
 
@@ -505,28 +495,8 @@ export const ExampleItems = meta.story({
                     }
                     readonly={file.readonly}
                     loading={file.loading}
+                    error={file.error}
                     onRemove={() => removeFile(file)}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-          {rejected.length > 0 && (
-            <>
-              <Heading
-                level={3}
-                data-size="2xs"
-                style={{ marginBlockStart: 'var(--ds-size-3)' }}
-              >
-                Vedlegg med feil:
-              </Heading>
-              <FileUpload.List>
-                {rejected.map((file) => (
-                  <FileUpload.Item
-                    key={file.id}
-                    file={file}
-                    onRemove={() => removeRejected(file)}
-                    error={'Filformatet støttes ikke'}
                   />
                 ))}
               </FileUpload.List>
@@ -578,10 +548,11 @@ export const ExampleItems = meta.story({
       await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
     });
 
-    await step('Files are exposed as lists of cards', async () => {
-      const [files, rejected] = canvas.getAllByRole('list');
-      await expect(within(files).getAllByRole('listitem')).toHaveLength(4);
-      await expect(within(rejected).getAllByRole('listitem')).toHaveLength(1);
+    await step('Files are exposed as one list of cards', async () => {
+      // Files that failed sit alongside the rest: to the user they are all
+      // files that were attached, and one of them has something wrong with it.
+      const files = canvas.getByRole('list');
+      await expect(within(files).getAllByRole('listitem')).toHaveLength(5);
 
       /* Both variants render the same cards; the compact variant only
          collapses them together in CSS. */
