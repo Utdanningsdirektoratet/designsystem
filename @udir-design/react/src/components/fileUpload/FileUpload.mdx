@@ -82,7 +82,7 @@ function fileId(file: File) {
 
 Har filene dine allerede en id fra serveren, bruk den i stedet.
 
-I lista over filer som ble avvist lager vi en unik id per opplastingsforsøk, ikke per fil. Da får brukeren en rad hver gang en fil blir avvist, også når samme fil blir forsøkt lagt ved flere ganger.
+Id-en hører til raden i lista, ikke til filen. Den samme filen kan bli forsøkt lagt ved flere ganger, og da skal brukeren se hva som skjedde med hvert forsøk.
 
 #### Fortell feltet hvilke filer som er lagt ved
 
@@ -98,6 +98,8 @@ Send lista med filer til `files` på `FileUpload.Dropzone` eller `FileUpload.Tri
 ```
 
 Komponenten vet ikke selv hvilke filer som er lagt ved. Det er først når du setter `files` at skjermlesere, nettleservalidering med `required` og vanlig innsending av `<form>` får vite om dem.
+
+Send inn de filene du faktisk skal sende, ikke alt som vises i lista. Filer med feil skal ikke være med: de havner ellers i selve filopplastingsfeltet, og blir sendt med hvis skjemaet sendes inn uten at du håndterer innsendingen selv.
 
 Bare ekte `File`-objekter kan legges inn i `files`. Filer du kun har metadata om, for eksempel filer som allerede ligger på serveren, sender du ikke inn her.
 
@@ -170,6 +172,10 @@ Feilmeldinger hører hjemme på to nivåer, og de blir lest opp på ulike måter
 - Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
 - Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
 
+Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
+
+Stopp innsendingen så lenge en fil i lista har feil. Da kan ikke brukeren sende inn i den tro at flere filer blir med enn det som stemmer, og `ErrorSummary` kan lenke til filene det gjelder.
+
 ### Opplesing av feilmeldinger
 
 Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
@@ -177,6 +183,8 @@ Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir
 Feil som dukker opp på en fil som allerede ligger i lista, for eksempel når serveren avviser den etter opplasting, blir lest opp med det samme. Filnavnet blir lest opp sammen med feilen, så du trenger ikke gjenta det i teksten.
 
 Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen kommer da samtidig, og en skjermleser leser bare opp feil som dukker opp senere.
+
+Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "To av filene kunne ikke lastes opp". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
 ## Error Summary
 

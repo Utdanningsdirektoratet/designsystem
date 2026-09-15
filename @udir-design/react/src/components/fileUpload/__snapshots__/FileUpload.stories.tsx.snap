@@ -584,7 +584,7 @@ exports[`Example Items 1`] = `
 </style>
 <div>
   <h3 data-size="2xs">
-    Vedlegg (3):
+    Vedlegg (4):
   </h3>
   <ul
     role="list"
@@ -751,17 +751,6 @@ exports[`Example Items 1`] = `
       >
       </div>
     </li>
-  </ul>
-  <h3
-    data-size="2xs"
-    style="<removed>"
-  >
-    Vedlegg med feil:
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
     <li data-invalid="true">
       <div>
         <div>
@@ -790,8 +779,13 @@ exports[`Example Items 1`] = `
           </span>
           <div>
             <span>
+              Filopplasting 5
+            </span>
+            (
+            <span>
               844 KB
             </span>
+            )
           </div>
         </div>
         <button
