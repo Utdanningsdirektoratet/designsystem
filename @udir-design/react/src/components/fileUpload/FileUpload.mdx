@@ -36,32 +36,39 @@ import { FileUpload } from '@udir-design/react';
 
 ### Stabil id per vedlegg
 
-Hver `FileUpload.Item` trenger en `key` som følger vedlegget, ikke posisjonen i lista.
+Hver `FileUpload.Item` trenger en `key` som følger vedlegget, ikke posisjonen i lista eller filen.
 
 - **Ikke bruk indeksen.** Når brukeren fjerner et vedlegg, gjenbruker React DOM-nodene og forskyver innholdet oppover. Da kan et element arve feilmeldingen fra vedlegget under, slik at feilen blir lest opp på nytt selv om brukeren bare fjernet et annet vedlegg.
-- **Ikke bruk filnavnet.** Brukeren kan laste opp to filer med samme navn fra ulike mapper, og da får du duplikate nøkler.
+- **Ikke lag id-en fra filen.** To filer kan ha samme navn, og den samme filen kan bli forsøkt lagt ved flere ganger. Brukeren skal se hva som skjedde med hvert forsøk, så hvert forsøk må få sin egen id.
 
-Bruk i stedet en stabil id per vedlegg, som du lager selv. I eksemplene våre lager vi id-en fra filnavn, størrelse og `lastModified`:
+Lag id-en idet vedlegget legges til:
 
 ```tsx
-function fileId(file: File) {
-  return `${file.name}-${file.size}-${file.lastModified}`;
-}
+type Entry = { id: string; file: File; error?: string };
+
+const addFiles = (files: File[]) =>
+  setEntries((prev) => [
+    ...prev,
+    ...files.map((file) => ({ id: crypto.randomUUID(), file })),
+  ]);
 
 <FileUpload.List>
-  {files.map((file) => (
+  {entries.map(({ id, file, error }) => (
     <FileUpload.Item
-      key={fileId(file)}
+      key={id}
       file={file}
-      onRemove={() => removeFile(file)}
+      error={error}
+      onRemove={() =>
+        setEntries((prev) => prev.filter((entry) => entry.id !== id))
+      }
     />
   ))}
 </FileUpload.List>;
 ```
 
-Har vedleggene dine allerede en id fra serveren, bruk den i stedet.
+`crypto.randomUUID` finnes bare på sider som lastes over https eller fra `localhost`.
 
-I lista over filer som ble avvist lager vi en unik id per opplastingsforsøk, ikke per fil. Da får brukeren et vedlegg i lista hver gang en fil blir avvist, også når samme fil blir forsøkt lagt ved flere ganger.
+Har vedleggene dine allerede en id fra serveren, bruk den i stedet.
 
 ### Fortell feltet hvilke filer som er lagt ved
 
@@ -77,6 +84,8 @@ Send lista med filer til `files` på `FileUpload.Dropzone` eller `FileUpload.Tri
 ```
 
 Komponenten vet ikke selv hvilke filer som er lagt ved. Det er først når du setter `files` at skjermlesere, nettleservalidering med `required` og vanlig innsending av `<form>` får vite om dem.
+
+Send inn de filene du faktisk skal sende, ikke alt som vises i lista. Filer med feil skal ikke være med: de havner ellers i selve filopplastingsfeltet, og blir sendt med hvis skjemaet sendes inn uten at du håndterer innsendingen selv.
 
 Bare ekte `File`-objekter kan legges inn i `files`. Filer du kun har metadata om, for eksempel filer som allerede ligger på serveren, sender du ikke inn her.
 
@@ -158,6 +167,12 @@ Feilmeldinger hører hjemme på to nivåer:
 
 - Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
 - Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
+
+Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "To av filene kunne ikke lastes opp". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+
+Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
+
+Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedlegg i lista har feil. Ikke send inn kun vedleggene uten feil, siden brukeren kanskje ikke har fått med seg feilmeldingene og tror at alt har gått bra. `ErrorSummary` kan da lenke til vedleggene det gjelder.
 
 ### Error Summary
 

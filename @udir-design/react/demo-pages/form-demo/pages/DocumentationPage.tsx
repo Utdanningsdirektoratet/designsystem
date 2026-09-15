@@ -62,6 +62,31 @@ export const DocumentationPage = ({
       },
     });
 
+  // The form owns the real attachments and rejected files sit on their own,
+  // but the user sees one list: everything they tried to attach.
+  const rows = [
+    ...uploadedFiles.map((file) => ({
+      id: fileId(file),
+      file,
+      error: undefined,
+      onRemove: () => removeFile(file),
+    })),
+    ...rejected.map(({ id, file, errors }) => ({
+      id,
+      file,
+      error: ErrorMessages.get(errors[0].code) ?? errors[0].message,
+      onRemove: () => removeRejected(id),
+    })),
+  ];
+
+  // Validation does not know about the rejected files, so without this there
+  // is nothing telling the user they were not attached.
+  const rejectedError =
+    rejected.length > 0 &&
+    (rejected.length === 1
+      ? 'Én fil kunne ikke lastes opp.'
+      : `${rejected.length} filer kunne ikke lastes opp.`);
+
   return (
     <>
       <Heading level={2} data-size="sm">
@@ -82,39 +107,21 @@ export const DocumentationPage = ({
         files={uploadedFiles}
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
-        error={errors.documentation?.message}
+        error={errors.documentation?.message || rejectedError}
       />
-      {uploadedFiles.length > 0 && (
+      {rows.length > 0 && (
         <>
           <Heading level={3} data-size="2xs">
-            Vedlegg ({uploadedFiles.length}):
+            Vedlegg ({rows.length}):
           </Heading>
 
           <FileUpload.List>
-            {uploadedFiles.map((file) => (
-              <FileUpload.Item
-                key={fileId(file)}
-                file={file}
-                onRemove={() => removeFile(file)}
-              />
-            ))}
-          </FileUpload.List>
-        </>
-      )}
-
-      {rejected.length > 0 && (
-        <>
-          <Heading level={3} data-size="2xs">
-            Vedlegg med feil:
-          </Heading>
-
-          <FileUpload.List>
-            {rejected.map(({ id, file, errors }) => (
+            {rows.map(({ id, file, error, onRemove }) => (
               <FileUpload.Item
                 key={id}
                 file={file}
-                onRemove={() => removeRejected(id)}
-                error={ErrorMessages.get(errors[0].code) ?? errors[0].message}
+                error={error}
+                onRemove={onRemove}
               />
             ))}
           </FileUpload.List>

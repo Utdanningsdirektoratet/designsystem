@@ -49,8 +49,8 @@ export type FileUploadProps = HTMLAttributes<DSFieldElement> & {
    */
   inputProps?: InputProps_;
   /**
-   * The files that are currently attached, so the file input matches the list
-   * the user sees. Leave out files you only have metadata for, such as files
+   * The files that will be submitted, so the file input reports them. Leave out
+   * files with an error, and files you only have metadata for, such as files
    * already stored on the server.
    */
   files?: File[];
