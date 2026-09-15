@@ -186,6 +186,12 @@ Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen ko
 
 Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "To av filene kunne ikke lastes opp". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
+### Feil og innsending
+
+Eksempelet under viser hvordan feil henger sammen med innsendingen: en fil som blir avvist med en gang, en fil serveren avviser etterpå, og en opplasting som ikke er ferdig. Alle tre ligger i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
+
+<Canvas of={FileUploadStories.SubmittingWithErrors} />
+
 ## Error Summary
 
 Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.
