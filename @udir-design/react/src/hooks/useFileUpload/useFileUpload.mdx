@@ -1,0 +1,148 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as Stories from './useFileUpload.stories';
+
+<Meta of={Stories} />
+
+# useFileUpload
+
+En React-hook som holder styr på filene brukeren har lagt ved i [`FileUpload`](/docs/components-fileupload--docs).
+
+Hooken skiller mellom to lister: alt brukeren har forsøkt å legge ved, og de filene som faktisk skal sendes inn. Den første viser du med `FileUpload.List`, den andre sender du til `files` på `FileUpload.Dropzone` eller `FileUpload.Trigger`, og videre til skjemaet ditt.
+
+<Canvas of={Stories.SubmittingWithErrors} />
+
+Hooken returnerer et objekt med:
+
+```ts
+{
+  entries: FileUploadEntry[], // Alt brukeren har forsøkt å legge ved
+  files: File[], // Filene uten feil, altså de som skal sendes inn
+
+  hasErrors: boolean, // Om minst én fil har en feil
+  uploading: boolean, // Om minst én fil fortsatt lastes opp
+
+  /* Legger til filer. Filer som allerede er lagt ved kommer tilbake i `duplicates` */
+  add: (
+    files: File[],
+    initial?: { error?: string; loading?: boolean },
+  ) => { added: FileUploadEntry[]; duplicates: File[] },
+
+  addRejected: (rejected: { file: File; error: string }[]) => void, // Legger til filer som ble avvist
+  update: (id: string, patch: { error?: string; loading?: boolean }) => void, // Endrer status på én fil
+  remove: (id: string) => void, // Fjerner én fil
+  clear: () => void, // Fjerner alle
+}
+```
+
+## Bruk
+
+### Koble hooken til FileUpload
+
+```tsx
+const { entries, files, remove } = useFileUpload();
+
+<FileUpload.Dropzone label="Last opp dokumentasjon" files={files} />
+<FileUpload.List>
+  {entries.map(({ id, file, error, loading }) => (
+    <FileUpload.Item
+      key={id}
+      file={file}
+      error={error}
+      loading={loading}
+      onRemove={() => remove(id)}
+    />
+  ))}
+</FileUpload.List>;
+```
+
+`entries` inneholder både filene som gikk bra og de som ikke gjorde det, og alle hører hjemme i den samme lista. For brukeren er en fil som blir avvist med en gang og en fil serveren ikke klarer å lese det samme: noe som ikke ble med. Se [Hvor hører feilen hjemme?](/docs/components-fileupload--docs) for mer om dette.
+
+### Filer som blir avvist
+
+Hooken lager ingen feilmeldinger selv. Du sender inn teksten, så den er på riktig språk og sier det skjemaet ditt trenger å si.
+
+```tsx
+const { addRejected } = useFileUpload();
+
+useDropzone({
+  onDropRejected: (rejections) =>
+    addRejected(
+      rejections.map(({ file, errors }) => ({
+        file,
+        error: ErrorMessages.get(errors[0].code) ?? errors[0].message,
+      })),
+    ),
+});
+```
+
+### Filer som allerede er lagt ved
+
+`add` legger ikke til en fil som allerede ligger i lista. Du får den i stedet tilbake, og bestemmer selv om brukeren skal få vite om det.
+
+```tsx
+const { add, addRejected } = useFileUpload();
+
+useDropzone({
+  onDropAccepted: (accepted) => {
+    const { duplicates } = add(accepted);
+    addRejected(
+      duplicates.map((file) => ({ file, error: 'Filen er allerede lagt til' })),
+    );
+  },
+});
+```
+
+To filer er den samme når navn, størrelse og endringstidspunkt stemmer overens. Trenger du en annen regel, sender du inn `getFileKey`. Lag den utenfor komponenten eller pakk den i `useCallback`, ellers endrer funksjonene hooken returnerer seg ved hver rendring.
+
+### Skjemaet ditt
+
+La skjemafeltet ditt holde hele lista, ikke bare filene som skal sendes inn. Da kan valideringen fange opp filene som feilet, og de er fortsatt der om brukeren går til en annen side og kommer tilbake.
+
+```tsx
+const onEntriesChange = useCallback(
+  (entries: FileUploadEntry[]) =>
+    setValue('dokumentasjon', entries, { shouldValidate: true }),
+  [setValue],
+);
+
+const { entries } = useFileUpload({
+  initialEntries: getValues('dokumentasjon'),
+  onEntriesChange,
+});
+```
+
+Valideringen din avgjør så hva som er greit, og `ErrorSummary` kan lenke til feltet som vanlig:
+
+```ts
+dokumentasjon: z.array(Vedlegg)
+  .min(1, 'Last opp dokumentasjon')
+  .refine((entries) => entries.every(({ error }) => !error), {
+    message: 'Noen av filene kunne ikke lastes opp. Fjern dem for å gå videre.',
+  });
+```
+
+Når du skal sende inn, bruker du `files`, som er lista uten filene med feil.
+
+### Opplasting
+
+Laster du opp filene med en gang de blir lagt ved, kan du markere dem som `loading` når de legges til, og oppdatere dem når serveren svarer.
+
+```tsx
+const { added } = add(accepted, { loading: true });
+
+// Når opplastingen er ferdig
+update(id, { loading: undefined });
+
+// Eller hvis serveren ikke ville ha filen
+update(id, {
+  loading: undefined,
+  error: 'Serveren kunne ikke lese filen.',
+});
+```
+
+En fil som får en feil blir liggende i lista, men forsvinner fra `files`. Brukeren ser den fortsatt, og velger selv om den skal fjernes eller legges ved på nytt.
+
+`loading` hører derimot ikke hjemme i skjemaet. En opplasting som pågår er noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Lagrer du den, kan et vedlegg bli stående som om det laster opp for alltid dersom brukeren forlater siden mens det står på, og da blir skjemaet umulig å sende inn. Ta den derfor ut når du sender lista videre til skjemaet.
+
+Skal brukeren kunne forlate siden mens en opplasting pågår, har du to valg. Enten hindrer du navigasjonen og spør om de vil avbryte opplastingen, eller så lar du opplastingen leve i en komponent som ikke forsvinner når brukeren bytter side, og oppdatere skjemaet når den er ferdig. I det siste tilfellet må du også stoppe innsendingen på en annen måte enn med `loading`.
