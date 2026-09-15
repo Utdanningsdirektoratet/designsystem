@@ -159,6 +159,18 @@ Dersom du ønsker å begrense antall filer, implementeres dette selv. Om brukere
 
 <Canvas of={FileUploadStories.TooManyFiles} />
 
+### Feil og innsending
+
+Eksempelet under viser hvordan feil henger sammen med innsendingen. Last opp filer for å prøve de tre tilfellene som stopper innsendingen:
+
+- en fil som blir avvist med en gang, fordi den ikke er en PDF eller er større enn 512 KB
+- en fil serveren avviser etterpå, når du trykker "La serveren avvise filen"
+- en opplasting som ikke er ferdig, så lenge du ikke trykker "Fullfør opplastingen"
+
+Alle havner i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
+
+<Canvas of={FileUploadStories.SubmittingWithErrors} />
+
 ## Retningslinjer
 
 ### Hvor hører feilen hjemme?
