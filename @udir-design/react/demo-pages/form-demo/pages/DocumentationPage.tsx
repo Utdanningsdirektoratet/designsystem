@@ -78,7 +78,9 @@ export const DocumentationPage = ({
             required: true,
             readOnly: isSubmitSuccessful,
           }),
-          id: 'dokumentasjon-dropzone',
+          // The error summary links to `#<field name>` and focuses the
+          // control with that id, so it has to match the name in the schema.
+          id: 'documentation',
         }}
         files={files}
         isDragActive={isDragActive}
