@@ -730,6 +730,23 @@ export const CompactList = meta.story({
       },
     );
 
+    await step('A file with an error is named as invalid', async () => {
+      /* The text is generated content, so it is invisible to Chromatic and
+         absent from the dom snapshot. A screen reader reads it with the file
+         name, which is the only way to tell a failed row apart while browsing
+         the list, so it has to sit inside the name element. */
+      const markerIn = (name: string) =>
+        canvas.getByText(name).querySelector('.uds-file-upload__item-invalid');
+
+      const marker = markerIn('kandidat-16.tsx');
+      await expect(marker).not.toBeNull();
+      await expect(
+        getComputedStyle(marker as Element, '::before').content,
+      ).toContain('ugyldig');
+
+      await expect(markerIn('kandidat-12.pdf')).toBeNull();
+    });
+
     await step('Clicking remove deletes the file from the list', async () => {
       const [removeButton] = canvas.getAllByRole('button');
       await userEvent.click(removeButton);
@@ -757,6 +774,7 @@ export const Translations = Preview.extend({
         '--udsc-fileUpload-or-text',
         '--udsc-fileUpload-uploading-text',
         '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-invalid-text',
         '--udsc-fileUpload-disabled-text-line-one',
         '--udsc-fileUpload-disabled-text-line-two',
       ],
