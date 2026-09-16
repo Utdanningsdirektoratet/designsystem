@@ -3,7 +3,7 @@
 exports[`Submitting With Errors 1`] = `
 <form style="<removed>">
   <ds-field>
-    <label for="<generated>">
+    <label for="dokumentasjon">
       Last opp dokumentasjon
     </label>
     <div
@@ -38,9 +38,9 @@ exports[`Submitting With Errors 1`] = `
       <input
         accept="application/pdf"
         multiple
+        id="dokumentasjon"
         type="file"
         name="dokumentasjon"
-        id="<generated>"
         aria-describedby="<generated> <generated>"
         aria-invalid="true"
       >
@@ -207,6 +207,25 @@ exports[`Submitting With Errors 1`] = `
       </div>
     </li>
   </ul>
+  <ds-error-summary
+    role="group"
+    tabindex="-1"
+    aria-labelledby="<generated>"
+  >
+    <h2 id="<generated>">
+      For å sende inn må du rette opp følgende:
+    </h2>
+    <ul>
+      <li>
+        <a
+          data-color="neutral"
+          href="#dokumentasjon"
+        >
+          Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.
+        </a>
+      </li>
+    </ul>
+  </ds-error-summary>
   <button type="submit">
     Send inn
   </button>
