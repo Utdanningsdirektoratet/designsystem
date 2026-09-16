@@ -188,6 +188,8 @@ Alle havner i den samme lista og sier fra på feltet, siden det bare er der bruk
 
 Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
 
+Eksempelet viser også hvordan man viser feil ved innsending. Når brukeren trykker på knappen, flyttes fokus automatisk til `ErrorSummary`, som viser feilen med en lenke tilbake til opplastingsfeltet. Når brukeren navigerer til opplastingsfeltet, vil en skjermleser også lese opp feilen der.
+
 <Canvas of={useFileUploadStories.SubmittingWithErrors} />
 
 ## Retningslinjer
@@ -212,6 +214,8 @@ Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedleg
 Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per vedlegg ville fylt oppsummeringen med det samme problemet om igjen.
 
 Punktet i oppsummeringen gjentar som regel feilmeldingen fra feltet. Skriv derfor meldingen slik at den også gir mening der.
+
+Se [eksempelet med feil og innsending](#feil-og-innsending) for hvordan dette henger sammen med innsendingen.
 
 ## Tekst i FileUpload
 
