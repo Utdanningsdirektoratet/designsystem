@@ -93,7 +93,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
           <div className="uds-file-upload__item-content">
-            <FileName file={file} href={href} />
+            <FileName file={file} href={href} invalid={Boolean(error)} />
             <div className="uds-file-upload__item-description">
               {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
               {!loading &&
@@ -201,12 +201,38 @@ export const downloadFile = (file: File): void => {
 interface FileNameProps {
   file: FileMeta;
   href?: string;
+  invalid?: boolean;
 }
 
-export const FileName = ({ file, href }: FileNameProps) => {
+export const FileName = ({ file, href, invalid }: FileNameProps) => {
+  /* Announce that the file is invalid as part of file name, so a row with
+     an error can be told apart while browsing the list without stepping
+     through the rest of the row to reach the message. Text in css */
+  const marker = invalid ? (
+    <span className="uds-file-upload__hidden-text uds-file-upload__item-invalid" />
+  ) : null;
+
   if (href) {
-    return <Link href={href}>{file.name}</Link>;
+    return (
+      <Link href={href}>
+        {file.name}
+        {marker}
+      </Link>
+    );
   }
 
-  return <span>{file.name}</span>;
+  if (!marker) {
+    return <span>{file.name}</span>;
+  }
+
+  /* A `div`: in a `span`, which Chrome leaves out of its tree, Chrome on
+     Android gave the name and the marker a node each, and TalkBack read
+     "ugyldig" as a stop of its own. */
+  return (
+    // oxlint-disable-next-line jsx-a11y/aria-role -- `text` is WebKit's own role, not ARIA's: without it, VoiceOver on iOS read the name, the comma and "ugyldig" as three stops. A link is read as one stop already.
+    <div className="uds-file-upload__item-name" role="text">
+      {file.name}
+      {marker}
+    </div>
+  );
 };
