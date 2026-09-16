@@ -1,11 +1,13 @@
 import type { ChangeEvent } from 'react';
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Checkbox } from 'src/components/checkbox';
 import { Heading } from 'src/components/typography/heading';
+import { useFileUpload } from 'src/hooks/useFileUpload';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
@@ -766,6 +768,266 @@ export const CompactList = meta.story({
       await expect(
         canvas.queryByText('kandidat-12.pdf'),
       ).not.toBeInTheDocument();
+    });
+  },
+});
+
+/** Stands in for a server that takes its time. */
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const UploadAndValidate = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: function UploadAndValidate() {
+    const { entries, files, add, addRejected, update, remove, hasErrors } =
+      useFileUpload();
+    const [reject, setReject] = useState(false);
+    const [validatingId, setValidatingId] = useState<string>();
+    const [approvedId, setApprovedId] = useState<string>();
+
+    const rejectRef = useRef(reject);
+    rejectRef.current = reject;
+    const handled = useRef(new Set<string>());
+
+    const handle = useCallback(
+      async (id: string) => {
+        update(id, { loading: true });
+
+        // Two waits, because the user is told a different thing during each:
+        // first the file is on its way, then the server is reading it.
+        await delay(500);
+        setValidatingId(id);
+        await delay(700);
+        setValidatingId(undefined);
+
+        if (rejectRef.current) {
+          update(id, {
+            loading: undefined,
+            error: 'Filen mangler kolonnen "kandidatnummer".',
+          });
+        } else {
+          update(id, { loading: undefined });
+          setApprovedId(id);
+        }
+      },
+      [update],
+    );
+
+    /* Only a file that is on its own is worth sending: with more than one
+       attached the user has to settle which it is first. Removing the others
+       later brings the one that is left here. `handled` is what ends the
+       effect: it runs on a change to `entries` and itself changes `entries`. */
+    useEffect(() => {
+      const [only] = entries;
+      if (entries.length !== 1 || handled.current.has(only.id)) return;
+      handled.current.add(only.id);
+      void handle(only.id);
+    }, [entries, handle]);
+
+    const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+      useDropzone({
+        multiple: false,
+        accept: { 'text/csv': ['.csv'] },
+        onDropAccepted: (accepted) => add(accepted),
+        onDropRejected: (rejections) => {
+          const isSurplus = (codes: string[]) =>
+            codes.includes('too-many-files');
+
+          // `multiple: false` turns away a whole group of files. They are
+          // still files the user attached, so they go in the list and the
+          // field says there are too many.
+          add(
+            rejections
+              .filter(({ errors }) => isSurplus(errors.map((e) => e.code)))
+              .map(({ file }) => file),
+          );
+
+          // A file that fails on its own merits carries its own reason.
+          addRejected(
+            rejections
+              .filter(({ errors }) => !isSurplus(errors.map((e) => e.code)))
+              .map(({ file, errors }) => ({
+                file,
+                error:
+                  errors[0].code === 'file-invalid-type'
+                    ? 'Filformatet støttes ikke'
+                    : errors[0].message,
+              })),
+          );
+        },
+      });
+
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        {/* Stands in for the server's verdict, which a real page does not get
+            to decide. */}
+        <Checkbox
+          label={<span>La valideringen avvise filen</span>}
+          checked={reject}
+          disabled={entries.length > 0}
+          onChange={(e) => setReject(e.target.checked)}
+        />
+
+        {/* The field stays where it is once a file is attached, rather than
+            being hidden or set readonly. It is still the field the user
+            wants, and what it says follows from the list. */}
+        <FileUpload.Dropzone
+          label="Last opp kandidatliste"
+          description="Du kan laste opp én fil i CSV-format."
+          cardProps={getRootProps()}
+          inputProps={getInputProps()}
+          files={files}
+          isDragActive={isDragActive}
+          isDragGlobal={isDragGlobal}
+          /* Both are read off the list, so neither can outlive what it says.
+             An attempt that was turned away does not make the field invalid
+             when the file already attached is perfectly good. */
+          error={
+            (entries.length > 1 &&
+              'Du kan bare legge ved én fil. Fjern dem du ikke vil bruke.') ||
+            (hasErrors && 'Noe må rettes. Feilen står på filen det gjelder.')
+          }
+        />
+
+        {entries.length > 0 && (
+          <FileUpload.List>
+            {entries.map(({ id, file, loading, error }) => (
+              <FileUpload.Item
+                key={id}
+                file={file}
+                loading={loading}
+                error={error}
+                onRemove={() => {
+                  remove(id);
+                  if (id === approvedId) setApprovedId(undefined);
+                }}
+                /* The default says the file is on its way, which stops being
+                   true once the server has it. */
+                loadingText={id === validatingId ? 'Validerer…' : undefined}
+                success={id === approvedId ? 'Filen er godkjent' : undefined}
+              />
+            ))}
+          </FileUpload.List>
+        )}
+      </div>
+    );
+  },
+});
+
+export const UploadAndValidateInteractions = UploadAndValidate.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: {
+    // The flow is timed, so neither snapshot would be stable; the assertions
+    // are what this story is for.
+    chromatic: { disableSnapshot: true },
+    snapshot: false,
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const input = () =>
+      canvasElement.querySelector('input[type="file"]') as HTMLInputElement;
+    const rows = () => canvas.queryAllByRole('listitem');
+    const message = () =>
+      rows()[0].querySelector('.uds-file-upload__item-message > p') as Element;
+    const busyText = () =>
+      rows()[0].querySelector('.uds-file-upload__item-description') as Element;
+    const csv = (name = 'kandidater.csv') =>
+      new File(['kandidatnummer\n1'], name, { type: 'text/csv' });
+    const tooMany =
+      'Du kan bare legge ved én fil. Fjern dem du ikke vil bruke.';
+    const remove = (index: number) =>
+      userEvent.click(
+        canvas.getAllByRole('button', { name: 'Fjern filen' })[index],
+      );
+
+    await step('Two files at once both land in the list', async () => {
+      // `multiple: false` makes react-dropzone turn away the whole drop, so
+      // without `onDropRejected` the files would vanish without a word.
+      const data = new DataTransfer();
+      data.items.add(csv('kandidater-a.csv'));
+      data.items.add(csv('kandidater-b.csv'));
+      // `DragEvent.dataTransfer` is readonly, so it has to be built with the
+      // event rather than assigned onto a fired one.
+      canvasElement.querySelector('.uds-file-upload .ds-card')?.dispatchEvent(
+        new DragEvent('drop', {
+          bubbles: true,
+          cancelable: true,
+          dataTransfer: data,
+        }),
+      );
+
+      await waitFor(() => expect(rows()).toHaveLength(2));
+      await expect(canvas.getByText(tooMany)).toBeVisible();
+      // Neither is worth sending until the user has settled which it is.
+      await expect(rows()[0]).not.toHaveAttribute('aria-busy');
+      await expect(rows()[1]).not.toHaveAttribute('aria-busy');
+    });
+
+    await step('Removing one starts the file that is left', async () => {
+      await remove(0);
+
+      await expect(rows()).toHaveLength(1);
+      await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
+      // Longer than the whole flow, which outlasts waitFor's default.
+      await waitFor(() => expect(busyText()).toHaveTextContent('Validerer…'), {
+        timeout: 3000,
+      });
+      await waitFor(
+        () => expect(canvas.getByText('Filen er godkjent')).toBeVisible(),
+        { timeout: 3000 },
+      );
+      await expect(rows()[0]).toHaveAttribute('data-valid');
+      // The hook the card border hangs off, mirroring `data-invalid`.
+      const card = getComputedStyle(rows()[0]);
+      await expect(card.getPropertyValue('--dsc-card-border-color')).toBe(
+        card.getPropertyValue('--ds-color-success-border-strong'),
+      );
+      // Drives the icon and the colour of the message.
+      await expect(message()).toHaveAttribute('data-color', 'success');
+    });
+
+    await step('A file too many leaves the approved one alone', async () => {
+      await userEvent.upload(input(), csv('kandidater-c.csv'));
+
+      await expect(rows()).toHaveLength(2);
+      await expect(canvas.getByText(tooMany)).toBeVisible();
+      // The verdict already given still stands.
+      await expect(canvas.getByText('Filen er godkjent')).toBeVisible();
+    });
+
+    await step('And removing it settles the field again', async () => {
+      await remove(1);
+
+      await expect(rows()).toHaveLength(1);
+      await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
+      // Not sent a second time: it was handled when it was first alone.
+      await expect(rows()[0]).not.toHaveAttribute('aria-busy');
+      await expect(canvas.getByText('Filen er godkjent')).toBeVisible();
+    });
+
+    await step('A rejected file gives the reason on the file', async () => {
+      await remove(0);
+      await userEvent.click(canvas.getByRole('checkbox'));
+      await userEvent.upload(input(), csv());
+
+      await waitFor(
+        () =>
+          expect(
+            canvas.getByText('Filen mangler kolonnen "kandidatnummer".'),
+          ).toBeVisible(),
+        { timeout: 3000 },
+      );
+      // The field says that something needs looking at, the file says what.
+      await expect(
+        canvas.getByText('Noe må rettes. Feilen står på filen det gjelder.'),
+      ).toBeVisible();
+      // No `data-color` is the danger default.
+      await expect(message()).not.toHaveAttribute('data-color');
     });
   },
 });
