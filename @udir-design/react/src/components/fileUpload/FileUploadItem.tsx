@@ -93,7 +93,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
           <div className="uds-file-upload__item-content">
-            <FileName file={file} href={href} />
+            <FileName file={file} href={href} invalid={Boolean(error)} />
             <div className="uds-file-upload__item-description">
               {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
               {!loading &&
@@ -198,12 +198,30 @@ export const downloadFile = (file: File): void => {
 interface FileNameProps {
   file: FileMeta;
   href?: string;
+  invalid?: boolean;
 }
 
-export const FileName = ({ file, href }: FileNameProps) => {
+export const FileName = ({ file, href, invalid }: FileNameProps) => {
+  /* Announce that the file is invalid as part of file name, so a row with
+     an error can be told apart while browsing the list without stepping
+     through the rest of the row to reach the message. Text in css */
+  const marker = invalid ? (
+    <span className="ds-sr-only uds-file-upload__item-invalid" />
+  ) : null;
+
   if (href) {
-    return <Link href={href}>{file.name}</Link>;
+    return (
+      <Link href={href}>
+        {file.name}
+        {marker}
+      </Link>
+    );
   }
 
-  return <span>{file.name}</span>;
+  return (
+    <span>
+      {file.name}
+      {marker}
+    </span>
+  );
 };
