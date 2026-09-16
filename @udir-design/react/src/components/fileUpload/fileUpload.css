@@ -8,7 +8,7 @@
   --udsc-fileUpload-dropFile-active-text: 'Slipp filen her';
   --udsc-fileUpload-dropFiles-active-text: 'Slipp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Laster opp...';
+  --udsc-fileUpload-loading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
   --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
@@ -23,7 +23,7 @@
   --udsc-fileUpload-dropFile-active-text: 'Slepp fila her';
   --udsc-fileUpload-dropFiles-active-text: 'Slepp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Lastar opp...';
+  --udsc-fileUpload-loading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
   --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
@@ -38,7 +38,7 @@
   --udsc-fileUpload-dropFile-active-text: 'Drop the file here';
   --udsc-fileUpload-dropFiles-active-text: 'Drop the files here';
   --udsc-fileUpload-or-text: 'or';
-  --udsc-fileUpload-uploading-text: 'Uploading...';
+  --udsc-fileUpload-loading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
   --udsc-fileUpload-invalid-text: 'invalid';
   --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
@@ -316,9 +316,10 @@
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
   }
 
-  /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .uds-file-upload__item-description::before {
-    content: var(--udsc-fileUpload-uploading-text);
+  /* The default text while loading. On the empty element, so that a
+     `loadingText` takes its place rather than landing next to it. */
+  &[aria-busy='true'] .uds-file-upload__item-description:empty::before {
+    content: var(--udsc-fileUpload-loading-text);
   }
 
   /* Invalid text after the file name */
