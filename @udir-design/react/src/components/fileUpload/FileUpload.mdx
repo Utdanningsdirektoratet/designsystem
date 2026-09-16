@@ -133,6 +133,8 @@ Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` 
 
 Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
 
+Med `success` viser du at filen er i orden, for eksempel når serveren har lest den ferdig. Sett `error` eller `success`, ikke begge: er begge satt, er det `error` som vises.
+
 <Canvas of={FileUploadStories.ExampleItems} />
 
 ### Visningsvarianter
@@ -187,11 +189,11 @@ Stopp innsendingen så lenge en fil i lista har feil. Da kan ikke brukeren sende
 
 Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
 
-Feil som dukker opp på en fil som allerede ligger i lista, for eksempel når serveren avviser den etter opplasting, blir lest opp med det samme. Filnavnet blir lest opp sammen med feilen, så du trenger ikke gjenta det i teksten.
+Meldinger som dukker opp på en fil som allerede ligger i lista, for eksempel når serveren avviser eller godkjenner den etter opplasting, blir lest opp med det samme. Dette gjelder både `error` og `success`. Filnavnet blir lest opp sammen med meldingen, så du trenger ikke gjenta det i teksten.
 
 Går brukeren gjennom lista, blir filnavnet på en fil med feil lest opp som ugyldig. Da trenger ikke brukeren lese hele raden for å finne ut hvilke filer som må ses på.
 
-Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen kommer da samtidig, og en skjermleser leser bare opp feil som dukker opp senere.
+Filer som får en melding idet de legges ved, blir ikke lest opp. Raden og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder en fil som allerede er godkjent når sida lastes, for eksempel når et skjema henter fram lagrede svar.
 
 Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
