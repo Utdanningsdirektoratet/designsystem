@@ -730,6 +730,19 @@ export const CompactList = meta.story({
       },
     );
 
+    await step('Only the file name breaks mid-word', async () => {
+      /* A long file name has nowhere to break; a message is prose and should
+         not be chopped in the middle of a word. */
+      const wordBreak = (el: Element) => getComputedStyle(el).wordBreak;
+
+      await expect(wordBreak(canvas.getByText('kandidat-16.tsx'))).toBe(
+        'break-all',
+      );
+      await expect(
+        wordBreak(canvas.getByText('Filformatet støttes ikke')),
+      ).not.toBe('break-all');
+    });
+
     await step('A file with an error is named as invalid', async () => {
       /* The text is generated content, so it is invisible to Chromatic and
          absent from the dom snapshot. A screen reader reads it with the file

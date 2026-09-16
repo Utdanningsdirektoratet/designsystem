@@ -211,7 +211,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
 
   if (href) {
     return (
-      <Link href={href}>
+      <Link className="uds-file-upload__item-name" href={href}>
         {file.name}
         {marker}
       </Link>
@@ -219,7 +219,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
   }
 
   return (
-    <span>
+    <span className="uds-file-upload__item-name">
       {file.name}
       {marker}
     </span>
