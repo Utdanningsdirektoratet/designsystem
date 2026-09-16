@@ -231,6 +231,8 @@ Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/co
 
 Feilmeldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp, med filnavnet foran.
 
+Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
+
 Skjermlesere leser ikke opp feilmeldingen på et vedlegg som legges til med feilen, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere.
 
 ## Språkstøtte
@@ -247,5 +249,6 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
     '--udsc-fileUpload-uploading-text',
+    '--udsc-fileUpload-invalid-text',
   ]}
 />

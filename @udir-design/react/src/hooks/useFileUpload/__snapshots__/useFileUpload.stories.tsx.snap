@@ -158,9 +158,11 @@ exports[`Submitting With Errors 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <div role="text">
             rapport-2.pdf
-          </span>
+            <span>
+            </span>
+          </div>
           <div>
             <span>
               1 KB
