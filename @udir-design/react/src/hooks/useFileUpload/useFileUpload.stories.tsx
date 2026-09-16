@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import type { DSErrorSummaryElement } from '@digdir/designsystemet-web';
+import { useRef, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
+import { ErrorSummary } from 'src/components/errorSummary';
 import { FileUpload } from 'src/components/fileUpload';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import { focusFormField } from 'src/utilities/form/focus';
 import type { UseFileUploadProps } from './useFileUpload';
 import { useFileUpload } from './useFileUpload';
 
@@ -36,6 +39,8 @@ export const SubmittingWithErrors = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: () => {
     const [receipt, setReceipt] = useState<string>();
+    const [attempted, setAttempted] = useState(false);
+    const summary = useRef<DSErrorSummaryElement>(null);
     const {
       entries,
       files,
@@ -86,7 +91,14 @@ export const SubmittingWithErrors = meta.story({
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (fieldError) return;
+          setAttempted(true);
+          if (fieldError) {
+            /* The field message is only read out to someone standing on the
+               field. The summary is what tells a user who pressed the button
+               what stopped them, and takes them to it. */
+            summary.current?.focus();
+            return;
+          }
           setReceipt(`Sendt inn med ${files.length} vedlegg.`);
         }}
         style={{
@@ -100,7 +112,11 @@ export const SubmittingWithErrors = meta.story({
           label="Last opp dokumentasjon"
           description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
           cardProps={getRootProps()}
-          inputProps={getInputProps({ name: 'dokumentasjon' })}
+          // The id is what the summary links to.
+          inputProps={getInputProps({
+            name: 'dokumentasjon',
+            id: 'dokumentasjon',
+          })}
           // Only the files that will actually be submitted.
           files={files}
           isDragActive={isDragActive}
@@ -158,6 +174,29 @@ export const SubmittingWithErrors = meta.story({
           </div>
         )}
 
+        {attempted && fieldError && (
+          <ErrorSummary ref={summary}>
+            <ErrorSummary.Heading>
+              For å sende inn må du rette opp følgende:
+            </ErrorSummary.Heading>
+            <ErrorSummary.List>
+              {/* One entry for the field, not one per file: the field message
+                  says what to do, and the list of files is right beside it. */}
+              <ErrorSummary.Item>
+                <ErrorSummary.Link
+                  href="#dokumentasjon"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    focusFormField('dokumentasjon');
+                  }}
+                >
+                  {fieldError}
+                </ErrorSummary.Link>
+              </ErrorSummary.Item>
+            </ErrorSummary.List>
+          </ErrorSummary>
+        )}
+
         <Button type="submit">Send inn</Button>
         {receipt && <Paragraph>{receipt}</Paragraph>}
       </form>
@@ -173,6 +212,10 @@ export const SubmittingWithErrors = meta.story({
 
     const send = () =>
       userEvent.click(canvas.getByRole('button', { name: 'Send inn' }));
+    /* The summary repeats the field message, so the field has to be asked
+       for it by name rather than the page at large. */
+    const field = () =>
+      within(canvasElement.querySelector('ds-field') as HTMLElement);
     const receipt = (count: number) =>
       canvas.queryByText(`Sendt inn med ${count} vedlegg.`);
 
@@ -205,13 +248,31 @@ export const SubmittingWithErrors = meta.story({
       await expect(canvas.getByText('Vedlegg (2):')).toBeInTheDocument();
       await expect(canvas.getByText('Filen er for stor')).toBeInTheDocument();
       await expect(
-        canvas.getByText(
+        field().getByText(
           'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
         ),
       ).toBeInTheDocument();
 
       await send();
       await expect(receipt(1)).toBeNull();
+    });
+
+    await step('Being stopped is said where the user pressed', async () => {
+      // The field message alone reaches nobody standing at the button.
+      const box = canvasElement.querySelector(
+        'ds-error-summary',
+      ) as HTMLElement;
+      await expect(box).toBeVisible();
+      await expect(box).toHaveFocus();
+
+      const link = within(box).getByRole('link');
+      await expect(link).toHaveTextContent(
+        'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
+      );
+
+      // And it takes the user to the field rather than only naming it.
+      await userEvent.click(link);
+      await expect(input).toHaveFocus();
     });
 
     await step('Submission goes through once the row is removed', async () => {
@@ -240,7 +301,7 @@ export const SubmittingWithErrors = meta.story({
 
         // The same field message as a file that was refused on arrival.
         await expect(
-          canvas.getByText(
+          field().getByText(
             'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
           ),
         ).toBeInTheDocument();
