@@ -10,6 +10,7 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -24,6 +25,7 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-uploading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -38,6 +40,7 @@
   --udsc-fileUpload-or-text: 'or';
   --udsc-fileUpload-uploading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
+  --udsc-fileUpload-invalid-text: 'invalid';
   --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
   --udsc-fileUpload-disabled-text-line-two: 'upload files';
 }
@@ -299,6 +302,27 @@
   /* Uploading text in the paragraph after link */
   &[aria-busy='true'] .uds-file-upload__item-description::before {
     content: var(--udsc-fileUpload-uploading-text);
+  }
+
+  /* Text for screen readers only, within visible text: the file name before
+     a message, and "ugyldig" after the file name. Visually hidden like
+     `.ds-sr-only`, but kept in the line instead of taken out of it with
+     `position: absolute`: NVDA in Firefox read it as a stop of its own. */
+  .uds-file-upload__hidden-text {
+    display: inline-block;
+    width: 1px;
+    /* With `overflow: hidden` its baseline is its bottom edge, which would
+       lift it above the text and make the line taller. */
+    vertical-align: top;
+    margin-inline-end: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    /* `pre` rather than `nowrap`, so the space after the file name is kept
+       at the end of the box. */
+    white-space: pre;
+  }
+  .uds-file-upload__item-invalid::before {
+    content: ', ' var(--udsc-fileUpload-invalid-text);
   }
 }
 
