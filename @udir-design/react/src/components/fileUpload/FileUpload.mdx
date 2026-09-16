@@ -193,7 +193,7 @@ Går brukeren gjennom lista, blir filnavnet på en fil med feil lest opp som ugy
 
 Filer som blir avvist idet de legges ved, blir ikke lest opp. Raden og feilen kommer da samtidig, og en skjermleser leser bare opp feil som dukker opp senere.
 
-Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Se lista under for hva som må gjøres.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
 
 ### Feil og innsending
 
@@ -206,6 +206,8 @@ Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder
 ## Error Summary
 
 Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per fil ville fylt oppsummeringen med det samme problemet om igjen.
+
+Punktet i oppsummeringen gjentar som regel feilmeldingen fra feltet. Skriv derfor meldingen slik at den også gir mening der.
 
 ## Språkstøtte
 
