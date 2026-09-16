@@ -214,7 +214,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
 
   if (href) {
     return (
-      <Link href={href}>
+      <Link className="uds-file-upload__item-name" href={href}>
         {file.name}
         {marker}
       </Link>
@@ -222,7 +222,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
   }
 
   if (!marker) {
-    return <span>{file.name}</span>;
+    return <span className="uds-file-upload__item-name">{file.name}</span>;
   }
 
   /* A `div`: in a `span`, which Chrome leaves out of its tree, Chrome on
