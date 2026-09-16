@@ -261,6 +261,10 @@
       &[data-invalid] {
         --dsc-card-border-color: var(--ds-color-danger-border-strong);
       }
+
+      &[data-valid] {
+        --dsc-card-border-color: var(--ds-color-success-border-strong);
+      }
     }
   }
 
@@ -294,7 +298,7 @@
       }
     }
 
-    .uds-file-upload__item-error > p {
+    .uds-file-upload__item-message > p {
       font-size: var(--ds-font-size-minus-1);
     }
   }
@@ -351,25 +355,20 @@
   font-size: var(--ds-font-size-minus-1);
 }
 
-.uds-file-upload__item-error {
+.uds-file-upload__item-message {
   margin-block-start: 0;
 
-  > p {
-    padding-inline-start: calc(
+  > .ds-validation-message {
+    /* Smaller than the icon on a field message, which stands beside a whole
+       field rather than inside a row. */
+    --dsc-validation-message-icon-size: 1em;
+
+    /* Lines the message up with the file name, past the file type icon. */
+    margin-inline-start: calc(
       var(--udsc-fileUpload-item-icon-size) +
         var(--udsc-fileUpload-item-icon-gap)
     );
-    color: var(--ds-color-danger-text-subtle);
-    display: flex;
-    gap: var(--ds-size-2);
     margin-block-start: var(--ds-size-1);
-    align-items: start;
-
-    /* Centred on the first line of the message rather than on all of it. The
-       icon is sized in em by its own attributes, not by `--ds-icon-size`. */
-    > svg {
-      margin-block-start: calc((1lh - 1em) / 2);
-    }
   }
 }
 
