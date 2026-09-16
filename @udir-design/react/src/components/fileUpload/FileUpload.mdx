@@ -139,6 +139,8 @@ Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` 
 
 Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Se [Hvor hører feilen hjemme?](#hvor-hører-feilen-hjemme) for når feilen skal stå på vedlegget og når den skal stå på feltet.
 
+Med `success` viser du at filen er i orden, for eksempel når serveren har sjekket filen etter opplasting. Sett `error` eller `success`, ikke begge: er begge satt, er det `error` som vises.
+
 <Canvas of={FileUploadStories.ExampleItems} />
 
 ### Tilstand for lasting
@@ -221,7 +223,7 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 
 ### Meldinger på vedlegg
 
-Skjermlesere leser teksten i `error` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
+Skjermlesere leser teksten i `error` og `success` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
 
 ## Tilgjengelighet
 
@@ -229,11 +231,11 @@ Skjermlesere leser teksten i `error` på `FileUpload.Item` med filnavnet foran, 
 
 Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
 
-Feilmeldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp, med filnavnet foran.
+Meldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder både `error` og `success`.
 
 Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
 
-Skjermlesere leser ikke opp feilmeldingen på et vedlegg som legges til med feilen, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere.
+Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar.
 
 ## Språkstøtte
 
