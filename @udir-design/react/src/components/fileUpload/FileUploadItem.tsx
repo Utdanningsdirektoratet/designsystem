@@ -1,7 +1,7 @@
 import { Tooltip, ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import {
   FileCsvIcon,
@@ -18,6 +18,7 @@ import { Button } from '../button';
 import { Link } from '../link';
 import { Spinner } from '../spinner';
 import { FileUploadFileSize } from './FileUploadFileSize';
+import { justAttached } from './attached';
 import type { FileMeta } from './types';
 
 export interface FileUploadItemProps extends Omit<
@@ -55,6 +56,12 @@ export interface FileUploadItemProps extends Omit<
    */
   loading?: boolean;
   /**
+   * Text shown while `loading`, for when the file is being handled in some
+   * other way than uploaded. Defaults to the text in
+   * `--udsc-fileUpload-loading-text`.
+   */
+  loadingText?: string;
+  /**
    * @default false
    */
   readonly?: boolean;
@@ -71,6 +78,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
       error,
       success,
       loading,
+      loadingText,
       href,
       readonly = false,
       className,
@@ -84,6 +92,40 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     // One slot, so a file that has been turned away says so rather than
     // claiming to be fine.
     const message = error ?? success;
+
+    /* A file that is there when the page loads has its loading text read
+       along with the rest of the page, so it is not announced until it
+       changes or loading ends. A file the user just added is announced. */
+    const [justAdded] = useState(justAttached);
+    const quietLoading = useRef(
+      loading && !justAdded ? { text: loadingText } : undefined,
+    );
+
+    /* The loading text says what is happening to the file, and WCAG counts
+       such progress as a status message (4.1.3), which has to be announced
+       without the file having focus. Read from css when it is the default,
+       so it follows the `lang` the row is in. Emptied again after a while,
+       since NVDA otherwise read the loading text twice when reading the
+       page, first the visible one and then this one. */
+    const regionRef = useRef<HTMLDivElement>(null);
+    const [loadingStatus, setLoadingStatus] = useState<string>();
+    useEffect(() => {
+      const region = regionRef.current;
+      if (!loading) quietLoading.current = undefined;
+      if (!loading || !region) return;
+      if (quietLoading.current) {
+        if (quietLoading.current.text === loadingText) return;
+        quietLoading.current = undefined;
+      }
+      let timer = window.setTimeout(() => {
+        setLoadingStatus(loadingText || defaultLoadingText(region));
+        timer = window.setTimeout(() => setLoadingStatus(undefined), 5000);
+      });
+      return () => {
+        clearTimeout(timer);
+        setLoadingStatus(undefined);
+      };
+    }, [loading, loadingText]);
 
     /* Composes Digdir's card class rather than the `Card` component, so the
        item stays a plain element without React-only behaviour. `FileUpload.List`
@@ -105,10 +147,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
           <div className="uds-file-upload__item-content">
             <FileName file={file} href={href} invalid={Boolean(error)} />
             <div className="uds-file-upload__item-description">
-              {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
-              {!loading &&
-                description !== null &&
-                (description ?? <FileUploadFileSize size={file.size} />)}
+              {/* Default loading text in css, hooked onto the empty element. */}
+              {loading
+                ? loadingText
+                : description !== null &&
+                  (description ?? <FileUploadFileSize size={file.size} />)}
             </div>
           </div>
           {!loading && !readonly && (
@@ -124,18 +167,26 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </Tooltip>
           )}
         </div>
-        {/* Announces a verdict that arrives after the file is already listed,
-            such as one the server reports once the upload finishes. An item
-            that is added with a message cannot announce: the region and the
-            message arrive together, and a region only announces what reaches
-            it after it is in the dom. `aria-atomic` keeps the file name in the
-            announcement when one message replaces another, where only the
-            message itself would otherwise be new. */}
+        {/* Announces what happens to a file that is already listed: the
+            loading text, see above, and a verdict such as the one a server
+            reports once the upload finishes. An item that is added with a
+            message cannot announce it: the region and the message arrive
+            together, and a region only announces what reaches it after it is
+            in the dom. `aria-atomic` keeps the file name in the announcement
+            when one text replaces another, where only the text itself would
+            otherwise be new. */}
         <div
+          ref={regionRef}
           aria-live="polite"
           aria-atomic="true"
           className="uds-file-upload__item-message"
         >
+          {/* Checked against `loading` as well, so a verdict that arrives as
+              loading ends replaces the text in the same render, rather than
+              being announced together with it until the effect has run. */}
+          {loading && loadingStatus && (
+            <span className="ds-sr-only">{`${file.name}: ${loadingStatus}`}</span>
+          )}
           {Boolean(message) && (
             /* `ValidationMessage` brings its own icon and colour per
                `data-color`, and places the icon on the first line. */
@@ -155,6 +206,14 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
   },
 );
 FileUploadItem.displayName = 'FileUpload.Item';
+
+/** The default loading text, from css so it follows the `lang` of `element`. */
+function defaultLoadingText(element: Element) {
+  return getComputedStyle(element)
+    .getPropertyValue('--udsc-fileUpload-loading-text')
+    .trim()
+    .replace(/^["']|["']$/g, '');
+}
 
 export function Icon({
   file,

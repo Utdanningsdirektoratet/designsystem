@@ -143,9 +143,11 @@ Med `success` viser du at filen er i orden, for eksempel når serveren har sjekk
 
 <Canvas of={FileUploadStories.ExampleItems} />
 
-### Tilstand for lasting
+### Opplasting og sjekk av filer
 
 `FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil. Mens `loading` er satt, vises en tekst om at filen blir lastet opp i stedet for beskrivelsen, og vedlegget har ingen knapper.
+
+Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer.
 
 `loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
 
@@ -223,7 +225,7 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 
 ### Meldinger på vedlegg
 
-Skjermlesere leser teksten i `error` og `success` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
+Skjermlesere leser teksten i `error`, `success` og `loadingText` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
 
 ## Tilgjengelighet
 
@@ -231,11 +233,11 @@ Skjermlesere leser teksten i `error` og `success` på `FileUpload.Item` med filn
 
 Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
 
-Meldinger på et vedlegg som allerede ligger i lista, blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder både `error` og `success`.
+Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. `error` og `success` blir bare lest opp når de dukker opp på et vedlegg som allerede ligger i lista.
 
 Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
 
-Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar.
+Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Har et vedlegg `loading` satt allerede når siden lastes, blir teksten lest sammen med resten av siden, og ikke lest opp før `loadingText` endres.
 
 ## Språkstøtte
 
@@ -250,7 +252,7 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFile-text',
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
-    '--udsc-fileUpload-uploading-text',
+    '--udsc-fileUpload-loading-text',
     '--udsc-fileUpload-invalid-text',
   ]}
 />

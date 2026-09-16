@@ -10,6 +10,7 @@ import { Field } from '../field';
 import { Label } from '../typography/label';
 import { ValidationMessage } from '../typography/validationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
+import { markAttached } from './attached';
 import { useFileInput } from './useFileInput';
 
 export type FileUploadDropzoneProps = FileUploadProps & {
@@ -74,6 +75,7 @@ export const FileUploadDropzone = forwardRef<
             e.preventDefault();
             return;
           }
+          markAttached(e.currentTarget);
           cardProps?.onDrop?.(e);
         }}
         tabIndex={undefined}
@@ -100,6 +102,7 @@ export const FileUploadDropzone = forwardRef<
           {...inputProps}
           ref={inputRef}
           onChange={(e) => {
+            markAttached(e.currentTarget);
             inputProps?.onChange?.(e);
             if (files) return;
             // Without `files` the input cannot be kept accurate, so keep it
