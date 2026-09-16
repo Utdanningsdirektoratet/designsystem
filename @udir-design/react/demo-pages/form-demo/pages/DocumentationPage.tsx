@@ -88,7 +88,7 @@ export const DocumentationPage = ({
       {entries.length > 0 && (
         <>
           <Heading level={3} data-size="2xs">
-            Vedlegg ({entries.length}):
+            {`Vedlegg (${entries.length}):`}
           </Heading>
 
           <FileUpload.List>
