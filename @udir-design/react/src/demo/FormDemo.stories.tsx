@@ -1,5 +1,5 @@
 import './demoSizing.css';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
 import { FormDemo } from '../../demo-pages/form-demo/FormDemo';
@@ -65,9 +65,10 @@ export const FormPage3 = meta.story({
  */
 export const FormPage3WithFileError = FormPage3.extend({
   parameters: {
-    // The interactions leave the page in a state the visual snapshot should not
-    // be taken from; the assertions below are what this story is for.
+    // The interactions leave the page in a state no snapshot should be taken
+    // from; the assertions below are what this story is for.
     chromatic: { disableSnapshot: true },
+    snapshot: false,
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -115,6 +116,20 @@ export const FormPage3WithFileError = FormPage3.extend({
           'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
         ).length,
       ).toBeGreaterThan(0);
+    });
+
+    await step('The summary link moves focus to the field', async () => {
+      await userEvent.click(
+        canvas.getByRole('link', {
+          name: 'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
+        }),
+      );
+
+      // The link changes page first, so the input is a different element by
+      // the time focus lands on it.
+      await waitFor(() =>
+        expect(canvasElement.querySelector('input[type="file"]')).toHaveFocus(),
+      );
     });
   },
 });
