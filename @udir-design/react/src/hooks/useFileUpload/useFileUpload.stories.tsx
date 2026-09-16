@@ -111,7 +111,7 @@ export const SubmittingWithErrors = meta.story({
         {entries.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({entries.length}):
+              {`Vedlegg (${entries.length}):`}
             </Heading>
             <FileUpload.List>
               {entries.map(({ id, file, loading, error }) => (
