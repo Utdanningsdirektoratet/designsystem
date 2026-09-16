@@ -1,6 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { FileUploadItem } from './FileUploadItem';
+import './fileUpload.css';
 
 afterEach(cleanup);
 
@@ -95,6 +96,37 @@ describe('FileUpload.Item', () => {
     const item = screen.getByRole('listitem');
     expect(item).toHaveAttribute('data-invalid');
     expect(item).not.toHaveAttribute('data-valid');
+  });
+
+  it('lets the loading text be replaced', () => {
+    // The default sits in css on the empty element, so a `loadingText` has to
+    // take its place rather than land beside it.
+    const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+    const item = (loadingText?: string) => (
+      <ul>
+        <FileUploadItem
+          file={file}
+          loading
+          loadingText={loadingText}
+          onRemove={() => {}}
+        />
+      </ul>
+    );
+    const description = () =>
+      document.querySelector('.uds-file-upload__item-description') as Element;
+
+    const { rerender } = render(item());
+
+    expect(description()).toBeEmptyDOMElement();
+    // Every language ends the default the same way.
+    expect(getComputedStyle(description(), '::before').content).toContain(
+      '...',
+    );
+
+    rerender(item('Validerer…'));
+
+    expect(description()).toHaveTextContent('Validerer…');
+    expect(getComputedStyle(description(), '::before').content).toBe('none');
   });
 
   it('renders file size when description is unset', () => {
