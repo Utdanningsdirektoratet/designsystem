@@ -783,6 +783,9 @@ export const UploadAndValidate = meta.story({
     const [reject, setReject] = useState(false);
     const [validatingId, setValidatingId] = useState<string>();
     const [approvedId, setApprovedId] = useState<string>();
+    /* What the first check read out of the file. The second check repeats it
+       in its own text, so the row keeps saying it while that one runs. */
+    const [found, setFound] = useState<{ id: string; text: string }>();
 
     const rejectRef = useRef(reject);
     rejectRef.current = reject;
@@ -794,7 +797,12 @@ export const UploadAndValidate = meta.story({
 
         // Two waits, because the user is told a different thing during each:
         // first the file is on its way, then the server is reading it.
+        // The cheap check first: is this the right shape of file at all.
         await delay(500);
+
+        // What it found stays on the row while the slower check runs, so the
+        // user is not left watching a spinner that says nothing.
+        setFound({ id, text: 'Antall elever: 412' });
         setValidatingId(id);
         await delay(700);
         setValidatingId(undefined);
@@ -896,22 +904,34 @@ export const UploadAndValidate = meta.story({
 
         {entries.length > 0 && (
           <FileUpload.List>
-            {entries.map(({ id, file, loading, error }) => (
-              <FileUpload.Item
-                key={id}
-                file={file}
-                loading={loading}
-                error={error}
-                onRemove={() => {
-                  remove(id);
-                  if (id === approvedId) setApprovedId(undefined);
-                }}
-                /* The default says the file is on its way, which stops being
-                   true once the server has it. */
-                loadingText={id === validatingId ? 'Validerer…' : undefined}
-                success={id === approvedId ? 'Filen er godkjent' : undefined}
-              />
-            ))}
+            {entries.map(({ id, file, loading, error }) => {
+              const read = id === found?.id ? found.text : undefined;
+
+              return (
+                <FileUpload.Item
+                  key={id}
+                  file={file}
+                  loading={loading}
+                  error={error}
+                  onRemove={() => {
+                    remove(id);
+                    if (id === approvedId) setApprovedId(undefined);
+                    if (id === found?.id) setFound(undefined);
+                  }}
+                  description={read}
+                  /* The default says the file is on its way, which stops being
+                     true once the server has it. The busy text also carries
+                     what the first check found, so the row does not drop it
+                     for the length of the second one. */
+                  loadingText={
+                    read && id === validatingId
+                      ? `${read}, sjekker innholdet…`
+                      : undefined
+                  }
+                  success={id === approvedId ? 'Filen er godkjent' : undefined}
+                />
+              );
+            })}
           </FileUpload.List>
         )}
       </div>
@@ -974,9 +994,15 @@ export const UploadAndValidateInteractions = UploadAndValidate.extend({
       await expect(rows()).toHaveLength(1);
       await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
       // Longer than the whole flow, which outlasts waitFor's default.
-      await waitFor(() => expect(busyText()).toHaveTextContent('Validerer…'), {
-        timeout: 3000,
-      });
+      // What the first check read is carried by the second one's text, so
+      // the row keeps saying it rather than going blank for the duration.
+      await waitFor(
+        () =>
+          expect(busyText()).toHaveTextContent(
+            'Antall elever: 412, sjekker innholdet…',
+          ),
+        { timeout: 3000 },
+      );
       await waitFor(
         () => expect(canvas.getByText('Filen er godkjent')).toBeVisible(),
         { timeout: 3000 },
