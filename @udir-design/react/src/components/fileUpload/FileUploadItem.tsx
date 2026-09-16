@@ -1,4 +1,4 @@
-import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
+import { Tooltip, ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
@@ -13,7 +13,6 @@ import {
   FileWordIcon,
   FileXMarkIcon,
   TrashIcon,
-  XMarkOctagonFillIcon,
 } from '@udir-design/icons';
 import { Button } from '../button';
 import { Link } from '../link';
@@ -41,6 +40,11 @@ export interface FileUploadItemProps extends Omit<
    */
   error?: string;
   /**
+   * Message shown when the file has been accepted, for example once the server
+   * has read it. Ignored when there is an `error`.
+   */
+  success?: string;
+  /**
    * Callback when the remove button is clicked.
    */
   onRemove: (file: FileMeta, event: MouseEvent<HTMLButtonElement>) => void;
@@ -65,6 +69,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     {
       file,
       error,
+      success,
       loading,
       href,
       readonly = false,
@@ -76,6 +81,10 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     }: FileUploadItemProps,
     ref,
   ) {
+    // One slot, so a file that has been turned away says so rather than
+    // claiming to be fine.
+    const message = error ?? success;
+
     /* Composes Digdir's card class rather than the `Card` component, so the
        item stays a plain element without React-only behaviour. `FileUpload.List`
        restyles these cards in CSS to build the `compact` variant. */
@@ -83,6 +92,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
       <li
         className={cl('ds-card', 'uds-file-upload__item', className)}
         data-invalid={Boolean(error) || undefined}
+        data-valid={(!error && Boolean(success)) || undefined}
         aria-busy={Boolean(loading) || undefined}
         data-size={size}
         ref={ref}
@@ -114,26 +124,27 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </Tooltip>
           )}
         </div>
-        {/* Announces an error that appears after the file is already listed,
+        {/* Announces a verdict that arrives after the file is already listed,
             such as one the server reports once the upload finishes. An item
-            that is added with an error cannot announce: the region and the
-            error arrive together, and a region only announces what reaches it
-            after it is in the dom. `aria-atomic` keeps the file name in the
-            announcement when one error replaces another, where only the
+            that is added with a message cannot announce: the region and the
+            message arrive together, and a region only announces what reaches
+            it after it is in the dom. `aria-atomic` keeps the file name in the
+            announcement when one message replaces another, where only the
             message itself would otherwise be new. */}
         <div
           aria-live="polite"
           aria-atomic="true"
-          className="uds-file-upload__item-error"
+          className="uds-file-upload__item-message"
         >
-          {Boolean(error) && (
-            <Paragraph>
-              <XMarkOctagonFillIcon aria-hidden />
+          {Boolean(message) && (
+            /* `ValidationMessage` brings its own icon and colour per
+               `data-color`, and places the icon on the first line. */
+            <ValidationMessage data-color={error ? undefined : 'success'}>
               {/* The announcement is heard on its own, away from the file name
                   above it, so it has to carry the name itself. */}
               <span className="ds-sr-only">{`${file.name}: `}</span>
-              {error}
-            </Paragraph>
+              {message}
+            </ValidationMessage>
           )}
         </div>
       </li>
