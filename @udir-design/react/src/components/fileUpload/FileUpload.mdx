@@ -151,7 +151,13 @@ Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, sette
 
 `loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
 
+I eksemplene under viser vi hvordan `loading` fungerer i praksis, ved at du selv laster opp en fil. Det første eksempelet bruker standardteksten.
+
 <Canvas of={FileUploadStories.Upload} />
+
+Det andre eksempelet viser først standardteksten mens filen lastes opp, og så bruker det `loadingText` mens filen blir sjekket.
+
+<Canvas of={FileUploadStories.UploadAndValidate} />
 
 ### Visningsvarianter
 
