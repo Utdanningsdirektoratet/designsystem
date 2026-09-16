@@ -99,7 +99,7 @@ const FormSchema = z.object({
     .min(1, 'Last opp dokumentasjon')
     .refine((entries) => entries.every(({ error }) => !error), {
       message:
-        'Noen av vedleggene har feil. Se lista under for hva som må gjøres.',
+        'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
     }),
   addition: z.string().optional(),
 });
