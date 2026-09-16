@@ -207,6 +207,8 @@ Eksempelet under viser hvordan feil henger sammen med innsendingen: en fil som b
 
 Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
 
+Eksempelet viser også hva som skjer når brukeren trykker på knappen: feilmeldingen på feltet blir bare lest opp for den som står på feltet, så det er `ErrorSummary` som sier fra til den som står ved knappen, og som tar brukeren dit.
+
 <Canvas of={useFileUploadStories.SubmittingWithErrors} />
 
 ## Error Summary
@@ -214,6 +216,8 @@ Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder
 Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per fil ville fylt oppsummeringen med det samme problemet om igjen.
 
 Punktet i oppsummeringen gjentar som regel feilmeldingen fra feltet. Skriv derfor meldingen slik at den også gir mening der.
+
+Se [eksempelet over](#feil-og-innsending) for hvordan dette henger sammen med innsendingen.
 
 ## Språkstøtte
 
