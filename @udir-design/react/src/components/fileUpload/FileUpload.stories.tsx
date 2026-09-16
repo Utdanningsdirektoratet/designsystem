@@ -192,7 +192,7 @@ export const ExampleDropZone = meta.story({
         {entries.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({entries.length}):
+              {`Vedlegg (${entries.length}):`}
             </Heading>
             <FileUpload.List>
               {entries.map(({ id, file, error }) => (
@@ -315,7 +315,7 @@ export const TooManyFiles = meta.story({
         {files.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
+              {`Vedlegg (${files.length}):`}
             </Heading>
             <FileUpload.List>
               {files.map((file) => (
@@ -514,7 +514,7 @@ export const ExampleItems = meta.story({
         {files.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
+              {`Vedlegg (${files.length}):`}
             </Heading>
             <FileUpload.List>
               {files.map((file) => (
@@ -724,7 +724,7 @@ export const CompactList = meta.story({
     return (
       <Prose>
         <Heading level={3} data-size="2xs">
-          Vedlegg ({files.length}):
+          {`Vedlegg (${files.length}):`}
         </Heading>
         <FileUpload.List variant="compact" data-size={args['data-size']}>
           {files.map((file) => (
