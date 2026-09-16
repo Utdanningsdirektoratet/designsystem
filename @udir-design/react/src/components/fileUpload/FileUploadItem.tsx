@@ -55,6 +55,12 @@ export interface FileUploadItemProps extends Omit<
    */
   loading?: boolean;
   /**
+   * Text shown while `loading`, for when the file is being handled in some
+   * other way than uploaded. Defaults to the text in
+   * `--udsc-fileUpload-loading-text`.
+   */
+  loadingText?: string;
+  /**
    * @default false
    */
   readonly?: boolean;
@@ -71,6 +77,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
       error,
       success,
       loading,
+      loadingText,
       href,
       readonly = false,
       className,
@@ -105,10 +112,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
           <div className="uds-file-upload__item-content">
             <FileName file={file} href={href} invalid={Boolean(error)} />
             <div className="uds-file-upload__item-description">
-              {/* Loading text in css. Always rendered so the ::before can hook onto it. */}
-              {!loading &&
-                description !== null &&
-                (description ?? <FileUploadFileSize size={file.size} />)}
+              {/* Default loading text in css, hooked onto the empty element. */}
+              {loading
+                ? loadingText
+                : description !== null &&
+                  (description ?? <FileUploadFileSize size={file.size} />)}
             </div>
           </div>
           {!loading && !readonly && (

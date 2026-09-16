@@ -152,6 +152,8 @@ Visningene støtter det samme, så du kan bytte mellom dem uten å endre på `Fi
 
 `FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil.
 
+Teksten sier at filen blir lastet opp. Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer.
+
 `loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
 
 <Canvas of={FileUploadStories.Upload} />
@@ -224,7 +226,7 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFile-text',
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
-    '--udsc-fileUpload-uploading-text',
+    '--udsc-fileUpload-loading-text',
     '--udsc-fileUpload-invalid-text',
   ]}
 />
