@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch server.js",
-    "start": "node server.js"
+    "lint": "oxlint",
+    "start": "node server.js",
+    "pretest:unit": "pnpm exec playwright install --with-deps chromium",
+    "test:unit": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "catalog:",
@@ -15,5 +19,13 @@
     "express": "catalog:",
     "express-rate-limit": "catalog:",
     "handlebars": "catalog:"
+  },
+  "devDependencies": {
+    "@vitest/browser": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "playwright": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
   }
 }
