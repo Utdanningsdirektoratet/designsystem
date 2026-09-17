@@ -840,9 +840,10 @@ export const UploadAndValidate = meta.story({
           const isSurplus = (codes: string[]) =>
             codes.includes('too-many-files');
 
-          // `multiple: false` turns away a whole group of files. They are
-          // still files the user attached, so they go in the list and the
-          // field says there are too many.
+          // `multiple: false` keeps the first file and turns the rest away as
+          // surplus. They are still files the user attached, so they go in the
+          // list beside the one that was kept, and the field says there are
+          // too many.
           add(
             rejections
               .filter(({ errors }) => isSurplus(errors.map((e) => e.code)))
@@ -966,8 +967,9 @@ export const UploadAndValidateInteractions = UploadAndValidate.extend({
       );
 
     await step('Two files at once both land in the list', async () => {
-      // `multiple: false` makes react-dropzone turn away the whole drop, so
-      // without `onDropRejected` the files would vanish without a word.
+      // `multiple: false` makes react-dropzone turn away everything past the
+      // first file, so without `onDropRejected` the rest would vanish without
+      // a word.
       const data = new DataTransfer();
       data.items.add(csv('kandidater-a.csv'));
       data.items.add(csv('kandidater-b.csv'));
