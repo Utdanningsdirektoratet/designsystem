@@ -339,8 +339,8 @@ catalogs:
       specifier: ^19.2.8
       version: 19.2.8
     react-dropzone:
-      specifier: ^15.0.0
-      version: 15.0.0
+      specifier: ^20.1.2
+      version: 20.1.2
     react-hook-form:
       specifier: ^7.87.0
       version: 7.87.0
@@ -777,7 +777,7 @@ importers:
         version: 19.2.8(react@19.2.8)
       react-dropzone:
         specifier: 'catalog:'
-        version: 15.0.0(react@19.2.8)
+        version: 20.1.2(@types/react@19.2.18)(react@19.2.8)
       react-hook-form:
         specifier: 'catalog:'
         version: 7.87.0(react@19.2.8)
@@ -3730,9 +3730,9 @@ packages:
   ast-v8-to-istanbul@1.0.6:
     resolution: {integrity: sha512-fvpl29helSO2w/z7utIbrkNXILdrLwDwAMH2I/zPKlGf5244+gf+B4cyS1sANcrPY2h+hWCGSgC8N61s/+AF9A==}
 
-  attr-accept@2.2.5:
-    resolution: {integrity: sha512-0bDNnY/u6pPwHDMoF0FieU354oBi0a8rD9FcsLwzcGWbc8KS8KPIi7y+s13OlVY+gMWc/9xEMUgNE6Qm8ZllYQ==}
-    engines: {node: '>=4'}
+  attr-accept@4.0.0:
+    resolution: {integrity: sha512-hmCnJClmeKNKlsBHgbM8yLZRiQZ4/20UXbLJb6OUT16eWcM5/xNZerr80a/zCYob768KIGq++aLrQNTuwPsIOQ==}
+    engines: {node: '>= 22'}
 
   autoprefixer@10.5.5:
     resolution: {integrity: sha512-uiRYvQYe/nNSzBJ7OUnd2/TZVsAdob3blml44teEpee9Cc1f4rGZFewO+JT3Wo8mgFOSzNqes4FHZn/Qz8WOuw==}
@@ -4509,9 +4509,9 @@ packages:
     resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
     engines: {node: '>=18'}
 
-  file-selector@2.1.2:
-    resolution: {integrity: sha512-QgXo+mXTe8ljeqUFaX3QVHc5osSItJ/Km+xpocx0aSqWGMSCf6qYs/VnzZgS864Pjn5iceMRFigeAV7AfTlaig==}
-    engines: {node: '>= 12'}
+  file-selector@5.0.1:
+    resolution: {integrity: sha512-v0g/PTeuQgvKCBrVRsfVudvwXlRHSWHEQkVgKawgCGHkEpKA1clp3Om5jvEVhz8G9W/mOYjJH9FhkH4C888PgQ==}
+    engines: {node: '>= 22'}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -5148,10 +5148,6 @@ packages:
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
-
-  loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
 
   loupe@3.2.1:
     resolution: {integrity: sha512-CdzqowRJCeLU72bHvWqwRBBlLcMEtIvGrlvef74kMnV2AolS9Y8xUv1I0U/MNAWMhBlKIoyuEgoJ0t/bbwHbLQ==}
@@ -6240,9 +6236,6 @@ packages:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
 
-  prop-types@15.8.1:
-    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
-
   property-information@7.2.0:
     resolution: {integrity: sha512-IAtzIB6sUiWaJYrX9smp3V46pBGbBeLFRGdh25kg1334VcBlD8HzhPeNIWQH9zhGmo2itIe25EHt9dQP7G5hmg==}
 
@@ -6306,20 +6299,21 @@ packages:
     peerDependencies:
       react: ^19.2.8
 
-  react-dropzone@15.0.0:
-    resolution: {integrity: sha512-lGjYV/EoqEjEWPnmiSvH4v5IoIAwQM2W4Z1C0Q/Pw2xD0eVzKPS359BQTUMum+1fa0kH2nrKjuavmTPOGhpLPg==}
-    engines: {node: '>= 10.13'}
+  react-dropzone@20.1.2:
+    resolution: {integrity: sha512-gj2m31ZmYOZjTuW6CDfx38/WW2JlbuQ/X2Il8cOwIWa7Znp7vQSPJFtRfDbAjusBuoXzAYktI+r2R6iKMaRTPw==}
+    engines: {node: '>= 22'}
     peerDependencies:
-      react: '>= 16.8 || 18.0.0'
+      '@types/react': '*'
+      react: '>= 18'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   react-hook-form@7.87.0:
     resolution: {integrity: sha512-zhFzWvLxNHH+8839OnZcUxgMZw88ah2jZWDWvKWgF3Tpbnd0vKL+dlcuU3nZVWESZQjd81EW8K+wU+cYfYAc0w==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
-
-  react-is@16.13.1:
-    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -9660,7 +9654,7 @@ snapshots:
       estree-walker: 3.0.3
       js-tokens: 10.0.0
 
-  attr-accept@2.2.5: {}
+  attr-accept@4.0.0: {}
 
   autoprefixer@10.5.5(postcss@8.5.28):
     dependencies:
@@ -10446,9 +10440,7 @@ snapshots:
     dependencies:
       is-unicode-supported: 2.1.0
 
-  file-selector@2.1.2:
-    dependencies:
-      tslib: 2.8.1
+  file-selector@5.0.1: {}
 
   fill-range@7.1.1:
     dependencies:
@@ -11054,10 +11046,6 @@ snapshots:
       yoctocolors: 2.2.0
 
   longest-streak@3.1.0: {}
-
-  loose-envify@1.4.0:
-    dependencies:
-      js-tokens: 4.0.0
 
   loupe@3.2.1: {}
 
@@ -12169,12 +12157,6 @@ snapshots:
 
   process@0.11.10: {}
 
-  prop-types@15.8.1:
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react-is: 16.13.1
-
   property-information@7.2.0: {}
 
   proto-list@1.2.4: {}
@@ -12236,18 +12218,17 @@ snapshots:
       react: 19.2.8
       scheduler: 0.27.0
 
-  react-dropzone@15.0.0(react@19.2.8):
+  react-dropzone@20.1.2(@types/react@19.2.18)(react@19.2.8):
     dependencies:
-      attr-accept: 2.2.5
-      file-selector: 2.1.2
-      prop-types: 15.8.1
+      attr-accept: 4.0.0
+      file-selector: 5.0.1
       react: 19.2.8
+    optionalDependencies:
+      '@types/react': 19.2.18
 
   react-hook-form@7.87.0(react@19.2.8):
     dependencies:
       react: 19.2.8
-
-  react-is@16.13.1: {}
 
   react-is@17.0.2: {}
 
