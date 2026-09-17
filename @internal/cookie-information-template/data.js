@@ -28,6 +28,8 @@ export const buildData = (culture) => {
   return {
     language: locale,
     culture: locale.toUpperCase(),
+    cookie_settings_link_text:
+      locale === 'en' ? 'Cookies' : 'Informasjonskapsler',
     banner_heading: content.heading,
     banner_main_text: content.body,
     cookie_declaration_text: content.cookieDeclarationText,

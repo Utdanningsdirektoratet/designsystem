@@ -196,18 +196,27 @@ oversettelsesobjektet i JavaScript-filen for designmalen.
 
 ## Åpne samtykkedialogen igjen
 
-Bruk `CookieConsent.renew()` på en knapp for å åpne samtykkedialogen igjen.
+Legg en lenke med teksten "Informasjonskapsler" i bunnfeltet i tjenesten. Lenken
+skal bruke `CookieConsent.renew()` for å åpne samtykkedialogen igjen.
 
 I HTML:
 
 ```html
-<button type="button" onclick="CookieConsent.renew()">Endre samtykke</button>
+<a href="#informasjonskapsler" onclick="CookieConsent.renew(); return false;">
+  Informasjonskapsler
+</a>
 ```
 
 I React:
 
 ```tsx
-<Button type="button" onClick={() => window.CookieConsent?.renew()}>
-  Endre samtykke
-</Button>
+<Footer.Item
+  href="#informasjonskapsler"
+  onClick={(event) => {
+    event.preventDefault();
+    window.CookieConsent?.renew();
+  }}
+>
+  Informasjonskapsler
+</Footer.Item>
 ```

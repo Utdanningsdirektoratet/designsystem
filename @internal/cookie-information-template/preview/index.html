@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="/css/udir/dist/components.css" />
     <link rel="stylesheet" href="/css/udir/dist/icons.css" />
     <link rel="stylesheet" href="/template/css-code.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      .cookie-preview-content {
+        min-block-size: calc(100vh - 4.25rem - var(--ds-size-10) * 2);
+      }
+    </style>
   </head>
   <body>
     <!-- Local Cookie Information API stub. This is not part of Cookie Information's JavaScript Code. -->
@@ -47,6 +55,30 @@
     </script>
 
     {{{cookieTemplate}}}
+
+    <!-- Simulated consumer page content. This is not part of Cookie Information's template. -->
+    <div class="cookie-preview-content" aria-hidden="true"></div>
+
+    <!-- Consumer-owned link for reopening the consent dialog. -->
+    <footer class="uds-footer">
+      <div>
+        <ul class="uds-footer__list">
+          <li>
+            <a
+              class="ds-link"
+              href="#informasjonskapsler"
+              data-testid="coi-banner__renew-consent-link"
+              onclick="
+                CookieConsent.renew();
+                return false;
+              "
+            >
+              {{cookie_settings_link_text}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     <script src="/template/javascript-code.js"></script>
   </body>

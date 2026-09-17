@@ -194,26 +194,3 @@
     {{/if}} {{/each}}
   </div>
 </dialog>
-
-<!-- Renew consent button (shown after banner is closed) -->
-<button
-  type="button"
-  id="Coi-Renew"
-  class="ds-button"
-  data-variant="tertiary"
-  data-size="sm"
-  aria-label="Endre samtykke for informasjonskapsler"
-  data-i18n="renewConsent"
-  data-i18n-aria-label="renewConsent"
-  data-testid="coi-banner__renew-consent-button"
-  onclick="CookieConsent.renew()"
-  style="
-    display: none;
-    position: fixed;
-    bottom: var(--ds-size-4);
-    left: var(--ds-size-4);
-    z-index: 1000;
-  "
->
-  Endre samtykke
-</button>

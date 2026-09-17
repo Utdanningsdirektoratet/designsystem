@@ -25,7 +25,6 @@ const translations = {
     consentCanBeChanged:
       'Du kan når som helst endre samtykket ditt via lenken i bunnfeltet.',
     consentAppliesTo: 'Samtykket gjelder for',
-    renewConsent: 'Endre samtykke for informasjonskapsler',
   },
   en: {
     pageTitle: 'Cookies',
@@ -47,7 +46,6 @@ const translations = {
     consentCanBeChanged:
       'You can change your consent at any time using the link in the footer.',
     consentAppliesTo: 'The consent applies to',
-    renewConsent: 'Change cookie consent',
   },
 };
 
@@ -85,7 +83,6 @@ const cookieDialog = document.getElementById('cookie-dialog');
 const detailsDialog = document.getElementById('cookie-details-dialog');
 const detailsTrigger = document.getElementById('cookie-details-trigger');
 const detailsClose = document.getElementById('cookie-details-close');
-const coiRenewBtn = document.getElementById('Coi-Renew');
 
 const optionalCategories = cookieDialog.querySelectorAll('.coi__checkbox');
 const necessaryOnly = optionalCategories.length === 0;
@@ -119,7 +116,6 @@ detailsDialog.addEventListener('click', (e) => {
 function showCookieBanner() {
   document.documentElement.classList.add('no-scroll');
   cookieDialog.showModal();
-  coiRenewBtn.style.display = 'none';
 }
 
 function hideCookieBanner() {
@@ -128,7 +124,6 @@ function hideCookieBanner() {
 
 cookieDialog.addEventListener('close', () => {
   document.documentElement.classList.remove('no-scroll');
-  coiRenewBtn.style.display = '';
 });
 
 // Close main dialog on backdrop click (don't close for consent — just ignore)
