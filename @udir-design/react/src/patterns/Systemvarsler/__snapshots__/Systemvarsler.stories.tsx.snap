@@ -1,0 +1,453 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Globalt systemvarsel 1`] = `
+<style>
+  .systemvarsler-global-alert {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 32rem;
+  background: var(--ds-color-surface-default);
+}
+
+.systemvarsler-global-alert__main {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--ds-size-5);
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--ds-size-3);
+}
+
+@media (min-width: 25.5rem) {
+  .systemvarsler-global-alert__main {
+    padding: var(--ds-size-4);
+  }
+}
+
+@media (min-width: 48rem) {
+  .systemvarsler-global-alert__main {
+    padding: var(--ds-size-6);
+  }
+}
+</style>
+<div>
+  <header style="<removed>">
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div data-color="warning">
+      <h4 data-size="xs">
+        Deler av tjenesten er utilgjengelig
+      </h4>
+      Du kan fortsatt finne og lese læreplaner, men søket kan være ustabilt. Vi jobber med å rette feilen.
+    </div>
+    <div>
+      <h4 data-size="lg">
+        Læreplaner
+      </h4>
+      <p>
+        Finn læreplaner for fag i grunnskolen og videregående opplæring.
+      </p>
+      <h5 data-size="sm">
+        Ofte besøkte sider
+      </h5>
+      <ul>
+        <li>
+          <a href="https://www.udir.no/lk20/">
+            Læreplanverket
+          </a>
+        </li>
+        <li>
+          <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/fagfornyelsen/">
+            Fagfornyelsen
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Lokalt systemvarsel 1`] = `
+<style>
+  .systemvarsler-local-alert {
+  box-sizing: border-box;
+  display: grid;
+  gap: var(--ds-size-5);
+  width: 100%;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: var(--ds-size-3);
+  background: var(--ds-color-surface-default);
+}
+
+.systemvarsler-local-textfield {
+  width: 10rem;
+}
+
+@media (min-width: 25.5rem) {
+  .systemvarsler-local-alert {
+    padding: var(--ds-size-4);
+  }
+}
+
+@media (min-width: 48rem) {
+  .systemvarsler-local-alert {
+    padding: var(--ds-size-6);
+  }
+}
+
+.systemvarsler-try-again-button {
+  margin-top: var(--ds-size-3);
+}
+</style>
+<section>
+  <div>
+    <h4>
+      Eksamensresultater
+    </h4>
+    <ds-field>
+      <label for="<generated>">
+        Kandidatnummer
+      </label>
+      <div>
+        <input
+          type="text"
+          value="4012"
+          id="<generated>"
+        >
+      </div>
+    </ds-field>
+  </div>
+  <div data-color="danger">
+    <h5 data-size="xs">
+      Kunne ikke hente eksamensresultatene
+    </h5>
+    <p>
+      Resultatene er midlertidig utilgjengelige. Prøv igjen eller kom tilbake senere.
+    </p>
+    <button
+      data-variant="secondary"
+      type="button"
+      data-size="sm"
+    >
+      Prøv igjen
+      <svg
+        width="14"
+        height="14"
+        viewbox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.092.5H7a6.5 6.5 0 106.41 7.583.5.5 0 10-.986-.166A5.495 5.495 0 017 12.5a5.5 5.5 0 010-11h.006a5.5 5.5 0 014.894 3H10a.5.5 0 000 1h3a.5.5 0 00.5-.5V2a.5.5 0 00-1 0v1.535A6.495 6.495 0 007.092.5z"
+          fill="currentColor"
+        >
+        </path>
+      </svg>
+    </button>
+  </div>
+</section>
+`;
+
+exports[`Side ikke funnet 1`] = `
+<style>
+  .systemvarsler-not-found {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 32rem;
+}
+
+.systemvarsler-not-found__main {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--ds-size-6);
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--ds-size-3);
+}
+
+@media (min-width: 25.5rem) {
+  .systemvarsler-not-found__main {
+    padding: var(--ds-size-4);
+  }
+}
+
+@media (min-width: 48rem) {
+  .systemvarsler-not-found__main {
+    padding: var(--ds-size-6);
+  }
+}
+
+.systemvarsler-not-found__search {
+  max-width: 32rem;
+}
+
+.systemvarsler-not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-3);
+}
+</style>
+<div>
+  <header style="<removed>">
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div>
+      <h5 data-size="lg">
+        Beklager, vi fant ikke siden
+      </h5>
+      <p>
+        Siden kan være slettet eller flyttet, eller det kan være en feil i lenken.
+      </p>
+      <form>
+        <ds-field>
+          <label for="<generated>">
+            Du kan søke etter informasjonen du leter etter:
+          </label>
+          <ds-suggestion>
+            <input
+              aria-label="Søk på udir.no"
+              type="text"
+              id="<generated>"
+            >
+            <button
+              data-variant="tertiary"
+              type="reset"
+              aria-label="Tøm"
+              aria-hidden="false"
+              hidden
+              tabindex="-1"
+            >
+            </button>
+            <button type="submit">
+              Søk
+            </button>
+          </ds-suggestion>
+        </ds-field>
+      </form>
+      <h6 data-size="xs">
+        Aktuelle sider
+      </h6>
+      <ul>
+        <li>
+          <a href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
+            Læreplanverket
+          </a>
+        </li>
+        <li>
+          <a href="https://www.udir.no/eksamen-og-prover/eksamen/">
+            Eksamen
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button type="button">
+        Gå til forsiden
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Meld fra om ødelagt lenke
+      </button>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Teknisk feilside 1`] = `
+<style>
+  .systemvarsler-technical-error {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 32rem;
+}
+
+.systemvarsler-technical-error__main {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--ds-size-6);
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--ds-size-3);
+}
+
+@media (min-width: 25.5rem) {
+  .systemvarsler-technical-error__main {
+    padding: var(--ds-size-4);
+  }
+}
+
+@media (min-width: 48rem) {
+  .systemvarsler-technical-error__main {
+    padding: var(--ds-size-6);
+  }
+}
+
+.systemvarsler-technical-error__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-3);
+}
+</style>
+<div>
+  <header style="<removed>">
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div>
+      <h4 data-size="lg">
+        Beklager, noe gikk galt
+      </h4>
+      <p>
+        Vi opplever tekniske problemer og jobber med å løse dem. Dette skyldes ikke noe du gjorde.
+      </p>
+      <p>
+        Vent noen minutter og prøv på nytt, eller gå tilbake til forrige side. Du kan
+        <a href="https://www.udir.no/kontakt-oss/">
+          kontakte brukerstøtte
+        </a>
+        hvis problemet fortsetter.
+      </p>
+    </div>
+    <div>
+      <button type="button">
+        Prøv på nytt
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Gå tilbake
+      </button>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`Varsel om utlogging 1`] = `
+<style>
+  .systemvarsler-session-expiry {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 48rem;
+  min-height: 12rem;
+  margin-inline: auto;
+  padding: var(--ds-size-3);
+  background: var(--ds-color-surface-default);
+}
+
+@media (min-width: 25.5rem) {
+  .systemvarsler-session-expiry {
+    padding: var(--ds-size-4);
+  }
+}
+
+@media (min-width: 48rem) {
+  .systemvarsler-session-expiry {
+    padding: var(--ds-size-6);
+  }
+}
+
+.systemvarsler-session-expiry__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-3);
+}
+</style>
+<div>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="systemvarsler-session-expiry-dialog"
+    closedby="none"
+    open
+  >
+    <div>
+      <h2>
+        Er du her fortsatt?
+      </h2>
+      <p>
+        Du har vært stille en stund. Hvis du ikke gjør noe på denne siden blir du snart logget ut.
+      </p>
+      <p>
+        Du blir logget ut om
+        <time datetime="PT60S">
+          60
+        </time>
+        sekunder.
+      </p>
+    </div>
+    <div>
+      <button type="button">
+        Forbli innlogget
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Logg ut
+      </button>
+    </div>
+  </dialog>
+</div>
+`;

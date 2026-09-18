@@ -1,13 +1,202 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as AlertStories from '../../components/alert/Alert.stories';
+import * as SystemvarslerStories from './Systemvarsler.stories';
 
-<Meta tags={['digdir']} />
+<Meta of={SystemvarslerStories} />
 
 # Systemvarsler
 
-Systemvarsler informerer brukerne om feil i systemet, eller viktige hendelser de bør være oppmerksomme på.
+Systemvarsler informerer brukerne om feil i systemet, eller viktige hendelser de bør være oppmerksomme på. Systemvarsler er _ikke_ knyttet til brukernes handlinger, slik valideringer er. Du finner informasjon om valideringsfeil i [bruksmønsteret for brukerutløste feilmeldinger](/docs/patterns-feilmeldinger--docs).
 
-Udir følger [Digdirs bruksmønster for systemvarsler](https://designsystemet.no/no/patterns/systemnotifications).
+Systemvarsler kan komme i ulike former, for eksempel som [`Alert`](/docs/components-alert--docs) eller modal [`Dialog`](/docs/components-dialog--docs). Måten vi kommuniserer systemvarslene på avhenger av svaret på disse spørsmålene:
+
+- Hvilken type informasjon er det?
+- Hvor alvorlig er informasjonen i varselet?
+- Hvilken kontekst kommer varselet i? Tilhører det en bestemt del av tjenesten eller dekker det hele systemet?
+- Må brukerne gjøre noe eller ikke?
+- Skal varselet vises for en planlagt hendelse, eller er det for en plutselig hendelse?
+
+Vi skal nå se nærmere på språket vi bruker i varslene, og hvordan vi bør utforme ulike typer varslinger. Til slutt tar vi for oss implementeringen i kode, med fokus på tilgjengelighet.
+
+## Språk
+
+Et godt systemvarsel skal være informativt, klart og brukervennlig.
+
+**Skriv på en imøtekommende og hjelpsom måte**
+
+- Fortell kort hva som er galt, og hvordan brukerne kan komme seg videre. Du kan bruke mellomoverskrifter og punktlister for å gjøre det enklere å skanne informasjonen.
+- Vær tydelig på at det ikke er brukerens feil. Fortell at feilen ligger hos oss.
+- Vi kan gjerne unnskylde oss ved å skrive «beklager», «dessverre» eller «takk for tålmodigheten».
+- Vær forsiktig med humor – det er sjelden morsomt når noe går galt.
+
+**Hjelp brukeren videre**
+
+- Fortell brukerne hva de kan prøve selv.
+- Pass på at brukerne har informasjon til å kunne beskrive feilen til brukerstøtte, for eksempel hvor feilen oppsto. Oppgi feilkoden hvis den er viktig for at brukerstøtte skal kunne løse feilen.
+- Oppgi kontaktinformasjon til brukerstøtte hvis det er en systemfeil. Unngå ordet «vennligst» («Vennligst kontakt brukerstøtte»), det er en overføring fra engelsk og kan oppfattes som uhøflig. Skriv heller «Du kan kontakte brukerstøtte».
+
+**Test varslene**
+
+- Test varslene på ekte brukere for å sikre at de er lette å forstå.
+
+## Ulike alvorlighetsgrader
+
+Det er viktig å bruke riktige virkemidler for å kommunisere alvorlighetsgrad. Misbruk av varsler kan svekke tillit og føre til at viktige meldinger overses. Ved å skille tydelig mellom kritiske feil, viktige meldinger og informasjon, sikrer vi at brukerne får riktig informasjon til rett tid og forstår hva som krever umiddelbar handling.
+
+En annen viktig ting å huske på, er at systemvarsler aldri må overskygge varsler som gjelder innbyggernes liv og helse. For eksempel dersom du skal varsle om at vannet ikke kan drikkes. Slike varsler skal alltid ha prioritet over tekniske systemvarsler, uansett hvor alvorlig vi tenker systemvarselet er. På denne måten passer vi på at livsviktig informasjon alltid når fram til innbyggerne. Hvis du skal varsle om alvorlige hendelser som ikke er relatert til systemet, bør du altså _ikke_ bruke komponentene som er tiltenkt systemvarsler.
+
+### A) Kritiske systemfeil
+
+Når vi har feil som påvirker hele eller store deler av systemet, bør brukerne få varsel om det tidlig. Hvis systemet er nede, skal varselet være tydelig på det. Vi kan si fra om dette på flere måter, for eksempel kan vi endre startsiden til å ha en annen tekstplakat enn den som er der til vanlig, eller vi kan vise en modal [`Dialog`](/docs/components-dialog--docs) som forteller brukerne om de kritiske feilene.
+
+### B) Viktig melding om systemet
+
+{/* Eksempelet er endret fra søknadsbehandling til en utdanningsrelatert tjeneste. */}
+
+Ikke alle feil er kritiske, men noen ganger påvirker midlertidige feil hvordan brukerne opplever tjenesten. La oss si at vi må varsle om lengre behandlingstid for eksamensresultater. Da kan vi legge en global [`Alert`](/docs/components-alert--docs) øverst på siden. Hvis meldingen bare gjelder deler av tjenesten, bør vi heller gi varselet der feilen gjelder. Hvis brukeren må ta et aktivt valg, kan det være bedre å bruke en modal [`Dialog`](/docs/components-dialog--docs). For eksempel for å varsle om at du snart blir logget ut, hvis du ikke tar et aktivt valg om å forbli innlogget.
+
+### C) Informasjon om systemet
+
+Brukerne kan også trenge å få mindre viktige systemvarsler. Det kan for eksempel være informasjon om planlagt vedlikehold eller beskjed om at en ny versjon er tilgjengelig. Slike meldinger kan vi vise med en [`Alert`](/docs/components-alert--docs).
+
+## Design og opplevelse
+
+Det finnes flere ulike måter å presentere systemvarsler til brukerne på. Vi bør velge den presentasjonsmåten som gjør at brukerne oppfatter varselet som nyttig. Varselet må ikke skape forvirring eller frustrasjon.
+
+Vi skal se nærmere på feilsider og komponentene modal [`Dialog`](/docs/components-dialog--docs) og [`Alert`](/docs/components-alert--docs). Når og hvordan skal vi bruke dem?
+
+### Når bruker vi feilsider?
+
+En full feilside er ofte hensiktsmessig når det oppstår alvorlige tekniske feil som hindrer brukeren i å fortsette å bruke tjenesten. Fordelen med feilsider er at de ikke krangler om oppmerksomheten med andre elementer på siden.
+
+**Vi kan bruke feilsider når**
+
+- det har oppstått tekniske feil som gjør at hele tjenesten er utilgjengelig
+- brukerne prøver å laste inn en side som ikke finnes
+
+**Det passer ikke med feilsider når**
+
+- den tekniske feilen er begrenset til én funksjon eller komponent
+- brukeren kan fortsette å bruke andre deler av tjenesten
+- deler av innholdet er utilgjengelig
+
+Fortell alltid brukerne hva som er galt og hvordan det påvirker dem og/eller systemet. Vi bør også si noe om hva brukerne eventuelt kan prøve selv, og hvor de kan få hjelp.
+
+{/* Digdirs skjermbilde av en 500-side er erstattet med et levende Udir-eksempel. */}
+
+<Canvas of={SystemvarslerStories.TekniskFeilside} />
+
+Eksempelet viser en full feilmeldingsside som forteller at vi har tekniske problemer og at dette ikke skyldes noe brukerne gjorde. Vi gir også brukerne noen alternativer for å komme videre.
+
+#### Når siden ikke eksisterer
+
+Når en bruker prøver å få tilgang til en side som ikke eksisterer, kan vi også bruke en full feilside. Da bør vi
+
+- gi brukeren mulighet til å søke etter informasjonen
+- gi brukerne forslag til andre relevante sider som tar utgangspunkt i samme URL
+- gi brukeren mulighet til å gå til forsiden
+
+{/* Digdirs skjermbilde av en 404-side er erstattet med et levende eksempel med Udir-innhold. */}
+
+<Canvas of={SystemvarslerStories.SideIkkeFunnet} />
+
+Eksempelet viser en full feilmeldingsside som forteller at siden kan være slettet eller flyttet, eller at det er en feil i lenken. Vi gir brukerne mulighet til å søke etter informasjonen, og foreslår noen aktuelle sider ut fra lenken de forsøkte å gå til.
+
+### Når bruker vi modaler?
+
+Med en modal [`Dialog`](/docs/components-dialog--docs) kan vi fange brukernes oppmerksomhet, samtidig som de fortsatt ser hvor de er. Men modaler forstyrrer også arbeidsflyten brukerne er i, så vi bør bare bruke dem når det er helt nødvendig.
+
+Vi anbefaler modal `Dialog` til systemvarsler som krever at brukerne må gjøre noe med en gang. Det kan for eksempel være når systemet av sikkerhetsgrunner ikke kan la deg være innlogget mer enn en viss tid når du ikke er aktiv. Modalen gir brukeren et valg om å fortsatt være innlogget.
+
+**Vi kan også bruke modal når**
+
+- det uansett er viktig at brukerne får med seg informasjonen
+- det oppstår feil som gjør at brukerne ikke kan fortsette å bruke tjenesten, for eksempel når systemet får nedetid eller når data ikke blir lagret
+- systemet krever at brukerne må bestemme noe før de kan fortsette, for eksempel hvis de må velge innstillinger som påvirker arbeidet deres videre
+
+**Når passer det ikke med modal?**
+
+- Til meldinger som kommer for ofte, det kan skape frustrasjon.
+- Varsler som ikke er så viktige, typisk sånne som kan vente til brukerne selv vil ta tak i det.
+
+{/* Digdirs skjermbilde av en modal er erstattet med en interaktiv Udir Dialog. */}
+
+<Canvas
+  of={SystemvarslerStories.VarselOmUtlogging}
+  story={{ inline: false, height: '400px' }}
+/>
+
+Eksempelet viser et globalt varsel som krever handling. I dialogen må brukeren ta et aktivt valg for å fortsette å være innlogget. Brukes når vi vil at brukerne skal svare for å få varselet til å forsvinne.
+
+### Når bruker vi alert?
+
+[`Alert`](/docs/components-alert--docs) er laget for å gi en beskjed til brukerne. Den er ofte delt inn i ulike varianter ut fra hvor viktig beskjeden er. Vi kan vise alert øverst i grensesnittet (global kontekst), eller den kan vises nær feilen (lokal kontekst).
+
+**Vi kan bruke `Alert` når**
+
+- feilen kun påvirker én del av systemet eller en mindre funksjon som ikke stopper brukerens mulighet til å fortsette andre oppgaver
+- det oppstår tilkoblingsproblemer eller API-feil som vil løse seg med en ny innlasting av siden
+
+**Det passer ikke med `Alert` når**
+
+- feilen hindrer all videre bruk av tjenesten (bruk feilside i stedet)
+- du skal gjøre brukeren oppmerksom på feil i enkeltfelt (bruk [`ValidationMessage`](/docs/components-typography--docs#validationmessage))
+- varslene er statiske infobokser (bruk [`Card`](/docs/components-card--docs))
+- det er eneste innhold på en side
+
+I eksempelet under ser vi en global `Alert` som fyller hele bredden øverst på siden. Denne typen varsel anbefales for problemer som gjelder hele tjenesten. Vi bruker gul `Alert` (`warning`) når brukerne fortsatt kan finne informasjon og navigere på nettsidene, men der noen av delene på siden er utilgjengelige.
+
+{/* Digdirs skjermbilde av en global Alert er erstattet med et levende Udir-eksempel. */}
+
+<Canvas of={SystemvarslerStories.GlobaltSystemvarsel} />
+
+Det neste eksempelet viser en lokal `Alert` som er plassert i nærheten av der feilen oppsto. Vi bruker en rød `Alert` (`danger`) i tilfeller der brukerne ikke kan fortsette arbeidet. Den står så lenge feilen finnes.
+
+{/* Digdirs skjermbilde av en lokal Alert er erstattet med et levende Udir-eksempel. */}
+
+<Canvas of={SystemvarslerStories.LokaltSystemvarsel} />
 
 ## Unngå bruk av toast
 
+{/* Denne delen er Udir-spesifikk og finnes ikke i Digdirs opprinnelige mønster. */}
+
 [Vi anbefaler å unngå bruk av toast](/docs/patterns-systemvarsler-toast--docs) på grunn av problemer med universell utforming.
+
+## Kode
+
+For å sikre at alle brukere får med seg systemvarsler til riktig tid, må du passe på å bruke riktige attributter.
+
+### Statiske varsler
+
+Varsler som vises ved sidelasting, kalles statiske varsler. Disse trenger ingen spesielle attributter, siden de er synlige fra starten av og kan plasseres logisk i innholdshierarkiet. Vær oppmerksom på hvilket overskriftsnivå varselet får i innholdshierarkiet.
+
+### Dynamiske varsler
+
+Varsler som dukker opp etter at siden er lastet, kalles dynamiske varsler. Disse varslene bør for eksempel bruke `role="alert"`. For å sikre at skjermlesere oppfatter endringen i innholdet, må elementet med rollen finnes på siden før varselet blir lagt til.
+
+{/* Digdirs eksempel med innerHTML er erstattet med Udirs React-eksempel, som viser en forhåndsopprettet live region. */}
+
+<Canvas of={AlertStories.CorrectLiveRegion} />
+
+Ved å opprette live regionen før den fylles med innhold, sikrer vi at skjermlesere oppfatter varselet så snart det vises. Les mer om [tilgjengelig bruk av `Alert`](/docs/components-alert--docs#interaksjon-med-skjermleser).
+
+### Nivåer for dynamiske varsler
+
+For kritiske varsler som må leses opp umiddelbart, bruk `role="alert"`, som sørger for at skjermleseren avbryter pågående opplesinger og leser opp varselet straks innholdet endres. For mindre alvorlige meldinger som kan vente, kan `role="status"` være et bedre valg, da dette ikke avbryter, men leses opp når skjermleseren har tid.
+
+{/* Teksten i kodeeksempelet er justert for å følge språkføringen tidligere i mønsteret. */}
+
+```html
+<div role="alert">Det oppsto en kritisk feil. Prøv igjen.</div>
+<div role="status">Endringen ble lagret.</div>
+```
+
+Les mer hos [UU-tilsynet](https://www.uutilsynet.no/wcag-standarden/413-statusbeskjeder-niva-aa/152) om hvilke roller du skal bruke på ulike elementer.
+
+### Modaler
+
+Når en dialog åpnes, er det viktig at den får fokus, slik at brukere umiddelbart kan interagere med innholdet. Ofte er det naturlig å sette fokus til det første interaktive elementet. Når dialogen lukkes, bør fokuset returnere til en logisk plassering på siden, for eksempel der brukeren var før.
+
+{/* Digdirs manuelle ARIA- og fokus-eksempel er erstattet med Udir Dialog, som håndterer dialogsemantikk og fokus. */}
+
+Bruk [`Dialog`](/docs/components-dialog--docs) fremfor å bygge dialogsemantikk og fokusstyring selv. Det interaktive [eksempelet med varsel om utlogging](#når-bruker-vi-modaler) viser komponenten i bruk.
