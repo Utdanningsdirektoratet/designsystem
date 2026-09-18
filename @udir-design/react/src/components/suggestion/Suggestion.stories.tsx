@@ -93,6 +93,22 @@ async function testSuggestion(el: HTMLElement) {
     /* When in test mode, open suggestion by focusing input */
     await userEvent.click(input);
   }
+
+  await settleListWidth(el);
+}
+
+/**
+ * The listbox is briefly visible at its own content width before digdir gives it
+ * the width of the input, and Chromatic snapshots land inside that window. Wait
+ * it out so the snapshot is taken from a settled state.
+ *
+ * Workaround for https://github.com/digdir/designsystemet/issues/5392 — remove
+ * once the fix is released.
+ */
+async function settleListWidth(el: HTMLElement) {
+  const list = el.querySelector('u-datalist');
+  if (!(list instanceof HTMLElement)) return;
+  await waitFor(() => expect(list.style.width).not.toBe(''));
 }
 
 /**
@@ -111,6 +127,7 @@ async function typeUnknownValue(el: HTMLElement, value: string) {
     .getAllByRole('option')
     .filter((option) => option.matches('u-option'));
   await expect(options).toHaveLength(1);
+  await settleListWidth(el);
 
   return { input, createOption: options[0] };
 }
