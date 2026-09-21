@@ -5,7 +5,7 @@ Dette biblioteket inneholder CSS-variabler for Utdanningsdirektoratets design to
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/theme@beta
+npm add @udir-design/theme
 ```
 
 ## Ta i bruk

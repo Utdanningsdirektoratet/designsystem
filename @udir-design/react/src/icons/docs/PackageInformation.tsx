@@ -54,10 +54,7 @@ function MyComponent () {
         <ToggleGroup.Item value="react">React</ToggleGroup.Item>
         <ToggleGroup.Item value="svg">SVG</ToggleGroup.Item>
       </ToggleGroup>
-      <CodeBlock
-        heading="Installasjon"
-        code="npm add @udir-design/icons@beta"
-      />
+      <CodeBlock heading="Installasjon" code="npm add @udir-design/icons" />
       <CodeBlock heading="Bruk" code={usageCode[codeType]} />
     </div>
   );
