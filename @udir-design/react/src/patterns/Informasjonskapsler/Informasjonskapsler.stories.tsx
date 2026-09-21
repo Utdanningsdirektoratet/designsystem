@@ -48,7 +48,7 @@ const localizedExampleData = exampleData as unknown as Record<
 >;
 
 const meta = preview.meta({
-  tags: ['alpha', 'udir', '!dev'],
+  tags: ['alpha', 'udir'],
   parameters: {
     componentOrigin: {
       originator: 'self',

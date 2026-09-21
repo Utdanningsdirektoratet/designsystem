@@ -47,11 +47,6 @@ const getBadgeFromTags = (tags: string[]) => {
 addons.setConfig({
   theme: customTheme,
   sidebar: {
-    filters: {
-      // Hide cookies pattern until it is ready
-      hideDocs: (item) =>
-        !(item.type === 'docs' && item.title?.includes('Informasjonskapsler')),
-    },
     renderLabel(item) {
       if (item.type === 'root') {
         if (item.id === 'introduksjon') {
