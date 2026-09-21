@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{language}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasjonskapsler</title>
+    <link
+      rel="preload stylesheet"
+      as="style"
+      href="https://altinncdn.no/fonts/inter/v4/inter.css"
+    />
+    <!-- Local preview dependencies. These are not part of Cookie Information's HTML Code. -->
+    <link rel="stylesheet" href="/css/theme/dist/index.css" />
+    <link rel="stylesheet" href="/css/digdir/dist/src/index.css" />
+    <link rel="stylesheet" href="/css/udir/dist/components.css" />
+    <link rel="stylesheet" href="/css/udir/dist/icons.css" />
+    <link rel="stylesheet" href="/template/css-code.css" />
+  </head>
+  <body>
+    <!-- Local Cookie Information API stub. This is not part of Cookie Information's JavaScript Code. -->
+    <script id="CookieConsent" data-culture="{{culture}}">
+      window.CookieInformation = {
+        submitAllCategories: function () {
+          hideCookieBanner();
+        },
+        submitConsent: function () {
+          hideCookieBanner();
+        },
+        declineAllCategories: function () {
+          hideCookieBanner();
+        },
+        changeCategoryConsentDecision: function (name) {
+          console.log('Toggle:', name);
+        },
+        getConsentGivenFor: function () {
+          return false;
+        },
+      };
+      window.CookieConsent = {
+        renew: function () {
+          showCookieBanner();
+        },
+      };
+      window.addEventListener('load', function () {
+        showCookieBanner();
+      });
+    </script>
+
+    {{{cookieTemplate}}}
+
+    <script src="/template/javascript-code.js"></script>
+  </body>
+</html>
