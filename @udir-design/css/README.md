@@ -5,7 +5,7 @@ Dette biblioteket inneholder styling for Utdanningsdirektoratets designsystem.
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/css@beta
+npm add @udir-design/css
 ```
 
 ## Ta i bruk med React
@@ -23,7 +23,7 @@ Om du bruker en bundler som støtter `@import` av npm-avhengigheter i CSS, f.eks
 #### Installer biblioteket
 
 ```sh
-npm add @udir-design/css@beta
+npm add @udir-design/css
 ```
 
 #### Importer fra JavaScript

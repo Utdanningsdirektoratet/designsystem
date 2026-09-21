@@ -841,17 +841,16 @@ pnpm --filter symbols run generate:pngs
 
 Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.org/),
 tilpasset for bruk i monorepo. Denne strategien baserer seg på automatisert publisering gjennom pull requests til
-spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett, konfigurasjon og bootstrap-prosedyre.
+spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett og konfigurasjon.
 
 Hos oss er dette satt opp slik:
 
 - `release/latest` brukes for å publisere en stabil versjon, og får `@latest`-taggen på npm.
-- `release/beta` brukes for å publisere beta-versjoner. Disse får pre-release versjonsnummer i henhold til [SemVer](https://semver.org/) — f.eks. `1.1.0-beta.2` — og `@beta`-tag på npm. **Denne branchen vil fjernes etter første stabile release på `release/latest`.**
 - `release/<N>.x` og `release/<N>.<N>.x`, der `<N>` er et tall, brukes for å publisere vedlikeholdsversjoner. Det lar oss for eksempel fikse en bug eller legge til en feature på en versjon som er én eller flere major-versjoner bak `release/latest`.
 
 I alle tilfeller blir versjonsnummer og endringslogg automatisk generert etter endringene har blitt merget inn i korrekt branch.
 
-Alle endringer merges først inn i `main`-branchen via en PR. Når man er klar for å publisere, oppretter man en PR for å merge `main` inn i en release-branch — for øyeblikket `release/beta`, men vi går over til `release/latest` etter første stabile release.
+Alle endringer merges først inn i `main`-branchen via en PR. Når man er klar for å publisere, oppretter man en PR for å merge `main` inn i en release-branch — vanligvis `release/latest`.
 
 Unntaket er vedlikeholdsversjoner for eldre major-versjoner. Dersom vi allerede er på versjon 2, men du må fikse en bug i versjon 1.13.1:
 

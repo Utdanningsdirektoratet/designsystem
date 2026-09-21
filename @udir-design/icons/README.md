@@ -9,7 +9,7 @@ For å ta i bruk biblioteket må du først installere det.
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/icons@beta
+npm add @udir-design/icons
 ```
 
 ## Ta i bruk med React
