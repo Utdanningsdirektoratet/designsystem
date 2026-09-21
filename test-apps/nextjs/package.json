@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "oxlint",
     "typecheck": "tsc --build",
-    "pretest:e2e": "pnpm exec playwright install --with-deps chromium",
+    "pretest:e2e": "pnpm exec playwright install chromium",
     "test:e2e": "playwright test"
   },
   "dependencies": {

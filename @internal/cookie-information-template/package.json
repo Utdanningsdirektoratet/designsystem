@@ -8,7 +8,7 @@
     "dev": "node --watch server.js",
     "lint": "oxlint",
     "start": "node server.js",
-    "pretest:unit": "pnpm exec playwright install --with-deps chromium",
+    "pretest:unit": "pnpm exec playwright install chromium",
     "test:unit": "vitest run",
     "typecheck": "tsc --noEmit"
   },
