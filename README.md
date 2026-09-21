@@ -841,7 +841,7 @@ pnpm --filter symbols run generate:pngs
 
 Vi benytter en publiseringsstrategi basert på [semantic-release](https://semantic-release.org/),
 tilpasset for bruk i monorepo. Denne strategien baserer seg på automatisert publisering gjennom pull requests til
-spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett, konfigurasjon og bootstrap-prosedyre.
+spesifikke brancher. Se [RELEASING.md](RELEASING.md) for teknisk oppsett og konfigurasjon.
 
 Hos oss er dette satt opp slik:
 
