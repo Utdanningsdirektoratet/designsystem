@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // Nothing builds this package: Oxlint and Vitest both load the TypeScript
+    // sources directly, so the explicit `.ts` import specifiers Node's type
+    // stripping requires are fine and there is no output to emit.
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "incremental": true,
+    "tsBuildInfoFile": "../../dist/out-tsc/internal-oxlint-plugin.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"]
+}

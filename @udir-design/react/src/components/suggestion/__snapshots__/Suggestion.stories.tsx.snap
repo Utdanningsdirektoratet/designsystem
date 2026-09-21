@@ -9,6 +9,7 @@ exports[`Always Show All 1`] = `
     <data
       value="Sogndal"
       aria-label="Sogndal, Press to remove"
+      hidden
       role="option"
       slot="items"
       tabindex="-1"
@@ -149,6 +150,7 @@ exports[`Controlled Independent Label Value 1`] = `
     <data
       value="#004"
       aria-label="Lars, Press to remove"
+      hidden
       role="option"
       slot="items"
       tabindex="-1"
@@ -673,6 +675,7 @@ exports[`Controlled Single 1`] = `
     <data
       value="Sogndal"
       aria-label="Sogndal, Press to remove"
+      hidden
       role="option"
       slot="items"
       tabindex="-1"
@@ -848,6 +851,7 @@ exports[`Controlled Single Creatable 1`] = `
     <data
       value="Finnes ikke"
       aria-label="Finnes ikke, Press to remove"
+      hidden
       role="option"
       slot="items"
       tabindex="-1"
@@ -908,7 +912,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="false"
         aria-selected="true"
         id="<generated>"
-        aria-hidden="false"
+        aria-hidden="true"
         selected
       >
       </u-option>
@@ -919,7 +923,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Sogndal
@@ -934,7 +938,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Oslo
@@ -949,7 +953,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Brønnøysund
@@ -964,7 +968,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Stavanger
@@ -979,7 +983,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Trondheim
@@ -994,7 +998,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Bergen
@@ -1009,7 +1013,7 @@ exports[`Controlled Single Creatable 1`] = `
         aria-disabled="true"
         aria-selected="false"
         id="<generated>"
-        aria-hidden="true"
+        aria-hidden="false"
         disabled
       >
         Lillestrøm
@@ -1480,6 +1484,7 @@ exports[`Default Value 1`] = `
     <data
       value="Sogndal"
       aria-label="Sogndal, Press to remove"
+      hidden
       role="option"
       slot="items"
       tabindex="-1"

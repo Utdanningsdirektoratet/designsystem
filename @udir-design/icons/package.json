@@ -29,7 +29,7 @@
     "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts --logLevel warn",
     "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
-    "inject": "echo 'Dummy script to trigger pnpm injected dependency sync'",
+    "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
     "clean": "rimraf ./dist && mkdir ./dist",
     "lint": "oxlint"
   },

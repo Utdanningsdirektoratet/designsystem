@@ -4,7 +4,6 @@ import {
   JS_TS_FILES,
   TS_TSX_FILES,
   barrelFileRestrictionPattern,
-  importOrder,
   jsxA11yOptionRules,
   noRestrictedImports,
   noUnusedVars,
@@ -23,7 +22,7 @@ const STORY_ALL_FILES = [
   '**/*.story.{ts,tsx,js,jsx,mjs,cjs}',
 ];
 
-// `categories` and `env` are inherited from the root config. The importx
+// `categories` and `env` are inherited from the root config. The `workspace`
 // jsPlugin is inherited too and merges with the storybook plugin added here.
 export default defineConfig({
   extends: [baseConfig],
@@ -51,9 +50,6 @@ export default defineConfig({
         ]),
         'typescript/consistent-type-imports': 'error',
         'typescript/consistent-type-exports': 'error',
-        'importx/order': importOrder([
-          { pattern: '.storybook/**', group: 'internal' },
-        ]),
       },
     },
     {

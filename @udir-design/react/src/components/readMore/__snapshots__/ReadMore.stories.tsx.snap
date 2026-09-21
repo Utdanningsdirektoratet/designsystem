@@ -44,6 +44,17 @@ exports[`Example 1`] = `
 </fieldset>
 `;
 
+exports[`Open 1`] = `
+<details open>
+  <summary>
+    Dette er en ReadMore
+  </summary>
+  <div>
+    Dette er innhold i en ReadMore
+  </div>
+</details>
+`;
+
 exports[`Preview 1`] = `
 <details>
   <summary>

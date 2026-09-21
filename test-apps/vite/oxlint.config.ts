@@ -7,8 +7,8 @@ import {
   reactPackageSettings,
 } from '../../oxlint.shared.ts';
 
-// `categories`, `env`, and `jsPlugins` (importx) are inherited from the root
-// config; only the React-specific additions are declared here.
+// `categories`, `env`, and `jsPlugins` (`workspace`) are inherited from the
+// root config; only the React-specific additions are declared here.
 export default defineConfig({
   extends: [baseConfig],
   plugins: reactPackagePlugins,
