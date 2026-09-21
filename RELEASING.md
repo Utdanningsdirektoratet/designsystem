@@ -28,11 +28,10 @@ comment, so reviewers can see exactly what will be released.
 
 ### Branch → channel mapping
 
-| Branch pattern                  | npm tag  | Version format | Purpose                             |
-| ------------------------------- | -------- | -------------- | ----------------------------------- |
-| `release/latest`                | `latest` | `1.2.3`        | Stable releases                     |
-| `release/beta`                  | `beta`   | `1.2.3-beta.N` | Beta pre-releases (due for removal) |
-| `release/N.x` / `release/N.N.x` | `N.x`    | `1.13.2`       | Maintenance releases                |
+| Branch pattern                  | npm tag  | Version format | Purpose              |
+| ------------------------------- | -------- | -------------- | -------------------- |
+| `release/latest`                | `latest` | `1.2.3`        | Stable releases      |
+| `release/N.x` / `release/N.N.x` | `N.x`    | `1.13.2`       | Maintenance releases |
 
 ### What triggers a release
 
