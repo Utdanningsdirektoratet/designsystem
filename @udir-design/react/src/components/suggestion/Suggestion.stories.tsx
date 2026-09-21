@@ -85,6 +85,8 @@ async function testSuggestion(el: HTMLElement) {
   const input = await waitFor(() => within(el).getByRole('combobox'));
   const toggle = within(el).queryByRole('button', { name: 'Valg' });
 
+  await settleInputWidth();
+
   if (toggle) {
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
     await userEvent.click(toggle);
@@ -93,6 +95,49 @@ async function testSuggestion(el: HTMLElement) {
     /* When in test mode, open suggestion by focusing input */
     await userEvent.click(input);
   }
+
+  await settleListWidth(el);
+}
+
+/**
+ * Digdir measures the input once, as the list opens, and never corrects it. In
+ * `layout: 'centered'` stories the story root is shrink-to-fit, so the input is
+ * sized by its own text metrics and grows when the web font replaces the
+ * fallback. Opening before that lands leaves the listbox permanently narrower
+ * than the input — which is what Chromatic captures, since it always runs with
+ * a cold font cache.
+ *
+ * Workaround for https://github.com/digdir/designsystemet/issues/5392 — remove
+ * once the fix is released.
+ */
+async function settleInputWidth() {
+  await document.fonts.ready;
+}
+
+/**
+ * The listbox is also briefly visible at its own content width before digdir
+ * gives it the width of the input, and Chromatic snapshots land inside that
+ * window. Wait it out so the snapshot is taken from a settled state.
+ *
+ * Assert the width rather than just waiting for one to be set, so a stale
+ * measurement fails here, loudly, instead of silently reaching Chromatic.
+ *
+ * Workaround for https://github.com/digdir/designsystemet/issues/5392 — remove
+ * once the fix is released.
+ */
+async function settleListWidth(el: HTMLElement) {
+  const list = el.querySelector('u-datalist');
+  const input = el.querySelector('input');
+  if (!(list instanceof HTMLElement) || !input) return;
+
+  await waitFor(() => {
+    const listWidth = list.getBoundingClientRect().width;
+    /* An empty list renders no box, so there is no width to match */
+    if (!listWidth) return;
+    expect(Math.round(listWidth)).toBe(
+      Math.round(input.getBoundingClientRect().width),
+    );
+  });
 }
 
 /**
@@ -101,6 +146,7 @@ async function testSuggestion(el: HTMLElement) {
  */
 async function typeUnknownValue(el: HTMLElement, value: string) {
   const input = await waitFor(() => within(el).getByRole('combobox'));
+  await settleInputWidth();
   await userEvent.clear(input);
   await userEvent.type(input, value);
 
@@ -111,6 +157,7 @@ async function typeUnknownValue(el: HTMLElement, value: string) {
     .getAllByRole('option')
     .filter((option) => option.matches('u-option'));
   await expect(options).toHaveLength(1);
+  await settleListWidth(el);
 
   return { input, createOption: options[0] };
 }
