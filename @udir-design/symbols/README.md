@@ -5,7 +5,7 @@ Dette biblioteket inneholder ~400 symboler for bruk i Udirs digitale tjenester. 
 ## Installere biblioteket
 
 ```bash
-npm add @udir-design/symbols@alpha
+npm add @udir-design/symbols
 ```
 
 ## Ta i bruk

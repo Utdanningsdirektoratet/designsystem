@@ -1,7 +1,6 @@
 # Releasing
 
-This document describes how the automated release pipeline works and how to
-bootstrap the first stable release.
+This document describes how the automated release pipeline works.
 
 For day-to-day workflow (which branch to target with your PR), see the
 [README](README.md#hvordan-publisere-en-ny-versjon).
@@ -26,13 +25,17 @@ Releases are fully automated via
 Pull requests to release branches get a **changelog preview** posted as a PR
 comment, so reviewers can see exactly what will be released.
 
+semantic-release records which npm channel a tag was published on as a git note
+(`refs/notes/semantic-release-<tag>`) on the tagged commit, and pushes it along
+with the tag. Tags created by the old Nx-based release system were backfilled
+with notes in a one-time migration, so the whole tag history is recognised.
+
 ### Branch → channel mapping
 
-| Branch pattern                  | npm tag  | Version format | Purpose                             |
-| ------------------------------- | -------- | -------------- | ----------------------------------- |
-| `release/latest`                | `latest` | `1.2.3`        | Stable releases                     |
-| `release/beta`                  | `beta`   | `1.2.3-beta.N` | Beta pre-releases (due for removal) |
-| `release/N.x` / `release/N.N.x` | `N.x`    | `1.13.2`       | Maintenance releases                |
+| Branch pattern                  | npm tag  | Version format | Purpose              |
+| ------------------------------- | -------- | -------------- | -------------------- |
+| `release/latest`                | `latest` | `1.2.3`        | Stable releases      |
+| `release/N.x` / `release/N.N.x` | `N.x`    | `1.13.2`       | Maintenance releases |
 
 ### What triggers a release
 
@@ -59,7 +62,8 @@ from the changelog.
 
 Packages are published using [`pnpm stage publish`](https://pnpm.io/cli/stage),
 which uploads them to a staging area on the npm registry without making them
-publicly available. A human must then approve each staged version:
+publicly available. Each package gets its own stage id, so one release stages
+five of them. A human must then approve those versions:
 
 ```bash
 # List staged packages
@@ -68,15 +72,15 @@ pnpm stage list
 # Inspect a specific staged version
 pnpm stage view <stage-id>
 
-# Approve (requires 2FA / OTP)
-pnpm stage approve <stage-id> --otp <otp>
+# Approve the whole release — pick interactively, or pass the ids
+pnpm stage approve
+pnpm stage approve <stage-id> <stage-id> ...
 
 # Or reject
 pnpm stage reject <stage-id>
 ```
 
-Staged packages can also be reviewed and approved on
-[npmjs.com](https://www.npmjs.com/). Follow [these instructions](https://docs.npmjs.com/staged-publishing#using-npmjscom) to find the Staged Packages tab.
+You can approve on [npmjs.com](https://www.npmjs.com/) instead of using pnpm, but this is slower: each staged package is approved on its own, with a fresh passkey sign-in every time. To do this, follow [these instructions](https://docs.npmjs.com/staged-publishing#using-npmjscom) to find the Staged Packages tab.
 
 This adds a manual gate between CI automation and public availability.
 
@@ -91,33 +95,6 @@ Each changelog entry includes:
 - A dedicated **⚠ BREAKING CHANGES** section at the top when applicable
 
 This matches the format produced by the former Nx-based `changelog-renderer.ts`.
-
-## Bootstrapping (one-time procedures)
-
-### 1. Bootstrap git notes for existing tags ✅ Done
-
-semantic-release tracks which npm channel a tag was published on using git
-notes (`refs/notes/semantic-release-<tag>`). Tags created by the old Nx-based
-release system didn't have these notes. A one-time bootstrap script was run to
-derive the channel from each tag's semver prerelease identifier and attach the
-note to the underlying commit. The notes have been pushed to the remote.
-
-For new tags, semantic-release creates and pushes notes automatically.
-
-### 2. Bootstrap v1.0.0 (stable baseline)
-
-`release/latest` is already set to the same commit as `v1.0.0-beta.33`. The
-first merge into `release/latest` will trigger semantic-release, which will
-create `v1.0.0` with tag, git note, and GitHub release automatically.
-
-The generated changelog for this first release will include the entire commit
-history (since there is no prior stable tag). Edit the GitHub release
-description afterwards to something sensible, e.g. _"First stable release.
-See beta releases for earlier changelog."_
-
-After this, semantic-release handles everything. The next commit merged into
-`release/latest` (e.g. `feat: add dialog`) will produce `v1.1.0` with a clean,
-incremental changelog.
 
 ## Configuration reference
 
