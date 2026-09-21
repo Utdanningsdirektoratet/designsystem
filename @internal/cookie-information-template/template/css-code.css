@@ -17,6 +17,27 @@ body {
   display: none;
 }
 
+/* Keep the original dialog's backdrop and tint only the consent dialog behind details. */
+#cookie-details-dialog {
+  --dsc-dialog-backdrop-background: transparent;
+}
+
+#cookie-dialog:has(+ #cookie-details-dialog[open])::before {
+  animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration) ease-in-out;
+  background: var(--dsc-dialog-backdrop-background);
+  content: '';
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #cookie-dialog:has(+ #cookie-details-dialog[open])::before {
+    animation: none;
+  }
+}
+
 @media (max-width: 40rem) {
   .cookies-buttons > button {
     flex: 1 1 auto;

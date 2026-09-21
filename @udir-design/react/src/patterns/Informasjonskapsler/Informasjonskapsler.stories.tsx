@@ -91,6 +91,23 @@ export const Preview = meta.story({
             .cookies-details li > strong {
               font-weight: 600;
             }
+            .cookie-details-dialog {
+              --dsc-dialog-backdrop-background: transparent;
+            }
+            .cookie-dialog:has(.cookie-details-dialog[open])::before {
+              animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration) ease-in-out;
+              background: var(--dsc-dialog-backdrop-background);
+              content: '';
+              inset: 0;
+              pointer-events: none;
+              position: absolute;
+              z-index: 1;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .cookie-dialog:has(.cookie-details-dialog[open])::before {
+                animation: none;
+              }
+            }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
                 flex: 1 1 auto;
@@ -99,6 +116,7 @@ export const Preview = meta.story({
           `}
         </style>
         <Dialog
+          className="cookie-dialog"
           open={open}
           onClose={() => setOpen(false)}
           {...(isInert && { inert: true })}
@@ -121,7 +139,7 @@ export const Preview = meta.story({
                 <InformationSquareFillIcon aria-hidden />
                 {text.detailsTrigger}
               </Dialog.Trigger>
-              <Dialog>
+              <Dialog className="cookie-details-dialog">
                 <Prose>
                   <Heading level={2}>{text.overviewHeading}</Heading>
                   <Paragraph>
@@ -258,6 +276,23 @@ export const NecessaryOnly = meta.story({
             .cookies-details li > strong {
               font-weight: 600;
             }
+            .cookie-details-dialog {
+              --dsc-dialog-backdrop-background: transparent;
+            }
+            .cookie-dialog:has(.cookie-details-dialog[open])::before {
+              animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration) ease-in-out;
+              background: var(--dsc-dialog-backdrop-background);
+              content: '';
+              inset: 0;
+              pointer-events: none;
+              position: absolute;
+              z-index: 1;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .cookie-dialog:has(.cookie-details-dialog[open])::before {
+                animation: none;
+              }
+            }
             @media (max-width: 40rem) {
               .cookies-buttons > button {
                 flex: 1 1 auto;
@@ -266,6 +301,7 @@ export const NecessaryOnly = meta.story({
           `}
         </style>
         <Dialog
+          className="cookie-dialog"
           open={open}
           onClose={() => setOpen(false)}
           {...(isInert && { inert: true })}
@@ -280,7 +316,7 @@ export const NecessaryOnly = meta.story({
                 <InformationSquareFillIcon aria-hidden />
                 {text.detailsTrigger}
               </Dialog.Trigger>
-              <Dialog>
+              <Dialog className="cookie-details-dialog">
                 <Prose>
                   <Heading level={2}>{text.overviewHeading}</Heading>
                   <Paragraph>
