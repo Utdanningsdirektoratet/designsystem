@@ -6,6 +6,13 @@ inputs:
       Optional registry to set up for auth. Will set the registry in a project level
       .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKEN.
     default: ''
+  playwright-deps:
+    description: |
+      Install Playwright's Chromium system dependencies once for this runner.
+      Enable in jobs that run browser tests. The per-package `pretest` scripts
+      only download the browser binary, which Playwright serialises with its own
+      lockfile; the apt-get half has no such lock, so it must run exactly once.
+    default: 'false'
 
 runs:
   using: 'composite'
@@ -24,6 +31,15 @@ runs:
 
     - run: pnpm install
       shell: bash
+
+    # Runs on its own, with no sibling tasks competing for the dpkg lock. The
+    # lock timeout covers the runner image's own background apt activity.
+    - name: Install Playwright system dependencies
+      if: inputs.playwright-deps == 'true'
+      shell: bash
+      run: |
+        echo 'DPkg::Lock::Timeout "120";' | sudo tee /etc/apt/apt.conf.d/99lock-timeout
+        pnpm exec playwright install-deps chromium
 
     # Turborepo remote cache via GitHub Actions cache.
     # The key includes the job name so parallel/sequential jobs don't overwrite each other.

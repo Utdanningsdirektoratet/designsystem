@@ -54,7 +54,7 @@
     "watch:typedoc": "typedoc --watch --tsconfig tsconfig.lib.json",
     "serve:typedoc": "pnpm dlx http-server --port=8090 -c-1 ./storybook-static/typedoc",
     "serve:docs": "pnpm dlx http-server ./storybook-static",
-    "pretest": "pnpm exec playwright install --with-deps chromium",
+    "pretest": "pnpm exec playwright install chromium",
     "test": "vitest",
     "pretest:unit": "pnpm pretest",
     "test:unit": "vitest --project unit",
