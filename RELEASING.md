@@ -62,7 +62,8 @@ from the changelog.
 
 Packages are published using [`pnpm stage publish`](https://pnpm.io/cli/stage),
 which uploads them to a staging area on the npm registry without making them
-publicly available. A human must then approve each staged version:
+publicly available. Each package gets its own stage id, so one release stages
+five of them. A human must then approve those versions:
 
 ```bash
 # List staged packages
@@ -71,15 +72,15 @@ pnpm stage list
 # Inspect a specific staged version
 pnpm stage view <stage-id>
 
-# Approve (requires 2FA / OTP)
-pnpm stage approve <stage-id> --otp <otp>
+# Approve the whole release — pick interactively, or pass the ids
+pnpm stage approve
+pnpm stage approve <stage-id> <stage-id> ...
 
 # Or reject
 pnpm stage reject <stage-id>
 ```
 
-Staged packages can also be reviewed and approved on
-[npmjs.com](https://www.npmjs.com/). Follow [these instructions](https://docs.npmjs.com/staged-publishing#using-npmjscom) to find the Staged Packages tab.
+You can approve on [npmjs.com](https://www.npmjs.com/) instead of using pnpm, but this is slower: each staged package is approved on its own, with a fresh passkey sign-in every time. To do this, follow [these instructions](https://docs.npmjs.com/staged-publishing#using-npmjscom) to find the Staged Packages tab.
 
 This adds a manual gate between CI automation and public availability.
 
