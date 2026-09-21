@@ -113,11 +113,13 @@ detailsDialog.addEventListener('click', (e) => {
 
 // --- Show/Hide banner ---
 
+// oxlint-disable-next-line no-unused-vars -- Cookie Information invokes this configured callback by name.
 function showCookieBanner() {
   document.documentElement.classList.add('no-scroll');
   cookieDialog.showModal();
 }
 
+// oxlint-disable-next-line no-unused-vars -- Cookie Information invokes this configured callback by name.
 function hideCookieBanner() {
   cookieDialog.close();
 }
