@@ -21,6 +21,10 @@ export const Preview = meta.story({
   render: (args) => (
     <ReadMore {...args}>Dette er innhold i en ReadMore</ReadMore>
   ),
+});
+
+export const Preview_Test = Preview.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const readmore = canvasElement.querySelector('details');
@@ -51,6 +55,10 @@ export const Preview = meta.story({
       expect(readmore).not.toHaveAttribute('open');
     });
   },
+});
+
+export const Open = Preview.extend({
+  args: { open: true },
 });
 
 export const Example = meta.story({

@@ -61,7 +61,7 @@ export const Icon = meta.story({
   padding-inline-start: var(--ds-size-1);
 }
 .tag-icon-icon {
-  margin-inline-end: var(--ds-size-1); 
+  margin-inline-end: var(--ds-size-1);
 }`}
       </style>
       <Tag className="tag-icon-tag" {...args}>
@@ -139,6 +139,9 @@ export const Article = meta.story({
       </style>
       <div>
         <img
+          // The photo is decorative. Ignore its pixels so re-encodings from the
+          // image CDN don't show up as visual changes in Chromatic.
+          data-chromatic="ignore"
           src={electricianImage}
           alt="Bøker på et bord"
           className="tag-article-img"

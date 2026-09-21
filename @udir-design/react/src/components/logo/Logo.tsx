@@ -5,7 +5,6 @@ import mainLogoDark from '../../../assets/img/udir-main-logo-dark-mode.svg';
 import mainLogoLight from '../../../assets/img/udir-main-logo.svg';
 import mainLogoPrideDark from '../../../assets/img/udir-pride-logo-dark-mode.svg';
 import mainLogoPrideLight from '../../../assets/img/udir-pride-logo.svg';
-
 import './logo.css';
 
 export type LogoProps = HTMLAttributes<HTMLElement> & {

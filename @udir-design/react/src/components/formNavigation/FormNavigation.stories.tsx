@@ -73,6 +73,9 @@ export const Preview = meta.story({
       </FormNavigation>
     );
   },
+});
+
+export const Preview_Test = Preview.extend({
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const navigation = canvas.getByTestId('form-navigation');

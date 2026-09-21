@@ -285,11 +285,13 @@ const WithLinkBase = (Link: ComponentType<LinkProps>) =>
     ),
   });
 
-export const WithLink = WithLinkBase(LinkComponent).extend({});
+const withLink = WithLinkBase(LinkComponent);
+export const WithLink = withLink.extend({});
 
-export const WithAnchor = WithLinkBase(({ children, ...props }) => (
+const withAnchor = WithLinkBase(({ children, ...props }) => (
   <a {...props}>{children}</a>
-)).extend({});
+));
+export const WithAnchor = withAnchor.extend({});
 
 export const WithLinkFocused = WithLink.extend({
   parameters: {

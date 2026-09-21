@@ -967,6 +967,48 @@ exports[`Preview 1`] = `
 <div data-size="auto">
   <div>
     <button
+      data-state="active"
+      data-variant="default"
+      aria-current="step"
+    >
+      <div>
+      </div>
+      Steg
+    </button>
+    <details
+      data-state="idle"
+      open
+    >
+      <summary>
+        <span>
+          Seksjon
+        </span>
+      </summary>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Første steg
+      </button>
+      <button
+        data-state="idle"
+        data-variant="default"
+      >
+        <div>
+        </div>
+        Andre steg
+      </button>
+    </details>
+  </div>
+</div>
+`;
+
+exports[`Preview Test 1`] = `
+<div data-size="auto">
+  <div>
+    <button
       data-state="idle"
       data-variant="default"
     >
