@@ -14,13 +14,25 @@
   }
 }
 
-.horisontalWrapper {
+.resourceLinks {
+  display: grid;
+  gap: var(--ds-size-6);
+  grid-template-columns: 1fr;
   margin-top: var(--ds-size-6);
   margin-bottom: var(--ds-size-10);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.horizontalCard {
   display: flex;
-  flex-wrap: wrap;
-  flex: 0 1 70%;
-  gap: var(--ds-size-4);
+  max-width: 35rem;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
 }
 
 .illustration {
@@ -29,10 +41,43 @@
   justify-content: center;
   align-items: center;
   padding: var(--ds-size-10);
+  flex-shrink: 0;
 }
 
 .icon {
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.resourceLinkHorizontal {
+  display: flex;
+  align-items: center;
+
+  & svg {
+    width: var(--ds-size-12);
+    height: var(--ds-size-12);
+  }
+
+  ::after,
+  ::before {
+    display: none;
+  }
+
+  .resourceLinkHorizontalIconWrapper {
+    display: flex;
+    align-items: center;
+    margin: var(--ds-size-4) 0 var(--ds-size-4) var(--ds-size-6);
+    height: fit-content;
+    width: fit-content;
+    padding: var(--ds-size-2);
+    border-radius: var(--ds-border-radius-md);
+    background-color: var(--ds-color-accent-surface-tinted);
+  }
+
+  &:hover {
+    > .resourceLinkHorizontalIconWrapper {
+      background-color: var(--ds-color-accent-surface-active);
+    }
+  }
 }
