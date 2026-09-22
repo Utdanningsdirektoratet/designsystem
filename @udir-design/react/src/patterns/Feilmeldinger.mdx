@@ -6,6 +6,8 @@ import * as FeilmeldingerStories from './Feilmeldinger.stories';
 
 # Brukerutløste feilmeldinger
 
+{/* Udir-endring: Innledningen er språklig strammet inn og rådet om oppsummering omfatter også flere feil. */}
+
 Feilmeldinger kan komme fra systemet eller være utløst av noe brukerne har gjort. Dette mønsteret handler om brukerutløste feilmeldinger i selvbetjeningsløsninger og skjema. Du finner informasjon om feil i systemet i [mønsteret om systemvarsler](/docs/patterns-systemvarsler--docs).
 
 Når brukerne har gjort en feil som hindrer dem i å komme videre, skal vi varsle dem om feilen slik at de kan rette den:
@@ -18,6 +20,8 @@ Feilmeldinger kan være knyttet til ett enkelt felt eller til flere felt. Vis en
 
 ### Feilmeldinger på enkeltfelt
 
+{/* Udir-endring: Digdirs skjermbilde og generelle ValidationMessage-henvisning er erstattet med et Udir-eksempel og veiledning for våre skjemakomponenter. */}
+
 Alle typer skjemafelt skal kunne vise en feilmelding. Meldingen skal stå nær feltet som inneholder feilen.
 
 <Canvas of={FeilmeldingerStories.Enkeltfelt} />
@@ -25,6 +29,8 @@ Alle typer skjemafelt skal kunne vise en feilmelding. Meldingen skal stå nær f
 Bruk `error`-egenskapen på blant annet [`Textfield`](/docs/components-textfield--docs), [`Checkbox`](/docs/components-checkbox--docs), [`Radio`](/docs/components-radio--docs) og [`Switch`](/docs/components-switch--docs). Når du setter sammen et eget felt, kombinerer du [`Field`](/docs/components-field--docs) med [`ValidationMessage`](/docs/components-typography--docs#validationmessage).
 
 ### Oppsummering av flere feilmeldinger
+
+{/* Udir-endring: Teksten er presisert, Digdirs skjermbilde er erstattet med Udirs ErrorSummary-story, og lenketekst, fokus og feilretting beskrives mer konkret. */}
 
 En oppsummering kan gjelde én eller flere feil. Hvis brukerne prøver å gå videre uten å ha fylt ut alt, eller de har gjort feil, viser vi oppsummeringen like over Neste- eller Send inn-knappen.
 
@@ -48,6 +54,8 @@ Les mer om oppbygning, fokus og plassering i dokumentasjonen for [`ErrorSummary`
 
 ### Det er best å unngå feilmeldinger
 
+{/* Udir-endring: Overskrift og råd er forenklet, blant annet med mer konkrete anbefalinger om skjult hjelp, pauser og naturlig formatering. */}
+
 Målet bør være å hindre at feil oppstår. Ta hensyn til dette når du planlegger løsningen:
 
 - Gi all relevant informasjon før brukerne starter, i klart og tydelig språk.
@@ -60,6 +68,8 @@ Målet bør være å hindre at feil oppstår. Ta hensyn til dette når du planle
 - Vis informasjon om maks antall tegn under ledeteksten hvis feltet har tegnbegrensning.
 
 ### Ulike typer meldinger
+
+{/* Udir-endring: Seksjonen er omarbeidet fra «typer feilmeldinger» til et tydeligere skille mellom systemfeil og informasjon som ikke hindrer innsending. */}
 
 #### Systemgenererte meldinger
 
@@ -74,6 +84,8 @@ I en søknad om tilskudd kan dette være beskjed om at et valgt tiltak gir lengr
 ## Språk
 
 ### Skriv gode feilmeldinger
+
+{/* Udir-endring: Språkrådene er strammet inn, et handlingsorientert råd er lagt til, og eksemplene er tilpasset Udirs domene. */}
 
 Den viktigste jobben til en feilmelding er å hjelpe brukerne videre:
 
@@ -95,6 +107,8 @@ Hvis løsningen ikke setter inn feltnavnet som en variabel, anbefaler vi bestemt
 
 ### Utseendet på feilmeldinger
 
+{/* Udir-endring: Digdirs illustrasjon er utelatt. Rådene beskriver i stedet hvordan Udir-komponentene markerer feil, og kontrastkravene er presisert. */}
+
 Når det oppstår feil i et felt er det viktig at feltet blir godt synlig, slik at det er lett for brukerne å se hvor de må fylle ut eller rette opp noe.
 
 Når den tekniske løsningen sjekker for feil, det vi kaller validerer, ønsker vi å vise hvilke felt som har feil. Til det kan vi bruke flere virkemidler.
@@ -109,9 +123,13 @@ Vi bruker rød som varselfarge for feil, det vi si at feltet og selve feilmeldin
 
 #### Plassering
 
+{/* Udir-endring: Digdirs åpne diskusjon om plassering er erstattet med Udirs etablerte plassering under feltet og krav om konsekvent bruk. */}
+
 Vis feilmeldingen under feltet med feil. Dette er mønsteret Udirs skjemakomponenter følger. Plasseringen må være konsekvent gjennom hele løsningen.
 
 ### Når skal vi vise en feilmelding?
+
+{/* Udir-endring: Rådene er kortet ned og skiller tydeligere mellom formatfeil etter blur og tomme obligatoriske felt ved innsending eller videre navigasjon. */}
 
 Vis feilmeldinger når brukerne forlater et felt, prøver å gå videre eller sender inn. Unngå å vise feil mens de skriver.
 
@@ -120,6 +138,8 @@ Når en verdi åpenbart har feil format, kan meldingen vises etter at brukeren f
 Ikke vis feil for et tomt obligatorisk felt før brukeren prøver å gå videre eller sende inn. Vi vet ikke om brukeren er ferdig bare fordi feltet mister fokus. Dette er spesielt viktig for brukere som navigerer med tastatur.
 
 ### Kryssvalidering
+
+{/* Udir-endring: Forklaringen og rådene er komprimert, og programmatisk markering er lagt til som krav. */}
 
 Noen valg påvirker kravene til andre felt. Et frivillig felt kan bli obligatorisk, eller en verdi kan måtte stå i et bestemt forhold til en annen verdi. Dette kaller vi kryssvalidering.
 
@@ -131,6 +151,8 @@ Gjør sammenhengen tydelig:
 
 #### Feilmeldinger som gjelder flere felt
 
+{/* Udir-endring: Digdirs video og skjermbilde er erstattet med et interaktivt Udir-eksempel. Veiledning om gruppefeil, feltfeil og mål for ErrorSummary-lenken er lagt til. */}
+
 I eksempelet må søkeren fylle ut minst én kontaktmåte. Hvis begge feltene er tomme når brukeren prøver å gå videre, markeres begge og én felles melding vises. Når ett felt er fylt ut, forsvinner gruppefeilen. En formatfeil vises bare ved feltet den gjelder.
 
 <Canvas of={FeilmeldingerStories.Kryssvalidering} />
@@ -141,6 +163,8 @@ Hvis en feil som gjelder flere felt tas med i en [`ErrorSummary`](/docs/componen
 
 ### Feilmeldinger og tilgjengelighet
 
+{/* Udir-endring: Digdirs innledning til WCAG-listen er forkortet; kriteriene og lenkene er beholdt. */}
+
 Flere WCAG-kriterier gjelder for feilmeldinger:
 
 - [3.3.1 Identifikasjon av feil](https://www.uutilsynet.no/wcag-standarden/331-identifikasjon-av-feil-niva/116)
@@ -150,11 +174,15 @@ Flere WCAG-kriterier gjelder for feilmeldinger:
 
 ### Ikke deaktiver submit-knappen
 
+{/* Udir-endring: Begrunnelsen er skrevet om i direkte språk og utvidet med tastaturnavigasjon og feltvise feilmeldinger. */}
+
 Ikke bruk en deaktivert Neste- eller Send inn-knapp for å validere skjemaet. En deaktivert knapp forklarer ikke hva som mangler. Den kan også være vanskelig å finne for brukere med nedsatt syn eller for dem som navigerer med tastatur.
 
 La brukerne aktivere knappen. Hvis noe mangler, viser du feilmeldinger ved feltene og en oppsummering over knappen.
 
 ### HTML og ARIA
+
+{/* Udir-endring: ARIA-rådene er forenklet og formulert som direkte instrukser; Digdirs merknadsboks er erstattet med løpende tekst og lokal formulering. */}
 
 For at alle brukere skal oppfatte feilmeldinger, er det viktig med et tydelig forhold mellom feilmeldingene og feltene de tilhører, også for dem som ser på innhold med ulike hjelpemidler.
 
@@ -164,6 +192,8 @@ For at alle brukere skal oppfatte feilmeldinger, er det viktig med et tydelig fo
 Vi unngår foreløpig `aria-errormessage`, fordi støtten i hjelpemidler fortsatt varierer. Se [diskusjonen hos Digdir](https://github.com/digdir/designsystemet/discussions/1684).
 
 ### Gi automatiske beskjeder
+
+{/* Udir-endring: Live-region-rådet er presisert til dynamiske endringer uten fokusflytting, og et nytt unntak for ErrorSummary er lagt til. */}
 
 Dynamiske meldinger må kunne oppfattes av skjermlesere. Bruk en live region når viktig informasjon dukker opp uten at fokus flyttes. I de fleste tilfeller passer `aria-live="polite"`, slik at opplesningen venter til skjermleseren er ferdig med pågående innhold.
 
