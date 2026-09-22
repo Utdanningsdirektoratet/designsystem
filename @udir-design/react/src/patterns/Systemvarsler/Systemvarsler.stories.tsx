@@ -21,7 +21,14 @@ const meta = preview.meta({
   parameters: {
     componentOrigin: {
       originator: 'digdir',
-      details: 'Tekst og eksempler er tilpasset Udir.',
+      details: (
+        <>
+          Tekst og eksempler er tilpasset Udir.{' '}
+          <Link href="https://designsystemet.no/no/patterns/systemnotifications">
+            Se Digdirs mønster om systemvarsler.
+          </Link>
+        </>
+      ),
     },
     layout: 'fullscreen',
   },
