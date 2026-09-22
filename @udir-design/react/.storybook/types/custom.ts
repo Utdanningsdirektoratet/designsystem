@@ -1,9 +1,9 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 export type ComponentOrigin = {
   name?: string;
   originator: 'self' | 'digdir' | 'nav';
-  details?: string;
+  details?: ReactNode;
 };
 export type ComponentOriginParameters = {
   componentOrigin?: ComponentOrigin;
