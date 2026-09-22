@@ -2,6 +2,7 @@ import { type ComponentProps, useState } from 'react';
 import preview from '.storybook/preview';
 import { Button } from 'src/components/button';
 import { Fieldset } from 'src/components/fieldset';
+import { Link } from 'src/components/link/Link';
 import { Textfield } from 'src/components/textfield';
 import { ValidationMessage } from 'src/components/typography/validationMessage';
 
@@ -12,7 +13,14 @@ const meta = preview.meta({
     layout: 'centered',
     componentOrigin: {
       originator: 'digdir',
-      details: 'Tekst og eksempler er tilpasset Udir.',
+      details: (
+        <>
+          Tekst og eksempler er tilpasset Udir.{' '}
+          <Link href="https://designsystemet.no/no/patterns/errors">
+            Se Digdirs mønster om brukerutløste feilmeldinger
+          </Link>
+        </>
+      ),
     },
   },
 });
