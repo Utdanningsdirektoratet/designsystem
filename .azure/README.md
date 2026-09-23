@@ -23,6 +23,8 @@ az deployment sub create --location westeurope --template-file resourcegroup-tes
 
 The Azure Container App instance gets created through the `azure-testapp-deploy.yml` workflow.
 
+The documentation Front Door routes `/testapp` and `/testapp/*` to this container app. Deploy the test app before deploying `designsystem-docs.bicep` so the template can resolve the container app's ingress hostname.
+
 ## Runtime infrastructure
 
 We use the following resources for our documentation:

@@ -25,7 +25,7 @@ export default function RootLayout({
       <body>
         <DemoBanner>
           <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
-          <Header />
+          <Header basePath="/testapp" />
           <main className="content">{children}</main>
           <Footer className="footer" />
         </DemoBanner>
