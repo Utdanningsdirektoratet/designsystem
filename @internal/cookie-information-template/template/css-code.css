@@ -17,6 +17,11 @@ body {
   display: none;
 }
 
+/* Cookie Information adds inline display:block to this dialog in the published template. */
+#cookie-details-dialog:not([open]) {
+  display: none !important;
+}
+
 /* Keep the original dialog's backdrop and tint only the consent dialog behind details. */
 #cookie-details-dialog {
   --dsc-dialog-backdrop-background: transparent;

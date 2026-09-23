@@ -6,8 +6,7 @@
   id="cookie-dialog"
   role="dialog"
   aria-modal="true"
-  aria-label="Cookie Information"
-  data-i18n-aria-label="dialogLabel"
+  aria-labelledby="cookie-dialog-heading"
   data-testid="coi-banner__wrapper"
   lang="{{language}}"
 >
@@ -16,16 +15,21 @@
     data-variant="tertiary"
     data-color="neutral"
     type="button"
-    aria-label="Lukk dialogvindu"
-    data-i18n-aria-label="closeDialog"
+    aria-label="Avvis valgfrie og lukk dialogvindu"
+    data-i18n-aria-label="declineOptionalAndClose"
     id="cookie-dialog-close"
     data-icon="true"
     command="close"
     commandfor="cookie-dialog"
+    onclick="handleCookieDialogDismissal()"
   ></button>
   <div class="uds-prose">
     <h2 class="ds-heading" id="cookie-dialog-heading">{{{banner_heading}}}</h2>
-    <p class="ds-paragraph" data-i18n="necessaryExplanation">
+    <p
+      class="ds-paragraph"
+      data-i18n="necessaryExplanation"
+      id="necessary-explanation"
+    >
       Nødvendige informasjonskapsler bidrar til at tjenesten fungerer og er
       sikker, og kan ikke velges bort.
     </p>
@@ -69,13 +73,19 @@
     >
       Se hvilke informasjonskapsler vi bruker
     </button>
-    <p class="ds-paragraph">
+    <p class="ds-paragraph" id="cookie-domain-information">
       <span id="consent-can-be-changed" data-i18n="consentCanBeChanged"
         >Du kan når som helst endre samtykket ditt via lenken i
         bunnfeltet.</span
       >
-      <span data-i18n="consentAppliesTo">Samtykket gjelder for</span>:
-      {{website_domains}}.
+      <span id="consent-applies-to" data-i18n="consentAppliesTo"
+        >Samtykket gjelder for</span
+      ><span
+        id="necessary-cookies-used-on"
+        data-i18n="necessaryCookiesUsedOn"
+        hidden
+        >Disse informasjonskapslene brukes på</span
+      >: {{website_domains}}.
     </p>
   </div>
 
@@ -123,7 +133,7 @@
       type="button"
       id="btn-close"
       data-i18n="close"
-      onclick="hideCookieBanner()"
+      onclick="handleCookieDialogDismissal()"
       hidden
     >
       Lukk
@@ -139,6 +149,7 @@
   id="cookie-details-dialog"
   role="dialog"
   aria-modal="true"
+  aria-labelledby="cookie-details-heading"
 >
   <button
     class="ds-button"
@@ -153,7 +164,13 @@
     data-icon="true"
   ></button>
   <div class="uds-prose" id="cookie-details-content">
-    <h2 class="ds-heading" data-i18n="overviewHeading">Informasjonskapsler</h2>
+    <h2
+      class="ds-heading"
+      data-i18n="overviewHeading"
+      id="cookie-details-heading"
+    >
+      Informasjonskapsler
+    </h2>
     <p class="ds-paragraph">{{{cookie_declaration_text}}}</p>
     {{#each cookie_categories}} {{#if this.cookie_type_count}}
     <div class="cookies-category">
@@ -169,7 +186,7 @@
           <div class="uds-prose">
             {{#each this.cookie_type_results}}
             <div class="uds-prose">
-              <h4 class="ds-heading" data-size="2xs"></h4>
+              <h4 class="ds-heading cookie-detail-heading" data-size="2xs"></h4>
               <ul class="cookies-details">
                 <li>
                   <strong data-i18n="provider">Leverandør: </strong

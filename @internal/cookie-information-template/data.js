@@ -21,9 +21,12 @@ export const normalizeLocale = (culture) => {
   return supportedLocales.has(locale) ? locale : 'nb';
 };
 
-export const buildData = (culture) => {
+export const buildData = (culture, { necessaryOnly = false } = {}) => {
   const locale = normalizeLocale(culture);
   const content = exampleData[locale];
+  const categories = necessaryOnly
+    ? content.categories.filter((category) => category.necessary)
+    : content.categories;
 
   return {
     language: locale,
@@ -34,7 +37,7 @@ export const buildData = (culture) => {
     banner_main_text: content.body,
     cookie_declaration_text: content.cookieDeclarationText,
     website_domains: content.websiteDomains,
-    cookie_categories: content.categories.map((category) => ({
+    cookie_categories: categories.map((category) => ({
       cookie_type_label: `cookie_cat_${category.id}`,
       cookie_type_name: category.name,
       cookie_type_name_lowercase: category.name.toLocaleLowerCase(locale),
