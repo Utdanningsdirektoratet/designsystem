@@ -9,13 +9,35 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: update-digdir
+  cancel-in-progress: false
+
 jobs:
   update-digdir:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check for existing update pull request
+        id: existing_pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pr=$(gh pr list --state open --limit 100 --json headRefName,number,url \
+            --jq 'first(.[] | select(.headRefName == "build/update-digdir" or (.headRefName | startswith("build/update-digdir/"))))')
+
+          if [[ -n "$pr" ]]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            number=$(jq -r '.number' <<< "$pr")
+            url=$(jq -r '.url' <<< "$pr")
+            echo "Digdir update pull request #$number is already open: $url" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: ./.github/actions/pnpm-setup
+        if: steps.existing_pr.outputs.exists == 'false'
       - name: Check if update is necessary
+        if: steps.existing_pr.outputs.exists == 'false'
         run: echo "version=$(pnpm outdated -r '@digdir/*' --json | jq -r '."@digdir/designsystemet".latest // ""')" >> "$GITHUB_OUTPUT"
         id: digdir_info
       - name: Update @digdir/* packages
@@ -27,11 +49,11 @@ jobs:
       - name: Update snapshots
         if: steps.digdir_info.outputs.version
         run: pnpm test:storybook:update
-      - name: Create or update pull request
+      - name: Create pull request
         if: steps.digdir_info.outputs.version
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
-          branch: build/update-digdir
+          branch: build/update-digdir/${{ steps.digdir_info.outputs.version }}
           base: ${{ github.event.repository.default_branch }}
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
           commit-message: 'build: update `@digdir/*` to ${{ steps.digdir_info.outputs.version }}'
