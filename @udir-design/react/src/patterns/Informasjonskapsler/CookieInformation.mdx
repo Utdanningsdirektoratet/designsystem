@@ -11,13 +11,13 @@ export const cookieCategories = Object.fromEntries(
 
 # Bruk av Cookie Information
 
-Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester som bruker informasjonskapsler kan bruke Cookie Information som teknisk løsning for å håndtere samtykke til informasjonskapsler. [Kontakt ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer) for å komme i gang.
+Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester kan bruke Cookie Information som teknisk løsning for å informere om informasjonskapsler og håndtere samtykke til valgfrie informasjonskapsler.
 
 Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med ansvarlig for Cookie Information. Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
 
 ## Oppsett
 
-Ansvarlig for Cookie Information setter opp tjenesten med den felles malen "Felles cookie-mal med Udirs designsystem" under "Consent popup" i dashbordet til Cookie Information. Tjenester skal ikke lage egne kopier av malen. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
+Ansvarlig for Cookie Information setter opp tjenesten med den felles malen "Felles cookie-mal med Udirs designsystem" under "Consent popup" i dashbordet til Cookie Information. Tjenester skal ikke lage egne kopier av malen. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](/docs/patterns-informasjonskapsler--docs).
 
 Under "Copy and translations" i dashbordet finner du tekst for samtykke til informasjonskapsler som kan brukes i tjenesten. Teksten bør tilpasses tjenesten din, og kvalitetssikres av internjuridisk. Under følger hvilke felter som må fylles ut, med eksempler på innhold. Felter som ikke er listet opp her brukes ikke i malen.
 
@@ -195,12 +195,14 @@ translations".
 ## Åpne samtykkedialogen igjen
 
 Legg en lenke med teksten "Informasjonskapsler" i bunnfeltet i tjenesten. Lenken
-skal bruke `CookieConsent.renew()` for å åpne samtykkedialogen igjen.
+skal bruke `renewCookieConsent()` fra den felles malen for å åpne dialogen igjen.
+Funksjonen sørger for at dialogen også kan åpnes manuelt dersom tjenesten ved en
+feilkonfigurasjon bare har nødvendige informasjonskapsler.
 
 I HTML:
 
 ```html
-<a href="#informasjonskapsler" onclick="CookieConsent.renew(); return false;">
+<a href="#informasjonskapsler" onclick="renewCookieConsent(); return false;">
   Informasjonskapsler
 </a>
 ```
@@ -212,7 +214,7 @@ I React:
   href="#informasjonskapsler"
   onClick={(event) => {
     event.preventDefault();
-    window.CookieConsent?.renew();
+    window.renewCookieConsent?.();
   }}
 >
   Informasjonskapsler
