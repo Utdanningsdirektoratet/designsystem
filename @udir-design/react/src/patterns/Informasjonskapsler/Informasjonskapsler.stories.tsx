@@ -5,7 +5,7 @@ import {
   Paragraph,
 } from '@digdir/designsystemet-react';
 import { useState } from 'react';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { InformationSquareFillIcon } from '@udir-design/icons';
 import {
   WithInertInitialRender,
@@ -14,6 +14,7 @@ import {
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Alert } from 'src/components/alert';
 import { Details } from 'src/components/details';
 import { Dialog } from 'src/components/dialog';
 import { Fieldset } from 'src/components/fieldset';
@@ -371,5 +372,41 @@ export const NecessaryCookiesDialog = meta.story({
     expect(
       within(dialog).getByText(/Disse informasjonskapslene brukes på:/),
     ).toBeVisible();
+  },
+});
+
+export const FeatureRequiresConsent = meta.story({
+  render: () => {
+    const text = translations[getPageLocale()];
+
+    return (
+      <Alert data-color="info">
+        <Alert.Heading level={2}>{text.featureConsentHeading}</Alert.Heading>
+        <Paragraph>{text.featureConsentDescription}</Paragraph>
+        <Button onClick={() => window.renewCookieConsent?.()}>
+          {text.changeConsent}
+        </Button>
+      </Alert>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const originalRenewCookieConsent = window.renewCookieConsent;
+    const renew = fn();
+    window.renewCookieConsent = renew;
+
+    try {
+      await expect(
+        canvas.getByRole('heading', {
+          name: 'Du må godta funksjonelle informasjonskapsler for å se videoen',
+        }),
+      ).toBeVisible();
+      await userEvent.click(
+        canvas.getByRole('button', { name: 'Endre samtykke' }),
+      );
+      expect(renew).toHaveBeenCalledOnce();
+    } finally {
+      window.renewCookieConsent = originalRenewCookieConsent;
+    }
   },
 });

@@ -252,3 +252,26 @@ For JavaScript direkte i sidens HTML skal du vente på `CookieInformationConsent
 ```
 
 Bruk det faktiske kategorinavnet fra tjenestens oppsett, for eksempel `cookie_cat_statistic` eller `cookie_cat_functional`.
+
+## Funksjoner som krever samtykke
+
+Hvis en funksjon krever en kategori brukeren ikke har godtatt, skal du vise en forklaring der funksjonen skulle ha vært. Bruk klassen `consent-placeholder` og angi kategorien i `data-category`. Den felles malen skjuler forklaringen når brukeren godtar kategorien.
+
+```tsx
+<Alert
+  className="consent-placeholder"
+  data-category="cookie_cat_functional"
+  data-color="info"
+>
+  <Alert.Heading level={2}>
+    Du må godta funksjonelle informasjonskapsler for å se videoen
+  </Alert.Heading>
+  <Paragraph>
+    Videoen leveres av [videoleverandør], som bruker informasjonskapsler for å
+    [beskriv formålet].
+  </Paragraph>
+  <Button onClick={() => window.renewCookieConsent?.()}>Endre samtykke</Button>
+</Alert>
+```
+
+Se [Cookie Informations veiledning om plassholdere for blokkert innhold](https://support.cookieinformation.com/articles/cms-and-integration-guides/provide-placeholder-for-blocked-page-elements-youtube-vimeo-etc/).

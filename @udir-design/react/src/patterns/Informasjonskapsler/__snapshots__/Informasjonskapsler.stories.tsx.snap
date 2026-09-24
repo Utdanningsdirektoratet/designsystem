@@ -1,6 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 
+exports[`Feature Requires Consent 1`] = `
+<div data-size="auto">
+  <div data-color="info">
+    <h2 data-size="xs">
+      Du må godta funksjonelle informasjonskapsler for å se videoen
+    </h2>
+    <p>
+      Videoen leveres av [videoleverandør], som bruker informasjonskapsler for å [beskriv formålet].
+    </p>
+    <button type="button">
+      Endre samtykke
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Necessary Cookies Dialog 1`] = `
 <div data-size="auto">
   <style>

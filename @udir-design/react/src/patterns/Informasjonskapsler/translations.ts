@@ -23,6 +23,11 @@ const translations = {
     declineOptional: 'Avvis valgfrie',
     declineOptionalAndClose: 'Avvis valgfrie og lukk dialogvindu',
     renewConsent: 'Endre samtykke',
+    featureConsentHeading:
+      'Du må godta funksjonelle informasjonskapsler for å se videoen',
+    featureConsentDescription:
+      'Videoen leveres av [videoleverandør], som bruker informasjonskapsler for å [beskriv formålet].',
+    changeConsent: 'Endre samtykke',
   },
   en: {
     necessaryExplanation:
@@ -48,6 +53,11 @@ const translations = {
     declineOptional: 'Reject optional',
     declineOptionalAndClose: 'Reject optional cookies and close dialog',
     renewConsent: 'Change consent',
+    featureConsentHeading:
+      'You must accept functional cookies to watch the video',
+    featureConsentDescription:
+      'The video is provided by [video provider], which uses cookies to [describe the purpose].',
+    changeConsent: 'Change consent',
   },
 } as const;
 
