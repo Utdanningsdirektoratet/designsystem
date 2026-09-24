@@ -220,3 +220,48 @@ I React:
   Informasjonskapsler
 </Footer.Item>
 ```
+
+## Blokkering før samtykke
+
+### Førsteparts informasjonskapsler
+
+Cookie Information blokkerer som standard at nettleseren lagrer valgfrie førsteparts informasjonskapsler på tjenestens rotdomene før brukeren har samtykket. Den blokkerer ikke skriptet som forsøker å sette dem, informasjonskapsler som serveren setter i HTTP-svaret med `Set-Cookie`, eller tredjeparts informasjonskapsler fra iframes.
+
+Se [Cookie Informations veiledning om blokkering av førsteparts informasjonskapsler](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/turn-on-first-party-cookie-blocking/).
+
+Dersom tjenestens server setter informasjonskapsler med HTTP-headeren `Set-Cookie`, må tjenesten selv sørge for at den ikke setter valgfrie informasjonskapsler før brukeren har samtykket til den aktuelle kategorien.
+
+Etter oppsett bør du [kontrollere at blokkeringen av førsteparts informasjonskapsler fungerer](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/check-if-first-party-cookie-blocking-is-working/) i et privat nettleservindu. Kontrollen viser bare at ingen valgfrie informasjonskapsler er lagret på rotdomenet før samtykke; den bekrefter ikke at skript eller tredjepartsintegrasjoner er blokkert.
+
+### Tredjeparts informasjonskapsler og tjenester
+
+Hvis et skript eller en integrasjon ikke skal kjøre før samtykke, for eksempel fordi den setter tredjeparts informasjonskapsler eller sender opplysninger til en tredjepart, må tjenesten styre innlastingen. Cookie Information stopper ikke automatisk vilkårlige skript eller kall fra tjenesten.
+
+Se [Cookie Informations veiledning om blokkering av tredjeparts informasjonskapsler](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/block-third-party-cookies-with-a-script/).
+
+#### Eksterne JavaScript-filer
+
+For en ekstern JavaScript-fil bruker du Cookie Informations mekanisme for å blokkere tredjeparts informasjonskapsler: `data-category-consent` og `data-consent-src` i stedet for `src`. `data-category-consent` må bruke samme kategorinavn som oppsettet i Cookie Information. Cookie Information laster filen først når brukeren har godtatt kategorien. Ikke legg den samme URL-en i `src`, fordi nettleseren da laster filen før Cookie Information kan kontrollere samtykket.
+
+```html
+<script
+  data-category-consent="cookie_cat_statistic"
+  data-consent-src="https://example.com/analytics.js"
+></script>
+```
+
+#### Kode direkte i sidens HTML
+
+For JavaScript direkte i sidens HTML skal du vente på `CookieInformationConsentGiven` og kontrollere samtykket før du starter integrasjonen:
+
+```html
+<script>
+  window.addEventListener('CookieInformationConsentGiven', () => {
+    if (CookieInformation.getConsentGivenFor('cookie_cat_marketing')) {
+      // Start integrasjonen her.
+    }
+  });
+</script>
+```
+
+Bruk det faktiske kategorinavnet fra tjenestens oppsett, for eksempel `cookie_cat_statistic`, `cookie_cat_functional` eller `cookie_cat_marketing`.
