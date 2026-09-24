@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { expect, within } from 'storybook/test';
+import { expect, waitFor, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
@@ -117,6 +118,22 @@ export const Preview = meta.story({
       });
       await expect(document.activeElement).toBe(targetHeading);
     });
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'],
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.uds-table-of-contents'),
+      ['--udsc-tableOfContents-summary-text'],
+    );
+
+    const summary = canvasElement.querySelector('summary');
+    canvasElement.lang = 'en';
+    await waitFor(() => expect(summary).toHaveTextContent('On this page'));
   },
 });
 
