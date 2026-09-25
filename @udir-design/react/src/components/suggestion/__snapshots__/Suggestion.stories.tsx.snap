@@ -2529,3 +2529,246 @@ exports[`Preview 1`] = `
   </ds-suggestion>
 </ds-field>
 `;
+
+exports[`Virtualized 1`] = `
+<ds-field>
+  <label for="<generated>">
+    Velg alternativer
+  </label>
+  <ds-suggestion data-multiple>
+    <data
+      value="Alternativ 123"
+      aria-label="Added Alternativ 123, Alternativ 123, Press to remove"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Alternativ 123
+    </data>
+    <input
+      placeholder
+      type="text"
+      id="<generated>"
+      aria-description="Navigate left to find 1 selected"
+      list="<generated>"
+      popovertarget="<generated>"
+      aria-autocomplete="list"
+      aria-controls="<generated>"
+      aria-expanded="true"
+      autocomplete="off"
+      enterkeyhint="done"
+      role="combobox"
+      aria-label="Added Alternativ 123, Velg alternativer"
+    >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
+    >
+    </button>
+    <button
+      aria-label="Tøm"
+      type="reset"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <u-datalist
+      data-nofilter
+      data-sr-plural="11 forslag"
+      data-sr-singular="11 forslag"
+      popover="manual"
+      role="listbox"
+      data-sr-of="of"
+      tabindex="-1"
+      aria-multiselectable="true"
+      id="<generated>"
+      data-is-floating="true"
+      aria-label="Velg alternativer"
+      style="<removed>"
+      data-floating="bottom"
+    >
+      <u-option
+        data-empty
+        label="Alternativ 123"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        hidden
+      >
+      </u-option>
+      <div
+        aria-hidden="true"
+        style="<removed>"
+      >
+      </div>
+      <u-option
+        data-index="0"
+        label="Alternativ 123"
+        value="Alternativ 123"
+        aria-setsize="11"
+        aria-posinset="1"
+        role="option"
+        aria-disabled="false"
+        aria-selected="true"
+        id="<generated>"
+        aria-hidden="false"
+        selected
+      >
+        Alternativ 123
+      </u-option>
+      <u-option
+        data-index="1"
+        label="Alternativ 1230"
+        value="Alternativ 1230"
+        aria-setsize="11"
+        aria-posinset="2"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1230
+      </u-option>
+      <u-option
+        data-index="2"
+        label="Alternativ 1231"
+        value="Alternativ 1231"
+        aria-setsize="11"
+        aria-posinset="3"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1231
+      </u-option>
+      <u-option
+        data-index="3"
+        label="Alternativ 1232"
+        value="Alternativ 1232"
+        aria-setsize="11"
+        aria-posinset="4"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1232
+      </u-option>
+      <u-option
+        data-index="4"
+        label="Alternativ 1233"
+        value="Alternativ 1233"
+        aria-setsize="11"
+        aria-posinset="5"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1233
+      </u-option>
+      <u-option
+        data-index="5"
+        label="Alternativ 1234"
+        value="Alternativ 1234"
+        aria-setsize="11"
+        aria-posinset="6"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1234
+      </u-option>
+      <u-option
+        data-index="6"
+        label="Alternativ 1235"
+        value="Alternativ 1235"
+        aria-setsize="11"
+        aria-posinset="7"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1235
+      </u-option>
+      <u-option
+        data-index="7"
+        label="Alternativ 1236"
+        value="Alternativ 1236"
+        aria-setsize="11"
+        aria-posinset="8"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1236
+      </u-option>
+      <u-option
+        data-index="8"
+        label="Alternativ 1237"
+        value="Alternativ 1237"
+        aria-setsize="11"
+        aria-posinset="9"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1237
+      </u-option>
+      <u-option
+        data-index="9"
+        label="Alternativ 1238"
+        value="Alternativ 1238"
+        aria-setsize="11"
+        aria-posinset="10"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1238
+      </u-option>
+      <u-option
+        data-index="10"
+        label="Alternativ 1239"
+        value="Alternativ 1239"
+        aria-setsize="11"
+        aria-posinset="11"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Alternativ 1239
+      </u-option>
+      <div
+        aria-hidden="true"
+        style="<removed>"
+      >
+      </div>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+`;
