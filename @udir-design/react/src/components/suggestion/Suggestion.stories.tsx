@@ -3,6 +3,7 @@ import { type InputEvent, useMemo, useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Details } from 'src/components/details';
 import { Divider } from 'src/components/divider';
@@ -48,6 +49,7 @@ const meta = preview.meta({
         height: '320px',
       },
     },
+    docs: advancedCodeDocs,
     a11y: {
       config: {
         rules: [
@@ -697,24 +699,12 @@ export const FetchExternal = meta.story({
       </Field>
     );
   },
-  parameters: {
-    docs: {
-      source: {
-        type: 'code',
-      },
-    },
-  },
 });
 
 export const Virtualized = meta.story({
   parameters: {
     customStyles: {
       width: 300,
-    },
-    docs: {
-      source: {
-        type: 'code',
-      },
     },
   },
   render: (args) => {
