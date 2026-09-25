@@ -1,0 +1,121 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as LinkStories from '../../components/link/Link.stories';
+import { LinkExExternalLinkIcon } from '../../components/link/docs/doAndDont';
+import * as MerkingAvLenkerStories from './MerkingAvLenker.stories';
+import { LenkelisteISkjermleser } from './docs/doAndDont';
+
+<Meta of={MerkingAvLenkerStories} />
+
+# Merking av lenker
+
+Lenker er en viktig del av navigasjonen på nett, og måten vi merker dem på påvirker brukeropplevelsen. I dette mønsteret går vi gjennom hvordan vi bør merke lenker og hvilke språk- og designprinsipper vi bør følge. Målet er å skape en mer forutsigbar og tilgjengelig brukeropplevelse.
+
+Les mer om implementasjon og bruk av lenker i [dokumentasjonen til `Link`](/docs/components-link--docs).
+
+## Eksterne lenker
+
+Eksterne lenker leder brukeren til en annen nettside. Når en bruker klikker på en ekstern lenke, forlater de det opprinnelige nettstedet og åpner innhold fra en annen aktør eller tjeneste.
+
+Det har variert hvordan eksterne lenker blir markert på ulike nettsteder. Noen bruker et ikon for å angi at det er en ekstern lenke, mens andre legger til tekst eller åpner lenken i en ny fane. Det at vi ikke praktiserer dette på samme måte kan skape forvirring for brukerne, spesielt når de ikke får tydelig informasjon om hva som skjer når de klikker på en lenke.
+
+For å skape en forutsigbar og god brukeropplevelse bør vi gi brukeren informasjon om:
+
+- Destinasjonen - hvor lenken fører dem.
+- Oppførsel - for eksempel om lenken åpner i ny fane, eller hvis den starter en spesiell handling som telefonsamtale eller e-post.
+
+## Språk
+
+Lenketeksten skal beskrive formålet med lenken og da er konteksten viktig. I løpende tekst bør lenken være en naturlig del av setningen og gi mening også når den leses isolert. I en liste eller meny kan lenken stå mer fritt, men den må fortsatt være tydelig og gi brukeren en klar idé om hva de kommer til.
+
+- Unngå «gå til» eller «klikk her» i lenketeksten. Det er allerede tydelig at det er en lenke.
+- Unngå å bruke ordet «lenke» i lenketekster. Du risikerer da at skjermlesere oppgir «lenke» flere ganger.
+- Ikke bruk kun «Les mer» som lenketekst. Ta med konteksten i lenketeksten, for eksempel «Eksamen kan du lese mer om på udir.no».
+- Bruk så korte lenketekster som mulig. Det kan være vanskelig for folk å lese lange tekster med underlinje, særlig når en lenke bryter over flere linjer.
+- Ikke bruk lenkens adresse (URL) som lenketekst. Det er slitsomt for folk som bruker skjermlesere å få adressen lest opp tegn for tegn.
+- Pass på at du ikke har flere lenker med samme lenketekst på samme side. Det blir vanskelig for folk som bruker skjermleser eller leselist når lenkene blir vist i en egen lenkeliste. Unntaket kan være hvis det er flere lenker som går til samme URL-adresse.
+
+{/* Eksemplene i tabellen er endret til Udir- og utdanningsrelatert innhold. */}
+
+| Dårlige eksempler:                                                                                                                                                                                 | Gode eksempler:                                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [På udir.no kan du finne læreplanverket og flere læreplaner som er relevante for deg](https://www.udir.no/laring-og-trivsel/lareplanverket/) (unødvendig lang)                                     | [Læreplanverket på udir.no](https://www.udir.no/laring-og-trivsel/lareplanverket/)                                                                                          |
+| [post@udir.no](mailto:post@udir.no) (mangler formål)                                                                                                                                               | [Send spørsmål til post@udir.no](mailto:post@udir.no)                                                                                                                       |
+| [Klikk her for å lese mer om saken på udir.no](https://www.udir.no/eksamen-og-prover/eksamen/forberede-og-ta-eksamen/) (unngå «klikk her» + «saken» sier ikke noe om hva det gjelder)              | [Forberede og ta eksamen (udir.no)](https://www.udir.no/eksamen-og-prover/eksamen/forberede-og-ta-eksamen/) (overskrift brukt som lenke)                                    |
+| [Rediger](https://github.com/Utdanningsdirektoratet/designsystem/blob/main/%40udir-design/react/src/patterns/MerkingAvLenker/MerkingAvLenker.mdx) (sier ingenting om hva som redigeres eller hvor) | [Rediger denne siden på github.com](https://github.com/Utdanningsdirektoratet/designsystem/blob/main/%40udir-design/react/src/patterns/MerkingAvLenker/MerkingAvLenker.mdx) |
+| Les mer om læreplanverket på: `https://www.udir.no/laring-og-trivsel/lareplanverket/` (unngå URL i løpende tekst)                                                                                  | [Læreplanverket (udir.no)](https://www.udir.no/laring-og-trivsel/lareplanverket/)                                                                                           |
+
+### Lenkeliste i skjermlesere
+
+Skjermlesere lar brukere navigere gjennom en liste over lenker. Derfor må lenketekster gi mening alene, uten ekstra kontekst. Legg det viktigste tidlig i lenketeksten for å gjøre det tydelig hva formålet med lenken er.
+
+{/* Digdirs skjermbilde er erstattet med et levende Udir-eksempel. */}
+
+<LenkelisteISkjermleser />
+
+I «Gjør»-eksempelet kommer det tydelig frem hva formålet med lenkene er. I «Unngå»-eksempelet er det ikke mulig å vite hvor man kommer når lenketeksten er «Vis mer», «Lenke til dokument» eller «Les mer».
+
+## Design og opplevelse
+
+### Unngå at lenker blir åpnet i ny fane
+
+Vi sikrer en forutsigbar brukeropplevelse når lenker åpnes i samme fane. Da videreføres brukerens egne lenkeinnstillinger i nettleseren. Flere bruker Tilbake-knappen i nettleseren hvis lenken ikke førte dit de trodde, men det fungerer ikke når lenken blir åpnet i ny fane.
+
+Det finnes likevel noen unntak, der lenken bør åpnes i ny fane:
+
+- Hvis systemet må logge ut brukeren når det navigeres til en annen side, og det er hensiktsmessig å unngå utlogging.
+- Når brukeren er midt i en prosess og risikerer å miste innhold ved å klikke på lenken. Ny fane bør vurderes hvis systemet ikke klarer å lagre brukerens inndata.
+
+{/* Nav-eksempelet er erstattet med en Udir-tjeneste. */}
+
+For disse unntakene bør vi [unngå bruk av ikon](#unngå-ekstern-lenke-ikon), men heller skrive det som en del av lenketeksten. For eksempel [Logg inn i PAS (åpnes i ny fane)](https://eksamen.udir.no/).
+
+Vi anbefaler å skrive «åpnes i ny fane» som en del av lenketeksten. Ikke alle kombinasjoner av nettlesere og skjermlesere gir brukeren beskjed om at lenken blir åpnet i ny fane, selv om lenken inneholder `target="_blank"`.
+
+### Utseende
+
+UU-tilsynet har informasjon om lovpålagte krav for [utseende på lenker (uutilsynet.no)](https://www.uutilsynet.no/veiledning/lenker/214#utseende). Brukeren må kunne identifisere alle lenker uavhengig av situasjon, evner og innstillinger på utstyret som benyttes.
+
+### Unngå «ekstern-lenke»-ikon
+
+{/* Digdirs «vi utførte» er gjort passivt for ikke å tilskrive undersøkelsen til Udir. */}
+
+Det er etablert et ikon som betyr «ekstern lenke», men dette ikonet blir ofte forstått som «åpnes i ny fane». En miniundersøkelse som ble utført i arbeidet med dette mønsteret viste at selv erfarne designere var usikre på betydningen av ikonet. Halvparten tolket ikonet som «åpnes i ny fane», mens resten mente det betydde «ekstern lenke». Dette viser at ikonet i seg selv ikke er entydig, og kan ikke bli brukt som eneste måte å formidle funksjonen på.
+
+{/* Digdirs bilde av ikonene er erstattet med Udirs levende gjør/ikke gjør-eksempel. */}
+
+<LinkExExternalLinkIcon />
+
+Bruk av ikonet kan i verste fall villede brukeren, spesielt hvis lenken ikke faktisk åpnes i en ny fane. Hvis det primære målet er å indikere at en lenke leder til en ekstern side, er det mer effektivt å kommunisere dette i lenketeksten i stedet for å stole på et ikon alene.
+
+Hvis lenketekstene blir veldig lange, eller lenkelister gjentar informasjon om eksterne lenker, kan det være fristende å bruke ikoner i stedet. Før du tar dette valget, vurder om bruker faktisk trenger denne ekstra informasjonen.
+
+Hvis du likevel bruker ikonet, vær oppmerksom på at det kan bli tolket ulikt av forskjellige brukere, siden det blir brukt både for eksterne lenker og åpne i ny fane.
+
+Dersom ikonet inneholder meningsbærende informasjon som ikke kommer frem i lenketeksten, skal dette formidles i ikonets alternativ tekst.
+
+### Hvor fører lenken
+
+{/* Kommuneeksemplene er erstattet med eksempler fra utdanningssektoren. */}
+
+Det er ikke alltid nødvendig å merke at en lenke er ekstern. Ofte fremgår det tydelig av konteksten. Hvis lenketeksten for eksempel er «Vilbli.no», vil brukeren naturlig forvente at lenken leder til nettstedet vilbli.no. I slike tilfeller er det unødvendig å legge til ekstra informasjon.
+
+Dersom lenken viser til spesifikt innhold på nettstedet, som for eksempel informasjon om videregående opplæring, kan lenken være «[Videregående opplæring på vilbli.no](https://www.vilbli.no/)» eller «[Videregående opplæring (vilbli.no)](https://www.vilbli.no/)». Det viktigste er at brukeren ikke blir overrasket over hvor de havner etter å ha klikket.
+
+### Lenke til filer
+
+Gjør det tydelig at lenken peker til en fil:
+
+- Opplys om filtype
+  - skriv filtype som en del av lenketeksten
+  - ikke bruk ikon alene for å vise filtype
+- Gjerne vis filstørrelse som en del av lenketeksten, spesielt hvis filstørrelsen er stor. Det gir brukeren bedre kontroll, siden de da kan vurdere om det passer å laste ned filen nå. For eksempel hvis de bruker mobildata, har dårlig nettforbindelse eller lite lagringsplass.
+
+{/* Digdirs bilde er erstattet med det eksisterende Udir-eksempelet for PDF-lenker. */}
+
+<Canvas of={LinkStories.File} />
+
+#### Filer som skal lastes ned
+
+Dersom lenken fører til en fil som skal lastes ned istedenfor å åpnes i nettleseren, bør vi sørge for å ha med attributten `download` med filnavn som indikerer filtype, f.eks. `download="årsrapport.docx"`.
+
+Vær oppmerksom på at dersom filtypen er av PDF, har de fleste nettlesere innebygd støtte for å vise PDF-filer i en forhåndsvisning, uavhengig av om `download`-attributtet er der eller ikke. Dette er også avhengig av brukerens innstillinger i nettleseren.
