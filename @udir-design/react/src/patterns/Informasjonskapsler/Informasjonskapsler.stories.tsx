@@ -257,6 +257,7 @@ export const Preview = meta.story({
 export const NecessaryCookiesDialog = meta.story({
   render: () => {
     const [open, setOpen] = useState(false);
+    const isInert = useIsInert();
     const locale = getPageLocale();
     const content = localizedExampleData[locale];
     const text = translations[locale];
@@ -292,6 +293,7 @@ export const NecessaryCookiesDialog = meta.story({
           closeButton={text.closeDialog}
           open={open}
           onClose={() => setOpen(false)}
+          {...(isInert && { inert: true })}
         >
           <Prose>
             <Heading level={2}>{content.heading}</Heading>
@@ -368,8 +370,10 @@ export const NecessaryCookiesDialog = meta.story({
     const dialog = canvas.getByRole('dialog');
     expect(within(dialog).queryByRole('checkbox')).not.toBeInTheDocument();
     expect(within(dialog).getByRole('button', { name: 'Lukk' })).toBeVisible();
-    expect(
-      within(dialog).getByText(/Disse informasjonskapslene brukes på:/),
-    ).toBeVisible();
+    await waitFor(() =>
+      expect(
+        within(dialog).getByText(/Disse informasjonskapslene brukes på:/),
+      ).toBeVisible(),
+    );
   },
 });
