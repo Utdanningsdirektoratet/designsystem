@@ -30,6 +30,9 @@ type SubmitHandler = NonNullable<ComponentProps<'form'>['onSubmit']>;
 export const Enkeltfelt = meta.story({
   name: 'Feilmelding på enkeltfelt',
   parameters: {
+    docs: {
+      source: { type: 'dynamic' },
+    },
     customStyles: {
       width: 'min(25rem, calc(100vw - var(--ds-size-8)))',
       maxWidth: '100%',
