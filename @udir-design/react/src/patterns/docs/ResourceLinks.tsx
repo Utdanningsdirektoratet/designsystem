@@ -20,7 +20,7 @@ export function PatternsResourceLinks() {
         icon={<TableIcon aria-hidden />}
         headingLevel={3}
         heading="Tabeller"
-        description="Visning og sammenligning av informasjon i rader og kolonner"
+        description="Visning, sortering og filtrering av tabeller"
       />
       <ResourceLinkHorizontal
         href={getPath('/docs/patterns-demoversjon-av-tjenester--docs')}
