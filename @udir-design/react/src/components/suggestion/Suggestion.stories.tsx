@@ -1,4 +1,5 @@
-import { type InputEvent, useState } from 'react';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import { type InputEvent, useMemo, useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
@@ -186,6 +187,14 @@ const DATA_PEOPLE = [
   { label: 'Nina', value: '#113' },
   { label: 'Tove', value: '#110' },
 ];
+
+const generateOptions = (count: number): SuggestionItem[] =>
+  Array.from({ length: count }, (_, i) => {
+    const label = `Alternativ ${i + 1}`;
+    return { label, value: label };
+  });
+
+const DATA_LARGE = generateOptions(5000);
 
 export const Preview = meta.story({
   parameters: {
@@ -694,6 +703,152 @@ export const FetchExternal = meta.story({
         type: 'code',
       },
     },
+  },
+});
+
+export const Virtualized = meta.story({
+  parameters: {
+    customStyles: {
+      width: 300,
+    },
+    docs: {
+      source: {
+        type: 'code',
+      },
+    },
+  },
+  render: (args) => {
+    const [query, setQuery] = useState('');
+    const listRef = useRef<HTMLDataListElement>(null);
+
+    const filtered = useMemo(() => {
+      const search = query.trim().toLowerCase();
+      return DATA_LARGE.filter(({ label }) =>
+        label.toLowerCase().includes(search),
+      );
+    }, [query]);
+
+    const virtualizer = useVirtualizer({
+      count: filtered.length,
+      getScrollElement: () => listRef.current,
+      estimateSize: () => 48,
+      overscan: 5,
+    });
+
+    const items = virtualizer.getVirtualItems();
+    const paddingTop = items[0]?.start ?? 0;
+    const paddingBottom =
+      virtualizer.getTotalSize() - (items[items.length - 1]?.end ?? 0);
+    /* u-datalist only counts rendered options, so give it the total instead */
+    const hits = `${filtered.length} forslag`;
+
+    return (
+      <Field>
+        <Label>Velg alternativer</Label>
+        <Suggestion
+          {...(args as SuggestionMultipleProps)}
+          multiple
+          filter={false}
+        >
+          <Suggestion.Input
+            onInput={({ currentTarget }) => {
+              setQuery(currentTarget.value);
+              virtualizer.scrollToOffset(0);
+            }}
+          />
+          <Suggestion.Toggle />
+          <Suggestion.Clear />
+          <Suggestion.List ref={listRef} singular={hits} plural={hits}>
+            <Suggestion.Empty />
+            <div aria-hidden style={{ height: paddingTop }} />
+            {items.map(({ index, key }) => {
+              const { label, value } = filtered[index];
+              return (
+                <Suggestion.Option
+                  key={key}
+                  ref={virtualizer.measureElement}
+                  data-index={index}
+                  label={label}
+                  value={value}
+                  aria-setsize={filtered.length}
+                  aria-posinset={index + 1}
+                >
+                  {label}
+                </Suggestion.Option>
+              );
+            })}
+            <div aria-hidden style={{ height: paddingBottom }} />
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    await testSuggestion(canvasElement);
+
+    const list = canvasElement.querySelector('u-datalist');
+    if (!(list instanceof HTMLElement)) throw new Error('List not found');
+    const getOptions = () => [
+      ...canvasElement.querySelectorAll<HTMLOptionElement>(
+        'u-option:not([data-empty])',
+      ),
+    ];
+
+    await step('Only a slice of the options is rendered', async () => {
+      await waitFor(() => expect(getOptions().length).toBeGreaterThan(0));
+      await expect(getOptions().length).toBeLessThan(50);
+      await expect(getOptions()[0]).toHaveAttribute(
+        'aria-setsize',
+        `${DATA_LARGE.length}`,
+      );
+    });
+
+    await step(
+      'Arrow keys reach options outside the rendered slice',
+      async () => {
+        const input = within(canvasElement).getByRole('combobox');
+        const steps = getOptions().length + 5;
+        for (let i = 1; i <= steps; i++) {
+          await userEvent.keyboard('{ArrowDown}');
+          await waitFor(() => {
+            const id = input.getAttribute('aria-activedescendant') ?? '';
+            const active = document.getElementById(id);
+            expect(active).toHaveAttribute('aria-posinset', `${i}`);
+          });
+        }
+      },
+    );
+
+    await step('Scrolling renders options further down the list', async () => {
+      list.scrollTop = list.scrollHeight;
+      const last = DATA_LARGE[DATA_LARGE.length - 1];
+      await waitFor(() => expect(getOptions().at(-1)?.value).toBe(last.value));
+    });
+
+    await step('Typing filters the full list', async () => {
+      const query = 'Alternativ 123';
+      const expected = DATA_LARGE.filter(({ label }) => label.includes(query));
+      const input = within(canvasElement).getByRole('combobox');
+      await userEvent.type(input, query);
+
+      await waitFor(() => {
+        const options = getOptions();
+        expect(options[0]?.value).toBe(expected[0].value);
+        expect(options[0]).toHaveAttribute(
+          'aria-setsize',
+          `${expected.length}`,
+        );
+        for (const option of options) expect(option.label).toContain(query);
+      });
+    });
+
+    await step('Selecting an option adds a chip', async () => {
+      const [first] = getOptions();
+      await userEvent.click(first);
+      await expect(await getChipValues(canvasElement)).toEqual([first.value]);
+    });
+
+    await settleListWidth(canvasElement);
   },
 });
 

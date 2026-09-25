@@ -79,6 +79,24 @@ I eksempelet under viser vi `Spinner` i `Suggestion.Empty`.
 
 <Canvas of={SuggestionStories.FetchExternal} />
 
+### Store datamengder
+
+`Suggestion` legger alle alternativene i DOM-en. Med store datamengder (rundt 1000 alternativer eller flere) blir komponenten treg, fordi React må rendre og oppdatere hver `Suggestion.Option`, og fordi filteret går gjennom alle alternativene ved hvert tastetrykk.
+
+Løsningen er å virtualisere listen, slik at bare alternativene som er synlige blir rendret. Eksempelet under bruker [TanStack Virtual](https://tanstack.com/virtual/latest) med 5000 alternativer.
+
+Dette må du gjøre:
+
+- Sett `filter={false}` og filtrer dataene selv, siden det innebygde filteret bare ser alternativene som er rendret.
+- Gi `Suggestion.List` en `ref` og bruk den som scroll-element i `useVirtualizer`.
+- Legg inn tomme elementer med `aria-hidden` før og etter alternativene, med høyden til alternativene som ikke er rendret. Da får listen riktig høyde og scrollbar.
+- Sett `aria-setsize` og `aria-posinset` på hvert alternativ, slik at skjermlesere får vite hvor i listen brukeren er.
+- Send totalt antall treff inn i `singular` og `plural` på `Suggestion.List`. Ellers annonseres bare antallet som er rendret.
+
+<Canvas of={SuggestionStories.Virtualized} />
+
+Et enklere alternativ er å bare vise for eksempel de 50 første treffene, sammen med en tekst som ber brukeren skrive mer for å snevre inn søket. Det krever ingen ekstra avhengighet, men brukeren kan ikke bla gjennom hele listen.
+
 ## `Suggestion.List`
 
 <ArgTypes of={SuggestionList} />
