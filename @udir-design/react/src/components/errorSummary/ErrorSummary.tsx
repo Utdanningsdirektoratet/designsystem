@@ -1,3 +1,4 @@
+import './errorSummary.css';
 import {
   ErrorSummary as DigdirErrorSummary,
   ErrorSummaryHeading,
