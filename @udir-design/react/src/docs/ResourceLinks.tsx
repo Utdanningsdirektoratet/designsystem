@@ -1,5 +1,6 @@
 import type { JSX } from 'react';
 import { Card } from 'src/components/card';
+import { Link } from 'src/components/link/Link';
 import type { HeadingProps } from 'src/components/typography/heading';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
@@ -34,22 +35,25 @@ export function ResourceLink({
 export function ResourceLinkHorizontal({
   href,
   icon,
+  activeIcon,
   headingLevel,
   heading,
   description,
 }: {
   href: string;
   icon: JSX.Element;
+  activeIcon?: JSX.Element;
   headingLevel: HeadingProps['level'];
   heading: string;
   description?: string;
 }) {
   return (
     <Card className={styles.resourceLinkHorizontal} data-color="accent">
-      <div className={styles.resourceLinkHorizontalIconWrapper}>{icon}</div>
       <Card.Block>
         <Heading level={headingLevel}>
-          <a href={href}>{heading}</a>
+          <Link href={href}>{heading}</Link>
+          {icon}
+          {activeIcon}
         </Heading>
         {description && <Paragraph>{description}</Paragraph>}
       </Card.Block>
