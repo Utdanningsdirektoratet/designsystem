@@ -5,6 +5,8 @@ const translations = {
     optionalLegend: 'Velg hvilke valgfrie informasjonskapsler du godtar',
     detailsTrigger: 'Se hvilke informasjonskapsler vi bruker',
     overviewHeading: 'Informasjonskapsler',
+    close: 'Lukk',
+    closeDialog: 'Lukk dialogvindu',
     privacyPolicyText:
       'Les om hvordan vi behandler personopplysninger og hvilke rettigheter du har i',
     privacyPolicyLinkText: 'vår personvernerklæring',
@@ -15,10 +17,11 @@ const translations = {
     consentCanBeChanged:
       'Du kan når som helst endre samtykket ditt via lenken i bunnfeltet.',
     consentAppliesTo: 'Samtykket gjelder for',
+    necessaryCookiesUsedOn: 'Disse informasjonskapslene brukes på',
     acceptAll: 'Godta alle',
     acceptSelected: 'Godta valgte',
     declineOptional: 'Avvis valgfrie',
-    close: 'Lukk',
+    declineOptionalAndClose: 'Avvis valgfrie og lukk dialogvindu',
     renewConsent: 'Endre samtykke',
   },
   en: {
@@ -27,6 +30,8 @@ const translations = {
     optionalLegend: 'Choose which optional cookies you accept',
     detailsTrigger: 'See which cookies we use',
     overviewHeading: 'Cookies',
+    close: 'Close',
+    closeDialog: 'Close dialog',
     privacyPolicyText:
       'Read about how we process personal data and your rights in',
     privacyPolicyLinkText: 'our privacy policy',
@@ -37,10 +42,11 @@ const translations = {
     consentCanBeChanged:
       'You can change your consent at any time using the link in the footer.',
     consentAppliesTo: 'The consent applies to',
+    necessaryCookiesUsedOn: 'These cookies are used on',
     acceptAll: 'Accept all',
     acceptSelected: 'Accept selected',
     declineOptional: 'Reject optional',
-    close: 'Close',
+    declineOptionalAndClose: 'Reject optional cookies and close dialog',
     renewConsent: 'Change consent',
   },
 } as const;
