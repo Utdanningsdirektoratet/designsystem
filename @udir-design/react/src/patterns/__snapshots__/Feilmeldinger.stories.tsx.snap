@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Feilmelding på enkeltfelt 1`] = `
+<ds-field>
+  <label for="organisasjonsnummer">
+    Organisasjonsnummer
+  </label>
+  <div
+    data-field="description"
+    id="<generated>"
+  >
+    Skriv inn organisasjonsnummeret til den som søker om tilskudd.
+  </div>
+  <div>
+    <input
+      aria-invalid="true"
+      id="organisasjonsnummer"
+      inputmode="numeric"
+      type="text"
+      value="12345"
+      aria-describedby="<generated> <generated>"
+    >
+  </div>
+  <p
+    data-field="validation"
+    id="<generated>"
+  >
+    Organisasjonsnummer må ha 9 siffer
+  </p>
+</ds-field>
+`;
+
+exports[`Feilmelding som gjelder flere felt 1`] = `
+<form style="<removed>">
+  <fieldset aria-labelledby="<generated> <generated>">
+    <legend id="<generated>">
+      Kontaktperson for søknaden
+    </legend>
+    <p id="<generated>">
+      Fyll ut minst én kontaktmåte.
+    </p>
+    <ds-field>
+      <label for="kontakt-epost">
+        E-postadresse
+      </label>
+      <div>
+        <input
+          aria-invalid="false"
+          id="kontakt-epost"
+          type="email"
+          value
+        >
+      </div>
+    </ds-field>
+    <ds-field>
+      <label for="kontakt-telefon">
+        Telefonnummer
+      </label>
+      <div>
+        <input
+          aria-invalid="false"
+          id="kontakt-telefon"
+          type="tel"
+          value
+        >
+      </div>
+    </ds-field>
+  </fieldset>
+  <button type="submit">
+    Gå videre
+  </button>
+</form>
+`;
