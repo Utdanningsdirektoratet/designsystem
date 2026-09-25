@@ -21,5 +21,10 @@ const meta = preview.meta({
 
 export const Metadata = meta.story({
   tags: ['!dev', '!test'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true, // don't run visual tests for this story
+    },
+  },
   render: () => <></>,
 });
