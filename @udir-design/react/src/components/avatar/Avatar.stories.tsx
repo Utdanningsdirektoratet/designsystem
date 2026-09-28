@@ -42,7 +42,7 @@ export const Content = meta.story({
   render: (args) => (
     <>
       <Avatar {...args} />
-      <Avatar {...args} initials="ON" />
+      <Avatar {...args}>ON</Avatar>
       <Avatar {...args}>
         <BriefcaseIcon aria-hidden />
       </Avatar>
@@ -56,13 +56,21 @@ export const Content = meta.story({
 export const Sizes = meta.story({
   render: (args) => (
     <>
-      <Avatar {...args} data-size="xs" aria-label="extra small" initials="xs" />
+      <Avatar {...args} data-size="xs" aria-label="extra small">
+        xs
+      </Avatar>
       <Avatar {...args} data-size="xs" aria-label="extra small" />
-      <Avatar {...args} data-size="sm" aria-label="small" initials="sm" />
+      <Avatar {...args} data-size="sm" aria-label="small">
+        sm
+      </Avatar>
       <Avatar {...args} data-size="sm" aria-label="small" />
-      <Avatar {...args} data-size="md" aria-label="medium" initials="md" />
+      <Avatar {...args} data-size="md" aria-label="medium">
+        md
+      </Avatar>
       <Avatar {...args} data-size="md" aria-label="medium" />
-      <Avatar {...args} data-size="lg" aria-label="large" initials="lg" />
+      <Avatar {...args} data-size="lg" aria-label="large">
+        lg
+      </Avatar>
       <Avatar {...args} data-size="lg" aria-label="large" />
     </>
   ),
@@ -90,7 +98,9 @@ export const InDropdown = meta.story({
   render: (args) => (
     <Dropdown.TriggerContext>
       <Dropdown.Trigger variant="tertiary">
-        <Avatar {...args} aria-hidden data-size="sm" initials="ON" />
+        <Avatar {...args} aria-hidden data-size="sm">
+          ON
+        </Avatar>
         Ola Nordmann
         <ChevronUpIcon aria-hidden />
       </Dropdown.Trigger>
@@ -101,7 +111,9 @@ export const InDropdown = meta.story({
             <Dropdown.Button>
               <Badge.Position overlap="circle">
                 <Badge data-color="danger" data-size="sm" />
-                <Avatar {...args} aria-hidden data-size="xs" initials="ON" />
+                <Avatar {...args} aria-hidden data-size="xs">
+                  ON
+                </Avatar>
               </Badge.Position>
               Ola Nordmann
             </Dropdown.Button>

@@ -233,11 +233,9 @@ export const UsageExample = meta.story({
             />
             <Heading>Undersøke</Heading>
             <div className="skeleton-usage-example-meta">
-              <Avatar
-                data-size="xs"
-                initials="KN"
-                aria-label={'Kari Nordmann'}
-              />
+              <Avatar data-size="xs" aria-label="Kari Nordmann">
+                KN
+              </Avatar>
               <Paragraph>Kari Nordmann | 27.06.2025</Paragraph>
             </div>
             <Paragraph>
