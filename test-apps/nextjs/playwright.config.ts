@@ -15,7 +15,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'pnpm next start',
+    command: 'next start',
     port: 3000,
     reuseExistingServer: false,
   },
