@@ -91,7 +91,7 @@ Dette må du gjøre:
 - Gi `Suggestion.List` en `ref` og bruk den som scroll-element i `useVirtualizer`.
 - Legg inn tomme elementer med `aria-hidden` før og etter alternativene, med høyden til alternativene som ikke er rendret. Da får listen riktig høyde og scrollbar.
 - Sett `aria-setsize` og `aria-posinset` på hvert alternativ, slik at skjermlesere får vite hvor i listen brukeren er.
-- Send totalt antall treff inn i `singular` og `plural` på `Suggestion.List`. Ellers annonseres bare antallet som er rendret.
+- Sett totalt antall treff som `data-sr-singular` og `data-sr-plural` på `Suggestion.List`. Ellers annonseres bare antallet som er rendret. Sett dem på `Suggestion.List` og ikke på `Suggestion`, siden `Suggestion` bare sender tekstene videre til listen én gang.
 
 <Canvas of={SuggestionStories.Virtualized} />
 

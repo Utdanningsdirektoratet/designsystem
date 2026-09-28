@@ -673,11 +673,16 @@ export const FetchExternal = meta.story({
     return (
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
-        <Suggestion {...args} filter={false}>
+        <Suggestion
+          {...args}
+          filter={false}
+          data-sr-singular="%d country"
+          data-sr-plural="%d countries"
+        >
           <Suggestion.Input onInput={handleInput} />
           <Suggestion.Toggle />
           <Suggestion.Clear />
-          <Suggestion.List singular="%d country" plural="%d countries">
+          <Suggestion.List>
             {value ? (
               <Suggestion.Empty>
                 {options ? (
@@ -748,7 +753,11 @@ export const Virtualized = meta.story({
           />
           <Suggestion.Toggle />
           <Suggestion.Clear />
-          <Suggestion.List ref={listRef} singular={hits} plural={hits}>
+          <Suggestion.List
+            ref={listRef}
+            data-sr-singular={hits}
+            data-sr-plural={hits}
+          >
             <Suggestion.Empty />
             <div aria-hidden style={{ height: paddingTop }} />
             {items.map(({ index, key }) => {

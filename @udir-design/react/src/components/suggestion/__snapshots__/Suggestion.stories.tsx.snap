@@ -1759,7 +1759,10 @@ exports[`Fetch External 1`] = `
   <label for="<generated>">
     Search for countries (in english)
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-singular="%d country"
+    data-sr-plural="%d countries"
+  >
     <input
       placeholder
       type="text"
@@ -1791,14 +1794,14 @@ exports[`Fetch External 1`] = `
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d countries"
-      data-sr-singular="%d country"
       popover="manual"
       role="listbox"
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d countries"
+      data-sr-singular="%d country"
       data-is-floating="true"
       aria-label="Search for countries (in english)"
       style="<removed>"
