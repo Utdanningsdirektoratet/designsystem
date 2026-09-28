@@ -12,10 +12,22 @@ exports[`Preview 1`] = `
           <ds-suggestion
             data-multiple
             data-display="count"
+            data-sr-added="La til"
+            data-sr-clear="Fjern tekst"
+            data-sr-empty="Ingen valgte"
+            data-sr-found="Naviger til venstre for å finne %d valgte"
+            data-sr-invalid="Ugyldig valg"
+            data-sr-items="Valgte"
+            data-sr-of="av"
+            data-sr-plural="%d forslag"
+            data-sr-remove="Trykk for å fjerne"
+            data-sr-removed="Fjernet"
+            data-sr-singular="%d forslag"
+            data-sr-toggle="Forslag"
           >
             <data
               value="Agder"
-              aria-label="Agder, Press to remove"
+              aria-label="Agder, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -24,7 +36,7 @@ exports[`Preview 1`] = `
             </data>
             <data
               value="Rogaland"
-              aria-label="Rogaland, Press to remove"
+              aria-label="Rogaland, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -35,29 +47,29 @@ exports[`Preview 1`] = `
               placeholder
               type="text"
               id="<generated>"
-              aria-description="Navigate left to find 2 selected"
+              aria-description="Naviger til venstre for å finne 2 valgte"
               list="<generated>"
               popovertarget="<generated>"
             >
             <button
-              aria-label="Tøm"
               hidden
               type="reset"
+              aria-label="Fjern tekst"
               aria-hidden="false"
               tabindex="-1"
             >
             </button>
             <u-datalist
               data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
               popover="manual"
               role="listbox"
-              data-sr-of="of"
+              data-sr-of="av"
               hidden
               tabindex="-1"
               aria-multiselectable="true"
               id="<generated>"
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
               data-is-floating="true"
             >
               <u-option
@@ -204,10 +216,22 @@ exports[`Preview 1`] = `
           <ds-suggestion
             data-multiple
             data-display="count"
+            data-sr-added="La til"
+            data-sr-clear="Fjern tekst"
+            data-sr-empty="Ingen valgte"
+            data-sr-found="Naviger til venstre for å finne %d valgte"
+            data-sr-invalid="Ugyldig valg"
+            data-sr-items="Valgte"
+            data-sr-of="av"
+            data-sr-plural="%d forslag"
+            data-sr-remove="Trykk for å fjerne"
+            data-sr-removed="Fjernet"
+            data-sr-singular="%d forslag"
+            data-sr-toggle="Forslag"
           >
             <data
               value="Arendal"
-              aria-label="Arendal, Press to remove"
+              aria-label="Arendal, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -216,7 +240,7 @@ exports[`Preview 1`] = `
             </data>
             <data
               value="Kristiansand"
-              aria-label="Kristiansand, Press to remove"
+              aria-label="Kristiansand, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -225,7 +249,7 @@ exports[`Preview 1`] = `
             </data>
             <data
               value="Sandnes"
-              aria-label="Sandnes, Press to remove"
+              aria-label="Sandnes, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -236,29 +260,29 @@ exports[`Preview 1`] = `
               placeholder
               type="text"
               id="<generated>"
-              aria-description="Navigate left to find 3 selected"
+              aria-description="Naviger til venstre for å finne 3 valgte"
               list="<generated>"
               popovertarget="<generated>"
             >
             <button
-              aria-label="Tøm"
               hidden
               type="reset"
+              aria-label="Fjern tekst"
               aria-hidden="false"
               tabindex="-1"
             >
             </button>
             <u-datalist
               data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
               popover="manual"
               role="listbox"
-              data-sr-of="of"
+              data-sr-of="av"
               hidden
               tabindex="-1"
               aria-multiselectable="true"
               id="<generated>"
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
               data-is-floating="true"
             >
               <u-option
@@ -333,7 +357,20 @@ exports[`Preview 1`] = `
         <label for="<generated>">
           Søk
         </label>
-        <ds-suggestion>
+        <ds-suggestion
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Forslag"
+        >
           <input
             aria-label="Søk"
             type="search"
@@ -341,11 +378,10 @@ exports[`Preview 1`] = `
             id="<generated>"
           >
           <button
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-            aria-hidden="false"
             hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
             tabindex="-1"
           >
           </button>
@@ -647,10 +683,22 @@ exports[`With Chips 1`] = `
           <ds-suggestion
             data-multiple
             data-display="count"
+            data-sr-added="La til"
+            data-sr-clear="Fjern tekst"
+            data-sr-empty="Ingen valgte"
+            data-sr-found="Naviger til venstre for å finne %d valgte"
+            data-sr-invalid="Ugyldig valg"
+            data-sr-items="Valgte"
+            data-sr-of="av"
+            data-sr-plural="%d forslag"
+            data-sr-remove="Trykk for å fjerne"
+            data-sr-removed="Fjernet"
+            data-sr-singular="%d forslag"
+            data-sr-toggle="Forslag"
           >
             <data
               value="Agder"
-              aria-label="Agder, Press to remove"
+              aria-label="Agder, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -659,7 +707,7 @@ exports[`With Chips 1`] = `
             </data>
             <data
               value="Rogaland"
-              aria-label="Rogaland, Press to remove"
+              aria-label="Rogaland, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -670,29 +718,29 @@ exports[`With Chips 1`] = `
               placeholder
               type="text"
               id="<generated>"
-              aria-description="Navigate left to find 2 selected"
+              aria-description="Naviger til venstre for å finne 2 valgte"
               list="<generated>"
               popovertarget="<generated>"
             >
             <button
-              aria-label="Tøm"
               hidden
               type="reset"
+              aria-label="Fjern tekst"
               aria-hidden="false"
               tabindex="-1"
             >
             </button>
             <u-datalist
               data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
               popover="manual"
               role="listbox"
-              data-sr-of="of"
+              data-sr-of="av"
               hidden
               tabindex="-1"
               aria-multiselectable="true"
               id="<generated>"
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
               data-is-floating="true"
             >
               <u-option
@@ -839,10 +887,22 @@ exports[`With Chips 1`] = `
           <ds-suggestion
             data-multiple
             data-display="count"
+            data-sr-added="La til"
+            data-sr-clear="Fjern tekst"
+            data-sr-empty="Ingen valgte"
+            data-sr-found="Naviger til venstre for å finne %d valgte"
+            data-sr-invalid="Ugyldig valg"
+            data-sr-items="Valgte"
+            data-sr-of="av"
+            data-sr-plural="%d forslag"
+            data-sr-remove="Trykk for å fjerne"
+            data-sr-removed="Fjernet"
+            data-sr-singular="%d forslag"
+            data-sr-toggle="Forslag"
           >
             <data
               value="Arendal"
-              aria-label="Arendal, Press to remove"
+              aria-label="Arendal, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -851,7 +911,7 @@ exports[`With Chips 1`] = `
             </data>
             <data
               value="Kristiansand"
-              aria-label="Kristiansand, Press to remove"
+              aria-label="Kristiansand, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -860,7 +920,7 @@ exports[`With Chips 1`] = `
             </data>
             <data
               value="Sandnes"
-              aria-label="Sandnes, Press to remove"
+              aria-label="Sandnes, Trykk for å fjerne"
               role="option"
               slot="items"
               tabindex="-1"
@@ -871,29 +931,29 @@ exports[`With Chips 1`] = `
               placeholder
               type="text"
               id="<generated>"
-              aria-description="Navigate left to find 3 selected"
+              aria-description="Naviger til venstre for å finne 3 valgte"
               list="<generated>"
               popovertarget="<generated>"
             >
             <button
-              aria-label="Tøm"
               hidden
               type="reset"
+              aria-label="Fjern tekst"
               aria-hidden="false"
               tabindex="-1"
             >
             </button>
             <u-datalist
               data-nofilter
-              data-sr-plural="%d forslag"
-              data-sr-singular="%d forslag"
               popover="manual"
               role="listbox"
-              data-sr-of="of"
+              data-sr-of="av"
               hidden
               tabindex="-1"
               aria-multiselectable="true"
               id="<generated>"
+              data-sr-plural="%d forslag"
+              data-sr-singular="%d forslag"
               data-is-floating="true"
             >
               <u-option
@@ -968,7 +1028,20 @@ exports[`With Chips 1`] = `
         <label for="<generated>">
           Søk
         </label>
-        <ds-suggestion>
+        <ds-suggestion
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Forslag"
+        >
           <input
             aria-label="Søk"
             type="search"
@@ -976,11 +1049,10 @@ exports[`With Chips 1`] = `
             id="<generated>"
           >
           <button
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-            aria-hidden="false"
             hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
             tabindex="-1"
           >
           </button>
@@ -1339,7 +1411,20 @@ exports[`With Dialog 1`] = `
         <label for="<generated>">
           Søk
         </label>
-        <ds-suggestion>
+        <ds-suggestion
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Forslag"
+        >
           <input
             aria-label="Søk"
             type="search"
@@ -1347,11 +1432,10 @@ exports[`With Dialog 1`] = `
             id="<generated>"
           >
           <button
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-            aria-hidden="false"
             hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
             tabindex="-1"
           >
           </button>
@@ -1412,34 +1496,46 @@ exports[`With Dialog 1`] = `
                   <ds-suggestion
                     data-multiple
                     data-display="count"
+                    data-sr-added="La til"
+                    data-sr-clear="Fjern tekst"
+                    data-sr-empty="Ingen valgte"
+                    data-sr-found="Naviger til venstre for å finne %d valgte"
+                    data-sr-invalid="Ugyldig valg"
+                    data-sr-items="Valgte"
+                    data-sr-of="av"
+                    data-sr-plural="%d forslag"
+                    data-sr-remove="Trykk for å fjerne"
+                    data-sr-removed="Fjernet"
+                    data-sr-singular="%d forslag"
+                    data-sr-toggle="Forslag"
                   >
                     <input
                       placeholder
                       type="text"
                       id="<generated>"
-                      aria-description="No selected"
+                      aria-description="Ingen valgte"
                       list="<generated>"
                       popovertarget="<generated>"
                     >
                     <button
-                      aria-label="Tøm"
                       hidden
                       type="reset"
+                      aria-label="Fjern tekst"
                       aria-hidden="false"
                       tabindex="-1"
                     >
                     </button>
                     <u-datalist
                       data-nofilter
-                      data-sr-plural="%d forslag"
-                      data-sr-singular="%d forslag"
                       popover="manual"
                       role="listbox"
-                      data-sr-of="of"
+                      data-sr-of="av"
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
                       id="<generated>"
+                      data-sr-plural="%d forslag"
+                      data-sr-singular="%d forslag"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1494,10 +1590,22 @@ exports[`With Dialog 1`] = `
                   <ds-suggestion
                     data-multiple
                     data-display="count"
+                    data-sr-added="La til"
+                    data-sr-clear="Fjern tekst"
+                    data-sr-empty="Ingen valgte"
+                    data-sr-found="Naviger til venstre for å finne %d valgte"
+                    data-sr-invalid="Ugyldig valg"
+                    data-sr-items="Valgte"
+                    data-sr-of="av"
+                    data-sr-plural="%d forslag"
+                    data-sr-remove="Trykk for å fjerne"
+                    data-sr-removed="Fjernet"
+                    data-sr-singular="%d forslag"
+                    data-sr-toggle="Forslag"
                   >
                     <data
                       value="Agder"
-                      aria-label="Agder, Press to remove"
+                      aria-label="Agder, Trykk for å fjerne"
                       role="option"
                       slot="items"
                       tabindex="-1"
@@ -1506,7 +1614,7 @@ exports[`With Dialog 1`] = `
                     </data>
                     <data
                       value="Rogaland"
-                      aria-label="Rogaland, Press to remove"
+                      aria-label="Rogaland, Trykk for å fjerne"
                       role="option"
                       slot="items"
                       tabindex="-1"
@@ -1517,29 +1625,29 @@ exports[`With Dialog 1`] = `
                       placeholder
                       type="text"
                       id="<generated>"
-                      aria-description="Navigate left to find 2 selected"
+                      aria-description="Naviger til venstre for å finne 2 valgte"
                       list="<generated>"
                       popovertarget="<generated>"
                     >
                     <button
-                      aria-label="Tøm"
                       hidden
                       type="reset"
+                      aria-label="Fjern tekst"
                       aria-hidden="false"
                       tabindex="-1"
                     >
                     </button>
                     <u-datalist
                       data-nofilter
-                      data-sr-plural="%d forslag"
-                      data-sr-singular="%d forslag"
                       popover="manual"
                       role="listbox"
-                      data-sr-of="of"
+                      data-sr-of="av"
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
                       id="<generated>"
+                      data-sr-plural="%d forslag"
+                      data-sr-singular="%d forslag"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1686,10 +1794,22 @@ exports[`With Dialog 1`] = `
                   <ds-suggestion
                     data-multiple
                     data-display="count"
+                    data-sr-added="La til"
+                    data-sr-clear="Fjern tekst"
+                    data-sr-empty="Ingen valgte"
+                    data-sr-found="Naviger til venstre for å finne %d valgte"
+                    data-sr-invalid="Ugyldig valg"
+                    data-sr-items="Valgte"
+                    data-sr-of="av"
+                    data-sr-plural="%d forslag"
+                    data-sr-remove="Trykk for å fjerne"
+                    data-sr-removed="Fjernet"
+                    data-sr-singular="%d forslag"
+                    data-sr-toggle="Forslag"
                   >
                     <data
                       value="Arendal"
-                      aria-label="Arendal, Press to remove"
+                      aria-label="Arendal, Trykk for å fjerne"
                       role="option"
                       slot="items"
                       tabindex="-1"
@@ -1698,7 +1818,7 @@ exports[`With Dialog 1`] = `
                     </data>
                     <data
                       value="Kristiansand"
-                      aria-label="Kristiansand, Press to remove"
+                      aria-label="Kristiansand, Trykk for å fjerne"
                       role="option"
                       slot="items"
                       tabindex="-1"
@@ -1707,7 +1827,7 @@ exports[`With Dialog 1`] = `
                     </data>
                     <data
                       value="Sandnes"
-                      aria-label="Sandnes, Press to remove"
+                      aria-label="Sandnes, Trykk for å fjerne"
                       role="option"
                       slot="items"
                       tabindex="-1"
@@ -1718,29 +1838,29 @@ exports[`With Dialog 1`] = `
                       placeholder
                       type="text"
                       id="<generated>"
-                      aria-description="Navigate left to find 3 selected"
+                      aria-description="Naviger til venstre for å finne 3 valgte"
                       list="<generated>"
                       popovertarget="<generated>"
                     >
                     <button
-                      aria-label="Tøm"
                       hidden
                       type="reset"
+                      aria-label="Fjern tekst"
                       aria-hidden="false"
                       tabindex="-1"
                     >
                     </button>
                     <u-datalist
                       data-nofilter
-                      data-sr-plural="%d forslag"
-                      data-sr-singular="%d forslag"
                       popover="manual"
                       role="listbox"
-                      data-sr-of="of"
+                      data-sr-of="av"
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
                       id="<generated>"
+                      data-sr-plural="%d forslag"
+                      data-sr-singular="%d forslag"
                       data-is-floating="true"
                     >
                       <u-option
@@ -1857,34 +1977,46 @@ exports[`With Dialog 1`] = `
                   <ds-suggestion
                     data-multiple
                     data-display="count"
+                    data-sr-added="La til"
+                    data-sr-clear="Fjern tekst"
+                    data-sr-empty="Ingen valgte"
+                    data-sr-found="Naviger til venstre for å finne %d valgte"
+                    data-sr-invalid="Ugyldig valg"
+                    data-sr-items="Valgte"
+                    data-sr-of="av"
+                    data-sr-plural="%d forslag"
+                    data-sr-remove="Trykk for å fjerne"
+                    data-sr-removed="Fjernet"
+                    data-sr-singular="%d forslag"
+                    data-sr-toggle="Forslag"
                   >
                     <input
                       placeholder
                       type="text"
                       id="<generated>"
-                      aria-description="No selected"
+                      aria-description="Ingen valgte"
                       list="<generated>"
                       popovertarget="<generated>"
                     >
                     <button
-                      aria-label="Tøm"
                       hidden
                       type="reset"
+                      aria-label="Fjern tekst"
                       aria-hidden="false"
                       tabindex="-1"
                     >
                     </button>
                     <u-datalist
                       data-nofilter
-                      data-sr-plural="%d forslag"
-                      data-sr-singular="%d forslag"
                       popover="manual"
                       role="listbox"
-                      data-sr-of="of"
+                      data-sr-of="av"
                       hidden
                       tabindex="-1"
                       aria-multiselectable="true"
                       id="<generated>"
+                      data-sr-plural="%d forslag"
+                      data-sr-singular="%d forslag"
                       data-is-floating="true"
                     >
                       <u-option

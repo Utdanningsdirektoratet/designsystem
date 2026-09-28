@@ -21,7 +21,9 @@ import {
   type ForwardRefExoticComponent,
   type RefAttributes,
   forwardRef,
+  useEffect,
 } from 'react';
+import { patchSuggestionSelection } from './patchSuggestionSelection';
 import './suggestion.css';
 
 type SuggestionDisplayProps = {
@@ -52,6 +54,8 @@ const SuggestionBase = forwardRef<
   SuggestionProps
 >(function Suggestion({ display = 'chips', ...rest }, ref) {
   const multiple = 'multiple' in rest && rest.multiple === true;
+
+  useEffect(patchSuggestionSelection, []);
 
   return (
     <DigdirSuggestion

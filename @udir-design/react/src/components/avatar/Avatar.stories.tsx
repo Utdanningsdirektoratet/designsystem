@@ -44,7 +44,7 @@ export const Content = meta.story({
       <Avatar {...args} />
       <Avatar {...args} initials="ON" />
       <Avatar {...args}>
-        <BriefcaseIcon />
+        <BriefcaseIcon aria-hidden />
       </Avatar>
       <Avatar {...args}>
         <img src={profileImage} alt="" />

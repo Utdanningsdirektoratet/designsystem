@@ -15,7 +15,20 @@ exports[`Controlled 1`] = `
         }
   </style>
   <form>
-    <ds-suggestion>
+    <ds-suggestion
+      data-sr-added="La til"
+      data-sr-clear="Fjern tekst"
+      data-sr-empty="Ingen valgte"
+      data-sr-found="Naviger til venstre for å finne %d valgte"
+      data-sr-invalid="Ugyldig valg"
+      data-sr-items="Valgte"
+      data-sr-of="av"
+      data-sr-plural="%d forslag"
+      data-sr-remove="Trykk for å fjerne"
+      data-sr-removed="Fjernet"
+      data-sr-singular="%d forslag"
+      data-sr-toggle="Forslag"
+    >
       <input
         id="search-input-controlled"
         aria-label="Søk"
@@ -23,11 +36,10 @@ exports[`Controlled 1`] = `
         value
       >
       <button
-        data-variant="tertiary"
-        type="reset"
-        aria-label="Tøm"
-        aria-hidden="false"
         hidden
+        type="reset"
+        aria-label="Fjern tekst"
+        aria-hidden="false"
         tabindex="-1"
       >
       </button>
@@ -56,17 +68,29 @@ exports[`Controlled 1`] = `
 exports[`Form 1`] = `
 <div>
   <form>
-    <ds-suggestion>
+    <ds-suggestion
+      data-sr-added="La til"
+      data-sr-clear="Fjern tekst"
+      data-sr-empty="Ingen valgte"
+      data-sr-found="Naviger til venstre for å finne %d valgte"
+      data-sr-invalid="Ugyldig valg"
+      data-sr-items="Valgte"
+      data-sr-of="av"
+      data-sr-plural="%d forslag"
+      data-sr-remove="Trykk for å fjerne"
+      data-sr-removed="Fjernet"
+      data-sr-singular="%d forslag"
+      data-sr-toggle="Forslag"
+    >
       <input
         aria-label="Søk"
         type="text"
       >
       <button
-        data-variant="tertiary"
-        type="reset"
-        aria-label="Tøm"
-        aria-hidden="false"
         hidden
+        type="reset"
+        aria-label="Fjern tekst"
+        aria-hidden="false"
         tabindex="-1"
       >
       </button>
@@ -87,18 +111,30 @@ exports[`Live Search 1`] = `
         }
 </style>
 <div>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="Søk"
       type="search"
       value
     >
     <button
-      data-variant="tertiary"
-      type="reset"
-      aria-label="Tøm"
-      aria-hidden="false"
       hidden
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
       tabindex="-1"
     >
     </button>
@@ -108,15 +144,27 @@ exports[`Live Search 1`] = `
 
 exports[`Preview 1`] = `
 <form>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="Søk"
       type="text"
     >
     <button
-      data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
       hidden
@@ -131,32 +179,56 @@ exports[`Preview 1`] = `
 
 exports[`Variants 1`] = `
 <div>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="Søk"
       type="search"
     >
     <button
-      data-variant="tertiary"
-      type="reset"
-      aria-label="Tøm"
-      aria-hidden="false"
       hidden
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
       tabindex="-1"
     >
     </button>
   </ds-suggestion>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="Søk"
       type="text"
     >
     <button
-      data-variant="tertiary"
-      type="reset"
-      aria-label="Tøm"
-      aria-hidden="false"
       hidden
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
       tabindex="-1"
     >
     </button>
@@ -164,17 +236,29 @@ exports[`Variants 1`] = `
       Søk
     </button>
   </ds-suggestion>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="Søk"
       type="text"
     >
     <button
-      data-variant="tertiary"
-      type="reset"
-      aria-label="Tøm"
-      aria-hidden="false"
       hidden
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
       tabindex="-1"
     >
     </button>
@@ -193,18 +277,30 @@ exports[`With Label 1`] = `
   <label for="<generated>">
     Søk i læreplaner
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       type="text"
       name="cat-search"
       id="<generated>"
     >
     <button
-      data-variant="tertiary"
-      type="reset"
-      aria-label="Tøm"
-      aria-hidden="false"
       hidden
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
       tabindex="-1"
     >
     </button>

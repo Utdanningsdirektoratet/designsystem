@@ -13,16 +13,28 @@ exports[`Button 1`] = `
 }
 </style>
 <div>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Forslag"
+  >
     <input
       aria-label="søk"
       type="text"
       value="Skole"
     >
     <button
-      data-variant="tertiary"
       type="reset"
-      aria-label="Tøm"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >

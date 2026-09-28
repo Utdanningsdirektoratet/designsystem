@@ -12,6 +12,18 @@ Can be removed after the next version of @digdir/designsystemet-css is released 
     border-bottom-right-radius: var(--dsc-card-border-radius);
   }
 
+  /*
+  Keep the heading underline from Digdir v1.21.0 (v1.22.0 makes it 0.06em, which Firefox draws
+  as 1px). v1.22.0 also makes the underline thicker on hover (0.12em); we keep that effect, but
+  make the hover underline exactly 1px thicker than at rest, since a smaller difference can
+  round to the same number of pixels and show no change.
+  */
+  --dsc-card-link-text-decoration-thickness: max(1px, 0.0625rem, 0.1025em);
+  --dsc-card-link-text-decoration-thickness--hover: calc(
+    var(--dsc-card-link-text-decoration-thickness) + 1px
+  );
+  --dsc-card-link-text-decoration-offset: 0.27em;
+
   /* fix focus style for links with <a> tags (and not <Link>) in heading */
   > :is(h1, h2, h3, h4, h5, h6),
   > .ds-card__block > :is(h1, h2, h3, h4, h5, h6) {

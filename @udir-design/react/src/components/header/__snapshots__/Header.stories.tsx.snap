@@ -692,9 +692,7 @@ exports[`Responsive 1`] = `
             role="img"
             aria-hidden="true"
           >
-            <span>
-              SH
-            </span>
+            SH
           </span>
         </button>
         <div
@@ -728,7 +726,6 @@ exports[`Responsive 1`] = `
                       viewbox="0 0 24 24"
                       focusable="false"
                       role="img"
-                      aria-hidden="true"
                     >
                       <path
                         fill="currentColor"
@@ -808,9 +805,7 @@ exports[`Responsive 1`] = `
               role="img"
               aria-hidden="true"
             >
-              <span>
-                SH
-              </span>
+              SH
             </span>
           </button>
           <div
@@ -844,7 +839,6 @@ exports[`Responsive 1`] = `
                         viewbox="0 0 24 24"
                         focusable="false"
                         role="img"
-                        aria-hidden="true"
                       >
                         <path
                           fill="currentColor"
@@ -1028,18 +1022,31 @@ exports[`Udir No 1`] = `
         </div>
       </a>
       <div>
-        <ds-suggestion data-show="sm">
+        <ds-suggestion
+          data-show="sm"
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Forslag"
+        >
           <input
             aria-label="Søk"
             placeholder="Søk"
             type="search"
           >
           <button
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-            aria-hidden="false"
             hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
             tabindex="-1"
           >
           </button>
@@ -1056,18 +1063,31 @@ exports[`Udir No 1`] = `
           popover="auto"
           data-placement="none"
         >
-          <ds-suggestion data-hide="sm">
+          <ds-suggestion
+            data-hide="sm"
+            data-sr-added="La til"
+            data-sr-clear="Fjern tekst"
+            data-sr-empty="Ingen valgte"
+            data-sr-found="Naviger til venstre for å finne %d valgte"
+            data-sr-invalid="Ugyldig valg"
+            data-sr-items="Valgte"
+            data-sr-of="av"
+            data-sr-plural="%d forslag"
+            data-sr-remove="Trykk for å fjerne"
+            data-sr-removed="Fjernet"
+            data-sr-singular="%d forslag"
+            data-sr-toggle="Forslag"
+          >
             <input
               aria-label="Søk"
               placeholder="Søk"
               type="search"
             >
             <button
-              data-variant="tertiary"
-              type="reset"
-              aria-label="Tøm"
-              aria-hidden="false"
               hidden
+              type="reset"
+              aria-label="Fjern tekst"
+              aria-hidden="false"
               tabindex="-1"
             >
             </button>
@@ -2062,7 +2082,20 @@ exports[`With Search 1`] = `
         </span>
       </a>
       <div>
-        <ds-suggestion>
+        <ds-suggestion
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Forslag"
+        >
           <input
             aria-label="Søk"
             placeholder="Søk"
@@ -2070,11 +2103,10 @@ exports[`With Search 1`] = `
             value
           >
           <button
-            data-variant="tertiary"
-            type="reset"
-            aria-label="Tøm"
-            aria-hidden="false"
             hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
             tabindex="-1"
           >
           </button>
@@ -2572,7 +2604,6 @@ exports[`With User Button 1`] = `
           >
             <img
               alt="Stian Hansen"
-              aria-hidden="true"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             >
           </span>
@@ -2608,7 +2639,6 @@ exports[`With User Button 1`] = `
                       viewbox="0 0 24 24"
                       focusable="false"
                       role="img"
-                      aria-hidden="true"
                     >
                       <path
                         fill="currentColor"
@@ -2665,12 +2695,11 @@ exports[`With User Button 1`] = `
           data-hide="sm"
         >
           <span
-            role="img"
             aria-label="Stian Hansen"
+            role="img"
           >
             <img
               alt
-              aria-hidden="true"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             >
           </span>
@@ -2722,7 +2751,6 @@ exports[`With User Button 1`] = `
                       viewbox="0 0 24 24"
                       focusable="false"
                       role="img"
-                      aria-hidden="true"
                     >
                       <path
                         fill="currentColor"
@@ -2824,7 +2852,6 @@ exports[`With User Button Test 1`] = `
           >
             <img
               alt="Stian Hansen"
-              aria-hidden="true"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             >
           </span>
@@ -2862,7 +2889,6 @@ exports[`With User Button Test 1`] = `
                       viewbox="0 0 24 24"
                       focusable="false"
                       role="img"
-                      aria-hidden="true"
                     >
                       <path
                         fill="currentColor"
@@ -2919,12 +2945,11 @@ exports[`With User Button Test 1`] = `
           data-hide="sm"
         >
           <span
-            role="img"
             aria-label="Stian Hansen"
+            role="img"
           >
             <img
               alt
-              aria-hidden="true"
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             >
           </span>
@@ -2976,7 +3001,6 @@ exports[`With User Button Test 1`] = `
                       viewbox="0 0 24 24"
                       focusable="false"
                       role="img"
-                      aria-hidden="true"
                     >
                       <path
                         fill="currentColor"

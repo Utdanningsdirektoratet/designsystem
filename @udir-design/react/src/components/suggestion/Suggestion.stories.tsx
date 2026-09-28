@@ -168,7 +168,7 @@ async function typeUnknownValue(el: HTMLElement, value: string) {
 const getChipValues = (el: HTMLElement) =>
   waitFor(() =>
     within(el)
-      .getAllByLabelText('Press to remove', { exact: false })
+      .getAllByLabelText('Trykk for å fjerne', { exact: false })
       .filter((chip) => chip instanceof HTMLDataElement)
       .map((chip) => chip.value),
   );
@@ -859,6 +859,41 @@ export const MultipleCreatable = Multiple.extend({
         'Heller ikke',
       ]);
     });
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const MultipleCreatableSelectsClickedOption = MultipleCreatable.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Selecting an existing option after a substring search adds that option',
+      async () => {
+        const input = await waitFor(() =>
+          within(canvasElement).getByRole('combobox'),
+        );
+        await userEvent.click(input);
+        await userEvent.type(input, 'ogn');
+
+        const sogndal = await waitFor(() => {
+          const option = within(canvasElement)
+            .getAllByRole('option')
+            .find((o) => (o as HTMLOptionElement).value === 'Sogndal');
+          if (!option) throw new Error('Sogndal option not found');
+          return option;
+        });
+        await userEvent.click(sogndal);
+
+        /* From digdir 1.22.0, the create option was selected instead, with the
+           typed query as label and value */
+        await expect(await getChipValues(canvasElement)).toEqual(['Sogndal']);
+        await expect(input).toHaveValue('ogn');
+        await expect(
+          canvasElement.querySelector('u-option[data-empty]'),
+        ).toHaveAttribute('data-create', 'Legg til «ogn»');
+      },
+    );
   },
 });
 
