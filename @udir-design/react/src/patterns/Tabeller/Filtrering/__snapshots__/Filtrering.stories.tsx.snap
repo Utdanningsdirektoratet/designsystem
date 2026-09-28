@@ -2,7 +2,7 @@
 
 exports[`Preview 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<generated>">
     <div>
       <div>
         <ds-field>
@@ -357,6 +357,9 @@ exports[`Preview 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<generated>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -605,13 +608,13 @@ exports[`Preview 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Chips 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<generated>">
     <div>
       <div>
         <ds-field>
@@ -1027,6 +1030,9 @@ exports[`With Chips 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<generated>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -1275,13 +1281,13 @@ exports[`With Chips 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
 
 exports[`With Dialog 1`] = `
 <div data-size="auto">
-  <div>
+  <section aria-labelledby="<generated>">
     <div>
       <ds-field>
         <label for="<generated>">
@@ -1970,6 +1976,9 @@ exports[`With Dialog 1`] = `
         data-zebra="true"
         data-color="neutral"
       >
+        <caption id="<generated>">
+          Skoler
+        </caption>
         <thead>
           <tr>
             <th>
@@ -2218,6 +2227,6 @@ exports[`With Dialog 1`] = `
         </ds-field>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 `;
