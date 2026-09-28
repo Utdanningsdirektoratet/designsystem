@@ -58,44 +58,69 @@ export const Preview = meta.story({
 });
 
 export const WithForm = meta.story({
-  parameters: {
-    customStyles: { display: 'grid', gap: 'var(--ds-size-4)' },
-  },
   decorators: WithInertInitialRender,
-  render: (args) => (
-    <>
-      <Textfield
-        label="Fornavn"
-        id="fornavn"
-        error="Fornavn må være minst 2 tegn"
-      />
+  parameters: {
+    customStyles: {
+      display: 'grid',
+      gap: 'var(--ds-size-4)',
+      width: 'min(25rem, calc(100vw - var(--ds-size-8)))',
+      maxWidth: '100%',
+    },
+  },
+  render: (args) => {
+    const [firstName, setFirstName] = useState('');
+    const [phone, setPhone] = useState('Abc');
+    const firstNameError =
+      firstName.trim().length < 2 ? 'Fornavn må være minst 2 tegn' : undefined;
+    const phoneError = !/^\d+$/.test(phone.replaceAll(' ', ''))
+      ? 'Telefonnummer kan kun inneholde siffer'
+      : undefined;
 
-      <Textfield
-        label="Telefon"
-        id="telefon"
-        type="tel"
-        error="Telefonnummer kan kun inneholde siffer"
-      />
+    return (
+      <>
+        <Textfield
+          label="Fornavn"
+          id="fornavn"
+          value={firstName}
+          onChange={(event) => setFirstName(event.target.value)}
+          error={firstNameError}
+        />
 
-      <ErrorSummary {...args}>
-        <ErrorSummary.Heading>
-          For å gå videre må du rette opp følgende feil:
-        </ErrorSummary.Heading>
-        <ErrorSummary.List>
-          <ErrorSummary.Item>
-            <ErrorSummary.Link href="#fornavn">
-              Fornavn må være minst 2 tegn
-            </ErrorSummary.Link>
-          </ErrorSummary.Item>
-          <ErrorSummary.Item>
-            <ErrorSummary.Link href="#telefon">
-              Telefonnummer kan kun inneholde siffer
-            </ErrorSummary.Link>
-          </ErrorSummary.Item>
-        </ErrorSummary.List>
-      </ErrorSummary>
-    </>
-  ),
+        <Textfield
+          label="Telefon"
+          id="telefon"
+          type="tel"
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
+          error={phoneError}
+        />
+
+        {firstNameError || phoneError ? (
+          <ErrorSummary {...args}>
+            <ErrorSummary.Heading>
+              For å gå videre må du rette opp følgende feil:
+            </ErrorSummary.Heading>
+            <ErrorSummary.List>
+              {firstNameError ? (
+                <ErrorSummary.Item>
+                  <ErrorSummary.Link href="#fornavn">
+                    {firstNameError}
+                  </ErrorSummary.Link>
+                </ErrorSummary.Item>
+              ) : null}
+              {phoneError ? (
+                <ErrorSummary.Item>
+                  <ErrorSummary.Link href="#telefon">
+                    {phoneError}
+                  </ErrorSummary.Link>
+                </ErrorSummary.Item>
+              ) : null}
+            </ErrorSummary.List>
+          </ErrorSummary>
+        ) : null}
+      </>
+    );
+  },
 });
 
 export const ShowHide = meta.story({
