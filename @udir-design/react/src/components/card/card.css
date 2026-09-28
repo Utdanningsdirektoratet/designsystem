@@ -1,17 +1,4 @@
-/*
-Fix focus style on details nested in card.
-Can be removed after the next version of @digdir/designsystemet-css is released and we have upgraded.
-*/
 .ds-card {
-  > .ds-details:first-child > :is(summary, u-summary) {
-    border-top-left-radius: var(--dsc-card-border-radius);
-    border-top-right-radius: var(--dsc-card-border-radius);
-  }
-  > .ds-details:last-child:not([open]) > :is(summary, u-summary) {
-    border-bottom-left-radius: var(--dsc-card-border-radius);
-    border-bottom-right-radius: var(--dsc-card-border-radius);
-  }
-
   /*
   Keep the heading underline from Digdir v1.21.0 (v1.22.0 makes it 0.06em, which Firefox draws
   as 1px). v1.22.0 also makes the underline thicker on hover (0.12em); we keep that effect, but
