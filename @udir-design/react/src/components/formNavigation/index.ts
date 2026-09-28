@@ -12,6 +12,7 @@ const FormNavigation: FormNavigation = Object.assign(FormNavigationRoot, {
   Step: FormNavigationStep,
 });
 
+FormNavigation.displayName = 'FormNavigation';
 FormNavigation.Group.displayName = 'FormNavigation.Group';
 FormNavigation.Step.displayName = 'FormNavigation.Step';
 

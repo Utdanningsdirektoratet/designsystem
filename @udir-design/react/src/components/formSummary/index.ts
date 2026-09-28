@@ -15,6 +15,7 @@ const FormSummary: FormSummary = Object.assign(FormSummaryRoot, {
   Section: FormSummarySection,
 });
 
+FormSummary.displayName = 'FormSummary';
 FormSummary.Fields.displayName = 'FormSummary.Fields';
 FormSummary.Field.displayName = 'FormSummary.Field';
 FormSummary.Section.displayName = 'FormSummary.Section';
