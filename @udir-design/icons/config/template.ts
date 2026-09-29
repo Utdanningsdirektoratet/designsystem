@@ -38,7 +38,7 @@ const template: Template = (variables, { tpl }) => {
   // Explicit `forwardRef` type arguments without `ref`: with `SVGProps`, `@types/react`
   // wraps each icon's props in `Omit<…, "ref">`, which is slow to type-check for 959 icons.
   return tpl`
-import React, { forwardRef, useId, type Ref, type SVGAttributes, type SVGProps } from "react";
+import { forwardRef, useId, type Ref, type SVGAttributes, type SVGProps } from "react";
 
 interface SVGRProps {
   /**

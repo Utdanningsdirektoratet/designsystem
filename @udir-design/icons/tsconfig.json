@@ -3,9 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "Bundler",
-    // `React.createElement`, like Aksel, so the icons import only `react`. With
-    // `react/jsx-runtime`, the Storybook manager bundled a runtime that didn't match its React.
-    "jsx": "react",
+    "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
