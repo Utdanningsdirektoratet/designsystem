@@ -6,7 +6,13 @@ import React, {
   type SVGProps,
 } from 'react';
 interface SVGRProps {
+  /**
+   * @deprecated Use `aria-label` for an accessible name, and the `Tooltip` component from `@udir-design/react` for a tooltip. Will be removed in the next major version.
+   */
   title?: string;
+  /**
+   * @deprecated Only used by the deprecated `title` prop. Will be removed in the next major version.
+   */
   titleId?: string;
 }
 const SvgLayersFill = forwardRef<
