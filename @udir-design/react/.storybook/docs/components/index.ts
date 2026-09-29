@@ -1,7 +1,7 @@
+export { CopyButton } from './CopyButton/CopyButton';
 export { CssToggle } from './CssToggle/CssToggle';
 export { Stack } from './Stack/Stack';
 export { SimpleAlert } from './SimpleAlert/SimpleAlert';
 export { Do, Dont } from './DoAndDont/DoAndDont';
 export { HideToc } from './HideToc';
 export { IncludeMarkdown } from './IncludeMarkdown';
-export { CopyButton } from './CopyButton/CopyButton';
