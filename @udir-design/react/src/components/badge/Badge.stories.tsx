@@ -63,19 +63,19 @@ export const Floating = meta.story({
       </style>
       <Badge.Position placement="top-right">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="top-left">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="bottom-right">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="bottom-left">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
         <Badge {...args} />
@@ -110,7 +110,7 @@ export const CustomPlacement = meta.story({
       </style>
       <Badge.Position placement="top-right">
         <Badge className="badge-custom-placement-badge" {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
     </>
   ),
@@ -121,7 +121,7 @@ export const Status = meta.story({
   render: (args) => (
     <Badge.Position data-size="lg">
       <Badge {...args} />
-      <FloppydiskFillIcon title="Lagre" />
+      <FloppydiskFillIcon aria-label="Lagre" />
     </Badge.Position>
   ),
 });
@@ -173,19 +173,19 @@ export const InButton = meta.story({
         <Button icon variant="tertiary">
           <Badge.Position>
             <Badge {...args} count={1000} maxCount={99} />
-            <EnvelopeClosedIcon title="Innboks" />
+            <EnvelopeClosedIcon aria-label="Innboks" />
           </Badge.Position>
         </Button>
         <Button icon variant="tertiary">
           <Badge.Position>
             <Badge {...args} count={10} />
-            <Chat2Icon title="Meldinger" />
+            <Chat2Icon aria-label="Meldinger" />
           </Badge.Position>
         </Button>
         <Button icon variant="tertiary">
           <Badge.Position>
             <Badge {...args}></Badge>
-            <VideoIcon title="Skru på video" />
+            <VideoIcon aria-label="Skru på video" />
           </Badge.Position>
         </Button>
       </div>
