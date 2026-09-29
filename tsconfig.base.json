@@ -16,7 +16,9 @@
     "paths": {
       "@udir-design/react": ["./@udir-design/react/src/stable.ts"],
       "@udir-design/theme": ["./@udir-design/theme/src/index.ts"],
-      "@udir-design/icons": ["./@udir-design/icons/src/index.ts"],
+      // The built declarations, not generated-src: type-checking the ~960 generated
+      // components would add about 1 GB and 2 s to every project that imports icons
+      "@udir-design/icons": ["./@udir-design/icons/dist/index.d.mts"],
       "@udir-design/icons/metadata": ["./@udir-design/icons/src/metadata.ts"],
       "@udir-design/symbols": ["./@udir-design/symbols/generated-src/index.ts"],
       "@udir-design/symbols/metadata": [

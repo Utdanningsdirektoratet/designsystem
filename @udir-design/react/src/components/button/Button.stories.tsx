@@ -258,21 +258,21 @@ export const Icons = meta.story({
     return (
       <>
         <Button data-size="sm" icon {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
         <Button data-size="sm" {...args}>
           <CogIcon aria-hidden />
           Small
         </Button>
         <Button data-size="md" icon {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
         <Button data-size="md" {...args}>
           <CogIcon aria-hidden />
           Medium
         </Button>
         <Button data-size="lg" icon {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
         <Button data-size="lg" {...args}>
           <CogIcon aria-hidden />
@@ -325,13 +325,13 @@ export const IconsOnlyPrimary = meta.story({
     return (
       <>
         <Button data-size="sm" {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
         <Button data-size="md" {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
         <Button data-size="lg" {...args}>
-          <CogIcon title="Innstillinger" />
+          <CogIcon aria-label="Innstillinger" />
         </Button>
       </>
     );

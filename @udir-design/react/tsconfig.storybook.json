@@ -11,7 +11,7 @@
       ],
       // Repeat paths form tsconfig.base.json because they apparently aren't included
       "@udir-design/theme": ["../theme/src/index.ts"],
-      "@udir-design/icons": ["../icons/src/index.ts"],
+      "@udir-design/icons": ["../icons/dist/index.d.mts"],
       "@udir-design/icons/metadata": ["../icons/src/metadata.ts"],
       "@udir-design/symbols": ["../symbols/generated-src/index.ts"],
       "@udir-design/symbols/metadata": ["../symbols/generated-src/metadata.ts"]

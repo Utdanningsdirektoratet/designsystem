@@ -676,10 +676,12 @@ Eksempel: `@udir-design/icons` definerer både et hoved-entrypoint og en submodu
 
 ```json
 "paths": {
-  "@udir-design/icons": ["./@udir-design/icons/src/index.ts"],
+  "@udir-design/icons": ["./@udir-design/icons/dist/index.d.mts"],
   "@udir-design/icons/metadata": ["./@udir-design/icons/src/metadata.ts"],
 }
 ```
+
+Hovedentrypointet til `@udir-design/icons` peker på de bygde typedeklarasjonene i `dist` i stedet for kildekoden, fordi TypeScript ellers må typesjekke alle de rundt 960 genererte ikonkomponentene.
 
 Uten endringen i `tsconfig.base.json` vil ting fungere for eksterne konsumenter, men du kan få subtile problemer innad i monorepoet.
 

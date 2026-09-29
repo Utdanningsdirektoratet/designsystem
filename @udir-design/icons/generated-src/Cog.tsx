@@ -1,0 +1,52 @@
+import React, {
+  forwardRef,
+  useId,
+  type Ref,
+  type SVGAttributes,
+  type SVGProps,
+} from 'react';
+interface SVGRProps {
+  /**
+   * @deprecated Use `aria-label` for an accessible name, and the `Tooltip` component from `@udir-design/react` for a tooltip. Will be removed in the next major version.
+   */
+  title?: string;
+  /**
+   * @deprecated Only used by the deprecated `title` prop. Will be removed in the next major version.
+   */
+  titleId?: string;
+}
+const SvgCog = forwardRef<
+  SVGSVGElement,
+  SVGAttributes<SVGSVGElement> & SVGRProps
+>(
+  (
+    { title, titleId: _titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
+    ref: Ref<SVGSVGElement>,
+  ) => {
+    let titleId: string | undefined = useId().replace(/:/g, '');
+    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewBox="0 0 24 24"
+        focusable={false}
+        role="img"
+        ref={ref}
+        aria-labelledby={titleId}
+        {...props}
+      >
+        {title ? <title id={titleId}>{title}</title> : null}
+        <path
+          fill="currentColor"
+          fillRule="evenodd"
+          d="M10.543 2.25a.75.75 0 0 0-.729.573l-.459 1.89q-.326.119-.637.265l-1.675-1.02a.75.75 0 0 0-.92.11L4.066 6.121a.75.75 0 0 0-.11.92l1.02 1.676q-.146.311-.264.637l-1.89.46a.75.75 0 0 0-.573.728v2.914a.75.75 0 0 0 .573.729l1.89.459q.118.326.265.637l-1.02 1.675a.75.75 0 0 0 .11.92l2.054 2.056a.75.75 0 0 0 .92.11l1.676-1.02q.311.145.637.264l.46 1.89a.75.75 0 0 0 .728.573h2.914a.75.75 0 0 0 .729-.573l.459-1.89q.326-.119.637-.264l1.675 1.02a.75.75 0 0 0 .92-.11l2.056-2.055a.75.75 0 0 0 .11-.92l-1.02-1.676a8 8 0 0 0 .264-.637l1.89-.46a.75.75 0 0 0 .573-.728v-2.914a.75.75 0 0 0-.573-.729l-1.89-.459a8 8 0 0 0-.265-.637l1.02-1.675a.75.75 0 0 0-.11-.92l-2.054-2.056a.75.75 0 0 0-.92-.11l-1.676 1.02a8 8 0 0 0-.637-.264l-.46-1.89a.75.75 0 0 0-.728-.573zm.172 3.221.418-1.721h1.734l.418 1.721a.75.75 0 0 0 .513.541q.611.184 1.163.483a.75.75 0 0 0 .747-.02l1.526-.93 1.221 1.22-.93 1.527a.75.75 0 0 0-.02.747q.298.552.483 1.163a.75.75 0 0 0 .541.513l1.721.418v1.734l-1.72.418a.75.75 0 0 0-.542.513 6.2 6.2 0 0 1-.483 1.163.75.75 0 0 0 .02.747l.93 1.526-1.22 1.221-1.527-.93a.75.75 0 0 0-.747-.02 6.2 6.2 0 0 1-1.163.483.75.75 0 0 0-.513.541l-.418 1.721h-1.734l-.418-1.72a.75.75 0 0 0-.513-.542 6.2 6.2 0 0 1-1.163-.483.75.75 0 0 0-.747.02l-1.526.93-1.221-1.22.93-1.527a.75.75 0 0 0 .02-.747 6.2 6.2 0 0 1-.483-1.163.75.75 0 0 0-.541-.513l-1.721-.418v-1.734l1.721-.418a.75.75 0 0 0 .541-.513q.185-.611.483-1.163a.75.75 0 0 0-.02-.747l-.93-1.526 1.22-1.221 1.527.93a.75.75 0 0 0 .747.02q.551-.298 1.163-.483a.75.75 0 0 0 .513-.541M10.25 12a1.75 1.75 0 1 1 3.5 0 1.75 1.75 0 0 1-3.5 0M12 8.75a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
+  },
+);
+export default SvgCog;

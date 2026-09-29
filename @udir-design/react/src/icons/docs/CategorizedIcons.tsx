@@ -49,7 +49,7 @@ export const CategorizedIcons = ({
                         : setSelectedIcon(icon);
                     }}
                   >
-                    <Value aria-hidden title={icon.id} />
+                    <Value aria-label={icon.id} />
                   </Button>
                 );
               })}

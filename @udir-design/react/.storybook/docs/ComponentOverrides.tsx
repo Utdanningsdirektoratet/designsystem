@@ -18,10 +18,11 @@ const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
         aria-hidden
         tabIndex={-1}
         href={href}
+        title="Link to this heading"
         className={componentStyles.headingLink}
         onClick={handleLinkClick(href)}
       >
-        <LinkIcon title="Link to this heading" />
+        <LinkIcon />
       </Link>
     </Heading>
   );
