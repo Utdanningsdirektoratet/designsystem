@@ -47,12 +47,24 @@ jobs:
           echo "Resolved dependency-diff base: $BASE"
           echo "base=$BASE" >> "$GITHUB_OUTPUT"
 
+      # Exit code 0 means TurboSnap, 99 means a full build. Anything else is a
+      # failure and fails the job, so that it gets fixed instead of silently
+      # turning every run into a full build.
       - name: Check runtime dependency changes
         id: diff_runtime_deps
+        env:
+          BASE: ${{ steps.dep_diff_base.outputs.base }}
         run: |
-          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "${{ steps.dep_diff_base.outputs.base }}" \
-            && echo "deps_changed=false" >> "$GITHUB_OUTPUT" \
-            || echo "deps_changed=true" >> "$GITHUB_OUTPUT"
+          status=0
+          pnpm tsx ./@internal/ci/bin/diff-runtime-deps.ts --base "$BASE" || status=$?
+          case "$status" in
+            0) echo "deps_changed=false" >> "$GITHUB_OUTPUT" ;;
+            99) echo "deps_changed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::diff-runtime-deps.ts failed with exit code $status"
+              exit "$status"
+              ;;
+          esac
 
       - name: Publish Storybook to Chromatic (TurboSnap)
         if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
