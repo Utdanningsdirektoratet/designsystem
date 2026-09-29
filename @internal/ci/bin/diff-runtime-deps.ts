@@ -38,7 +38,6 @@ import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { load as parseYaml } from 'js-yaml';
 import yargs, { type Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import {
@@ -49,6 +48,7 @@ import {
   computeSources,
   formatSnapshotKey,
   formatSources,
+  parseLockfile,
 } from '../src/diff-runtime-deps.js';
 
 // ─── Package-json IO ──────────────────────────────────────────────────────────
@@ -113,9 +113,7 @@ await (async () => {
     `Checking runtime dependency changes in @udir-design/* against ${options.base}...\n`,
   );
 
-  const headLockfile = parseYaml(
-    fs.readFileSync(lockfilePath, 'utf-8'),
-  ) as Lockfile;
+  const headLockfile = parseLockfile(fs.readFileSync(lockfilePath, 'utf-8'));
 
   let baseLockfile: Lockfile;
   try {
@@ -123,7 +121,7 @@ await (async () => {
       cwd: repoRoot,
       encoding: 'utf-8',
     });
-    baseLockfile = parseYaml(text) as Lockfile;
+    baseLockfile = parseLockfile(text);
   } catch {
     console.error(
       `Error: could not read pnpm-lock.yaml from ref "${options.base}". ` +
