@@ -38,7 +38,7 @@ export default defineConfig({
       // the root (stable) react export must be after alpha/beta to not interfere with the aliases above
       '@udir-design/react': 'src/stable',
       '@udir-design/icons/metadata': '../icons/src/metadata',
-      '@udir-design/icons': '../icons/src/index',
+      '@udir-design/icons': '../icons/generated-src/index',
       '@udir-design/symbols/metadata': '../symbols/generated-src/metadata',
       '@udir-design/symbols': '../symbols/generated-src/index',
     }),

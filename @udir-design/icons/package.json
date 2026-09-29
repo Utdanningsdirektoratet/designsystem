@@ -11,6 +11,9 @@
     "./dist"
   ],
   "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -27,7 +30,7 @@
     "generate": "rimraf generated-src && svgr node_modules/@navikt/aksel-icons/dist/svg --config-file .svgrrc.ts --silent --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir generated-src && mv generated-src/index.tsx generated-src/index.ts && oxfmt ./generated-src",
     "copy-aksel-icons": "svgo --quiet --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
     "copy-style": "cp src/style.css dist/",
-    "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts --logLevel warn",
+    "compile": "tsdown",
     "build": "pnpm clean && pnpm generate && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
     "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
@@ -49,6 +52,18 @@
     "svgo": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.3.7 || ^19.0.0",
+    "react": "^18.3.1 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
   },
   "untrackedDevDependencies": [
     "tsdown",
