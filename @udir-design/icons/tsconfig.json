@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "./dist",
+    "target": "esnext",
     "module": "esnext",
-    "composite": true
+    "moduleResolution": "Bundler",
+    // `React.createElement`, like Aksel, so the icons import only `react`. With
+    // `react/jsx-runtime`, the Storybook manager bundled a runtime that didn't match its React.
+    "jsx": "react",
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "noEmit": true
   },
-  "include": ["./src"]
+  "include": ["generated-src/**/*", "src/**/*"],
+  "exclude": ["dist", "node_modules"]
 }

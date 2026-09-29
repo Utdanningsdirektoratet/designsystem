@@ -1,0 +1,46 @@
+import React, {
+  forwardRef,
+  useId,
+  type Ref,
+  type SVGAttributes,
+  type SVGProps,
+} from 'react';
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgKnife = forwardRef<
+  SVGSVGElement,
+  SVGAttributes<SVGSVGElement> & SVGRProps
+>(
+  (
+    { title, titleId: _titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
+    ref: Ref<SVGSVGElement>,
+  ) => {
+    let titleId: string | undefined = useId().replace(/:/g, '');
+    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewBox="0 0 24 24"
+        focusable={false}
+        role="img"
+        ref={ref}
+        aria-labelledby={titleId}
+        {...props}
+      >
+        {title ? <title id={titleId}>{title}</title> : null}
+        <path
+          fill="currentColor"
+          fillRule="evenodd"
+          d="M13.939 3.392A.75.75 0 0 1 14.25 4v16a.75.75 0 0 1-1.5 0v-6.25h-.25A2.75 2.75 0 0 1 9.75 11V7.883a4.75 4.75 0 0 1 3.248-4.506l.265-.089a.75.75 0 0 1 .675.104M12.75 12.25V5.144a3.25 3.25 0 0 0-1.5 2.739V11c0 .69.56 1.25 1.25 1.25z"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
+  },
+);
+export default SvgKnife;

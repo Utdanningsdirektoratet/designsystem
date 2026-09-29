@@ -1,0 +1,46 @@
+import React, {
+  forwardRef,
+  useId,
+  type Ref,
+  type SVGAttributes,
+  type SVGProps,
+} from 'react';
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgCaretUp = forwardRef<
+  SVGSVGElement,
+  SVGAttributes<SVGSVGElement> & SVGRProps
+>(
+  (
+    { title, titleId: _titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps,
+    ref: Ref<SVGSVGElement>,
+  ) => {
+    let titleId: string | undefined = useId().replace(/:/g, '');
+    titleId = title ? (_titleId ? _titleId : 'title-' + titleId) : undefined;
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewBox="0 0 24 24"
+        focusable={false}
+        role="img"
+        ref={ref}
+        aria-labelledby={titleId}
+        {...props}
+      >
+        {title ? <title id={titleId}>{title}</title> : null}
+        <path
+          fill="currentColor"
+          fillRule="evenodd"
+          d="M11.47 7.97a.75.75 0 0 1 1.06 0l5.5 5.5a.75.75 0 0 1-.53 1.28h-11a.75.75 0 0 1-.53-1.28zm-3.16 5.28h7.38L12 9.56z"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
+  },
+);
+export default SvgCaretUp;
