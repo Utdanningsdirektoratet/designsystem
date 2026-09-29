@@ -29,9 +29,11 @@
  * removed from package.json in this branch are detected as removed.
  *
  * Exit codes:
- *   0 - No runtime dependency changes detected
- *   1 - Runtime dependencies changed (trigger a full Chromatic build)
- *   2 - Error (e.g. could not read the base lockfile from git)
+ *   0  - No runtime dependency changes detected
+ *   99 - Runtime dependencies changed (trigger a full Chromatic build)
+ *   Any other code is an error. "Changed" deliberately avoids 1, because
+ *   Node, tsx, and pnpm all exit with 1 on failure, including failures that
+ *   happen before this script's code runs.
  */
 
 import { execSync } from 'node:child_process';
@@ -83,6 +85,9 @@ function readPkgJsonFromGit(
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
+/** See "Exit codes" above; must match the `case` in `chromatic.yml`. */
+const EXIT_DEPS_CHANGED = 99;
+
 await (async () => {
   const yargsInstance = yargs(hideBin(process.argv));
   const options = await yargsInstance
@@ -127,7 +132,7 @@ await (async () => {
       `Error: could not read pnpm-lock.yaml from ref "${options.base}". ` +
         `Make sure the ref exists and the lockfile is tracked by git.`,
     );
-    process.exit(2);
+    process.exit(1);
   }
 
   const udirDesignDir = path.join(repoRoot, '@udir-design');
@@ -273,5 +278,5 @@ await (async () => {
   console.log(
     '⚠️  Runtime dependencies changed — a full Chromatic build is recommended.',
   );
-  process.exit(1);
+  process.exit(EXIT_DEPS_CHANGED);
 })();
