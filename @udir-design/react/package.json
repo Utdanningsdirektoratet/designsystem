@@ -11,31 +11,66 @@
     "./dist"
   ],
   "type": "module",
-  "main": "./dist/stable.js",
-  "types": "./dist/stable.d.ts",
+  "main": "./dist/stable.cjs",
+  "types": "./dist/stable.d.cts",
   "exports": {
     ".": {
-      "import": "./dist/stable.js",
-      "require": "./dist/stable.cjs"
+      "import": {
+        "types": "./dist/stable.d.ts",
+        "default": "./dist/stable.js"
+      },
+      "require": {
+        "types": "./dist/stable.d.cts",
+        "default": "./dist/stable.cjs"
+      }
     },
     "./alpha": {
-      "import": "./dist/alpha.js",
-      "require": "./dist/alpha.cjs"
+      "import": {
+        "types": "./dist/alpha.d.ts",
+        "default": "./dist/alpha.js"
+      },
+      "require": {
+        "types": "./dist/alpha.d.cts",
+        "default": "./dist/alpha.cjs"
+      }
     },
     "./beta": {
-      "import": "./dist/beta.js",
-      "require": "./dist/beta.cjs"
+      "import": {
+        "types": "./dist/beta.d.ts",
+        "default": "./dist/beta.js"
+      },
+      "require": {
+        "types": "./dist/beta.d.cts",
+        "default": "./dist/beta.cjs"
+      }
     },
     "./alpha/utilities": {
-      "import": "./dist/utilities/alpha.js",
-      "require": "./dist/utilities/alpha.cjs"
+      "import": {
+        "types": "./dist/utilities/alpha.d.ts",
+        "default": "./dist/utilities/alpha.js"
+      },
+      "require": {
+        "types": "./dist/utilities/alpha.d.cts",
+        "default": "./dist/utilities/alpha.cjs"
+      }
     },
     "./beta/utilities": {
-      "import": "./dist/utilities/beta.js",
-      "require": "./dist/utilities/beta.cjs"
+      "import": {
+        "types": "./dist/utilities/beta.d.ts",
+        "default": "./dist/utilities/beta.js"
+      },
+      "require": {
+        "types": "./dist/utilities/beta.d.cts",
+        "default": "./dist/utilities/beta.cjs"
+      }
     },
     "./html": {
-      "types": "./dist/html.d.ts"
+      "import": {
+        "types": "./dist/html.d.ts"
+      },
+      "require": {
+        "types": "./dist/html.d.cts"
+      }
     },
     "./style.css": "./dist/style.css"
   },
