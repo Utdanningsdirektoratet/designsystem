@@ -10,4 +10,7 @@ export default defineConfig({
   deps: {
     neverBundle: ['react', 'react/jsx-runtime'],
   },
+  // Keep `exports.default` in the CommonJS build, so it matches the
+  // `export default` in the generated .d.cts files
+  cjsDefault: false,
 });
