@@ -4,6 +4,9 @@
   "tasks": {
     "inject": {
       "dependsOn": ["build"]
+    },
+    "lint": {
+      "dependsOn": ["build"]
     }
   }
 }
