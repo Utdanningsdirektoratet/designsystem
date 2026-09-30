@@ -25,6 +25,7 @@ allowBuilds:
 autoInstallPeers: false
 
 catalog:
+  "@arethetypeswrong/cli": ^0.18.5
   "@babel/types": ^7.29.8
   "@types/js-yaml": ^4.0.9
   "@commitlint/cli": ^21.2.3
@@ -168,6 +169,11 @@ minimumReleaseAgeExclude:
 overrides:
   # `sass` only needs this for `--watch`, which nothing here uses.
   "@parcel/watcher": "-"
+  # `@arethetypeswrong/core` pins a TypeScript 5.6 release candidate, because it
+  # uses TypeScript internals (arethetypeswrong/arethetypeswrong.github.io#254).
+  # Those it uses exist unchanged in TypeScript 6, and `lint:package-types` gave
+  # the same results with both, so use the workspace's TypeScript instead.
+  "@arethetypeswrong/core>typescript": "catalog:"
   axios@>=1.0.0 <1.15.0: ">=1.15.0"
   brace-expansion@<=5.0.7: ^5.0.8
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
@@ -209,6 +215,11 @@ packageExtensions:
         optional: true
 
 patchedDependencies:
+  # The tarball reader in `@arethetypeswrong/core` decodes file names one byte
+  # per character, so every import of a file with a non-ASCII name, such as
+  # `BallongBlå.mjs` in `@udir-design/symbols`, fails in `lint:package-types`.
+  # The patch decodes them as UTF-8.
+  "@andrewbranch/untar.js@1.0.4": patches/@andrewbranch__untar.js@1.0.4.patch
   remark-heading-id@1.0.1: patches/remark-heading-id@1.0.1.patch
 
 strictPeerDependencies: true

@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "turbo run dev watch:typedoc serve:typedoc --filter=@udir-design/react",
-    "build": "pnpm fmt:check && turbo run typecheck lint test:unit build build:docs",
+    "build": "pnpm fmt:check && turbo run typecheck lint lint:package-types test:unit build build:docs",
     "build:storybook": "turbo run build:storybook --filter=@udir-design/react",
     "build:docs": "turbo run build:docs --filter=@udir-design/react",
     "test:storybook": "turbo run test:storybook --filter=@udir-design/react",
