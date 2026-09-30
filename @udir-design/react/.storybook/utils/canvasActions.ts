@@ -3,8 +3,18 @@ import { buildGitHubUrl } from './sourceCodeUrl';
 export function getCanvasSourceHref(
   fileName: string,
   gitBranch?: string,
+  location?: { startLine: number; endLine: number },
 ): string {
-  return buildGitHubUrl(fileName, gitBranch);
+  const href = buildGitHubUrl(fileName, gitBranch);
+  if (
+    !location ||
+    !Number.isInteger(location.startLine) ||
+    location.startLine < 1 ||
+    !Number.isInteger(location.endLine) ||
+    location.endLine < location.startLine
+  )
+    return href;
+  return `${href}#L${location.startLine}${location.endLine === location.startLine ? '' : `-L${location.endLine}`}`;
 }
 
 export function getCanvasStoryHref(

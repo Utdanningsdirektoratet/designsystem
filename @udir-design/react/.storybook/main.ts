@@ -3,6 +3,7 @@ import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
 import { createTierIndexers } from './utils/createTierIndexers.js';
+import { storySourceLocationPlugin } from './utils/storySourceLocationPlugin.js';
 
 /** Keep in sync with the React.HTMLAttributes augmentation in src/html.ts */
 const GLOBAL_HTML_ATTRIBUTES = new Set([
@@ -78,7 +79,7 @@ export default defineMain({
         cssCodeSplit: false,
         chunkSizeWarningLimit: Infinity,
       },
-      plugins: [fixStorybookMockerEntryPlugin()],
+      plugins: [storySourceLocationPlugin(), fixStorybookMockerEntryPlugin()],
       optimizeDeps: {
         /*
         Sometimes we get a message like this, and then tests fail:

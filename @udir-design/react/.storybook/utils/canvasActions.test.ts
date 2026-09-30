@@ -6,6 +6,24 @@ const repo = 'https://github.com/Utdanningsdirektoratet/designsystem/blob';
 const fileHref = `${repo}/main/@udir-design/react/src/components/button/Button.stories.tsx`;
 
 describe('Canvas example source', () => {
+  it('highlights a definition range or a single line', () => {
+    expect(
+      getCanvasSourceHref(fileName, 'main', { startLine: 20, endLine: 35 }),
+    ).toBe(`${fileHref}#L20-L35`);
+    expect(
+      getCanvasSourceHref(fileName, 'main', { startLine: 20, endLine: 20 }),
+    ).toBe(`${fileHref}#L20`);
+  });
+
+  it.each([
+    { startLine: 0, endLine: 4 },
+    { startLine: 4, endLine: 2 },
+    { startLine: 1.5, endLine: 3 },
+    { startLine: 1, endLine: NaN },
+  ])('falls back to the file for an invalid range: %j', (location) => {
+    expect(getCanvasSourceHref(fileName, 'main', location)).toBe(fileHref);
+  });
+
   it('uses the current branch and defaults to main', () => {
     expect(getCanvasSourceHref(fileName, 'feature/canvas')).toBe(
       `${repo}/feature/canvas/@udir-design/react/src/components/button/Button.stories.tsx`,

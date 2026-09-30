@@ -11,7 +11,11 @@ export function Canvas(props: ComponentProps<typeof OriginalCanvas>) {
   const fileName: unknown = story.parameters.fileName;
   const githubHref =
     typeof fileName === 'string' && fileName
-      ? getCanvasSourceHref(fileName, __GIT_BRANCH__)
+      ? getCanvasSourceHref(
+          fileName,
+          __GIT_BRANCH__,
+          story.parameters.udirSourceLocation,
+        )
       : undefined;
   const customActions =
     props.additionalActions ??

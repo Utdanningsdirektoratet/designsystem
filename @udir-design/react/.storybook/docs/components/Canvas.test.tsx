@@ -110,6 +110,26 @@ describe('global Canvas wrapper', () => {
     expect(mocks.useOf).toHaveBeenCalledWith('story', ['story']);
   });
 
+  it('opens the build-generated story definition range on GitHub', () => {
+    const open = vi.spyOn(window, 'open').mockReturnValue(null);
+    mocks.useOf.mockReturnValue({
+      story: {
+        ...story,
+        parameters: {
+          ...story.parameters,
+          udirSourceLocation: { startLine: 183, endLine: 216 },
+        },
+      },
+    });
+    render(<Canvas />);
+    fireEvent.click(screen.getByRole('button', { name: 'Open in GitHub' }));
+    expect(open).toHaveBeenCalledWith(
+      'https://github.com/Utdanningsdirektoratet/designsystem/blob/feature/canvas/@udir-design/react/src/components/button/Button.stories.tsx#L183-L216',
+      '_blank',
+      'noopener,noreferrer',
+    );
+  });
+
   it('preserves prop actions in preference to parameter actions', () => {
     const onClick = vi.fn();
     mocks.useOf.mockReturnValue({
