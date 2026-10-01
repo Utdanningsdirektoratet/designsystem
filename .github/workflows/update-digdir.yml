@@ -43,6 +43,10 @@ jobs:
       - name: Update @digdir/* packages
         if: steps.digdir_info.outputs.version
         run: pnpm update -r --latest "@digdir/*" && pnpm dedupe
+      - name: Regenerate design tokens
+        if: steps.digdir_info.outputs.version
+        # `--yes` applies config migrations; without a TTY the confirmation prompt throws
+        run: pnpm --filter @udir-design/tokens run create --yes
       - name: Rebuild theme
         if: steps.digdir_info.outputs.version
         run: pnpm turbo run build --filter=@udir-design/theme

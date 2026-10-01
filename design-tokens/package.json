@@ -9,6 +9,7 @@
   },
   "scripts": {
     "create": "designsystemet tokens create",
+    "postcreate": "./process/apply-token-overrides.ts",
     "build": "pnpm clean && designsystemet tokens build -t ./src -o ./dist && pnpm build:data-css",
     "clean": "rimraf dist",
     "build:data-css": "./process/build-datavis-css.ts"

@@ -461,13 +461,13 @@ Testene utføres også automatisk før publisering av kodebibliotekene, og publi
 
 ### Hvordan genere nye designtokens
 
-Fordi vi har noen egne tokensett i tillegg til de fra Digdir er prosessen for å oppdatere dem noe ulik den beskrevet hos Digdir.
+Vi overstyrer noen av tokenverdiene vi får fra Digdir. Disse verdiene ligger i `design-tokens/src-overrides/`, der hver fil speiler strukturen til den tilsvarende fila i `design-tokens/src/`. Etter at `create` har generert tokens, legger `postcreate`-scriptet (`design-tokens/process/apply-token-overrides.ts`) verdiene våre inn i de genererte filene. Scriptet feiler dersom en overstyrt token ikke lenger finnes, for eksempel fordi Digdir har endret navn på den.
+
+Når Digdir-bibliotekene oppdateres av den [automatiske oppdateringen](#digdir), genereres tokens og css-variabler på nytt som en del av den. Stegene under trengs derfor bare når vi endrer config-fila selv.
 
 1. Oppdater config-fila `design-tokens/designsystemet.config.json`, manuelt eller ved bruk av temabyggeren
 2. Kjør kommandoen `pnpm --filter tokens run create` i terminalen
-3. Reverter sletting av våre egne tokensett (`*.overrides.json`)
-4. Se gjennom filene `$metadata.json` og `$themes.json`. Om den eneste endringen er at våre ekstra tokensett er fjernet, kan filene bare reverteres. Ellers må vi integrere endringene fra Digdir med våre ekstra linjer
-5. Kjør `pnpm turbo @udir-design/theme#build` for å oppdatere css-variabler
+3. Kjør `pnpm turbo @udir-design/theme#build` for å oppdatere css-variabler
 
 ## Hvordan legge til nye pakker i monorepoet
 
@@ -725,10 +725,12 @@ Vi har noen avhengigheter som er pinnet til spesifikke versjoner. Disse trenger 
 > [!IMPORTANT]
 > Oppdateringer av Digdir-bibliotekene skjer automatisk [hver natt kl 01:00 (UTC)](https://github.com/Utdanningsdirektoratet/designsystem/actions/workflows/update-digdir.yml), og eventuelle endringer må godkjennes i en pull request.
 
-Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvilke versjoner som er i bruk hos Udir. Derfor må disse oppdateres slik:
+Designsystem-bibliotekene fra Digdir er pinnet for å ha full kontroll over hvilke versjoner som er i bruk hos Udir. Derfor må disse oppdateres slik, med påfølgende generering av tokens og css-variabler:
 
 ```sh
 pnpm update -r --latest "@digdir/*"
+pnpm --filter tokens run create
+pnpm turbo @udir-design/theme#build
 ```
 
 #### `oxfmt`
