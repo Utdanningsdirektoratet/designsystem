@@ -92,7 +92,9 @@ export default defineMain({
 
         This indicates that some dependencies
         */
-        include: ['react/jsx-dev-runtime'],
+        // The source-location transform injects this import after dependency
+        // scanning. Prebundle it to avoid reoptimization during browser tests.
+        include: ['react/jsx-dev-runtime', 'storybook/internal/csf'],
       },
       server: {
         proxy: {
