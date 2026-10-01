@@ -147,6 +147,9 @@ export default defineMain({
       shouldExtractLiteralValuesFromEnum: true,
       // Removes "undefined" as an option in Storybook controls for optional properties
       shouldRemoveUndefinedFromOptional: true,
+      // Keep JSDoc tags in the description. Storybook only finds `@deprecated` there, and
+      // otherwise leaves deprecated props unmarked in the props table.
+      shouldIncludePropTagMap: false,
     },
   },
 });
