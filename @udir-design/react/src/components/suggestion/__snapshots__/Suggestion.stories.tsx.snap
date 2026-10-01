@@ -17,7 +17,7 @@ exports[`Always Show All 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Sogndal"
@@ -171,7 +171,7 @@ exports[`Controlled Independent Label Value 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="#004"
@@ -323,7 +323,7 @@ exports[`Controlled Multiple 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Sogndal"
@@ -518,7 +518,7 @@ exports[`Controlled Multiple Creatable 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Oslo"
@@ -735,7 +735,7 @@ exports[`Controlled Single 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Sogndal"
@@ -925,7 +925,7 @@ exports[`Controlled Single Creatable 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Finnes ikke"
@@ -1133,7 +1133,7 @@ exports[`Creatable 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <input
       placeholder
@@ -1318,7 +1318,7 @@ exports[`Custom Filter Alt 1 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <input
       placeholder
@@ -1468,7 +1468,7 @@ exports[`Custom Filter Alt 2 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <input
       placeholder
@@ -1611,7 +1611,7 @@ exports[`Default Value 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Sogndal"
@@ -1762,6 +1762,16 @@ exports[`Fetch External 1`] = `
   <ds-suggestion
     data-sr-singular="%d country"
     data-sr-plural="%d countries"
+    data-sr-added="Added"
+    data-sr-clear="Clear input"
+    data-sr-empty="None selected"
+    data-sr-found="Navigate left to find %d selected"
+    data-sr-invalid="Invalid value"
+    data-sr-items="Selected"
+    data-sr-of="of"
+    data-sr-remove="Press to remove"
+    data-sr-removed="Removed"
+    data-sr-toggle="Options"
   >
     <input
       placeholder
@@ -1778,7 +1788,7 @@ exports[`Fetch External 1`] = `
     >
     <button
       aria-expanded="true"
-      aria-label="Valg"
+      aria-label="Options"
       type="button"
       aria-hidden="false"
       tabindex="-1"
@@ -1835,7 +1845,7 @@ exports[`In Details 1`] = `
         data-sr-remove="Trykk for å fjerne"
         data-sr-removed="Fjernet"
         data-sr-singular="%d forslag"
-        data-sr-toggle="Forslag"
+        data-sr-toggle="Valg"
       >
         <input
           placeholder
@@ -1981,7 +1991,7 @@ exports[`Multiple 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <input
       placeholder
@@ -2162,7 +2172,7 @@ exports[`Multiple Count 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Oslo"
@@ -2363,7 +2373,7 @@ exports[`Multiple Creatable 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Finnes ikke"
@@ -2569,7 +2579,7 @@ exports[`Preview 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <input
       placeholder
@@ -2748,7 +2758,7 @@ exports[`Virtualized 1`] = `
     data-sr-remove="Trykk for å fjerne"
     data-sr-removed="Fjernet"
     data-sr-singular="%d forslag"
-    data-sr-toggle="Forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Alternativ 123"

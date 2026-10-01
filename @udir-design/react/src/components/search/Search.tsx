@@ -1,3 +1,4 @@
+import '../suggestion/translations.css';
 import './search.css';
 import {
   Search as DigdirSearch,

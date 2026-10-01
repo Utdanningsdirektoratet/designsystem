@@ -947,7 +947,55 @@ export const Translations = Preview.extend({
         '--dsc-suggestion-count-label',
         '--dsc-suggestion-create-text',
         '--dsc-suggestion-empty-text',
+        '--dsc-suggestion-sr-added',
+        '--dsc-suggestion-sr-clear',
+        '--dsc-suggestion-sr-empty',
+        '--dsc-suggestion-sr-found',
+        '--dsc-suggestion-sr-invalid',
+        '--dsc-suggestion-sr-items',
+        '--dsc-suggestion-sr-of',
+        '--dsc-suggestion-sr-plural',
+        '--dsc-suggestion-sr-remove',
+        '--dsc-suggestion-sr-removed',
+        '--dsc-suggestion-sr-singular',
+        '--dsc-suggestion-sr-toggle',
       ],
     );
+  },
+});
+
+/* Digdir's `Suggestion.Toggle` labels itself "Valg" in every language */
+export const ToggleLabelFollowsLanguage = meta.story({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  render: () => (
+    <>
+      {(['nb', 'nn', 'en'] as const).map((lang) => (
+        <Field lang={lang} key={lang}>
+          <Label>{lang}</Label>
+          <Suggestion>
+            <Suggestion.Input />
+            <Suggestion.Toggle />
+            <Suggestion.List />
+          </Suggestion>
+        </Field>
+      ))}
+      <Field>
+        <Label>Egen tekst</Label>
+        <Suggestion>
+          <Suggestion.Input />
+          <Suggestion.Toggle aria-label="Vis kommuner" />
+          <Suggestion.List />
+        </Suggestion>
+      </Field>
+    </>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    for (const name of ['Valg', 'Val', 'Options', 'Vis kommuner']) {
+      await waitFor(() =>
+        expect(canvas.getByRole('button', { name })).toBeInTheDocument(),
+      );
+    }
   },
 });

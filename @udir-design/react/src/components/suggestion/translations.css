@@ -1,0 +1,79 @@
+/* Translations are defined outside component class so users can easily add translations.
+   Shared with `Search`, which renders `<ds-suggestion class="ds-search">` and reads the
+   same text variables. */
+
+/* Upstream sets the Norwegian texts on the element itself, which beats any inherited
+   value regardless of layer. Reset to `inherit` so the nearest [lang] ancestor decides.
+   `:where()` keeps specificity at 0 so the [lang] blocks below always win. */
+:where(.ds-search, .ds-suggestion) {
+  --dsc-suggestion-create-text: inherit;
+  --dsc-suggestion-empty-text: inherit;
+  --dsc-suggestion-sr-added: inherit;
+  --dsc-suggestion-sr-clear: inherit;
+  --dsc-suggestion-sr-empty: inherit;
+  --dsc-suggestion-sr-found: inherit;
+  --dsc-suggestion-sr-invalid: inherit;
+  --dsc-suggestion-sr-items: inherit;
+  --dsc-suggestion-sr-of: inherit;
+  --dsc-suggestion-sr-plural: inherit;
+  --dsc-suggestion-sr-remove: inherit;
+  --dsc-suggestion-sr-removed: inherit;
+  --dsc-suggestion-sr-singular: inherit;
+  --dsc-suggestion-sr-toggle: inherit;
+}
+
+:root,
+[lang|='nb' i],
+[lang|='no' i] {
+  --dsc-suggestion-count-label: 'valgt';
+  --dsc-suggestion-create-text: 'Legg til «{value}»';
+  --dsc-suggestion-empty-text: 'Tomt';
+  --dsc-suggestion-sr-added: 'La til';
+  --dsc-suggestion-sr-clear: 'Fjern tekst';
+  --dsc-suggestion-sr-empty: 'Ingen valgte';
+  --dsc-suggestion-sr-found: 'Naviger til venstre for å finne %d valgte';
+  --dsc-suggestion-sr-invalid: 'Ugyldig valg';
+  --dsc-suggestion-sr-items: 'Valgte';
+  --dsc-suggestion-sr-of: 'av';
+  --dsc-suggestion-sr-plural: '%d forslag';
+  --dsc-suggestion-sr-remove: 'Trykk for å fjerne';
+  --dsc-suggestion-sr-removed: 'Fjernet';
+  --dsc-suggestion-sr-singular: '%d forslag';
+  --dsc-suggestion-sr-toggle: 'Valg';
+}
+
+[lang|='nn' i] {
+  --dsc-suggestion-count-label: 'valde';
+  --dsc-suggestion-create-text: 'Legg til «{value}»';
+  --dsc-suggestion-empty-text: 'Tomt';
+  --dsc-suggestion-sr-added: 'La til';
+  --dsc-suggestion-sr-clear: 'Fjern tekst';
+  --dsc-suggestion-sr-empty: 'Ingen valde';
+  --dsc-suggestion-sr-found: 'Naviger til venstre for å finne %d valde';
+  --dsc-suggestion-sr-invalid: 'Ugyldig val';
+  --dsc-suggestion-sr-items: 'Valde';
+  --dsc-suggestion-sr-of: 'av';
+  --dsc-suggestion-sr-plural: '%d forslag';
+  --dsc-suggestion-sr-remove: 'Trykk for å fjerne';
+  --dsc-suggestion-sr-removed: 'Fjerna';
+  --dsc-suggestion-sr-singular: '%d forslag';
+  --dsc-suggestion-sr-toggle: 'Val';
+}
+
+[lang|='en' i] {
+  --dsc-suggestion-count-label: 'selected';
+  --dsc-suggestion-create-text: 'Add “{value}”';
+  --dsc-suggestion-empty-text: 'Empty';
+  --dsc-suggestion-sr-added: 'Added';
+  --dsc-suggestion-sr-clear: 'Clear input';
+  --dsc-suggestion-sr-empty: 'None selected';
+  --dsc-suggestion-sr-found: 'Navigate left to find %d selected';
+  --dsc-suggestion-sr-invalid: 'Invalid value';
+  --dsc-suggestion-sr-items: 'Selected';
+  --dsc-suggestion-sr-of: 'of';
+  --dsc-suggestion-sr-plural: '%d suggestions';
+  --dsc-suggestion-sr-remove: 'Press to remove';
+  --dsc-suggestion-sr-removed: 'Removed';
+  --dsc-suggestion-sr-singular: '%d suggestion';
+  --dsc-suggestion-sr-toggle: 'Options';
+}

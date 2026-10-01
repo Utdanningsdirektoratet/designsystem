@@ -39,7 +39,7 @@ import { Suggestion } from '@udir-design/react/alpha';
 </Suggestion>;
 ```
 
-`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen har `aria-label="Valg"` som standard. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
+`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen får `aria-label` fra tekstvariabelen `--dsc-suggestion-sr-toggle`, som er "Valg" på bokmål. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
 
 ## Eksempler
 
@@ -106,12 +106,24 @@ Den er inspirert av [open-ui sitt combobox mønster](https://open-ui.org/compone
 
 Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
 
-Følgende tekstvariabler er tilgjengelige for overstyring:
+Følgende tekstvariabler er tilgjengelige for overstyring. Variablene som begynner med `--dsc-suggestion-sr-`, er tekster som bare leses opp av skjermlesere. `%d` byttes ut med et antall.
 
 <CssLanguageVariables
   variables={[
     '--dsc-suggestion-count-label',
     '--dsc-suggestion-create-text',
     '--dsc-suggestion-empty-text',
+    '--dsc-suggestion-sr-added',
+    '--dsc-suggestion-sr-clear',
+    '--dsc-suggestion-sr-empty',
+    '--dsc-suggestion-sr-found',
+    '--dsc-suggestion-sr-invalid',
+    '--dsc-suggestion-sr-items',
+    '--dsc-suggestion-sr-of',
+    '--dsc-suggestion-sr-plural',
+    '--dsc-suggestion-sr-remove',
+    '--dsc-suggestion-sr-removed',
+    '--dsc-suggestion-sr-singular',
+    '--dsc-suggestion-sr-toggle',
   ]}
 />

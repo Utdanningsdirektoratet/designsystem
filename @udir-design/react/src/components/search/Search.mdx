@@ -1,5 +1,6 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as SearchStories from './Search.stories';
+import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
 
 <Meta of={SearchStories} />
 
@@ -107,3 +108,11 @@ Hvis du vil eksponere søket for hjelpemidler som et ARIA søk-landemerke, legge
 - <kbd>Tab</kbd> - lar brukere bevege seg mellom inputfelt, clear-knapp og
   søkeknapp.
 - <kbd>Enter</kbd> - sender inn søket når fokus er i inputfeltet.
+
+## Språkstøtte
+
+Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+
+`Search` bruker samme tekstvariabel som [`Suggestion`](/docs/components-suggestion--docs#språkstøtte) for teksten skjermlesere leser opp for `Search.Clear`. Følgende tekstvariabel er tilgjengelig for overstyring:
+
+<CssLanguageVariables variables={['--dsc-suggestion-sr-clear']} />
