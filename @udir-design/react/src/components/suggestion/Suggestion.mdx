@@ -92,6 +92,7 @@ Dette må du gjøre:
 - Legg inn tomme elementer med `aria-hidden` før og etter alternativene, med høyden til alternativene som ikke er rendret. Da får listen riktig høyde og scrollbar.
 - Sett `aria-setsize` og `aria-posinset` på hvert alternativ, slik at skjermlesere får vite hvor i listen brukeren er.
 - Sett totalt antall treff som `data-sr-singular` og `data-sr-plural` på `Suggestion.List`. Ellers annonseres bare antallet som er rendret. Sett dem på `Suggestion.List` og ikke på `Suggestion`, siden `Suggestion` bare sender tekstene videre til listen én gang.
+- Sett `virtualizer.shouldAdjustScrollPositionOnItemSizeChange = () => false`, lytt etter `toggle` på `Suggestion.List`, og kall `virtualizer.scrollToOffset(0)` når listen åpnes. Alternativene får høyden 0 når listen lukkes, og uten dette kan listen åpne seg et stykke ned, slik at pil ned velger et alternativ som ikke er det første.
 
 <Canvas of={SuggestionStories.Virtualized} />
 

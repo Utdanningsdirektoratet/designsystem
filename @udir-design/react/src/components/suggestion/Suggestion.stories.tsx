@@ -1,5 +1,5 @@
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { type InputEvent, useMemo, useRef, useState } from 'react';
+import { type InputEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
@@ -683,6 +683,22 @@ export const Virtualized = meta.story({
       overscan: 5,
     });
 
+    /* Options report a height of 0 while the list is closed. Without this, the
+       virtualizer scrolls to compensate when they get their height back. */
+    virtualizer.shouldAdjustScrollPositionOnItemSizeChange = () => false;
+
+    /* The list keeps a scroll position while closed that the virtualizer doesn't
+       know about, so start from the top whenever it opens */
+    useEffect(() => {
+      const list = listRef.current;
+      const onToggle = (event: Event) => {
+        if ((event as ToggleEvent).newState === 'open')
+          virtualizer.scrollToOffset(0);
+      };
+      list?.addEventListener('toggle', onToggle);
+      return () => list?.removeEventListener('toggle', onToggle);
+    }, [virtualizer]);
+
     const items = virtualizer.getVirtualItems();
     const paddingTop = items[0]?.start ?? 0;
     const paddingBottom =
@@ -775,6 +791,28 @@ export const Virtualized = meta.story({
       list.scrollTop = list.scrollHeight;
       const last = DATA_LARGE[DATA_LARGE.length - 1];
       await waitFor(() => expect(getOptions().at(-1)?.value).toBe(last.value));
+    });
+
+    await step('Reopening the list starts at the first option', async () => {
+      const input = within(canvasElement).getByRole('combobox');
+      for (let i = 0; i < 3; i++) {
+        await userEvent.keyboard('{Escape}');
+        await waitFor(() => expect(list).not.toBeVisible());
+        await userEvent.keyboard('{ArrowDown}');
+        await waitFor(() => expect(list).toBeVisible());
+        /* The virtualizer measures the options again after the list opens, which
+           is when it used to scroll the list away from the top */
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        await expect(list.scrollTop).toBe(0);
+        await userEvent.keyboard('{ArrowDown}');
+        await waitFor(() => {
+          const id = input.getAttribute('aria-activedescendant') ?? '';
+          expect(document.getElementById(id)).toHaveAttribute(
+            'aria-posinset',
+            '1',
+          );
+        });
+      }
     });
 
     await step('Typing filters the full list', async () => {
