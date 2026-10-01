@@ -16,18 +16,30 @@
   --dsc-suggestion-count-label: 'valgt';
   --dsc-suggestion-create-text: 'Legg til «{value}»';
   --dsc-suggestion-empty-text: 'Tomt';
+  --udsc-suggestion-clear-label: 'Tøm';
+  --udsc-suggestion-toggle-label: 'Valg';
+  --udsc-suggestion-list-singular: '%d forslag';
+  --udsc-suggestion-list-plural: '%d forslag';
 }
 
 [lang|='nn' i] {
   --dsc-suggestion-count-label: 'valde';
   --dsc-suggestion-create-text: 'Legg til «{value}»';
   --dsc-suggestion-empty-text: 'Tomt';
+  --udsc-suggestion-clear-label: 'Tøm';
+  --udsc-suggestion-toggle-label: 'Val';
+  --udsc-suggestion-list-singular: '%d forslag';
+  --udsc-suggestion-list-plural: '%d forslag';
 }
 
 [lang|='en' i] {
   --dsc-suggestion-count-label: 'selected';
   --dsc-suggestion-create-text: 'Add “{value}”';
   --dsc-suggestion-empty-text: 'Empty';
+  --udsc-suggestion-clear-label: 'Clear';
+  --udsc-suggestion-toggle-label: 'Options';
+  --udsc-suggestion-list-singular: '%d suggestion';
+  --udsc-suggestion-list-plural: '%d suggestions';
 }
 
 .ds-suggestion {

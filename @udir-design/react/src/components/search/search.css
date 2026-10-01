@@ -1,3 +1,20 @@
+[lang|='nb' i],
+[lang|='no' i],
+:root {
+  --udsc-search-button-text: 'Søk';
+  --udsc-search-clear-label: 'Tøm';
+}
+
+[lang|='nn' i] {
+  --udsc-search-button-text: 'Søk';
+  --udsc-search-clear-label: 'Tøm';
+}
+
+[lang|='en' i] {
+  --udsc-search-button-text: 'Search';
+  --udsc-search-clear-label: 'Clear';
+}
+
 .ds-search {
   /* adjust icon size to before Digdir v1.16.0 */
   --ds-icon-size: var(--ds-size-7);

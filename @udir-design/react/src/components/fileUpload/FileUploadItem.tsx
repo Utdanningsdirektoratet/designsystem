@@ -159,7 +159,7 @@ export function Icon({
   const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
   if (loading) {
-    return <Spinner aria-label="spinner" />;
+    return <Spinner aria-hidden />;
   }
 
   if (showError) {

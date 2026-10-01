@@ -1,8 +1,9 @@
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
-import { forwardRef, useEffect, useId, useRef } from 'react';
+import { forwardRef, useId, useRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import { Button } from '../button';
 import { Field } from '../field';
 import type { InputProps } from '../input';
@@ -60,19 +61,13 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
     ref,
   ) {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const buttonRef = useRef<HTMLButtonElement>(null);
     const cssVar = inputProps?.multiple
       ? '--udsc-fileUpload-chooseFiles-text'
       : '--udsc-fileUpload-chooseFile-text';
-    // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
-    useEffect(() => {
-      if (typeof window === 'undefined' || !buttonRef.current) return;
-      const buttonAriaLabel = getComputedStyle(buttonRef.current)
-        .getPropertyValue(cssVar)
-        .replace(/^["']|["']$/g, '')
-        .trim();
-      buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
-    }, [cssVar]);
+    const [buttonRef, buttonAriaLabel] = useLanguageVariable<HTMLButtonElement>(
+      cssVar,
+      inputProps?.multiple ? 'Velg filer' : 'Velg fil',
+    );
 
     const generatedId = useId();
     const id = rest.id ?? generatedId;
@@ -99,6 +94,7 @@ export const FileUploadTrigger = forwardRef<HTMLDivElement, FileUploadProps>(
         )}
         <Button
           id={buttonId}
+          aria-label={buttonAriaLabel}
           aria-labelledby={label ? labelId : undefined}
           aria-describedby={description ? descriptionId : undefined}
           disabled={inputProps?.readOnly ?? inputProps?.disabled}

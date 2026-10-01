@@ -331,9 +331,9 @@ exports[`Example Drop Zone 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg filer"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
-      aria-label="Velg filer"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -467,9 +467,9 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg filer"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
-      aria-label="Velg filer"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -899,9 +899,9 @@ exports[`Example Trigger 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg fil"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
-      aria-label="Velg fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1029,9 +1029,9 @@ exports[`Preview 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg fil"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
-      aria-label="Velg fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1074,9 +1074,9 @@ exports[`Preview 1`] = `
         data-variant="secondary"
         type="button"
         id="<generated>-button"
+        aria-label="Velg fil"
         aria-labelledby="<generated>-label"
         aria-describedby="<generated>-description"
-        aria-label="Velg fil"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1137,10 +1137,10 @@ exports[`Readonly 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg fil"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
       disabled
-      aria-label="Velg fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1221,9 +1221,9 @@ exports[`Too Many Files 1`] = `
         data-variant="secondary"
         type="button"
         id="<generated>-button"
+        aria-label="Velg filer"
         aria-labelledby="<generated>-label"
         aria-describedby="<generated>-description"
-        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1497,9 +1497,9 @@ exports[`Upload 1`] = `
       data-variant="secondary"
       type="button"
       id="<generated>-button"
+      aria-label="Velg fil"
       aria-labelledby="<generated>-label"
       aria-describedby="<generated>-description"
-      aria-label="Velg fil"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1533,9 +1533,9 @@ exports[`Upload 1`] = `
       <div>
         <div>
           <svg
-            aria-label="spinner"
             role="img"
             viewbox="0 0 50 50"
+            aria-hidden="true"
           >
             <circle
               cx="25"

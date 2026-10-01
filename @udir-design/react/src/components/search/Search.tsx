@@ -1,7 +1,7 @@
 import './search.css';
 import {
   Search as DigdirSearch,
-  SearchButton,
+  SearchButton as DigdirSearchButton,
   type SearchButtonProps,
   SearchClear as DigdirSearchClear,
   type SearchClearProps,
@@ -14,7 +14,9 @@ import {
   type ForwardRefExoticComponent,
   type RefAttributes,
   forwardRef,
+  useImperativeHandle,
 } from 'react';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import { useSyncedClearButton } from './useSyncedClearButton';
 
 type SearchProps = Omit<DigdirSearchProps, 'data-color'>;
@@ -31,8 +33,31 @@ const SearchRoot = forwardRef<ComponentRef<typeof DigdirSearch>, SearchProps>(
 const SearchClear = forwardRef<HTMLButtonElement, SearchClearProps>(
   function SearchClear(props, ref) {
     const clearRef = useSyncedClearButton(ref);
+    const [, defaultLabel] = useLanguageVariable(
+      '--udsc-search-clear-label',
+      'Tøm',
+      clearRef,
+    );
 
-    return <DigdirSearchClear {...props} ref={clearRef} />;
+    return (
+      <DigdirSearchClear aria-label={defaultLabel} {...props} ref={clearRef} />
+    );
+  },
+);
+
+const SearchButton = forwardRef<HTMLButtonElement, SearchButtonProps>(
+  function SearchButton({ children, ...rest }, ref) {
+    const [buttonRef, defaultLabel] = useLanguageVariable<HTMLButtonElement>(
+      '--udsc-search-button-text',
+      'Søk',
+    );
+    useImperativeHandle(ref, () => buttonRef.current as HTMLButtonElement);
+
+    return (
+      <DigdirSearchButton {...rest} ref={buttonRef}>
+        {children ?? defaultLabel}
+      </DigdirSearchButton>
+    );
   },
 );
 
@@ -50,6 +75,7 @@ const Search: ForwardRefExoticComponent<
 
 // For some reason this fixes "ComponentSubcomponent" -> "Component.Subcomponent" in Storybook code snippets
 Search.displayName = 'Search';
+SearchButton.displayName = 'Search.Button';
 SearchClear.displayName = 'Search.Clear';
 
 export type {
