@@ -5,10 +5,23 @@ exports[`Always Show All 1`] = `
   <label for="<generated>">
     Viser alle options også når valgt
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Sogndal"
-      aria-label="Sogndal, Press to remove"
+      aria-label="Sogndal, Trykk for å fjerne"
       hidden
       role="option"
       slot="items"
@@ -39,22 +52,22 @@ exports[`Always Show All 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Viser alle options også når valgt"
       style="<removed>"
@@ -146,10 +159,23 @@ exports[`Controlled Independent Label Value 1`] = `
   <label for="<generated>">
     Velg person
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="#004"
-      aria-label="Lars, Press to remove"
+      aria-label="Lars, Trykk for å fjerne"
       hidden
       role="option"
       slot="items"
@@ -180,22 +206,22 @@ exports[`Controlled Independent Label Value 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg person"
       style="<removed>"
@@ -284,10 +310,24 @@ exports[`Controlled Multiple 1`] = `
   <label for="<generated>">
     Velg destinasjoner
   </label>
-  <ds-suggestion data-multiple>
+  <ds-suggestion
+    data-multiple
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Sogndal"
-      aria-label="Sogndal, Press to remove"
+      aria-label="Sogndal, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -296,7 +336,7 @@ exports[`Controlled Multiple 1`] = `
     </data>
     <data
       value="Stavanger"
-      aria-label="Stavanger, Press to remove"
+      aria-label="Stavanger, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -307,7 +347,7 @@ exports[`Controlled Multiple 1`] = `
       placeholder
       type="text"
       id="<generated>"
-      aria-description="Navigate left to find 2 selected"
+      aria-description="Naviger til venstre for å finne 2 valgte"
       list="<generated>"
       popovertarget="<generated>"
     >
@@ -320,24 +360,24 @@ exports[`Controlled Multiple 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       hidden
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
     >
       <u-option
@@ -467,10 +507,22 @@ exports[`Controlled Multiple Creatable 1`] = `
   <ds-suggestion
     data-multiple
     data-creatable
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Oslo"
-      aria-label="Added Finnes ikke, Oslo, Press to remove"
+      aria-label="La til Finnes ikke, Oslo, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -479,7 +531,7 @@ exports[`Controlled Multiple Creatable 1`] = `
     </data>
     <data
       value="Finnes ikke"
-      aria-label="Added Finnes ikke, Finnes ikke, Press to remove"
+      aria-label="La til Finnes ikke, Finnes ikke, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -490,7 +542,7 @@ exports[`Controlled Multiple Creatable 1`] = `
       placeholder
       type="text"
       id="<generated>"
-      aria-description="Navigate left to find 2 selected"
+      aria-description="Naviger til venstre for å finne 2 valgte"
       list="<generated>"
       popovertarget="<generated>"
       aria-autocomplete="list"
@@ -499,7 +551,7 @@ exports[`Controlled Multiple Creatable 1`] = `
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-label="Added Finnes ikke, Velg destinasjoner"
+      aria-label="La til Finnes ikke, Velg destinasjoner"
     >
     <button
       aria-expanded="true"
@@ -511,22 +563,22 @@ exports[`Controlled Multiple Creatable 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg destinasjoner"
       style="<removed>"
@@ -536,7 +588,7 @@ exports[`Controlled Multiple Creatable 1`] = `
         data-empty="Legg til «{value}»"
         label="Finnes ikke"
         value="Finnes ikke"
-        data-create="Legg til «Finnes ikke»"
+        data-create="Finnes ikke"
         role="option"
         aria-disabled="false"
         aria-selected="true"
@@ -671,10 +723,23 @@ exports[`Controlled Single 1`] = `
   <label for="<generated>">
     Velg destinasjon
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Sogndal"
-      aria-label="Sogndal, Press to remove"
+      aria-label="Sogndal, Trykk for å fjerne"
       hidden
       role="option"
       slot="items"
@@ -699,23 +764,23 @@ exports[`Controlled Single 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       hidden
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
     >
       <u-option
@@ -847,10 +912,24 @@ exports[`Controlled Single Creatable 1`] = `
   <label for="<generated>">
     Velg destinasjon
   </label>
-  <ds-suggestion data-creatable>
+  <ds-suggestion
+    data-creatable
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Finnes ikke"
-      aria-label="Finnes ikke, Press to remove"
+      aria-label="Finnes ikke, Trykk for å fjerne"
       hidden
       role="option"
       slot="items"
@@ -881,22 +960,22 @@ exports[`Controlled Single Creatable 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg destinasjon"
       style="<removed>"
@@ -907,7 +986,7 @@ exports[`Controlled Single Creatable 1`] = `
         data-empty="Legg til «{value}»"
         label="Finnes ikke"
         value="Finnes ikke"
-        data-create="Legg til «Finnes ikke»"
+        data-create="Finnes ikke"
         role="option"
         aria-disabled="false"
         aria-selected="true"
@@ -1041,7 +1120,21 @@ exports[`Creatable 1`] = `
   <label for="<generated>">
     Velg en destinasjon
   </label>
-  <ds-suggestion data-creatable>
+  <ds-suggestion
+    data-creatable
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <input
       placeholder
       type="text"
@@ -1065,22 +1158,22 @@ exports[`Creatable 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1213,7 +1306,20 @@ exports[`Custom Filter Alt 1 1`] = `
   <label for="<generated>">
     Skriv inn et tall mellom 1-6
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <input
       placeholder
       type="text"
@@ -1236,23 +1342,23 @@ exports[`Custom Filter Alt 1 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
       style="<removed>"
@@ -1350,7 +1456,20 @@ exports[`Custom Filter Alt 2 1`] = `
   <label for="<generated>">
     Skriv inn et tall mellom 1-6
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <input
       placeholder
       type="text"
@@ -1373,23 +1492,23 @@ exports[`Custom Filter Alt 2 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Skriv inn et tall mellom 1-6"
       style="<removed>"
@@ -1480,10 +1599,23 @@ exports[`Default Value 1`] = `
   <label for="<generated>">
     Velg en destinasjon
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Sogndal"
-      aria-label="Sogndal, Press to remove"
+      aria-label="Sogndal, Trykk for å fjerne"
       hidden
       role="option"
       slot="items"
@@ -1514,22 +1646,22 @@ exports[`Default Value 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1627,7 +1759,20 @@ exports[`Fetch External 1`] = `
   <label for="<generated>">
     Search for countries (in english)
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-singular="%d country"
+    data-sr-plural="%d countries"
+    data-sr-added="Added"
+    data-sr-clear="Clear input"
+    data-sr-empty="None selected"
+    data-sr-found="Navigate left to find %d selected"
+    data-sr-invalid="Invalid value"
+    data-sr-items="Selected"
+    data-sr-of="of"
+    data-sr-remove="Press to remove"
+    data-sr-removed="Removed"
+    data-sr-toggle="Options"
+  >
     <input
       placeholder
       type="text"
@@ -1643,30 +1788,30 @@ exports[`Fetch External 1`] = `
     >
     <button
       aria-expanded="true"
-      aria-label="Valg"
+      aria-label="Options"
       type="button"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Clear input"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d countries"
-      data-sr-singular="%d country"
       popover="manual"
       role="listbox"
       data-sr-of="of"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d countries"
+      data-sr-singular="%d country"
       data-is-floating="true"
       aria-label="Search for countries (in english)"
       style="<removed>"
@@ -1687,7 +1832,21 @@ exports[`In Details 1`] = `
       <label for="<generated>">
         Velg en destinasjon
       </label>
-      <ds-suggestion autofocus>
+      <ds-suggestion
+        autofocus
+        data-sr-added="La til"
+        data-sr-clear="Fjern tekst"
+        data-sr-empty="Ingen valgte"
+        data-sr-found="Naviger til venstre for å finne %d valgte"
+        data-sr-invalid="Ugyldig valg"
+        data-sr-items="Valgte"
+        data-sr-of="av"
+        data-sr-plural="%d forslag"
+        data-sr-remove="Trykk for å fjerne"
+        data-sr-removed="Fjernet"
+        data-sr-singular="%d forslag"
+        data-sr-toggle="Valg"
+      >
         <input
           placeholder
           type="text"
@@ -1710,23 +1869,23 @@ exports[`In Details 1`] = `
         >
         </button>
         <button
-          aria-label="Tøm"
           hidden
           type="reset"
+          aria-label="Fjern tekst"
           aria-hidden="false"
           tabindex="-1"
         >
         </button>
         <u-datalist
           data-nofilter
-          data-sr-plural="%d forslag"
-          data-sr-singular="%d forslag"
           popover="manual"
           role="listbox"
-          data-sr-of="of"
+          data-sr-of="av"
           tabindex="-1"
           aria-multiselectable="false"
           id="<generated>"
+          data-sr-plural="%d forslag"
+          data-sr-singular="%d forslag"
           data-is-floating="true"
           aria-label="Velg en destinasjon"
           style="<removed>"
@@ -1819,12 +1978,26 @@ exports[`Multiple 1`] = `
   <label for="<generated>">
     Velg en destinasjon
   </label>
-  <ds-suggestion data-multiple>
+  <ds-suggestion
+    data-multiple
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <input
       placeholder
       type="text"
       id="<generated>"
-      aria-description="No selected"
+      aria-description="Ingen valgte"
       list="<generated>"
       popovertarget="<generated>"
       aria-autocomplete="list"
@@ -1843,23 +2016,23 @@ exports[`Multiple 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -1988,10 +2161,22 @@ exports[`Multiple Count 1`] = `
   <ds-suggestion
     data-multiple
     data-display="count"
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Oslo"
-      aria-label="Oslo, Press to remove"
+      aria-label="Oslo, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -2000,7 +2185,7 @@ exports[`Multiple Count 1`] = `
     </data>
     <data
       value="Sogndal"
-      aria-label="Sogndal, Press to remove"
+      aria-label="Sogndal, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -2011,7 +2196,7 @@ exports[`Multiple Count 1`] = `
       placeholder
       type="text"
       id="<generated>"
-      aria-description="Navigate left to find 2 selected"
+      aria-description="Naviger til venstre for å finne 2 valgte"
       list="<generated>"
       popovertarget="<generated>"
       aria-autocomplete="list"
@@ -2030,23 +2215,23 @@ exports[`Multiple Count 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg destinasjoner"
       style="<removed>"
@@ -2177,10 +2362,22 @@ exports[`Multiple Creatable 1`] = `
   <ds-suggestion
     data-multiple
     data-creatable
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
   >
     <data
       value="Finnes ikke"
-      aria-label="Added Heller ikke, Finnes ikke, Press to remove"
+      aria-label="La til Heller ikke, Finnes ikke, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -2189,7 +2386,7 @@ exports[`Multiple Creatable 1`] = `
     </data>
     <data
       value="Heller ikke"
-      aria-label="Added Heller ikke, Heller ikke, Press to remove"
+      aria-label="La til Heller ikke, Heller ikke, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -2200,7 +2397,7 @@ exports[`Multiple Creatable 1`] = `
       placeholder
       type="text"
       id="<generated>"
-      aria-description="Navigate left to find 2 selected"
+      aria-description="Naviger til venstre for å finne 2 valgte"
       list="<generated>"
       popovertarget="<generated>"
       aria-autocomplete="list"
@@ -2209,7 +2406,7 @@ exports[`Multiple Creatable 1`] = `
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-label="Added Heller ikke, Added Finnes ikke, Velg en destinasjon"
+      aria-label="La til Heller ikke, La til Finnes ikke, Velg en destinasjon"
     >
     <button
       aria-expanded="true"
@@ -2221,22 +2418,22 @@ exports[`Multiple Creatable 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -2246,7 +2443,7 @@ exports[`Multiple Creatable 1`] = `
         data-empty="Legg til «{value}»"
         label="Heller ikke"
         value="Heller ikke"
-        data-create="Legg til «Heller ikke»"
+        data-create="Heller ikke"
         role="option"
         aria-disabled="false"
         aria-selected="true"
@@ -2370,7 +2567,20 @@ exports[`Preview 1`] = `
   <label for="<generated>">
     Velg en destinasjon
   </label>
-  <ds-suggestion>
+  <ds-suggestion
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <input
       placeholder
       type="text"
@@ -2393,23 +2603,23 @@ exports[`Preview 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       hidden
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
     </button>
     <u-datalist
       data-nofilter
-      data-sr-plural="%d forslag"
-      data-sr-singular="%d forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="false"
       id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
       data-is-floating="true"
       aria-label="Velg en destinasjon"
       style="<removed>"
@@ -2535,10 +2745,24 @@ exports[`Virtualized 1`] = `
   <label for="<generated>">
     Velg alternativer
   </label>
-  <ds-suggestion data-multiple>
+  <ds-suggestion
+    data-multiple
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
     <data
       value="Alternativ 123"
-      aria-label="Added Alternativ 123, Alternativ 123, Press to remove"
+      aria-label="La til Alternativ 123, Alternativ 123, Trykk for å fjerne"
       role="option"
       slot="items"
       tabindex="-1"
@@ -2549,7 +2773,7 @@ exports[`Virtualized 1`] = `
       placeholder
       type="text"
       id="<generated>"
-      aria-description="Navigate left to find 1 selected"
+      aria-description="Naviger til venstre for å finne 1 valgte"
       list="<generated>"
       popovertarget="<generated>"
       aria-autocomplete="list"
@@ -2558,7 +2782,7 @@ exports[`Virtualized 1`] = `
       autocomplete="off"
       enterkeyhint="done"
       role="combobox"
-      aria-label="Added Alternativ 123, Velg alternativer"
+      aria-label="La til Alternativ 123, Velg alternativer"
     >
     <button
       aria-expanded="true"
@@ -2570,8 +2794,8 @@ exports[`Virtualized 1`] = `
     >
     </button>
     <button
-      aria-label="Tøm"
       type="reset"
+      aria-label="Fjern tekst"
       aria-hidden="false"
       tabindex="-1"
     >
@@ -2582,7 +2806,7 @@ exports[`Virtualized 1`] = `
       data-sr-singular="11 forslag"
       popover="manual"
       role="listbox"
-      data-sr-of="of"
+      data-sr-of="av"
       tabindex="-1"
       aria-multiselectable="true"
       id="<generated>"

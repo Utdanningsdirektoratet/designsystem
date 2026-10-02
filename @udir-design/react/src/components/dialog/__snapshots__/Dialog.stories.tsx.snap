@@ -346,7 +346,20 @@ exports[`Dialog With Suggestion 1`] = `
       <label for="<generated>">
         Velg en kommune
       </label>
-      <ds-suggestion>
+      <ds-suggestion
+        data-sr-added="La til"
+        data-sr-clear="Fjern tekst"
+        data-sr-empty="Ingen valgte"
+        data-sr-found="Naviger til venstre for å finne %d valgte"
+        data-sr-invalid="Ugyldig valg"
+        data-sr-items="Valgte"
+        data-sr-of="av"
+        data-sr-plural="%d forslag"
+        data-sr-remove="Trykk for å fjerne"
+        data-sr-removed="Fjernet"
+        data-sr-singular="%d forslag"
+        data-sr-toggle="Valg"
+      >
         <input
           placeholder
           type="text"
@@ -355,24 +368,24 @@ exports[`Dialog With Suggestion 1`] = `
           popovertarget="<generated>"
         >
         <button
-          aria-label="Tøm"
           hidden
           type="reset"
+          aria-label="Fjern tekst"
           aria-hidden="false"
           tabindex="-1"
         >
         </button>
         <u-datalist
           data-nofilter
-          data-sr-plural="%d forslag"
-          data-sr-singular="%d forslag"
           popover="manual"
           role="listbox"
-          data-sr-of="of"
+          data-sr-of="av"
           hidden
           tabindex="-1"
           aria-multiselectable="false"
           id="<generated>"
+          data-sr-plural="%d forslag"
+          data-sr-singular="%d forslag"
           data-is-floating="true"
         >
           <u-option

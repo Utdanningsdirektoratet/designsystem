@@ -5,7 +5,7 @@ import {
   EXPERIMENTAL_SuggestionInput as SuggestionInput,
   EXPERIMENTAL_SuggestionList as SuggestionList,
   EXPERIMENTAL_SuggestionOption as SuggestionOption,
-  EXPERIMENTAL_SuggestionToggle as SuggestionToggle,
+  EXPERIMENTAL_SuggestionToggle as DigdirSuggestionToggle,
   type SuggestionClearProps,
   type SuggestionEmptyProps,
   type SuggestionInputProps,
@@ -14,15 +14,36 @@ import {
   type SuggestionMultipleProps as DigdirSuggestionMultipleProps,
   type SuggestionOptionProps,
   type SuggestionSingleProps as DigdirSuggestionSingleProps,
-  type SuggestionToggleProps,
+  type SuggestionToggleProps as DigdirSuggestionToggleProps,
 } from '@digdir/designsystemet-react';
 import {
   type ComponentRef,
   type ForwardRefExoticComponent,
   type RefAttributes,
   forwardRef,
+  useEffect,
 } from 'react';
+import { patchSuggestionSelection } from './patchSuggestionSelection';
 import './suggestion.css';
+import './translations.css';
+
+type SuggestionToggleProps = Omit<DigdirSuggestionToggleProps, 'aria-label'> & {
+  /**
+   * Aria label for the toggle button
+   * @default `--dsc-suggestion-sr-toggle` ("Valg" in bokmål)
+   */
+  'aria-label'?: string;
+};
+
+/* Digdir's toggle defaults `aria-label` to "Valg" regardless of language. u-combobox fills
+   in an empty `aria-label` from `--dsc-suggestion-sr-toggle` / `data-sr-toggle`, so pass ""
+   instead to let the label follow `lang` like the other screen reader texts. */
+const SuggestionToggle = forwardRef<
+  ComponentRef<typeof DigdirSuggestionToggle>,
+  SuggestionToggleProps
+>(function SuggestionToggle({ 'aria-label': ariaLabel = '', ...rest }, ref) {
+  return <DigdirSuggestionToggle {...rest} aria-label={ariaLabel} ref={ref} />;
+});
 
 type SuggestionDisplayProps = {
   /**
@@ -52,6 +73,8 @@ const SuggestionBase = forwardRef<
   SuggestionProps
 >(function Suggestion({ display = 'chips', ...rest }, ref) {
   const multiple = 'multiple' in rest && rest.multiple === true;
+
+  useEffect(patchSuggestionSelection, []);
 
   return (
     <DigdirSuggestion

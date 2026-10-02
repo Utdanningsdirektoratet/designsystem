@@ -122,15 +122,6 @@
     }
   }
 
-  /*
-  * Override opacity for label and description when disabled,
-  * to ensure they are still readable since disabled button is used for readOnly.
-  */
-  > label,
-  [data-field='description'] {
-    opacity: 1;
-  }
-
   &:not([aria-busy='true']):not(:has(input[readOnly])) {
     > .ds-card:hover {
       cursor: pointer;
