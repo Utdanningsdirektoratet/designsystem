@@ -7,3 +7,4 @@
 
 // oxlint-disable-next-line no-restricted-imports
 export * from './beta';
+export * from './file/downloadFile';
