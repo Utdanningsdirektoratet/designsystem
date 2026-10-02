@@ -75,7 +75,9 @@ export interface FileUploadItemProps extends Omit<
    */
   readonly?: boolean;
   /**
-   * href to file location
+   * Address the user can open the file at, which makes the file name a link.
+   * For a file without such an address, use `FileUpload.DownloadButton` in
+   * `actions` instead.
    */
   href?: string;
 }
