@@ -2,6 +2,7 @@ import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FileUploadStories from './FileUpload.stories';
 import * as useFileUploadStories from '../../hooks/useFileUpload/useFileUpload.stories';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
+import { Link } from 'src/components/link/Link';
 
 <Meta of={FileUploadStories} />
 
@@ -33,7 +34,7 @@ import { FileUpload } from '@udir-design/react';
 - `FileUpload.Dropzone` eller `FileUpload.Trigger` er feltet brukeren velger filer med.
 - `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange vedlegg det er og hvor i lista brukeren befinner seg.
 - `FileUpload.Item` viser ett vedlegg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
-- `FileUpload.FileSize` viser en filstørrelse, for eksempel i beskrivelsen av et vedlegg.
+- `FileUpload.DownloadButton` og `FileUpload.ItemButton` er knapper du kan legge på et vedlegg, og `FileUpload.FileSize` viser en filstørrelse, for eksempel i beskrivelsen av et vedlegg.
 
 Komponentene holder ikke styr på vedleggene selv. Det gjør [`useFileUpload`](/docs/hooks-usefileupload--docs) for deg: den gir hvert vedlegg en id, skiller ut filene som skal sendes inn, og kjenner igjen en fil som allerede er lagt ved, slik at du kan si fra til brukeren i stedet for å legge den ved to ganger.
 
@@ -116,7 +117,7 @@ Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du
 
 ### Innhold i hvert vedlegg
 
-Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet.
+Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
 
 Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
 
@@ -158,6 +159,47 @@ I eksemplene under viser vi hvordan `loading` fungerer i praksis, ved at du selv
 Det andre eksempelet viser først standardteksten mens filen lastes opp, og så bruker det `loadingText` mens filen blir sjekket.
 
 <Canvas of={FileUploadStories.UploadAndValidate} />
+
+### Handlinger på hvert vedlegg
+
+Et vedlegg kan ha handlinger brukeren kan utføre. Setter du `onRemove`, får vedlegget en knapp for å fjerne det. Andre handlinger legger du i `actions`, med `FileUpload.DownloadButton` eller `FileUpload.ItemButton`. Knappen for å fjerne vedlegget kommer alltid sist, slik at den står på samme sted i hvert vedlegg.
+
+```tsx
+import { FileUpload } from '@udir-design/react';
+import { downloadFile } from '@udir-design/react/alpha/utilities';
+
+<FileUpload.Item
+  key={id}
+  file={file}
+  onRemove={() => removeFile(id)}
+  actions={
+    <FileUpload.DownloadButton
+      fileName={file.name}
+      onClick={() => downloadFile(file)}
+    />
+  }
+/>;
+```
+
+<Canvas of={FileUploadStories.ItemActions} />
+
+#### Laste ned filen
+
+`FileUpload.DownloadButton` er en knapp for å laste ned filen. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
+
+`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. En fil brukeren nettopp har valgt, ligger allerede i nettleseren som et `File`-objekt, også før den er lastet opp. Den kan du gi rett til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link> fra `@udir-design/react/alpha/utilities`. Ligger filen bare på serveren, må du hente den først.
+
+Tar handlingen tid, for eksempel fordi filen må hentes fra serveren først, setter du `loading` på knappen, ikke på `FileUpload.Item`. Da beholder knappen fokus mens det pågår, mens `loading` på vedlegget skjuler alle knappene.
+
+#### Andre handlinger
+
+Trenger du andre handlinger på vedlegget, for eksempel en knapp for å beskrive filen, bruker du `FileUpload.ItemButton` med et ikon og en `tooltip`. Navnet på knappen blir teksten i `tooltip` etterfulgt av `fileName`, for eksempel "Beskriv filen attest.pdf", mens tooltipen bare viser "Beskriv filen". Se [Tekst i FileUpload](#tekst-i-fileupload) for hvordan du skriver `tooltip`.
+
+<Canvas of={FileUploadStories.CustomItemButton} />
+
+#### Når knappene er skjult
+
+`readonly` på `FileUpload.Item` skjuler bare knappen for å fjerne vedlegget. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke. `loading` på `FileUpload.Item` skjuler alle knappene, også dem i `actions`.
 
 ### Visningsvarianter
 
@@ -209,6 +251,20 @@ Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som 
 
 Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedlegg i lista har feil. Ikke send inn kun vedleggene uten feil, siden brukeren kanskje ikke har fått med seg feilmeldingene og tror at alt har gått bra. `ErrorSummary` kan da lenke tilbake til feltet slik at brukeren får rettet problemene.
 
+### Lenke eller nedlastingsknapp?
+
+Brukeren kan åpne en fil på to måter: ved å klikke på filnavnet når du har satt `href`, eller med en `FileUpload.DownloadButton`. Velg én av dem for hver fil, ikke begge. Uten `href` vises filnavnet som vanlig tekst, også når vedlegget har en nedlastingsknapp. Trenger ikke brukeren å åpne filen, for eksempel på en kvitteringsside som viser hvilke filer som ble sendt inn, eller mens filen fortsatt lastes opp eller sjekkes, bruker du ingen av dem.
+
+Sett `href` på `FileUpload.Item` når filen ligger på en adresse brukeren kan åpne direkte i nettleseren, for eksempel en fil som allerede er lastet opp. Da er filnavnet en vanlig lenke, og brukeren kan åpne den i en ny fane, kopiere adressen eller lagre filen. Det er serveren og nettleseren, ikke komponenten, som bestemmer om filen blir vist i nettleseren eller lastet ned.
+
+Bruk `FileUpload.DownloadButton` i `actions` når
+
+- brukeren nettopp har lagt ved filen, og den bare finnes som et `File`-objekt i nettleseren. Da sender du objektet til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link>.
+- adressen krever noe en lenke ikke kan sende med, for eksempel et token i `Authorization`-headeren. Da henter du filen med `fetch` i `onClick`, gjør svaret om til en `File` og gir den til `downloadFile`.
+- tjenesten må vite at brukeren har lastet ned filen, for eksempel fordi filen må være åpnet før skjemaet kan sendes inn. En lenke åpner filen uten at du får vite om det.
+
+Ikke lag en adresse til `href` selv med `URL.createObjectURL`. En slik adresse finnes bare så lenge siden som laget den er åpen, og bare i den samme nettleseren, så en kopiert adresse går ikke til filen etterpå. Da vi testet dette, klarte heller ikke Safari å åpne adressen i en ny fane, og Chrome lastet ned en Word-fil med et tilfeldig navn i stedet for filnavnet. En rekke vanlige handlinger på en lenke vil derfor ikke fungere som forventet.
+
 ### Error Summary
 
 Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per vedlegg ville fylt oppsummeringen med det samme problemet om igjen.
@@ -237,6 +293,10 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 
 Skjermlesere leser teksten i `error`, `success` og `loadingText` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
 
+### Egne knapper
+
+Skjermlesere leser `tooltip` på `FileUpload.ItemButton` med filnavnet etter, så skriv den slik at den gir mening da: "Beskriv filen" blir lest som "Beskriv filen attest.pdf" og fungerer fint, mens "Rediger beskrivelse" blir lest som "Rediger beskrivelse attest.pdf". Du må selv sørge for at `tooltip` er på riktig språk.
+
 ## Tilgjengelighet
 
 ### Opplesing med skjermleser
@@ -246,6 +306,8 @@ Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/co
 Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. `error` og `success` blir bare lest opp når de dukker opp på et vedlegg som allerede ligger i lista.
 
 Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
+
+Skjermlesere leser knappene på et vedlegg med filnavnet etter, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. På `FileUpload.ItemButton` bestemmer du selv teksten foran filnavnet, se [Egne knapper](#egne-knapper).
 
 Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Har et vedlegg `loading` satt allerede når siden lastes, blir teksten lest sammen med resten av siden, og ikke lest opp før `loadingText` endres.
 
@@ -263,6 +325,8 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
     '--udsc-fileUpload-loading-text',
+    '--udsc-fileUpload-removeFile-text',
+    '--udsc-fileUpload-downloadFile-text',
     '--udsc-fileUpload-invalid-text',
   ]}
 />
