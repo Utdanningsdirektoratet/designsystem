@@ -10,6 +10,7 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-loading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
+  --udsc-fileUpload-downloadFile-text: 'Last ned filen';
   --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
@@ -25,6 +26,7 @@
   --udsc-fileUpload-or-text: 'eller';
   --udsc-fileUpload-loading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
+  --udsc-fileUpload-downloadFile-text: 'Last ned fila';
   --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
@@ -40,6 +42,7 @@
   --udsc-fileUpload-or-text: 'or';
   --udsc-fileUpload-loading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
+  --udsc-fileUpload-downloadFile-text: 'Download file';
   --udsc-fileUpload-invalid-text: 'invalid';
   --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
   --udsc-fileUpload-disabled-text-line-two: 'upload files';
@@ -303,8 +306,13 @@
     word-break: break-all;
   }
 
-  [data-tooltip] {
+  /* Two classes, to win over Digdir's `[data-tooltip]` reset on the button. */
+  .uds-file-upload__delete-button {
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
+  }
+
+  .uds-file-upload__download-button {
+    --ds-tooltip: var(--udsc-fileUpload-downloadFile-text);
   }
 
   /* The default text while loading. On the empty element, so that a
@@ -323,10 +331,13 @@
   display: flex;
   align-items: center;
   width: 100%;
+}
 
-  > .ds-button {
-    margin-inline-start: auto;
-  }
+.uds-file-upload__item-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
+  margin-inline-start: auto;
 }
 
 .uds-file-upload__item-icon > svg {
