@@ -1,3 +1,4 @@
+import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadDropzone } from './FileUploadDropzone';
 import { FileUploadFileSize } from './FileUploadFileSize';
 import { FileUploadItem } from './FileUploadItem';
@@ -59,6 +60,19 @@ export type FileUpload = {
    * />
    */
   FileSize: typeof FileUploadFileSize;
+  /**
+   * Button that downloads a file, for use in `actions` on `FileUpload.Item`.
+   *
+   * Does not download anything by itself: do it in `onClick`, for example with
+   * `downloadFile` from `@udir-design/react/alpha/utilities`.
+   *
+   * @example
+   * <FileUpload.DownloadButton
+   *   fileName={file.name}
+   *   onClick={() => downloadFile(file)}
+   * />
+   */
+  DownloadButton: typeof FileUploadDownloadButton;
 };
 
 export const FileUpload: FileUpload = {
@@ -67,6 +81,7 @@ export const FileUpload: FileUpload = {
   Item: FileUploadItem,
   List: FileUploadList,
   FileSize: FileUploadFileSize,
+  DownloadButton: FileUploadDownloadButton,
 };
 
 FileUpload.Trigger.displayName = 'FileUpload.Trigger';
@@ -74,3 +89,4 @@ FileUpload.Dropzone.displayName = 'FileUpload.Dropzone';
 FileUpload.Item.displayName = 'FileUpload.Item';
 FileUpload.List.displayName = 'FileUpload.List';
 FileUpload.FileSize.displayName = 'FileUpload.FileSize';
+FileUpload.DownloadButton.displayName = 'FileUpload.DownloadButton';

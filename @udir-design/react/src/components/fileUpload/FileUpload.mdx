@@ -137,6 +137,37 @@ Med `success` viser du at filen er i orden, for eksempel når serveren har lest 
 
 <Canvas of={FileUploadStories.ExampleItems} />
 
+#### Knapper på hvert vedlegg
+
+Setter du `onRemove`, får hvert vedlegg en knapp for å fjerne filen.
+
+Skal brukeren kunne gjøre noe annet med filen, for eksempel laste den ned, legger du knappene i `actions`. Knappen for å fjerne filen kommer etter dem, slik at den står på samme sted i hver rad.
+
+```tsx
+import { FileUpload } from '@udir-design/react';
+import { downloadFile } from '@udir-design/react/alpha/utilities';
+
+<FileUpload.Item
+  key={id}
+  file={file}
+  onRemove={() => removeFile(id)}
+  actions={
+    <FileUpload.DownloadButton
+      fileName={file.name}
+      onClick={() => downloadFile(file)}
+    />
+  }
+/>;
+```
+
+`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`, og dermed får du også vite at brukeren har lastet ned filen. Har nettleseren filen, for eksempel fordi brukeren nettopp har lagt den ved, kan du bruke `downloadFile` fra `@udir-design/react/alpha/utilities`. Ligger filen på en adresse brukeren kan åpne, er det enklere å sette `href`.
+
+Navnet på knappene sier hvilken fil de gjelder, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. Lager du egne knapper, bør navnet på dem også si hvilken fil de gjelder.
+
+Mens `loading` er satt, vises ingen knapper. `readonly` skjuler bare knappen for å fjerne filen. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke.
+
+<Canvas of={FileUploadStories.ItemActions} />
+
 ### Visningsvarianter
 
 `FileUpload.List` har to visninger, som du velger med `variant`:
@@ -233,6 +264,8 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
     '--udsc-fileUpload-loading-text',
+    '--udsc-fileUpload-removeFile-text',
+    '--udsc-fileUpload-downloadFile-text',
     '--udsc-fileUpload-invalid-text',
   ]}
 />

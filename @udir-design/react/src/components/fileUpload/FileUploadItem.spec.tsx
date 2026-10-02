@@ -141,4 +141,55 @@ describe('FileUpload.Item', () => {
 
     expect(screen.getByText('1 KB'));
   });
+
+  describe('actions', () => {
+    const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+
+    it('come before the delete button', () => {
+      render(
+        <ul>
+          <FileUploadItem
+            file={file}
+            onRemove={() => {}}
+            actions={<button type="button">Last ned</button>}
+          />
+        </ul>,
+      );
+
+      const [first, last] = screen.getAllByRole('button');
+      expect(first).toHaveTextContent('Last ned');
+      expect(last).toHaveClass('uds-file-upload__delete-button');
+    });
+
+    it('stay in a readonly item, where the delete button does not', () => {
+      render(
+        <ul>
+          <FileUploadItem
+            file={file}
+            onRemove={() => {}}
+            readonly
+            actions={<button type="button">Last ned</button>}
+          />
+        </ul>,
+      );
+
+      expect(screen.getAllByRole('button')).toHaveLength(1);
+      expect(screen.getByRole('button')).toHaveTextContent('Last ned');
+    });
+
+    it('are hidden while loading, along with the delete button', () => {
+      render(
+        <ul>
+          <FileUploadItem
+            file={file}
+            loading
+            onRemove={() => {}}
+            actions={<button type="button">Last ned</button>}
+          />
+        </ul>,
+      );
+
+      expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+  });
 });
