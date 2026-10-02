@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { NotePencilIcon } from '@udir-design/icons';
 import { AbcFillSymbol } from '@udir-design/symbols';
 import { Alert, AlertHeading } from 'src/components/alert';
 import { Avatar } from 'src/components/avatar';
@@ -66,9 +67,11 @@ import {
 } from 'src/components/fieldset';
 import {
   FileUpload,
+  FileUploadDownloadButton,
   FileUploadDropzone,
   FileUploadFileSize,
   FileUploadItem,
+  FileUploadItemButton,
   FileUploadList,
   FileUploadTrigger,
 } from 'src/components/fileUpload';
@@ -276,6 +279,21 @@ export function cspDemoComponents(props: CspDemoProps) {
           loading
         />
         <FileUploadItem file={file} onRemove={noop} error="Feil" />
+        <FileUploadItem
+          file={file}
+          onRemove={noop}
+          actions={
+            <>
+              <FileUploadItemButton
+                icon={<NotePencilIcon aria-hidden />}
+                tooltip="Beskriv filen"
+                fileName={file.name}
+                onClick={noop}
+              />
+              <FileUploadDownloadButton fileName={file.name} onClick={noop} />
+            </>
+          }
+        />
       </FileUploadList>
     </>
   );
@@ -490,9 +508,11 @@ export function cspDemoComponents(props: CspDemoProps) {
         <FileUpload.Item file={file} onRemove={noop} />
       </FileUpload.List>
     ),
+    FileUploadDownloadButton: fileUpload,
     FileUploadDropzone: fileUpload,
     FileUploadFileSize: fileUpload,
     FileUploadItem: fileUpload,
+    FileUploadItemButton: fileUpload,
     FileUploadList: fileUpload,
     FileUploadTrigger: fileUpload,
     Footer: footer,
