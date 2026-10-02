@@ -279,7 +279,7 @@ export const SubmittingWithErrors = meta.story({
       const list = canvas.getAllByRole('list')[0];
       const rows = within(list).getAllByRole('listitem');
       await userEvent.click(
-        within(rows[1]).getByRole('button', { name: 'Fjern filen' }),
+        within(rows[1]).getByRole('button', { name: /^Fjern filen / }),
       );
 
       await send();

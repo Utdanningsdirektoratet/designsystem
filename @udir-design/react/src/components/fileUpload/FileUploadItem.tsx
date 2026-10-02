@@ -1,4 +1,4 @@
-import { Tooltip, ValidationMessage } from '@digdir/designsystemet-react';
+import { ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
@@ -14,10 +14,10 @@ import {
   FileXMarkIcon,
   TrashIcon,
 } from '@udir-design/icons';
-import { Button } from '../button';
 import { Link } from '../link';
 import { Spinner } from '../spinner';
 import { FileUploadFileSize } from './FileUploadFileSize';
+import { FileUploadItemButton } from './FileUploadItemButton';
 import type { FileMeta } from './types';
 
 export interface FileUploadItemProps extends Omit<
@@ -45,9 +45,16 @@ export interface FileUploadItemProps extends Omit<
    */
   success?: string;
   /**
-   * Callback when the remove button is clicked.
+   * Callback for the delete button, which is shown when this is set.
    */
-  onRemove: (file: FileMeta, event: MouseEvent<HTMLButtonElement>) => void;
+  onRemove?: (file: FileMeta, event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * Buttons at the end of the row, such as `FileUpload.DownloadButton`. The
+   * delete button comes after them, so it stays at the end of every row.
+   *
+   * Hidden while `loading`.
+   */
+  actions?: ReactNode;
   /**
    * Toggle loading state.
    *
@@ -61,6 +68,9 @@ export interface FileUploadItemProps extends Omit<
    */
   loadingText?: string;
   /**
+   * Hides the delete button. Has no effect on `actions`, so leave out what the
+   * user should not do with the file.
+   *
    * @default false
    */
   readonly?: boolean;
@@ -84,6 +94,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
       'data-size': size,
       description,
       onRemove,
+      actions,
       ...rest
     }: FileUploadItemProps,
     ref,
@@ -91,6 +102,15 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     // One slot, so a file that has been turned away says so rather than
     // claiming to be fine.
     const message = error ?? success;
+
+    const deleteButton = onRemove && !readonly && (
+      <FileUploadItemButton
+        className="uds-file-upload__delete-button"
+        icon={<TrashIcon aria-hidden />}
+        fileName={file.name}
+        onClick={(e) => onRemove(file, e)}
+      />
+    );
 
     /* Composes Digdir's card class rather than the `Card` component, so the
        item stays a plain element without React-only behaviour. `FileUpload.List`
@@ -119,17 +139,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
                   (description ?? <FileUploadFileSize size={file.size} />)}
             </div>
           </div>
-          {!loading && !readonly && (
-            <Tooltip content="">
-              {/* Tooltip content in css */}
-              <Button
-                icon
-                onClick={(e) => onRemove(file, e)}
-                variant="tertiary"
-              >
-                <TrashIcon aria-hidden />
-              </Button>
-            </Tooltip>
+          {!loading && (Boolean(actions) || deleteButton) && (
+            <div className="uds-file-upload__item-actions">
+              {actions}
+              {deleteButton}
+            </div>
           )}
         </div>
         {/* Announces a verdict that arrives after the file is already listed,
@@ -203,16 +217,6 @@ export function Icon({
       return <FileIcon aria-hidden />;
   }
 }
-
-export const downloadFile = (file: File): void => {
-  const a = document.createElement('a');
-  const url = URL.createObjectURL(file);
-  a.href = url;
-  a.download = file.name;
-  a.click();
-
-  URL.revokeObjectURL(url);
-};
 
 interface FileNameProps {
   file: FileMeta;

@@ -8,13 +8,18 @@ import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Checkbox } from 'src/components/checkbox';
 import { Heading } from 'src/components/typography/heading';
 import { useFileUpload } from 'src/hooks/useFileUpload';
+import { downloadFile } from 'src/utilities/file/downloadFile';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
 import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
 import { FileMeta } from './types';
-import { FileUpload, FileUploadFileSize } from './index';
+import {
+  FileUpload,
+  FileUploadDownloadButton,
+  FileUploadFileSize,
+} from './index';
 
 const meta = preview.meta({
   component: FileUploadTrigger,
@@ -23,6 +28,7 @@ const meta = preview.meta({
     'FileUpload.List': FileUploadList,
     'FileUpload.Item': FileUploadItem,
     'FileUpload.FileSize': FileUploadFileSize,
+    'FileUpload.DownloadButton': FileUploadDownloadButton,
   },
   tags: ['udir'],
   parameters: {
@@ -570,6 +576,97 @@ export const ExampleItems = meta.story({
   },
 });
 
+export const ItemActions = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = {
+      id: string;
+      file: File;
+      readonly?: boolean;
+      loading?: boolean;
+    };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      { id: 'soknad', file: pdf('soknad.pdf') },
+      { id: 'vedtak', file: pdf('vedtak.pdf'), readonly: true },
+      { id: 'vedlegg', file: pdf('vedlegg.pdf'), loading: true },
+    ]);
+    const [downloaded, setDownloaded] = useState<string[]>([]);
+
+    const download = ({ id, file }: Entry) => {
+      downloadFile(file);
+      // The click is yours to see, for example when the user has to open
+      // the file before it counts.
+      setDownloaded((prev) => [...prev, id]);
+    };
+
+    return (
+      <FileUpload.List>
+        {entries.map((entry) => (
+          <FileUpload.Item
+            key={entry.id}
+            file={entry.file}
+            readonly={entry.readonly}
+            loading={entry.loading}
+            description={
+              downloaded.includes(entry.id) ? (
+                <>
+                  <FileUpload.FileSize size={entry.file.size} />, lastet ned
+                </>
+              ) : undefined
+            }
+            actions={
+              <FileUpload.DownloadButton
+                fileName={entry.file.name}
+                onClick={() => download(entry)}
+              />
+            }
+            onRemove={() =>
+              setEntries((prev) => prev.filter(({ id }) => id !== entry.id))
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Each button says which file it acts on', async () => {
+      await expect(
+        canvas.getByRole('button', { name: 'Last ned filen soknad.pdf' }),
+      ).toBeInTheDocument();
+      await expect(
+        canvas.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      ).toBeInTheDocument();
+    });
+
+    await step('A readonly file keeps the actions it was given', async () => {
+      await expect(
+        canvas.getByRole('button', { name: 'Last ned filen vedtak.pdf' }),
+      ).toBeInTheDocument();
+      await expect(
+        canvas.queryByRole('button', { name: 'Fjern filen vedtak.pdf' }),
+      ).not.toBeInTheDocument();
+    });
+
+    await step('A file that is loading has no actions', async () => {
+      await expect(
+        canvas.queryByRole('button', { name: /vedlegg\.pdf/ }),
+      ).not.toBeInTheDocument();
+    });
+
+    await step('Removing a file takes it out of the list', async () => {
+      await userEvent.click(
+        canvas.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      );
+      await expect(canvas.queryByText('soknad.pdf')).not.toBeInTheDocument();
+    });
+  },
+});
+
 export const Upload = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
@@ -963,7 +1060,7 @@ export const UploadAndValidateInteractions = UploadAndValidate.extend({
       'Du kan bare legge ved én fil. Fjern dem du ikke vil bruke.';
     const remove = (index: number) =>
       userEvent.click(
-        canvas.getAllByRole('button', { name: 'Fjern filen' })[index],
+        canvas.getAllByRole('button', { name: /^Fjern filen / })[index],
       );
 
     await step('Two files at once both land in the list', async () => {
@@ -1077,6 +1174,7 @@ export const Translations = Preview.extend({
         '--udsc-fileUpload-or-text',
         '--udsc-fileUpload-loading-text',
         '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-downloadFile-text',
         '--udsc-fileUpload-invalid-text',
         '--udsc-fileUpload-disabled-text-line-one',
         '--udsc-fileUpload-disabled-text-line-two',
