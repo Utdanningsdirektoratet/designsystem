@@ -110,7 +110,7 @@ Setter du ikke `files`, tømmer komponenten `input`-elementet etter hvert filval
 
 #### Innhold i hvert vedlegg
 
-Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet.
+Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
 
 Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
 
@@ -160,13 +160,27 @@ import { downloadFile } from '@udir-design/react/alpha/utilities';
 />;
 ```
 
-`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`, og dermed får du også vite at brukeren har lastet ned filen. Har nettleseren filen, for eksempel fordi brukeren nettopp har lagt den ved, kan du bruke `downloadFile` fra `@udir-design/react/alpha/utilities`. Ligger filen på en adresse brukeren kan åpne, er det enklere å sette `href`.
+`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. Har nettleseren filen, for eksempel fordi brukeren nettopp har lagt den ved, kan du bruke `downloadFile` fra `@udir-design/react/alpha/utilities`.
 
 Navnet på knappene sier hvilken fil de gjelder, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. Lager du egne knapper, bør navnet på dem også si hvilken fil de gjelder.
 
 Mens `loading` er satt, vises ingen knapper. `readonly` skjuler bare knappen for å fjerne filen. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke.
 
 <Canvas of={FileUploadStories.ItemActions} />
+
+#### Lenke eller nedlastingsknapp?
+
+Brukeren kan åpne en fil på to måter: ved å klikke på filnavnet når du har satt `href`, eller med en `FileUpload.DownloadButton`. Velg én av dem for hver fil, ikke begge. Uten `href` vises filnavnet som vanlig tekst, også når vedlegget har en nedlastingsknapp. Trenger ikke brukeren å åpne filen, for eksempel på en kvitteringsside som viser hvilke filer som ble sendt inn, eller mens filen fortsatt lastes opp eller sjekkes, bruker du ingen av dem.
+
+Sett `href` på `FileUpload.Item` når filen ligger på en adresse brukeren kan åpne direkte i nettleseren, for eksempel en fil som allerede er lastet opp. Da er filnavnet en vanlig lenke, og brukeren kan åpne den i en ny fane, kopiere adressen eller lagre filen. Om filen blir vist i nettleseren eller lastet ned, bestemmer serveren og nettleseren, ikke komponenten.
+
+Bruk `FileUpload.DownloadButton` i `actions` når
+
+- filen bare finnes i nettleseren, for eksempel fordi brukeren nettopp har lagt den ved. Da gir du filen til `downloadFile`.
+- adressen krever noe en lenke ikke kan sende med, for eksempel et token i `Authorization`-headeren. Da henter du filen med `fetch` i `onClick`, gjør svaret om til en `File` og gir den til `downloadFile`.
+- tjenesten må vite at brukeren har lastet ned filen, for eksempel fordi filen må være åpnet før skjemaet kan sendes inn. En lenke åpner filen uten at du får vite om det.
+
+Ikke lag en adresse til `href` selv med `URL.createObjectURL`. En slik adresse virker bare i fanen den ble laget i: Safari klarer ikke å åpne den i en ny fane, Chrome kan miste filnavnet, og en kopiert adresse går ikke til filen. En rekke vanlige handlinger på en lenke vil derfor ikke fungere som forventet.
 
 ### Visningsvarianter
 
