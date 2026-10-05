@@ -17,7 +17,7 @@ import {
 import { Link } from '../link';
 import { Spinner } from '../spinner';
 import { FileUploadFileSize } from './FileUploadFileSize';
-import { FileUploadItemButton } from './FileUploadItemButton';
+import { ItemButton } from './FileUploadItemButton';
 import type { FileMeta } from './types';
 
 export interface FileUploadItemProps extends Omit<
@@ -106,7 +106,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     const message = error ?? success;
 
     const deleteButton = onRemove && !readonly && (
-      <FileUploadItemButton
+      <ItemButton
         kind="delete"
         icon={<TrashIcon aria-hidden />}
         fileName={file.name}
