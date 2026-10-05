@@ -1,11 +1,15 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, SubmitEvent } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { NotePencilIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Button } from 'src/components/button';
 import { Checkbox } from 'src/components/checkbox';
+import { Dialog } from 'src/components/dialog';
+import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
 import { useFileUpload } from 'src/hooks/useFileUpload';
 import { downloadFile } from 'src/utilities/file/downloadFile';
@@ -19,6 +23,7 @@ import {
   FileUpload,
   FileUploadDownloadButton,
   FileUploadFileSize,
+  FileUploadItemButton,
 } from './index';
 
 const meta = preview.meta({
@@ -29,6 +34,7 @@ const meta = preview.meta({
     'FileUpload.Item': FileUploadItem,
     'FileUpload.FileSize': FileUploadFileSize,
     'FileUpload.DownloadButton': FileUploadDownloadButton,
+    'FileUpload.ItemButton': FileUploadItemButton,
   },
   tags: ['udir'],
   parameters: {
@@ -664,6 +670,153 @@ export const ItemActions = meta.story({
       );
       await expect(canvas.queryByText('soknad.pdf')).not.toBeInTheDocument();
     });
+  },
+});
+
+export const CustomItemButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = { id: string; file: File; description?: string };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      {
+        id: 'vitnemal',
+        file: pdf('vitnemal.pdf'),
+        description: 'Vitnemål fra videregående skole',
+      },
+      { id: 'attest', file: pdf('attest.pdf') },
+    ]);
+    const [editing, setEditing] = useState<Entry>();
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const edit = (entry: Entry) => {
+      setEditing(entry);
+      dialogRef.current?.showModal();
+    };
+
+    const save = (event: SubmitEvent<HTMLFormElement>) => {
+      const value = new FormData(event.currentTarget).get('description');
+      const description = typeof value === 'string' ? value.trim() : '';
+      setEntries((prev) =>
+        prev.map((entry) =>
+          entry.id === editing?.id
+            ? { ...entry, description: description || undefined }
+            : entry,
+        ),
+      );
+    };
+
+    return (
+      <>
+        <FileUpload.List>
+          {entries.map((entry) => (
+            <FileUpload.Item
+              key={entry.id}
+              file={entry.file}
+              description={
+                entry.description ? (
+                  <>
+                    {entry.description} (
+                    <FileUpload.FileSize size={entry.file.size} />)
+                  </>
+                ) : undefined
+              }
+              actions={
+                <FileUpload.ItemButton
+                  icon={<NotePencilIcon aria-hidden />}
+                  tooltip="Beskriv filen"
+                  fileName={entry.file.name}
+                  onClick={() => edit(entry)}
+                />
+              }
+              onRemove={() =>
+                setEntries((prev) => prev.filter(({ id }) => id !== entry.id))
+              }
+            />
+          ))}
+        </FileUpload.List>
+        <Dialog ref={dialogRef} closedby="any">
+          {/* `method="dialog"` closes the dialog when the form is sent, and
+              the browser then hands focus back to the button that opened it. */}
+          <form
+            method="dialog"
+            onSubmit={save}
+            style={{ display: 'grid', gap: 'var(--ds-size-4)' }}
+          >
+            <Heading>Beskriv filen {editing?.file.name}</Heading>
+            <Textfield
+              // A new field for every file, so it starts out with its text.
+              key={editing?.id}
+              name="description"
+              label="Beskrivelse"
+              description={'For eksempel "Vitnemål" eller "Legeerklæring"'}
+              defaultValue={editing?.description}
+            />
+            <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+              <Button type="submit">Lagre</Button>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => dialogRef.current?.close()}
+              >
+                Avbryt
+              </Button>
+            </div>
+          </form>
+        </Dialog>
+      </>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step(
+      'The button is named by its tooltip and the file it acts on',
+      async () => {
+        await expect(
+          await canvas.findByRole('button', {
+            name: 'Beskriv filen attest.pdf',
+          }),
+        ).toBeInTheDocument();
+      },
+    );
+
+    await step('The button sits before the delete button', async () => {
+      const [first, second] = canvas.getAllByRole('button', {
+        name: /attest\.pdf$/,
+      });
+      await expect(first).toHaveAccessibleName('Beskriv filen attest.pdf');
+      await expect(second).toHaveAccessibleName('Fjern filen attest.pdf');
+    });
+
+    await step(
+      'A saved description is shown on the file, and focus is back on the button',
+      async () => {
+        const button = canvas.getByRole('button', {
+          name: 'Beskriv filen attest.pdf',
+        });
+        await userEvent.click(button);
+
+        const dialog = await canvas.findByRole('dialog');
+        await expect(within(dialog).getByRole('heading')).toHaveTextContent(
+          'Beskriv filen attest.pdf',
+        );
+        await userEvent.type(
+          within(dialog).getByLabelText('Beskrivelse'),
+          'Attest fra arbeidsgiver',
+        );
+        await userEvent.click(
+          within(dialog).getByRole('button', { name: 'Lagre' }),
+        );
+
+        await expect(
+          await canvas.findByText(/Attest fra arbeidsgiver/),
+        ).toBeVisible();
+        await waitFor(() => expect(button).toHaveFocus());
+      },
+    );
   },
 });
 

@@ -21,69 +21,109 @@ export interface FileUploadItemButtonProps extends Omit<
   | 'aria-labelledby'
 > {
   /**
-   * Name of the file the button acts on. Shown and read out after the button
-   * text, so every button in the list has a name of its own.
+   * Name of the file the button acts on. Shown and read out after `tooltip`,
+   * so every button in the list has a name of its own.
    */
   fileName: string;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * The icon shown in the button, such as one from `@udir-design/icons`, with
+   * `aria-hidden`. Should only contain an icon, not text.
+   */
+  icon: ReactNode;
+  /**
+   * What the button does, such as "Beskriv filen". Shown as a tooltip with
+   * `fileName` after it, which is also the name of the button, so it has to
+   * make sense with the file name after it.
+   */
+  tooltip: string;
 }
 
 /**
- * An icon button in a `FileUpload.Item`. `kind` sets the class
- * `uds-file-upload__<kind>-button`, which the text is set on in CSS through
+ * The delete and download buttons take their text from CSS instead of
+ * `tooltip`, so that it follows `lang`. `kind` sets the class
+ * `uds-file-upload__<kind>-button`, which the text is set on through
  * `--ds-tooltip`.
  */
+type ItemButtonProps = Omit<FileUploadItemButtonProps, 'tooltip'> &
+  (
+    | { tooltip: string; kind?: undefined }
+    | { kind: 'delete' | 'download'; tooltip?: undefined }
+  );
+
+export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
+  function ItemButton(
+    { fileName, icon, kind, tooltip, className, ...rest },
+    ref,
+  ) {
+    const kindClass = kind && `uds-file-upload__${kind}-button`;
+    const sameKind = kindClass ?? `tooltip ${tooltip}`;
+
+    const node = useRef<HTMLButtonElement | null>(null);
+    const setRef = useCallback(
+      (el: HTMLButtonElement | null) => {
+        if (el) {
+          kinds.set(el, sameKind);
+        } else if (node.current) {
+          handleRemoval(node.current, sameKind);
+        }
+        node.current = el;
+        if (typeof ref === 'function') {
+          ref(el);
+        } else if (ref) {
+          ref.current = el;
+        }
+      },
+      [ref, sameKind],
+    );
+
+    /* The CSS for the class gives the text in `--ds-tooltip`. Read from the
+       button, so it follows the `lang` the button is in. */
+    const [kindLabel, setKindLabel] = useState<string>();
+    useLayoutEffect(() => {
+      if (kind && node.current) {
+        setKindLabel(cssText(node.current, '--ds-tooltip'));
+      }
+    }, [kind]);
+    const label = kind ? kindLabel : tooltip;
+
+    /* The tooltip shows the file name too, since its text is also the
+       button's name: Digdir's tooltip sets it as `aria-label`, overwriting
+       any we set ourselves, and the file name tells the buttons in a list
+       apart. A name from `aria-labelledby` instead, pointing at the tooltip's
+       `aria-label` and the file name on a hidden element, would have kept the
+       tooltip short, but TalkBack 16, which Samsung phones come with, read
+       such a button as "Knapp" with no name at all, in Chrome 150 and later;
+       `aria-label` it reads. */
+    return (
+      <Tooltip content={label ? `${label} ${fileName}` : ''}>
+        <Button
+          ref={setRef}
+          icon
+          variant="tertiary"
+          className={cl(kindClass, className)}
+          {...rest}
+        >
+          {icon}
+        </Button>
+      </Tooltip>
+    );
+  },
+);
+
 export const FileUploadItemButton = forwardRef<
   HTMLButtonElement,
-  FileUploadItemButtonProps & { icon: ReactNode; kind: 'delete' | 'download' }
->(function FileUploadItemButton(
-  { fileName, icon, kind, className, ...rest },
-  ref,
-) {
-  const kindClass = `uds-file-upload__${kind}-button`;
-
-  const node = useRef<HTMLButtonElement | null>(null);
-  const setRef = useCallback(
-    (el: HTMLButtonElement | null) => {
-      if (!el && node.current) handleRemoval(node.current, kindClass);
-      node.current = el;
-      if (typeof ref === 'function') {
-        ref(el);
-      } else if (ref) {
-        ref.current = el;
-      }
-    },
-    [ref, kindClass],
-  );
-
-  /* Read from the button, so it follows the `lang` the button is in. */
-  const [label, setLabel] = useState<string>();
-  useLayoutEffect(() => {
-    if (node.current) setLabel(cssText(node.current, '--ds-tooltip'));
-  }, []);
-
-  /* The tooltip shows the file name too, since its text is also the
-     button's name: Digdir's tooltip sets it as `aria-label`, overwriting
-     any we set ourselves, and the file name tells the buttons in a list
-     apart. A name from `aria-labelledby` instead, pointing at the tooltip's
-     `aria-label` and the file name on a hidden element, would have kept the
-     tooltip short, but TalkBack 16, which Samsung phones come with, read such
-     a button as "Knapp" with no name at all, in Chrome 150 and later;
-     `aria-label` it reads. */
-  return (
-    <Tooltip content={label ? `${label} ${fileName}` : ''}>
-      <Button
-        ref={setRef}
-        icon
-        variant="tertiary"
-        className={cl(kindClass, className)}
-        {...rest}
-      >
-        {icon}
-      </Button>
-    </Tooltip>
-  );
+  FileUploadItemButtonProps
+>(function FileUploadItemButton(props, ref) {
+  return <ItemButton ref={ref} {...props} />;
 });
+
+/**
+ * The kind of each button: its class for the delete and download buttons, and
+ * its tooltip for a `FileUpload.ItemButton`. Kept here rather than on the
+ * button, where the tooltip's text also holds the file name.
+ */
+const kinds = new WeakMap<Element, string>();
 
 /** A text from CSS, such as one that follows `lang`, without its quotes. */
 function cssText(element: Element, property: string) {
@@ -105,8 +145,10 @@ function cssText(element: Element, property: string) {
  * item and tab:
  * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#discernibleandpredictablekeyboardfocus
  * https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
- * Landing on the same kind of button lets the user remove one file after
- * another. When the list has none left, focus is left to the consumer.
+ * Buttons are of the same kind when they have the same class, or for a
+ * `FileUpload.ItemButton` the same tooltip. Landing on the same kind of button
+ * lets the user remove one file after another. When the list has none left,
+ * focus is left to the consumer.
  *
  * If there is no button to move focus to, Digdir's tooltip implementation
  * currently stays open, pointing at where the button was, since it only closes
@@ -114,7 +156,7 @@ function cssText(element: Element, property: string) {
  * mouse, which Safari does not focus on click. We work around this by closing
  * the tooltip here.
  */
-function handleRemoval(button: HTMLButtonElement, kindClass: string) {
+function handleRemoval(button: HTMLButtonElement, sameKind: string) {
   const focused = document.activeElement === button;
   if (!focused && !button.matches(':hover')) return;
   const row = button.closest('.uds-file-upload__item');
@@ -138,7 +180,9 @@ function handleRemoval(button: HTMLButtonElement, kindClass: string) {
       for (const candidate of candidates) {
         const target =
           candidate.isConnected &&
-          candidate.querySelector<HTMLElement>(`.${kindClass}`);
+          Array.from(candidate.querySelectorAll<HTMLElement>('button')).find(
+            (button) => kinds.get(button) === sameKind,
+          );
         if (target) {
           target.focus();
           return;
