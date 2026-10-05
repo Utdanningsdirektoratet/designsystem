@@ -1,5 +1,8 @@
 import { cleanup, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { useState } from 'react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { userEvent } from 'vitest/browser';
+import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadItem } from './FileUploadItem';
 import './fileUpload.css';
 
@@ -190,6 +193,158 @@ describe('FileUpload.Item', () => {
       );
 
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('removing a file with the keyboard', () => {
+    /* Every row has a download button before the delete button, so landing on
+       the first button in the next row would be the wrong one. */
+    function Files({ onRemove }: { onRemove?: () => void }) {
+      const [names, setNames] = useState(['a.pdf', 'b.pdf', 'c.pdf']);
+      return (
+        <>
+          <button type="button">Utenfor</button>
+          <ul>
+            {names.map((name) => (
+              <FileUploadItem
+                key={name}
+                file={{ name }}
+                actions={
+                  <FileUploadDownloadButton
+                    fileName={name}
+                    onClick={() => {}}
+                  />
+                }
+                onRemove={() => {
+                  setNames((prev) => prev.filter((n) => n !== name));
+                  onRemove?.();
+                }}
+              />
+            ))}
+          </ul>
+        </>
+      );
+    }
+
+    const buttonIn = (name: string, kind: 'delete' | 'download') =>
+      screen
+        .getByText(name)
+        .closest('li')
+        ?.querySelector<HTMLElement>(`.uds-file-upload__${kind}-button`);
+
+    const remove = async (name: string) => {
+      buttonIn(name, 'delete')?.focus();
+      await userEvent.keyboard('{Enter}');
+    };
+
+    it("moves focus to the next file's delete button", async () => {
+      render(<Files />);
+
+      await remove('b.pdf');
+
+      await vi.waitFor(() => expect(buttonIn('c.pdf', 'delete')).toHaveFocus());
+    });
+
+    it("moves focus to the previous file's delete button when the last file is removed", async () => {
+      render(<Files />);
+
+      await remove('c.pdf');
+
+      await vi.waitFor(() => expect(buttonIn('b.pdf', 'delete')).toHaveFocus());
+    });
+
+    it('leaves focus where `onRemove` moved it', async () => {
+      render(
+        <Files
+          onRemove={() =>
+            screen.getByRole('button', { name: 'Utenfor' }).focus()
+          }
+        />,
+      );
+
+      await remove('b.pdf');
+
+      await vi.waitFor(() =>
+        expect(screen.queryByText('b.pdf')).not.toBeInTheDocument(),
+      );
+      expect(screen.getByRole('button', { name: 'Utenfor' })).toHaveFocus();
+    });
+  });
+
+  it("moves focus to the next file's download button when loading hides the focused one", async () => {
+    function Downloads() {
+      const [busy, setBusy] = useState<string>();
+      return (
+        <ul>
+          {['a.pdf', 'b.pdf'].map((name) => (
+            <FileUploadItem
+              key={name}
+              file={{ name }}
+              loading={busy === name}
+              actions={
+                <FileUploadDownloadButton
+                  fileName={name}
+                  onClick={() => setBusy(name)}
+                />
+              }
+            />
+          ))}
+        </ul>
+      );
+    }
+    render(<Downloads />);
+    const [first, second] = screen.getAllByRole('button');
+
+    first.focus();
+    await userEvent.keyboard('{Enter}');
+
+    await vi.waitFor(() => expect(second).toHaveFocus());
+  });
+
+  describe('the tooltip of a removed delete button', () => {
+    function OneFile() {
+      const [removed, setRemoved] = useState(false);
+      return (
+        <ul>
+          {!removed && (
+            <FileUploadItem
+              file={{ name: 'a.pdf' }}
+              onRemove={() => setRemoved(true)}
+            />
+          )}
+        </ul>
+      );
+    }
+
+    const tooltipOpen = () =>
+      Boolean(document.querySelector('.ds-tooltip')?.matches(':popover-open'));
+
+    it('closes when there is no file left to move focus to', async () => {
+      render(<OneFile />);
+      screen.getByRole('button').focus();
+      await vi.waitFor(() => expect(tooltipOpen()).toBe(true));
+
+      await userEvent.keyboard('{Enter}');
+
+      await vi.waitFor(() =>
+        expect(screen.queryByRole('button')).not.toBeInTheDocument(),
+      );
+      await vi.waitFor(() => expect(tooltipOpen()).toBe(false));
+    });
+
+    it('closes when the button was under the mouse without having focus', async () => {
+      render(<OneFile />);
+      const button = screen.getByRole('button');
+      await userEvent.hover(button);
+      await vi.waitFor(() => expect(tooltipOpen()).toBe(true));
+
+      // As in Safari, where clicking a button does not focus it.
+      button.click();
+
+      await vi.waitFor(() =>
+        expect(screen.queryByRole('button')).not.toBeInTheDocument(),
+      );
+      await vi.waitFor(() => expect(tooltipOpen()).toBe(false));
     });
   });
 });

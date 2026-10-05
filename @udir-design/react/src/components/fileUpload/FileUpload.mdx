@@ -166,6 +166,10 @@ Navnet på knappene sier hvilken fil de gjelder, for eksempel "Fjern filen sokna
 
 Mens `loading` er satt, vises ingen knapper. `readonly` skjuler bare knappen for å fjerne filen. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke.
 
+Forsvinner en av knappene mens den har fokus, for eksempel fordi brukeren fjernet filen eller fordi `loading` ble satt, flyttes fokus til samme knapp på vedlegget under, eller på vedlegget over når det ikke finnes noe under. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere filer etter hverandre. Dette gjelder `FileUpload.DownloadButton` og knappen for å fjerne filen, ikke egne knapper i `actions`.
+
+Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, må du selv flytte fokus i `onRemove`, for eksempel til knappen for å laste opp filer. Har du flyttet fokus i `onRemove`, blir det stående der.
+
 <Canvas of={FileUploadStories.ItemActions} />
 
 #### Lenke eller nedlastingsknapp?

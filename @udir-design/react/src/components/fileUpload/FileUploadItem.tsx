@@ -107,7 +107,7 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
 
     const deleteButton = onRemove && !readonly && (
       <FileUploadItemButton
-        className="uds-file-upload__delete-button"
+        kind="delete"
         icon={<TrashIcon aria-hidden />}
         fileName={file.name}
         onClick={(e) => onRemove(file, e)}
