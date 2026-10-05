@@ -197,6 +197,12 @@ describe('FileUpload.Item', () => {
     });
   });
 
+  const buttonIn = (name: string, kind: 'delete' | 'download') =>
+    screen
+      .getByText(name)
+      .closest('li')
+      ?.querySelector<HTMLElement>(`.uds-file-upload__${kind}-button`);
+
   describe('removing a file with the keyboard', () => {
     /* Every row has a download button before the delete button, so landing on
        the first button in the next row would be the wrong one. */
@@ -226,12 +232,6 @@ describe('FileUpload.Item', () => {
         </>
       );
     }
-
-    const buttonIn = (name: string, kind: 'delete' | 'download') =>
-      screen
-        .getByText(name)
-        .closest('li')
-        ?.querySelector<HTMLElement>(`.uds-file-upload__${kind}-button`);
 
     const remove = async (name: string) => {
       buttonIn(name, 'delete')?.focus();
@@ -272,59 +272,121 @@ describe('FileUpload.Item', () => {
     });
   });
 
-  it("moves focus to the next file's download button when loading hides the focused one", async () => {
-    function Downloads() {
+  describe('while `loading` hides the focused button', () => {
+    /* Loading lasts long enough to be seen before it ends. */
+    const later = (done: () => void) => setTimeout(done, 200);
+
+    function Files() {
+      const [names, setNames] = useState(['a.pdf', 'b.pdf']);
       const [busy, setBusy] = useState<string>();
       return (
-        <ul>
-          {['a.pdf', 'b.pdf'].map((name) => (
-            <FileUploadItem
-              key={name}
-              file={{ name }}
-              loading={busy === name}
-              actions={
-                <FileUploadDownloadButton
-                  fileName={name}
-                  onClick={() => setBusy(name)}
-                />
-              }
-            />
-          ))}
-        </ul>
+        <>
+          <button type="button">Utenfor</button>
+          <ul>
+            {names.map((name) => (
+              <FileUploadItem
+                key={name}
+                file={{ name }}
+                loading={busy === name}
+                actions={
+                  <FileUploadDownloadButton
+                    fileName={name}
+                    onClick={() => {
+                      setBusy(name);
+                      later(() => setBusy(undefined));
+                    }}
+                  />
+                }
+                // Deleted on a server, which takes a while.
+                onRemove={() => {
+                  setBusy(name);
+                  later(() =>
+                    setNames((prev) => prev.filter((n) => n !== name)),
+                  );
+                }}
+              />
+            ))}
+          </ul>
+        </>
       );
     }
-    render(<Downloads />);
-    const [first, second] = screen.getAllByRole('button');
 
-    first.focus();
-    await userEvent.keyboard('{Enter}');
+    const press = async (name: string, kind: 'delete' | 'download') => {
+      buttonIn(name, kind)?.focus();
+      await userEvent.keyboard('{Enter}');
+      await vi.waitFor(() =>
+        expect(screen.getByText(name).closest('li')).toHaveAttribute(
+          'aria-busy',
+          'true',
+        ),
+      );
+    };
 
-    await vi.waitFor(() => expect(second).toHaveFocus());
+    it('keeps focus away from the other files', async () => {
+      render(<Files />);
+
+      await press('a.pdf', 'download');
+
+      expect(buttonIn('b.pdf', 'download')).not.toHaveFocus();
+      expect(document.body).toHaveFocus();
+    });
+
+    it('gives focus back to the button when loading ends', async () => {
+      render(<Files />);
+
+      await press('a.pdf', 'download');
+
+      await vi.waitFor(() =>
+        expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
+      );
+    });
+
+    it('leaves focus where the user moved it while loading', async () => {
+      render(<Files />);
+      const outside = screen.getByRole('button', { name: 'Utenfor' });
+
+      await press('a.pdf', 'download');
+      outside.focus();
+
+      await vi.waitFor(() =>
+        expect(buttonIn('a.pdf', 'download')).toBeInTheDocument(),
+      );
+      expect(outside).toHaveFocus();
+    });
+
+    it("moves focus to the next file's delete button once the file is removed", async () => {
+      render(<Files />);
+
+      await press('a.pdf', 'delete');
+
+      await vi.waitFor(() => expect(buttonIn('b.pdf', 'delete')).toHaveFocus());
+    });
   });
 
   describe('a custom `FileUpload.ItemButton`', () => {
     function Files() {
-      const [busy, setBusy] = useState<string>();
+      const [names, setNames] = useState(['a.pdf', 'b.pdf']);
       return (
         <ul>
-          {['a.pdf', 'b.pdf'].map((name) => (
+          {names.map((name) => (
             <FileUploadItem
               key={name}
               file={{ name }}
-              loading={busy === name}
               actions={
                 <>
                   <FileUploadItemButton
                     icon={<svg aria-hidden />}
-                    tooltip="Forhåndsvis filen"
+                    tooltip="Beskriv filen"
                     fileName={name}
                     onClick={() => {}}
                   />
                   <FileUploadItemButton
                     icon={<svg aria-hidden />}
-                    tooltip="Del filen"
+                    tooltip="Flytt filen"
                     fileName={name}
-                    onClick={() => setBusy(name)}
+                    onClick={() =>
+                      setNames((prev) => prev.filter((n) => n !== name))
+                    }
                   />
                 </>
               }
@@ -338,19 +400,21 @@ describe('FileUpload.Item', () => {
       render(<Files />);
 
       expect(
-        await screen.findByRole('button', { name: 'Del filen a.pdf' }),
+        await screen.findByRole('button', { name: 'Flytt filen a.pdf' }),
       ).toBeInTheDocument();
     });
 
     it('hands focus to the button with the same tooltip on the next file', async () => {
       render(<Files />);
 
-      (await screen.findByRole('button', { name: 'Del filen a.pdf' })).focus();
+      (
+        await screen.findByRole('button', { name: 'Flytt filen a.pdf' })
+      ).focus();
       await userEvent.keyboard('{Enter}');
 
       await vi.waitFor(() =>
         expect(
-          screen.getByRole('button', { name: 'Del filen b.pdf' }),
+          screen.getByRole('button', { name: 'Flytt filen b.pdf' }),
         ).toHaveFocus(),
       );
     });
