@@ -58,14 +58,11 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
     const node = useRef<HTMLButtonElement | null>(null);
     const setRef = useCallback(
       (el: HTMLButtonElement | null) => {
-        if (!el && node.current) {
-          handleRemoval(
-            node.current,
-            kindClass
-              ? `.${kindClass}`
-              : `[data-tooltip="${CSS.escape(tooltip ?? '')}"]`,
-          );
-        }
+        const sameKind = kindClass
+          ? `.${kindClass}`
+          : `[data-tooltip="${CSS.escape(tooltip ?? '')}"]`;
+        if (el) restoreFocus(el, sameKind);
+        else if (node.current) handleRemoval(node.current, sameKind);
         node.current = el;
         if (typeof ref === 'function') {
           ref(el);
@@ -116,21 +113,37 @@ export const FileUploadItemButton = forwardRef<
 });
 
 /**
+ * Rows whose focused button went away while the row stayed, such as while the
+ * item is `loading`, with the kind of button that had focus.
+ */
+const waitingRows = new WeakMap<
+  Element,
+  { sameKind: string; stop: () => void }
+>();
+
+/**
  * Called as the button leaves the page, which happens to the delete button
  * along with its row, and to every button while the item is `loading`. If the
  * button had focus, the browser left focus on the page itself. Tab still
  * continued from where the button had been, but until the user pressed it,
  * nothing showed where they were, and a screen reader had nothing to read.
  *
- * Focus moves instead to the same kind of button in the next row, or in the
- * row before when there is no next one, as APG describes for a deleted list
- * item and tab:
+ * When the row is gone, focus moves instead to the same kind of button in the
+ * next row, or in the row before when there is no next one, as APG describes
+ * for a deleted list item and tab:
  * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#discernibleandpredictablekeyboardfocus
  * https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
  * Buttons are of the same kind when they have the same class, or for a
  * `FileUpload.ItemButton` the same tooltip. Landing on the same kind of button
  * lets the user remove one file after another. When the list has none left,
  * focus is left to the consumer.
+ *
+ * When the row is still there, its buttons are only hidden for a while, so
+ * focus stays with the file instead of moving to another one. The row waits
+ * for a button of the same kind to come back and gets focus back then, see
+ * `restoreFocus`. If the row is removed while it waits, as when a file is set
+ * to `loading` while it is deleted on the server, focus moves on as for any
+ * removed row. Focus moving anywhere else ends the wait.
  *
  * If there is no button to move focus to, Digdir's tooltip implementation
  * currently stays open, pointing at where the button was, since it only closes
@@ -157,16 +170,11 @@ function handleRemoval(button: HTMLButtonElement, sameKind: string) {
       /* Focus that is somewhere else, such as on a message the consumer moved
          it to, stays put, and the focus event has already moved the
          tooltip. */
-      const active = document.activeElement;
-      if (active && active !== document.body) return;
-      for (const candidate of candidates) {
-        const target =
-          candidate.isConnected &&
-          candidate.querySelector<HTMLElement>(sameKind);
-        if (target) {
-          target.focus();
-          return;
-        }
+      if ((document.activeElement ?? document.body) !== document.body) return;
+      if (row?.isConnected) {
+        waitInRow(row, candidates, sameKind);
+      } else if (focusFirst(candidates, sameKind)) {
+        return;
       }
     }
 
@@ -177,4 +185,51 @@ function handleRemoval(button: HTMLButtonElement, sameKind: string) {
     const tooltip = document.querySelector<HTMLElement>('.ds-tooltip');
     if (tooltip?.popover) tooltip.hidePopover();
   });
+}
+
+/** Focuses the button of the given kind in the first row that has one. */
+function focusFirst(rows: Element[], sameKind: string) {
+  for (const row of rows) {
+    const target = row.isConnected && row.querySelector<HTMLElement>(sameKind);
+    if (target) {
+      target.focus();
+      return true;
+    }
+  }
+  return false;
+}
+
+function waitInRow(row: Element, candidates: Element[], sameKind: string) {
+  waitingRows.get(row)?.stop();
+  const list = row.parentElement;
+  const observer = new MutationObserver(() => {
+    if (row.isConnected) return;
+    stop();
+    if ((document.activeElement ?? document.body) === document.body) {
+      focusFirst(candidates, sameKind);
+    }
+  });
+  const stop = () => {
+    observer.disconnect();
+    document.removeEventListener('focusin', stop);
+    waitingRows.delete(row);
+  };
+  if (list) observer.observe(list, { childList: true });
+  document.addEventListener('focusin', stop);
+  waitingRows.set(row, { sameKind, stop });
+}
+
+/**
+ * Called as the button comes onto the page. Gives it focus if its row has been
+ * waiting for this kind of button since the one that had focus went away, and
+ * focus has not been anywhere else since.
+ */
+function restoreFocus(button: HTMLButtonElement, sameKind: string) {
+  const row = button.closest('.uds-file-upload__item');
+  const waiting = row && waitingRows.get(row);
+  if (waiting?.sameKind !== sameKind) return;
+  waiting.stop();
+  if ((document.activeElement ?? document.body) === document.body) {
+    button.focus();
+  }
 }
