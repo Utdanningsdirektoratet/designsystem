@@ -2,6 +2,7 @@ import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadDropzone } from './FileUploadDropzone';
 import { FileUploadFileSize } from './FileUploadFileSize';
 import { FileUploadItem } from './FileUploadItem';
+import { FileUploadItemButton } from './FileUploadItemButton';
 import { FileUploadList } from './FileUploadList';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
@@ -73,6 +74,20 @@ export type FileUpload = {
    * />
    */
   DownloadButton: typeof FileUploadDownloadButton;
+  /**
+   * Icon button for your own action, for use in `actions` on
+   * `FileUpload.Item`. Shows `tooltip` and is named by it followed by
+   * `fileName`.
+   *
+   * @example
+   * <FileUpload.ItemButton
+   *   icon={<NotePencilIcon aria-hidden />}
+   *   tooltip="Beskriv filen"
+   *   fileName={file.name}
+   *   onClick={() => edit(file)}
+   * />
+   */
+  ItemButton: typeof FileUploadItemButton;
 };
 
 export const FileUpload: FileUpload = {
@@ -82,6 +97,7 @@ export const FileUpload: FileUpload = {
   List: FileUploadList,
   FileSize: FileUploadFileSize,
   DownloadButton: FileUploadDownloadButton,
+  ItemButton: FileUploadItemButton,
 };
 
 FileUpload.Trigger.displayName = 'FileUpload.Trigger';
@@ -90,3 +106,4 @@ FileUpload.Item.displayName = 'FileUpload.Item';
 FileUpload.List.displayName = 'FileUpload.List';
 FileUpload.FileSize.displayName = 'FileUpload.FileSize';
 FileUpload.DownloadButton.displayName = 'FileUpload.DownloadButton';
+FileUpload.ItemButton.displayName = 'FileUpload.ItemButton';

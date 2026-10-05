@@ -160,13 +160,17 @@ import { downloadFile } from '@udir-design/react/alpha/utilities';
 />;
 ```
 
-`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. Har nettleseren filen, for eksempel fordi brukeren nettopp har lagt den ved, kan du bruke `downloadFile` fra `@udir-design/react/alpha/utilities`.
+`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. Har nettleseren filen, for eksempel fordi brukeren nettopp har lagt den ved, kan du bruke `downloadFile` fra `@udir-design/react/alpha/utilities`. Starter knappen noe som tar tid, for eksempel fordi filen må hentes fra serveren først, setter du `loading` på knappen, ikke på `FileUpload.Item`. Da beholder knappen fokus mens det pågår, mens `loading` på vedlegget skjuler alle knappene.
 
-Navnet på knappene sier hvilken fil de gjelder, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. Lager du egne knapper, bør navnet på dem også si hvilken fil de gjelder.
+Navnet på knappene sier hvilken fil de gjelder, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden.
+
+Trenger du en knapp for noe annet, for eksempel for å beskrive filen, bruker du `FileUpload.ItemButton` med et ikon og en `tooltip`. Navnet på knappen blir teksten i `tooltip` etterfulgt av `fileName`, for eksempel "Beskriv filen attest.pdf", mens tooltipen bare viser "Beskriv filen". Skriv derfor `tooltip` slik at den gir mening med filnavnet etter seg: "Beskriv filen" fungerer, mens "Rediger beskrivelse" gir "Rediger beskrivelse attest.pdf". Du må selv sørge for at `tooltip` er på riktig språk.
+
+<Canvas of={FileUploadStories.CustomItemButton} />
 
 Mens `loading` er satt, vises ingen knapper. `readonly` skjuler bare knappen for å fjerne filen. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke.
 
-Forsvinner en av knappene mens den har fokus, for eksempel fordi brukeren fjernet filen eller fordi `loading` ble satt, flyttes fokus til samme knapp på vedlegget under, eller på vedlegget over når det ikke finnes noe under. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere filer etter hverandre. Dette gjelder `FileUpload.DownloadButton` og knappen for å fjerne filen, ikke egne knapper i `actions`.
+Forsvinner en av knappene mens den har fokus, for eksempel fordi brukeren fjernet filen eller fordi `loading` ble satt, flyttes fokus til samme knapp på vedlegget under, eller på vedlegget over når det ikke finnes noe under. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere filer etter hverandre. Dette gjelder knappene fra `FileUpload`, ikke andre knapper du legger i `actions`. To `FileUpload.ItemButton` regnes som samme knapp når de har samme `tooltip`.
 
 Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, må du selv flytte fokus i `onRemove`, for eksempel til knappen for å laste opp filer. Har du flyttet fokus i `onRemove`, blir det stående der.
 
