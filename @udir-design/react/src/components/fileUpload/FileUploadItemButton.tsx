@@ -15,73 +15,104 @@ export interface FileUploadItemButtonProps extends Omit<
   | 'aria-labelledby'
 > {
   /**
-   * Name of the file the button acts on. Read out after the button text, so
-   * every button in the list has a name of its own.
+   * Name of the file the button acts on. Read out after `tooltip`, so every
+   * button in the list has a name of its own.
    */
   fileName: string;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * The icon shown in the button, such as one from `@udir-design/icons`, with
+   * `aria-hidden`. Should only contain an icon, not text.
+   */
+  icon: ReactNode;
+  /**
+   * What the button does, such as "Beskriv filen". Shown as a tooltip, and
+   * read out before `fileName` as the name of the button, so it has to make
+   * sense with the file name after it.
+   */
+  tooltip: string;
 }
 
 /**
- * An icon button in a `FileUpload.Item`. `kind` sets the class
- * `uds-file-upload__<kind>-button`, which the text is set on in CSS through
+ * The delete and download buttons take their text from CSS instead of
+ * `tooltip`, so that it follows `lang`. `kind` sets the class
+ * `uds-file-upload__<kind>-button`, which the text is set on through
  * `--ds-tooltip`.
  */
+type ItemButtonProps = Omit<FileUploadItemButtonProps, 'tooltip'> &
+  (
+    | { tooltip: string; kind?: undefined }
+    | { kind: 'delete' | 'download'; tooltip?: undefined }
+  );
+
+export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
+  function ItemButton(
+    { fileName, icon, kind, tooltip, id, className, ...rest },
+    ref,
+  ) {
+    const generatedId = useId();
+    const buttonId = id ?? generatedId;
+    const fileNameId = `${buttonId}-file`;
+    const kindClass = kind && `uds-file-upload__${kind}-button`;
+
+    const node = useRef<HTMLButtonElement | null>(null);
+    const setRef = useCallback(
+      (el: HTMLButtonElement | null) => {
+        if (!el && node.current) {
+          handleRemoval(
+            node.current,
+            kindClass
+              ? `.${kindClass}`
+              : `[data-tooltip="${CSS.escape(tooltip ?? '')}"]`,
+          );
+        }
+        node.current = el;
+        if (typeof ref === 'function') {
+          ref(el);
+        } else if (ref) {
+          ref.current = el;
+        }
+      },
+      [ref, kindClass, tooltip],
+    );
+
+    /* The tooltip sets its text as `aria-label` on the button, overwriting any
+       we set ourselves. Pointing `aria-labelledby` at the button first picks
+       that label up, and the file name after it tells the buttons in a list
+       apart, while the tooltip stays short.
+
+       The file name is an `aria-label` on a hidden element rather than its
+       text, so the row does not contain the name twice for anyone looking it
+       up by text, such as a test. `role="img"` is there because a plain span
+       may not be named. The element lies outside the button: content inside
+       it would make the tooltip a description instead. */
+    return (
+      <>
+        <Tooltip content={tooltip ?? ''}>
+          <Button
+            ref={setRef}
+            id={buttonId}
+            icon
+            variant="tertiary"
+            aria-labelledby={`${buttonId} ${fileNameId}`}
+            className={cl(kindClass, className)}
+            {...rest}
+          >
+            {icon}
+          </Button>
+        </Tooltip>
+        {/* oxlint-disable-next-line jsx-a11y/prefer-tag-over-role -- An `<img>` needs a `src`; this element only carries a name for `aria-labelledby`. */}
+        <span hidden id={fileNameId} role="img" aria-label={fileName} />
+      </>
+    );
+  },
+);
+
 export const FileUploadItemButton = forwardRef<
   HTMLButtonElement,
-  FileUploadItemButtonProps & { icon: ReactNode; kind: 'delete' | 'download' }
->(function FileUploadItemButton(
-  { fileName, icon, kind, id, className, ...rest },
-  ref,
-) {
-  const generatedId = useId();
-  const buttonId = id ?? generatedId;
-  const fileNameId = `${buttonId}-file`;
-  const kindClass = `uds-file-upload__${kind}-button`;
-
-  const node = useRef<HTMLButtonElement | null>(null);
-  const setRef = useCallback(
-    (el: HTMLButtonElement | null) => {
-      if (!el && node.current) handleRemoval(node.current, kindClass);
-      node.current = el;
-      if (typeof ref === 'function') {
-        ref(el);
-      } else if (ref) {
-        ref.current = el;
-      }
-    },
-    [ref, kindClass],
-  );
-
-  /* The tooltip sets its text as `aria-label` on the button, overwriting any
-     we set ourselves. Pointing `aria-labelledby` at the button first picks
-     that label up, and the file name after it tells the buttons in a list
-     apart, while the tooltip stays short.
-
-     The file name is an `aria-label` on a hidden element rather than its
-     text, so the row does not contain the name twice for anyone looking it up
-     by text, such as a test. `role="img"` is there because a plain span may
-     not be named. The element lies outside the button: content inside it
-     would make the tooltip a description instead. */
-  return (
-    <>
-      <Tooltip content="">
-        <Button
-          ref={setRef}
-          id={buttonId}
-          icon
-          variant="tertiary"
-          aria-labelledby={`${buttonId} ${fileNameId}`}
-          className={cl(kindClass, className)}
-          {...rest}
-        >
-          {icon}
-        </Button>
-      </Tooltip>
-      {/* oxlint-disable-next-line jsx-a11y/prefer-tag-over-role -- An `<img>` needs a `src`; this element only carries a name for `aria-labelledby`. */}
-      <span hidden id={fileNameId} role="img" aria-label={fileName} />
-    </>
-  );
+  FileUploadItemButtonProps
+>(function FileUploadItemButton(props, ref) {
+  return <ItemButton ref={ref} {...props} />;
 });
 
 /**
@@ -96,8 +127,10 @@ export const FileUploadItemButton = forwardRef<
  * item and tab:
  * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#discernibleandpredictablekeyboardfocus
  * https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
- * Landing on the same kind of button lets the user remove one file after
- * another. When the list has none left, focus is left to the consumer.
+ * Buttons are of the same kind when they have the same class, or for a
+ * `FileUpload.ItemButton` the same tooltip. Landing on the same kind of button
+ * lets the user remove one file after another. When the list has none left,
+ * focus is left to the consumer.
  *
  * If there is no button to move focus to, Digdir's tooltip implementation
  * currently stays open, pointing at where the button was, since it only closes
@@ -105,7 +138,7 @@ export const FileUploadItemButton = forwardRef<
  * mouse, which Safari does not focus on click. We work around this by closing
  * the tooltip here.
  */
-function handleRemoval(button: HTMLButtonElement, kindClass: string) {
+function handleRemoval(button: HTMLButtonElement, sameKind: string) {
   const focused = document.activeElement === button;
   if (!focused && !button.matches(':hover')) return;
   const row = button.closest('.uds-file-upload__item');
@@ -129,7 +162,7 @@ function handleRemoval(button: HTMLButtonElement, kindClass: string) {
       for (const candidate of candidates) {
         const target =
           candidate.isConnected &&
-          candidate.querySelector<HTMLElement>(`.${kindClass}`);
+          candidate.querySelector<HTMLElement>(sameKind);
         if (target) {
           target.focus();
           return;
