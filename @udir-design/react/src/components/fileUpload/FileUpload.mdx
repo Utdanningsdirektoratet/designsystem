@@ -170,7 +170,9 @@ Trenger du en knapp for noe annet, for eksempel for å beskrive filen, bruker du
 
 Mens `loading` er satt, vises ingen knapper. `readonly` skjuler bare knappen for å fjerne filen. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke.
 
-Forsvinner en av knappene mens den har fokus, for eksempel fordi brukeren fjernet filen eller fordi `loading` ble satt, flyttes fokus til samme knapp på vedlegget under, eller på vedlegget over når det ikke finnes noe under. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere filer etter hverandre. Dette gjelder knappene fra `FileUpload`, ikke andre knapper du legger i `actions`. To `FileUpload.ItemButton` regnes som samme knapp når de har samme `tooltip`.
+Forsvinner et vedlegg mens en av knappene på det har fokus, flyttes fokus til samme knapp på vedlegget under, eller på vedlegget over når det ikke finnes noe under. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere filer etter hverandre. Dette gjelder knappene fra `FileUpload`, ikke andre knapper du legger i `actions`. To `FileUpload.ItemButton` regnes som samme knapp når de har samme `tooltip`.
+
+Blir knappene skjult fordi `loading` er satt, flyttes ikke fokus til et annet vedlegg. Knappen får fokus igjen når `loading` fjernes, med mindre brukeren har flyttet fokus et annet sted i mellomtiden. Fjernes vedlegget mens det laster, flyttes fokus til vedlegget under eller over som vanlig.
 
 Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, må du selv flytte fokus i `onRemove`, for eksempel til knappen for å laste opp filer. Har du flyttet fokus i `onRemove`, blir det stående der.
 
