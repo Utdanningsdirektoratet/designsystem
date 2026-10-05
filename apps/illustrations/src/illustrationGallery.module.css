@@ -1,0 +1,185 @@
+.root,
+.content {
+  display: grid;
+  gap: var(--ds-size-4);
+  min-width: 0;
+}
+
+.content {
+  padding-block-start: var(--ds-size-4);
+}
+
+.toolbar {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--ds-size-4);
+}
+
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--ds-size-4);
+  padding: var(--ds-size-6);
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--ds-size-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 10rem auto auto;
+  align-content: start;
+  gap: var(--ds-size-3);
+  width: 100%;
+  height: 100%;
+  padding: var(--ds-size-4);
+  color: inherit;
+  font: inherit;
+  background: var(--ds-color-neutral-background-default);
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-md);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.card:hover {
+  background: var(--ds-color-neutral-surface-hover);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--ds-color-neutral-border-strong);
+  outline-offset: 3px;
+}
+
+.card img {
+  width: 100%;
+  height: 10rem;
+  object-fit: contain;
+}
+
+.variantCount {
+  font-size: var(--ds-body-sm-font-size);
+  color: var(--ds-color-neutral-text-subtle);
+}
+
+.dialog {
+  --dsc-dialog-max-width: 65rem;
+
+  width: min(65rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+}
+
+.details {
+  display: grid;
+  gap: var(--ds-size-8);
+  margin-top: var(--ds-size-6);
+}
+
+.controlSection {
+  display: grid;
+  gap: var(--ds-size-4);
+  min-width: 0;
+}
+
+.previewPanel {
+  display: grid;
+  gap: var(--ds-size-4);
+  min-width: 0;
+  align-content: start;
+  padding: var(--ds-size-4);
+  padding-block-end: var(--ds-size-2);
+  background: var(--ds-color-neutral-background-default);
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-md);
+}
+
+.preview {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: contain;
+}
+
+.dimensions,
+.fileInfo {
+  color: var(--ds-color-neutral-text-subtle);
+}
+
+.dimensions {
+  text-align: start;
+}
+
+.previewFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-size-2);
+  margin-block-start: calc(-1 * var(--ds-size-2));
+}
+
+.controls {
+  display: grid;
+  align-content: start;
+  gap: var(--ds-size-6);
+  min-width: 0;
+}
+
+.selects {
+  display: grid;
+  gap: var(--ds-size-4);
+}
+
+.checkboxes {
+  display: grid;
+  gap: var(--ds-size-2);
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-4);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--ds-size-6);
+}
+
+@media (min-width: 48rem) {
+  .details {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .preview {
+    height: 28rem;
+  }
+}
+
+/* A toggle group cannot shrink, so swap it for a select when the container is narrow. */
+.categorySelect {
+  display: none;
+}
+
+@container (max-width: 52rem) {
+  .categoryToggle {
+    display: none;
+  }
+
+  .categorySelect {
+    display: grid;
+  }
+}

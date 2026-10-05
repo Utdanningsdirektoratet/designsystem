@@ -1,6 +1,7 @@
 packages:
   - "@internal/*"
   - "@udir-design/*"
+  - "apps/*"
   - design-tokens
   - test-apps/*
 
@@ -139,6 +140,8 @@ catalog:
   express: ^5.2.1
   express-rate-limit: ^8.7.0
   handlebars: ^4.7.9
+  "@types/proper-lockfile": ^4.1.4
+  proper-lockfile: ^4.1.2
 
 catalogMode: strict
 
