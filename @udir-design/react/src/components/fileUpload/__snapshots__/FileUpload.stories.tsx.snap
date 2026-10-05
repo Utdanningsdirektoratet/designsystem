@@ -349,6 +349,313 @@ exports[`Compact List 1`] = `
 </div>
 `;
 
+exports[`Custom Item Button 1`] = `
+<ul
+  role="list"
+  data-variant="default"
+>
+  <li>
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span>
+          vitnemal.pdf
+        </span>
+        <div>
+          Vitnemål fra videregående skole (
+          <span>
+            293 KB
+          </span>
+          )
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Beskriv filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Beskriv filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="vitnemal.pdf"
+        >
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Fjern filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Fjern filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="vitnemal.pdf"
+        >
+        </span>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+  <li>
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span>
+          attest.pdf
+        </span>
+        <div>
+          Attest fra arbeidsgiver (
+          <span>
+            293 KB
+          </span>
+          )
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Beskriv filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Beskriv filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="attest.pdf"
+        >
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Fjern filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Fjern filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="attest.pdf"
+        >
+        </span>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+</ul>
+<dialog
+  data-placement="center"
+  data-modal="true"
+  id="<generated>"
+  closedby="any"
+>
+  <button
+    data-icon="true"
+    commandfor="<generated>"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    command="close"
+  >
+  </button>
+  <form
+    method="dialog"
+    style="<removed>"
+  >
+    <h2>
+      Beskriv filen attest.pdf
+    </h2>
+    <ds-field>
+      <label for="<generated>">
+        Beskrivelse
+      </label>
+      <div
+        data-field="description"
+        id="<generated>"
+      >
+        For eksempel "Vitnemål" eller "Legeerklæring"
+      </div>
+      <div>
+        <input
+          type="text"
+          name="description"
+          id="<generated>"
+          aria-describedby="<generated>"
+        >
+      </div>
+    </ds-field>
+    <div style="<removed>">
+      <button type="submit">
+        Lagre
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Avbryt
+      </button>
+    </div>
+  </form>
+</dialog>
+`;
+
 exports[`Example Drop Zone 1`] = `
 <ds-field>
   <label for="<generated>">
