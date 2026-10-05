@@ -1,6 +1,6 @@
 import { Tooltip } from '@digdir/designsystemet-react';
 import cl from 'clsx/lite';
-import { forwardRef, useId } from 'react';
+import { forwardRef, useCallback, useId, useRef } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
 import { Button, type ButtonProps } from '../button';
 
@@ -55,6 +55,24 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
     const fileNameId = `${buttonId}-file`;
     const kindClass = kind && `uds-file-upload__${kind}-button`;
 
+    const node = useRef<HTMLButtonElement | null>(null);
+    const setRef = useCallback(
+      (el: HTMLButtonElement | null) => {
+        const sameKind = kindClass
+          ? `.${kindClass}`
+          : `[data-tooltip="${CSS.escape(tooltip ?? '')}"]`;
+        if (el) restoreFocus(el, sameKind);
+        else if (node.current) handleRemoval(node.current, sameKind);
+        node.current = el;
+        if (typeof ref === 'function') {
+          ref(el);
+        } else if (ref) {
+          ref.current = el;
+        }
+      },
+      [ref, kindClass, tooltip],
+    );
+
     /* The tooltip sets its text as `aria-label` on the button, overwriting any
        we set ourselves. Pointing `aria-labelledby` at the button first picks
        that label up, and the file name after it tells the buttons in a list
@@ -74,7 +92,7 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
       <>
         <Tooltip content={tooltip ?? ''}>
           <Button
-            ref={ref}
+            ref={setRef}
             id={buttonId}
             icon
             variant="tertiary"
@@ -109,3 +127,198 @@ export const FileUploadItemButton = forwardRef<
 >(function FileUploadItemButton(props, ref) {
   return <ItemButton ref={ref} {...props} />;
 });
+
+/**
+ * Rows whose focused button went away while the row stayed, such as while the
+ * item is `loading`, with the kind of button that had focus.
+ */
+const waitingRows = new WeakMap<
+  Element,
+  { sameKind: string; target: HTMLElement; stop: () => void }
+>();
+
+/**
+ * Called as the button leaves the page, which happens to the delete button
+ * along with its row, and to every button while the item is `loading`. If the
+ * button had focus, the browser left focus on the page itself. Tab still
+ * continued from where the button had been, but until the user pressed it,
+ * nothing showed where they were, and a screen reader had nothing to read.
+ *
+ * When the row is gone, focus moves instead to the same kind of button in the
+ * next row, or in the row before when there is no next one, as APG describes
+ * for a deleted list item and tab:
+ * https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#discernibleandpredictablekeyboardfocus
+ * https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
+ * Buttons are of the same kind when they have the same class, or for a
+ * `FileUpload.ItemButton` the same tooltip. Landing on the same kind of button
+ * lets the user remove one file after another.
+ *
+ * When no row has one, as when the list is left empty, focus moves to the
+ * nearest element before the list that can take focus, which is usually the
+ * field to upload files with. Only within the list's form, though: outside
+ * one, the nearest element could be anywhere, such as in the page's menu.
+ * Leaving focus on the page was not enough even though Tab continued from the
+ * right place: VoiceOver in Safari lost its place, and the announcement that
+ * the file was removed along with it.
+ *
+ * When the row is still there, its buttons are only hidden for a while, so
+ * focus stays with the file instead of moving to another one: its file name
+ * and loading text take focus meanwhile, see `FileUpload.Item`, or the row
+ * itself when it is not loading. Left on the page, focus made VoiceOver in
+ * Safari read the page's title and lose its place, and the row's loading text
+ * was never read. The row waits for a button of the same kind to come back
+ * and gives it focus then, see `restoreFocus`. If the row is removed while it
+ * waits, as when a file is set to `loading` while it is deleted on the
+ * server, focus moves on as for any removed row. Focus moving anywhere else
+ * ends the wait.
+ *
+ * If there is no button to move focus to, Digdir's tooltip implementation
+ * currently stays open, pointing at where the button was, since it only closes
+ * on focus, mouse movement or Escape. The same happens to a button under the
+ * mouse, which Safari does not focus on click. We work around this by closing
+ * the tooltip here.
+ */
+function handleRemoval(button: HTMLButtonElement, sameKind: string) {
+  const focused = document.activeElement === button;
+  if (!focused && !button.matches(':hover')) return;
+  const row = button.closest<HTMLElement>('.uds-file-upload__item');
+  const list = row?.parentElement;
+  const rows = list ? Array.from(list.children) : [];
+  const index = row ? rows.indexOf(row) : -1;
+  const candidates =
+    index < 0
+      ? []
+      : [...rows.slice(index + 1), ...rows.slice(0, index).reverse()];
+  /* Collected now, since the list may leave along with its last row. */
+  const form = focused && list?.closest('form');
+  const earlier =
+    form && list
+      ? Array.from(
+          form.querySelectorAll<HTMLElement>(
+            'a[href], button, input, select, textarea, summary, [tabindex]',
+          ),
+        ).filter(
+          (el) =>
+            el.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING,
+        )
+      : [];
+  const moveOn = () => focusFirst(candidates, sameKind) || focusLast(earlier);
+
+  /* React lets go of the ref before it removes the button, so wait until it
+     has. A button that is still there only had its ref changed. */
+  queueMicrotask(() => {
+    if (button.isConnected) return;
+    if (focused) {
+      /* Focus that is somewhere else, such as on a message the consumer moved
+         it to, stays put, and the focus event has already moved the
+         tooltip. */
+      if ((document.activeElement ?? document.body) !== document.body) return;
+      if (row?.isConnected) {
+        waitInRow(row, sameKind, moveOn);
+      } else if (moveOn()) {
+        return;
+      }
+    }
+
+    /* A workaround until Digdir closes the tooltip when its button is removed.
+       Digdir still counts it as open and closes it again on the next focus or
+       mouse movement, which does nothing to a closed popover. `popover` is
+       only set once the tooltip has been shown. */
+    const tooltip = document.querySelector<HTMLElement>('.ds-tooltip');
+    if (tooltip?.popover) tooltip.hidePopover();
+  });
+}
+
+/** Focuses the button of the given kind in the first row that has one. */
+function focusFirst(rows: Element[], sameKind: string) {
+  for (const row of rows) {
+    const target = row.isConnected && row.querySelector<HTMLElement>(sameKind);
+    if (target) {
+      target.focus();
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Focuses the last of the elements that can still take focus. Checked only
+ * now, since the field may have changed along with the list, such as by being
+ * disabled once enough files are attached.
+ */
+function focusLast(elements: HTMLElement[]) {
+  const target = elements.findLast(
+    (el) =>
+      el.isConnected &&
+      !el.matches(':disabled, [tabindex="-1"], input[type="hidden"]') &&
+      !el.closest('[inert]') &&
+      el.checkVisibility(),
+  );
+  target?.focus();
+  return Boolean(target);
+}
+
+function waitInRow(row: HTMLElement, sameKind: string, moveOn: () => boolean) {
+  waitingRows.get(row)?.stop();
+  const loadingTarget = row.querySelector<HTMLElement>(
+    ':scope > .uds-file-upload__item-focus',
+  );
+  const target = loadingTarget ?? row;
+  /* Only a tabindex we added is ours to take away again. */
+  const addedTabIndex = !target.hasAttribute('tabindex');
+  if (addedTabIndex) target.tabIndex = -1;
+  if (loadingTarget) loadingTarget.hidden = false;
+  target.focus();
+  const stopObserving = whenRemoved(row, () => {
+    stop();
+    if ((document.activeElement ?? document.body) === document.body) moveOn();
+  });
+  const stop = () => {
+    stopObserving();
+    document.removeEventListener('focusin', stop);
+    if (addedTabIndex) target.removeAttribute('tabindex');
+    waitingRows.delete(row);
+  };
+  /* Added after it has taken focus, so only a later move ends the wait. */
+  document.addEventListener('focusin', stop);
+  waitingRows.set(row, { sameKind, target, stop });
+}
+
+/**
+ * Calls `then` once the row has left the page. Watches the whole page rather
+ * than the list, since a list that is left empty may go along with the row.
+ */
+function whenRemoved(row: Element, then: () => void) {
+  const observer = new MutationObserver(() => {
+    if (row.isConnected) return;
+    observer.disconnect();
+    then();
+  });
+  observer.observe(row.getRootNode(), { childList: true, subtree: true });
+  return () => observer.disconnect();
+}
+
+/**
+ * Called as the button comes onto the page. Gives it focus if its row has been
+ * waiting for this kind of button since the one that had focus went away, and
+ * focus has not been anywhere else since.
+ *
+ * Focus waits 200 ms. Focused as it came onto the page, the button was not
+ * read by VoiceOver in Safari, though it was two frames later. Within 50 ms,
+ * NVDA in Firefox read the row, buttons and all, before the button, even with
+ * the row keeping its name; from 100 ms it read only the button.
+ */
+function restoreFocus(button: HTMLButtonElement, sameKind: string) {
+  const row = button.closest('.uds-file-upload__item');
+  const waiting = row && waitingRows.get(row);
+  if (waiting?.sameKind !== sameKind) return;
+  setTimeout(() => {
+    const active = document.activeElement ?? document.body;
+    if (
+      button.isConnected &&
+      (active === waiting.target || active === document.body)
+    )
+      button.focus();
+    waiting.stop();
+  }, 200);
+}

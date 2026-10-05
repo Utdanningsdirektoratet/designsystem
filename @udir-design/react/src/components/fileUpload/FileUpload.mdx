@@ -189,7 +189,7 @@ import { downloadFile } from '@udir-design/react/alpha/utilities';
 
 `FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. En fil brukeren nettopp har valgt, ligger allerede i nettleseren som et `File`-objekt, også før den er lastet opp. Den kan du gi rett til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link> fra `@udir-design/react/alpha/utilities`. Ligger filen bare på serveren, må du hente den først.
 
-Tar handlingen tid, for eksempel fordi filen må hentes fra serveren først, setter du `loading` på knappen, ikke på `FileUpload.Item`. Da beholder knappen fokus mens det pågår, mens `loading` på vedlegget skjuler alle knappene.
+Tar handlingen tid, for eksempel fordi filen må hentes fra serveren først, setter du `loading` på `FileUpload.Item` mens det pågår, og `loadingText` til det som skjer, for eksempel "Henter filen…". Mens `loading` er satt, skjules knappene. Knappen brukeren trykket på får fokus igjen når `loading` fjernes.
 
 #### Andre handlinger
 
@@ -200,6 +200,8 @@ Trenger du andre handlinger på vedlegget, for eksempel en knapp for å beskrive
 #### Når knappene er skjult
 
 `readonly` på `FileUpload.Item` skjuler bare knappen for å fjerne vedlegget. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke. `loading` på `FileUpload.Item` skjuler alle knappene, også dem i `actions`.
+
+Hvor fokus havner når et vedlegg forsvinner eller knappene blir skjult, står under [Fokus](#fokus).
 
 ### Visningsvarianter
 
@@ -303,13 +305,27 @@ Skjermlesere leser `tooltip` på `FileUpload.ItemButton` med filnavnet etter, s�
 
 Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
 
-Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. `error` og `success` blir bare lest opp når de dukker opp på et vedlegg som allerede ligger i lista.
+Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. `error` og `success` blir bare lest opp når de dukker opp på et vedlegg som allerede ligger i lista. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
 
 Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
 
 Skjermlesere leser knappene på et vedlegg med filnavnet etter, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. På `FileUpload.ItemButton` bestemmer du selv teksten foran filnavnet, se [Egne knapper](#egne-knapper).
 
 Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Har et vedlegg `loading` satt allerede når siden lastes, blir teksten lest sammen med resten av siden, og ikke lest opp før `loadingText` endres.
+
+### Fokus
+
+#### Når et vedlegg forsvinner
+
+Hvis en knapp på et vedlegg har fokus, og vedlegget forsvinner, flyttes fokus til samme knapp på neste vedlegg, eller på forrige vedlegg dersom det ikke finnes noe neste. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere vedlegg etter hverandre. Vanligvis er dette bare aktuelt for den innebygde knappen for å fjerne vedlegget. Fjerner du vedlegg selv, med en egen knapp eller utenfra, gjelder det samme for knappene i `actions` som er `FileUpload.ItemButton` eller `FileUpload.DownloadButton`, men ikke for andre knapper. To `FileUpload.ItemButton` regnes som samme knapp når de har samme `tooltip`.
+
+Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi lista er blitt tom, flyttes fokus til det nærmeste elementet før lista som kan få fokus. Legg derfor lista etter feltet for å laste opp filer, så havner fokus der. Dette skjer bare når lista ligger i et `<form>`-element, og fokus flyttes bare til elementer i det samme skjemaet. Uten `<form>` vet ikke komponenten hva som hører sammen med lista, så fokus blir liggende på selve siden. Da mister skjermleseren plassen sin, og VoiceOver leser heller ikke opp at vedlegget er fjernet. Bruker du ikke `<form>`, må du derfor selv flytte fokus i `onRemove`.
+
+Har du flyttet fokus i `onRemove`, faller denne automatikken bort, og du har selv full kontroll.
+
+#### Når et vedlegg laster
+
+Hvis en knapp på vedlegget har fokus når `loading` settes, får selve vedlegget fokus mens knappene er skjult. Skjermleseren leser opp filnavnet og teksten som viser at det laster. Fokus flyttes ikke til et annet vedlegg. Knappen får fokus igjen når `loading` fjernes, med mindre brukeren har flyttet fokus et annet sted i mellomtiden. Fjernes vedlegget mens det laster, flyttes fokus som beskrevet over.
 
 ## Språkstøtte
 
