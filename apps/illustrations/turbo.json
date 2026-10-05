@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build:assets": {
+      "inputs": ["source/**", "scripts/**", "src/schema.ts"],
+      "outputs": ["public/illustrations-assets/**"]
+    },
+    "build": {
+      "dependsOn": ["^build", "^inject", "build:assets"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "with": ["@udir-design/css#watch"],
+      "persistent": true,
+      "dependsOn": ["^build", "^inject", "build:assets"]
+    },
+    "lint": {
+      "dependsOn": ["^build", "^inject"],
+      "inputs": ["$TURBO_DEFAULT$"]
+    },
+    "inspect:figma": { "cache": false, "env": ["FIGMA_TOKEN"] },
+    "plan:figma": { "cache": false },
+    "verify:figma": { "cache": false, "env": ["FIGMA_TOKEN"] },
+    "import:figma": { "cache": false, "env": ["FIGMA_TOKEN"] }
+  }
+}
