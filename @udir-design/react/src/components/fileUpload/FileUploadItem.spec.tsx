@@ -4,6 +4,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { userEvent } from 'vitest/browser';
 import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadItem } from './FileUploadItem';
+import { FileUploadItemButton } from './FileUploadItemButton';
 import './fileUpload.css';
 
 afterEach(cleanup);
@@ -299,6 +300,60 @@ describe('FileUpload.Item', () => {
     await userEvent.keyboard('{Enter}');
 
     await vi.waitFor(() => expect(second).toHaveFocus());
+  });
+
+  describe('a custom `FileUpload.ItemButton`', () => {
+    function Files() {
+      const [busy, setBusy] = useState<string>();
+      return (
+        <ul>
+          {['a.pdf', 'b.pdf'].map((name) => (
+            <FileUploadItem
+              key={name}
+              file={{ name }}
+              loading={busy === name}
+              actions={
+                <>
+                  <FileUploadItemButton
+                    icon={<svg aria-hidden />}
+                    tooltip="Forhåndsvis filen"
+                    fileName={name}
+                    onClick={() => {}}
+                  />
+                  <FileUploadItemButton
+                    icon={<svg aria-hidden />}
+                    tooltip="Del filen"
+                    fileName={name}
+                    onClick={() => setBusy(name)}
+                  />
+                </>
+              }
+            />
+          ))}
+        </ul>
+      );
+    }
+
+    it('is named by its tooltip and the file it acts on', async () => {
+      render(<Files />);
+
+      expect(
+        await screen.findByRole('button', { name: 'Del filen a.pdf' }),
+      ).toBeInTheDocument();
+    });
+
+    it('hands focus to the button with the same tooltip on the next file', async () => {
+      render(<Files />);
+
+      (await screen.findByRole('button', { name: 'Del filen a.pdf' })).focus();
+      await userEvent.keyboard('{Enter}');
+
+      await vi.waitFor(() =>
+        expect(
+          screen.getByRole('button', { name: 'Del filen b.pdf' }),
+        ).toHaveFocus(),
+      );
+    });
   });
 
   describe('the tooltip of a removed delete button', () => {

@@ -3,6 +3,7 @@ import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadDropzone } from './FileUploadDropzone';
 import { FileUploadFileSize } from './FileUploadFileSize';
 import { FileUploadItem } from './FileUploadItem';
+import { FileUploadItemButton } from './FileUploadItemButton';
 import { FileUploadList } from './FileUploadList';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
@@ -11,6 +12,7 @@ export type { FileUploadDownloadButtonProps } from './FileUploadDownloadButton';
 export type { FileUploadDropzoneProps } from './FileUploadDropzone';
 export type { FileUploadFileSizeProps } from './FileUploadFileSize';
 export type { FileUploadItemProps } from './FileUploadItem';
+export type { FileUploadItemButtonProps } from './FileUploadItemButton';
 export type {
   FileUploadListProps,
   FileUploadListVariant,
@@ -23,6 +25,7 @@ export {
   FileUploadDropzone,
   FileUploadFileSize,
   FileUploadItem,
+  FileUploadItemButton,
   FileUploadList,
   FileUploadTrigger,
 };
