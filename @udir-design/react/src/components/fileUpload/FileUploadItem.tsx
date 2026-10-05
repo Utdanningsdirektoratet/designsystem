@@ -1,8 +1,16 @@
 import { ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
+import { flushSync } from 'react-dom';
 import {
   FileCsvIcon,
   FileExcelIcon,
@@ -105,6 +113,8 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     // One slot, so a file that has been turned away says so rather than
     // claiming to be fine.
     const message = error ?? success;
+    const rowRef = useRef<HTMLLIElement>(null);
+    useImperativeHandle(ref, () => rowRef.current as HTMLLIElement);
 
     /* A file that is there when the page loads has its loading text read
        along with the rest of the page, so it is not announced until it
@@ -116,10 +126,13 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
 
     /* The loading text says what is happening to the file, and WCAG counts
        such progress as a status message (4.1.3), which has to be announced
-       without the file having focus. Read from css when it is the default,
-       so it follows the `lang` the row is in. Emptied again after a while,
-       since NVDA otherwise read the loading text twice when reading the
-       page, first the visible one and then this one. */
+       without the file having focus. Set a moment after loading starts, by
+       which time a row whose focused button was hidden has given focus to
+       its file name and loading text, see below: they are read then, and
+       announcing them as well would say them twice. Read from css when it is
+       the default, so it follows the `lang` the row is in. Emptied again
+       after a while, since NVDA otherwise read the loading text twice when
+       reading the page, first the visible one and then this one. */
     const regionRef = useRef<HTMLDivElement>(null);
     const [loadingStatus, setLoadingStatus] = useState<string>();
     useEffect(() => {
@@ -131,12 +144,69 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
         quietLoading.current = undefined;
       }
       let timer = window.setTimeout(() => {
+        if (region.parentElement?.contains(document.activeElement)) return;
         setLoadingStatus(loadingText || defaultLoadingText(region));
         timer = window.setTimeout(() => setLoadingStatus(undefined), 5000);
       });
       return () => {
         clearTimeout(timer);
         setLoadingStatus(undefined);
+      };
+    }, [loading, loadingText]);
+
+    /* Takes focus while loading hides the button that had it, see
+       `waitInRow`: the file name and loading text in one element, visually
+       hidden. Not the row itself, named by them: VoiceOver on iOS did not
+       read the name of a list item, only the file name inside it, and the
+       loading text was never heard. Hidden until it takes focus, and again
+       when focus leaves, so browsing the row does not find the file name and
+       loading text twice. Read from css when it is the default, so it follows
+       the `lang` the row is in.
+
+       When loading ends while it has focus, it keeps its text until focus
+       moves on, which it does 200 ms later, to the button that comes back.
+       NVDA in Firefox read the row by its new content, buttons and all, when
+       the element with focus changed its name, and also when focus waited
+       long enough. Let go after a moment as well, in case no button comes
+       back to take focus; the row takes focus then, rather than the page as
+       the element goes. */
+    const focusRef = useRef<HTMLSpanElement>(null);
+    const [focusText, setFocusText] = useState<string>();
+    useLayoutEffect(() => {
+      const row = rowRef.current;
+      const target = focusRef.current;
+      if (loading) {
+        if (row) setFocusText(loadingText || defaultLoadingText(row));
+        return;
+      }
+      if (!target || document.activeElement !== target) {
+        setFocusText(undefined);
+        return;
+      }
+      /* Let go as focus leaves, rather than in a render React schedules for
+         later, so it is gone by the time focus lands on the button. */
+      const onFocusOut = () => flushSync(() => setFocusText(undefined));
+      target.addEventListener('focusout', onFocusOut, { once: true });
+      const timer = setTimeout(() => {
+        if (row && document.activeElement === target) {
+          /* Only a tabindex we added is ours to take away again. */
+          if (!row.hasAttribute('tabindex')) {
+            row.tabIndex = -1;
+            row.addEventListener(
+              'blur',
+              () => row.removeAttribute('tabindex'),
+              {
+                once: true,
+              },
+            );
+          }
+          row.focus();
+        }
+        setFocusText(undefined);
+      }, 1000);
+      return () => {
+        target.removeEventListener('focusout', onFocusOut);
+        clearTimeout(timer);
       };
     }, [loading, loadingText]);
 
@@ -159,9 +229,22 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
         data-valid={(!error && Boolean(success)) || undefined}
         aria-busy={Boolean(loading) || undefined}
         data-size={size}
-        ref={ref}
+        ref={rowRef}
         {...rest}
       >
+        {focusText && (
+          <span
+            ref={focusRef}
+            className="uds-file-upload__item-focus"
+            tabIndex={-1}
+            hidden
+            onBlur={(event) => {
+              event.currentTarget.hidden = true;
+            }}
+          >
+            {`${file.name} ${focusText}`}
+          </span>
+        )}
         <div className="uds-file-upload__item-row">
           <div className="uds-file-upload__item-icon">
             <Icon file={file} showError={Boolean(error)} loading={loading} />
@@ -242,8 +325,9 @@ export function Icon({
 }) {
   const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
+  /* Hidden, since the loading text says the same. */
   if (loading) {
-    return <Spinner aria-label="spinner" />;
+    return <Spinner aria-hidden />;
   }
 
   if (showError) {
