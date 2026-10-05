@@ -329,6 +329,29 @@
      text, but a word longer than the line, such as an address, breaks within
      it rather than running into the buttons or out of the card. */
   overflow-wrap: anywhere;
+  position: relative;
+
+  /* While `loading` hides the button that had focus, the row's hidden file
+     name and loading text take focus, or the row itself when it is not
+     loading. The ring goes on the row either way, the same as Digdir's
+     `ds-focus`. */
+  &:focus-visible,
+  &:has(> .uds-file-upload__item-focus:focus-visible) {
+    box-shadow: var(--dsc-focus-boxShadow);
+    outline: var(--dsc-focus-outline);
+    outline-offset: var(--ds-border-width-focus);
+  }
+
+  /* Invisible but as big as the row, rather than `.ds-sr-only`: TalkBack
+     draws its frame around the element itself, and around `.ds-sr-only` it
+     drew a dot above the spinner. */
+  .uds-file-upload__item-focus {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
 
   /* A long file name has nowhere to break, so it may break anywhere. An
      invalid name is a `div`; at the width of its text, screen readers frame
@@ -379,6 +402,10 @@
   display: flex;
   align-items: center;
   width: 100%;
+  /* The row is the item's first child except while the hidden focus element
+     comes before it, when Digdir's spacing between card children would push
+     it down. */
+  margin-block-start: 0;
 }
 
 .uds-file-upload__item-actions {

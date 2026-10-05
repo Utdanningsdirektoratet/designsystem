@@ -6,6 +6,7 @@ import { NotePencilIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button';
 import { Checkbox } from 'src/components/checkbox';
 import { Dialog } from 'src/components/dialog';
@@ -134,14 +135,7 @@ export const Readonly = meta.story({
 type Entry = { id: string; file: File; loading?: boolean; error?: string };
 
 export const ExampleDropZone = meta.story({
-  parameters: {
-    customStyles: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 'var(--ds-size-3)',
-    },
-    docs: advancedCodeDocs,
-  },
+  parameters: { docs: advancedCodeDocs },
   render: (args) => {
     // Accepted and rejected files go in the same list: to the user they are
     // both files that were dropped, and one of them did not work. The id is per
@@ -186,7 +180,13 @@ export const ExampleDropZone = meta.story({
       (valid.length > 2 && 'Du har lastet opp for mange filer.');
 
     return (
-      <>
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
           description={
@@ -221,7 +221,7 @@ export const ExampleDropZone = meta.story({
             </FileUpload.List>
           </>
         )}
-      </>
+      </form>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -311,7 +311,7 @@ export const TooManyFiles = meta.story({
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="file-upload-too-many-files-main">
+        <form className="file-upload-too-many-files-main">
           <FileUpload.Dropzone
             label="Last opp dokumentasjon"
             description="Du kan kun laste opp 2 filer."
@@ -343,7 +343,7 @@ export const TooManyFiles = meta.story({
               </FileUpload.List>
             </>
           )}
-        </div>
+        </form>
       </>
     );
   },
@@ -382,7 +382,7 @@ export const ExampleTrigger = meta.story({
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="file-upload-example-trigger-main">
+        <form className="file-upload-example-trigger-main">
           <FileUpload.Trigger
             inputProps={{
               accept: 'image/png, image/jpeg',
@@ -402,7 +402,7 @@ export const ExampleTrigger = meta.story({
               </FileUpload.List>
             </>
           )}
-        </div>
+        </form>
       </>
     );
   },
@@ -580,12 +580,6 @@ export const ExampleItems = meta.story({
     await step('Readonly and loading items have no remove button', async () => {
       const removeButtons = canvas.getAllByRole('button');
       await expect(removeButtons).toHaveLength(3);
-    });
-
-    await step('Loading item shows a spinner', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
     });
 
     await step('Loading item has aria-busy set', async () => {
@@ -864,6 +858,110 @@ export const CustomItemButton = meta.story({
   },
 });
 
+/**
+ * Buttons whose action takes a while, such as fetching the file from the server
+ * before it is downloaded, or deleting it there. The file is `loading`
+ * meanwhile, which hides its buttons: focus moves to the file itself, and back
+ * to the button when it is done. For testing with a screen reader.
+ *
+ * A deletion that fails is reported next to the list rather than as an `error`
+ * on the file: nothing is wrong with the file, so it should not be read as
+ * invalid or keep the form from being sent.
+ */
+export const SlowItemActions = meta.story({
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+    const [files, setFiles] = useState(() =>
+      ['soknad.pdf', 'vitnemal.pdf', 'attest.pdf'].map(pdf),
+    );
+    const [busy, setBusy] = useState<{ name: string; text: string }>();
+    const [fail, setFail] = useState(false);
+    const [failed, setFailed] = useState<string>();
+    const [failedUnread, setFailedUnread] = useState(false);
+    const lastAction = useRef(0);
+
+    const slowly = async (file: File, text: string) => {
+      const action = ++lastAction.current;
+      setFailed(undefined);
+      setBusy({ name: file.name, text });
+      await delay(3000);
+      setBusy(undefined);
+      return action;
+    };
+    const remove = async (file: File) => {
+      const action = await slowly(file, 'Sletter filen…');
+      if (!fail) {
+        setFiles((prev) => prev.filter((f) => f !== file));
+        return;
+      }
+      /* Shown as loading ends, but kept from screen readers until focus is
+         back on the button, which FileUpload moves there just after loading
+         ends: VoiceOver on iOS cut an alert that came sooner off to read the
+         button. The alert cuts off the name of the button instead, which the
+         user has just pressed. Not if it has been pressed again meanwhile. */
+      setFailed(file.name);
+      setFailedUnread(true);
+      await delay(1000);
+      if (action === lastAction.current) setFailedUnread(false);
+    };
+
+    return (
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        {/* Stands in for the server refusing, which a real page does not get
+            to decide. */}
+        <Checkbox
+          label="La slettingen feile"
+          checked={fail}
+          onChange={(e) => setFail(e.target.checked)}
+        />
+        <FileUpload.Trigger label="Last opp dokumentasjon" />
+        {files.length > 0 && (
+          <FileUpload.List>
+            {files.map((file) => (
+              <FileUpload.Item
+                key={file.name}
+                file={file}
+                loading={busy?.name === file.name}
+                loadingText={busy?.name === file.name ? busy.text : undefined}
+                actions={
+                  <FileUpload.DownloadButton
+                    fileName={file.name}
+                    onClick={() => void slowly(file, 'Henter filen…')}
+                  />
+                }
+                onRemove={() => void remove(file)}
+              />
+            ))}
+          </FileUpload.List>
+        )}
+        {/* On the page before the message, so screen readers notice it arrive.
+            As wide as the files at most, which `FileUpload.List` sets. */}
+        <div role="alert" style={{ maxWidth: '30rem' }}>
+          {failed && (
+            /* A new element when it is to be read, since Safari on macOS did
+               not announce the alert when only `aria-hidden` was removed,
+               until the user moved the mouse or VoiceOver. */
+            <Alert
+              key={failedUnread ? 'unread' : 'read'}
+              data-color="danger"
+              aria-hidden={failedUnread || undefined}
+            >
+              {`Kunne ikke slette ${failed}. Prøv igjen.`}
+            </Alert>
+          )}
+        </div>
+      </form>
+    );
+  },
+});
+
 export const Upload = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
@@ -893,7 +991,7 @@ export const Upload = meta.story({
           gap: var(--ds-size-3);
         }`}
         </style>
-        <div className="file-upload-upload-main">
+        <form className="file-upload-upload-main">
           <FileUpload.Trigger
             label="Last opp rapport"
             description="Du kan legge ved 1 fil."
@@ -914,7 +1012,7 @@ export const Upload = meta.story({
               </FileUpload.List>
             </>
           )}
-        </div>
+        </form>
       </>
     );
   },
@@ -944,10 +1042,11 @@ export const Upload = meta.story({
       await expect(within(list).getAllByRole('listitem')).toHaveLength(1);
     });
 
-    await step('Item shows loading spinner after upload', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
+    await step('Item is loading after upload', async () => {
+      await expect(canvas.getByRole('listitem')).toHaveAttribute(
+        'aria-busy',
+        'true',
+      );
     });
   },
 });
@@ -1163,7 +1262,7 @@ export const UploadAndValidate = meta.story({
       });
 
     return (
-      <div
+      <form
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -1232,7 +1331,7 @@ export const UploadAndValidate = meta.story({
             })}
           </FileUpload.List>
         )}
-      </div>
+      </form>
     );
   },
 });
