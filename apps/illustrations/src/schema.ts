@@ -19,6 +19,26 @@ export const sources: Partial<
     pageNodeId: '243:57165',
     idPrefix: '',
   },
+  grunnskole: {
+    fileKey: 'RfcyS7LcDOp98gPwfxC8SV',
+    pageNodeId: '243:57166',
+    idPrefix: 'grunnskole-',
+  },
+  'videregaende-opplaering': {
+    fileKey: '29XqLRNsp5yfb0u8ocOg4e',
+    pageNodeId: '243:57168',
+    idPrefix: 'videregaende-opplaering-',
+  },
+  'voksen-og-generell': {
+    fileKey: 'LWOYkXTlaCduAmdbGEWTrh',
+    pageNodeId: '243:57170',
+    idPrefix: 'voksen-og-generell-',
+  },
+  internbruk: {
+    fileKey: 'rOd2pnHwuyVS4NrzVys320',
+    pageNodeId: '243:57167',
+    idPrefix: 'internbruk-',
+  },
 };
 
 export function getSource(categoryId: string) {

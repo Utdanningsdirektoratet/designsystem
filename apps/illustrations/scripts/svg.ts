@@ -9,45 +9,49 @@ export function validateSvg(svg: string) {
     !/<\/svg>\s*$/i.test(svg)
   )
     throw new Error('Expected a standalone SVG document.');
+  // Embedded bitmaps are inert; every other data: URI stays rejected.
+  const plain = svg.replace(
+    /(<image\b[^>]*?\s(?:xlink:)?href=)(["'])data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/=\s]*\2/gi,
+    '$1$2#embedded-image$2',
+  );
   if (
     /<!DOCTYPE|<!ENTITY|<!\[CDATA\[|&#|&(?!amp;|lt;|gt;|quot;|apos;)|\\|<\?(?!xml\s)/i.test(
-      svg,
+      plain,
     )
   )
     throw new Error('Unsafe SVG entities, processing instructions or escapes.');
-  if (
-    /<\s*\/?\s*(?:[\w-]+:)?(?:script|foreignObject|iframe|object|embed|animate\w*|set)\b|\bon[\w-]+\s*=|@|(?:javascript|https?|file|data):/i.test(
-      svg
+  const active =
+    /<\s*\/?\s*(?:[\w-]+:)?(?:script|foreignObject|iframe|object|embed|animate\w*|set)\b|\bon[\w-]+\s*=|@|(?:javascript|https?|file|data):/i.exec(
+      plain
         .replace(
           /xmlns="http:\/\/www\.w3\.org\/(?:2000\/svg|1999\/xlink)"/g,
           '',
         )
         .replace(/xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink"/g, ''),
-    )
-  ) {
-    throw new Error('Unsafe SVG active content or external URL.');
+    );
+  if (active) {
+    throw new Error(
+      `Unsafe SVG active content or external URL: "${active[0]}".`,
+    );
   }
-  for (const match of svg.matchAll(
+  for (const match of plain.matchAll(
     /\b(?:[\w-]+:)?(?:href|src)\s*=\s*(["'])(.*?)\1/gis,
   )) {
     if (!/^#[a-z0-9_.:-]+$/i.test(match[2]))
       throw new Error('SVG references must be local fragments.');
   }
-  for (const match of svg.matchAll(/url\s*\(([^)]*)\)/gi)) {
+  for (const match of plain.matchAll(/url\s*\(([^)]*)\)/gi)) {
     if (!/^\s*(["']?)#[a-z0-9_.:-]+\1\s*$/i.test(match[1]))
       throw new Error('SVG CSS URLs must be local fragments.');
   }
 }
 
-export async function renderPng(
+export async function checkSvg(
   svg: string,
   variant: Pick<IllustrationVariant, 'width' | 'height'>,
 ) {
   validateSvg(svg);
-  const width = Math.round(variant.width * 2);
-  const height = Math.round(variant.height * 2);
-  const input = sharp(Buffer.from(svg), { density: 144 });
-  const bounds = await input.metadata();
+  const bounds = await sharp(Buffer.from(svg), { density: 144 }).metadata();
   if (
     !bounds.width ||
     !bounds.height ||
@@ -56,6 +60,16 @@ export async function renderPng(
   ) {
     throw new Error('SVG aspect ratio does not match the mapped frame bounds.');
   }
+}
+
+export async function renderPng(
+  svg: string,
+  variant: Pick<IllustrationVariant, 'width' | 'height'>,
+) {
+  await checkSvg(svg, variant);
+  const width = Math.round(variant.width * 2);
+  const height = Math.round(variant.height * 2);
+  const input = sharp(Buffer.from(svg), { density: 144 });
   // Uniform contain avoids stretching; transparent padding only accounts for rounding differences.
   const png = await input
     .resize(width, height, {

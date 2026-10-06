@@ -30,6 +30,11 @@ export async function request(
       });
     } catch {
       // Do not relay fetch errors: they can include a signed asset URL.
+      if (attempt < 3) {
+        console.warn(`Figma network error or timeout, retry ${attempt + 1}/3.`);
+        await wait(1000 * 2 ** attempt);
+        continue;
+      }
       throw new Error(
         'Figma network request failed or timed out; no sources were replaced.',
       );
@@ -59,6 +64,9 @@ export async function request(
       );
     }
     await response.body?.cancel();
+    console.warn(
+      `Figma HTTP ${response.status}, retry ${attempt + 1}/3 in ${Math.round(Math.max(0, delay) / 1000)}s.`,
+    );
     await wait(Math.max(0, delay));
   }
   throw new Error('Figma retry limit reached.');

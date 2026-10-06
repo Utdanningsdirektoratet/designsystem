@@ -1,8 +1,11 @@
+import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { catalogSchema } from '../src/schema.ts';
 import { packageRoot, replaceDirectory } from './files.ts';
 import { renderPng } from './svg.ts';
+
+const svgDirectory = join(packageRoot, 'source/catalog/svg');
 
 await replaceDirectory(
   join(packageRoot, 'public/illustrations-assets'),
@@ -17,6 +20,13 @@ await replaceDirectory(
     );
     await mkdir(join(stage, 'svg'));
     await mkdir(join(stage, 'png'));
+    const missing = catalog.families
+      .flatMap((family) => family.variants)
+      .filter((variant) => !existsSync(join(svgDirectory, variant.svg)));
+    if (missing.length)
+      throw new Error(
+        `${missing.length} SVGs are missing from source/catalog/svg. Run "pnpm fetch:svgs" (needs FIGMA_TOKEN).`,
+      );
     for (const family of catalog.families) {
       for (const variant of family.variants) {
         const svg = await readFile(

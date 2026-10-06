@@ -6,11 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:assets": "tsx scripts/build.ts",
-    "plan:figma": "tsx scripts/plan.ts",
-    "inspect:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/inspect.ts",
-    "verify:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/verify.ts",
-    "import:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/import.ts",
+    "build:assets": "node --env-file-if-exists=../../.env.local --import=tsx scripts/fetch.ts && tsx scripts/build.ts",
+    "fetch:svgs": "node --env-file-if-exists=../../.env.local --import=tsx scripts/fetch.ts",
+    "sync:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/sync.ts",
     "typecheck": "tsc",
     "lint": "oxlint",
     "test:unit": "vitest run"

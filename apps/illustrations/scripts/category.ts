@@ -1,7 +1,5 @@
-import { join } from 'node:path';
 import { getSource, isCategoryId } from '../src/schema.ts';
 import type { CategoryId } from '../src/schema.ts';
-import { packageRoot } from './files.ts';
 
 // Fails before any network or file access when the category or its source is missing.
 export function parseCli(args: string[], flags: string[] = []) {
@@ -18,11 +16,9 @@ export function parseCli(args: string[], flags: string[] = []) {
     throw new Error(
       'Pass --category=<category id>, for example --category=barnehage.',
     );
-  const source = getSource(categoryId);
   return {
     categoryId: categoryId as CategoryId,
-    source,
+    source: getSource(categoryId),
     flags: given,
-    inventory: join(packageRoot, 'inventory', categoryId),
   };
 }
