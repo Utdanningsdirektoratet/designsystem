@@ -12,11 +12,30 @@
     "TypeScript": {
       "code_actions_on_format": {
         "source.fixAll.oxc": true
-      }
+      },
+      "language_servers": [
+        "typescript-ls",
+        "!vtsls",
+        "!typescript-language-server",
+        "..."
+      ]
     },
     "TSX": {
       "code_actions_on_format": {
         "source.fixAll.oxc": true
+      },
+      "language_servers": [
+        "typescript-ls",
+        "!vtsls",
+        "!typescript-language-server",
+        "..."
+      ]
+    }
+  },
+  "lsp": {
+    "typescript-ls": {
+      "settings": {
+        "package_version": "7.0.2"
       }
     }
   }
