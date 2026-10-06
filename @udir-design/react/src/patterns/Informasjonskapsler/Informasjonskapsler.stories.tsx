@@ -47,6 +47,12 @@ const localizedExampleData = exampleData as unknown as Record<
   ExampleData
 >;
 
+declare global {
+  interface Window {
+    renewCookieConsent?: () => void;
+  }
+}
+
 const meta = preview.meta({
   tags: ['alpha', 'udir'],
   parameters: {
@@ -117,6 +123,7 @@ export const Preview = meta.story({
         </style>
         <Dialog
           className="cookie-dialog"
+          closeButton={text.declineOptionalAndClose}
           open={open}
           onClose={() => setOpen(false)}
           {...(isInert && { inert: true })}
@@ -247,14 +254,13 @@ export const Preview = meta.story({
   },
 });
 
-export const NecessaryOnly = meta.story({
+export const NecessaryCookiesDialog = meta.story({
   render: () => {
-    const [open, setOpen] = useState(true);
-    const isInert = useIsInert();
+    const [open, setOpen] = useState(false);
     const locale = getPageLocale();
     const content = localizedExampleData[locale];
     const text = translations[locale];
-    const categoriesWithCookies = content.categories.filter(
+    const necessaryCategories = content.categories.filter(
       (category) => category.necessary && category.cookies.length > 0,
     );
 
@@ -263,11 +269,6 @@ export const NecessaryOnly = meta.story({
         <style>
           {`
             /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
             .cookies-details ul {
               list-style: none;
               padding: 0;
@@ -276,136 +277,99 @@ export const NecessaryOnly = meta.story({
             .cookies-details li > strong {
               font-weight: 600;
             }
-            .cookie-details-dialog {
-              --dsc-dialog-backdrop-background: transparent;
-            }
-            .cookie-dialog:has(.cookie-details-dialog[open])::before {
-              animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration) ease-in-out;
-              background: var(--dsc-dialog-backdrop-background);
-              content: '';
-              inset: 0;
-              pointer-events: none;
-              position: absolute;
-              z-index: 1;
-            }
-            @media (prefers-reduced-motion: reduce) {
-              .cookie-dialog:has(.cookie-details-dialog[open])::before {
-                animation: none;
-              }
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-                flex: 1 1 auto;
-              }
-            }
           `}
         </style>
+        <Link
+          href="#informasjonskapsler"
+          onClick={(event) => {
+            event.preventDefault();
+            setOpen(true);
+          }}
+        >
+          {text.overviewHeading}
+        </Link>
         <Dialog
-          className="cookie-dialog"
+          closeButton={text.closeDialog}
           open={open}
           onClose={() => setOpen(false)}
-          {...(isInert && { inert: true })}
         >
           <Prose>
-            <Heading>{content.heading}</Heading>
-
-            <Paragraph>{text.necessaryExplanation}</Paragraph>
-
-            <Dialog.TriggerContext>
-              <Dialog.Trigger variant="secondary" data-size="sm">
-                <InformationSquareFillIcon aria-hidden />
-                {text.detailsTrigger}
-              </Dialog.Trigger>
-              <Dialog className="cookie-details-dialog">
-                <Prose>
-                  <Heading level={2}>{text.overviewHeading}</Heading>
-                  <Paragraph>
-                    {text.privacyPolicyText}{' '}
-                    <Link href="https://example.com/privacy">
-                      {text.privacyPolicyLinkText}
-                    </Link>
-                    .
-                  </Paragraph>
-                  {categoriesWithCookies.map((category) => (
-                    <div key={category.name} className="cookies-container">
-                      <Prose>
-                        <Heading data-size="xs" level={3}>
-                          {category.name}
-                        </Heading>
-                        <Paragraph>{category.description}</Paragraph>
-                        <Details>
-                          <Details.Summary>
-                            {category.cookies.length}{' '}
-                            {category.name.toLocaleLowerCase(locale)}
-                          </Details.Summary>
-                          <Details.Content className="cookies-details">
-                            <Prose>
-                              {category.cookies.map((cookie, index) => (
-                                <Prose key={cookie.name}>
-                                  <Heading data-size="2xs" level={4}>
-                                    {index + 1}
-                                  </Heading>
-                                  <ul>
-                                    <li>
-                                      <strong>{text.provider}: </strong>
-                                      {cookie.provider}
-                                    </li>
-                                    <li>
-                                      <strong>{text.purpose}: </strong>
-                                      {cookie.purpose}
-                                    </li>
-                                    <li>
-                                      <strong>{text.name}: </strong>
-                                      {cookie.name}
-                                    </li>
-                                    <li>
-                                      <strong>{text.expiration}: </strong>
-                                      {cookie.expiration}
-                                    </li>
-                                  </ul>
-                                </Prose>
-                              ))}
-                            </Prose>
-                          </Details.Content>
-                        </Details>
-                      </Prose>
-                    </div>
-                  ))}
-                </Prose>
-              </Dialog>
-            </Dialog.TriggerContext>
+            <Heading level={2}>{content.heading}</Heading>
             <Paragraph>
-              {text.consentAppliesTo}: {content.websiteDomains}.
+              {text.privacyPolicyText}{' '}
+              <Link href="https://example.com/privacy">
+                {text.privacyPolicyLinkText}
+              </Link>
+              .
+            </Paragraph>
+            {necessaryCategories.map((category) => (
+              <div key={category.name} className="cookies-container">
+                <Prose>
+                  <Heading data-size="xs" level={3}>
+                    {category.name}
+                  </Heading>
+                  <Paragraph>{category.description}</Paragraph>
+                  <Details>
+                    <Details.Summary>
+                      {category.cookies.length}{' '}
+                      {category.name.toLocaleLowerCase(locale)}
+                    </Details.Summary>
+                    <Details.Content className="cookies-details">
+                      <Prose>
+                        {category.cookies.map((cookie, index) => (
+                          <Prose key={cookie.name}>
+                            <Heading data-size="2xs" level={4}>
+                              {index + 1}
+                            </Heading>
+                            <ul>
+                              <li>
+                                <strong>{text.provider}: </strong>
+                                {cookie.provider}
+                              </li>
+                              <li>
+                                <strong>{text.purpose}: </strong>
+                                {cookie.purpose}
+                              </li>
+                              <li>
+                                <strong>{text.name}: </strong>
+                                {cookie.name}
+                              </li>
+                              <li>
+                                <strong>{text.expiration}: </strong>
+                                {cookie.expiration}
+                              </li>
+                            </ul>
+                          </Prose>
+                        ))}
+                      </Prose>
+                    </Details.Content>
+                  </Details>
+                </Prose>
+              </div>
+            ))}
+            <Paragraph>
+              {text.necessaryCookiesUsedOn}: {content.websiteDomains}.
             </Paragraph>
           </Prose>
-
-          <div className="cookies-buttons">
-            <Button variant="secondary" onClick={() => setOpen(false)}>
-              {text.close}
-            </Button>
-          </div>
+          <Button onClick={() => setOpen(false)}>{text.close}</Button>
         </Dialog>
-        {open ? null : (
-          <Button
-            variant="tertiary"
-            onClick={() => setOpen(true)}
-            aria-haspopup="dialog"
-          >
-            {text.renewConsent}
-          </Button>
-        )}
       </>
     );
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await waitFor(() =>
-      expect(canvas.getByRole('button', { name: /^Lukk$/ })).toBeVisible(),
+    expect(canvas.queryByRole('dialog')).not.toBeInTheDocument();
+    await userEvent.click(
+      canvas.getByRole('link', { name: 'Informasjonskapsler' }),
     );
-    expect(canvas.queryByRole('checkbox')).not.toBeInTheDocument();
+
+    await waitFor(() => expect(canvas.getByRole('dialog')).toBeVisible());
+    const dialog = canvas.getByRole('dialog');
+    expect(within(dialog).queryByRole('checkbox')).not.toBeInTheDocument();
+    expect(within(dialog).getByRole('button', { name: 'Lukk' })).toBeVisible();
     expect(
-      canvas.queryByRole('button', { name: 'Godta alle' }),
-    ).not.toBeInTheDocument();
+      within(dialog).getByText(/Disse informasjonskapslene brukes på:/),
+    ).toBeVisible();
   },
 });

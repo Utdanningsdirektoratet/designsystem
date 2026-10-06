@@ -27,7 +27,9 @@ app.use(
 );
 
 app.get('/', (request, response) => {
-  const data = buildData(request.query.culture);
+  const data = buildData(request.query.culture, {
+    necessaryOnly: request.query.necessaryOnly === 'true',
+  });
   response.send(
     previewTemplate({ ...data, cookieTemplate: cookieTemplate(data) }),
   );

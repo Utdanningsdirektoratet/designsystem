@@ -32,7 +32,7 @@ Kjør forhåndsvisningen mens du utvikler eller kontrollerer malen:
 pnpm turbo run dev --filter=@internal/cookie-information-template
 ```
 
-Gå til `http://localhost:3000`. Bruk `?culture=en` for å kontrollere den engelske versjonen.
+Gå til `http://localhost:3000`. Bruk `?culture=en` for å kontrollere den engelske versjonen og `?necessaryOnly=true` for å kontrollere visningen med bare nødvendige informasjonskapsler. Parameterne kan kombineres.
 
 `server.js`, `data.js` og `preview/` brukes bare til lokal forhåndsvisning og skal ikke kopieres til Cookie Information. Forhåndsvisningen laster de tre filene fra `template/`, men bruker en lokal stub av Cookie Information-API-et og eksempeldata fra React-dokumentasjonen.
 
