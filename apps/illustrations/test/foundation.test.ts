@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
@@ -71,7 +71,7 @@ const empty = catalogSchema.parse({
 const catalog = resolveMapping(mapping, root, empty, false, 'barnehage');
 
 describe('catalog and reviewed mappings', () => {
-  it('keeps the imported catalog, reviewed mapping and canonical SVGs in correspondence', async () => {
+  it('keeps the imported catalog and reviewed mapping in correspondence', () => {
     const actual = catalogSchema.parse(imported);
     const reviewed = importMapSchema.parse(importMap);
     expect(actual.state).toBe('imported');
@@ -105,17 +105,6 @@ describe('catalog and reviewed mappings', () => {
       }))
       .sort((a, b) => a.id.localeCompare(b.id));
     expect(catalogFamilies).toEqual(mappedFamilies);
-
-    const directory = new URL('../source/catalog/svg/', import.meta.url);
-    const variants = actual.families.flatMap((family) => family.variants);
-    expect((await readdir(directory)).sort()).toEqual(
-      variants.map((variant) => variant.svg).sort(),
-    );
-    for (const variant of variants) {
-      const source = await readFile(new URL(variant.svg, directory), 'utf8');
-      expect(source.length, variant.svg).toBeGreaterThan(0);
-      expect(() => validateSvg(source), variant.svg).not.toThrow();
-    }
   });
 
   it('accepts pending metadata, rejects invalid states, dimensions and missing IDs', () => {
@@ -219,10 +208,20 @@ describe('offline rasterization', () => {
       '<style>rect{fill:u\\72l(https://example.com/a)}</style>',
       '<rect onclick="alert(1)"/>',
       '<image href="&#104;ttps://example.com/a"/>',
+      '<image href="data:image/svg+xml;base64,PHN2Zz48L3N2Zz4="/>',
+      '<rect href="data:image/png;base64,iVBORw0KGgo="/>',
+      '<image href="data:image/png;base64,iVBORw0KGgo=" onload="x"/>',
     ])
       expect(() =>
         validateSvg(svg.replace('</svg>', `${unsafe}</svg>`)),
       ).toThrow();
+  });
+
+  it('accepts embedded raster images only on image elements', () => {
+    const image = '<image href="data:image/png;base64,iVBORw0KGgo+on/AA=="/>';
+    expect(() =>
+      validateSvg(svg.replace('</svg>', `${image}</svg>`)),
+    ).not.toThrow();
   });
 });
 
@@ -286,6 +285,9 @@ describe('bounded requests and source replacement', () => {
             'https://api.figma.com/test',
             undefined,
             vi.fn<typeof fetch>().mockRejectedValue(new Error('private URL')),
+            vi
+              .fn<(delay: number) => Promise<void>>()
+              .mockResolvedValue(undefined),
           );
         }),
       ).rejects.toThrow(/network request failed/);
@@ -310,18 +312,19 @@ describe('categories and color themes', () => {
         .parse(imported)
         .families.flatMap((family) =>
           family.variants.map((variant) => variant.properties.Fargetema),
-        ),
+        )
+        .filter((theme) => theme !== undefined),
     );
     expect([...themes].sort()).toEqual(['blå', 'brun', 'grønn']);
     expect(JSON.stringify(imported)).not.toMatch(/alt [123]/);
   });
 
   it('rejects categories without a reviewed Figma source before any request', () => {
-    expect(() => getSource('grunnskole')).toThrow(/no configured Figma source/);
-    expect(() => getSource('unknown')).toThrow();
+    expect(() => getSource('unknown')).toThrow(/no configured Figma source/);
   });
 
   it('refreshes one category without touching others, even with equal node IDs', () => {
+    const original = sources.grunnskole;
     sources.grunnskole = {
       fileKey: 'other-file',
       pageNodeId: '7:7',
@@ -357,7 +360,7 @@ describe('categories and color themes', () => {
         resolveMapping(mapping, root, combined, false, 'barnehage').families,
       ).toHaveLength(2);
     } finally {
-      delete sources.grunnskole;
+      sources.grunnskole = original;
     }
   });
 });

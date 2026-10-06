@@ -1,9 +1,5 @@
 import { useId, useMemo, useRef, useState } from 'react';
-import {
-  ClipboardCheckmarkIcon,
-  DownloadIcon,
-  FilesIcon,
-} from '@udir-design/icons';
+import { DownloadIcon } from '@udir-design/icons';
 import {
   Button,
   Checkbox,
@@ -18,6 +14,7 @@ import {
   Select,
   ToggleGroup,
 } from '@udir-design/react';
+import { CopyImageButton } from './CopyImageButton';
 import {
   familyDisplayName,
   illustrationAssetUrl,
@@ -31,35 +28,6 @@ import {
 import styles from './illustrationGallery.module.css';
 import { categories } from './metadata';
 import type { CategoryId, IllustrationCatalog } from './metadata';
-
-function CopyImageButton({ url }: { url: string }) {
-  const [copied, setCopied] = useState(false);
-  return (
-    <Button
-      variant="tertiary"
-      data-size="sm"
-      onClick={async () => {
-        try {
-          const blob = await (await fetch(url)).blob();
-          await navigator.clipboard.write([
-            new ClipboardItem({ 'image/png': blob }),
-          ]);
-          setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
-        } catch {
-          setCopied(false);
-        }
-      }}
-    >
-      {copied ? (
-        <ClipboardCheckmarkIcon aria-hidden />
-      ) : (
-        <FilesIcon aria-hidden />
-      )}
-      {copied ? 'Kopiert' : 'Kopier'}
-    </Button>
-  );
-}
 
 export function IllustrationGallery({
   catalog,
@@ -234,6 +202,7 @@ export function IllustrationGallery({
             ref={searchRef}
             id={searchId}
             name="illustrasjonssøk"
+            aria-label="Søk"
             autoComplete="off"
             value={query}
             onChange={(event) => setQuery(event.target.value)}

@@ -4,7 +4,8 @@
   "tasks": {
     "build:assets": {
       "inputs": ["source/**", "scripts/**", "src/schema.ts"],
-      "outputs": ["public/illustrations-assets/**"]
+      "outputs": ["public/illustrations-assets/**"],
+      "passThroughEnv": ["FIGMA_TOKEN"]
     },
     "build": {
       "dependsOn": ["^build", "^inject", "build:assets"],
@@ -20,9 +21,7 @@
       "dependsOn": ["^build", "^inject"],
       "inputs": ["$TURBO_DEFAULT$"]
     },
-    "inspect:figma": { "cache": false, "env": ["FIGMA_TOKEN"] },
-    "plan:figma": { "cache": false },
-    "verify:figma": { "cache": false, "env": ["FIGMA_TOKEN"] },
-    "import:figma": { "cache": false, "env": ["FIGMA_TOKEN"] }
+    "fetch:svgs": { "cache": false, "env": ["FIGMA_TOKEN"] },
+    "sync:figma": { "cache": false, "env": ["FIGMA_TOKEN"] }
   }
 }
