@@ -66,7 +66,8 @@ export default function CookieInformationIntegration() {
 
       const consentScript = document.createElement('script');
       consentScript.id = 'CookieConsent';
-      consentScript.src = 'https://policy.app.cookieinformation.com/uc.js';
+      consentScript.src =
+        'https://policy.app.cookieinformation.com/v2.0.0/uc.js';
       consentScript.dataset.culture = 'NB';
       consentScript.dataset.gcmVersion = '2.0';
       document.head.append(consentScript);
