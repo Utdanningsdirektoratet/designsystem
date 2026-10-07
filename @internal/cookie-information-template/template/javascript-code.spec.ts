@@ -26,6 +26,7 @@ type TemplateWindow = {
     renew: () => void;
   };
   CookieInformation: CookieInformationApi;
+  cookieInformationCustomConfig?: Record<string, unknown>;
   dispatchEvent: (event: Event) => boolean;
   document: Document;
   hideCookieBanner: () => void;
@@ -84,6 +85,7 @@ const templateData = ({
 type RenderTemplateOptions = {
   consumerMarkup?: string;
   culture?: string | null;
+  customConfig?: Record<string, unknown>;
   data?: ReturnType<typeof templateData>;
 };
 
@@ -99,6 +101,7 @@ const createCookieInformationApi = (templateWindow: TemplateWindow) => ({
 const renderTemplate = async ({
   consumerMarkup = '',
   culture = 'NB',
+  customConfig,
   data = templateData(),
 }: RenderTemplateOptions = {}) => {
   const frame = document.createElement('iframe');
@@ -130,6 +133,7 @@ const renderTemplate = async ({
       renew: () => templateWindow.showCookieBanner(),
     },
     CookieInformation: cookieInformation,
+    cookieInformationCustomConfig: customConfig,
   });
 
   const script = frame.contentDocument.createElement('script');
@@ -519,6 +523,22 @@ describe('Cookie Information template', () => {
     expect(
       cookieInformation.changeCategoryConsentDecision,
     ).toHaveBeenCalledWith('cookie_cat_functional');
+  });
+
+  it("stores every consent decision for 365 days while keeping the service's other settings", async () => {
+    const { templateWindow } = await renderTemplate({
+      customConfig: {
+        acceptFrequency: 30,
+        declineFrequency: 7,
+        otherSetting: 'kept',
+      },
+    });
+
+    expect(templateWindow.cookieInformationCustomConfig).toEqual({
+      acceptFrequency: 365,
+      declineFrequency: 365,
+      otherSetting: 'kept',
+    });
   });
 
   it('shows a blocked feature placeholder only without the required consent', async () => {

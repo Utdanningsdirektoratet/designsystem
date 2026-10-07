@@ -4,6 +4,16 @@
  * Integrates with CookieInformation JS API.
  */
 
+// Cookie Information keeps a decision for 365 days only when every configured category is
+// accepted, and for 14 days otherwise. Keep every decision equally long, so declining does not
+// lead to more frequent prompts. Cookie Information reads these values each time it stores one.
+const consentDurationDays = 365;
+window.cookieInformationCustomConfig = {
+  ...window.cookieInformationCustomConfig,
+  acceptFrequency: consentDurationDays,
+  declineFrequency: consentDurationDays,
+};
+
 const translations = {
   nb: {
     pageTitle: 'Informasjonskapsler',
