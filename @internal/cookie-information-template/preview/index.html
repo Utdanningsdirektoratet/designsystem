@@ -28,17 +28,14 @@
     <!-- Local Cookie Information API stub. This is not part of Cookie Information's JavaScript Code. -->
     <script id="CookieConsent" data-culture="{{culture}}">
       window.CookieInformation = {
-        submitAllCategories: function () {
-          hideCookieBanner();
-        },
         submitConsent: function () {
           hideCookieBanner();
         },
         declineAllCategories: function () {
           hideCookieBanner();
         },
-        changeCategoryConsentDecision: function (name) {
-          console.log('Toggle:', name);
+        changeCategoryConsentDecision: function (name, decision) {
+          console.log('Decision:', name, decision ?? 'toggle');
         },
         getConsentGivenFor: function () {
           return false;

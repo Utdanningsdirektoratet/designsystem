@@ -125,6 +125,15 @@ document.getElementById('consent-can-be-changed').hidden = necessaryOnly;
 consentAppliesTo.hidden = necessaryOnly;
 necessaryCookiesUsedOn.hidden = !necessaryOnly;
 
+// Accept only the categories shown to the user. Cookie Information's submitAllCategories() also
+// accepts unclassified cookies and categories that get their first cookie later.
+document.getElementById('btn-accept-all').addEventListener('click', () => {
+  optionalCategories.forEach((checkbox) => {
+    CookieInformation.changeCategoryConsentDecision(checkbox.name, true);
+  });
+  CookieInformation.submitConsent();
+});
+
 if (necessaryOnly) {
   cookieDialogClose.setAttribute('aria-label', translate('closeDialog'));
   necessaryExplanation.hidden = true;
