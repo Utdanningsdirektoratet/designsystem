@@ -44,3 +44,24 @@ Gå til `http://localhost:3000`. Bruk `?culture=en` for å kontrollere den engel
 4. Kontroller malen i Cookie Information før den tas i bruk av tjenester.
 
 Malen bruker CSS-klasser og CSS-variabler fra Udirs designsystem. Pass på at disse er tilgjengelige i miljøet der Cookie Information viser malen.
+
+## Data fra Cookie Information
+
+Cookie Information publiserer konfigurasjonen for hvert domene som offentlige filer. Filene kan brukes til å feilsøke eller kontrollere oppsettet uten tilgang til administrasjonsgrensesnittet. `<domene>` er vertsnavnet uten `www.`, for eksempel `udir.no`. `<språk>` er verdien i `data-culture` med små bokstaver, for eksempel `nb`.
+
+- `https://policy.app.cookieinformation.com/latest/<domene>/<språk>.js` er samtykkeboksen slik Cookie Information sender den til nettleseren: malen med CSS og JavaScript, kategoriene i oppsettet (`categories`), samtykkeversjonen (`consentVersionId`) og informasjonskapslene med leverandør, formål og utløpstid.
+- `https://policy.app.cookieinformation.com/cookie-data/<domene>/cabl.json` er listen Cookie Information bruker til automatisk blokkering av førsteparts informasjonskapsler, med navn, domene og kategori for hver informasjonskapsel og tidspunktet for siste endring (`metadata.last_updated`).
+
+Begge filene caches i opptil fem minutter (`max-age=300`). Endringer i Cookie Information kan derfor ta noen minutter før de når brukerne.
+
+### Automatisk blokkering
+
+Cookie Information blokkerer bare informasjonskapsler som står i `cabl.json`, og bare når navn og domene stemmer nøyaktig. Andre informasjonskapsler slippes gjennom. Blokkeringen gjelder informasjonskapsler som settes med JavaScript på siden, ikke informasjonskapsler fra serveren (`Set-Cookie`) eller fra tredjeparts iframes.
+
+Når skanneren finner nye informasjonskapsler, legges de automatisk til i listen (se `cabl.json`). Om de finnes i Cookie Informations database, får de en kategori automatisk, mens ukjente informasjonskapsler havner i kategorien "unclassified".
+
+### Samtykke og ny samtykkeversjon
+
+Samtykket lagres i informasjonskapselen `CookieInformationConsent` som JSON. Feltet `website_uuid` inneholder samtykkeversjonen samtykket ble gitt for, og `consents_approved` og `consents_denied` inneholder kategoriene brukeren godtok og avviste.
+
+"Reset consent" under "Settings" i Cookie Information gir alle domenene i samtykkeløsningen en ny samtykkeversjon. Når `website_uuid` ikke lenger stemmer med `consentVersionId`, sletter Cookie Information det lagrede samtykket ved neste sidevisning og viser samtykkeboksen på nytt. Dette er kontrollert med versjon 2.0.0 av Cookie Informations bibliotek.
