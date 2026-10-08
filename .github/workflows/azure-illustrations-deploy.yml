@@ -1,138 +1,138 @@
 name: Deploy illustrations to Azure
 
 on:
-    workflow_dispatch:
-        inputs:
-            category:
-                description: "Only fetch and deploy one category, for example internbruk (a small test). Leave empty for everything."
-                required: false
-                default: ""
-                type: string
-    push:
-        branches:
-            - main
-    # Temporary: lets the PR be tried before the workflow is on main. Runs only with the label
-    # `illustrations-test`, for every category. Remove after launch.
-    pull_request:
-        types: [labeled, synchronize]
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Only fetch and deploy one category, for example internbruk (a small test). Leave empty for everything.'
+        required: false
+        default: ''
+        type: string
+  push:
+    branches:
+      - main
+  # Temporary: lets the PR be tried before the workflow is on main. Runs only with the label
+  # `illustrations-test`, for every category. Remove after launch.
+  pull_request:
+    types: [labeled, synchronize]
 
 env:
-    STORAGE_ACCOUNT: stdsillustrations
-    CONTAINER: illustrations
-    # Bump to refetch all SVGs from Figma when artwork changed without a metadata change.
-    ASSET_REVISION: ${{ vars.ILLUSTRATIONS_ASSET_REVISION || '1' }}
-    # Empty means every category.
-    CATEGORY: ${{ inputs.category }}
+  STORAGE_ACCOUNT: stdsillustrations
+  CONTAINER: illustrations
+  # Bump to refetch all SVGs from Figma when artwork changed without a metadata change.
+  ASSET_REVISION: ${{ vars.ILLUSTRATIONS_ASSET_REVISION || '1' }}
+  # Empty means every category.
+  CATEGORY: ${{ inputs.category }}
 
 jobs:
-    check:
-        if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'illustrations-test')
-        runs-on: ubuntu-latest
-        name: Check if deploy should be initiated
-        outputs:
-            should_deploy: ${{ steps.should_deploy.outputs.should_deploy }}
-        permissions:
-            contents: read
-            actions: "read"
-            pull-requests: "read"
-        steps:
-            - name: Check out repo
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-              with:
-                  fetch-depth: 0
-                  filter: tree:0
+  check:
+    if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'illustrations-test')
+    runs-on: ubuntu-latest
+    name: Check if deploy should be initiated
+    outputs:
+      should_deploy: ${{ steps.should_deploy.outputs.should_deploy }}
+    permissions:
+      contents: read
+      actions: 'read'
+      pull-requests: 'read'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          filter: tree:0
 
-            - uses: ./.github/actions/pnpm-setup
+      - uses: ./.github/actions/pnpm-setup
 
-            - name: Determine whether to deploy
-              id: should_deploy
-              run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-illustrations.ts)" >> "$GITHUB_OUTPUT"
-              env:
-                  IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
+      - name: Determine whether to deploy
+        id: should_deploy
+        run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-illustrations.ts)" >> "$GITHUB_OUTPUT"
+        env:
+          IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 
-    deploy:
-        needs: check
-        if: needs.check.outputs.should_deploy == 'true'
-        runs-on: ubuntu-latest
-        environment: illustrations
-        name: Build and deploy to Azure Blob Storage
-        permissions:
-            contents: read
-            id-token: write
-        steps:
-            - name: Check out repo
-              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+  deploy:
+    needs: check
+    if: needs.check.outputs.should_deploy == 'true'
+    runs-on: ubuntu-latest
+    environment: illustrations
+    name: Build and deploy to Azure Blob Storage
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-            - uses: ./.github/actions/pnpm-setup
+      - uses: ./.github/actions/pnpm-setup
 
-            - name: Compute artwork version
-              id: version
-              run: |
-                  if [[ ! "$CATEGORY" =~ ^[a-z-]*$ ]]; then echo "Invalid category"; exit 1; fi
-                  HASH=$(sha256sum apps/illustrations/source/catalog/metadata.json | cut -c1-16)
-                  SUFFIX=${CATEGORY:+-$CATEGORY}
-                  echo "value=${HASH}-r${ASSET_REVISION}${SUFFIX}" >> "$GITHUB_OUTPUT"
+      - name: Compute artwork version
+        id: version
+        run: |
+          if [[ ! "$CATEGORY" =~ ^[a-z-]*$ ]]; then echo "Invalid category"; exit 1; fi
+          HASH=$(sha256sum apps/illustrations/source/catalog/metadata.json | cut -c1-16)
+          SUFFIX=${CATEGORY:+-$CATEGORY}
+          echo "value=${HASH}-r${ASSET_REVISION}${SUFFIX}" >> "$GITHUB_OUTPUT"
 
-            - name: Log in to Azure
-              uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
-              with:
-                  client-id: ${{ secrets.AZURE_CLIENT_ID }}
-                  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Log in to Azure
+        uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-            # metadata.json is uploaded last, so its presence means the version is complete.
-            - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
-              name: Check if the artwork version is already uploaded
-              id: uploaded
-              env:
-                  VERSION: ${{ steps.version.outputs.value }}
-              with:
-                  azcliversion: 2.78.0
-                  inlineScript: |
-                      EXISTS=$(az storage blob exists --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --query exists --output tsv)
-                      echo "exists=$EXISTS" >> "$GITHUB_OUTPUT"
+      # metadata.json is uploaded last, so its presence means the version is complete.
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Check if the artwork version is already uploaded
+        id: uploaded
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            EXISTS=$(az storage blob exists --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --query exists --output tsv)
+            echo "exists=$EXISTS" >> "$GITHUB_OUTPUT"
 
-            - name: Restore downloaded SVGs
-              if: steps.uploaded.outputs.exists != 'true'
-              uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-              with:
-                  path: apps/illustrations/source/catalog/svg
-                  key: illustrations-svg-r${{ env.ASSET_REVISION }}-${{ env.CATEGORY || 'all' }}-${{ hashFiles('apps/illustrations/source/catalog/metadata.json') }}
-                  restore-keys: |
-                      illustrations-svg-r${{ env.ASSET_REVISION }}-${{ env.CATEGORY || 'all' }}-
+      - name: Restore downloaded SVGs
+        if: steps.uploaded.outputs.exists != 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: apps/illustrations/source/catalog/svg
+          key: illustrations-svg-r${{ env.ASSET_REVISION }}-${{ env.CATEGORY || 'all' }}-${{ hashFiles('apps/illustrations/source/catalog/metadata.json') }}
+          restore-keys: |
+            illustrations-svg-r${{ env.ASSET_REVISION }}-${{ env.CATEGORY || 'all' }}-
 
-            - name: Fetch SVGs from Figma and render PNGs
-              if: steps.uploaded.outputs.exists != 'true'
-              run: pnpm turbo run build:assets --filter=@udir-design/apps-illustrations
-              env:
-                  FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-                  ILLUSTRATIONS_CATEGORY: ${{ env.CATEGORY }}
+      - name: Fetch SVGs from Figma and render PNGs
+        if: steps.uploaded.outputs.exists != 'true'
+        run: pnpm turbo run build:assets --filter=@udir-design/apps-illustrations
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          ILLUSTRATIONS_CATEGORY: ${{ env.CATEGORY }}
 
-            - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
-              name: Upload artwork
-              if: steps.uploaded.outputs.exists != 'true'
-              env:
-                  VERSION: ${{ steps.version.outputs.value }}
-              with:
-                  azcliversion: 2.78.0
-                  inlineScript: |
-                      ASSETS=apps/illustrations/public/illustrations-assets
-                      az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/svg" --source "$ASSETS/svg" --overwrite true --content-type image/svg+xml
-                      az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/png" --source "$ASSETS/png" --overwrite true --content-type image/png
-                      az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --file "$ASSETS/metadata.json" --overwrite true --content-type application/json
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload artwork
+        if: steps.uploaded.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            ASSETS=apps/illustrations/public/illustrations-assets
+            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/svg" --source "$ASSETS/svg" --overwrite true --content-type image/svg+xml
+            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/png" --source "$ASSETS/png" --overwrite true --content-type image/png
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --file "$ASSETS/metadata.json" --overwrite true --content-type application/json
 
-            - name: Build app
-              run: pnpm turbo run build --filter=@udir-design/apps-illustrations
-              env:
-                  VITE_AUTH_CLIENT_ID: ${{ vars.ILLUSTRATIONS_CLIENT_ID }}
-                  VITE_AUTH_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-                  VITE_STORAGE_ACCOUNT: ${{ env.STORAGE_ACCOUNT }}
-                  VITE_STORAGE_CONTAINER: ${{ env.CONTAINER }}
-                  VITE_ASSET_VERSION: ${{ steps.version.outputs.value }}
+      - name: Build app
+        run: pnpm turbo run build --filter=@udir-design/apps-illustrations
+        env:
+          VITE_AUTH_CLIENT_ID: ${{ vars.ILLUSTRATIONS_CLIENT_ID }}
+          VITE_AUTH_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          VITE_STORAGE_ACCOUNT: ${{ env.STORAGE_ACCOUNT }}
+          VITE_STORAGE_CONTAINER: ${{ env.CONTAINER }}
+          VITE_ASSET_VERSION: ${{ steps.version.outputs.value }}
 
-            - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
-              name: Upload app
-              with:
-                  azcliversion: 2.78.0
-                  inlineScript: |
-                      az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination '$web' --destination-path illustrasjoner --source apps/illustrations/dist --overwrite true
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload app
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination '$web' --destination-path illustrasjoner --source apps/illustrations/dist --overwrite true
