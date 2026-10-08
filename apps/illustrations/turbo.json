@@ -3,19 +3,18 @@
   "extends": ["//"],
   "tasks": {
     "build:assets": {
-      "inputs": ["source/**", "scripts/**", "src/schema.ts"],
-      "outputs": ["public/illustrations-assets/**"],
-      "passThroughEnv": ["FIGMA_TOKEN"]
+      "cache": false,
+      "passThroughEnv": ["FIGMA_TOKEN", "ILLUSTRATIONS_CATEGORY"]
     },
     "build": {
-      "dependsOn": ["^build", "^inject", "build:assets"],
+      "dependsOn": ["^build", "^inject"],
       "inputs": ["$TURBO_DEFAULT$"],
       "outputs": ["dist/**"]
     },
     "dev": {
       "with": ["@udir-design/css#watch"],
       "persistent": true,
-      "dependsOn": ["^build", "^inject", "build:assets"]
+      "dependsOn": ["^build", "^inject"]
     },
     "lint": {
       "dependsOn": ["^build", "^inject"],

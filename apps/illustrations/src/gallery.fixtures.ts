@@ -134,7 +134,3 @@ export const binaryFixtureCatalog: IllustrationCatalog = {
     },
   ],
 };
-
-// Empty SVG viewport, deliberately no illustration. Downloads still use real asset URL logic.
-export const emptyFixturePreview = () =>
-  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/%3E';

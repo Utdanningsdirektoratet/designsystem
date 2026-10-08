@@ -14,10 +14,11 @@ import {
   Select,
   ToggleGroup,
 } from '@udir-design/react';
+import { AssetImage } from './AssetImage';
 import { CopyImageButton } from './CopyImageButton';
+import { useAssetLinkProps } from './assets';
 import {
   familyDisplayName,
-  illustrationAssetUrl,
   isBinaryProperty,
   matchesFamilySearch,
   needsVariantChooser,
@@ -27,17 +28,38 @@ import {
 } from './gallery.utils';
 import styles from './illustrationGallery.module.css';
 import { categories } from './metadata';
-import type { CategoryId, IllustrationCatalog } from './metadata';
+import type {
+  CategoryId,
+  IllustrationCatalog,
+  IllustrationVariant,
+} from './metadata';
+
+function PngDownload({ variant }: { variant: IllustrationVariant }) {
+  const props = useAssetLinkProps(variant, 'png');
+  return (
+    <Button asChild>
+      <a {...props}>
+        <DownloadIcon aria-hidden />
+        <span>Last ned PNG</span>
+      </a>
+    </Button>
+  );
+}
+
+function SvgDownload({ variant }: { variant: IllustrationVariant }) {
+  const props = useAssetLinkProps(variant, 'svg');
+  return (
+    <Link {...props}>
+      <DownloadIcon aria-hidden />
+      <span>Last ned SVG</span>
+    </Link>
+  );
+}
 
 export function IllustrationGallery({
   catalog,
-  previewUrl = (item) => illustrationAssetUrl(item, 'svg'),
 }: {
   catalog: IllustrationCatalog;
-  /** Test fixtures can supply an empty image without requesting nonexistent artwork. */
-  previewUrl?: (
-    item: IllustrationCatalog['families'][number]['variants'][number],
-  ) => string;
 }) {
   const [categoryId, setCategoryId] = useState<CategoryId>(categories[0].id);
   const [query, setQuery] = useState('');
@@ -145,8 +167,8 @@ export function IllustrationGallery({
                   dialogRef.current?.showModal();
                 }}
               >
-                <img
-                  src={previewUrl(representative)}
+                <AssetImage
+                  variant={representative}
                   alt=""
                   loading="lazy"
                   decoding="async"
@@ -227,9 +249,9 @@ export function IllustrationGallery({
               </Heading>
               <div className={styles.details}>
                 <div className={styles.previewPanel}>
-                  <img
+                  <AssetImage
                     className={styles.preview}
-                    src={previewUrl(variant)}
+                    variant={variant}
                     alt={`${familyDisplayName(family.name)}: ${variant.name}`}
                     decoding="async"
                     width={variant.width}
@@ -239,10 +261,7 @@ export function IllustrationGallery({
                     <output className={styles.dimensions}>
                       {variant.width} × {variant.height} px
                     </output>
-                    <CopyImageButton
-                      key={variant.id}
-                      url={illustrationAssetUrl(variant, 'png')}
-                    />
+                    <CopyImageButton key={variant.id} variant={variant} />
                   </div>
                 </div>
                 <div className={styles.controls}>
@@ -352,22 +371,8 @@ export function IllustrationGallery({
                       Last ned
                     </Heading>
                     <div className={styles.downloads}>
-                      <Button asChild>
-                        <a
-                          href={illustrationAssetUrl(variant, 'png')}
-                          download={`${variant.id}.png`}
-                        >
-                          <DownloadIcon aria-hidden />
-                          <span>Last ned PNG</span>
-                        </a>
-                      </Button>
-                      <Link
-                        href={illustrationAssetUrl(variant, 'svg')}
-                        download={variant.svg}
-                      >
-                        <DownloadIcon aria-hidden />
-                        <span>Last ned SVG</span>
-                      </Link>
+                      <PngDownload variant={variant} />
+                      <SvgDownload variant={variant} />
                     </div>
                   </div>
                 </div>
