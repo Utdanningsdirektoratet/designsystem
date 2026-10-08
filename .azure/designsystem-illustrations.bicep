@@ -26,8 +26,8 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2025-01-01' = {
     accessTier: 'Hot'
     // No account keys: only Entra ID can read or write.
     allowSharedKeyAccess: false
-    // The static website ($web, app shell only) is served anonymously. The artwork container stays private.
-    allowBlobPublicAccess: true
+    // Off for the account; the static website ($web) is still served anonymously regardless of this.
+    allowBlobPublicAccess: false
   }
 }
 
