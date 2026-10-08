@@ -42,7 +42,7 @@ function CatalogGallery() {
 
   if (state.status === 'ready')
     return <IllustrationGallery catalog={state.catalog} />;
-  if (state.status === 'loading') return <Paragraph>Laster …</Paragraph>;
+  if (state.status === 'loading') return null;
   return (
     <div>
       <Heading level={2}>

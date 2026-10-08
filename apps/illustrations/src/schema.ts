@@ -128,13 +128,10 @@ export const catalogSchema = z
             code: 'custom',
             message: 'SVG filename must match stable variant ID.',
           });
-        if (
-          Math.round(variant.width * 2) < 1 ||
-          Math.round(variant.height * 2) < 1
-        ) {
+        if (Math.round(variant.width) < 1 || Math.round(variant.height) < 1) {
           context.addIssue({
             code: 'custom',
-            message: 'Frame bounds must round to positive 2x dimensions.',
+            message: 'Frame bounds must round to positive dimensions.',
           });
         }
       }

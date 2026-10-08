@@ -176,13 +176,13 @@ describe('catalog and reviewed mappings', () => {
 });
 
 describe('offline rasterization', () => {
-  it('produces rounded 2x bounds with alpha and preserves artwork background', async () => {
+  it('produces rounded frame-size bounds with alpha and preserves artwork background', async () => {
     const png = await renderPng(svg, { width: 10.2, height: 5.1 });
     const { data, info } = await sharp(png)
       .ensureAlpha()
       .raw()
       .toBuffer({ resolveWithObject: true });
-    expect([info.width, info.height]).toEqual([20, 10]);
+    expect([info.width, info.height]).toEqual([10, 5]);
     expect(data[3]).toBe(255);
     expect(data[(info.width - 1) * 4 + 3]).toBe(0);
     const opaque = svg.replace(
@@ -195,7 +195,7 @@ describe('offline rasterization', () => {
       .ensureAlpha()
       .raw()
       .toBuffer();
-    expect(background[(20 - 1) * 4 + 3]).toBe(255);
+    expect(background[(10 - 1) * 4 + 3]).toBe(255);
   });
 
   it('rejects active content, external references and disguised URLs', () => {
