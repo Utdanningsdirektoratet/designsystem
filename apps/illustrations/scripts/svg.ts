@@ -67,9 +67,9 @@ export async function renderPng(
   variant: Pick<IllustrationVariant, 'width' | 'height'>,
 ) {
   await checkSvg(svg, variant);
-  const width = Math.round(variant.width * 2);
-  const height = Math.round(variant.height * 2);
-  const input = sharp(Buffer.from(svg), { density: 144 });
+  const width = Math.round(variant.width);
+  const height = Math.round(variant.height);
+  const input = sharp(Buffer.from(svg), { density: 72 });
   // Uniform contain avoids stretching; transparent padding only accounts for rounding differences.
   const png = await input
     .resize(width, height, {

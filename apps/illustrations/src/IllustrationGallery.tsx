@@ -1,4 +1,4 @@
-import { useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { DownloadIcon } from '@udir-design/icons';
 import {
   Button,
@@ -16,7 +16,7 @@ import {
 } from '@udir-design/react';
 import { AssetImage } from './AssetImage';
 import { CopyImageButton } from './CopyImageButton';
-import { useAssetLinkProps } from './assets';
+import { useAssetLinkProps, useAssetSource } from './assets';
 import {
   familyDisplayName,
   isBinaryProperty,
@@ -89,6 +89,14 @@ export function IllustrationGallery({
         }))
     : [];
   const showVariantChooser = family ? needsVariantChooser(family) : false;
+  const source = useAssetSource();
+
+  // Warms the cache so switching options never waits on the network.
+  useEffect(() => {
+    if (!family || source.directUrl) return;
+    for (const item of family.variants.slice(0, 20))
+      source.url(item, 'svg').catch(() => {});
+  }, [family, source]);
   const availableFamilies = useMemo(
     () =>
       sortFamilies(

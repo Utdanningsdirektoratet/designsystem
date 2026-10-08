@@ -14,7 +14,26 @@ function getSession(config: AuthConfig) {
   return session;
 }
 
-type State = 'loading' | 'signedOut' | 'signedIn' | 'error';
+type State = 'loading' | 'signedIn' | 'error';
+
+const attemptKey = 'illustrations-login-attempted';
+
+// Shared so React's double effect in development redirects only once.
+let started: Promise<boolean> | undefined;
+function start(current: Session) {
+  started ??= current.init().then(async (account) => {
+    if (account) {
+      sessionStorage.removeItem(attemptKey);
+      return true;
+    }
+    // Coming back from a redirect without an account would otherwise loop.
+    if (sessionStorage.getItem(attemptKey)) throw new Error('Login failed.');
+    sessionStorage.setItem(attemptKey, '1');
+    await current.login();
+    return false;
+  });
+  return started;
+}
 
 export function AuthGate({
   config,
@@ -31,9 +50,10 @@ export function AuthGate({
   );
 
   useEffect(() => {
-    current
-      .init()
-      .then((account) => setState(account ? 'signedIn' : 'signedOut'))
+    start(current)
+      .then((signedIn) => {
+        if (signedIn) setState('signedIn');
+      })
       .catch(() => setState('error'));
   }, [current]);
 
@@ -42,22 +62,18 @@ export function AuthGate({
 
   return (
     <div className={styles.root}>
-      {state === 'loading' ? <Paragraph>Logger inn …</Paragraph> : null}
-      {state === 'signedOut' ? (
-        <>
-          <Heading level={2}>Logg inn for å se illustrasjonene</Heading>
-          <Paragraph>
-            Illustrasjonene er tilgjengelige for ansatte i
-            Utdanningsdirektoratet.
-          </Paragraph>
-          <Button onClick={() => void current.login()}>Logg inn</Button>
-        </>
-      ) : null}
       {state === 'error' ? (
         <>
           <Heading level={2}>Innloggingen feilet</Heading>
           <Paragraph>Prøv å laste siden på nytt.</Paragraph>
-          <Button onClick={() => window.location.reload()}>Last på nytt</Button>
+          <Button
+            onClick={() => {
+              sessionStorage.removeItem(attemptKey);
+              window.location.reload();
+            }}
+          >
+            Last på nytt
+          </Button>
         </>
       ) : null}
     </div>

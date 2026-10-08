@@ -39,7 +39,8 @@ export function createSession(config: AuthConfig) {
       authority: `https://login.microsoftonline.com/${config.tenantId}`,
       redirectUri: `${window.location.origin}${import.meta.env.BASE_URL}`,
     },
-    cache: { cacheLocation: 'sessionStorage' },
+    // localStorage keeps new tabs and restarts signed in; sessionStorage is per tab.
+    cache: { cacheLocation: 'localStorage' },
   });
 
   return {
