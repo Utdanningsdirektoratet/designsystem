@@ -6,11 +6,13 @@ import { packageRoot, replaceDirectory } from './files.ts';
 import { renderPng } from './svg.ts';
 
 const svgDirectory = join(packageRoot, 'source/catalog/svg');
+// Limits the build to one category, for trying the whole chain on a small set first.
+const only = process.env.ILLUSTRATIONS_CATEGORY || undefined;
 
 await replaceDirectory(
   join(packageRoot, 'public/illustrations-assets'),
   async (stage) => {
-    const catalog = catalogSchema.parse(
+    const full = catalogSchema.parse(
       JSON.parse(
         await readFile(
           join(packageRoot, 'source/catalog/metadata.json'),
@@ -18,6 +20,14 @@ await replaceDirectory(
         ),
       ),
     );
+    const catalog = {
+      ...full,
+      families: full.families.filter(
+        (family) => !only || family.categoryId === only,
+      ),
+    };
+    if (only && !catalog.families.length)
+      throw new Error(`No families found for category "${only}".`);
     await mkdir(join(stage, 'svg'));
     await mkdir(join(stage, 'png'));
     const missing = catalog.families

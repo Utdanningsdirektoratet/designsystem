@@ -20,7 +20,8 @@ async function exists(path: string) {
 // Downloads artwork named by metadata.json into the ignored svg directory. Existing files are
 // kept unless --force is passed, so an interrupted run resumes where it stopped.
 try {
-  let only: string | undefined;
+  let only: string | undefined =
+    process.env.ILLUSTRATIONS_CATEGORY || undefined;
   let force = false;
   for (const arg of process.argv.slice(2)) {
     if (arg === '--force') force = true;

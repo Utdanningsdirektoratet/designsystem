@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import catalog from '../source/catalog/metadata.json';
 import { binaryFixtureCatalog, fixtureCatalog } from './gallery.fixtures';
 import {
   familyDisplayName,
@@ -11,7 +12,9 @@ import {
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
-import { metadata } from './metadata';
+import { catalogSchema } from './schema';
+
+const metadata = catalogSchema.parse(catalog);
 
 const family = fixtureCatalog.families[0];
 const [first, second, third] = family.variants;

@@ -2,7 +2,7 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { IllustrationGallery } from './IllustrationGallery';
-import { emptyFixturePreview, fixtureCatalog } from './gallery.fixtures';
+import { fixtureCatalog } from './gallery.fixtures';
 import { illustrationAssetUrl } from './gallery.utils';
 
 afterEach(cleanup);
@@ -36,12 +36,7 @@ describe('IllustrationGallery', () => {
   });
 
   it('scopes the gallery by category', () => {
-    render(
-      <IllustrationGallery
-        catalog={fixtureCatalog}
-        previewUrl={emptyFixturePreview}
-      />,
-    );
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
     expect(
       (screen.getByRole('radio', { name: 'Barnehage' }) as HTMLInputElement)
         .checked,
@@ -56,12 +51,7 @@ describe('IllustrationGallery', () => {
   });
 
   it('filters families by search and clears the query', () => {
-    render(
-      <IllustrationGallery
-        catalog={fixtureCatalog}
-        previewUrl={emptyFixturePreview}
-      />,
-    );
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
     const list = screen.getByRole('list');
     expect(list.querySelectorAll('button')).toHaveLength(2);
 
@@ -79,12 +69,7 @@ describe('IllustrationGallery', () => {
   });
 
   it('exposes download links for the selected variant', () => {
-    render(
-      <IllustrationGallery
-        catalog={fixtureCatalog}
-        previewUrl={emptyFixturePreview}
-      />,
-    );
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
     const family = fixtureCatalog.families[0];
     fireEvent.click(
       screen.getByRole('button', { name: 'Syntetisk testfamilie' }),
