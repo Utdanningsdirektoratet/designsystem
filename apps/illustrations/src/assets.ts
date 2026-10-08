@@ -75,7 +75,8 @@ export function useAssetUrl(variant: IllustrationVariant, format: AssetFormat) {
     };
   }, [direct, source, variant, format, key]);
 
-  return direct ?? (loaded?.key === key ? loaded.url : undefined);
+  // The previous image stays visible while the next one loads.
+  return direct ?? loaded?.url;
 }
 
 /** Props for an `<a>`: a plain link when possible, otherwise a download with credentials. */
