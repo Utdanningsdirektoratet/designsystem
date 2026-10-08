@@ -2,6 +2,30 @@
 
 Private Vite React app (`@udir-design/apps-illustrations`) that serves the illustration gallery.
 Run it with `pnpm turbo run dev --filter=@udir-design/apps-illustrations` (port 4400, preview 4500).
+In development there is no login: the app reads the files in `public/illustrations-assets/`, so run
+`pnpm build:assets` once first.
+
+## Hosting and login
+
+The deployed app is a static site at `design.udir.no/illustrasjoner`. Udir staff sign in with Entra ID
+(MSAL, single-page app registration, no secret). The artwork is not part of the site: it sits in a
+private blob container, and the browser reads it with the user's own token (`storage.azure.com`
+`user_impersonation`). Access is controlled by a role assignment for a staff group on that container.
+
+A build has login when `VITE_AUTH_CLIENT_ID` is set. It also needs `VITE_AUTH_TENANT_ID`,
+`VITE_STORAGE_ACCOUNT`, `VITE_STORAGE_CONTAINER` and `VITE_ASSET_VERSION`. Such builds use the base path
+`/illustrasjoner/`. Register `https://design.udir.no/illustrasjoner/` and `http://localhost:4400/illustrasjoner/`
+as redirect URIs.
+
+- [.azure/designsystem-illustrations.bicep](../../.azure/designsystem-illustrations.bicep): storage account,
+  private container, CORS and cleanup. Enable the account's static website once in the portal (Data
+  management, Static website, index document `index.html`); the deploy identity can't change account settings.
+- [.azure/designsystem-illustrations-frontdoor.bicep](../../.azure/designsystem-illustrations-frontdoor.bicep):
+  adds only its own origin group, rule set and route to the shared Front Door.
+- [.github/workflows/azure-illustrations-deploy.yml](../../.github/workflows/azure-illustrations-deploy.yml):
+  fetches SVGs (cached), renders PNGs, uploads artwork to `<hash>-r<revision>/` and the app to
+  `$web/illustrasjoner`. Set the repository variable `ILLUSTRATIONS_ASSET_REVISION` to force a full
+  refetch when artwork changed in Figma without a `metadata.json` change.
 
 ## Where things live
 
@@ -23,7 +47,8 @@ Run from this directory, or with `pnpm turbo run <task> --filter=@udir-design/ap
   and `--force` downloads everything again. It needs a Figma token only when something is missing.
 - `build:assets`: runs `fetch:svgs`, then validates the SVGs and renders `png/<variant-id>.png` at
   exactly `round(width * 2)` by `round(height * 2)` into `public/illustrations-assets/`.
-- `dev` and `build`: run `build:assets` first.
+- `dev` and `build` do not run `build:assets`, so the monorepo build needs no Figma token. `build` only
+  produces the small app shell in `dist/`.
 - `sync:figma --category=<id>`: refreshes the category's entries in `metadata.json` from the live Figma
   page (bounds, identity checks). `--allow-removals` is required to drop families or variants.
   It does not download artwork. Run `fetch:svgs --force --category=<id>` afterwards if artwork changed.
