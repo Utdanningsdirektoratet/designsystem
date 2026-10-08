@@ -1,5 +1,5 @@
-import { mkdtemp, rename, rm } from 'node:fs/promises';
-import { join } from 'node:path';
+import { mkdir, mkdtemp, rename, rm } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { lock as acquireLock } from 'proper-lockfile';
 import type { LockOptions } from 'proper-lockfile';
@@ -45,6 +45,8 @@ export async function replaceDirectory(
       join(packageRoot, destination.endsWith('dist') ? '.dist-' : '.catalog-'),
     );
     await prepare(stage);
+    // A fresh checkout has no parent folder, such as public/.
+    await mkdir(dirname(destination), { recursive: true });
     backup = `${stage}-previous`;
     try {
       await rename(destination, backup);

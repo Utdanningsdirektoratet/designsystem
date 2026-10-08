@@ -124,3 +124,26 @@ describe('recoverable illustration writer locks', () => {
     });
   });
 });
+
+describe('replacing a directory in a fresh checkout', () => {
+  it('creates the missing parent folder', async () => {
+    const directory = await mkdtemp(
+      join(tmpdir(), 'illustration-parent-test-'),
+    );
+    try {
+      const destination = join(directory, 'public', 'assets');
+      await replaceDirectory(
+        destination,
+        async (stage) => {
+          await writeFile(join(stage, 'asset'), 'complete');
+        },
+        { lockPath: join(directory, '.refresh-lock'), retries: 0 },
+      );
+      expect(await readFile(join(destination, 'asset'), 'utf8')).toBe(
+        'complete',
+      );
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+});
