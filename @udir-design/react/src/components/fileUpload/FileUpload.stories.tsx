@@ -1330,6 +1330,7 @@ export const Translations = Preview.extend({
         '--udsc-fileUpload-or-text',
         '--udsc-fileUpload-loading-text',
         '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-removed-text',
         '--udsc-fileUpload-downloadFile-text',
         '--udsc-fileUpload-invalid-text',
         '--udsc-fileUpload-disabled-text-line-one',
