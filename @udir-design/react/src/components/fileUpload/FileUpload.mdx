@@ -176,6 +176,8 @@ Blir knappene skjult fordi `loading` er satt, flyttes ikke fokus til et annet ve
 
 Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, må du selv flytte fokus i `onRemove`, for eksempel til knappen for å laste opp filer. Har du flyttet fokus i `onRemove`, blir det stående der.
 
+Når brukeren fjerner en fil med knappen for å fjerne filen, leser skjermleseren opp at filen er fjernet, for eksempel "soknad.pdf er fjernet". Dette skal du derfor ikke si fra om selv. Beskjeden kommer når vedlegget blir borte fra siden, ikke når brukeren trykker på knappen. Dette gjelder bare den innebygde knappen for å fjerne filen, ikke vedlegg som fjernes på andre måter.
+
 <Canvas of={FileUploadStories.ItemActions} />
 
 #### Lenke eller nedlastingsknapp?
@@ -289,6 +291,7 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-or-text',
     '--udsc-fileUpload-loading-text',
     '--udsc-fileUpload-removeFile-text',
+    '--udsc-fileUpload-removed-text',
     '--udsc-fileUpload-downloadFile-text',
     '--udsc-fileUpload-invalid-text',
   ]}
