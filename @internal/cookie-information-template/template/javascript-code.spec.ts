@@ -9,23 +9,20 @@ const compileHarness = Handlebars.compile(testHarness);
 const compileTemplate = Handlebars.compile(htmlCode);
 
 type CookieInformationApi = {
-  changeCategoryConsentDecision: (category: string) => void;
+  changeCategoryConsentDecision: (category: string, decision?: boolean) => void;
   declineAllCategories: () => void;
   getConsentGivenFor: (category: string) => boolean;
-  submitAllCategories: () => void;
   submitConsent: () => void;
 };
 
-type ConsentDecisionMethod =
-  | 'declineAllCategories'
-  | 'submitAllCategories'
-  | 'submitConsent';
+type ConsentDecisionMethod = 'declineAllCategories' | 'submitConsent';
 
 type TemplateWindow = {
   CookieConsent: {
     renew: () => void;
   };
   CookieInformation: CookieInformationApi;
+  cookieInformationCustomConfig?: Record<string, unknown>;
   dispatchEvent: (event: Event) => boolean;
   document: Document;
   hideCookieBanner: () => void;
@@ -84,6 +81,7 @@ const templateData = ({
 type RenderTemplateOptions = {
   consumerMarkup?: string;
   culture?: string | null;
+  customConfig?: Record<string, unknown>;
   data?: ReturnType<typeof templateData>;
 };
 
@@ -91,7 +89,6 @@ const createCookieInformationApi = (templateWindow: TemplateWindow) => ({
   changeCategoryConsentDecision: vi.fn(),
   declineAllCategories: vi.fn(() => templateWindow.hideCookieBanner()),
   getConsentGivenFor: vi.fn(() => false),
-  submitAllCategories: vi.fn(() => templateWindow.hideCookieBanner()),
   submitConsent: vi.fn(() => templateWindow.hideCookieBanner()),
 });
 
@@ -99,6 +96,7 @@ const createCookieInformationApi = (templateWindow: TemplateWindow) => ({
 const renderTemplate = async ({
   consumerMarkup = '',
   culture = 'NB',
+  customConfig,
   data = templateData(),
 }: RenderTemplateOptions = {}) => {
   const frame = document.createElement('iframe');
@@ -130,6 +128,7 @@ const renderTemplate = async ({
       renew: () => templateWindow.showCookieBanner(),
     },
     CookieInformation: cookieInformation,
+    cookieInformationCustomConfig: customConfig,
   });
 
   const script = frame.contentDocument.createElement('script');
@@ -454,7 +453,6 @@ describe('Cookie Information template', () => {
 
     expect(dialog.open).toBe(false);
     expect(cookieInformation.declineAllCategories).toHaveBeenCalledOnce();
-    expect(cookieInformation.submitAllCategories).not.toHaveBeenCalled();
     expect(cookieInformation.submitConsent).not.toHaveBeenCalled();
   });
 
@@ -489,7 +487,7 @@ describe('Cookie Information template', () => {
   it.each<
     [description: string, buttonId: string, method: ConsentDecisionMethod]
   >([
-    ['accepts all categories', 'btn-accept-all', 'submitAllCategories'],
+    ['accepts all categories', 'btn-accept-all', 'submitConsent'],
     ['accepts selected categories', 'btn-accept-selected', 'submitConsent'],
     ['declines optional categories', 'btn-decline', 'declineAllCategories'],
   ])('closes after the user %s', async (_description, buttonId, method) => {
@@ -507,6 +505,41 @@ describe('Cookie Information template', () => {
     expect(document.documentElement).not.toHaveClass('no-scroll');
   });
 
+  it('accepts only the categories shown when the user accepts all', async () => {
+    const category = (
+      label: string,
+      overrides: Partial<CookieCategory> = {},
+    ): CookieCategory => ({
+      ...optionalCategories[1],
+      cookie_type_label: label,
+      ...overrides,
+    });
+    const { cookieInformation, templateWindow } = await renderTemplate({
+      data: templateData({
+        cookieCategories: [
+          optionalCategories[0],
+          category('cookie_cat_functional'),
+          category('cookie_cat_statistic'),
+          category('cookie_cat_marketing', { cookie_type_count: 0 }),
+          category('cookie_cat_unclassified', { is_unclassified: true }),
+        ],
+      }),
+    });
+
+    templateWindow.showCookieBanner();
+    getElementById(templateWindow.document, 'btn-accept-all').click();
+
+    const { changeCategoryConsentDecision, submitConsent } = cookieInformation;
+    expect(changeCategoryConsentDecision.mock.calls).toEqual([
+      ['cookie_cat_functional', true],
+      ['cookie_cat_statistic', true],
+    ]);
+    expect(submitConsent).toHaveBeenCalledOnce();
+    expect(submitConsent.mock.invocationCallOrder[0]).toBeGreaterThan(
+      Math.max(...changeCategoryConsentDecision.mock.invocationCallOrder),
+    );
+  });
+
   it('reports optional-category changes to Cookie Information', async () => {
     const { cookieInformation, templateWindow } = await renderTemplate();
     const { document } = templateWindow;
@@ -519,6 +552,22 @@ describe('Cookie Information template', () => {
     expect(
       cookieInformation.changeCategoryConsentDecision,
     ).toHaveBeenCalledWith('cookie_cat_functional');
+  });
+
+  it("stores every consent decision for 365 days while keeping the service's other settings", async () => {
+    const { templateWindow } = await renderTemplate({
+      customConfig: {
+        acceptFrequency: 30,
+        declineFrequency: 7,
+        otherSetting: 'kept',
+      },
+    });
+
+    expect(templateWindow.cookieInformationCustomConfig).toEqual({
+      acceptFrequency: 365,
+      declineFrequency: 365,
+      otherSetting: 'kept',
+    });
   });
 
   it('shows a blocked feature placeholder only without the required consent', async () => {

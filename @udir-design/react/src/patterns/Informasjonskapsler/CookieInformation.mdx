@@ -4,7 +4,7 @@ import { CookieInformationTexts } from './docs/CookieInformationTexts';
 
 Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester kan bruke Cookie Information som teknisk løsning for å informere om informasjonskapsler og håndtere samtykke til valgfrie informasjonskapsler.
 
-Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med ansvarlig for Cookie Information. Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
+Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med [ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer). Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
 
 ## Oppsett
 
@@ -114,3 +114,42 @@ For JavaScript direkte i sidens HTML skal du vente på `CookieInformationConsent
 ```
 
 Bruk det faktiske kategorinavnet fra tjenestens oppsett, for eksempel `cookie_cat_statistic` eller `cookie_cat_functional`.
+
+## Når tjenesten endrer informasjonskapsler
+
+Malen lagrer brukerens valg i 365 dager, uansett om brukeren godtar eller avviser. Brukeren blir ikke spurt på nytt når tjenesten endrer informasjonskapsler, med mindre ansvarlig for Cookie Information manuelt ber om nytt samtykke. Det er tjenesteansvarlig eller systemforvalter for tjenesten som vet hva som er endret, og de må derfor selv si fra til ansvarlig for Cookie Information.
+
+Et samtykke gjelder bare det brukeren fikk informasjon om. Når formålet eller leverandøren endrer seg, må brukerne derfor få en ny mulighet til å vurdere samtykket. Det gjelder når tjenesten
+
+- legger til en valgfri informasjonskapsel for et nytt formål
+- legger til en valgfri informasjonskapsel fra en ny leverandør
+- endrer formålet til en eksisterende informasjonskapsel
+- får vite at en leverandør har endret hvilke opplysninger de lagrer eller henter inn
+
+Se [Datatilsynets veiledning om å holde orden i eget hus](https://www.datatilsynet.no/personvern-pa-ulike-omrader/internett-og-apper/bruk-av-informasjonskapsler-og-andre-sporingsteknologier/10.-hold-orden-i-eget-hus).
+
+Kontakt ansvarlig for Cookie Information i god tid før endringen blir tilgjengelig for brukerne. Oppgi leverandør, formål og kategori. Oppgi også navn og domene på informasjonskapslene hvis dere kjenner dem, for eksempel fra et testmiljø. Ansvarlig kan da legge inn informasjonskapslene manuelt og be om nytt samtykke samtidig som endringen blir tilgjengelig. Hvis navnene ikke er kjent på forhånd, kan ansvarlig starte en skanning manuelt rett etter at endringen er tilgjengelig. Når skanneren har funnet informasjonskapslene, klassifiserer ansvarlig dem og ber om nytt samtykke. Nytt samtykke gjelder alle domenene som er satt opp for denne tjenesten, og alle brukerne blir spurt på nytt. Samle derfor endringer hvis det er mulig, slik at brukerne ikke blir bedt om nytt samtykke oftere enn nødvendig.
+
+Skanneren finner ikke informasjonskapsler som bare settes på sider som krever innlogging, eller på sider den ikke når via lenker fra forsiden. Da må dere selv finne navn og domene, for eksempel med utviklerverktøyene i nettleseren.
+
+Kontakt også ansvarlig for Cookie Information når tjenesten legger til en nødvendig informasjonskapsel. Den trenger ikke nytt samtykke, men må klassifiseres. Informasjonskapsler som Cookie Information ikke kjenner igjen, havner i kategorien uklassifiserte. Udirs oppsett lar ikke brukeren godta uklassifiserte informasjonskapsler, fordi brukeren ikke kan gi et informert samtykke når formålet og leverandøren er ukjent. En funksjon som er avhengig av en slik informasjonskapsel, fungerer derfor ikke før den er klassifisert.
+
+### Oppgaver for ansvarlig for Cookie Information
+
+Denne delen beskriver oppgaver som krever tilgang til dashbordet til Cookie Information.
+
+Med "samtykkeløsning" mener vi "Consent solution" i Cookie Information, altså oppsettet som ett eller flere domener deler, blant annet tekster og listen over informasjonskapsler.
+
+#### Klassifisere informasjonskapsler
+
+Skanneren til Cookie Information legger nye informasjonskapsler til i samtykkeløsningen automatisk. Informasjonskapsler som finnes i databasen til Cookie Information, får en kategori derfra. Kategorien kan endres manuelt ved behov. Andre havner i kategorien "Unclassified". Velg kategori og leverandør for disse under "Cookie management". Cookie Information kan varsle på e-post når skanneren finner en uklassifisert informasjonskapsel.
+
+Når en tjeneste melder om nye informasjonskapsler med kjent navn og domene, kan du legge dem inn med "Add a custom cookie" under "Cookie management" før endringen blir tilgjengelig for brukerne. Skanneren finner bare informasjonskapsler på produksjonsdomener, ikke på test-domener.
+
+Hvis navnene ikke er kjent, kan du starte en skanning rett etter at endringen er tilgjengelig for brukerne. Gå til "Domains", velg innstillingene for domenet (tannhjulet) og velg "Run extra scan" under "Scanner settings". Skanningen kan ta noen timer. Skanneren følger lenker fra forsiden som en vanlig besøkende, så den finner ikke informasjonskapsler som bare settes på sider som krever innlogging. Slike informasjonskapsler må legges inn manuelt.
+
+#### Be om nytt samtykke
+
+Når en tjeneste melder om en endring som krever nytt samtykke, velger du "Reset consent" under "Ask visitors for consent again" i "Settings". Du kommer også dit fra "Manage consent reset" nederst under "Cookie management".
+
+Dette gjelder alle domenene i samtykkeløsningen. Det kan ta opptil 10 minutter før endringen når brukerne. Deretter sletter Cookie Information det lagrede samtykket ved neste sidevisning og viser samtykkedialogen på nytt.

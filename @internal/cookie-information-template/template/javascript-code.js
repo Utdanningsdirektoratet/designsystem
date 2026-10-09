@@ -4,6 +4,16 @@
  * Integrates with CookieInformation JS API.
  */
 
+// Cookie Information keeps a decision for 365 days only when every configured category is
+// accepted, and for 14 days otherwise. Keep every decision equally long, so declining does not
+// lead to more frequent prompts. Cookie Information reads these values each time it stores one.
+const consentDurationDays = 365;
+window.cookieInformationCustomConfig = {
+  ...window.cookieInformationCustomConfig,
+  acceptFrequency: consentDurationDays,
+  declineFrequency: consentDurationDays,
+};
+
 const translations = {
   nb: {
     pageTitle: 'Informasjonskapsler',
@@ -114,6 +124,15 @@ document.getElementById('btn-close').hidden = !necessaryOnly;
 document.getElementById('consent-can-be-changed').hidden = necessaryOnly;
 consentAppliesTo.hidden = necessaryOnly;
 necessaryCookiesUsedOn.hidden = !necessaryOnly;
+
+// Accept only the categories shown to the user. Cookie Information's submitAllCategories() also
+// accepts unclassified cookies and categories that get their first cookie later.
+document.getElementById('btn-accept-all').addEventListener('click', () => {
+  optionalCategories.forEach((checkbox) => {
+    CookieInformation.changeCategoryConsentDecision(checkbox.name, true);
+  });
+  CookieInformation.submitConsent();
+});
 
 if (necessaryOnly) {
   cookieDialogClose.setAttribute('aria-label', translate('closeDialog'));
