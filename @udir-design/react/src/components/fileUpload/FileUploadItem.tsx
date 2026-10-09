@@ -131,8 +131,9 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
        its file name and loading text, see below: they are read then, and
        announcing them as well would say them twice. Read from css when it is
        the default, so it follows the `lang` the row is in. Emptied again
-       after a while, since NVDA otherwise read the loading text twice when
-       reading the page, first the visible one and then this one. */
+       after a while, as the announcement of a removal is, since NVDA
+       otherwise read the loading text twice when reading the page, first the
+       visible one and then this one. */
     const regionRef = useRef<HTMLDivElement>(null);
     const [loadingStatus, setLoadingStatus] = useState<string>();
     useEffect(() => {
