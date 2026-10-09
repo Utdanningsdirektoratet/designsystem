@@ -174,7 +174,7 @@ Forsvinner et vedlegg mens en av knappene på det har fokus, flyttes fokus til s
 
 Blir knappene skjult fordi `loading` er satt, flyttes ikke fokus til et annet vedlegg. Knappen får fokus igjen når `loading` fjernes, med mindre brukeren har flyttet fokus et annet sted i mellomtiden. Fjernes vedlegget mens det laster, flyttes fokus til vedlegget under eller over som vanlig.
 
-Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, må du selv flytte fokus i `onRemove`, for eksempel til knappen for å laste opp filer. Har du flyttet fokus i `onRemove`, blir det stående der.
+Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi listen er blitt tom, flyttes fokus til det nærmeste elementet før listen som kan få fokus. Legg derfor listen etter feltet for å laste opp filer, så havner fokus der. Dette skjer bare når listen ligger i et `<form>`-element, og fokus flyttes bare til elementer i det samme skjemaet. Uten `<form>` vet ikke komponenten hva som hører sammen med listen, så fokus blir liggende på selve siden. Da mister skjermleseren plassen sin, og VoiceOver leser heller ikke opp at filen er fjernet. Bruker du ikke `<form>`, må du derfor selv flytte fokus i `onRemove`. Har du flyttet fokus i `onRemove`, blir det stående der.
 
 Når brukeren fjerner en fil med knappen for å fjerne filen, leser skjermleseren opp at filen er fjernet, for eksempel "soknad.pdf er fjernet". Dette skal du derfor ikke si fra om selv. Beskjeden kommer når vedlegget blir borte fra siden, ikke når brukeren trykker på knappen. Dette gjelder bare den innebygde knappen for å fjerne filen, ikke vedlegg som fjernes på andre måter.
 

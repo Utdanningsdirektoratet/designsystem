@@ -144,8 +144,15 @@ const waitingRows = new WeakMap<
  * https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction
  * Buttons are of the same kind when they have the same class, or for a
  * `FileUpload.ItemButton` the same tooltip. Landing on the same kind of button
- * lets the user remove one file after another. When the list has none left,
- * focus is left to the consumer.
+ * lets the user remove one file after another.
+ *
+ * When no row has one, as when the list is left empty, focus moves to the
+ * nearest element before the list that can take focus, which is usually the
+ * field to upload files with. Only within the list's form, though: outside
+ * one, the nearest element could be anywhere, such as in the page's menu.
+ * Leaving focus on the page was not enough even though Tab continued from the
+ * right place: VoiceOver in Safari lost its place, and the announcement that
+ * the file was removed along with it.
  *
  * When the row is still there, its buttons are only hidden for a while, so
  * focus stays with the file instead of moving to another one. The row waits
@@ -164,12 +171,27 @@ function handleRemoval(button: HTMLButtonElement, sameKind: string) {
   const focused = document.activeElement === button;
   if (!focused && !button.matches(':hover')) return;
   const row = button.closest('.uds-file-upload__item');
-  const rows = row?.parentElement ? Array.from(row.parentElement.children) : [];
+  const list = row?.parentElement;
+  const rows = list ? Array.from(list.children) : [];
   const index = row ? rows.indexOf(row) : -1;
   const candidates =
     index < 0
       ? []
       : [...rows.slice(index + 1), ...rows.slice(0, index).reverse()];
+  /* Collected now, since the list may leave along with its last row. */
+  const form = focused && list?.closest('form');
+  const earlier =
+    form && list
+      ? Array.from(
+          form.querySelectorAll<HTMLElement>(
+            'a[href], button, input, select, textarea, summary, [tabindex]',
+          ),
+        ).filter(
+          (el) =>
+            el.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING,
+        )
+      : [];
+  const moveOn = () => focusFirst(candidates, sameKind) || focusLast(earlier);
 
   /* React lets go of the ref before it removes the button, so wait until it
      has. A button that is still there only had its ref changed. */
@@ -181,8 +203,8 @@ function handleRemoval(button: HTMLButtonElement, sameKind: string) {
          tooltip. */
       if ((document.activeElement ?? document.body) !== document.body) return;
       if (row?.isConnected) {
-        waitInRow(row, candidates, sameKind);
-      } else if (focusFirst(candidates, sameKind)) {
+        waitInRow(row, sameKind, moveOn);
+      } else if (moveOn()) {
         return;
       }
     }
@@ -208,13 +230,28 @@ function focusFirst(rows: Element[], sameKind: string) {
   return false;
 }
 
-function waitInRow(row: Element, candidates: Element[], sameKind: string) {
+/**
+ * Focuses the last of the elements that can still take focus. Checked only
+ * now, since the field may have changed along with the list, such as by being
+ * disabled once enough files are attached.
+ */
+function focusLast(elements: HTMLElement[]) {
+  const target = elements.findLast(
+    (el) =>
+      el.isConnected &&
+      !el.matches(':disabled, [tabindex="-1"], input[type="hidden"]') &&
+      !el.closest('[inert]') &&
+      el.checkVisibility(),
+  );
+  target?.focus();
+  return Boolean(target);
+}
+
+function waitInRow(row: Element, sameKind: string, moveOn: () => boolean) {
   waitingRows.get(row)?.stop();
   const stopObserving = whenRemoved(row, () => {
     stop();
-    if ((document.activeElement ?? document.body) === document.body) {
-      focusFirst(candidates, sameKind);
-    }
+    if ((document.activeElement ?? document.body) === document.body) moveOn();
   });
   const stop = () => {
     stopObserving();
