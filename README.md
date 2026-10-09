@@ -74,15 +74,6 @@ Komponenter i designsystemet kan befinne seg i én av tre ulike livsfaser:
 <dt><strong>Stabil</strong></dt><dd>Komponenten er vurdert til å tilfredsstille systemteamenes behov. Designteamet har gjort denne vurderingen basert på kjennskap til Udirs tjenester og tilbakemeldinger fra systemteamene i alpha- og betafasene. Stabile komponenter har gjennomgått akseptansetest i designteamet. Vi prøver å unngå endringer i stabile komponenter med mindre det ligger gode grunner bak.</dd>
 </dl>
 
-> [!WARNING]
-> I **alpha**- og **beta**-fasene vil følgende gjelde:
->
-> - endringer som bryter bakoverkompatibilitet kan skje når som helst, uten at MAJOR-versjonsnummeret endres
-> - komponentene må importeres fra riktig undermodul:
->   - `@udir-design/react/alpha` gir tilgang til alpha, beta og stabile komponenter
->   - `@udir-design/react/beta` gir tilgang til beta og stabile komponenter
->   - `@udir-design/react` gir kun tilgang til stabile komponenter
-
 ### Overgang fra beta til stabil
 
 Vi legger ut melding på Slack-kanalen #designsystem-udir når vi mener en komponent kan gå fra beta til stabil. Hvis vi ikke får noen innsigelser på dette, setter vi komponenten til stabil etter cirka en uke.
