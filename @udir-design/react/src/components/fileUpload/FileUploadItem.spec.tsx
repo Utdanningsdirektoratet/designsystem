@@ -4,8 +4,10 @@ import {
   isInaccessible,
   render,
   screen,
+  within,
 } from '@testing-library/react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { userEvent } from 'vitest/browser';
 import { FileUploadDownloadButton } from './FileUploadDownloadButton';
@@ -14,6 +16,14 @@ import { FileUploadItemButton } from './FileUploadItemButton';
 import './fileUpload.css';
 
 afterEach(cleanup);
+
+/* While it is open, the rest of the page is inert, and a screen reader hears
+   nothing from a live region there. */
+function InModalDialog({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDialogElement>(null);
+  useEffect(() => ref.current?.showModal(), []);
+  return <dialog ref={ref}>{children}</dialog>;
+}
 
 describe('FileUpload.Item', () => {
   it('renders a link when `href` is set', () => {
@@ -172,6 +182,7 @@ describe('FileUpload.Item', () => {
         />
       </ul>
     );
+    // Within the row: the page-wide region for removals may come first.
     const region = () =>
       screen.getByRole('listitem').querySelector('[aria-live]') as Element;
 
@@ -709,6 +720,117 @@ describe('FileUpload.Item', () => {
           screen.getByRole('button', { name: 'Flytt filen b.pdf' }),
         ).toHaveFocus(),
       );
+    });
+  });
+
+  describe('removing a file with its delete button', () => {
+    function Files({ initial, slow }: { initial: string[]; slow?: boolean }) {
+      const [names, setNames] = useState(initial);
+      const [busy, setBusy] = useState<string>();
+      const remove = (name: string) =>
+        setNames((prev) => prev.filter((n) => n !== name));
+      // Hidden when empty, as a consumer may do.
+      return names.length > 0 ? (
+        <ul>
+          {names.map((name) => (
+            <FileUploadItem
+              key={name}
+              file={{ name }}
+              loading={busy === name}
+              actions={
+                <FileUploadItemButton
+                  icon={<svg aria-hidden />}
+                  tooltip="Flytt filen"
+                  fileName={name}
+                  onClick={() => remove(name)}
+                />
+              }
+              onRemove={() => {
+                if (!slow) return remove(name);
+                // Deleted on a server, which takes a while.
+                setBusy(name);
+                setTimeout(() => remove(name), 1000);
+              }}
+            />
+          ))}
+        </ul>
+      ) : null;
+    }
+
+    const status = () =>
+      document.body.querySelector(':scope > [role="status"]');
+
+    // The region outlives each test, and keeps its text for a few seconds.
+    afterEach(() => status()?.replaceChildren());
+
+    /* Longer than the announcement waits before it is set. Earlier tests may
+       still have one on its way, so the files here have names of their own,
+       and a test that expects nothing only looks for those. */
+    const pastTheWait = () => new Promise((done) => setTimeout(done, 700));
+
+    it('announces that the file is removed', async () => {
+      render(<Files initial={['x.pdf', 'y.pdf']} />);
+
+      await userEvent.click(buttonIn('y.pdf', 'delete') as HTMLElement);
+
+      // The test page is in English.
+      await vi.waitFor(
+        () => expect(status()).toMatchTextContent('y.pdf removed'),
+        { timeout: 2000 },
+      );
+    });
+
+    it('announces it once a file that is `loading` meanwhile is gone, along with its list', async () => {
+      render(<Files initial={['x.pdf']} slow />);
+
+      await userEvent.click(buttonIn('x.pdf', 'delete') as HTMLElement);
+      await vi.waitFor(() =>
+        expect(screen.getByRole('listitem')).toHaveAttribute(
+          'aria-busy',
+          'true',
+        ),
+      );
+      await pastTheWait();
+      expect(status()).not.toMatchTextContent('x.pdf');
+
+      await vi.waitFor(
+        () => expect(status()).toMatchTextContent('x.pdf removed'),
+        { timeout: 3000 },
+      );
+      expect(screen.queryByRole('list')).not.toBeInTheDocument();
+    });
+
+    it('announces it inside the modal dialog the file is in', async () => {
+      render(
+        <InModalDialog>
+          <Files initial={['m.pdf', 'n.pdf']} />
+        </InModalDialog>,
+      );
+
+      await userEvent.click(buttonIn('n.pdf', 'delete') as HTMLElement);
+
+      await vi.waitFor(
+        () =>
+          expect(
+            within(screen.getByRole('dialog')).getByRole('status'),
+          ).toMatchTextContent('n.pdf removed'),
+        { timeout: 2000 },
+      );
+      expect(status()).not.toMatchTextContent('n.pdf');
+    });
+
+    it('announces nothing when the file leaves another way', async () => {
+      render(<Files initial={['x.pdf', 'y.pdf']} />);
+
+      await userEvent.click(
+        await screen.findByRole('button', { name: 'Flytt filen x.pdf' }),
+      );
+
+      await vi.waitFor(() =>
+        expect(screen.queryByText('x.pdf')).not.toBeInTheDocument(),
+      );
+      await pastTheWait();
+      expect(status()).not.toMatchTextContent('x.pdf');
     });
   });
 

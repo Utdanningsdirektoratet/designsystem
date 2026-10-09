@@ -183,6 +183,10 @@ import { downloadFile } from '@udir-design/react/alpha/utilities';
 
 <Canvas of={FileUploadStories.ItemActions} />
 
+#### Fjerne vedlegget
+
+Skjermleseren leser opp at vedlegget er fjernet, så det skal du ikke si fra om selv. Se [Opplesing med skjermleser](#opplesing-med-skjermleser).
+
 #### Laste ned filen
 
 `FileUpload.DownloadButton` er en knapp for å laste ned filen. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
@@ -311,6 +315,8 @@ Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest op
 
 Skjermlesere leser knappene på et vedlegg med filnavnet etter, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. På `FileUpload.ItemButton` bestemmer du selv teksten foran filnavnet, se [Egne knapper](#egne-knapper).
 
+Når brukeren bruker den innebygde knappen for å fjerne et vedlegg, annonseres dette av skjermleseren når vedlegget blir borte, for eksempel "soknad.pdf er fjernet". Fjerner du vedlegg på andre måter, må du selv sørge for at dette annonseres.
+
 Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Har et vedlegg `loading` satt allerede når siden lastes, blir teksten lest sammen med resten av siden, og ikke lest opp før `loadingText` endres.
 
 ### Fokus
@@ -342,6 +348,7 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-or-text',
     '--udsc-fileUpload-loading-text',
     '--udsc-fileUpload-removeFile-text',
+    '--udsc-fileUpload-removed-text',
     '--udsc-fileUpload-downloadFile-text',
     '--udsc-fileUpload-invalid-text',
   ]}

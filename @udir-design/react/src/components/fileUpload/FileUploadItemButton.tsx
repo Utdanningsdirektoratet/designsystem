@@ -47,7 +47,7 @@ type ItemButtonProps = Omit<FileUploadItemButtonProps, 'tooltip'> &
 
 export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
   function ItemButton(
-    { fileName, icon, kind, tooltip, id, className, ...rest },
+    { fileName, icon, kind, tooltip, id, className, onClick, ...rest },
     ref,
   ) {
     const generatedId = useId();
@@ -61,8 +61,13 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
         const sameKind = kindClass
           ? `.${kindClass}`
           : `[data-tooltip="${CSS.escape(tooltip ?? '')}"]`;
-        if (el) restoreFocus(el, sameKind);
-        else if (node.current) handleRemoval(node.current, sameKind);
+        if (el) {
+          restoreFocus(el, sameKind);
+          if (kind === 'delete') keepAnnouncing(el);
+        } else if (node.current) {
+          handleRemoval(node.current, sameKind);
+          if (kind === 'delete') announceRemoval(node.current);
+        }
         node.current = el;
         if (typeof ref === 'function') {
           ref(el);
@@ -70,7 +75,7 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
           ref.current = el;
         }
       },
-      [ref, kindClass, tooltip],
+      [ref, kind, kindClass, tooltip],
     );
 
     /* The tooltip sets its text as `aria-label` on the button, overwriting any
@@ -98,6 +103,10 @@ export const ItemButton = forwardRef<HTMLButtonElement, ItemButtonProps>(
             variant="tertiary"
             aria-labelledby={`${buttonId} ${fileNameId}`}
             className={cl(kindClass, className)}
+            onClick={(event) => {
+              if (kind === 'delete') markRemoval(event.currentTarget, fileName);
+              onClick(event);
+            }}
             {...rest}
           >
             {icon}
@@ -321,4 +330,127 @@ function restoreFocus(button: HTMLButtonElement, sameKind: string) {
       button.focus();
     waiting.stop();
   }, 200);
+}
+
+/**
+ * Rows whose delete button has been pressed, with what to announce once the
+ * row is gone, and while the row waits for that, how to stop waiting.
+ *
+ * A screen reader user hears focus land on the next file, which does not say
+ * that the file was removed, and when the list is left empty they hear
+ * nothing at all. The announcement waits for the row to go, so nothing is
+ * said when `onRemove` asks first and the user cancels, or the removal fails.
+ * Only the delete button announces: a row that goes for another reason, such
+ * as a custom button that moves the file, has not necessarily been removed.
+ */
+const removals = new WeakMap<
+  Element,
+  { text: string; region: HTMLElement; stop?: () => void }
+>();
+
+/** Called as the delete button is pressed, while its row is still there. */
+function markRemoval(button: HTMLButtonElement, fileName: string) {
+  const row = button.closest('.uds-file-upload__item');
+  /* Read from the row, so it follows the `lang` the row is in. */
+  const removed =
+    row &&
+    getComputedStyle(row)
+      .getPropertyValue('--udsc-fileUpload-removed-text')
+      .trim()
+      .replace(/^["']|["']$/g, '');
+  /* The region is chosen now, while the row is still in its dialog. */
+  if (removed) {
+    removals.set(row, {
+      text: `${fileName} ${removed}`,
+      region: prepareAnnouncements(row),
+    });
+  }
+}
+
+/**
+ * Called as the delete button leaves the page. Announces the removal once its
+ * row has gone too, which is right away unless the item is `loading`, as when
+ * the file is deleted on the server first.
+ */
+function announceRemoval(button: HTMLButtonElement) {
+  const row = button.closest('.uds-file-upload__item');
+  const removal = row && removals.get(row);
+  if (!removal) return;
+  queueMicrotask(() => {
+    if (button.isConnected) return;
+    const done = () => {
+      removals.delete(row);
+      announce(removal.text, removal.region);
+    };
+    if (row.isConnected) removal.stop = whenRemoved(row, done);
+    else done();
+  });
+}
+
+/**
+ * Called as the delete button comes onto the page. Puts the live region in
+ * place before it has anything to say. A button that comes back while its row
+ * waits to be removed means the removal did not happen.
+ */
+function keepAnnouncing(button: HTMLButtonElement) {
+  prepareAnnouncements(button);
+
+  const row = button.closest('.uds-file-upload__item');
+  const removal = row && removals.get(row);
+  if (row && removal?.stop) {
+    removal.stop();
+    removals.delete(row);
+  }
+}
+
+/**
+ * One region for the page, and one for each dialog with files in it: while a
+ * modal dialog is open, the rest of the page is inert, and a screen reader
+ * hears nothing from a region there. Outside every list, so it stays when the
+ * consumer hides a list that is left empty. Found by the dialog or page.
+ */
+const regions = new WeakMap<Element, HTMLElement>();
+const timers = new WeakMap<HTMLElement, number>();
+
+/**
+ * Puts the region for where `element` is in place before it has anything to
+ * say, since a screen reader only announces what changes in a region it
+ * already knows about: the region in the nearest dialog, native or with
+ * `aria-modal`, or else the one for the page.
+ */
+function prepareAnnouncements(element: Element) {
+  const container =
+    element.closest('dialog, [aria-modal="true"]') ?? document.body;
+  let status = regions.get(container);
+  if (!status) {
+    status = document.createElement('div');
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    status.className = 'ds-sr-only';
+    regions.set(container, status);
+  }
+  if (status.parentNode !== container) container.append(status);
+  return status;
+}
+
+/**
+ * Sets the text a moment after focus has moved. VoiceOver in Safari read the
+ * text after the next file's button when it came right away, but dropped it
+ * when focus went to an upload field, as the consumer does when the list is
+ * left empty. Half a second later, it read the field and then the text. When
+ * focus fell to the page instead, it dropped the text even a second later.
+ */
+function announce(text: string, status: HTMLElement) {
+  clearTimeout(timers.get(status));
+  const timer = window.setTimeout(() => {
+    /* The same text again may not be read again, so it is told apart by a
+       non-breaking space. */
+    status.textContent = status.textContent === text ? `${text}\u00a0` : text;
+    /* Emptied again, so the text is not found later when reading the page. */
+    timers.set(
+      status,
+      window.setTimeout(() => status.replaceChildren(), 5000),
+    );
+  }, 500);
+  timers.set(status, timer);
 }
