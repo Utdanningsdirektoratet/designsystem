@@ -237,7 +237,6 @@ export function IllustrationGallery({
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <Search.Button variant="secondary" />
           <Search.Clear />
         </Search>
       </div>
