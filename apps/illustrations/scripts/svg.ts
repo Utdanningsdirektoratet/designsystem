@@ -1,5 +1,15 @@
 import sharp from 'sharp';
+import { optimize } from 'svgo';
 import type { IllustrationVariant } from '../src/schema.ts';
+
+// svgo 4 keeps the viewBox by default, which the aspect-ratio check needs.
+export function optimizeSvg(svg: string) {
+  return optimize(svg, {
+    multipass: true,
+    floatPrecision: 2,
+    plugins: ['preset-default'],
+  }).data;
+}
 
 // Conservative fail-closed checks, not an SVG sanitizer. Unsupported constructs require review,
 // never automatic rewriting. Reject entity/CSS escapes that can conceal external references.

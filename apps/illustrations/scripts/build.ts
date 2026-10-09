@@ -3,7 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { catalogSchema } from '../src/schema.ts';
 import { packageRoot, replaceDirectory } from './files.ts';
-import { renderPng } from './svg.ts';
+import { optimizeSvg, renderPng } from './svg.ts';
 
 const svgDirectory = join(packageRoot, 'source/catalog/svg');
 // Limits the build to one category, for trying the whole chain on a small set first.
@@ -39,9 +39,11 @@ await replaceDirectory(
       );
     for (const family of catalog.families) {
       for (const variant of family.variants) {
-        const svg = await readFile(
-          join(packageRoot, 'source/catalog/svg', variant.svg),
-          'utf8',
+        const svg = optimizeSvg(
+          await readFile(
+            join(packageRoot, 'source/catalog/svg', variant.svg),
+            'utf8',
+          ),
         );
         const png = await renderPng(svg, variant);
         await writeFile(join(stage, 'svg', variant.svg), svg);
