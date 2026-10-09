@@ -962,6 +962,113 @@ export const SlowItemActions = meta.story({
   },
 });
 
+/** While a modal dialog is open, the rest of the page is inert, and a
+    screen reader hears only what is announced inside the dialog. */
+export const ItemsInDialog = meta.story({
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = { id: string; file: File; error?: string };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      { id: 'soknad', file: pdf('soknad.pdf') },
+      { id: 'vitnemal', file: pdf('vitnemal.pdf') },
+    ]);
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const add = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
+      const added = Array.from(input.files ?? [], (file) => ({
+        id: fileId(file),
+        file,
+        error:
+          file.type === 'application/pdf'
+            ? undefined
+            : 'Filformatet støttes ikke',
+      }));
+      setEntries((prev) => [...prev, ...added]);
+      input.value = '';
+    };
+
+    return (
+      <>
+        <Button onClick={() => dialogRef.current?.showModal()}>
+          Legg ved dokumentasjon
+        </Button>
+        <Dialog ref={dialogRef} closedby="any">
+          {/* A form, so that focus moves to the upload field when the last
+              file is removed, see "Fokus" in the docs. */}
+          <form style={{ display: 'grid', gap: 'var(--ds-size-4)' }}>
+            <Heading>Legg ved dokumentasjon</Heading>
+            <FileUpload.Trigger
+              label="Last opp filer"
+              description="Du kan laste opp filer i PDF-format."
+              inputProps={{ multiple: true }}
+              files={entries
+                .filter(({ error }) => !error)
+                .map(({ file }) => file)}
+              onChange={add}
+            />
+            <FileUpload.List>
+              {entries.map((entry) => (
+                <FileUpload.Item
+                  key={entry.id}
+                  file={entry.file}
+                  error={entry.error}
+                  onRemove={() =>
+                    setEntries((prev) =>
+                      prev.filter(({ id }) => id !== entry.id),
+                    )
+                  }
+                />
+              ))}
+            </FileUpload.List>
+          </form>
+        </Dialog>
+      </>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(
+      canvas.getByRole('button', { name: 'Legg ved dokumentasjon' }),
+    );
+    const dialog = within(canvas.getByRole('dialog'));
+
+    await step('A removal is announced inside the dialog', async () => {
+      await userEvent.click(
+        dialog.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      );
+      await waitFor(
+        () =>
+          expect(dialog.getByRole('status')).toHaveTextContent(
+            'soknad.pdf er fjernet',
+          ),
+        { timeout: 2000 },
+      );
+    });
+
+    await step(
+      'Removing the last file moves focus to the upload field, and is announced',
+      async () => {
+        await userEvent.click(
+          dialog.getByRole('button', { name: 'Fjern filen vitnemal.pdf' }),
+        );
+        await waitFor(() =>
+          expect(dialog.getByLabelText('Last opp filer')).toHaveFocus(),
+        );
+        await waitFor(
+          () =>
+            expect(dialog.getByRole('status')).toHaveTextContent(
+              'vitnemal.pdf er fjernet',
+            ),
+          { timeout: 2000 },
+        );
+      },
+    );
+  },
+});
+
 export const Upload = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
@@ -1473,6 +1580,7 @@ export const Translations = Preview.extend({
         '--udsc-fileUpload-or-text',
         '--udsc-fileUpload-loading-text',
         '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-removed-text',
         '--udsc-fileUpload-downloadFile-text',
         '--udsc-fileUpload-invalid-text',
         '--udsc-fileUpload-disabled-text-line-one',
