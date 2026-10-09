@@ -10,7 +10,7 @@ export const LenkelisteISkjermleser = () => {
         <List.Unordered>
           <List.Item>
             <Link href="https://www.udir.no/laring-og-trivsel/lareplanverket/">
-              Læreplanverket på udir.no
+              Læreplaner
             </Link>
           </List.Item>
           <List.Item>
