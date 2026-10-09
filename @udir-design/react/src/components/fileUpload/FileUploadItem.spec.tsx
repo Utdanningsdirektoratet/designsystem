@@ -272,6 +272,83 @@ describe('FileUpload.Item', () => {
     });
   });
 
+  describe('removing the last file with the keyboard', () => {
+    function LastFile({ inForm = true, slow = false }) {
+      const [removed, setRemoved] = useState(false);
+      const [busy, setBusy] = useState(false);
+      // Hidden when empty, as a consumer may do.
+      const list = !removed && (
+        <ul>
+          <FileUploadItem
+            file={{ name: 'a.pdf' }}
+            loading={busy}
+            onRemove={() => {
+              if (!slow) return setRemoved(true);
+              // Deleted on a server, which takes a while.
+              setBusy(true);
+              setTimeout(() => setRemoved(true), 200);
+            }}
+          />
+        </ul>
+      );
+      return (
+        <>
+          <button type="button">Utenfor</button>
+          {inForm ? (
+            <form>
+              <input type="file" aria-label="Last opp" />
+              <button type="button" disabled>
+                Deaktivert
+              </button>
+              <button type="button" hidden>
+                Skjult
+              </button>
+              {list}
+            </form>
+          ) : (
+            list
+          )}
+        </>
+      );
+    }
+
+    const remove = async () => {
+      buttonIn('a.pdf', 'delete')?.focus();
+      await userEvent.keyboard('{Enter}');
+      await vi.waitFor(() =>
+        expect(screen.queryByText('a.pdf')).not.toBeInTheDocument(),
+      );
+    };
+
+    it('moves focus to the nearest element before the list in its form that can take focus', async () => {
+      render(<LastFile />);
+
+      await remove();
+
+      await vi.waitFor(() =>
+        expect(screen.getByLabelText('Last opp')).toHaveFocus(),
+      );
+    });
+
+    it('moves focus there too once a file that was `loading` is removed', async () => {
+      render(<LastFile slow />);
+
+      await remove();
+
+      await vi.waitFor(() =>
+        expect(screen.getByLabelText('Last opp')).toHaveFocus(),
+      );
+    });
+
+    it('leaves focus on the page when the list is not in a form', async () => {
+      render(<LastFile inForm={false} />);
+
+      await remove();
+
+      expect(document.body).toHaveFocus();
+    });
+  });
+
   describe('while `loading` hides the focused button', () => {
     /* Loading lasts long enough to be seen before it ends. */
     const later = (done: () => void) => setTimeout(done, 200);
