@@ -1,6 +1,12 @@
 import { loadCsf } from 'storybook/internal/csf-tools';
 import type { Plugin } from 'vite';
 
+/**
+ * Appends code that sets `parameters.udirSourceLocation = { startLine, endLine }`
+ * on every story, as if it had been written by hand in each story. The original
+ * source is untouched, so line numbers stay valid. See the fixtures in
+ * `./fixtures/expected` for example output.
+ */
 export function addStorySourceLocations(
   code: string,
   fileName: string,
@@ -13,7 +19,10 @@ export function addStorySourceLocations(
   // so upgrades cannot silently invalidate the generated annotations.
   const scope = Object.values(csf._storyPaths)[0]?.scope;
   if (!scope) return code;
+  // Collision-free local name for the `isStory` import added at the end of the file.
   const isStory = scope.generateUidIdentifier('udirIsStory').name;
+  // For each story: the expression for its annotations object (factory stories
+  // keep it on `.input`) paired with its line range from the original source.
   const entries = Object.keys(csf._storyExports).flatMap((exportName) => {
     const node = csf._storyPaths[exportName]?.node;
     const location = node?.loc;
@@ -23,8 +32,8 @@ export function addStorySourceLocations(
     ];
   });
   if (!entries.length) return code;
-  // The factory parser does not classify alias exports as stories. Count all
-  // local exports, not just recognized stories, to detect shared references.
+  // The factory parser does not classify alias exports as stories. Collect all
+  // local named exports (not just stories) to detect shared references.
   const exports = csf._ast.program.body.flatMap((statement) => {
     if (statement.type !== 'ExportNamedDeclaration' || statement.source)
       return [];
@@ -69,7 +78,6 @@ export function storySourceLocationPlugin(): Plugin {
       try {
         const transformed = addStorySourceLocations(code, id);
         if (transformed === code) return;
-        // Original source is retained verbatim; only annotations are appended.
         return { code: transformed, map: null };
       } catch (error) {
         this.warn(
