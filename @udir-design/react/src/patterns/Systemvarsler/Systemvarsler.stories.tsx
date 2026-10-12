@@ -1,7 +1,9 @@
 import { RefreshIcon } from '@storybook/icons';
 import { useEffect, useState } from 'react';
 import preview from '.storybook/preview';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Field } from 'src/components/field';
+import { Footer } from 'src/components/footer';
 import { Textfield } from 'src/components/textfield/Textfield';
 import { Label } from 'src/components/typography/label';
 import { Alert } from '../../components/alert';
@@ -31,6 +33,13 @@ const meta = preview.meta({
       ),
     },
     layout: 'fullscreen',
+    docs: advancedCodeDocs,
+    customStyles: {
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      story: { minHeight: '100vh' },
+    },
   },
 });
 
@@ -41,35 +50,20 @@ export const TekniskFeilside = meta.story({
       <style>{`
 .systemvarsler-technical-error {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
 }
-
 .systemvarsler-technical-error__main {
   box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-technical-error__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-technical-error__main {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-technical-error__actions {
   display: flex;
   flex-wrap: wrap;
@@ -77,7 +71,7 @@ export const TekniskFeilside = meta.story({
 }
 `}</style>
       <div className="systemvarsler-technical-error">
-        <Header applicationName="Utdanningsdirektoratet" sticky={false} />
+        <Header applicationName="Tjenestenavn" sticky={false} />
         <main className="systemvarsler-technical-error__main">
           <Prose>
             <Heading level={4} data-size="lg">
@@ -103,6 +97,7 @@ export const TekniskFeilside = meta.story({
             </Button>
           </div>
         </main>
+        <Footer />
       </div>
     </>
   ),
@@ -115,47 +110,26 @@ export const SideIkkeFunnet = meta.story({
       <style>{`
 .systemvarsler-not-found {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
 }
-
 .systemvarsler-not-found__main {
   box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-not-found__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-not-found__main {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-not-found__search {
   max-width: 32rem;
 }
-
-.systemvarsler-not-found__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-3);
-}
 `}</style>
       <div className="systemvarsler-not-found">
-        <Header applicationName="Utdanningsdirektoratet" sticky={false} />
+        <Header applicationName="Tjenestenavn" sticky={false} />
         <main className="systemvarsler-not-found__main">
           <Prose>
             <Heading level={5} data-size="lg">
@@ -195,13 +169,51 @@ export const SideIkkeFunnet = meta.story({
               </List.Item>
             </List.Unordered>
           </Prose>
-          <div className="systemvarsler-not-found__actions">
-            <Button type="button">Gå til forsiden</Button>
-            <Button variant="secondary" type="button">
-              Meld fra om ødelagt lenke
-            </Button>
-          </div>
+          <Button type="button">Gå til forsiden</Button>
         </main>
+        <Footer />
+      </div>
+    </>
+  ),
+});
+
+export const SideIkkeFunnetEnkel = meta.story({
+  name: 'Side ikke funnet',
+  render: () => (
+    <>
+      <style>{`
+.systemvarsler-not-found-simple {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 32rem;
+}
+.systemvarsler-not-found-simple__main {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
+}
+`}</style>
+      <div className="systemvarsler-not-found-simple">
+        <Header applicationName="Tjenestenavn" sticky={false} />
+        <main className="systemvarsler-not-found-simple__main">
+          <Prose>
+            <Heading level={5} data-size="lg">
+              Beklager, vi fant ikke siden
+            </Heading>
+            <Paragraph>
+              Siden kan være slettet eller flyttet, eller det kan være en feil i
+              lenken.
+            </Paragraph>
+          </Prose>
+          <Button type="button">Gå til forsiden</Button>
+        </main>
+        <Footer />
       </div>
     </>
   ),
@@ -226,34 +238,21 @@ export const VarselOmUtlogging = meta.story({
 .systemvarsler-session-expiry {
   box-sizing: border-box;
   display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 48rem;
-  min-height: 12rem;
+  gap: var(--ds-size-5);
+  width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-  background: var(--ds-color-surface-default);
+  padding: var(--ds-size-4);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-session-expiry {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-session-expiry {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-session-expiry__actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-3);
 }
 `}</style>
-        <div className="systemvarsler-session-expiry">
+        <div
+          className="systemvarsler-session-expiry"
+          style={{ minHeight: '12rem' }}
+        >
           <Dialog.TriggerContext>
             <Dialog
               id="systemvarsler-session-expiry-dialog"
@@ -292,35 +291,23 @@ export const GlobaltSystemvarsel = meta.story({
       <style>{`
 .systemvarsler-global-alert {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
-  background: var(--ds-color-surface-default);
 }
-
 .systemvarsler-global-alert__main {
   box-sizing: border-box;
-  display: grid;
-  gap: var(--ds-size-5);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-}
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-global-alert__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-global-alert__main {
-    padding: var(--ds-size-6);
-  }
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
 `}</style>
       <div className="systemvarsler-global-alert">
-        <Header applicationName="Utdanningsdirektoratet" sticky={false} />
+        <Header applicationName="Tjenestenavn" sticky={false} />
         <main className="systemvarsler-global-alert__main">
           <Alert data-color="warning">
             <Alert.Heading level={4}>
@@ -351,6 +338,7 @@ export const GlobaltSystemvarsel = meta.story({
             </List.Unordered>
           </Prose>
         </main>
+        <Footer />
       </div>
     </>
   ),
@@ -365,29 +353,13 @@ export const LokaltSystemvarsel = meta.story({
   box-sizing: border-box;
   display: grid;
   gap: var(--ds-size-5);
-  width: 100%;
-  max-width: 48rem;
+  width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-  background: var(--ds-color-surface-default);
+  padding: var(--ds-size-4);
 }
-
 .systemvarsler-local-textfield {
   width: 10rem;
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-local-alert {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-local-alert {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-try-again-button {
   margin-top: var(--ds-size-3);
 }
