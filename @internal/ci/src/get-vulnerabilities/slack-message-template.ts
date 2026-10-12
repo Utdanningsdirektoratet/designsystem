@@ -1,7 +1,7 @@
 import { argv, exit } from 'node:process';
 
-const bulletPoints: unknown[] = argv[2] ? JSON.parse(argv[2]) : [];
-if (!bulletPoints.length) {
+const lists: unknown[] = argv[2] ? JSON.parse(argv[2]) : [];
+if (!lists.length) {
   exit(0);
 }
 
@@ -23,14 +23,7 @@ const template = {
     },
     {
       type: 'rich_text',
-      elements: [
-        {
-          type: 'rich_text_list',
-          style: 'bullet',
-          indent: 0,
-          elements: bulletPoints,
-        },
-      ],
+      elements: lists,
     },
     {
       type: 'context',
