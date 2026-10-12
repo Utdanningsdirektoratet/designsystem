@@ -3,7 +3,6 @@ import {
   EnvelopeClosedFillIcon,
   EnvelopeClosedIcon,
   FloppydiskFillIcon,
-  VideoIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
@@ -172,20 +171,23 @@ export const InButton = meta.story({
       <div className="badge-in-button-main">
         <Button icon variant="tertiary">
           <Badge.Position>
-            <Badge {...args} count={1000} maxCount={99} />
+            <Badge {...args} count={1000} maxCount={99} aria-hidden />
             <EnvelopeClosedIcon aria-label="Innboks" />
           </Badge.Position>
+          <span className="ds-sr-only">1000 uleste</span>
         </Button>
         <Button icon variant="tertiary">
           <Badge.Position>
-            <Badge {...args} count={10} />
+            <Badge {...args} count={10} aria-hidden />
             <Chat2Icon aria-label="Meldinger" />
           </Badge.Position>
+          <span className="ds-sr-only">10 nye</span>
         </Button>
         <Button icon variant="tertiary">
+          <span className="ds-sr-only">Nye</span>
           <Badge.Position>
-            <Badge {...args}></Badge>
-            <VideoIcon aria-label="Skru på video" />
+            <Badge {...args} aria-hidden />
+            <Chat2Icon aria-label="meldinger" />
           </Badge.Position>
         </Button>
       </div>
