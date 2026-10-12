@@ -16,6 +16,14 @@ allowBuilds:
   style-dictionary: false
   unrs-resolver: false
 
+audit:
+  ignore:
+    # braces: denial of service through deeply nested glob patterns, with no
+    # fix published. Only build and release tooling depends on it, and those
+    # tools expand glob patterns from our own configuration, never from
+    # outside input.
+    - GHSA-vfj7-8cjw-p6xm
+
 # Peer dependencies are declared explicitly rather than auto-installed, so that
 # optional peers for features we don't use (such as unplugin-dts's api-extractor
 # rollup, or standalone rollup, since Vite builds with rolldown) are simply left
