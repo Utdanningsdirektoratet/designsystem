@@ -39,17 +39,19 @@ export const DashboardStory = meta.story({
             popoverTarget="usermenu2"
             data-show="sm"
             avatar={
-              <Badge.Position overlap="circle">
-                <Badge
-                  count={notifications}
-                  maxCount={9}
-                  aria-hidden
-                  data-color="danger"
-                />
-                <Avatar aria-hidden>SH</Avatar>
-              </Badge.Position>
+              <>
+                <Badge.Position overlap="circle">
+                  <Badge
+                    count={notifications}
+                    maxCount={9}
+                    aria-hidden
+                    data-color="danger"
+                  />
+                  <Avatar aria-hidden>SH</Avatar>
+                </Badge.Position>
+                <span className="ds-sr-only">{notifications} varsler</span>
+              </>
             }
-            aria-label={`Stian Hansen Admin - ${notifications} varsler`}
           />
           <Dropdown id="usermenu2" placement="bottom-end" autoPlacement={false}>
             <Dropdown.Heading>Bytt profil</Dropdown.Heading>
@@ -95,6 +97,7 @@ export const DashboardStory = meta.story({
               />
               <Avatar aria-label="Stian Hansen">SH</Avatar>
             </Badge.Position>
+            <span className="ds-sr-only">{notifications} varsler</span>
           </Button>
           <Dropdown id="usermenuSmall" placement="bottom-end">
             <Dropdown.List>
