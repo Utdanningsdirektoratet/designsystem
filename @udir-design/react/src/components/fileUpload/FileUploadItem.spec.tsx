@@ -133,6 +133,32 @@ describe('FileUpload.Item', () => {
     expect(getComputedStyle(description(), '::before').content).toBe('none');
   });
 
+  it('is named by its file and loading text only while loading', () => {
+    // Named, the row is read as a whole when it takes focus from a hidden
+    // button. Afterwards its buttons are back, and a name would hide them.
+    const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+    const item = (loading: boolean) => (
+      <ul>
+        <FileUploadItem
+          file={file}
+          loading={loading}
+          loadingText="Validerer…"
+          onRemove={() => {}}
+        />
+      </ul>
+    );
+
+    const { rerender } = render(item(true));
+
+    expect(screen.getByRole('listitem')).toHaveAccessibleName(
+      'eksempel.txt Validerer…',
+    );
+
+    rerender(item(false));
+
+    expect(screen.getByRole('listitem')).toHaveAccessibleName('');
+  });
+
   it('renders file size when description is unset', () => {
     render(
       <ul>
@@ -399,13 +425,12 @@ describe('FileUpload.Item', () => {
       );
     };
 
-    it('keeps focus away from the other files', async () => {
+    it('gives focus to the file itself, not another file', async () => {
       render(<Files />);
 
       await press('a.pdf', 'download');
 
-      expect(buttonIn('b.pdf', 'download')).not.toHaveFocus();
-      expect(document.body).toHaveFocus();
+      expect(screen.getByText('a.pdf').closest('li')).toHaveFocus();
     });
 
     it('gives focus back to the button when loading ends', async () => {
@@ -416,6 +441,35 @@ describe('FileUpload.Item', () => {
       await vi.waitFor(() =>
         expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
       );
+    });
+
+    it('keeps the name it had while loading until focus moves on, and not a moment longer', async () => {
+      // NVDA in Firefox read the row's new content, buttons and all, when
+      // its name changed while it still had focus.
+      render(<Files />);
+      const row = () => screen.getByText('a.pdf').closest('li') as Element;
+      let namedAsFocusLanded: boolean | undefined;
+      const onFocusIn = (event: FocusEvent) => {
+        if (event.target === buttonIn('a.pdf', 'download')) {
+          namedAsFocusLanded = row().hasAttribute('aria-labelledby');
+        }
+      };
+      document.addEventListener('focusin', onFocusIn);
+
+      try {
+        await press('a.pdf', 'download');
+        await vi.waitFor(() => expect(row()).not.toHaveAttribute('aria-busy'));
+
+        expect(row()).toHaveFocus();
+        expect(row()).toHaveAccessibleName('a.pdf Uploading...');
+
+        await vi.waitFor(() =>
+          expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
+        );
+        expect(namedAsFocusLanded).toBe(false);
+      } finally {
+        document.removeEventListener('focusin', onFocusIn);
+      }
     });
 
     it('leaves focus where the user moved it while loading', async () => {

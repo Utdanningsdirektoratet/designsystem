@@ -303,6 +303,14 @@
 
 /* FileUpload.Item */
 .uds-file-upload__item {
+  /* The row takes focus while `loading` hides the button that had it. The same
+     ring as Digdir's `ds-focus`. */
+  &:focus-visible {
+    box-shadow: var(--dsc-focus-boxShadow);
+    outline: var(--dsc-focus-outline);
+    outline-offset: var(--ds-border-width-focus);
+  }
+
   /* A long file name has nowhere to break, so it may break anywhere. Messages
      are prose and break between words like other text. */
   .uds-file-upload__item-name {

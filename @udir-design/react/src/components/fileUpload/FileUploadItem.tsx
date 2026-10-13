@@ -1,8 +1,16 @@
 import { ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef } from 'react';
+import {
+  forwardRef,
+  useId,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
+import { flushSync } from 'react-dom';
 import {
   FileCsvIcon,
   FileExcelIcon,
@@ -104,6 +112,45 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     // One slot, so a file that has been turned away says so rather than
     // claiming to be fine.
     const message = error ?? success;
+    const id = useId();
+    const nameId = `${id}-name`;
+    const descriptionId = `${id}-description`;
+    const lingeringId = `${id}-lingering`;
+    const rowRef = useRef<HTMLLIElement>(null);
+    useImperativeHandle(ref, () => rowRef.current as HTMLLIElement);
+
+    /* A row that still has focus when loading ends keeps the name it had
+       while loading until focus moves on, which it does 200 ms later, to the
+       button that comes back. Without it, NVDA in Firefox read the row by
+       its new content, buttons and all, since the name of the element with
+       focus had changed; that also took focus waiting long enough. The
+       loading text is gone from the page by then, so the name points at a
+       hidden copy of it. Let go after a moment as well, in case no button
+       comes back to take focus. */
+    const [lingeringText, setLingeringText] = useState<string>();
+    const lastLoadingText = useRef<{ text?: string }>(undefined);
+    useLayoutEffect(() => {
+      const row = rowRef.current;
+      if (loading) {
+        lastLoadingText.current = { text: loadingText };
+        return;
+      }
+      const last = lastLoadingText.current;
+      lastLoadingText.current = undefined;
+      if (!last || !row || document.activeElement !== row) return;
+      setLingeringText(last.text || defaultLoadingText(row));
+      /* Let go as focus leaves, rather than in a render React schedules for
+         later, so the row is an ordinary list item again by the time focus
+         lands on the button. */
+      const onFocusOut = () => flushSync(() => setLingeringText(undefined));
+      row.addEventListener('focusout', onFocusOut, { once: true });
+      const timer = setTimeout(() => setLingeringText(undefined), 1000);
+      return () => {
+        row.removeEventListener('focusout', onFocusOut);
+        clearTimeout(timer);
+        setLingeringText(undefined);
+      };
+    }, [loading, loadingText]);
 
     const deleteButton = onRemove && !readonly && (
       <ItemButton
@@ -123,8 +170,18 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
         data-invalid={Boolean(error) || undefined}
         data-valid={(!error && Boolean(success)) || undefined}
         aria-busy={Boolean(loading) || undefined}
+        /* While loading, the row is just its name and loading text, and takes
+           focus when the button that had it is hidden. Named, it is read as
+           that; unnamed, VoiceOver in Safari read only its first item. */
+        aria-labelledby={
+          loading
+            ? `${nameId} ${descriptionId}`
+            : lingeringText
+              ? `${nameId} ${lingeringId}`
+              : undefined
+        }
         data-size={size}
-        ref={ref}
+        ref={rowRef}
         {...rest}
       >
         <div className="uds-file-upload__item-row">
@@ -132,8 +189,16 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
           <div className="uds-file-upload__item-content">
-            <FileName file={file} href={href} invalid={Boolean(error)} />
-            <div className="uds-file-upload__item-description">
+            <FileName
+              id={nameId}
+              file={file}
+              href={href}
+              invalid={Boolean(error)}
+            />
+            <div
+              id={descriptionId}
+              className="uds-file-upload__item-description"
+            >
               {/* Default loading text in css, hooked onto the empty element. */}
               {loading
                 ? loadingText
@@ -148,6 +213,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </div>
           )}
         </div>
+        {!loading && lingeringText && (
+          <span hidden id={lingeringId}>
+            {lingeringText}
+          </span>
+        )}
         {/* Announces a verdict that arrives after the file is already listed,
             such as one the server reports once the upload finishes. An item
             that is added with a message cannot announce: the region and the
@@ -177,6 +247,14 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
 );
 FileUploadItem.displayName = 'FileUpload.Item';
 
+/** The default loading text, from css so it follows the `lang` of `element`. */
+function defaultLoadingText(element: Element) {
+  return getComputedStyle(element)
+    .getPropertyValue('--udsc-fileUpload-loading-text')
+    .trim()
+    .replace(/^["']|["']$/g, '');
+}
+
 export function Icon({
   file,
   showError,
@@ -188,8 +266,9 @@ export function Icon({
 }) {
   const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
+  /* Hidden, since the loading text says the same. */
   if (loading) {
-    return <Spinner aria-label="spinner" />;
+    return <Spinner aria-hidden />;
   }
 
   if (showError) {
@@ -221,12 +300,13 @@ export function Icon({
 }
 
 interface FileNameProps {
+  id: string;
   file: FileMeta;
   href?: string;
   invalid?: boolean;
 }
 
-export const FileName = ({ file, href, invalid }: FileNameProps) => {
+export const FileName = ({ id, file, href, invalid }: FileNameProps) => {
   /* Announce that the file is invalid as part of file name, so a row with
      an error can be told apart while browsing the list without stepping
      through the rest of the row to reach the message. Text in css */
@@ -236,7 +316,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
 
   if (href) {
     return (
-      <Link className="uds-file-upload__item-name" href={href}>
+      <Link id={id} className="uds-file-upload__item-name" href={href}>
         {file.name}
         {marker}
       </Link>
@@ -244,7 +324,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
   }
 
   return (
-    <span className="uds-file-upload__item-name">
+    <span id={id} className="uds-file-upload__item-name">
       {file.name}
       {marker}
     </span>
