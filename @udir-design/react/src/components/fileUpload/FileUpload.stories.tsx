@@ -499,7 +499,7 @@ export const ExampleItems = meta.story({
                     description={
                       file.description ? (
                         <>
-                          <span>{file.description}</span> (
+                          {`${file.description} (`}
                           <FileUpload.FileSize size={file.size} />)
                         </>
                       ) : undefined
@@ -550,7 +550,9 @@ export const ExampleItems = meta.story({
     });
 
     await step('Description is shown for normal items', async () => {
-      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
+      await expect(
+        canvas.getByText('Filopplasting 1', { exact: false }),
+      ).toBeInTheDocument();
     });
 
     await step('Files are exposed as one list of cards', async () => {
@@ -711,7 +713,7 @@ export const CustomItemButton = meta.story({
               description={
                 entry.description ? (
                   <>
-                    {entry.description} (
+                    {`${entry.description} (`}
                     <FileUpload.FileSize size={entry.file.size} />)
                   </>
                 ) : undefined
