@@ -1,7 +1,9 @@
 import {
+  AuthError,
   InteractionRequiredAuthError,
   PublicClientApplication,
 } from '@azure/msal-browser';
+import type { AccountInfo } from '@azure/msal-browser';
 import type { StorageConfig } from './storage';
 
 export interface AuthConfig extends StorageConfig {
@@ -43,28 +45,51 @@ export function createSession(config: AuthConfig) {
     cache: { cacheLocation: 'localStorage' },
   });
 
+  let pending: Promise<string> | undefined;
+
+  async function acquire(account: AccountInfo, forceRefresh: boolean) {
+    try {
+      return (await msal.acquireTokenSilent({ scopes, account, forceRefresh }))
+        .accessToken;
+    } catch (error) {
+      if (!(error instanceof InteractionRequiredAuthError)) throw error;
+      // The refresh token lives 24 hours; sign in again and never resolve while the page navigates away.
+      await msal.acquireTokenRedirect({ scopes, account });
+      return new Promise<never>(() => {});
+    }
+  }
+
+  // Parallel requests share one call, so at most one redirect starts.
+  function getToken(forceRefresh = false) {
+    const account = msal.getActiveAccount();
+    if (!account) return Promise.reject(new Error('Not signed in.'));
+    pending ??= acquire(account, forceRefresh).finally(() => {
+      pending = undefined;
+    });
+    return pending;
+  }
+
   return {
     /** Completes a pending redirect login and returns the signed-in account, if any. */
     async init() {
       await msal.initialize();
       const result = await msal.handleRedirectPromise();
       const account = result?.account ?? msal.getAllAccounts()[0];
-      if (account) msal.setActiveAccount(account);
-      return account ?? null;
+      if (!account) return null;
+      msal.setActiveAccount(account);
+      try {
+        // An expired refresh token redirects here, before the app renders.
+        await getToken();
+      } catch (error) {
+        if (!(error instanceof AuthError)) throw error;
+        // A damaged cache is unrecoverable silently; start over with a fresh login.
+        await msal.clearCache();
+        return null;
+      }
+      return account;
     },
     login: () => msal.loginRedirect({ scopes }),
-    logout: () => msal.logoutRedirect(),
-    async getToken() {
-      const account = msal.getActiveAccount();
-      if (!account) throw new Error('Not signed in.');
-      try {
-        return (await msal.acquireTokenSilent({ scopes, account })).accessToken;
-      } catch (error) {
-        if (error instanceof InteractionRequiredAuthError)
-          await msal.acquireTokenRedirect({ scopes, account });
-        throw error;
-      }
-    },
+    getToken,
   };
 }
 

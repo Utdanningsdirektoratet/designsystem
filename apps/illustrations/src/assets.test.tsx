@@ -62,6 +62,25 @@ describe('storage source', () => {
     expect(fetcher).toHaveBeenCalledTimes(2);
   });
 
+  it('retries a 401 once with a forced token refresh', async () => {
+    const fetcher = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(null, { status: 401 }))
+      .mockResolvedValue(new Response('png'));
+    vi.stubGlobal('fetch', fetcher);
+    const getToken = vi.fn(async (forceRefresh?: boolean) =>
+      forceRefresh ? 'fresh' : 'stale',
+    );
+    const source = createStorageSource(config, getToken);
+
+    await source.blob(variant, 'png');
+
+    expect(getToken.mock.calls).toEqual([[false], [true]]);
+    expect(
+      new Headers(fetcher.mock.calls[1][1]?.headers).get('Authorization'),
+    ).toBe('Bearer fresh');
+  });
+
   it('reports missing access with the HTTP status', async () => {
     vi.stubGlobal(
       'fetch',
