@@ -815,6 +815,72 @@ export const CustomItemButton = meta.story({
   },
 });
 
+/**
+ * Buttons whose action takes a while, such as fetching the file from the server
+ * before it is downloaded, or deleting it there. The file is `loading`
+ * meanwhile, which hides its buttons: focus moves to the file itself, and back
+ * to the button when it is done. For testing with a screen reader.
+ */
+export const SlowItemActions = meta.story({
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+    const [files, setFiles] = useState(() =>
+      ['soknad.pdf', 'vitnemal.pdf', 'attest.pdf'].map(pdf),
+    );
+    const [busy, setBusy] = useState<{ name: string; text: string }>();
+    const [fail, setFail] = useState(false);
+
+    const slowly = async (file: File, text: string) => {
+      setBusy({ name: file.name, text });
+      await delay(3000);
+      setBusy(undefined);
+    };
+    const remove = async (file: File) => {
+      await slowly(file, 'Sletter filen…');
+      if (!fail) setFiles((prev) => prev.filter((f) => f !== file));
+    };
+
+    return (
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        {/* Stands in for the server refusing, which a real page does not get
+            to decide. */}
+        <Checkbox
+          label="La slettingen feile"
+          checked={fail}
+          onChange={(e) => setFail(e.target.checked)}
+        />
+        <FileUpload.Trigger label="Last opp dokumentasjon" />
+        {files.length > 0 && (
+          <FileUpload.List>
+            {files.map((file) => (
+              <FileUpload.Item
+                key={file.name}
+                file={file}
+                loading={busy?.name === file.name}
+                loadingText={busy?.name === file.name ? busy.text : undefined}
+                actions={
+                  <FileUpload.DownloadButton
+                    fileName={file.name}
+                    onClick={() => void slowly(file, 'Henter filen…')}
+                  />
+                }
+                onRemove={() => void remove(file)}
+              />
+            ))}
+          </FileUpload.List>
+        )}
+      </form>
+    );
+  },
+});
+
 export const Upload = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: (args) => {
