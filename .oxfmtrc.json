@@ -37,7 +37,8 @@
     ".nx/cache",
     ".nx/workspace-data",
     "**/*.generated.ts",
-    "**/*.generated.tsx"
+    "**/*.generated.tsx",
+    "@udir-design/react/.storybook/utils/fixtures/expected"
   ],
   "overrides": [
     {

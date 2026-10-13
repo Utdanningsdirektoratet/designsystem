@@ -6,6 +6,7 @@ import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
 import { type TagProps } from 'src/components/tag';
 import customTheme from './docs/customTheme';
+import { isSidebarEntryVisible } from './utils/sidebarVisibility';
 
 const tagBadges = {
   alpha: {
@@ -37,6 +38,10 @@ const getBadgeFromTags = (tags: string[]) => {
 addons.setConfig({
   theme: customTheme,
   sidebar: {
+    filters: {
+      'udir-production-docs-only': (entry) =>
+        isSidebarEntryVisible(entry, process.env.NODE_ENV === 'production'),
+    },
     renderLabel(item) {
       if (item.type === 'root') {
         if (item.id === 'introduksjon') {

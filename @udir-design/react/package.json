@@ -92,7 +92,7 @@
     "pretest": "pnpm exec playwright install chromium",
     "test": "vitest",
     "pretest:unit": "pnpm pretest",
-    "test:unit": "vitest --project unit",
+    "test:unit": "vitest --project unit --project storybook-config",
     "pretest:storybook": "pnpm pretest",
     "test:storybook": "vitest --project storybook"
   },

@@ -44,7 +44,15 @@ export default defineConfig({
     projects: [
       {
         test: {
+          name: 'storybook-config',
+          environment: 'node',
+          include: ['.storybook/**/*.node.spec.ts'],
+        },
+      },
+      {
+        test: {
           name: 'unit',
+          exclude: ['.storybook/**/*.node.spec.ts'],
           browser: {
             enabled: true,
             instances: [{ browser: 'chromium' }],

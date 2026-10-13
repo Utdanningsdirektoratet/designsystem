@@ -29,7 +29,7 @@ export default defineConfig({
   plugins: reactPackagePlugins,
   settings: reactPackageSettings,
   jsPlugins: ['eslint-plugin-storybook'],
-  ignorePatterns: ['!.storybook'],
+  ignorePatterns: ['!.storybook', '.storybook/utils/fixtures'],
   rules: {
     ...reactPackageRules,
     ...jsxA11yOptionRules,

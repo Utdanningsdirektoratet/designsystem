@@ -7,6 +7,7 @@ import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import type { MdxComponentOverrides } from '../types';
 import componentStyles from './componentOverrides.module.scss';
+import { Canvas } from './components/Canvas';
 import { StorybookLink, handleLinkClick } from './components/StorybookLink';
 
 const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
@@ -29,6 +30,7 @@ const HeadingSelfLink: React.FC<HeadingProps> = ({ children, ...props }) => {
 };
 
 export const componentOverrides: MdxComponentOverrides = {
+  Canvas,
   h1: (props) => <HeadingSelfLink data-size="lg" {...props} level={1} />,
   h2: (props) => <HeadingSelfLink data-size="md" {...props} level={2} />,
   h3: (props) => <HeadingSelfLink data-size="sm" {...props} level={3} />,
