@@ -1,7 +1,7 @@
 import { ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import {
   FileCsvIcon,
@@ -104,6 +104,9 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     // One slot, so a file that has been turned away says so rather than
     // claiming to be fine.
     const message = error ?? success;
+    const id = useId();
+    const nameId = `${id}-name`;
+    const descriptionId = `${id}-description`;
 
     const deleteButton = onRemove && !readonly && (
       <ItemButton
@@ -123,6 +126,10 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
         data-invalid={Boolean(error) || undefined}
         data-valid={(!error && Boolean(success)) || undefined}
         aria-busy={Boolean(loading) || undefined}
+        /* While loading, the row is just its name and loading text, and takes
+           focus when the button that had it is hidden. Named, it is read as
+           that; unnamed, VoiceOver in Safari read only its first item. */
+        aria-labelledby={loading ? `${nameId} ${descriptionId}` : undefined}
         data-size={size}
         ref={ref}
         {...rest}
@@ -132,8 +139,16 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             <Icon file={file} showError={Boolean(error)} loading={loading} />
           </div>
           <div className="uds-file-upload__item-content">
-            <FileName file={file} href={href} invalid={Boolean(error)} />
-            <div className="uds-file-upload__item-description">
+            <FileName
+              id={nameId}
+              file={file}
+              href={href}
+              invalid={Boolean(error)}
+            />
+            <div
+              id={descriptionId}
+              className="uds-file-upload__item-description"
+            >
               {/* Default loading text in css, hooked onto the empty element. */}
               {loading
                 ? loadingText
@@ -188,8 +203,9 @@ export function Icon({
 }) {
   const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
+  /* Hidden, since the loading text says the same. */
   if (loading) {
-    return <Spinner aria-label="spinner" />;
+    return <Spinner aria-hidden />;
   }
 
   if (showError) {
@@ -221,12 +237,13 @@ export function Icon({
 }
 
 interface FileNameProps {
+  id: string;
   file: FileMeta;
   href?: string;
   invalid?: boolean;
 }
 
-export const FileName = ({ file, href, invalid }: FileNameProps) => {
+export const FileName = ({ id, file, href, invalid }: FileNameProps) => {
   /* Announce that the file is invalid as part of file name, so a row with
      an error can be told apart while browsing the list without stepping
      through the rest of the row to reach the message. Text in css */
@@ -236,7 +253,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
 
   if (href) {
     return (
-      <Link className="uds-file-upload__item-name" href={href}>
+      <Link id={id} className="uds-file-upload__item-name" href={href}>
         {file.name}
         {marker}
       </Link>
@@ -244,7 +261,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
   }
 
   return (
-    <span className="uds-file-upload__item-name">
+    <span id={id} className="uds-file-upload__item-name">
       {file.name}
       {marker}
     </span>

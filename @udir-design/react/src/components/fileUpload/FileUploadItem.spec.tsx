@@ -133,6 +133,32 @@ describe('FileUpload.Item', () => {
     expect(getComputedStyle(description(), '::before').content).toBe('none');
   });
 
+  it('is named by its file and loading text only while loading', () => {
+    // Named, the row is read as a whole when it takes focus from a hidden
+    // button. Afterwards its buttons are back, and a name would hide them.
+    const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+    const item = (loading: boolean) => (
+      <ul>
+        <FileUploadItem
+          file={file}
+          loading={loading}
+          loadingText="Validerer…"
+          onRemove={() => {}}
+        />
+      </ul>
+    );
+
+    const { rerender } = render(item(true));
+
+    expect(screen.getByRole('listitem')).toHaveAccessibleName(
+      'eksempel.txt Validerer…',
+    );
+
+    rerender(item(false));
+
+    expect(screen.getByRole('listitem')).toHaveAccessibleName('');
+  });
+
   it('renders file size when description is unset', () => {
     render(
       <ul>
@@ -399,13 +425,12 @@ describe('FileUpload.Item', () => {
       );
     };
 
-    it('keeps focus away from the other files', async () => {
+    it('gives focus to the file itself, not another file', async () => {
       render(<Files />);
 
       await press('a.pdf', 'download');
 
-      expect(buttonIn('b.pdf', 'download')).not.toHaveFocus();
-      expect(document.body).toHaveFocus();
+      expect(screen.getByText('a.pdf').closest('li')).toHaveFocus();
     });
 
     it('gives focus back to the button when loading ends', async () => {
