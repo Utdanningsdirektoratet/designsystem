@@ -49,6 +49,12 @@ Run from this directory, or with `pnpm turbo run <task> --filter=@udir-design/ap
   exactly `round(width)` by `round(height)` into `public/illustrations-assets/`.
 - `dev` and `build` do not run `build:assets`, so the monorepo build needs no Figma token. `build` only
   produces the small app shell in `dist/`.
+- `suggest:figma [--category=<id>]`: finds families and variants on the live Figma page that are missing
+  from `import-map.json` and adds them. Without `--category` it checks every category. Existing entries
+  are never changed, and it writes nothing if a new node is ambiguous (unknown property name or value,
+  unmapped colour theme and similar). It also warns about entries whose Figma node is gone (for example
+  a recreated component) and about nodes beyond the fetched depth. `--prune` removes the stale entries;
+  follow it with `sync:figma --allow-removals`. Review the diff after.
 - `sync:figma --category=<id>`: refreshes the category's entries in `metadata.json` from the live Figma
   page (bounds, identity checks). `--allow-removals` is required to drop families or variants.
   It does not download artwork. Run `fetch:svgs --force --category=<id>` afterwards if artwork changed.
@@ -79,19 +85,22 @@ that keeps generated IDs unique across files. A category without a source cannot
   from Figma's `alt 1/2/3`), `Bakgrunn`, `Geometrisk form` and `Karakter`.
 - Only these are exported: components and linked instances in the mapping. Loose `motif` groups,
   guide frames starting with `_`, the `Navngivingsstruktur` section and some off-page instances
-  in Internbruk were reviewed and left out.
+  in Internbruk were reviewed and left out. `suggest:figma` skips the sections and nodes listed in
+  `scripts/exclusions.json`; add an entry there (with a reason) to exclude more.
 - SVGs are checked before use. Scripts, external URLs, entities and `foreignObject` are rejected.
   Embedded base64 PNG, JPEG and WebP images on `<image>` elements are allowed.
 
 ## Adding or changing families
 
-The planning tooling that generated `import-map.json` has been removed. To add a family or category:
+To add an illustration (or a whole family) that already exists in Figma:
 
-1. Add the category's entry to `sources` in `src/schema.ts`, if it is new.
-2. Add the families and variants to `source/import-map.json` by hand, with the Figma node IDs,
-   stable IDs and properties. Look at an existing entry for the shape.
-3. Run `sync:figma --category=<id>`. It validates ancestry, references and bounds against Figma.
-4. Run `fetch:svgs`, then `build:assets`.
-5. Commit `import-map.json` and `metadata.json`.
+1. Run `suggest:figma --category=<id>` and review the diff of `source/import-map.json`.
+   If it reports an ambiguity, fix it in Figma or edit the map by hand.
+2. Run `sync:figma --category=<id>`. It validates ancestry, references and bounds against Figma.
+3. Optionally run `build:assets` to preview the artwork locally.
+4. Commit `import-map.json` and `metadata.json`. The deploy workflow fetches and uploads the artwork.
 
-The earlier `inspect`, `plan` and `verify` scripts are in git history if a bulk import is needed again.
+For a new category, first add its entry to `sources` in `src/schema.ts`.
+
+`suggest:figma` derives IDs, property labels and the `alt N` colour themes with the rules in
+`scripts/planning.ts`.

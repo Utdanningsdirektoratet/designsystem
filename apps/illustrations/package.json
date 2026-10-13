@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:assets": "node --env-file-if-exists=../../.env.local --import=tsx scripts/fetch.ts && tsx scripts/build.ts",
     "fetch:svgs": "node --env-file-if-exists=../../.env.local --import=tsx scripts/fetch.ts",
+    "suggest:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/suggest.ts",
     "sync:figma": "node --env-file-if-exists=../../.env.local --import=tsx scripts/sync.ts",
     "typecheck": "tsc",
     "lint": "oxlint",
