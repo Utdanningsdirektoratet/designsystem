@@ -34,19 +34,24 @@ function memoize<T>(
 /** Reads a private blob container with the signed-in user's access token. */
 export function createStorageSource(
   config: StorageConfig,
-  getToken: () => Promise<string>,
+  getToken: (forceRefresh?: boolean) => Promise<string>,
 ): AssetSource {
   const root = `https://${config.storageAccount}.blob.core.windows.net/${config.container}/${config.version}`;
   const blobs = new Map<string, Promise<Blob>>();
   const urls = new Map<string, Promise<string>>();
 
-  async function get(path: string) {
-    const response = await fetch(`${root}/${path}`, {
+  const request = async (path: string, forceRefresh: boolean) =>
+    fetch(`${root}/${path}`, {
       headers: {
-        Authorization: `Bearer ${await getToken()}`,
+        Authorization: `Bearer ${await getToken(forceRefresh)}`,
         'x-ms-version': storageVersion,
       },
     });
+
+  async function get(path: string) {
+    let response = await request(path, false);
+    // A token revoked before it expired is only replaced by a forced refresh.
+    if (response.status === 401) response = await request(path, true);
     if (!response.ok) throw new AssetError(response.status);
     return response;
   }

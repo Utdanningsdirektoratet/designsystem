@@ -45,7 +45,10 @@ export function AuthGate({
   const current = getSession(config);
   const [state, setState] = useState<State>('loading');
   const source = useMemo(
-    () => createStorageSource(config, () => current.getToken()),
+    () =>
+      createStorageSource(config, (forceRefresh) =>
+        current.getToken(forceRefresh),
+      ),
     [config, current],
   );
 
