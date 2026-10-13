@@ -1,4 +1,9 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import {
+  cleanup,
+  isInaccessible,
+  render,
+  screen,
+} from '@testing-library/react';
 import { useState } from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { userEvent } from 'vitest/browser';
@@ -131,6 +136,25 @@ describe('FileUpload.Item', () => {
 
     expect(description()).toHaveTextContent('Validerer…');
     expect(getComputedStyle(description(), '::before').content).toBe('none');
+  });
+
+  it('keeps the file name and loading text that take focus out of reach until they do', () => {
+    // Browsing the row would otherwise find the file name and loading text
+    // twice, once as shown and once in what takes focus.
+    render(
+      <ul>
+        <FileUploadItem
+          file={new File([new Uint8Array(1024)], 'eksempel.txt')}
+          loading
+          loadingText="Validerer…"
+          onRemove={() => {}}
+        />
+      </ul>,
+    );
+
+    expect(isInaccessible(screen.getByText('eksempel.txt Validerer…'))).toBe(
+      true,
+    );
   });
 
   it('renders file size when description is unset', () => {
@@ -399,13 +423,18 @@ describe('FileUpload.Item', () => {
       );
     };
 
-    it('keeps focus away from the other files', async () => {
+    it("gives focus to the file's name and loading text, not another file", async () => {
+      // VoiceOver on iOS read only the file name when the row itself had
+      // focus, named by the two.
       render(<Files />);
 
       await press('a.pdf', 'download');
 
-      expect(buttonIn('b.pdf', 'download')).not.toHaveFocus();
-      expect(document.body).toHaveFocus();
+      expect(document.activeElement).toHaveTextContent('a.pdf Uploading...');
+      expect(isInaccessible(document.activeElement as Element)).toBe(false);
+      expect(screen.getByText('a.pdf').closest('li')).toContainElement(
+        document.activeElement as HTMLElement,
+      );
     });
 
     it('gives focus back to the button when loading ends', async () => {
@@ -416,6 +445,70 @@ describe('FileUpload.Item', () => {
       await vi.waitFor(() =>
         expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
       );
+    });
+
+    it('keeps what has focus as it was while loading until focus moves on, and not a moment longer', async () => {
+      // NVDA in Firefox read the row's new content, buttons and all, when
+      // the element with focus changed its name. Left behind, the text would
+      // be found twice when browsing the row.
+      render(<Files />);
+      const row = () => screen.getByText('a.pdf').closest('li') as Element;
+      let leftAsFocusLanded: boolean | undefined;
+      const onFocusIn = (event: FocusEvent) => {
+        if (event.target === buttonIn('a.pdf', 'download')) {
+          leftAsFocusLanded = screen.queryByText('a.pdf Uploading...') !== null;
+        }
+      };
+      document.addEventListener('focusin', onFocusIn);
+
+      try {
+        await press('a.pdf', 'download');
+        await vi.waitFor(() => expect(row()).not.toHaveAttribute('aria-busy'));
+
+        expect(document.activeElement).toHaveTextContent('a.pdf Uploading...');
+
+        await vi.waitFor(() =>
+          expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
+        );
+        expect(leftAsFocusLanded).toBe(false);
+      } finally {
+        document.removeEventListener('focusin', onFocusIn);
+      }
+    });
+
+    it('keeps focus in the row when no button comes back once loading ends', async () => {
+      // Such as when the consumer takes the action away once it has been done.
+      function Once() {
+        const [state, setState] = useState<'idle' | 'busy' | 'done'>('idle');
+        return (
+          <ul>
+            <FileUploadItem
+              file={{ name: 'a.pdf' }}
+              loading={state === 'busy'}
+              actions={
+                state === 'idle' && (
+                  <FileUploadDownloadButton
+                    fileName="a.pdf"
+                    onClick={() => {
+                      setState('busy');
+                      later(() => setState('done'));
+                    }}
+                  />
+                )
+              }
+            />
+          </ul>
+        );
+      }
+      render(<Once />);
+      const row = screen.getByText('a.pdf').closest('li');
+
+      await press('a.pdf', 'download');
+      await vi.waitFor(() => expect(row).not.toHaveAttribute('aria-busy'));
+
+      // Past the moment the file name and loading text let go of focus.
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      expect(row).toHaveFocus();
     });
 
     it('leaves focus where the user moved it while loading', async () => {

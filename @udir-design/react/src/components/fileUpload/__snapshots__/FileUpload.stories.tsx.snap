@@ -1084,12 +1084,18 @@ exports[`Example Items 1`] = `
       </div>
     </li>
     <li aria-busy="true">
+      <span
+        tabindex="-1"
+        hidden
+      >
+        eksempel4.pdf Laster opp...
+      </span>
       <div>
         <div>
           <svg
-            aria-label="spinner"
             role="img"
             viewbox="0 0 50 50"
+            aria-hidden="true"
           >
             <circle
               cx="25"
@@ -1444,12 +1450,18 @@ exports[`Item Actions 1`] = `
     </div>
   </li>
   <li aria-busy="true">
+    <span
+      tabindex="-1"
+      hidden
+    >
+      vedlegg.pdf Laster opp...
+    </span>
     <div>
       <div>
         <svg
-          aria-label="spinner"
           role="img"
           viewbox="0 0 50 50"
+          aria-hidden="true"
         >
           <circle
             cx="25"
@@ -2023,12 +2035,18 @@ exports[`Upload 1`] = `
     data-variant="default"
   >
     <li aria-busy="true">
+      <span
+        tabindex="-1"
+        hidden
+      >
+        rapport.pdf Laster opp...
+      </span>
       <div>
         <div>
           <svg
-            aria-label="spinner"
             role="img"
             viewbox="0 0 50 50"
+            aria-hidden="true"
           >
             <circle
               cx="25"

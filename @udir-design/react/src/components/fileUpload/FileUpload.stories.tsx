@@ -539,12 +539,6 @@ export const ExampleItems = meta.story({
       await expect(removeButtons).toHaveLength(3);
     });
 
-    await step('Loading item shows a spinner', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
-    });
-
     await step('Loading item has aria-busy set', async () => {
       const busyItem = canvasElement.querySelector('[aria-busy="true"]');
       await expect(busyItem).toBeInTheDocument();
@@ -899,10 +893,11 @@ export const Upload = meta.story({
       await expect(within(list).getAllByRole('listitem')).toHaveLength(1);
     });
 
-    await step('Item shows loading spinner after upload', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
+    await step('Item is loading after upload', async () => {
+      await expect(canvas.getByRole('listitem')).toHaveAttribute(
+        'aria-busy',
+        'true',
+      );
     });
   },
 });
