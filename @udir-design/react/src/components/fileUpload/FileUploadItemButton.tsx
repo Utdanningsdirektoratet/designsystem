@@ -155,11 +155,13 @@ const waitingRows = new WeakMap<
  * the file was removed along with it.
  *
  * When the row is still there, its buttons are only hidden for a while, so
- * focus stays with the file instead of moving to another one. The row waits
- * for a button of the same kind to come back and gets focus back then, see
- * `restoreFocus`. If the row is removed while it waits, as when a file is set
- * to `loading` while it is deleted on the server, focus moves on as for any
- * removed row. Focus moving anywhere else ends the wait.
+ * focus stays with the file instead of moving to another one: the row itself
+ * takes focus meanwhile. Left on the page, focus made VoiceOver in Safari read
+ * the page's title and lose its place, and the row's loading text was never
+ * read. The row waits for a button of the same kind to come back and gives it
+ * focus then, see `restoreFocus`. If the row is removed while it waits, as
+ * when a file is set to `loading` while it is deleted on the server, focus
+ * moves on as for any removed row. Focus moving anywhere else ends the wait.
  *
  * If there is no button to move focus to, Digdir's tooltip implementation
  * currently stays open, pointing at where the button was, since it only closes
@@ -170,7 +172,7 @@ const waitingRows = new WeakMap<
 function handleRemoval(button: HTMLButtonElement, sameKind: string) {
   const focused = document.activeElement === button;
   if (!focused && !button.matches(':hover')) return;
-  const row = button.closest('.uds-file-upload__item');
+  const row = button.closest<HTMLElement>('.uds-file-upload__item');
   const list = row?.parentElement;
   const rows = list ? Array.from(list.children) : [];
   const index = row ? rows.indexOf(row) : -1;
@@ -247,8 +249,12 @@ function focusLast(elements: HTMLElement[]) {
   return Boolean(target);
 }
 
-function waitInRow(row: Element, sameKind: string, moveOn: () => boolean) {
+function waitInRow(row: HTMLElement, sameKind: string, moveOn: () => boolean) {
   waitingRows.get(row)?.stop();
+  /* Only a tabindex we added is ours to take away again. */
+  const addedTabIndex = !row.hasAttribute('tabindex');
+  if (addedTabIndex) row.tabIndex = -1;
+  row.focus();
   const stopObserving = whenRemoved(row, () => {
     stop();
     if ((document.activeElement ?? document.body) === document.body) moveOn();
@@ -256,8 +262,10 @@ function waitInRow(row: Element, sameKind: string, moveOn: () => boolean) {
   const stop = () => {
     stopObserving();
     document.removeEventListener('focusin', stop);
+    if (addedTabIndex) row.removeAttribute('tabindex');
     waitingRows.delete(row);
   };
+  /* Added after the row has taken focus, so only a later move ends the wait. */
   document.addEventListener('focusin', stop);
   waitingRows.set(row, { sameKind, stop });
 }
@@ -280,15 +288,22 @@ function whenRemoved(row: Element, then: () => void) {
  * Called as the button comes onto the page. Gives it focus if its row has been
  * waiting for this kind of button since the one that had focus went away, and
  * focus has not been anywhere else since.
+ *
+ * Focus waits two frames. Focused as it came onto the page, the button was not
+ * read by VoiceOver in Safari, though it was once it had been there that long.
  */
 function restoreFocus(button: HTMLButtonElement, sameKind: string) {
   const row = button.closest('.uds-file-upload__item');
   const waiting = row && waitingRows.get(row);
   if (waiting?.sameKind !== sameKind) return;
-  waiting.stop();
-  if ((document.activeElement ?? document.body) === document.body) {
-    button.focus();
-  }
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      const active = document.activeElement ?? document.body;
+      if (button.isConnected && (active === row || active === document.body))
+        button.focus();
+      waiting.stop();
+    }),
+  );
 }
 
 /**

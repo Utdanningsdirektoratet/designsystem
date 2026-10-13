@@ -38,10 +38,10 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             kandidat-13.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -121,10 +121,10 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             kandidat-14.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -204,10 +204,10 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             kandidat-15.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -282,12 +282,12 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             kandidat-16.tsx
             <span>
             </span>
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               844 KB
             </span>
@@ -382,10 +382,10 @@ exports[`Custom Item Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span id="<generated>-name">
           vitnemal.pdf
         </span>
-        <div>
+        <div id="<generated>-description">
           Vitnemål fra videregående skole (
           <span>
             293 KB
@@ -504,10 +504,10 @@ exports[`Custom Item Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span id="<generated>-name">
           attest.pdf
         </span>
-        <div>
+        <div id="<generated>-description">
           Attest fra arbeidsgiver (
           <span>
             293 KB
@@ -735,10 +735,10 @@ exports[`Example Drop Zone 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel1.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -876,10 +876,10 @@ exports[`Example Dropzone With Explicit Size 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel1.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -979,10 +979,10 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel2.docx
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               Filopplasting 2
             </span>
@@ -1062,10 +1062,13 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <a href="/eksempel3.png">
+          <a
+            id="<generated>-name"
+            href="/eksempel3.png"
+          >
             eksempel3.png
           </a>
-          <div>
+          <div id="<generated>-description">
             <span>
               Filopplasting 3
             </span>
@@ -1083,13 +1086,16 @@ exports[`Example Items 1`] = `
       >
       </div>
     </li>
-    <li aria-busy="true">
+    <li
+      aria-busy="true"
+      aria-labelledby="<generated>-name <generated>-description"
+    >
       <div>
         <div>
           <svg
-            aria-label="spinner"
             role="img"
             viewbox="0 0 50 50"
+            aria-hidden="true"
           >
             <circle
               cx="25"
@@ -1110,10 +1116,10 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel4.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
           </div>
         </div>
       </div>
@@ -1146,12 +1152,12 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel5.tsx
             <span>
             </span>
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               Filopplasting 5
             </span>
@@ -1296,10 +1302,10 @@ exports[`Example Trigger 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel1.png
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -1388,10 +1394,10 @@ exports[`Item Actions 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span id="<generated>-name">
           vedtak.pdf
         </span>
-        <div>
+        <div id="<generated>-description">
           <span>
             293 KB
           </span>
@@ -1443,13 +1449,16 @@ exports[`Item Actions 1`] = `
     >
     </div>
   </li>
-  <li aria-busy="true">
+  <li
+    aria-busy="true"
+    aria-labelledby="<generated>-name <generated>-description"
+  >
     <div>
       <div>
         <svg
-          aria-label="spinner"
           role="img"
           viewbox="0 0 50 50"
+          aria-hidden="true"
         >
           <circle
             cx="25"
@@ -1470,10 +1479,10 @@ exports[`Item Actions 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span id="<generated>-name">
           vedlegg.pdf
         </span>
-        <div>
+        <div id="<generated>-description">
         </div>
       </div>
     </div>
@@ -1748,10 +1757,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel1.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               293 KB
             </span>
@@ -1831,10 +1840,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel2.docx
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               9 KB
             </span>
@@ -1909,10 +1918,10 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             eksempel3.png
           </span>
-          <div>
+          <div id="<generated>-description">
             <span>
               2,86 MB
             </span>
@@ -2022,13 +2031,16 @@ exports[`Upload 1`] = `
     role="list"
     data-variant="default"
   >
-    <li aria-busy="true">
+    <li
+      aria-busy="true"
+      aria-labelledby="<generated>-name <generated>-description"
+    >
       <div>
         <div>
           <svg
-            aria-label="spinner"
             role="img"
             viewbox="0 0 50 50"
+            aria-hidden="true"
           >
             <circle
               cx="25"
@@ -2049,10 +2061,10 @@ exports[`Upload 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span id="<generated>-name">
             rapport.pdf
           </span>
-          <div>
+          <div id="<generated>-description">
           </div>
         </div>
       </div>
