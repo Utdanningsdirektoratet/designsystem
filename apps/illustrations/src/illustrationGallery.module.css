@@ -97,6 +97,8 @@
   gap: var(--ds-size-4);
   min-width: 0;
   align-content: start;
+  position: relative;
+  overflow: hidden;
   padding: var(--ds-size-4);
   padding-block-end: var(--ds-size-2);
   background: var(--ds-color-neutral-background-default);
@@ -109,6 +111,21 @@
   width: 100%;
   height: 20rem;
   object-fit: contain;
+}
+
+.previewFrame {
+  display: grid;
+  gap: var(--ds-size-2);
+}
+
+.previewNote {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  padding: var(--ds-size-1) var(--ds-size-3);
+  text-align: center;
+  color: var(--ds-color-text-default);
+  background: var(--ds-color-surface-tinted);
 }
 
 .dimensions,
@@ -147,9 +164,18 @@
 }
 
 .downloads {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-4);
+  display: grid;
+  justify-items: start;
+  gap: var(--ds-size-3);
+}
+
+.downloads > :first-child {
+  justify-self: stretch;
+}
+
+.downloads > p {
+  margin-top: var(--ds-size-2);
+  margin-bottom: calc(-1 * var(--ds-size-1));
 }
 
 .footer {
