@@ -21,7 +21,8 @@ body {
   max-width: calc(80rem + 2 * var(--ds-size-5));
   margin: 0 auto;
   /* Same gutters as Header/Footer, so the content lines up with them. */
-  padding-block: var(--ds-size-5);
+  padding-block-start: var(--ds-size-5);
+  padding-block-end: var(--ds-size-15);
   padding-inline: var(--ds-size-5);
 
   @media (max-width: 30rem) {

@@ -8,6 +8,25 @@ export function familyDisplayName(name: string): string {
   return readable.charAt(0).toLocaleUpperCase('nb') + readable.slice(1);
 }
 
+const propertyLabels: Record<string, string> = {
+  'Geometrisk form': 'Organisk form',
+  Season: 'Sesong',
+};
+
+const valueLabels: Record<string, Record<string, string>> = {
+  Season: { Summer: 'Sommer', Winter: 'Vinter' },
+};
+
+/** Presentation only: canonical property keys and values stay unchanged. */
+export function propertyDisplayLabel(key: string): string {
+  return propertyLabels[key] ?? key;
+}
+
+export function propertyValueDisplayLabel(key: string, value: string): string {
+  const label = valueLabels[key]?.[value] ?? value;
+  return label.charAt(0).toLocaleUpperCase('nb') + label.slice(1);
+}
+
 export function normalizeFamilySearch(value: string): string {
   return value.toLocaleLowerCase('nb').replace(/[\s-]+/g, '');
 }

@@ -22,7 +22,9 @@ import {
   isBinaryProperty,
   matchesFamilySearch,
   needsVariantChooser,
+  propertyDisplayLabel,
   propertyOptions,
+  propertyValueDisplayLabel,
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
@@ -33,6 +35,13 @@ import type {
   IllustrationCatalog,
   IllustrationVariant,
 } from './metadata';
+
+// Maps Fargetema to the theme color it is drawn for (see design-tokens config).
+const fargetemaColors: Record<string, string> = {
+  grønn: 'accent',
+  blå: 'support1',
+  brun: 'support2',
+};
 
 function PngDownload({ variant }: { variant: IllustrationVariant }) {
   const props = useAssetLinkProps(variant, 'png');
@@ -89,6 +98,12 @@ export function IllustrationGallery({
         }))
     : [];
   const showVariantChooser = family ? needsVariantChooser(family) : false;
+  // The note only makes sense when the user can pick between color themes.
+  const hasFargetemaChoice = options.some(({ key }) => key === 'Fargetema');
+  const themeColor =
+    hasFargetemaChoice && variant?.properties.Bakgrunn === 'Nei'
+      ? fargetemaColors[variant.properties.Fargetema]
+      : undefined;
   const source = useAssetSource();
 
   // Warms the cache so switching options never waits on the network.
@@ -256,14 +271,23 @@ export function IllustrationGallery({
               </Heading>
               <div className={styles.details}>
                 <div className={styles.previewPanel}>
-                  <AssetImage
-                    className={styles.preview}
-                    variant={variant}
-                    alt={`${familyDisplayName(family.name)}: ${variant.name}`}
-                    decoding="async"
-                    width={variant.width}
-                    height={variant.height}
-                  />
+                  <div className={styles.previewFrame} data-color={themeColor}>
+                    {themeColor ? (
+                      <Paragraph className={styles.previewNote} data-size="xs">
+                        For bruk på hvit eller{' '}
+                        {variant.properties.Fargetema.toLocaleLowerCase('nb')}{' '}
+                        bakgrunn
+                      </Paragraph>
+                    ) : null}
+                    <AssetImage
+                      className={styles.preview}
+                      variant={variant}
+                      alt={`${familyDisplayName(family.name)}: ${variant.name}`}
+                      decoding="async"
+                      width={variant.width}
+                      height={variant.height}
+                    />
+                  </div>
                   <div className={styles.previewFooter}>
                     <output className={styles.dimensions}>
                       {variant.width} × {variant.height} px
@@ -283,7 +307,7 @@ export function IllustrationGallery({
                           .map(({ key, values }, index) => (
                             <Field key={key}>
                               <Label htmlFor={`${fieldId}-${index}`}>
-                                {key}
+                                {propertyDisplayLabel(key)}
                               </Label>
                               <Select
                                 id={`${fieldId}-${index}`}
@@ -315,7 +339,9 @@ export function IllustrationGallery({
                                     key={value}
                                     value={`value:${value}`}
                                   >
-                                    {value || '(Tom verdi)'}
+                                    {value
+                                      ? propertyValueDisplayLabel(key, value)
+                                      : '(Tom verdi)'}
                                   </Select.Option>
                                 ))}
                               </Select>
@@ -352,7 +378,7 @@ export function IllustrationGallery({
                             .map(({ key }) => (
                               <Checkbox
                                 key={key}
-                                label={key}
+                                label={propertyDisplayLabel(key)}
                                 checked={variant.properties[key] === 'Ja'}
                                 onChange={(event) => {
                                   const next = selectProperty(
@@ -379,6 +405,9 @@ export function IllustrationGallery({
                     </Heading>
                     <div className={styles.downloads}>
                       <PngDownload variant={variant} />
+                      <Paragraph data-size="sm" data-color="neutral">
+                        Trenger du SVG til nett eller utvikling?
+                      </Paragraph>
                       <SvgDownload variant={variant} />
                     </div>
                   </div>
