@@ -69,7 +69,8 @@ jobs:
         id: version
         run: |
           if [[ ! "$CATEGORY" =~ ^[a-z-]*$ ]]; then echo "Invalid category"; exit 1; fi
-          HASH=$(sha256sum apps/illustrations/source/catalog/metadata.json | cut -c1-16)
+          # Includes the processing scripts, so an svgo or PNG change uploads a new version without refetching from Figma.
+          HASH=$(cat apps/illustrations/source/catalog/metadata.json apps/illustrations/scripts/svg.ts apps/illustrations/scripts/build.ts | sha256sum | cut -c1-16)
           SUFFIX=${CATEGORY:+-$CATEGORY}
           echo "value=${HASH}-r${ASSET_REVISION}${SUFFIX}" >> "$GITHUB_OUTPUT"
 
