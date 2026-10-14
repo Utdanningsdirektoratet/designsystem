@@ -44,7 +44,7 @@
         ]
       },
       {
-        "id": "statistical",
+        "id": "statistic",
         "name": "Statistiske",
         "description": "Statistiske informasjonskapsler samler anonyme opplysninger om hvordan tjenesten blir brukt, slik at vi kan bruke dem til å gjøre tjenesten mest mulig tilpasset brukernes behov. Tjenesten lagrer [sett inn hvilke opplysninger som lagres]. Ved å samtykke godtar du at vi kan behandle dataene.",
         "necessary": false,
@@ -73,16 +73,9 @@
         ]
       },
       {
-        "id": "marketing",
-        "name": "Markedsføring",
-        "description": "Markedsførings-informasjonskapsler brukes til å spore besøkende på tvers av hjemmesider. Hensikten er å vise annonser som er relevante og engasjerende for den enkelte brukeren, og dermed mer verdifulle for utgivere og tredjeparts-annonsører. Ved å samtykke godtar du at vi kan behandle dataene.",
-        "necessary": false,
-        "cookies": []
-      },
-      {
         "id": "unclassified",
         "name": "Uklassifiserte",
-        "description": "Vi er i ferd med å klassifisere uklassifiserte informasjonskapsler sammen med leverandørene av de enkelte informasjonskapsler.",
+        "description": "Informasjonskapsler vi ikke har klassifisert ennå. Du kan ikke samtykke til disse før vi har klassifisert dem.",
         "necessary": false,
         "cookies": []
       }
@@ -133,7 +126,7 @@
         ]
       },
       {
-        "id": "statistical",
+        "id": "statistic",
         "name": "Statistics",
         "description": "Statistics cookies collect anonymous information about how the service is used so that we can adapt it to users' needs. The service stores [insert what information is stored]. By consenting, you accept that we may process the data.",
         "necessary": false,
@@ -162,16 +155,9 @@
         ]
       },
       {
-        "id": "marketing",
-        "name": "Marketing",
-        "description": "Marketing cookies are used to track visitors across websites. The purpose is to display advertisements that are relevant and engaging to individual users and therefore more valuable to publishers and third-party advertisers. By consenting, you accept that we may process the data.",
-        "necessary": false,
-        "cookies": []
-      },
-      {
         "id": "unclassified",
         "name": "Unclassified",
-        "description": "We are working with the cookie providers to classify unclassified cookies.",
+        "description": "Cookies we have not classified yet. You cannot consent to these until we have classified them.",
         "necessary": false,
         "cookies": []
       }

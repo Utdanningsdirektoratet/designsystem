@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
 import { useDebounceCallback } from '../../utilities/useDebounceCallback';
@@ -294,6 +295,18 @@ export const LiveSearch = meta.story({
           )}
         </Prose>
       </>
+    );
+  },
+});
+
+export const Translations = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement }) => {
+    await expectLanguageVariables(
+      canvasElement,
+      () => canvasElement.querySelector('.ds-search'),
+      ['--dsc-suggestion-sr-clear'],
     );
   },
 });

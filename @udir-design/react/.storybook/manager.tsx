@@ -4,18 +4,9 @@ import './addons/sourceCodeToolbar';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
-import {
-  ComponentIcon,
-  ImageIcon,
-  InformationSquareIcon,
-  LayersIcon,
-  PuzzlePieceIcon,
-  RectangleSectionsIcon,
-  TokenIcon,
-  WrenchIcon,
-} from '@udir-design/icons';
 import { type TagProps } from 'src/components/tag';
 import customTheme from './docs/customTheme';
+import { isSidebarEntryVisible } from './utils/sidebarVisibility';
 
 const tagBadges = {
   alpha: {
@@ -47,15 +38,16 @@ const getBadgeFromTags = (tags: string[]) => {
 addons.setConfig({
   theme: customTheme,
   sidebar: {
+    filters: {
+      'udir-production-docs-only': (entry) =>
+        isSidebarEntryVisible(entry, process.env.NODE_ENV === 'production'),
+    },
     renderLabel(item) {
       if (item.type === 'root') {
         if (item.id === 'introduksjon') {
           return (
             <>
-              <InformationSquareIcon
-                aria-hidden
-                className="sidebar-subheading-icon"
-              />
+              <SidebarIcon name="informationSquare" />
               Introduksjon
             </>
           );
@@ -63,7 +55,7 @@ addons.setConfig({
         if (item.id === 'iconsandsymbols') {
           return (
             <>
-              <ImageIcon aria-hidden className="sidebar-subheading-icon" />
+              <SidebarIcon name="image" />
               Ikoner og symboler
             </>
           );
@@ -71,10 +63,7 @@ addons.setConfig({
         if (item.id === 'demo') {
           return (
             <>
-              <RectangleSectionsIcon
-                aria-hidden
-                className="sidebar-subheading-icon"
-              />
+              <SidebarIcon name="rectangleSections" />
               Demosider
             </>
           );
@@ -82,7 +71,7 @@ addons.setConfig({
         if (item.id === 'design-tokens') {
           return (
             <>
-              <TokenIcon aria-hidden className="sidebar-subheading-icon" />
+              <SidebarIcon name="token" />
               Design tokens
             </>
           );
@@ -90,7 +79,7 @@ addons.setConfig({
         if (item.id === 'patterns') {
           return (
             <>
-              <LayersIcon aria-hidden className="sidebar-subheading-icon" />
+              <SidebarIcon name="layers" />
               Bruksmønstre
             </>
           );
@@ -98,7 +87,7 @@ addons.setConfig({
         if (item.id === 'components') {
           return (
             <>
-              <ComponentIcon aria-hidden className="sidebar-subheading-icon" />
+              <SidebarIcon name="component" />
               Komponenter
             </>
           );
@@ -106,10 +95,7 @@ addons.setConfig({
         if (item.id === 'hooks') {
           return (
             <>
-              <PuzzlePieceIcon
-                aria-hidden
-                className="sidebar-subheading-icon"
-              />
+              <SidebarIcon name="puzzlePiece" />
               Hooks
             </>
           );
@@ -117,7 +103,7 @@ addons.setConfig({
         if (item.id === 'utilities') {
           return (
             <>
-              <WrenchIcon aria-hidden className="sidebar-subheading-icon" />
+              <SidebarIcon name="wrench" />
               Hjelpeverktøy
             </>
           );
@@ -169,6 +155,18 @@ addons.setConfig({
     },
   },
 });
+
+/**
+ * The icon is a CSS mask, so its `--uds-icon-<name>` variable must be imported in `manager.css`.
+ */
+function SidebarIcon({ name }: { name: string }) {
+  return (
+    <span
+      className="sidebar-subheading-icon"
+      style={{ maskImage: `var(--uds-icon-${name})` }}
+    />
+  );
+}
 
 function RenderWithTagBadge({
   item,

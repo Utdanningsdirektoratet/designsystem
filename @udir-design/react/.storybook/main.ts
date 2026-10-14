@@ -3,6 +3,7 @@ import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
 import { createTierIndexers } from './utils/createTierIndexers.js';
+import { storySourceLocationPlugin } from './utils/storySourceLocationPlugin.js';
 
 /** Keep in sync with the React.HTMLAttributes augmentation in src/html.ts */
 const GLOBAL_HTML_ATTRIBUTES = new Set([
@@ -78,7 +79,7 @@ export default defineMain({
         cssCodeSplit: false,
         chunkSizeWarningLimit: Infinity,
       },
-      plugins: [fixStorybookMockerEntryPlugin()],
+      plugins: [storySourceLocationPlugin(), fixStorybookMockerEntryPlugin()],
       optimizeDeps: {
         /*
         Sometimes we get a message like this, and then tests fail:
@@ -91,7 +92,9 @@ export default defineMain({
 
         This indicates that some dependencies
         */
-        include: ['react/jsx-dev-runtime'],
+        // The source-location transform injects this import after dependency
+        // scanning. Prebundle it to avoid reoptimization during browser tests.
+        include: ['react/jsx-dev-runtime', 'storybook/internal/csf'],
       },
       server: {
         proxy: {
@@ -147,6 +150,9 @@ export default defineMain({
       shouldExtractLiteralValuesFromEnum: true,
       // Removes "undefined" as an option in Storybook controls for optional properties
       shouldRemoveUndefinedFromOptional: true,
+      // Keep JSDoc tags in the description. Storybook only finds `@deprecated` there, and
+      // otherwise leaves deprecated props unmarked in the props table.
+      shouldIncludePropTagMap: false,
     },
   },
 });

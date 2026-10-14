@@ -32,7 +32,7 @@ import { Avatar } from '@udir-design/react';
 
 /* Med bilde */
 <Avatar aria-label="Ola Nordmann">
-  <img src="..." />
+  <img src="..." alt="" />
 </Avatar>
 
 /* Sammen med synlig tekst */
@@ -46,8 +46,8 @@ import { Avatar } from '@udir-design/react';
 
 ### Innhold
 
-`Avatar` kan inneholde et ikon, et bilde, eller initialer. Ikon og bilde legger du inn som `children` i komponenten. Innholdet får automatisk `aria-hidden="true"` for å unngå dobbel informasjon.
-Initialer sendes inn i `initials`-propen. Det vil fungere som en fallback dersom bildet ikke lastes. Et standard ikon vises dersom det ikke sendes inn `children` eller `initials`.
+`Avatar` kan inneholde et ikon, et bilde, eller initialer. Ikon og bilde legger du inn som `children` i komponenten. Gi ikonet `aria-hidden` og bildet `alt=""` for å unngå dobbel informasjon, siden `aria-label` på `Avatar` allerede beskriver innholdet.
+Initialer legger du inn som tekst i `children`. Et standard ikon vises dersom det ikke sendes inn `children`.
 
 <Canvas of={AvatarStories.Content} />
 

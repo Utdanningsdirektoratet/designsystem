@@ -12,4 +12,13 @@
 
   /* adjust icon size to before Digdir v1.16.0 */
   --ds-icon-size: 1em;
+
+  /*
+  Keep the underline from Digdir v1.21.0. From v1.21.1 the underline sits at 0.24em, where
+  Firefox breaks the thicker hover underline at descenders while Chrome and Safari don't.
+  Digdir has no custom property for the offset.
+  */
+  --dsc-link-text-decoration-thickness: 0.0625em;
+  --dsc-link-text-decoration-thickness--hover: 0.125em;
+  text-underline-offset: 0.27em;
 }

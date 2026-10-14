@@ -4,7 +4,7 @@
  * Determines whether the Next.js test app should be deployed.
  *
  * Decision logic:
- *   IS_DISPATCH || test-app-nextjs is affected || workflow file is modified
+ *   IS_DISPATCH || test-app-nextjs#build is affected || workflow file is modified
  *
  * Reads from environment variables:
  *   IS_DISPATCH - "true" if the event is a workflow_dispatch
@@ -25,11 +25,13 @@ const IS_DISPATCH = process.env['IS_DISPATCH'] === 'true';
 function isNextjsAffected(): boolean {
   try {
     const output = execSync(
-      'pnpm turbo ls --affected --filter="test-app-nextjs" --output json',
+      'pnpm turbo run build --filter="test-app-nextjs" --affected --dry-run=json',
       { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] },
     );
     const result = JSON.parse(output);
-    return result.packages.count > 0;
+    return result.tasks.some(
+      (t: { taskId: string }) => t.taskId === 'test-app-nextjs#build',
+    );
   } catch {
     return false;
   }
@@ -50,7 +52,7 @@ function isWorkflowModified(): boolean {
 const nextjsAffected = isNextjsAffected();
 const workflowModified = isWorkflowModified();
 
-log(`Is the Next.js test app affected? ${nextjsAffected}`);
+log(`Is test-app-nextjs#build affected? ${nextjsAffected}`);
 log(`Is the deployment workflow modified? ${workflowModified}`);
 log(
   `Is the deploy triggered through a manual workflow dispatch? ${IS_DISPATCH}`,

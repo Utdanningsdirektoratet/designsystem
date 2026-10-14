@@ -1,6 +1,7 @@
 import Handlebars from 'handlebars';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import testHarness from '../test/template-harness.html?raw';
+import cssCode from './css-code.css?raw';
 import htmlCode from './html-code.html?raw';
 import javascriptCode from './javascript-code.js?raw';
 
@@ -8,28 +9,43 @@ const compileHarness = Handlebars.compile(testHarness);
 const compileTemplate = Handlebars.compile(htmlCode);
 
 type CookieInformationApi = {
-  changeCategoryConsentDecision: (category: string) => void;
+  changeCategoryConsentDecision: (category: string, decision?: boolean) => void;
   declineAllCategories: () => void;
-  submitAllCategories: () => void;
+  getConsentGivenFor: (category: string) => boolean;
   submitConsent: () => void;
 };
 
-type ConsentDecisionMethod =
-  | 'declineAllCategories'
-  | 'submitAllCategories'
-  | 'submitConsent';
+type ConsentDecisionMethod = 'declineAllCategories' | 'submitConsent';
 
 type TemplateWindow = {
   CookieConsent: {
     renew: () => void;
   };
   CookieInformation: CookieInformationApi;
+  cookieInformationCustomConfig?: Record<string, unknown>;
+  dispatchEvent: (event: Event) => boolean;
   document: Document;
   hideCookieBanner: () => void;
   showCookieBanner: () => void;
+  renewCookieConsent: () => void;
 };
 
-const optionalCategories = [
+type CookieCategory = {
+  cookie_type_label: string;
+  cookie_type_name: string;
+  cookie_type_description: string;
+  cookie_type_count: number;
+  is_necessary: boolean;
+  is_unclassified: boolean;
+  cookie_type_results: Array<{
+    data_processor_name: string;
+    description: string;
+    name: string;
+    expiration: string;
+  }>;
+};
+
+const optionalCategories: CookieCategory[] = [
   {
     cookie_type_label: 'cookie_cat_necessary',
     cookie_type_name: 'Nødvendige',
@@ -65,13 +81,14 @@ const templateData = ({
 type RenderTemplateOptions = {
   consumerMarkup?: string;
   culture?: string | null;
+  customConfig?: Record<string, unknown>;
   data?: ReturnType<typeof templateData>;
 };
 
 const createCookieInformationApi = (templateWindow: TemplateWindow) => ({
   changeCategoryConsentDecision: vi.fn(),
   declineAllCategories: vi.fn(() => templateWindow.hideCookieBanner()),
-  submitAllCategories: vi.fn(() => templateWindow.hideCookieBanner()),
+  getConsentGivenFor: vi.fn(() => false),
   submitConsent: vi.fn(() => templateWindow.hideCookieBanner()),
 });
 
@@ -79,6 +96,7 @@ const createCookieInformationApi = (templateWindow: TemplateWindow) => ({
 const renderTemplate = async ({
   consumerMarkup = '',
   culture = 'NB',
+  customConfig,
   data = templateData(),
 }: RenderTemplateOptions = {}) => {
   const frame = document.createElement('iframe');
@@ -92,6 +110,7 @@ const renderTemplate = async ({
   frame.srcdoc = compileHarness({
     language: data.language,
     cultureAttribute,
+    cookieStyles: cssCode,
     cookieTemplate: compileTemplate(data),
     consumerMarkup,
   });
@@ -109,6 +128,7 @@ const renderTemplate = async ({
       renew: () => templateWindow.showCookieBanner(),
     },
     CookieInformation: cookieInformation,
+    cookieInformationCustomConfig: customConfig,
   });
 
   const script = frame.contentDocument.createElement('script');
@@ -170,7 +190,7 @@ describe('Cookie Information template', () => {
       consumerMarkup: `
         <footer>
           <a href="#informasjonskapsler" id="renew-link"
-            onclick="CookieConsent.renew(); return false;"
+            onclick="renewCookieConsent(); return false;"
           >Informasjonskapsler</a>
         </footer>`,
     });
@@ -193,9 +213,9 @@ describe('Cookie Information template', () => {
     });
     const { document } = templateWindow;
 
-    expect(getElementById(document, 'cookie-dialog')).toHaveAttribute(
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
       'aria-label',
-      'Cookie consent',
+      'Reject optional cookies and close dialog',
     );
     expect(getElementById(document, 'btn-accept-all')).toHaveTextContent(
       'Accept all',
@@ -209,9 +229,9 @@ describe('Cookie Information template', () => {
     });
     const { document } = templateWindow;
 
-    expect(getElementById(document, 'cookie-dialog')).toHaveAttribute(
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
       'aria-label',
-      'Cookie consent',
+      'Reject optional cookies and close dialog',
     );
     expect(getElementById(document, 'btn-accept-all')).toHaveTextContent(
       'Accept all',
@@ -225,16 +245,16 @@ describe('Cookie Information template', () => {
     });
     const { document } = templateWindow;
 
-    expect(getElementById(document, 'cookie-dialog')).toHaveAttribute(
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
       'aria-label',
-      'Samtykke til informasjonskapsler',
+      'Avvis valgfrie og lukk dialogvindu',
     );
     expect(getElementById(document, 'btn-accept-all')).toHaveTextContent(
       'Godta alle',
     );
   });
 
-  it('shows the "Lukk" consent action instead of decision controls when all categories are necessary', async () => {
+  it('shows information-only controls and wording when all categories are necessary', async () => {
     const { templateWindow } = await renderTemplate({
       data: templateData({ cookieCategories: [optionalCategories[0]] }),
     });
@@ -251,6 +271,86 @@ describe('Cookie Information template', () => {
     expect(getElementById(document, 'consent-can-be-changed').hidden).toBe(
       true,
     );
+    expect(getElementById(document, 'consent-applies-to').hidden).toBe(true);
+    expect(getElementById(document, 'necessary-cookies-used-on').hidden).toBe(
+      false,
+    );
+    expect(
+      getElementById(document, 'necessary-cookies-used-on'),
+    ).toHaveTextContent('Disse informasjonskapslene brukes på');
+    expect(getElementById(document, 'cookie-dialog')).toHaveAttribute(
+      'aria-labelledby',
+      'cookie-dialog-heading',
+    );
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
+      'aria-label',
+      'Lukk dialogvindu',
+    );
+    expect(getElementById(document, 'necessary-explanation').hidden).toBe(true);
+    expect(getElementById(document, 'cookie-details-trigger').hidden).toBe(
+      true,
+    );
+    expect(document.getElementById('cookie-details-dialog')).toBeNull();
+    expect(document.getElementById('cookie-details-heading')).toBeNull();
+
+    const detailsContent = getElementById(document, 'cookie-details-content');
+    const domainInformation = getElementById(
+      document,
+      'cookie-domain-information',
+    );
+    expect(getElementById(document, 'cookie-dialog')).toContainElement(
+      detailsContent,
+    );
+    expect(detailsContent.nextElementSibling).toBe(domainInformation);
+    expect(detailsContent).toHaveTextContent('Detaljert informasjon.');
+    expect(detailsContent).toHaveTextContent('Nødvendige informasjonskapsler.');
+  });
+
+  it('numbers cookie detail headings within their category', async () => {
+    const category = {
+      ...optionalCategories[0],
+      cookie_type_count: 2,
+      cookie_type_results: [
+        {
+          data_processor_name: 'Cookie Information',
+          description: 'Støtter tekniske funksjoner.',
+          name: 'CookieConsent',
+          expiration: '1 år',
+        },
+        {
+          data_processor_name: 'Cloudflare',
+          description: 'Beskytter mot overbelastning.',
+          name: 'cf_clearance',
+          expiration: '30 minutter',
+        },
+      ],
+    };
+    const { templateWindow } = await renderTemplate({
+      data: templateData({ cookieCategories: [category] }),
+    });
+
+    expect(
+      Array.from(
+        templateWindow.document.querySelectorAll('.cookie-detail-heading'),
+      ).map((heading) => heading.textContent),
+    ).toEqual(['1', '2']);
+  });
+
+  it('suppresses the automatic necessary-only dialog but allows manual opening', async () => {
+    const { templateWindow } = await renderTemplate({
+      data: templateData({ cookieCategories: [optionalCategories[0]] }),
+    });
+    const { document } = templateWindow;
+    const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
+
+    templateWindow.showCookieBanner();
+    expect(dialog.open).toBe(false);
+    expect(document.documentElement).not.toHaveClass('no-scroll');
+
+    templateWindow.renewCookieConsent();
+    expect(dialog.open).toBe(true);
+    expect(document.documentElement).toHaveClass('no-scroll');
+    expect(dialog).toHaveTextContent('Detaljert informasjon.');
   });
 
   it('shows optional category controls when optional categories exist', async () => {
@@ -268,6 +368,51 @@ describe('Cookie Information template', () => {
     expect(getElementById(document, 'consent-can-be-changed').hidden).toBe(
       false,
     );
+    expect(getElementById(document, 'consent-applies-to').hidden).toBe(false);
+    expect(getElementById(document, 'necessary-cookies-used-on').hidden).toBe(
+      true,
+    );
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
+      'aria-label',
+      'Avvis valgfrie og lukk dialogvindu',
+    );
+    expect(getElementById(document, 'necessary-explanation').hidden).toBe(
+      false,
+    );
+    expect(getElementById(document, 'cookie-details-trigger').hidden).toBe(
+      false,
+    );
+    expect(document.getElementById('cookie-details-dialog')).not.toBeNull();
+    expect(document.getElementById('cookie-details-heading')).not.toBeNull();
+  });
+
+  it('keeps the details dialog hidden until it is opened', async () => {
+    const { templateWindow } = await renderTemplate();
+    const detailsDialog = getElementById<HTMLDialogElement>(
+      templateWindow.document,
+      'cookie-details-dialog',
+    );
+
+    detailsDialog.style.display = 'block';
+    expect(getComputedStyle(detailsDialog).display).toBe('none');
+
+    detailsDialog.showModal();
+    expect(getComputedStyle(detailsDialog).display).toBe('block');
+    expect(detailsDialog).toHaveAttribute(
+      'aria-labelledby',
+      'cookie-details-heading',
+    );
+  });
+
+  it('provides the design-system close command on the consent dialog', async () => {
+    const { templateWindow } = await renderTemplate();
+    const closeButton = getElementById(
+      templateWindow.document,
+      'cookie-dialog-close',
+    );
+
+    expect(closeButton).toHaveAttribute('command', 'close');
+    expect(closeButton).toHaveAttribute('commandfor', 'cookie-dialog');
   });
 
   it('opens and closes the details dialog', async () => {
@@ -298,7 +443,7 @@ describe('Cookie Information template', () => {
     expect(detailsDialog.open).toBe(false);
   });
 
-  it('does not record a decision when the outer dialog is dismissed', async () => {
+  it('records rejection when the consent dialog is closed with the close button', async () => {
     const { cookieInformation, templateWindow } = await renderTemplate();
     const { document } = templateWindow;
     const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
@@ -307,18 +452,42 @@ describe('Cookie Information template', () => {
     getElementById(document, 'cookie-dialog-close').click();
 
     expect(dialog.open).toBe(false);
-    expect(
-      cookieInformation.changeCategoryConsentDecision,
-    ).not.toHaveBeenCalled();
-    expect(cookieInformation.declineAllCategories).not.toHaveBeenCalled();
-    expect(cookieInformation.submitAllCategories).not.toHaveBeenCalled();
+    expect(cookieInformation.declineAllCategories).toHaveBeenCalledOnce();
     expect(cookieInformation.submitConsent).not.toHaveBeenCalled();
+  });
+
+  it('records rejection when the consent dialog receives a close request', async () => {
+    const { cookieInformation, templateWindow } = await renderTemplate();
+    const { document } = templateWindow;
+    const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
+    const cancelEvent = new Event('cancel', { cancelable: true });
+
+    templateWindow.showCookieBanner();
+    dialog.dispatchEvent(cancelEvent);
+
+    expect(cancelEvent.defaultPrevented).toBe(true);
+    expect(dialog.open).toBe(false);
+    expect(cookieInformation.declineAllCategories).toHaveBeenCalledOnce();
+  });
+
+  it('closes the manually opened necessary-only dialog without recording rejection', async () => {
+    const { cookieInformation, templateWindow } = await renderTemplate({
+      data: templateData({ cookieCategories: [optionalCategories[0]] }),
+    });
+    const { document } = templateWindow;
+    const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
+
+    templateWindow.renewCookieConsent();
+    getElementById(document, 'btn-close').click();
+
+    expect(dialog.open).toBe(false);
+    expect(cookieInformation.declineAllCategories).not.toHaveBeenCalled();
   });
 
   it.each<
     [description: string, buttonId: string, method: ConsentDecisionMethod]
   >([
-    ['accepts all categories', 'btn-accept-all', 'submitAllCategories'],
+    ['accepts all categories', 'btn-accept-all', 'submitConsent'],
     ['accepts selected categories', 'btn-accept-selected', 'submitConsent'],
     ['declines optional categories', 'btn-decline', 'declineAllCategories'],
   ])('closes after the user %s', async (_description, buttonId, method) => {
@@ -336,6 +505,41 @@ describe('Cookie Information template', () => {
     expect(document.documentElement).not.toHaveClass('no-scroll');
   });
 
+  it('accepts only the categories shown when the user accepts all', async () => {
+    const category = (
+      label: string,
+      overrides: Partial<CookieCategory> = {},
+    ): CookieCategory => ({
+      ...optionalCategories[1],
+      cookie_type_label: label,
+      ...overrides,
+    });
+    const { cookieInformation, templateWindow } = await renderTemplate({
+      data: templateData({
+        cookieCategories: [
+          optionalCategories[0],
+          category('cookie_cat_functional'),
+          category('cookie_cat_statistic'),
+          category('cookie_cat_marketing', { cookie_type_count: 0 }),
+          category('cookie_cat_unclassified', { is_unclassified: true }),
+        ],
+      }),
+    });
+
+    templateWindow.showCookieBanner();
+    getElementById(templateWindow.document, 'btn-accept-all').click();
+
+    const { changeCategoryConsentDecision, submitConsent } = cookieInformation;
+    expect(changeCategoryConsentDecision.mock.calls).toEqual([
+      ['cookie_cat_functional', true],
+      ['cookie_cat_statistic', true],
+    ]);
+    expect(submitConsent).toHaveBeenCalledOnce();
+    expect(submitConsent.mock.invocationCallOrder[0]).toBeGreaterThan(
+      Math.max(...changeCategoryConsentDecision.mock.invocationCallOrder),
+    );
+  });
+
   it('reports optional-category changes to Cookie Information', async () => {
     const { cookieInformation, templateWindow } = await renderTemplate();
     const { document } = templateWindow;
@@ -348,5 +552,40 @@ describe('Cookie Information template', () => {
     expect(
       cookieInformation.changeCategoryConsentDecision,
     ).toHaveBeenCalledWith('cookie_cat_functional');
+  });
+
+  it("stores every consent decision for 365 days while keeping the service's other settings", async () => {
+    const { templateWindow } = await renderTemplate({
+      customConfig: {
+        acceptFrequency: 30,
+        declineFrequency: 7,
+        otherSetting: 'kept',
+      },
+    });
+
+    expect(templateWindow.cookieInformationCustomConfig).toEqual({
+      acceptFrequency: 365,
+      declineFrequency: 365,
+      otherSetting: 'kept',
+    });
+  });
+
+  it('shows a blocked feature placeholder only without the required consent', async () => {
+    const { cookieInformation, templateWindow } = await renderTemplate({
+      consumerMarkup: `
+        <div class="consent-placeholder" data-category="cookie_cat_functional">
+          Video requires functional cookies.
+        </div>`,
+    });
+    const { document } = templateWindow;
+    const placeholder = getElement(document, '.consent-placeholder');
+
+    vi.mocked(cookieInformation.getConsentGivenFor).mockReturnValue(true);
+    templateWindow.dispatchEvent(new Event('CookieInformationConsentGiven'));
+    expect(placeholder.hidden).toBe(true);
+
+    vi.mocked(cookieInformation.getConsentGivenFor).mockReturnValue(false);
+    templateWindow.dispatchEvent(new Event('CookieInformationConsentGiven'));
+    expect(placeholder.hidden).toBe(false);
   });
 });

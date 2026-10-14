@@ -16,6 +16,14 @@ allowBuilds:
   style-dictionary: false
   unrs-resolver: false
 
+audit:
+  ignore:
+    # braces: denial of service through deeply nested glob patterns, with no
+    # fix published. Only build and release tooling depends on it, and those
+    # tools expand glob patterns from our own configuration, never from
+    # outside input.
+    - GHSA-vfj7-8cjw-p6xm
+
 # Peer dependencies are declared explicitly rather than auto-installed, so that
 # optional peers for features we don't use (such as unplugin-dts's api-extractor
 # rollup, or standalone rollup, since Vite builds with rolldown) are simply left
@@ -25,32 +33,34 @@ allowBuilds:
 autoInstallPeers: false
 
 catalog:
+  "@arethetypeswrong/cli": ^0.18.5
   "@babel/types": ^7.29.8
   "@types/js-yaml": ^4.0.9
   "@commitlint/cli": ^21.2.3
   "@commitlint/config-conventional": ^21.2.3
   "@commitlint/types": ^21.2.3
-  "@digdir/designsystemet": 1.21.0
-  "@digdir/designsystemet-css": 1.21.0
-  "@digdir/designsystemet-react": 1.21.0
-  "@digdir/designsystemet-types": 1.21.0
-  "@digdir/designsystemet-web": 1.21.0
+  "@digdir/designsystemet": 1.23.0
+  "@digdir/designsystemet-css": 1.23.0
+  "@digdir/designsystemet-react": 1.23.0
+  "@digdir/designsystemet-types": 1.23.0
+  "@digdir/designsystemet-web": 1.23.0
   "@figma/rest-api-spec": ^0.41.0
   "@hookform/resolvers": ^5.9.1
   "@navikt/aksel-icons": 8.15.0
-  "@radix-ui/react-slot": ^1.3.3
-  "@storybook/addon-a11y": ^10.6.0
-  "@storybook/addon-docs": ^10.6.0
-  "@storybook/addon-vitest": ^10.6.0
+  "@radix-ui/react-slot": ^1.4.0
+  "@storybook/addon-a11y": ^10.6.1
+  "@storybook/addon-docs": ^10.6.1
+  "@storybook/addon-vitest": ^10.6.1
   "@storybook/icons": ^2.1.0
-  "@storybook/react-vite": ^10.6.0
+  "@storybook/react-vite": ^10.6.1
   "@svgr/cli": 8.1.0
   "@svgr/core": ^8.1.0
+  "@tanstack/react-virtual": ^3.14.14
   "@testing-library/react": ^16.3.3
   "@tokens-studio/sd-transforms": ^2.0.3
   "@types/diffable-html": ^5.0.2
   "@types/mdast": ^4.0.4
-  "@types/node": ^24.13.6
+  "@types/node": ^24.19.2
   "@types/ramda": ^0.32.0
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
@@ -59,57 +69,57 @@ catalog:
   "@typescript/native": npm:typescript@^7.0.2
   "@u-elements/u-details": ^1.0.0
   "@u-elements/u-progress": ^1.0.1
-  "@vitejs/plugin-react": ^6.1.1
+  "@vitejs/plugin-react": ^6.1.2
   "@vitest/browser": ^4.1.11
   "@vitest/browser-playwright": ^4.1.11
   "@vitest/coverage-v8": ^4.1.11
   "@vitest/ui": ^4.1.11
   autoprefixer: ^10.6.1
-  axe-core: ^4.13.0
+  axe-core: ^4.14.0
   axe-playwright: ^2.2.2
   camelcase: ^9.0.0
-  chromatic: ^18.9.4
+  chromatic: ^18.12.0
   clsx: 2.1.1
   cssnano: ^7.1.9
   diffable-html: ^6.0.1
-  eslint-plugin-storybook: ^10.6.0
+  eslint-plugin-storybook: ^10.6.1
   fast-glob: ^3.3.3
   fuse.js: ^7.5.0
   hast-util-from-html: ^2.0.3
   hast-util-is-element: ^3.0.0
   hast-util-to-html: ^9.0.5
-  highcharts: ^12.6.1
+  highcharts: ^12.6.2
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
-  js-yaml: ^5.4.2
+  js-yaml: ^5.4.3
   jsdom: ^29.1.1
   mdast-util-to-hast: ^13.2.1
-  next: ^16.3.5
-  playwright: ^1.63.0
-  postcss: ^8.5.28
+  next: ^16.4.0
+  playwright: ^1.64.0
+  postcss: ^8.5.29
   postcss-cli: ^11.0.1
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
-  postcss-nesting: ^14.0.1
-  oxfmt: 0.68.0
+  postcss-nesting: ^14.0.3
+  oxfmt: 0.72.0
   prettier: 3.9.5
   ramda: ^0.32.0
   react: ^19.3.0
   react-dom: ^19.3.0
   react-dropzone: ^15.0.0
-  react-hook-form: ^7.88.0
+  react-hook-form: ^7.89.0
   react-style-stringify: ^1.2.0
   remark-gfm: ^4.0.1
   remark-heading-id: ^1.0.1
   remark-parse: ^11.0.0
   remark-stringify: ^11.0.0
   rimraf: ^6.1.3
-  sass: ^1.104.1
-  sharp: ^0.35.4
+  sass: ^1.105.1
+  sharp: ^0.35.5
   shx: ^0.4.0
-  storybook: ^10.6.0
-  storybook-addon-pseudo-states: ^10.6.0
-  style-dictionary: ^5.5.4
+  storybook: ^10.6.1
+  storybook-addon-pseudo-states: ^10.6.1
+  style-dictionary: ^5.6.1
   svgo: ^4.1.0
   tsdown: ^0.22.14
   tslib: ^2.8.1
@@ -120,23 +130,23 @@ catalog:
   unified: ^11.0.5
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.1.0
-  vite: ^8.3.0
+  vite: ^8.3.4
   vitest: ^4.1.11
-  yargs: ^18.1.0
+  yargs: ^18.2.0
   zod: ^4.6.5
-  turbo: ^2.11.2
+  turbo: ^2.11.7
   semantic-release: ^25.0.9
   "@semantic-release/exec": ^7.1.0
   conventional-changelog-conventionalcommits: ^9.3.1
   conventional-changelog-writer: ^8.4.0
   dpdm: ^4.3.0
-  unplugin-dts: ^1.1.1
-  oxlint: ^1.83.0
-  oxlint-tsgolint: ^7.0.2002
+  unplugin-dts: ^1.1.2
+  oxlint: ^1.87.0
+  oxlint-tsgolint: ^7.0.2004
   react-router: ^8.4.0
-  express: ^5.2.1
-  express-rate-limit: ^8.7.0
-  handlebars: ^4.7.9
+  express: ^5.3.0
+  express-rate-limit: ^8.7.1
+  handlebars: ^4.7.10
 
 catalogMode: strict
 
@@ -167,6 +177,11 @@ minimumReleaseAgeExclude:
 overrides:
   # `sass` only needs this for `--watch`, which nothing here uses.
   "@parcel/watcher": "-"
+  # `@arethetypeswrong/core` pins a TypeScript 5.6 release candidate, because it
+  # uses TypeScript internals (arethetypeswrong/arethetypeswrong.github.io#254).
+  # Those it uses exist unchanged in TypeScript 6, and `lint:package-types` gave
+  # the same results with both, so use the workspace's TypeScript instead.
+  "@arethetypeswrong/core>typescript": "catalog:"
   axios@>=1.0.0 <1.15.0: ">=1.15.0"
   brace-expansion@<=5.0.7: ^5.0.8
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
@@ -208,6 +223,11 @@ packageExtensions:
         optional: true
 
 patchedDependencies:
+  # The tarball reader in `@arethetypeswrong/core` decodes file names one byte
+  # per character, so every import of a file with a non-ASCII name, such as
+  # `BallongBlå.mjs` in `@udir-design/symbols`, fails in `lint:package-types`.
+  # The patch decodes them as UTF-8.
+  "@andrewbranch/untar.js@1.0.4": patches/@andrewbranch__untar.js@1.0.4.patch
   remark-heading-id@1.0.1: patches/remark-heading-id@1.0.1.patch
 
 strictPeerDependencies: true

@@ -29,16 +29,17 @@
  * removed from package.json in this branch are detected as removed.
  *
  * Exit codes:
- *   0 - No runtime dependency changes detected
- *   1 - Runtime dependencies changed (trigger a full Chromatic build)
- *   2 - Error (e.g. could not read the base lockfile from git)
+ *   0  - No runtime dependency changes detected
+ *   99 - Runtime dependencies changed (trigger a full Chromatic build)
+ *   Any other code is an error. "Changed" deliberately avoids 1, because
+ *   Node, tsx, and pnpm all exit with 1 on failure, including failures that
+ *   happen before this script's code runs.
  */
 
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { load as parseYaml } from 'js-yaml';
 import yargs, { type Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import {
@@ -49,6 +50,7 @@ import {
   computeSources,
   formatSnapshotKey,
   formatSources,
+  parseLockfile,
 } from '../src/diff-runtime-deps.js';
 
 // ─── Package-json IO ──────────────────────────────────────────────────────────
@@ -83,6 +85,9 @@ function readPkgJsonFromGit(
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
+/** See "Exit codes" above; must match the `case` in `chromatic.yml`. */
+const EXIT_DEPS_CHANGED = 99;
+
 await (async () => {
   const yargsInstance = yargs(hideBin(process.argv));
   const options = await yargsInstance
@@ -113,9 +118,7 @@ await (async () => {
     `Checking runtime dependency changes in @udir-design/* against ${options.base}...\n`,
   );
 
-  const headLockfile = parseYaml(
-    fs.readFileSync(lockfilePath, 'utf-8'),
-  ) as Lockfile;
+  const headLockfile = parseLockfile(fs.readFileSync(lockfilePath, 'utf-8'));
 
   let baseLockfile: Lockfile;
   try {
@@ -123,13 +126,13 @@ await (async () => {
       cwd: repoRoot,
       encoding: 'utf-8',
     });
-    baseLockfile = parseYaml(text) as Lockfile;
+    baseLockfile = parseLockfile(text);
   } catch {
     console.error(
       `Error: could not read pnpm-lock.yaml from ref "${options.base}". ` +
         `Make sure the ref exists and the lockfile is tracked by git.`,
     );
-    process.exit(2);
+    process.exit(1);
   }
 
   const udirDesignDir = path.join(repoRoot, '@udir-design');
@@ -275,5 +278,5 @@ await (async () => {
   console.log(
     '⚠️  Runtime dependencies changed — a full Chromatic build is recommended.',
   );
-  process.exit(1);
+  process.exit(EXIT_DEPS_CHANGED);
 })();

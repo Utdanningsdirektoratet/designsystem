@@ -1,3 +1,12 @@
+@import '@udir-design/icons/css/component.css';
+@import '@udir-design/icons/css/image.css';
+@import '@udir-design/icons/css/informationSquare.css';
+@import '@udir-design/icons/css/layers.css';
+@import '@udir-design/icons/css/puzzlePiece.css';
+@import '@udir-design/icons/css/rectangleSections.css';
+@import '@udir-design/icons/css/token.css';
+@import '@udir-design/icons/css/wrench.css';
+
 .storybook-tag-badge {
   --ds-size-mode-font-size: 0.85;
   margin-left: auto;
@@ -7,8 +16,13 @@
 }
 
 .sidebar-subheading-icon {
+  flex-shrink: 0;
+  width: 1.125rem;
   height: 1.125rem;
-  width: auto;
+  background: currentColor;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
 }
 
 [aria-controls='storybook-mobile-menu'] .uds-sb-sidebar-name {

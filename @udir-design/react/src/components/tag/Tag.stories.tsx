@@ -162,7 +162,9 @@ export const Article = meta.story({
           </ul>
         </div>
         <div className="tag-article-div">
-          <Avatar data-size="xs" initials="ON" aria-label={'Kari Nordmann'} />
+          <Avatar data-size="xs" aria-label="Kari Nordmann">
+            ON
+          </Avatar>
           <Paragraph>Ola Nordmann | 19.06.2025</Paragraph>
         </div>
         <Paragraph>

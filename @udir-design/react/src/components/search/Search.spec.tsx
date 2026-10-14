@@ -53,10 +53,7 @@ const clearButtonIsVisible = (container: HTMLElement) => {
 };
 
 /**
- * u-combobox only recomputes the clear button's `hidden` attribute on real `input`
- * events, so a value that comes from React state leaves it stale in both directions.
- * See https://github.com/digdir/designsystemet/issues/5295 and the workaround in
- * `useSyncedClearButton`.
+ * Regression test for https://github.com/digdir/designsystemet/issues/5295, fixed in digdir 1.22.0.
  */
 describe('Search.Clear follows the input value', () => {
   it('is hidden while the field is empty', () => {

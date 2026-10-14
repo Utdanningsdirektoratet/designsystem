@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "lint": "oxlint",
+    "lint:package-types": "./bin/check-package-types.sh",
     "test:unit": "vitest run",
     "typecheck": "tsc --build"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "catalog:",
     "@semantic-release/exec": "catalog:",
     "@types/js-yaml": "catalog:",
     "@types/yargs": "catalog:",
+    "@udir-design/icons": "workspace:*",
+    "@udir-design/react": "workspace:*",
+    "@udir-design/symbols": "workspace:*",
     "conventional-changelog-conventionalcommits": "catalog:",
     "conventional-changelog-writer": "catalog:",
     "fast-glob": "catalog:",

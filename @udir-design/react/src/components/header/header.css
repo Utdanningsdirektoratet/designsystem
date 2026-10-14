@@ -59,6 +59,8 @@
   }
 
   .uds-header__search {
+    /* Keep the spacing before the search icon from before Digdir 1.23.0 to balance the collapsed field */
+    --dsc-suggestion-search-icon-spacing: var(--ds-size-2);
     width: var(--ds-size-22);
     transition: width 300ms ease-out;
 

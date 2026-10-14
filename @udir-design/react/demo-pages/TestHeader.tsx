@@ -39,12 +39,16 @@ const _profiles = {
 
 const profiles: Record<keyof typeof _profiles, Profile> = _profiles;
 
-export function TestHeader() {
+type Props = {
+  basePath?: string;
+};
+
+export function TestHeader({ basePath = '' }: Props) {
   const [currentProfile, setCurrentProfile] =
     useState<keyof typeof profiles>('stian');
 
   return (
-    <Header applicationName="Demoapp">
+    <Header applicationName="Demoapp" href={`${basePath}/`}>
       <UserMenu
         currentProfile={currentProfile}
         onProfileSwitch={setCurrentProfile}
@@ -89,7 +93,7 @@ export function TestHeader() {
             <List.Unordered>
               <List.Item>
                 <Link
-                  href="/article"
+                  href={`${basePath}/article`}
                   style={{
                     textDecoration: 'none',
                   }}
@@ -100,7 +104,7 @@ export function TestHeader() {
               </List.Item>
               <List.Item>
                 <Link
-                  href="/dashboard"
+                  href={`${basePath}/dashboard`}
                   style={{
                     textDecoration: 'none',
                   }}
@@ -111,7 +115,7 @@ export function TestHeader() {
               </List.Item>
               <List.Item>
                 <Link
-                  href="/page"
+                  href={`${basePath}/page`}
                   style={{
                     textDecoration: 'none',
                   }}
@@ -122,7 +126,7 @@ export function TestHeader() {
               </List.Item>
               <List.Item>
                 <Link
-                  href="/form"
+                  href={`${basePath}/form`}
                   style={{
                     textDecoration: 'none',
                   }}
@@ -133,7 +137,7 @@ export function TestHeader() {
               </List.Item>
               <List.Item>
                 <Link
-                  href="/table"
+                  href={`${basePath}/table`}
                   style={{
                     textDecoration: 'none',
                   }}

@@ -82,7 +82,6 @@ const template: Template = (variables, { tpl }) => {
 
   // Output
   return tpl`
-"use client";
 import React, { type Ref, type SVGProps, forwardRef } from "react";
 
 ${variables.interfaces}

@@ -1,7 +1,9 @@
-import { type InputEvent, useState } from 'react';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import { type InputEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
+import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Details } from 'src/components/details';
 import { Divider } from 'src/components/divider';
@@ -47,6 +49,7 @@ const meta = preview.meta({
         height: '320px',
       },
     },
+    docs: advancedCodeDocs,
     a11y: {
       config: {
         rules: [
@@ -85,8 +88,6 @@ async function testSuggestion(el: HTMLElement) {
   const input = await waitFor(() => within(el).getByRole('combobox'));
   const toggle = within(el).queryByRole('button', { name: 'Valg' });
 
-  await settleInputWidth();
-
   if (toggle) {
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
     await userEvent.click(toggle);
@@ -95,49 +96,6 @@ async function testSuggestion(el: HTMLElement) {
     /* When in test mode, open suggestion by focusing input */
     await userEvent.click(input);
   }
-
-  await settleListWidth(el);
-}
-
-/**
- * Digdir measures the input once, as the list opens, and never corrects it. In
- * `layout: 'centered'` stories the story root is shrink-to-fit, so the input is
- * sized by its own text metrics and grows when the web font replaces the
- * fallback. Opening before that lands leaves the listbox permanently narrower
- * than the input — which is what Chromatic captures, since it always runs with
- * a cold font cache.
- *
- * Workaround for https://github.com/digdir/designsystemet/issues/5392 — remove
- * once the fix is released.
- */
-async function settleInputWidth() {
-  await document.fonts.ready;
-}
-
-/**
- * The listbox is also briefly visible at its own content width before digdir
- * gives it the width of the input, and Chromatic snapshots land inside that
- * window. Wait it out so the snapshot is taken from a settled state.
- *
- * Assert the width rather than just waiting for one to be set, so a stale
- * measurement fails here, loudly, instead of silently reaching Chromatic.
- *
- * Workaround for https://github.com/digdir/designsystemet/issues/5392 — remove
- * once the fix is released.
- */
-async function settleListWidth(el: HTMLElement) {
-  const list = el.querySelector('u-datalist');
-  const input = el.querySelector('input');
-  if (!(list instanceof HTMLElement) || !input) return;
-
-  await waitFor(() => {
-    const listWidth = list.getBoundingClientRect().width;
-    /* An empty list renders no box, so there is no width to match */
-    if (!listWidth) return;
-    expect(Math.round(listWidth)).toBe(
-      Math.round(input.getBoundingClientRect().width),
-    );
-  });
 }
 
 /**
@@ -146,7 +104,6 @@ async function settleListWidth(el: HTMLElement) {
  */
 async function typeUnknownValue(el: HTMLElement, value: string) {
   const input = await waitFor(() => within(el).getByRole('combobox'));
-  await settleInputWidth();
   await userEvent.clear(input);
   await userEvent.type(input, value);
 
@@ -157,7 +114,6 @@ async function typeUnknownValue(el: HTMLElement, value: string) {
     .getAllByRole('option')
     .filter((option) => option.matches('u-option'));
   await expect(options).toHaveLength(1);
-  await settleListWidth(el);
 
   return { input, createOption: options[0] };
 }
@@ -165,10 +121,31 @@ async function typeUnknownValue(el: HTMLElement, value: string) {
 const getChipValues = (el: HTMLElement) =>
   waitFor(() =>
     within(el)
-      .getAllByLabelText('Press to remove', { exact: false })
+      .getAllByLabelText('Trykk for å fjerne', { exact: false })
       .filter((chip) => chip instanceof HTMLDataElement)
       .map((chip) => chip.value),
   );
+
+/* Up to at least digdir 1.23.0, Enter selected `Suggestion.Empty`, whose label
+   follows the typed text, with an empty string as value: for text matching no
+   option, and also for an exact option label, since `Suggestion.Empty` comes first */
+async function testEnterSelectsOnlyMatchingOption(
+  el: HTMLElement,
+  onSelectedChange: unknown,
+  oslo: SuggestionItem | SuggestionItem[],
+) {
+  const input = await waitFor(() => within(el).getByRole('combobox'));
+  await userEvent.click(input);
+  await userEvent.type(input, 's');
+  await userEvent.keyboard('{Enter}');
+  await expect(onSelectedChange).not.toHaveBeenCalled();
+
+  await userEvent.clear(input);
+  await userEvent.type(input, 'Oslo');
+  await userEvent.keyboard('{Enter}');
+  await expect(onSelectedChange).toHaveBeenCalledTimes(1);
+  await expect(onSelectedChange).toHaveBeenCalledWith(oslo);
+}
 
 const DATA_PLACES = [
   'Sogndal',
@@ -186,6 +163,14 @@ const DATA_PEOPLE = [
   { label: 'Nina', value: '#113' },
   { label: 'Tove', value: '#110' },
 ];
+
+const generateOptions = (count: number): SuggestionItem[] =>
+  Array.from({ length: count }, (_, i) => {
+    const label = `Alternativ ${i + 1}`;
+    return { label, value: label };
+  });
+
+const DATA_LARGE = generateOptions(5000);
 
 export const Preview = meta.story({
   parameters: {
@@ -278,6 +263,21 @@ export const CreatableSelectionSurvivesBlur = Creatable.extend({
         );
         await expect(input).toHaveValue('Oslo');
       },
+    );
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const EnterSelectsOnlyMatchingOption = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  args: { onSelectedChange: fn() },
+  play: async ({ args, canvasElement, step }) => {
+    await step('Enter selects only an option with the typed label', () =>
+      testEnterSelectsOnlyMatchingOption(canvasElement, args.onSelectedChange, {
+        label: 'Oslo',
+        value: 'Oslo',
+      }),
     );
   },
 });
@@ -662,11 +662,16 @@ export const FetchExternal = meta.story({
     return (
       <Field lang="en">
         <Label>Search for countries (in english)</Label>
-        <Suggestion {...args} filter={false}>
+        <Suggestion
+          {...args}
+          filter={false}
+          data-sr-singular="%d country"
+          data-sr-plural="%d countries"
+        >
           <Suggestion.Input onInput={handleInput} />
           <Suggestion.Toggle />
           <Suggestion.Clear />
-          <Suggestion.List singular="%d country" plural="%d countries">
+          <Suggestion.List>
             {value ? (
               <Suggestion.Empty>
                 {options ? (
@@ -688,12 +693,186 @@ export const FetchExternal = meta.story({
       </Field>
     );
   },
+});
+
+export const Virtualized = meta.story({
   parameters: {
-    docs: {
-      source: {
-        type: 'code',
-      },
+    customStyles: {
+      width: 300,
     },
+  },
+  render: (args) => {
+    const [query, setQuery] = useState('');
+    const listRef = useRef<HTMLDataListElement>(null);
+
+    const filtered = useMemo(() => {
+      const search = query.trim().toLowerCase();
+      return DATA_LARGE.filter(({ label }) =>
+        label.toLowerCase().includes(search),
+      );
+    }, [query]);
+
+    const virtualizer = useVirtualizer({
+      count: filtered.length,
+      getScrollElement: () => listRef.current,
+      estimateSize: () => 48,
+      overscan: 5,
+    });
+
+    /* Options report a height of 0 while the list is closed. Without this, the
+       virtualizer scrolls to compensate when they get their height back. */
+    virtualizer.shouldAdjustScrollPositionOnItemSizeChange = () => false;
+
+    /* The list keeps a scroll position while closed that the virtualizer doesn't
+       know about, so start from the top whenever it opens */
+    useEffect(() => {
+      const list = listRef.current;
+      const onToggle = (event: Event) => {
+        if ((event as ToggleEvent).newState === 'open')
+          virtualizer.scrollToOffset(0);
+      };
+      list?.addEventListener('toggle', onToggle);
+      return () => list?.removeEventListener('toggle', onToggle);
+    }, [virtualizer]);
+
+    const items = virtualizer.getVirtualItems();
+    const paddingTop = items[0]?.start ?? 0;
+    const paddingBottom =
+      virtualizer.getTotalSize() - (items[items.length - 1]?.end ?? 0);
+    /* u-datalist only counts rendered options, so give it the total instead */
+    const hits = `${filtered.length} forslag`;
+
+    return (
+      <Field>
+        <Label>Velg alternativer</Label>
+        <Suggestion
+          {...(args as SuggestionMultipleProps)}
+          multiple
+          filter={false}
+        >
+          <Suggestion.Input
+            onInput={({ currentTarget }) => {
+              setQuery(currentTarget.value);
+              virtualizer.scrollToOffset(0);
+            }}
+          />
+          <Suggestion.Toggle />
+          <Suggestion.Clear />
+          <Suggestion.List
+            ref={listRef}
+            data-sr-singular={hits}
+            data-sr-plural={hits}
+          >
+            <Suggestion.Empty />
+            <div aria-hidden style={{ height: paddingTop }} />
+            {items.map(({ index, key }) => {
+              const { label, value } = filtered[index];
+              return (
+                <Suggestion.Option
+                  key={key}
+                  ref={virtualizer.measureElement}
+                  data-index={index}
+                  label={label}
+                  value={value}
+                  aria-setsize={filtered.length}
+                  aria-posinset={index + 1}
+                >
+                  {label}
+                </Suggestion.Option>
+              );
+            })}
+            <div aria-hidden style={{ height: paddingBottom }} />
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    await testSuggestion(canvasElement);
+
+    const list = canvasElement.querySelector('u-datalist');
+    if (!(list instanceof HTMLElement)) throw new Error('List not found');
+    const getOptions = () => [
+      ...canvasElement.querySelectorAll<HTMLOptionElement>(
+        'u-option:not([data-empty])',
+      ),
+    ];
+
+    await step('Only a slice of the options is rendered', async () => {
+      await waitFor(() => expect(getOptions().length).toBeGreaterThan(0));
+      await expect(getOptions().length).toBeLessThan(50);
+      await expect(getOptions()[0]).toHaveAttribute(
+        'aria-setsize',
+        `${DATA_LARGE.length}`,
+      );
+    });
+
+    await step(
+      'Arrow keys reach options outside the rendered slice',
+      async () => {
+        const input = within(canvasElement).getByRole('combobox');
+        const steps = getOptions().length + 5;
+        for (let i = 1; i <= steps; i++) {
+          await userEvent.keyboard('{ArrowDown}');
+          await waitFor(() => {
+            const id = input.getAttribute('aria-activedescendant') ?? '';
+            const active = document.getElementById(id);
+            expect(active).toHaveAttribute('aria-posinset', `${i}`);
+          });
+        }
+      },
+    );
+
+    await step('Scrolling renders options further down the list', async () => {
+      list.scrollTop = list.scrollHeight;
+      const last = DATA_LARGE[DATA_LARGE.length - 1];
+      await waitFor(() => expect(getOptions().at(-1)?.value).toBe(last.value));
+    });
+
+    await step('Reopening the list starts at the first option', async () => {
+      const input = within(canvasElement).getByRole('combobox');
+      for (let i = 0; i < 3; i++) {
+        await userEvent.keyboard('{Escape}');
+        await waitFor(() => expect(list).not.toBeVisible());
+        await userEvent.keyboard('{ArrowDown}');
+        await waitFor(() => expect(list).toBeVisible());
+        /* The virtualizer measures the options again after the list opens, which
+           is when it used to scroll the list away from the top */
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        await expect(list.scrollTop).toBe(0);
+        await userEvent.keyboard('{ArrowDown}');
+        await waitFor(() => {
+          const id = input.getAttribute('aria-activedescendant') ?? '';
+          expect(document.getElementById(id)).toHaveAttribute(
+            'aria-posinset',
+            '1',
+          );
+        });
+      }
+    });
+
+    await step('Typing filters the full list', async () => {
+      const query = 'Alternativ 123';
+      const expected = DATA_LARGE.filter(({ label }) => label.includes(query));
+      const input = within(canvasElement).getByRole('combobox');
+      await userEvent.type(input, query);
+
+      await waitFor(() => {
+        const options = getOptions();
+        expect(options[0]?.value).toBe(expected[0].value);
+        expect(options[0]).toHaveAttribute(
+          'aria-setsize',
+          `${expected.length}`,
+        );
+        for (const option of options) expect(option.label).toContain(query);
+      });
+    });
+
+    await step('Selecting an option adds a chip', async () => {
+      const [first] = getOptions();
+      await userEvent.click(first);
+      await expect(await getChipValues(canvasElement)).toEqual([first.value]);
+    });
   },
 });
 
@@ -714,6 +893,55 @@ export const MultipleCreatable = Multiple.extend({
         'Heller ikke',
       ]);
     });
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const MultipleCreatableSelectsClickedOption = MultipleCreatable.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'Selecting an existing option after a substring search adds that option',
+      async () => {
+        const input = await waitFor(() =>
+          within(canvasElement).getByRole('combobox'),
+        );
+        await userEvent.click(input);
+        await userEvent.type(input, 'ogn');
+
+        const sogndal = await waitFor(() => {
+          const option = within(canvasElement)
+            .getAllByRole('option')
+            .find((o) => (o as HTMLOptionElement).value === 'Sogndal');
+          if (!option) throw new Error('Sogndal option not found');
+          return option;
+        });
+        await userEvent.click(sogndal);
+
+        /* From digdir 1.22.0, the create option was selected instead, with the
+           typed query as label and value */
+        await expect(await getChipValues(canvasElement)).toEqual(['Sogndal']);
+        await expect(input).toHaveValue('ogn');
+        await expect(
+          canvasElement.querySelector('u-option[data-empty]'),
+        ).toHaveAttribute('data-create', 'Legg til «ogn»');
+      },
+    );
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const MultipleEnterSelectsOnlyMatchingOption = Multiple.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  args: { onSelectedChange: fn() },
+  play: async ({ args, canvasElement, step }) => {
+    await step('Enter selects only an option with the typed label', () =>
+      testEnterSelectsOnlyMatchingOption(canvasElement, args.onSelectedChange, [
+        { label: 'Oslo', value: 'Oslo' },
+      ]),
+    );
   },
 });
 
@@ -807,7 +1035,55 @@ export const Translations = Preview.extend({
         '--dsc-suggestion-count-label',
         '--dsc-suggestion-create-text',
         '--dsc-suggestion-empty-text',
+        '--dsc-suggestion-sr-added',
+        '--dsc-suggestion-sr-clear',
+        '--dsc-suggestion-sr-empty',
+        '--dsc-suggestion-sr-found',
+        '--dsc-suggestion-sr-invalid',
+        '--dsc-suggestion-sr-items',
+        '--dsc-suggestion-sr-of',
+        '--dsc-suggestion-sr-plural',
+        '--dsc-suggestion-sr-remove',
+        '--dsc-suggestion-sr-removed',
+        '--dsc-suggestion-sr-singular',
+        '--dsc-suggestion-sr-toggle',
       ],
     );
+  },
+});
+
+/* Digdir's `Suggestion.Toggle` labels itself "Valg" in every language */
+export const ToggleLabelFollowsLanguage = meta.story({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  render: () => (
+    <>
+      {(['nb', 'nn', 'en'] as const).map((lang) => (
+        <Field lang={lang} key={lang}>
+          <Label>{lang}</Label>
+          <Suggestion>
+            <Suggestion.Input />
+            <Suggestion.Toggle />
+            <Suggestion.List />
+          </Suggestion>
+        </Field>
+      ))}
+      <Field>
+        <Label>Egen tekst</Label>
+        <Suggestion>
+          <Suggestion.Input />
+          <Suggestion.Toggle aria-label="Vis kommuner" />
+          <Suggestion.List />
+        </Suggestion>
+      </Field>
+    </>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    for (const name of ['Valg', 'Val', 'Options', 'Vis kommuner']) {
+      await waitFor(() =>
+        expect(canvas.getByRole('button', { name })).toBeInTheDocument(),
+      );
+    }
   },
 });

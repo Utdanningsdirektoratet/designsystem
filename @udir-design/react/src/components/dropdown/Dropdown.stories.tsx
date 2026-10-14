@@ -181,7 +181,7 @@ export const Avatars = meta.story({
             <Dropdown.Item>
               <Dropdown.Button onClick={() => setOpen(false)}>
                 <Avatar aria-label="Sarpsborg kommune" data-color="support1">
-                  <BriefcaseIcon />
+                  <BriefcaseIcon aria-hidden />
                 </Avatar>
                 Sarpsborg kommune <Badge count={10} maxCount={9} />
               </Dropdown.Button>

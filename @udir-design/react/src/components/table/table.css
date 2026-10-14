@@ -14,6 +14,8 @@
 .ds-table {
   --dsc-table-background--zebra: var(--ds-color-background-tinted);
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
+  /* adjust border radius to before Digdir v1.21.1 */
+  --dsc-table-border-radius: var(--ds-border-radius-md);
 
   td {
     font-feature-settings: 'tnum' 1;

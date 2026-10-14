@@ -5,6 +5,7 @@ import {
   buildClosure,
   compareClosure,
   computeSources,
+  parseLockfile,
   parseTrackedDepNames,
 } from './diff-runtime-deps.js';
 
@@ -159,5 +160,58 @@ describe('closure diffing for tracked build tooling', () => {
     expect(report.added).toEqual([]);
     expect(report.removed).toEqual([]);
     expect(report.changed).toEqual([]);
+  });
+});
+
+describe('parseLockfile', () => {
+  const projectDocument = `lockfileVersion: '9.0'
+
+importers:
+
+  '@udir-design/react':
+    dependencies:
+      react:
+        specifier: 'catalog:'
+        version: 19.2.0
+
+snapshots:
+
+  react@19.2.0: {}
+`;
+
+  const expected: Lockfile = {
+    lockfileVersion: '9.0',
+    importers: {
+      '@udir-design/react': {
+        dependencies: { react: { specifier: 'catalog:', version: '19.2.0' } },
+      },
+    },
+    snapshots: { 'react@19.2.0': {} },
+  } as Lockfile;
+
+  it('returns the project lockfile, not the leading env lockfile, of a pnpm 12 lockfile', () => {
+    const text = `---
+lockfileVersion: '9.0'
+
+importers:
+
+  .:
+    configDependencies: {}
+    packageManagerDependencies:
+      pnpm:
+        specifier: 12.6.0
+        version: 12.6.0
+
+snapshots:
+
+  pnpm@12.6.0: {}
+
+---
+${projectDocument}`;
+    expect(parseLockfile(text)).toEqual(expected);
+  });
+
+  it('returns the project lockfile of a single-document lockfile', () => {
+    expect(parseLockfile(projectDocument)).toEqual(expected);
   });
 });

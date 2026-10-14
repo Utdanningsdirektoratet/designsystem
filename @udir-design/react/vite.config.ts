@@ -38,7 +38,7 @@ export default defineConfig({
       // the root (stable) react export must be after alpha/beta to not interfere with the aliases above
       '@udir-design/react': 'src/stable',
       '@udir-design/icons/metadata': '../icons/src/metadata',
-      '@udir-design/icons': '../icons/src/index',
+      '@udir-design/icons': '../icons/generated-src/index',
       '@udir-design/symbols/metadata': '../symbols/generated-src/metadata',
       '@udir-design/symbols': '../symbols/generated-src/index',
     }),
@@ -49,6 +49,24 @@ export default defineConfig({
     react(),
     dts({
       entryRoot: 'src',
+      // One declaration tree per module format, with file extensions in the relative
+      // imports so they resolve under `moduleResolution: "node16"`. The ESM tree is
+      // renamed to .d.ts next to the .js files, since this is a `"type": "module"`
+      // package; .d.cts files describe the .cjs build.
+      outDirs: [
+        { dir: 'dist', moduleFormat: 'esm' },
+        { dir: 'dist', moduleFormat: 'cjs' },
+      ],
+      beforeWriteFile: (filePath, content) =>
+        filePath.endsWith('.d.mts')
+          ? {
+              filePath: filePath.replace(/\.d\.mts$/, '.d.ts'),
+              content: content.replace(
+                /(['"])(\.\.?\/[^'"]*)\.mjs\1/g,
+                '$1$2.js$1',
+              ),
+            }
+          : undefined,
       tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json'),
       afterDiagnostic: (diagnostics) => {
         const errors = diagnostics.filter(

@@ -11,11 +11,32 @@
     "./dist"
   ],
   "type": "module",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "exports": {
-    ".": "./dist/index.mjs",
-    "./metadata": "./dist/metadata.mjs",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./metadata": {
+      "import": {
+        "types": "./dist/metadata.d.mts",
+        "default": "./dist/metadata.mjs"
+      },
+      "require": {
+        "types": "./dist/metadata.d.cts",
+        "default": "./dist/metadata.cjs"
+      }
+    },
     "./style.css": "./dist/style.css",
     "./svg/*.svg": "./dist/svg/*.svg",
     "./css/*.css": "./dist/css/*.css"
@@ -24,10 +45,11 @@
     "access": "public"
   },
   "scripts": {
+    "generate": "rimraf generated-src && svgr node_modules/@navikt/aksel-icons/dist/svg --config-file .svgrrc.ts --silent --typescript --ext tsx --no-prettier --index-template config/index-template.js --out-dir generated-src && mv generated-src/index.tsx generated-src/index.ts && oxfmt ./generated-src",
     "copy-aksel-icons": "svgo --quiet --config svgo.config.aksel.mjs -f ./node_modules/@navikt/aksel-icons/dist/svg -o ./dist/svg",
     "copy-style": "cp src/style.css dist/",
-    "compile": "tsdown src/index.ts src/metadata.ts --format esm,cjs --dts --logLevel warn",
-    "build": "pnpm clean && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
+    "compile": "tsdown",
+    "build": "pnpm clean && pnpm generate && pnpm compile && pnpm copy-aksel-icons && pnpm copy-style && pnpm generate-css",
     "generate-css": "tsx generate-css.ts",
     "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
     "clean": "rimraf ./dist && mkdir ./dist",
@@ -37,15 +59,35 @@
     "@navikt/aksel-icons": "catalog:"
   },
   "devDependencies": {
+    "@babel/types": "catalog:",
+    "@svgr/cli": "catalog:",
+    "@svgr/core": "catalog:",
+    "@types/react": "catalog:",
     "camelcase": "catalog:",
+    "oxfmt": "catalog:",
+    "react": "catalog:",
     "rimraf": "catalog:",
     "svgo": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
+  "peerDependencies": {
+    "@types/react": "^18.3.7 || ^19.0.0",
+    "react": "^18.3.1 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
   "untrackedDevDependencies": [
     "tsdown",
     "camelcase",
-    "rimraf"
+    "rimraf",
+    "@babel/types",
+    "oxfmt"
   ]
 }

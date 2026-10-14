@@ -1,0 +1,17 @@
+diff --git a/lib/untar.js b/lib/untar.js
+index 605b29dcc36fe9dd21e7381a74572f8de553f433..53d5db30e42e858eca243120d7c25772a2a94dcf 100644
+--- a/lib/untar.js
++++ b/lib/untar.js
+@@ -19,9 +19,9 @@ const ByteStream = require('./bytestream')
+  * @returns 
+  */
+ const readCleanString = function(bstr, numBytes) {
+-    const str = bstr.readString(numBytes);
+-    const zIndex = str.indexOf(String.fromCharCode(0));
+-    return zIndex != -1 ? str.substring(0, zIndex) : str;
++    const bytes = bstr.readBytes(numBytes);
++    const zIndex = bytes.indexOf(0);
++    return new TextDecoder().decode(zIndex != -1 ? bytes.subarray(0, zIndex) : bytes);
+ };
+ 
+ /** 

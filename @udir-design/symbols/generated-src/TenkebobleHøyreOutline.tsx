@@ -1,4 +1,3 @@
-'use client';
 import React, { type Ref, type SVGProps, forwardRef } from 'react';
 interface SVGRProps {
   size?: number | string;

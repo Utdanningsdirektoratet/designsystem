@@ -3,7 +3,6 @@ import {
   EnvelopeClosedFillIcon,
   EnvelopeClosedIcon,
   FloppydiskFillIcon,
-  VideoIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { Avatar } from '../avatar/Avatar';
@@ -63,19 +62,19 @@ export const Floating = meta.story({
       </style>
       <Badge.Position placement="top-right">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="top-left">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="bottom-right">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="bottom-left">
         <Badge {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
       <Badge.Position placement="top-right" overlap="circle">
         <Badge {...args} />
@@ -110,7 +109,7 @@ export const CustomPlacement = meta.story({
       </style>
       <Badge.Position placement="top-right">
         <Badge className="badge-custom-placement-badge" {...args} />
-        <EnvelopeClosedFillIcon title="Meldinger" />
+        <EnvelopeClosedFillIcon aria-label="Meldinger" />
       </Badge.Position>
     </>
   ),
@@ -121,7 +120,7 @@ export const Status = meta.story({
   render: (args) => (
     <Badge.Position data-size="lg">
       <Badge {...args} />
-      <FloppydiskFillIcon title="Lagre" />
+      <FloppydiskFillIcon aria-label="Lagre" />
     </Badge.Position>
   ),
 });
@@ -172,20 +171,23 @@ export const InButton = meta.story({
       <div className="badge-in-button-main">
         <Button icon variant="tertiary">
           <Badge.Position>
-            <Badge {...args} count={1000} maxCount={99} />
-            <EnvelopeClosedIcon title="Innboks" />
+            <Badge {...args} count={1000} maxCount={99} aria-hidden />
+            <EnvelopeClosedIcon aria-label="Innboks" />
           </Badge.Position>
+          <span className="ds-sr-only">1000 uleste</span>
         </Button>
         <Button icon variant="tertiary">
           <Badge.Position>
-            <Badge {...args} count={10} />
-            <Chat2Icon title="Meldinger" />
+            <Badge {...args} count={10} aria-hidden />
+            <Chat2Icon aria-label="Meldinger" />
           </Badge.Position>
+          <span className="ds-sr-only">10 nye</span>
         </Button>
         <Button icon variant="tertiary">
+          <span className="ds-sr-only">Nye</span>
           <Badge.Position>
-            <Badge {...args}></Badge>
-            <VideoIcon title="Skru på video" />
+            <Badge {...args} aria-hidden />
+            <Chat2Icon aria-label="meldinger" />
           </Badge.Position>
         </Button>
       </div>

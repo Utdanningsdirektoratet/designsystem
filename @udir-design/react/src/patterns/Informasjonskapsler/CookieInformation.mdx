@@ -1,169 +1,18 @@
-import { Table } from '@udir-design/react/beta';
-import { Unstyled } from '@storybook/addon-docs/blocks';
-import { CopyButton } from '.storybook/docs/components';
-import localizedExampleData from './exampleData.json';
-
-export const exampleData = localizedExampleData.nb;
-
-export const cookieCategories = Object.fromEntries(
-  exampleData.categories.map((category) => [category.id, category]),
-);
+import { CookieInformationTexts } from './docs/CookieInformationTexts';
 
 # Bruk av Cookie Information
 
-Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester som bruker informasjonskapsler kan bruke Cookie Information som teknisk løsning for å håndtere samtykke til informasjonskapsler. [Kontakt ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer) for å komme i gang.
+Udir har avtale med [Cookie Information](https://cookieinformation.com/) som leverandør av løsninger for håndtering av informasjonskapsler. Tjenester kan bruke Cookie Information som teknisk løsning for å informere om informasjonskapsler og håndtere samtykke til valgfrie informasjonskapsler.
 
-Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med ansvarlig for Cookie Information. Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
+Cookie Information tilbyr ikke tilgangsstyring. Oppsettet gjøres derfor i samarbeid med [ansvarlig for Cookie Information](https://systemoversikten.udir.no/systemer/S293/detaljer). Sørg for å tilpasse teksten til tjenesten din på forhånd. Se nærmere beskrivelse av oppsettet under.
 
 ## Oppsett
 
-Ansvarlig for Cookie Information setter opp tjenesten med den felles malen "Felles cookie-mal med Udirs designsystem" under "Consent popup" i dashbordet til Cookie Information. Tjenester skal ikke lage egne kopier av malen. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](https://designsystem.udir.no/patterns/informasjonskapsler).
+Ansvarlig for Cookie Information setter opp tjenesten med den felles malen "Felles cookie-mal med Udirs designsystem" under "Consent popup" i dashbordet til Cookie Information. Tjenester skal ikke lage egne kopier av malen. Dette sikrer at tjenesten følger føringene for visuell utforming av valg for informasjonskapsler som er beskrevet i [Informasjonskapsler](/docs/patterns-informasjonskapsler--docs).
 
 Under "Copy and translations" i dashbordet finner du tekst for samtykke til informasjonskapsler som kan brukes i tjenesten. Teksten bør tilpasses tjenesten din, og kvalitetssikres av internjuridisk. Under følger hvilke felter som må fylles ut, med eksempler på innhold. Felter som ikke er listet opp her brukes ikke i malen.
 
-<Unstyled>
-  <Table
-    border
-    tintedColumnHeader
-    tintedRowHeader
-    style={{ maxWidth: '40rem' }}
-  >
-    <caption className="ds-sr-only">
-      Tekster for Cookie Information-oppsett
-    </caption>
-    <Table.Body>
-      <Table.Row>
-        <Table.HeaderCell
-          scope="colgroup"
-          colSpan={3}
-          style={{
-            textAlign: 'center',
-            backgroundColor: 'var(--ds-color-surface-tinted)',
-          }}
-        >
-          Consent popup
-        </Table.HeaderCell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Headline</Table.HeaderCell>
-        <Table.Cell>{exampleData.heading}</Table.Cell>
-        <Table.Cell>
-          <CopyButton text={exampleData.heading} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Consent popup text</Table.HeaderCell>
-        <Table.Cell>{exampleData.body}</Table.Cell>
-        <Table.Cell>
-          <CopyButton text={exampleData.body} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell
-          scope="colgroup"
-          colSpan={3}
-          style={{
-            textAlign: 'center',
-            backgroundColor: 'var(--ds-color-surface-tinted)',
-          }}
-        >
-          Cookie policy
-        </Table.HeaderCell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">Cookie policy text</Table.HeaderCell>
-        <Table.Cell>{exampleData.cookieDeclarationText}</Table.Cell>
-        <Table.Cell>
-          <CopyButton text={exampleData.cookieDeclarationText} />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell
-          scope="colgroup"
-          colSpan={3}
-          style={{
-            textAlign: 'center',
-            backgroundColor: 'var(--ds-color-surface-tinted)',
-          }}
-        >
-          Tracking categories
-        </Table.HeaderCell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          {cookieCategories.necessary.name}
-        </Table.HeaderCell>
-        <Table.Cell>
-          {cookieCategories.necessary.description}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={
-              cookieCategories.necessary.description
-            }
-          />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          {cookieCategories.functional.name}
-        </Table.HeaderCell>
-        <Table.Cell>
-          {cookieCategories.functional.description}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={
-              cookieCategories.functional.description
-            }
-          />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          {cookieCategories.statistical.name}
-        </Table.HeaderCell>
-        <Table.Cell>
-          {cookieCategories.statistical.description}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={cookieCategories.statistical.description}
-          />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          {cookieCategories.marketing.name}
-        </Table.HeaderCell>
-        <Table.Cell>
-          {cookieCategories.marketing.description}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={cookieCategories.marketing.description}
-          />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.HeaderCell scope="row">
-          {cookieCategories.unclassified.name}
-        </Table.HeaderCell>
-        <Table.Cell>
-          {cookieCategories.unclassified.description}
-        </Table.Cell>
-        <Table.Cell>
-          <CopyButton
-            text={
-              cookieCategories.unclassified.description
-            }
-          />
-        </Table.Cell>
-      </Table.Row>
-    </Table.Body>
-
-  </Table>
-</Unstyled>
+<CookieInformationTexts />
 
 ## Installere i tjenesten
 
@@ -172,7 +21,7 @@ Under "Copy and translations" i dashbordet finner du tekst for samtykke til info
 ```html
 <script
   id="CookieConsent"
-  src="https://policy.app.cookieinformation.com/uc.js"
+  src="https://policy.app.cookieinformation.com/v2.0.0/uc.js"
   data-culture="NB"
   data-gcm-version="2.0"
   type="text/javascript"
@@ -195,12 +44,14 @@ translations".
 ## Åpne samtykkedialogen igjen
 
 Legg en lenke med teksten "Informasjonskapsler" i bunnfeltet i tjenesten. Lenken
-skal bruke `CookieConsent.renew()` for å åpne samtykkedialogen igjen.
+skal bruke `renewCookieConsent()` fra den felles malen for å åpne dialogen igjen.
+Funksjonen sørger for at dialogen også kan åpnes manuelt dersom tjenesten ved en
+feilkonfigurasjon bare har nødvendige informasjonskapsler.
 
 I HTML:
 
 ```html
-<a href="#informasjonskapsler" onclick="CookieConsent.renew(); return false;">
+<a href="#informasjonskapsler" onclick="renewCookieConsent(); return false;">
   Informasjonskapsler
 </a>
 ```
@@ -212,9 +63,93 @@ I React:
   href="#informasjonskapsler"
   onClick={(event) => {
     event.preventDefault();
-    window.CookieConsent?.renew();
+    window.renewCookieConsent?.();
   }}
 >
   Informasjonskapsler
 </Footer.Item>
 ```
+
+## Blokkering før samtykke
+
+### Førsteparts informasjonskapsler
+
+Cookie Information blokkerer som standard at nettleseren lagrer valgfrie førsteparts informasjonskapsler på tjenestens rotdomene før brukeren har samtykket. Den blokkerer ikke skriptet som forsøker å sette dem, informasjonskapsler som serveren setter i HTTP-svaret med `Set-Cookie`, eller tredjeparts informasjonskapsler fra iframes.
+
+Se [Cookie Informations veiledning om blokkering av førsteparts informasjonskapsler](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/turn-on-first-party-cookie-blocking/).
+
+Dersom tjenestens server setter informasjonskapsler med HTTP-headeren `Set-Cookie`, må tjenesten selv sørge for at den ikke setter valgfrie informasjonskapsler før brukeren har samtykket til den aktuelle kategorien.
+
+Etter oppsett bør du [kontrollere at blokkeringen av førsteparts informasjonskapsler fungerer](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/check-if-first-party-cookie-blocking-is-working/) i et privat nettleservindu. Kontrollen viser bare at ingen valgfrie informasjonskapsler er lagret på rotdomenet før samtykke; den bekrefter ikke at skript eller tredjepartsintegrasjoner er blokkert.
+
+### Tredjeparts informasjonskapsler og tjenester
+
+Hvis et skript eller en integrasjon ikke skal kjøre før samtykke, for eksempel fordi den setter tredjeparts informasjonskapsler eller sender opplysninger til en tredjepart, må tjenesten styre innlastingen. Cookie Information stopper ikke automatisk vilkårlige skript eller kall fra tjenesten.
+
+Se [Cookie Informations veiledning om blokkering av tredjeparts informasjonskapsler](https://support.cookieinformation.com/articles/first-time-user-get-started/basic-implementation/block-third-party-cookies-with-a-script/).
+
+#### Eksterne JavaScript-filer
+
+For en ekstern JavaScript-fil bruker du Cookie Informations mekanisme for å blokkere tredjeparts informasjonskapsler: `data-category-consent` og `data-consent-src` i stedet for `src`. `data-category-consent` må bruke samme kategorinavn som oppsettet i Cookie Information. Cookie Information laster filen først når brukeren har godtatt kategorien. Ikke legg den samme URL-en i `src`, fordi nettleseren da laster filen før Cookie Information kan kontrollere samtykket.
+
+```html
+<script
+  data-category-consent="cookie_cat_statistic"
+  data-consent-src="https://example.com/analytics.js"
+></script>
+```
+
+#### Kode direkte i sidens HTML
+
+For JavaScript direkte i sidens HTML skal du vente på `CookieInformationConsentGiven` og kontrollere samtykket før du starter integrasjonen:
+
+```html
+<script>
+  window.addEventListener('CookieInformationConsentGiven', () => {
+    if (CookieInformation.getConsentGivenFor('cookie_cat_statistic')) {
+      // Start integrasjonen her.
+    }
+  });
+</script>
+```
+
+Bruk det faktiske kategorinavnet fra tjenestens oppsett, for eksempel `cookie_cat_statistic` eller `cookie_cat_functional`.
+
+## Når tjenesten endrer informasjonskapsler
+
+Malen lagrer brukerens valg i 365 dager, uansett om brukeren godtar eller avviser. Brukeren blir ikke spurt på nytt når tjenesten endrer informasjonskapsler, med mindre ansvarlig for Cookie Information manuelt ber om nytt samtykke. Det er tjenesteansvarlig eller systemforvalter for tjenesten som vet hva som er endret, og de må derfor selv si fra til ansvarlig for Cookie Information.
+
+Et samtykke gjelder bare det brukeren fikk informasjon om. Når formålet eller leverandøren endrer seg, må brukerne derfor få en ny mulighet til å vurdere samtykket. Det gjelder når tjenesten
+
+- legger til en valgfri informasjonskapsel for et nytt formål
+- legger til en valgfri informasjonskapsel fra en ny leverandør
+- endrer formålet til en eksisterende informasjonskapsel
+- får vite at en leverandør har endret hvilke opplysninger de lagrer eller henter inn
+
+Se [Datatilsynets veiledning om å holde orden i eget hus](https://www.datatilsynet.no/personvern-pa-ulike-omrader/internett-og-apper/bruk-av-informasjonskapsler-og-andre-sporingsteknologier/10.-hold-orden-i-eget-hus).
+
+Kontakt ansvarlig for Cookie Information i god tid før endringen blir tilgjengelig for brukerne. Oppgi leverandør, formål og kategori. Oppgi også navn og domene på informasjonskapslene hvis dere kjenner dem, for eksempel fra et testmiljø. Ansvarlig kan da legge inn informasjonskapslene manuelt og be om nytt samtykke samtidig som endringen blir tilgjengelig. Hvis navnene ikke er kjent på forhånd, kan ansvarlig starte en skanning manuelt rett etter at endringen er tilgjengelig. Når skanneren har funnet informasjonskapslene, klassifiserer ansvarlig dem og ber om nytt samtykke. Nytt samtykke gjelder alle domenene som er satt opp for denne tjenesten, og alle brukerne blir spurt på nytt. Samle derfor endringer hvis det er mulig, slik at brukerne ikke blir bedt om nytt samtykke oftere enn nødvendig.
+
+Skanneren finner ikke informasjonskapsler som bare settes på sider som krever innlogging, eller på sider den ikke når via lenker fra forsiden. Da må dere selv finne navn og domene, for eksempel med utviklerverktøyene i nettleseren.
+
+Kontakt også ansvarlig for Cookie Information når tjenesten legger til en nødvendig informasjonskapsel. Den trenger ikke nytt samtykke, men må klassifiseres. Informasjonskapsler som Cookie Information ikke kjenner igjen, havner i kategorien uklassifiserte. Udirs oppsett lar ikke brukeren godta uklassifiserte informasjonskapsler, fordi brukeren ikke kan gi et informert samtykke når formålet og leverandøren er ukjent. En funksjon som er avhengig av en slik informasjonskapsel, fungerer derfor ikke før den er klassifisert.
+
+### Oppgaver for ansvarlig for Cookie Information
+
+Denne delen beskriver oppgaver som krever tilgang til dashbordet til Cookie Information.
+
+Med "samtykkeløsning" mener vi "Consent solution" i Cookie Information, altså oppsettet som ett eller flere domener deler, blant annet tekster og listen over informasjonskapsler.
+
+#### Klassifisere informasjonskapsler
+
+Skanneren til Cookie Information legger nye informasjonskapsler til i samtykkeløsningen automatisk. Informasjonskapsler som finnes i databasen til Cookie Information, får en kategori derfra. Kategorien kan endres manuelt ved behov. Andre havner i kategorien "Unclassified". Velg kategori og leverandør for disse under "Cookie management". Cookie Information kan varsle på e-post når skanneren finner en uklassifisert informasjonskapsel.
+
+Når en tjeneste melder om nye informasjonskapsler med kjent navn og domene, kan du legge dem inn med "Add a custom cookie" under "Cookie management" før endringen blir tilgjengelig for brukerne. Skanneren finner bare informasjonskapsler på produksjonsdomener, ikke på test-domener.
+
+Hvis navnene ikke er kjent, kan du starte en skanning rett etter at endringen er tilgjengelig for brukerne. Gå til "Domains", velg innstillingene for domenet (tannhjulet) og velg "Run extra scan" under "Scanner settings". Skanningen kan ta noen timer. Skanneren følger lenker fra forsiden som en vanlig besøkende, så den finner ikke informasjonskapsler som bare settes på sider som krever innlogging. Slike informasjonskapsler må legges inn manuelt.
+
+#### Be om nytt samtykke
+
+Når en tjeneste melder om en endring som krever nytt samtykke, velger du "Reset consent" under "Ask visitors for consent again" i "Settings". Du kommer også dit fra "Manage consent reset" nederst under "Cookie management".
+
+Dette gjelder alle domenene i samtykkeløsningen. Det kan ta opptil 10 minutter før endringen når brukerne. Deretter sletter Cookie Information det lagrede samtykket ved neste sidevisning og viser samtykkedialogen på nytt.

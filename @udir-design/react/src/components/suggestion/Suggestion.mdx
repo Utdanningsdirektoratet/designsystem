@@ -39,7 +39,7 @@ import { Suggestion } from '@udir-design/react/alpha';
 </Suggestion>;
 ```
 
-`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen har `aria-label="Valg"` som standard. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
+`Suggestion.Toggle` legger til en knapp som åpner og lukker listen med alternativer. Knappen får `aria-label` fra tekstvariabelen `--dsc-suggestion-sr-toggle`, som er "Valg" på bokmål. Angi en annen `aria-label` dersom teksten ikke beskriver innholdet i listen.
 
 ## Eksempler
 
@@ -79,9 +79,24 @@ I eksempelet under viser vi `Spinner` i `Suggestion.Empty`.
 
 <Canvas of={SuggestionStories.FetchExternal} />
 
-## `Suggestion.List`
+### Store datamengder
 
-<ArgTypes of={SuggestionList} />
+`Suggestion` legger alle alternativene i DOM-en. Med store datamengder (rundt 1000 alternativer eller flere) blir komponenten treg, fordi React må rendre og oppdatere hver `Suggestion.Option`, og fordi filteret går gjennom alle alternativene ved hvert tastetrykk.
+
+Løsningen er å virtualisere listen, slik at bare alternativene som er synlige blir rendret. Eksempelet under bruker [TanStack Virtual](https://tanstack.com/virtual/latest) med 5000 alternativer.
+
+Dette må du gjøre:
+
+- Sett `filter={false}` og filtrer dataene selv, siden det innebygde filteret bare ser alternativene som er rendret.
+- Gi `Suggestion.List` en `ref` og bruk den som scroll-element i `useVirtualizer`.
+- Legg inn tomme elementer med `aria-hidden` før og etter alternativene, med høyden til alternativene som ikke er rendret. Da får listen riktig høyde og scrollbar.
+- Sett `aria-setsize` og `aria-posinset` på hvert alternativ, slik at skjermlesere får vite hvor i listen brukeren er.
+- Sett totalt antall treff som `data-sr-singular` og `data-sr-plural` på `Suggestion.List`. Ellers annonseres bare antallet som er rendret. Sett dem på `Suggestion.List` og ikke på `Suggestion`, siden `Suggestion` bare sender tekstene videre til listen én gang.
+- Sett `virtualizer.shouldAdjustScrollPositionOnItemSizeChange = () => false`, lytt etter `toggle` på `Suggestion.List`, og kall `virtualizer.scrollToOffset(0)` når listen åpnes. Alternativene får høyden 0 når listen lukkes, og uten dette kan listen åpne seg et stykke ned, slik at pil ned velger et alternativ som ikke er det første.
+
+<Canvas of={SuggestionStories.Virtualized} />
+
+Et enklere alternativ er å bare vise for eksempel de 50 første treffene, sammen med en tekst som ber brukeren skrive mer for å snevre inn søket. Det krever ingen ekstra avhengighet, men brukeren kan ikke bla gjennom hele listen.
 
 ## Tilleggsinformasjon
 
@@ -92,12 +107,24 @@ Den er inspirert av [open-ui sitt combobox mønster](https://open-ui.org/compone
 
 Komponenten har innebygget støtte for bokmål, nynorsk og engelsk. [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
 
-Følgende tekstvariabler er tilgjengelige for overstyring:
+Følgende tekstvariabler er tilgjengelige for overstyring. Variablene som begynner med `--dsc-suggestion-sr-`, er tekster som bare leses opp av skjermlesere. `%d` byttes ut med et antall.
 
 <CssLanguageVariables
   variables={[
     '--dsc-suggestion-count-label',
     '--dsc-suggestion-create-text',
     '--dsc-suggestion-empty-text',
+    '--dsc-suggestion-sr-added',
+    '--dsc-suggestion-sr-clear',
+    '--dsc-suggestion-sr-empty',
+    '--dsc-suggestion-sr-found',
+    '--dsc-suggestion-sr-invalid',
+    '--dsc-suggestion-sr-items',
+    '--dsc-suggestion-sr-of',
+    '--dsc-suggestion-sr-plural',
+    '--dsc-suggestion-sr-remove',
+    '--dsc-suggestion-sr-removed',
+    '--dsc-suggestion-sr-singular',
+    '--dsc-suggestion-sr-toggle',
   ]}
 />

@@ -390,7 +390,7 @@ export const WithoutContext = meta.story({
           aria-label="Slett rad"
           onClick={() => setOpen(!open)}
         >
-          <TrashIcon title="Slett rad" />
+          <TrashIcon aria-hidden />
         </Button>
         <Popover
           id="my-popover"

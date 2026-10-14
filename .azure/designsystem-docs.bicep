@@ -2,6 +2,13 @@ metadata description = 'Creates a storage account and container for Designsystem
 
 param location string = resourceGroup().location
 
+resource testApp 'Microsoft.App/containerApps@2025-01-01' existing = {
+  name: 'ca-designsystem-testapp'
+  scope: resourceGroup('rg-designsystem-testapp')
+}
+
+var testAppHostName = testApp.properties.configuration.ingress.fqdn
+
 @onlyIfNotExists()
 resource storageAccount 'Microsoft.Storage/storageAccounts@2025-01-01' = {
   name: 'stdesignsystemdocs'
@@ -53,6 +60,24 @@ resource frontDoorOriginGroup 'Microsoft.Cdn/profiles/originGroups@2025-06-01' =
   }
 }
 
+@onlyIfNotExists()
+resource frontDoorTestAppOriginGroup 'Microsoft.Cdn/profiles/originGroups@2025-06-01' = {
+  parent: frontDoorProfile
+  name: 'testapp'
+  properties: {
+    healthProbeSettings: {
+      probeIntervalInSeconds: 30
+      probePath: '/testapp'
+      probeProtocol: 'Https'
+      probeRequestType: 'HEAD'
+    }
+    loadBalancingSettings: {
+      sampleSize: 4
+      successfulSamplesRequired: 3
+    }
+  }
+}
+
 var storageAccountHostName = parseUri(storageAccount.properties.primaryEndpoints.web).host
 
 @onlyIfNotExists()
@@ -64,6 +89,19 @@ resource frontDoorOrigin 'Microsoft.Cdn/profiles/originGroups/origins@2025-06-01
     httpPort: 80
     httpsPort: 443
     originHostHeader: storageAccountHostName
+  }
+}
+
+@onlyIfNotExists()
+resource frontDoorTestAppOrigin 'Microsoft.Cdn/profiles/originGroups/origins@2025-06-01' = {
+  parent: frontDoorTestAppOriginGroup
+  name: 'testapp-container-app'
+  properties: {
+    enforceCertificateNameCheck: true
+    hostName: testAppHostName
+    httpPort: 80
+    httpsPort: 443
+    originHostHeader: testAppHostName
   }
 }
 
@@ -92,6 +130,32 @@ resource frontDoorRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2025-06-01' 
     ]
     patternsToMatch: [
       '/*'
+    ]
+    forwardingProtocol: 'HttpsOnly'
+    linkToDefaultDomain: 'Enabled'
+    httpsRedirect: 'Enabled'
+  }
+}
+
+@onlyIfNotExists()
+resource frontDoorTestAppRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2025-06-01' = {
+  parent: frontDoorEndpoint
+  name: 'testapp'
+  dependsOn: [frontDoorTestAppOrigin]
+  properties: {
+    customDomains: [
+      { id: frontDoorCustomDomain.id }
+    ]
+    originGroup: {
+      id: frontDoorTestAppOriginGroup.id
+    }
+    supportedProtocols: [
+      'Http'
+      'Https'
+    ]
+    patternsToMatch: [
+      '/testapp'
+      '/testapp/*'
     ]
     forwardingProtocol: 'HttpsOnly'
     linkToDefaultDomain: 'Enabled'

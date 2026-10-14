@@ -86,5 +86,12 @@ Denne komponenten er ikkje meint for tekst. Om du treng å vise ord eller korte 
 
 ## Tilgjengelegheit
 
-[Badge gir ingen informasjon til skjermlesarar](https://github.com/digdir/designsystemet/issues/3560).
-Sørg derfor for at elementet som `Badge` er plassert over, inneheld den same informasjonen ved å bruke `aria-label`.
+Når `Badge` står inline, inne i teksten til eit element, blir innhaldet ein del av det tilgjengelege namnet til elementet. Ein knapp med teksten «Innboks» og ein badge med «2» blir lesen opp som «Innboks 2».
+
+Når `Badge` flyt over eit element, les ikkje skjermlesarar badgen saman med elementet. Skjul då badgen med `aria-hidden`, og legg den same informasjonen som skjult tekst inne i elementet med klassen `ds-sr-only`, til dømes «10 varsel». Då blir informasjonen ein del av det tilgjengelege namnet utan at den synlege teksten blir overstyrt. Skjermlesarar les teksten i same rekkefølge som han står i koden, så plasser den skjulte teksten der namnet blir naturleg å lese, til dømes «Nye meldinger» i staden for «Meldinger nye».
+
+<Canvas of={BadgeStories.InButton} />
+
+Unngå å bruke `aria-label` på element som har synleg tekst. `aria-label` erstattar all synleg tekst i elementet, og namnet må då innehalde heile den synlege teksten for å oppfylle [suksesskriteriet 2.5.3 i WCAG](https://www.uutilsynet.no/wcag-standarden/253-ledetekst-i-navn-niva/150). På element utan synleg tekst, til dømes eit ikon, kan du bruke `aria-label`.
+
+Når verdien i `Badge` endrar seg medan brukaren er på sida, til dømes frå 1 til 2, skal skjermlesarar få beskjed om endringa ([suksesskriteriet 4.1.3 i WCAG](https://www.uutilsynet.no/wcag-standarden/413-statusbeskjeder-niva-aa/152)). Det skjer ikkje av seg sjølv, heller ikkje når talet ligg som skjult tekst i elementet. Legg i staden ein live region med `role="status"` på sida, og fyll regionen med ei melding som «Du har 2 nye varsel» når talet endrar seg. Live regionen må finnast på sida før meldinga blir lagd inn. Sjå [mønsteret for systemvarsler](/docs/patterns-systemvarsler--docs) for korleis du set opp ein live region.

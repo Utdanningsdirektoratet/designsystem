@@ -22,26 +22,26 @@ exports[`As Link 1`] = `
 
 exports[`Color Variants 1`] = `
 <span
-  role="img"
   aria-label="color neutral"
+  role="img"
   data-color="neutral"
 >
 </span>
 <span
-  role="img"
   aria-label="color accent"
+  role="img"
   data-color="accent"
 >
 </span>
 <span
-  role="img"
   aria-label="color support1"
+  role="img"
   data-color="support1"
 >
 </span>
 <span
-  role="img"
   aria-label="color support2"
+  role="img"
   data-color="support2"
 >
 </span>
@@ -49,19 +49,19 @@ exports[`Color Variants 1`] = `
 
 exports[`Content 1`] = `
 <span
-  role="img"
   aria-label="Ola Nordmann"
+  role="img"
 >
 </span>
 <span
-  data-initials="ON"
-  role="img"
   aria-label="Ola Nordmann"
+  role="img"
 >
+  ON
 </span>
 <span
-  role="img"
   aria-label="Ola Nordmann"
+  role="img"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -83,12 +83,11 @@ exports[`Content 1`] = `
   </svg>
 </span>
 <span
-  role="img"
   aria-label="Ola Nordmann"
+  role="img"
 >
   <img
     alt
-    aria-hidden="true"
     src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=1480&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   >
 </span>
@@ -131,7 +130,6 @@ exports[`Icons 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-hidden="true"
       >
         <path
           fill="currentColor"
@@ -159,7 +157,6 @@ exports[`Icons 1`] = `
         viewbox="0 0 24 24"
         focusable="false"
         role="img"
-        aria-hidden="true"
       >
         <path
           fill="currentColor"
@@ -184,11 +181,11 @@ exports[`In Dropdown 1`] = `
   popovertarget="<generated>"
 >
   <span
-    data-initials="ON"
     role="img"
     aria-hidden="true"
     data-size="sm"
   >
+    ON
   </span>
   Ola Nordmann
   <svg
@@ -237,11 +234,11 @@ exports[`In Dropdown 1`] = `
           >
           </span>
           <span
-            data-initials="ON"
             role="img"
             aria-hidden="true"
             data-size="xs"
           >
+            ON
           </span>
         </span>
         Ola Nordmann
@@ -266,7 +263,6 @@ exports[`In Dropdown 1`] = `
             viewbox="0 0 24 24"
             focusable="false"
             role="img"
-            aria-hidden="true"
           >
             <path
               fill="currentColor"
@@ -286,62 +282,62 @@ exports[`In Dropdown 1`] = `
 
 exports[`Preview 1`] = `
 <span
-  role="img"
   aria-label="Ola Nordmann"
+  role="img"
 >
 </span>
 `;
 
 exports[`Sizes 1`] = `
 <span
-  data-initials="xs"
-  role="img"
   aria-label="extra small"
+  role="img"
+  data-size="xs"
+>
+  xs
+</span>
+<span
+  aria-label="extra small"
+  role="img"
   data-size="xs"
 >
 </span>
 <span
+  aria-label="small"
   role="img"
-  aria-label="extra small"
-  data-size="xs"
+  data-size="sm"
 >
+  sm
 </span>
 <span
-  data-initials="sm"
-  role="img"
   aria-label="small"
+  role="img"
   data-size="sm"
 >
 </span>
 <span
+  aria-label="medium"
   role="img"
-  aria-label="small"
-  data-size="sm"
+  data-size="md"
 >
+  md
 </span>
 <span
-  data-initials="md"
-  role="img"
   aria-label="medium"
+  role="img"
   data-size="md"
 >
 </span>
 <span
-  role="img"
-  aria-label="medium"
-  data-size="md"
->
-</span>
-<span
-  data-initials="lg"
-  role="img"
   aria-label="large"
+  role="img"
   data-size="lg"
 >
+  lg
 </span>
 <span
-  role="img"
   aria-label="large"
+  role="img"
   data-size="lg"
 >
 </span>

@@ -21,7 +21,7 @@ export type SourceCodeConfig = {
 };
 
 export type SourceCodeContext = {
-  story: API_LeafEntry;
+  story: Pick<API_LeafEntry, 'importPath' | 'type' | 'title' | 'tags'>;
   siblings?: API_HashEntry[];
   sourceCode?: SourceCodeConfig;
 };
@@ -56,7 +56,7 @@ function toStoriesPath(importPath: string): string {
   return replaceExtension(importPath, MDX_FILE_RE, '.stories.tsx');
 }
 
-function buildGitHubUrl(importPath: string, gitBranch?: string): string {
+export function buildGitHubUrl(importPath: string, gitBranch?: string): string {
   const branch = gitBranch || DEFAULT_BRANCH;
   const normalized = importPath.replace(/^\./, '');
   const path = normalized.startsWith('/') ? normalized : `/${normalized}`;

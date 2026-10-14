@@ -9,6 +9,8 @@
  * the bin entry point so that this logic stays deterministic and unit-testable.
  */
 
+import { loadAll } from 'js-yaml';
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface PackageJson {
@@ -42,6 +44,19 @@ export interface Lockfile {
 }
 
 export type ReadPkgJson = (pkgName: string) => PackageJson | null;
+
+/**
+ * Parses the text of `pnpm-lock.yaml` into the project lockfile.
+ *
+ * Since pnpm 12 the file may hold two YAML documents: a leading "env lockfile"
+ * (the resolved pnpm version and config dependencies) followed by the project
+ * lockfile. Older lockfiles, e.g. on a base ref from before the upgrade, hold
+ * only the project lockfile. The project lockfile is the last document in
+ * both layouts; see https://pnpm.io/lockfile.
+ */
+export function parseLockfile(text: string): Lockfile {
+  return loadAll(text).at(-1) as Lockfile;
+}
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
 

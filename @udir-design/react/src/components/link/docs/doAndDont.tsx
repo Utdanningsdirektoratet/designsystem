@@ -18,10 +18,10 @@ export const LinkExExternalLinkIcon = () => {
 const ExExternalLinkIconDo = () => {
   return (
     <Link
-      href="https://www.udir.no/eksamen-og-prover/eksamen/"
+      href="https://www.bufdir.no/barnevern/hjelpetiltak-i-hjemmet/"
       style={{ margin: 'var(--ds-size-2) 0' }}
     >
-      Se info om eksamen på Udir.no
+      Samarbeid med barnevernet (på bufdir.no)
     </Link>
   );
 };
@@ -29,10 +29,10 @@ const ExExternalLinkIconDo = () => {
 const ExExternalLinkIconDont = () => {
   return (
     <Link
-      href="https://www.udir.no/eksamen-og-prover/eksamen/"
+      href="https://www.bufdir.no/barnevern/hjelpetiltak-i-hjemmet/"
       style={{ margin: 'var(--ds-size-2) 0' }}
     >
-      <span>Info om eksamen</span>
+      <span>Samarbeid med barnevernet</span>
       <ExternalLinkIcon aria-hidden />
     </Link>
   );
