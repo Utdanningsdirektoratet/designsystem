@@ -1,5 +1,6 @@
 import {
   AuthError,
+  CacheLookupPolicy,
   InteractionRequiredAuthError,
   PublicClientApplication,
 } from '@azure/msal-browser';
@@ -49,8 +50,15 @@ export function createSession(config: AuthConfig) {
 
   async function acquire(account: AccountInfo, forceRefresh: boolean) {
     try {
-      return (await msal.acquireTokenSilent({ scopes, account, forceRefresh }))
-        .accessToken;
+      // No hidden-iframe fallback (it needs a redirect bridge page); an expired refresh token fails fast.
+      return (
+        await msal.acquireTokenSilent({
+          scopes,
+          account,
+          forceRefresh,
+          cacheLookupPolicy: CacheLookupPolicy.AccessTokenAndRefreshToken,
+        })
+      ).accessToken;
     } catch (error) {
       if (!(error instanceof InteractionRequiredAuthError)) throw error;
       // The refresh token lives 24 hours; sign in again and never resolve while the page navigates away.
