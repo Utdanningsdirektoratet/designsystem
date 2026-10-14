@@ -1,6 +1,6 @@
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { type InputEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
@@ -126,6 +126,27 @@ const getChipValues = (el: HTMLElement) =>
       .map((chip) => chip.value),
   );
 
+/* Up to at least digdir 1.23.0, Enter selected `Suggestion.Empty`, whose label
+   follows the typed text, with an empty string as value: for text matching no
+   option, and also for an exact option label, since `Suggestion.Empty` comes first */
+async function testEnterSelectsOnlyMatchingOption(
+  el: HTMLElement,
+  onSelectedChange: unknown,
+  oslo: SuggestionItem | SuggestionItem[],
+) {
+  const input = await waitFor(() => within(el).getByRole('combobox'));
+  await userEvent.click(input);
+  await userEvent.type(input, 's');
+  await userEvent.keyboard('{Enter}');
+  await expect(onSelectedChange).not.toHaveBeenCalled();
+
+  await userEvent.clear(input);
+  await userEvent.type(input, 'Oslo');
+  await userEvent.keyboard('{Enter}');
+  await expect(onSelectedChange).toHaveBeenCalledTimes(1);
+  await expect(onSelectedChange).toHaveBeenCalledWith(oslo);
+}
+
 const DATA_PLACES = [
   'Sogndal',
   'Oslo',
@@ -242,6 +263,21 @@ export const CreatableSelectionSurvivesBlur = Creatable.extend({
         );
         await expect(input).toHaveValue('Oslo');
       },
+    );
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const EnterSelectsOnlyMatchingOption = Preview.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  args: { onSelectedChange: fn() },
+  play: async ({ args, canvasElement, step }) => {
+    await step('Enter selects only an option with the typed label', () =>
+      testEnterSelectsOnlyMatchingOption(canvasElement, args.onSelectedChange, {
+        label: 'Oslo',
+        value: 'Oslo',
+      }),
     );
   },
 });
@@ -891,6 +927,20 @@ export const MultipleCreatableSelectsClickedOption = MultipleCreatable.extend({
           canvasElement.querySelector('u-option[data-empty]'),
         ).toHaveAttribute('data-create', 'Legg til «ogn»');
       },
+    );
+  },
+});
+
+/* Regression test only, so it is kept out of Chromatic */
+export const MultipleEnterSelectsOnlyMatchingOption = Multiple.extend({
+  tags: ['!dev'], // hides the story from the sidebar
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  args: { onSelectedChange: fn() },
+  play: async ({ args, canvasElement, step }) => {
+    await step('Enter selects only an option with the typed label', () =>
+      testEnterSelectsOnlyMatchingOption(canvasElement, args.onSelectedChange, [
+        { label: 'Oslo', value: 'Oslo' },
+      ]),
     );
   },
 });

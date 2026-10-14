@@ -23,6 +23,7 @@ import {
   forwardRef,
   useEffect,
 } from 'react';
+import { patchSuggestionEmptyMatch } from './patchSuggestionEmptyMatch';
 import { patchSuggestionSelection } from './patchSuggestionSelection';
 import './suggestion.css';
 import './translations.css';
@@ -75,6 +76,7 @@ const SuggestionBase = forwardRef<
   const multiple = 'multiple' in rest && rest.multiple === true;
 
   useEffect(patchSuggestionSelection, []);
+  useEffect(patchSuggestionEmptyMatch, []);
 
   return (
     <DigdirSuggestion
