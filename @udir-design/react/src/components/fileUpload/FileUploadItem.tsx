@@ -3,6 +3,7 @@ import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import {
   forwardRef,
+  useEffect,
   useId,
   useImperativeHandle,
   useLayoutEffect,
@@ -119,6 +120,31 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     const rowRef = useRef<HTMLLIElement>(null);
     useImperativeHandle(ref, () => rowRef.current as HTMLLIElement);
 
+    /* The loading text says what is happening to the file, and WCAG counts
+       such progress as a status message (4.1.3), which has to be announced
+       without the file having focus. Set a moment after loading starts, by
+       which time a row whose focused button was hidden has taken focus
+       itself: it is read then, and announcing it as well would say it
+       twice. Read from css when it is the default, so it follows the `lang`
+       the row is in. Emptied again after a while, as the announcement of a
+       removal is, since NVDA otherwise read the loading text twice when
+       reading the page, first the visible one and then this one. */
+    const regionRef = useRef<HTMLDivElement>(null);
+    const [loadingStatus, setLoadingStatus] = useState<string>();
+    useEffect(() => {
+      const region = regionRef.current;
+      if (!loading || !region) return;
+      let timer = window.setTimeout(() => {
+        if (region.parentElement?.contains(document.activeElement)) return;
+        setLoadingStatus(loadingText || defaultLoadingText(region));
+        timer = window.setTimeout(() => setLoadingStatus(undefined), 5000);
+      });
+      return () => {
+        clearTimeout(timer);
+        setLoadingStatus(undefined);
+      };
+    }, [loading, loadingText]);
+
     /* A row that still has focus when loading ends keeps the name it had
        while loading until focus moves on, which it does 200 ms later, to the
        button that comes back. Without it, NVDA in Firefox read the row by
@@ -218,18 +244,26 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             {lingeringText}
           </span>
         )}
-        {/* Announces a verdict that arrives after the file is already listed,
-            such as one the server reports once the upload finishes. An item
-            that is added with a message cannot announce: the region and the
-            message arrive together, and a region only announces what reaches
-            it after it is in the dom. `aria-atomic` keeps the file name in the
-            announcement when one message replaces another, where only the
-            message itself would otherwise be new. */}
+        {/* Announces what happens to a file that is already listed: the
+            loading text, see above, and a verdict such as the one a server
+            reports once the upload finishes. An item that is added with a
+            message cannot announce it: the region and the message arrive
+            together, and a region only announces what reaches it after it is
+            in the dom. `aria-atomic` keeps the file name in the announcement
+            when one text replaces another, where only the text itself would
+            otherwise be new. */}
         <div
+          ref={regionRef}
           aria-live="polite"
           aria-atomic="true"
           className="uds-file-upload__item-message"
         >
+          {/* Checked against `loading` as well, so a verdict that arrives as
+              loading ends replaces the text in the same render, rather than
+              being announced together with it until the effect has run. */}
+          {loading && loadingStatus && (
+            <span className="ds-sr-only">{`${file.name}: ${loadingStatus}`}</span>
+          )}
           {Boolean(message) && (
             /* `ValidationMessage` brings its own icon and colour per
                `data-color`, and places the icon on the first line. */
