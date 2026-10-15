@@ -215,6 +215,10 @@ export const ExampleDropZone = meta.story({
       </form>
     );
   },
+});
+
+export const ExampleDropZone_Test = ExampleDropZone.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const dropzone = canvas.querySelector('input') as HTMLInputElement;
@@ -397,6 +401,10 @@ export const ExampleTrigger = meta.story({
       </>
     );
   },
+});
+
+export const ExampleTrigger_Test = ExampleTrigger.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const trigger = canvas.querySelector('input') as HTMLInputElement;
@@ -517,6 +525,10 @@ export const ExampleItems = meta.story({
       </>
     );
   },
+});
+
+export const ExampleItems_Test = ExampleItems.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -632,6 +644,10 @@ export const ItemActions = meta.story({
       </FileUpload.List>
     );
   },
+});
+
+export const ItemActions_Test = ItemActions.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -764,6 +780,10 @@ export const CustomItemButton = meta.story({
       </>
     );
   },
+});
+
+export const CustomItemButton_Test = CustomItemButton.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -935,6 +955,10 @@ export const Upload = meta.story({
       </>
     );
   },
+});
+
+export const Upload_Test = Upload.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const fileInput = canvasElement.querySelector('input') as HTMLInputElement;
@@ -1014,6 +1038,10 @@ export const CompactList = meta.story({
       </Prose>
     );
   },
+});
+
+export const CompactList_Test = CompactList.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -1252,8 +1280,7 @@ export const UploadAndValidate = meta.story({
   },
 });
 
-export const UploadAndValidateInteractions = UploadAndValidate.extend({
-  tags: ['!dev'], // hides the story from the sidebar
+export const UploadAndValidate_Test = UploadAndValidate.extend({
   parameters: {
     // The flow is timed, so neither snapshot would be stable; the assertions
     // are what this story is for.
