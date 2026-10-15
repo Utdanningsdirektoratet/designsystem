@@ -12,6 +12,7 @@ import {
   Paragraph,
   Search,
   Select,
+  Tag,
   ToggleGroup,
 } from '@udir-design/react';
 import { AssetImage } from './AssetImage';
@@ -122,7 +123,7 @@ export function IllustrationGallery({
     [catalog.families, categoryId],
   );
   const families = availableFamilies.filter((item) =>
-    matchesFamilySearch(item.name, query),
+    matchesFamilySearch(item.name, query, item.tags),
   );
 
   const selectCategory = (value: CategoryId) => {
@@ -152,11 +153,11 @@ export function IllustrationGallery({
       {families.length === 0 ? (
         <div className={styles.empty}>
           <Heading level={2} data-size="sm">
-            Ingen illustrasjoner å vise
+            Ingen illustrasjoner å vise i denne kategorien
           </Heading>
           <Paragraph>
             {query.trim()
-              ? 'Ingen illustrasjonsfamilier passer til søket. Prøv et annet navn eller tøm søket.'
+              ? 'Ingen illustrasjoner passer til søket. Prøv et annet navn eller tøm søket.'
               : `Det er ikke importert illustrasjoner for ${categories.find((item) => item.id === categoryId)?.label ?? 'denne kategorien'} ennå.`}
           </Paragraph>
           {query.trim() ? (
@@ -248,6 +249,7 @@ export function IllustrationGallery({
             id={searchId}
             name="illustrasjonssøk"
             aria-label="Søk"
+            placeholder="Søk"
             autoComplete="off"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -269,6 +271,17 @@ export function IllustrationGallery({
               <Heading level={2} id={titleId}>
                 {familyDisplayName(family.name)}
               </Heading>
+              {family.tags?.length ? (
+                <ul className={styles.tags} aria-label="Stikkord">
+                  {family.tags.map((tag) => (
+                    <li key={tag}>
+                      <Tag data-size="sm" data-color="neutral">
+                        {tag}
+                      </Tag>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               <div className={styles.details}>
                 <div className={styles.previewPanel}>
                   <div className={styles.previewFrame} data-color={themeColor}>

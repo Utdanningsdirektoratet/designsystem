@@ -80,6 +80,15 @@
   max-height: calc(100dvh - 2rem);
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-2);
+  margin: var(--ds-size-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
 .details {
   display: grid;
   gap: var(--ds-size-8);

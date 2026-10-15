@@ -48,6 +48,14 @@ describe('illustration gallery browsing', () => {
     expect(matchesFamilySearch('aktivitet-1', '  ')).toBe(true);
   });
 
+  it('matches tags by prefix only', () => {
+    const tags = ['kontor', 'retning', 'piler'];
+    expect(matchesFamilySearch('hverdag-1', 'kont', tags)).toBe(true);
+    expect(matchesFamilySearch('hverdag-1', 'PIL', tags)).toBe(true);
+    expect(matchesFamilySearch('hverdag-1', 'ontor', tags)).toBe(false);
+    expect(matchesFamilySearch('hverdag-1', 'kont')).toBe(false);
+  });
+
   it('sorts Norwegian names and numeric suffixes without mutating metadata', () => {
     const names = [
       'øvelse-1',

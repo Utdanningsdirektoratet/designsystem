@@ -31,10 +31,16 @@ export function normalizeFamilySearch(value: string): string {
   return value.toLocaleLowerCase('nb').replace(/[\s-]+/g, '');
 }
 
-export function matchesFamilySearch(name: string, query: string): boolean {
+export function matchesFamilySearch(
+  name: string,
+  query: string,
+  tags: string[] = [],
+): boolean {
   const search = normalizeFamilySearch(query);
-  return [name, familyDisplayName(name)].some((value) =>
-    normalizeFamilySearch(value).includes(search),
+  return (
+    [name, familyDisplayName(name)].some((value) =>
+      normalizeFamilySearch(value).includes(search),
+    ) || tags.some((tag) => normalizeFamilySearch(tag).startsWith(search))
   );
 }
 
