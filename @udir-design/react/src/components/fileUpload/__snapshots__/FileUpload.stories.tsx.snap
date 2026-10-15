@@ -1006,6 +1006,9 @@ exports[`Example Items 1`] = `
         aria-live="polite"
         aria-atomic="true"
       >
+        <span>
+          eksempel4.pdf: Laster opp...
+        </span>
       </div>
     </li>
     <li data-invalid="true">
@@ -1364,6 +1367,9 @@ exports[`Item Actions 1`] = `
       aria-live="polite"
       aria-atomic="true"
     >
+      <span>
+        vedlegg.pdf: Laster opp...
+      </span>
     </div>
   </li>
 </ul>
