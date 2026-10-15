@@ -240,7 +240,12 @@ describe('illustration gallery selection', () => {
         for (const { key, values } of options) {
           for (const value of values) {
             const next = selectProperty(catalogFamily, current, key, value);
-            expect(next.properties[key]).toBe(value);
+            // Plain check: an `expect` per step is slow over the full catalog.
+            if (next.properties[key] !== value) {
+              throw new Error(
+                `${catalogFamily.name}: ${key}=${value} selected ${next.id}`,
+              );
+            }
             if (!reachable.has(next.id)) queue.push(next);
           }
         }
@@ -249,7 +254,7 @@ describe('illustration gallery selection', () => {
         new Set(catalogFamily.variants.map(({ id }) => id)),
       );
     }
-  });
+  }, 30_000);
 });
 
 describe('illustration asset URLs', () => {
