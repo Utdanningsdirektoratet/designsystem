@@ -76,6 +76,7 @@ const familySchema = z.strictObject({
   categoryId: z.enum(categoryIds),
   nodeId,
   name,
+  tags: z.array(z.string().min(1)).optional(),
   variants: z.array(variantSchema).min(1),
 });
 
@@ -150,7 +151,9 @@ export const importMapSchema = z
     schemaVersion: z.literal(2),
     state: z.enum(['pending-review', 'reviewed']),
     families: z.array(
-      familySchema.extend({ variants: z.array(mappedVariantSchema).min(1) }),
+      familySchema
+        .omit({ tags: true })
+        .extend({ variants: z.array(mappedVariantSchema).min(1) }),
     ),
   })
   .superRefine((mapping, context) => {

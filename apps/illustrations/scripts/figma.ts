@@ -133,6 +133,30 @@ export function parseHierarchy(value: unknown, pageNodeId: string): FigmaNode {
   return root;
 }
 
+// Figma keeps component set descriptions in this map, not on the nodes themselves.
+export function componentSetDescriptions(value: unknown, pageNodeId: string) {
+  const page = z
+    .object({
+      nodes: z.record(
+        z.string(),
+        z
+          .object({
+            componentSets: z
+              .record(z.string(), z.object({ description: z.string() }))
+              .optional(),
+          })
+          .nullable(),
+      ),
+    })
+    .parse(value).nodes[pageNodeId];
+  return Object.fromEntries(
+    Object.entries(page?.componentSets ?? {}).map(([id, { description }]) => [
+      id,
+      description,
+    ]),
+  );
+}
+
 export async function getHierarchy(
   token: string,
   source: { fileKey: string; pageNodeId: string },
