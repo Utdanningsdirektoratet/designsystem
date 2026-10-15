@@ -159,6 +159,41 @@ describe('FileUpload.Item', () => {
     expect(screen.getByRole('listitem')).toHaveAccessibleName('');
   });
 
+  it('announces its loading text, which is heard without the file having focus', async () => {
+    const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+    const item = (loading: boolean, loadingText?: string) => (
+      <ul>
+        <FileUploadItem
+          file={file}
+          loading={loading}
+          loadingText={loadingText}
+          onRemove={() => {}}
+        />
+      </ul>
+    );
+    // Within the row: the page-wide region for removals may come first.
+    const region = () =>
+      screen.getByRole('listitem').querySelector('[aria-live]') as Element;
+
+    const { rerender } = render(item(false));
+    rerender(item(true));
+
+    // The default comes from css, in the language of the page.
+    await vi.waitFor(() =>
+      expect(region()).toHaveTextContent('eksempel.txt: Uploading...'),
+    );
+
+    rerender(item(true, 'Validerer…'));
+
+    await vi.waitFor(() =>
+      expect(region()).toHaveTextContent('eksempel.txt: Validerer…'),
+    );
+
+    rerender(item(false));
+
+    expect(region()).toBeEmptyDOMElement();
+  });
+
   it('renders file size when description is unset', () => {
     render(
       <ul>
@@ -462,6 +497,18 @@ describe('FileUpload.Item', () => {
       await press('a.pdf', 'delete');
 
       await vi.waitFor(() => expect(buttonIn('b.pdf', 'delete')).toHaveFocus());
+    });
+
+    it('does not announce the loading text of the file that took focus, which reads it already', async () => {
+      render(<Files />);
+
+      await press('a.pdf', 'download');
+      // Past the moment the announcement would be made, still loading.
+      await new Promise((resolve) => setTimeout(resolve, 50));
+
+      const row = screen.getByText('a.pdf').closest('li') as Element;
+      expect(row).toHaveAttribute('aria-busy', 'true');
+      expect(row.querySelector('[aria-live]')).toBeEmptyDOMElement();
     });
   });
 

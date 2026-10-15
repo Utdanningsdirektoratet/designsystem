@@ -1,7 +1,7 @@
 import { ValidationMessage } from '@digdir/designsystemet-react';
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import { forwardRef, useId } from 'react';
+import { forwardRef, useEffect, useId, useRef, useState } from 'react';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import {
   FileCsvIcon,
@@ -108,6 +108,34 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     const nameId = `${id}-name`;
     const descriptionId = `${id}-description`;
 
+    /* The loading text says what is happening to the file, and WCAG counts
+       such progress as a status message (4.1.3), which has to be announced
+       without the file having focus. Set a moment after loading starts, by
+       which time a row whose focused button was hidden has taken focus
+       itself: it is read then, and announcing it as well would say it
+       twice. Read from css when it is the default, so it follows the `lang`
+       the row is in. */
+    const regionRef = useRef<HTMLDivElement>(null);
+    const [loadingStatus, setLoadingStatus] = useState<string>();
+    useEffect(() => {
+      const region = regionRef.current;
+      if (!loading || !region) return;
+      const timer = setTimeout(() => {
+        if (region.parentElement?.contains(document.activeElement)) return;
+        setLoadingStatus(
+          loadingText ||
+            getComputedStyle(region)
+              .getPropertyValue('--udsc-fileUpload-loading-text')
+              .trim()
+              .replace(/^["']|["']$/g, ''),
+        );
+      });
+      return () => {
+        clearTimeout(timer);
+        setLoadingStatus(undefined);
+      };
+    }, [loading, loadingText]);
+
     const deleteButton = onRemove && !readonly && (
       <ItemButton
         kind="delete"
@@ -163,18 +191,26 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </div>
           )}
         </div>
-        {/* Announces a verdict that arrives after the file is already listed,
-            such as one the server reports once the upload finishes. An item
-            that is added with a message cannot announce: the region and the
-            message arrive together, and a region only announces what reaches
-            it after it is in the dom. `aria-atomic` keeps the file name in the
-            announcement when one message replaces another, where only the
-            message itself would otherwise be new. */}
+        {/* Announces what happens to a file that is already listed: the
+            loading text, see above, and a verdict such as the one a server
+            reports once the upload finishes. An item that is added with a
+            message cannot announce it: the region and the message arrive
+            together, and a region only announces what reaches it after it is
+            in the dom. `aria-atomic` keeps the file name in the announcement
+            when one text replaces another, where only the text itself would
+            otherwise be new. */}
         <div
+          ref={regionRef}
           aria-live="polite"
           aria-atomic="true"
           className="uds-file-upload__item-message"
         >
+          {/* Checked against `loading` as well, so a verdict that arrives as
+              loading ends replaces the text in the same render, rather than
+              being announced together with it until the effect has run. */}
+          {loading && loadingStatus && (
+            <span className="ds-sr-only">{`${file.name}: ${loadingStatus}`}</span>
+          )}
           {Boolean(message) && (
             /* `ValidationMessage` brings its own icon and colour per
                `data-color`, and places the icon on the first line. */
