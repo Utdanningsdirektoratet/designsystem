@@ -4,31 +4,19 @@ exports[`Globalt systemvarsel 1`] = `
 <style>
   .systemvarsler-global-alert {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
-  background: var(--ds-color-surface-default);
 }
-
 .systemvarsler-global-alert__main {
   box-sizing: border-box;
-  display: grid;
-  gap: var(--ds-size-5);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-}
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-global-alert__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-global-alert__main {
-    padding: var(--ds-size-6);
-  }
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
 </style>
 <div>
@@ -39,14 +27,17 @@ exports[`Globalt systemvarsel 1`] = `
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo-dark-mode.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
         </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
       </a>
     </div>
   </header>
@@ -81,6 +72,24 @@ exports[`Globalt systemvarsel 1`] = `
       </ul>
     </div>
   </main>
+  <footer style="<removed>">
+    <div>
+      <a href="https://udir.no">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
 </div>
 `;
 
@@ -90,29 +99,13 @@ exports[`Lokalt systemvarsel 1`] = `
   box-sizing: border-box;
   display: grid;
   gap: var(--ds-size-5);
-  width: 100%;
-  max-width: 48rem;
+  width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-  background: var(--ds-color-surface-default);
+  padding: var(--ds-size-4);
 }
-
 .systemvarsler-local-textfield {
   width: 10rem;
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-local-alert {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-local-alert {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-try-again-button {
   margin-top: var(--ds-size-3);
 }
@@ -170,43 +163,22 @@ exports[`Side ikke funnet 1`] = `
 <style>
   .systemvarsler-not-found {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
 }
-
 .systemvarsler-not-found__main {
   box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-not-found__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-not-found__main {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-not-found__search {
   max-width: 32rem;
-}
-
-.systemvarsler-not-found__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-3);
 }
 </style>
 <div>
@@ -217,14 +189,17 @@ exports[`Side ikke funnet 1`] = `
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo-dark-mode.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
         </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
       </a>
     </div>
   </header>
@@ -290,18 +265,103 @@ exports[`Side ikke funnet 1`] = `
         </li>
       </ul>
     </div>
-    <div>
-      <button type="button">
-        Gå til forsiden
-      </button>
-      <button
-        data-variant="secondary"
-        type="button"
-      >
-        Meld fra om ødelagt lenke
-      </button>
-    </div>
+    <button type="button">
+      Gå til forsiden
+    </button>
   </main>
+  <footer style="<removed>">
+    <div>
+      <a href="https://udir.no">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`Side ikke funnet 2`] = `
+<style>
+  .systemvarsler-not-found-simple {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 32rem;
+}
+.systemvarsler-not-found-simple__main {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
+}
+</style>
+<div>
+  <header style="<removed>">
+    <div>
+      <a href="/">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
+          >
+        </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div>
+      <h5 data-size="lg">
+        Beklager, vi fant ikke siden
+      </h5>
+      <p>
+        Siden kan være slettet eller flyttet, eller det kan være en feil i lenken.
+      </p>
+    </div>
+    <button type="button">
+      Gå til forsiden
+    </button>
+  </main>
+  <footer style="<removed>">
+    <div>
+      <a href="https://udir.no">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
 </div>
 `;
 
@@ -309,35 +369,20 @@ exports[`Teknisk feilside 1`] = `
 <style>
   .systemvarsler-technical-error {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  width: 100%;
   min-height: 32rem;
 }
-
 .systemvarsler-technical-error__main {
   box-sizing: border-box;
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   gap: var(--ds-size-6);
   width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
+  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-technical-error__main {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-technical-error__main {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-technical-error__actions {
   display: flex;
   flex-wrap: wrap;
@@ -352,14 +397,17 @@ exports[`Teknisk feilside 1`] = `
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-3&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-2&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
           <img
             alt="Utdanningsdirektoratet"
             role="img"
-            src="/assets/img/udir-main-logo-dark-mode.svg"
+            src="data:image/svg+xml,%3c?xml%20version=&#x27;1.0&#x27;%20encoding=&#x27;UTF-8&#x27;?%3e%3csvg%20id=&#x27;Layer_1&#x27;%20data-name=&#x27;Layer%201&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20viewBox=&#x27;0%200%2024%2024&#x27;%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23303030;%20}%20.cls-2%20{%20fill:%20%23fff;%20}%20.cls-3%20{%20fill:%20%2376c69d;%20}%20%3c/style%3e%3c/defs%3e%3ccircle%20class=&#x27;cls-2&#x27;%20cx=&#x27;12&#x27;%20cy=&#x27;12&#x27;%20r=&#x27;12&#x27;/%3e%3cg%3e%3cpath%20class=&#x27;cls-3&#x27;%20d=&#x27;M18.26,4.55v9.25c0,2.22-1.8,4.02-4.02,4.02-.4,0-.78-.06-1.14-.16.42-.64.67-1.4.67-2.22V6.18l4.49-1.63Z&#x27;/%3e%3cpath%20class=&#x27;cls-1&#x27;%20d=&#x27;M13.11,17.65c-.72,1.08-1.95,1.8-3.35,1.8-2.22,0-4.02-1.8-4.02-4.02V6.81l4.49-1.63v8.62c0,1.82,1.21,3.36,2.88,3.85Z&#x27;/%3e%3c/g%3e%3c/svg%3e"
           >
         </div>
+        <span data-size="xs">
+          Tjenestenavn
+        </span>
       </a>
     </div>
   </header>
@@ -391,6 +439,24 @@ exports[`Teknisk feilside 1`] = `
       </button>
     </div>
   </main>
+  <footer style="<removed>">
+    <div>
+      <a href="https://udir.no">
+        <div style="<removed>">
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo.svg"
+          >
+          <img
+            alt="Utdanningsdirektoratet"
+            role="img"
+            src="/assets/img/udir-main-logo-dark-mode.svg"
+          >
+        </div>
+      </a>
+    </div>
+  </footer>
 </div>
 `;
 
@@ -399,34 +465,18 @@ exports[`Varsel om utlogging 1`] = `
   .systemvarsler-session-expiry {
   box-sizing: border-box;
   display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 48rem;
-  min-height: 12rem;
+  gap: var(--ds-size-5);
+  width: min(100%, 48rem);
   margin-inline: auto;
-  padding: var(--ds-size-3);
-  background: var(--ds-color-surface-default);
+  padding: var(--ds-size-4);
 }
-
-@media (min-width: 25.5rem) {
-  .systemvarsler-session-expiry {
-    padding: var(--ds-size-4);
-  }
-}
-
-@media (min-width: 48rem) {
-  .systemvarsler-session-expiry {
-    padding: var(--ds-size-6);
-  }
-}
-
 .systemvarsler-session-expiry__actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--ds-size-3);
 }
 </style>
-<div>
+<div style="<removed>">
   <dialog
     data-placement="center"
     data-modal="true"
