@@ -3,9 +3,13 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { describe, expect, it, vi } from 'vitest';
-import { exportSvgUrls, request } from '../scripts/figma.ts';
+import {
+  componentSetDescriptions,
+  exportSvgUrls,
+  request,
+} from '../scripts/figma.ts';
 import { replaceDirectory } from '../scripts/files.ts';
-import { resolveMapping } from '../scripts/mapping.ts';
+import { parseTags, resolveMapping } from '../scripts/mapping.ts';
 import { renderPng, validateSvg } from '../scripts/svg.ts';
 import imported from '../source/catalog/metadata.json';
 import importMap from '../source/import-map.json';
@@ -92,7 +96,7 @@ describe('catalog and reviewed mappings', () => {
       }))
       .sort((a, b) => a.id.localeCompare(b.id));
     const catalogFamilies = actual.families
-      .map((family) => ({
+      .map(({ tags: _tags, ...family }) => ({
         ...family,
         variants: family.variants
           .map(({ id, nodeId, name, properties }) => ({
@@ -154,6 +158,36 @@ describe('catalog and reviewed mappings', () => {
     expect(() =>
       resolveMapping(renamed, reassigned, catalog, true, 'barnehage'),
     ).toThrow(/cannot be reassigned/);
+  });
+
+  it('reads tags from component set descriptions', () => {
+    expect(parseTags('Kontor, retning , piler,, kontor')).toEqual([
+      'kontor',
+      'retning',
+      'piler',
+    ]);
+    expect(parseTags('Tags: kontor, piler')).toEqual(['kontor', 'piler']);
+    expect(parseTags('')).toEqual([]);
+    const descriptions = componentSetDescriptions(
+      {
+        nodes: {
+          [FIGMA_PAGE_NODE_ID]: {
+            componentSets: { '1:1': { description: 'kontor, piler' } },
+          },
+        },
+      },
+      FIGMA_PAGE_NODE_ID,
+    );
+    const [family] = resolveMapping(
+      mapping,
+      root,
+      empty,
+      false,
+      'barnehage',
+      descriptions,
+    ).families;
+    expect(family.tags).toEqual(['kontor', 'piler']);
+    expect(catalog.families[0].tags).toBeUndefined();
   });
 
   it('rejects duplicates, unsafe filenames and unconfirmed removals', () => {
@@ -359,6 +393,9 @@ describe('categories and color themes', () => {
       expect(
         resolveMapping(mapping, root, combined, false, 'barnehage').families,
       ).toHaveLength(2);
+      expect(
+        resolveMapping(mapping, root, combined, false, 'barnehage').families,
+      ).toEqual(combined.families);
     } finally {
       sources.grunnskole = original;
     }

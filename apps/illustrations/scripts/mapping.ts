@@ -2,12 +2,23 @@ import { catalogSchema, getSource, importMapSchema } from '../src/schema.ts';
 import type { CategoryId, IllustrationCatalog } from '../src/schema.ts';
 import type { FigmaNode } from './figma.ts';
 
+// Descriptions are comma-separated tags, optionally prefixed with "Tags:".
+export function parseTags(description: string) {
+  const tags = description
+    .replace(/^\s*tags:/i, '')
+    .split(',')
+    .map((tag) => tag.trim().toLowerCase())
+    .filter(Boolean);
+  return [...new Set(tags)];
+}
+
 export function resolveMapping(
   value: unknown,
   root: FigmaNode,
   previous: IllustrationCatalog,
   allowRemovals: boolean,
   categoryId: CategoryId,
+  descriptions: Record<string, string> = {},
 ) {
   if (root.id !== getSource(categoryId).pageNodeId || root.type !== 'CANVAS')
     throw new Error('Mapping must be bounded within the intended Figma page.');
@@ -30,8 +41,10 @@ export function resolveMapping(
   const families = scoped.map((family) => {
     if (!nodes.has(family.nodeId))
       throw new Error(`Missing family root ${family.nodeId}.`);
+    const tags = parseTags(descriptions[family.nodeId] ?? '');
     return {
       ...family,
+      ...(tags.length ? { tags } : {}),
       variants: family.variants.map((variant) => {
         const entry = nodes.get(variant.nodeId);
         const component = variant.componentId
@@ -82,13 +95,30 @@ export function resolveMapping(
       }),
     };
   });
+  // Keep every family where it was so a sync only shows real changes.
+  const resolved = new Map(families.map((family) => [family.id, family]));
+  const ordered = previous.families.flatMap((family) =>
+    family.categoryId !== categoryId
+      ? [family]
+      : resolved.has(family.id)
+        ? [resolved.get(family.id)!]
+        : [],
+  );
+  const added = families.filter(
+    (family) => !previous.families.some(({ id }) => id === family.id),
+  );
+  const lastOfCategory = ordered.findLastIndex(
+    (family) => family.categoryId === categoryId,
+  );
+  ordered.splice(
+    lastOfCategory === -1 ? ordered.length : lastOfCategory + 1,
+    0,
+    ...added,
+  );
   const catalog = catalogSchema.parse({
     schemaVersion: 2,
     state: 'imported',
-    families: [
-      ...previous.families.filter((family) => family.categoryId !== categoryId),
-      ...families,
-    ],
+    families: ordered,
   });
   const newFamilies = new Map(families.map((family) => [family.id, family]));
   const newVariants = new Map(
