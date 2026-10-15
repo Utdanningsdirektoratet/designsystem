@@ -1,7 +1,8 @@
 import './fileUpload.css';
+import type { DSFieldElement } from '@digdir/designsystemet-web';
 import cl from 'clsx/lite';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useEffect, useId, useRef } from 'react';
+import type { HTMLAttributes, Ref } from 'react';
+import { forwardRef } from 'react';
 import { UploadIcon } from '@udir-design/icons';
 import { Button } from '../button';
 import { Card } from '../card';
@@ -9,6 +10,7 @@ import { Field } from '../field';
 import { Label } from '../typography/label';
 import { ValidationMessage } from '../typography/validationMessage';
 import type { FileUploadProps } from './FileUploadTrigger';
+import { useFileInput } from './useFileInput';
 
 export type FileUploadDropzoneProps = FileUploadProps & {
   /**
@@ -28,7 +30,7 @@ export type FileUploadDropzoneProps = FileUploadProps & {
 };
 
 export const FileUploadDropzone = forwardRef<
-  HTMLDivElement,
+  DSFieldElement,
   FileUploadDropzoneProps
 >(function FileUploadDropzone(
   {
@@ -42,47 +44,29 @@ export const FileUploadDropzone = forwardRef<
     variant = 'secondary',
     inputProps,
     cardProps,
+    files,
     ...rest
   },
   ref,
 ) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const cssVar = inputProps?.multiple
-    ? '--udsc-fileUpload-chooseFiles-text'
-    : '--udsc-fileUpload-chooseFile-text';
-  // This is to make sure accessibility tests pass. Not actually necessary to make screenreaders announce the button.
-  useEffect(() => {
-    if (typeof window === 'undefined' || !buttonRef.current) return;
-    const buttonAriaLabel = getComputedStyle(buttonRef.current)
-      .getPropertyValue(cssVar)
-      .replace(/^["']|["']$/g, '')
-      .trim();
-    buttonRef.current.setAttribute('aria-label', buttonAriaLabel);
-  }, [cssVar]);
-
-  const generatedId = useId();
-  const id = rest.id ?? generatedId;
-  const buttonId = `${id}-button`;
-  const labelId = `${id}-label`;
-  const descriptionId = `${id}-description`;
+  // `getInputProps()` returns a `ref` that `react-dropzone` needs in order to
+  // open the file dialog programmatically. It is not part of `InputProps`.
+  const inputRef = useFileInput(
+    files,
+    (inputProps as { ref?: Ref<HTMLInputElement> } | undefined)?.ref,
+  );
 
   return (
-    <div
-      className={cl('ds-field', 'uds-file-upload', className)}
+    <Field
+      className={cl('uds-file-upload', className)}
       data-size={size}
       data-drag-active={isDragActive || undefined}
       data-drag-global={isDragGlobal || undefined}
       ref={ref}
       {...rest}
     >
-      {!!label && (
-        <Label id={labelId} htmlFor={buttonId}>
-          {label}
-        </Label>
-      )}
-      {!!description && (
-        <Field.Description id={descriptionId}>{description}</Field.Description>
-      )}
+      {!!label && <Label>{label}</Label>}
+      {!!description && <Field.Description>{description}</Field.Description>}
       <Card
         {...cardProps}
         onDrop={(e) => {
@@ -97,30 +81,49 @@ export const FileUploadDropzone = forwardRef<
         {/* Text in css */}
         <div>{/* Text in css */}</div>
         {!inputProps?.readOnly && (
-          <Button
-            id={buttonId}
-            aria-labelledby={label ? labelId : undefined}
-            aria-describedby={description ? descriptionId : undefined}
-            variant={variant}
-            ref={buttonRef}
-          >
-            <UploadIcon aria-hidden />
-            {/* Text in css */}
+          <Button asChild variant={variant}>
+            <span>
+              <UploadIcon aria-hidden />
+              {/* Text in css */}
+            </span>
           </Button>
         )}
+        {/* The input covers the card and is the only focusable control here, so
+            `ds-field` can wire the label, description and error message to it.
+            `style` and `tabIndex` are overridden because `react-dropzone`'s
+            `getInputProps()` visually hides the input and takes it out of the
+            tab order. `aria-label` is dropped when there is a `label`, so a
+            default from `getInputProps()` cannot silently replace it. */}
+        <input
+          type="file"
+          className="ds-input"
+          {...inputProps}
+          ref={inputRef}
+          onChange={(e) => {
+            inputProps?.onChange?.(e);
+            if (files) return;
+            // Without `files` the input cannot be kept accurate, so keep it
+            // empty rather than letting assistive technology announce a stale
+            // selection. Deferred to a microtask so `onChange` handlers
+            // further up the tree still see `event.target.files` while this
+            // event is being dispatched.
+            const input = e.currentTarget;
+            queueMicrotask(() => {
+              input.value = '';
+            });
+          }}
+          onClick={(e) => {
+            if (inputProps?.readOnly) {
+              e.preventDefault();
+            }
+            inputProps?.onClick?.(e);
+          }}
+          aria-label={label ? undefined : inputProps?.['aria-label']}
+          style={undefined}
+          tabIndex={undefined}
+        />
       </Card>
-      <input
-        className="ds-input"
-        type="file"
-        {...inputProps}
-        onClick={(e) => {
-          if (inputProps?.readOnly) {
-            e.preventDefault();
-          }
-          inputProps?.onClick?.(e);
-        }}
-      />
       {!!error && <ValidationMessage>{error}</ValidationMessage>}
-    </div>
+    </Field>
   );
 });
