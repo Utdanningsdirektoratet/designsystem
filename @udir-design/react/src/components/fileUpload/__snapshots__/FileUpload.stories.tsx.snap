@@ -3,13 +3,96 @@
 exports[`Compact List 1`] = `
 <div>
   <h3 data-size="2xs">
-    Vedlegg (4):
+    Vedlegg (5):
   </h3>
   <ul
     role="list"
     data-variant="compact"
     data-size="md"
   >
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
+            kandidat-12.pdf
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-12.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
     <li>
       <div>
         <div>
@@ -508,11 +591,9 @@ exports[`Custom Item Button 1`] = `
           attest.pdf
         </span>
         <div id="<generated>-description">
-          Attest fra arbeidsgiver (
           <span>
             293 KB
           </span>
-          )
         </div>
       </div>
       <div>
@@ -620,7 +701,7 @@ exports[`Custom Item Button 1`] = `
     style="<removed>"
   >
     <h2>
-      Beskriv filen attest.pdf
+      Beskriv filen
     </h2>
     <ds-field>
       <label for="<generated>">
@@ -700,97 +781,6 @@ exports[`Example Drop Zone 1`] = `
       >
     </div>
   </ds-field>
-  <h3 data-size="2xs">
-    Vedlegg (1):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
-    <li>
-      <div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
-          >
-            <path
-              fill="currentColor"
-              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
-            >
-            </path>
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-              clip-rule="evenodd"
-            >
-            </path>
-          </svg>
-        </div>
-        <div>
-          <span id="<generated>-name">
-            eksempel1.pdf
-          </span>
-          <div id="<generated>-description">
-            <span>
-              293 KB
-            </span>
-          </div>
-        </div>
-        <div>
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="button"
-            id="<generated>"
-            aria-labelledby="<generated> <generated>-file"
-            data-tooltip="Fjern filen"
-            data-placement="top"
-            data-autoplacement="true"
-            aria-label="Fjern filen"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="none"
-              viewbox="0 0 24 24"
-              focusable="false"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                fill="currentColor"
-                fill-rule="evenodd"
-                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                clip-rule="evenodd"
-              >
-              </path>
-            </svg>
-          </button>
-          <span
-            hidden
-            id="<generated>-file"
-            role="img"
-            aria-label="eksempel1.pdf"
-          >
-          </span>
-        </div>
-      </div>
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </div>
-    </li>
-  </ul>
 </form>
 `;
 
@@ -841,8 +831,20 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       >
     </div>
   </ds-field>
+</form>
+`;
+
+exports[`Example Items 1`] = `
+<style>
+  .file-upload-example-items-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<div>
   <h3 data-size="2xs">
-    Vedlegg (1):
+    Vedlegg (5):
   </h3>
   <ul
     role="list"
@@ -880,9 +882,11 @@ exports[`Example Dropzone With Explicit Size 1`] = `
             eksempel1.pdf
           </span>
           <div id="<generated>-description">
+            Filopplasting 1 (
             <span>
               293 KB
             </span>
+            )
           </div>
         </div>
         <div>
@@ -931,26 +935,6 @@ exports[`Example Dropzone With Explicit Size 1`] = `
       >
       </div>
     </li>
-  </ul>
-</form>
-`;
-
-exports[`Example Items 1`] = `
-<style>
-  .file-upload-example-items-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }
-</style>
-<div>
-  <h3 data-size="2xs">
-    Vedlegg (4):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
     <li>
       <div>
         <div>
@@ -1263,16 +1247,63 @@ exports[`Example Trigger 1`] = `
       >
     </span>
   </ds-field>
-  <h3 data-size="2xs">
-    Vedlegg (1):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
-    <li>
+</form>
+`;
+
+exports[`Item Actions 1`] = `
+<ul
+  role="list"
+  data-variant="default"
+>
+  <li>
+    <div>
       <div>
-        <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span id="<generated>-name">
+          soknad.pdf
+        </span>
+        <div id="<generated>-description">
+          <span>
+            293 KB
+          </span>
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Last ned filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned filen"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -1286,77 +1317,64 @@ exports[`Example Trigger 1`] = `
             <path
               fill="currentColor"
               fill-rule="evenodd"
-              d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
               clip-rule="evenodd"
             >
             </path>
           </svg>
-        </div>
-        <div>
-          <span id="<generated>-name">
-            eksempel1.png
-          </span>
-          <div id="<generated>-description">
-            <span>
-              293 KB
-            </span>
-          </div>
-        </div>
-        <div>
-          <button
-            data-icon="true"
-            data-variant="tertiary"
-            type="button"
-            id="<generated>"
-            aria-labelledby="<generated> <generated>-file"
-            data-tooltip="Fjern filen"
-            data-placement="top"
-            data-autoplacement="true"
-            aria-label="Fjern filen"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="none"
-              viewbox="0 0 24 24"
-              focusable="false"
-              role="img"
-              aria-hidden="true"
-            >
-              <path
-                fill="currentColor"
-                fill-rule="evenodd"
-                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-                clip-rule="evenodd"
-              >
-              </path>
-            </svg>
-          </button>
-          <span
-            hidden
-            id="<generated>-file"
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="soknad.pdf"
+        >
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Fjern filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Fjern filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
             role="img"
-            aria-label="eksempel1.png"
+            aria-hidden="true"
           >
-          </span>
-        </div>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="soknad.pdf"
+        >
+        </span>
       </div>
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </div>
-    </li>
-  </ul>
-</form>
-`;
-
-exports[`Item Actions 1`] = `
-<ul
-  role="list"
-  data-variant="default"
->
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
   <li>
     <div>
       <div>
@@ -2428,57 +2446,6 @@ exports[`Upload 1`] = `
       >
     </span>
   </ds-field>
-  <h3 data-size="2xs">
-    Vedlegg (1):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
-    <li
-      aria-busy="true"
-      aria-labelledby="<generated>-name <generated>-description"
-    >
-      <div>
-        <div>
-          <svg
-            role="img"
-            viewbox="0 0 50 50"
-            aria-hidden="true"
-          >
-            <circle
-              cx="25"
-              cy="25"
-              r="20"
-              fill="none"
-              stroke-width="5"
-            >
-            </circle>
-            <circle
-              cx="25"
-              cy="25"
-              r="20"
-              fill="none"
-              stroke-width="5"
-            >
-            </circle>
-          </svg>
-        </div>
-        <div>
-          <span id="<generated>-name">
-            rapport.pdf
-          </span>
-          <div id="<generated>-description">
-          </div>
-        </div>
-      </div>
-      <div
-        aria-live="polite"
-        aria-atomic="true"
-      >
-      </div>
-    </li>
-  </ul>
 </form>
 `;
 
