@@ -213,7 +213,7 @@ Visningene støtter det samme, så du kan bytte mellom dem uten å endre på `Fi
 
 <Canvas of={FileUploadStories.Upload} />
 
-Teksten sier at filen blir lastet opp. Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer.
+Teksten sier at filen blir lastet opp. Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer. Skjermleseren leser opp teksten når `loading` settes og når `loadingText` endres, sammen med filnavnet.
 
 <Canvas of={FileUploadStories.UploadAndValidate} />
 
@@ -250,7 +250,7 @@ Stopp innsendingen så lenge en fil i lista har feil. Da kan ikke brukeren sende
 
 Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
 
-Meldinger som dukker opp på en fil som allerede ligger i lista, for eksempel når serveren avviser eller godkjenner den etter opplasting, blir lest opp med det samme. Dette gjelder både `error` og `success`. Filnavnet blir lest opp sammen med meldingen, så du trenger ikke gjenta det i teksten.
+Meldinger som dukker opp på en fil, for eksempel når serveren avviser eller godkjenner den etter opplasting, blir lest opp med det samme. Dette gjelder `error`, `success` og teksten som vises mens `loading` er satt. Filnavnet blir lest opp sammen med meldingen, så du trenger ikke gjenta det i teksten. `error` og `success` blir bare lest opp når de kommer på en fil som allerede ligger i lista. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
 
 Går brukeren gjennom lista, blir filnavnet på en fil med feil lest opp som ugyldig. Da trenger ikke brukeren lese hele raden for å finne ut hvilke filer som må ses på.
 
