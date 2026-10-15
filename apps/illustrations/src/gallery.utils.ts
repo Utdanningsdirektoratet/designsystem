@@ -44,6 +44,23 @@ export function matchesFamilySearch(
   );
 }
 
+/** Search hits per category, skipping `excludeCategoryId` and categories without hits. */
+export function countMatchesByCategory(
+  families: IllustrationFamily[],
+  query: string,
+  excludeCategoryId: string,
+): { categoryId: string; count: number }[] {
+  if (!query.trim()) return [];
+  const counts = new Map<string, number>();
+  for (const item of families) {
+    if (item.categoryId === excludeCategoryId || item.variants.length === 0)
+      continue;
+    if (!matchesFamilySearch(item.name, query, item.tags)) continue;
+    counts.set(item.categoryId, (counts.get(item.categoryId) ?? 0) + 1);
+  }
+  return [...counts].map(([categoryId, count]) => ({ categoryId, count }));
+}
+
 /** Return a new array; never reorder the source catalog or its variants. */
 export function sortFamilies(
   families: IllustrationFamily[],

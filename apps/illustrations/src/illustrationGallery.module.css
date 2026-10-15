@@ -27,6 +27,12 @@
   border-radius: var(--ds-border-radius-md);
 }
 
+.otherHits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-2);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));

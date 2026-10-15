@@ -31,7 +31,9 @@ describe('IllustrationGallery', () => {
     );
     expect(screen.getByText('Viser 0 av 0 illustrasjoner')).toBeTruthy();
     expect(
-      screen.getByRole('heading', { name: 'Ingen illustrasjoner å vise' }),
+      screen.getByRole('heading', {
+        name: 'Ingen illustrasjoner å vise i denne kategorien',
+      }),
     ).toBeTruthy();
   });
 
@@ -58,13 +60,42 @@ describe('IllustrationGallery', () => {
     const search = screen.getByRole('searchbox', { name: searchLabel });
     fireEvent.change(search, { target: { value: 'INGEN TREFF' } });
     expect(
-      screen.getByRole('heading', { name: 'Ingen illustrasjoner å vise' }),
+      screen.getByRole('heading', {
+        name: 'Ingen illustrasjoner å vise i denne kategorien',
+      }),
     ).toBeTruthy();
     expect(screen.getByText('Viser 0 av 2 illustrasjoner').ariaLive).toBe(
       'polite',
     );
 
     fireEvent.change(search, { target: { value: 'TESTFAMILIE' } });
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+  });
+
+  it('links to hits in other categories and keeps the query', () => {
+    render(
+      <IllustrationGallery
+        catalog={{
+          ...fixtureCatalog,
+          families: [
+            fixtureCatalog.families[0],
+            { ...fixtureCatalog.families[1], categoryId: 'internbruk' },
+          ],
+        }}
+      />,
+    );
+    const search = screen.getByRole('searchbox', { name: searchLabel });
+    fireEvent.change(search, { target: { value: 'annen' } });
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(0);
+
+    fireEvent.click(
+      screen.getByRole('button', { name: '1 treff i Internbruk' }),
+    );
+    expect(
+      (screen.getByRole('radio', { name: 'Internbruk' }) as HTMLInputElement)
+        .checked,
+    ).toBe(true);
+    expect((search as HTMLInputElement).value).toBe('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
