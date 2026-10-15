@@ -6,6 +6,7 @@ import { NotePencilIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button';
 import { Checkbox } from 'src/components/checkbox';
 import { Dialog } from 'src/components/dialog';
@@ -840,6 +841,10 @@ export const CustomItemButton_Test = CustomItemButton.extend({
  * before it is downloaded, or deleting it there. The file is `loading`
  * meanwhile, which hides its buttons: focus moves to the file itself, and back
  * to the button when it is done. For testing with a screen reader.
+ *
+ * A deletion that fails is reported next to the list rather than as an `error`
+ * on the file: nothing is wrong with the file, so it should not be read as
+ * invalid or keep the form from being sent.
  */
 export const SlowItemActions = meta.story({
   render: () => {
@@ -850,15 +855,18 @@ export const SlowItemActions = meta.story({
     );
     const [busy, setBusy] = useState<{ name: string; text: string }>();
     const [fail, setFail] = useState(false);
+    const [failed, setFailed] = useState<string>();
 
     const slowly = async (file: File, text: string) => {
+      setFailed(undefined);
       setBusy({ name: file.name, text });
       await delay(3000);
       setBusy(undefined);
     };
     const remove = async (file: File) => {
       await slowly(file, 'Sletter filen…');
-      if (!fail) setFiles((prev) => prev.filter((f) => f !== file));
+      if (fail) setFailed(file.name);
+      else setFiles((prev) => prev.filter((f) => f !== file));
     };
 
     return (
@@ -896,6 +904,15 @@ export const SlowItemActions = meta.story({
             ))}
           </FileUpload.List>
         )}
+        {/* On the page before the message, so screen readers notice it arrive.
+            As wide as the files at most, which `FileUpload.List` sets. */}
+        <div role="alert" style={{ maxWidth: '30rem' }}>
+          {failed && (
+            <Alert data-color="danger">
+              Kunne ikke slette {failed}. Prøv igjen.
+            </Alert>
+          )}
+        </div>
       </form>
     );
   },
