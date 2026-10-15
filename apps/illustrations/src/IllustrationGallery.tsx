@@ -19,6 +19,7 @@ import { AssetImage } from './AssetImage';
 import { CopyImageButton } from './CopyImageButton';
 import { useAssetLinkProps, useAssetSource } from './assets';
 import {
+  countMatchesByCategory,
   familyDisplayName,
   isBinaryProperty,
   matchesFamilySearch,
@@ -126,9 +127,17 @@ export function IllustrationGallery({
     matchesFamilySearch(item.name, query, item.tags),
   );
 
-  const selectCategory = (value: CategoryId) => {
+  const otherCategoryHits = useMemo(() => {
+    const counts = countMatchesByCategory(catalog.families, query, categoryId);
+    return categories.flatMap(({ id, label }) => {
+      const hit = counts.find((item) => item.categoryId === id);
+      return hit ? [{ id, label, count: hit.count }] : [];
+    });
+  }, [catalog.families, query, categoryId]);
+
+  const selectCategory = (value: CategoryId, keepQuery = false) => {
     setCategoryId(value);
-    setQuery('');
+    if (!keepQuery) setQuery('');
     setSelection(null);
   };
 
@@ -157,9 +166,24 @@ export function IllustrationGallery({
           </Heading>
           <Paragraph>
             {query.trim()
-              ? 'Ingen illustrasjoner passer til søket. Prøv et annet navn eller tøm søket.'
+              ? otherCategoryHits.length > 0
+                ? 'Ingen illustrasjoner i denne kategorien passer til søket, men det finnes treff i andre kategorier.'
+                : 'Ingen illustrasjoner passer til søket. Prøv et annet navn eller tøm søket.'
               : `Det er ikke importert illustrasjoner for ${categories.find((item) => item.id === categoryId)?.label ?? 'denne kategorien'} ennå.`}
           </Paragraph>
+          {otherCategoryHits.length > 0 ? (
+            <div className={styles.otherHits}>
+              {otherCategoryHits.map(({ id, label, count }) => (
+                <Button
+                  key={id}
+                  variant="secondary"
+                  onClick={() => selectCategory(id, true)}
+                >
+                  {count} treff i {label}
+                </Button>
+              ))}
+            </div>
+          ) : null}
           {query.trim() ? (
             <Button
               variant="secondary"

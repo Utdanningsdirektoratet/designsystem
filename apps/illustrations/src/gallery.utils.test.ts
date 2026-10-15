@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import catalog from '../source/catalog/metadata.json';
 import { binaryFixtureCatalog, fixtureCatalog } from './gallery.fixtures';
 import {
+  countMatchesByCategory,
   familyDisplayName,
   illustrationAssetUrl,
   isBinaryProperty,
@@ -88,6 +89,39 @@ describe('illustration gallery browsing', () => {
     ]);
     expect(families.map(({ name }) => name)).toEqual(names);
     expect(sortFamilies([])).toEqual([]);
+  });
+});
+
+describe('countMatchesByCategory', () => {
+  const [barnehage, other] = fixtureCatalog.families;
+  const families = [
+    barnehage,
+    { ...other, categoryId: 'internbruk' as const, tags: ['skole'] },
+    {
+      ...other,
+      id: 'empty',
+      categoryId: 'grunnskole' as const,
+      variants: [],
+    },
+  ];
+
+  it('counts hits in other categories only', () => {
+    expect(countMatchesByCategory(families, 'syntetisk', 'barnehage')).toEqual([
+      { categoryId: 'internbruk', count: 1 },
+    ]);
+  });
+
+  it('matches tags by prefix and ignores families without variants', () => {
+    expect(countMatchesByCategory(families, 'sko', 'barnehage')).toEqual([
+      { categoryId: 'internbruk', count: 1 },
+    ]);
+    expect(countMatchesByCategory(families, 'syntetisk', 'internbruk')).toEqual(
+      [{ categoryId: 'barnehage', count: 1 }],
+    );
+  });
+
+  it('returns nothing for an empty query', () => {
+    expect(countMatchesByCategory(families, '  ', 'barnehage')).toEqual([]);
   });
 });
 
