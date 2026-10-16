@@ -36,6 +36,9 @@ jobs:
           fetch-depth: 0
 
       - uses: ./.github/actions/pnpm-setup
+        with:
+          # The search index is built by rendering the docs pages in Chromium.
+          playwright-deps: true
 
       - name: Build storybook
         run: pnpm turbo run build:docs --filter=@udir-design/react
