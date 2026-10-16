@@ -128,6 +128,14 @@ configureInstance('default', {
   bundlePath: new URL('pagefind/', window.location.href).pathname,
 }).setLanguage('nb');
 
+// The instance adds its screen reader announcements, such as the number of
+// results, in a container directly in <body>.
+for (const announcer of document.querySelectorAll<HTMLElement>(
+  '[data-pagefind-announcer]',
+)) {
+  announcer.lang = 'nb';
+}
+
 // The modal lives in <body>, outside the sidebar, so it keeps working while
 // the sidebar is hidden, and on small screens where the sidebar is in a menu.
 const searchModal = document.createElement('pagefind-modal') as PagefindModal;
