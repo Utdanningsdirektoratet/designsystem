@@ -44,6 +44,12 @@ pagefind-modal pagefind-filter-dropdown {
   margin-top: var(--ds-size-2);
 }
 
+.uds-search-dev-note {
+  margin: 0 0 var(--ds-size-3);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 .uds-search-result-category {
   display: block;
   margin-bottom: 0.1rem;

@@ -48,7 +48,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
   return (
     <Markdown
       options={{
-        // Match the heading ids of the surrounding MDX and of the search index.
+        // Match the ids that `sectionId` and the surrounding MDX headings use.
         slugify: slugifyHeading,
         overrides: {
           ...componentOverrides,

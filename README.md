@@ -389,9 +389,11 @@ De vanligste kommandoene har snarveier i rot `package.json`:
 | ---------------------- | ----------------------------------------- |
 | `pnpm dev`             | Start Storybook med typedoc i watch-modus |
 | `pnpm build`           | Lint, typesjekk, test og bygg alle pakker |
-| `pnpm build:storybook` | Bygg Storybook                            |
+| `pnpm build:storybook` | Bygg Storybook med søkeindeks             |
 | `pnpm build:docs`      | Bygg Storybook + typedoc                  |
 | `pnpm test:storybook`  | Kjør Storybook-tester                     |
+
+Søket i Storybook bruker en søkeindeks som bare bygges av `pnpm build:storybook`, ved at hver dokumentasjonsside vises i en nettleser med Playwright. Når du kjører `pnpm dev`, søker du i indeksen fra siste bygg, så kjør `pnpm build:storybook` for å oppdatere den.
 
 Les mer i [Turborepo-dokumentasjonen](https://turbo.build/docs).
 

@@ -9,11 +9,8 @@ declare module 'mdast' {
 
 // ─── Heading IDs ─────────────────────────────────────────────────────────────
 
-/** Concatenates the text in an mdast or hast node, like `Node.textContent`. */
-export function nodeText(node: {
-  value?: unknown;
-  children?: unknown[];
-}): string {
+/** Concatenates the text in an mdast node, like `Node.textContent`. */
+function nodeText(node: { value?: unknown; children?: unknown[] }): string {
   if (typeof node.value === 'string') return node.value;
   return (node.children ?? [])
     .map((child) => nodeText(child as Parameters<typeof nodeText>[0]))
@@ -24,29 +21,23 @@ export function nodeText(node: {
  * Slugifies heading text with GitHub's rules, which Storybook also uses for
  * MDX headings (through `rehype-slug`). Passed to markdown-to-jsx as the
  * `slugify` option in `<IncludeMarkdown>`, whose default would transliterate
- * letters such as `ø`. Don't pass `slug` directly: markdown-to-jsx calls it
- * with its default slugifier as the second argument, which `slug` reads as
- * `maintainCase`.
+ * letters such as `ø`, so a heading's `sectionId` is also its anchor. Don't
+ * pass `slug` directly: markdown-to-jsx calls it with its default slugifier as
+ * the second argument, which `slug` reads as `maintainCase`.
  */
 export function slugifyHeading(text: string): string {
   return slug(text);
 }
 
 /**
- * Remark plugin that sets the `id` that `<IncludeMarkdown>` renders on each
- * top-level heading, both as `data.id` for `remarkGetSection` and as an HTML
- * attribute for `mdast-util-to-hast`.
+ * Remark plugin that sets `data.id` on each top-level heading to the id that
+ * `<IncludeMarkdown>` renders, so `remarkGetSection` can find sections by it.
  */
 export function remarkSlugHeadings() {
   return function (tree: Root): void {
     for (const node of tree.children) {
       if (node.type !== 'heading') continue;
-      const id = slugifyHeading(nodeText(node));
-      node.data = {
-        ...node.data,
-        id,
-        hProperties: { ...node.data?.hProperties, id },
-      };
+      node.data = { ...node.data, id: slugifyHeading(nodeText(node)) };
     }
   };
 }

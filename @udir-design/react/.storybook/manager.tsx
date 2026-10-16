@@ -114,7 +114,7 @@ function RenderWithTagBadge({
 }
 
 // ── Search ───────────────────────────────────────────────────────────────────
-// Pagefind search, using the index built by `plugins/pagefind`.
+// Pagefind search, using the index that `search/buildSearchIndex.ts` builds.
 //
 // The search is in Norwegian while Storybook's own controls are in English, so
 // the search elements get `lang="nb"` for screen readers, and `setLanguage`
@@ -146,6 +146,15 @@ searchModal.innerHTML = `
     <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
   </pagefind-modal-header>
   <pagefind-modal-body>
+    ${
+      // The index is only built by `build:storybook`, see `servePagefindIndex.ts`.
+      process.env.NODE_ENV === 'production'
+        ? ''
+        : `<p class="uds-search-dev-note">
+            Søket bruker indeksen fra siste bygg av Storybook. Kjør
+            <code>pnpm build:storybook</code> for å oppdatere den.
+          </p>`
+    }
     <pagefind-summary></pagefind-summary>
     <pagefind-results>
       <script type="text/pagefind-template">
