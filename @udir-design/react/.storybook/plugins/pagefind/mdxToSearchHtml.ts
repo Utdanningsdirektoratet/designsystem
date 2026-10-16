@@ -1,6 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import GithubSlugger from 'github-slugger';
+import { fromHtml } from 'hast-util-from-html';
 import { toHtml } from 'hast-util-to-html';
 import type {
   PhrasingContentMap,
@@ -8,7 +9,7 @@ import type {
   RootContent,
   RootContentMap,
 } from 'mdast';
-import { toHast } from 'mdast-util-to-hast';
+import { type State, toHast } from 'mdast-util-to-hast';
 import remarkGfm from 'remark-gfm';
 import remarkMdx from 'remark-mdx';
 import remarkParse from 'remark-parse';
@@ -31,8 +32,9 @@ type MdxJsxAttribute = Extract<
 >;
 
 /**
- * JSX components that wrap prose, such as callouts. Their children are indexed;
- * all other JSX elements, such as examples and story blocks, are left out.
+ * JSX components that wrap prose, such as callouts. Their children are indexed.
+ * Other components, such as examples and story blocks, are left out, while
+ * HTML elements written in MDX (`<ul>`, `<a>`, …) are kept.
  */
 const PROSE_WRAPPER_COMPONENTS: Record<string, true> = {
   SimpleAlert: true,
@@ -64,7 +66,23 @@ export function mdxToSearchHtml(mdx: string, mdxPath: string): SearchHtml {
   remove(tree, ['mdxjsEsm', 'mdxFlowExpression', 'mdxTextExpression']);
   replaceJsxElements(tree, rawImports);
 
-  const hast = toHast(tree);
+  const hast = toHast(tree, {
+    allowDangerousHtml: true,
+    handlers: {
+      // Only HTML elements are left after `replaceJsxElements`.
+      mdxJsxFlowElement: htmlElementToHast,
+      mdxJsxTextElement: htmlElementToHast,
+    },
+  });
+  // Raw HTML in markdown, such as the `<dl>` in the README. Parse it, so its
+  // text is indexed rather than dropped.
+  visit(hast, 'raw', (node, index, parent) => {
+    if (index === undefined || !parent) return;
+    const { children } = fromHtml(node.value, { fragment: true });
+    parent.children.splice(index, 1, ...children);
+    return index;
+  });
+
   let title: string | undefined;
   // Storybook gives MDX headings ids with `rehype-slug`, which numbers
   // repeated slugs per page. Headings from `<IncludeMarkdown>` already have
@@ -109,12 +127,16 @@ function collectRawImports(tree: Root, mdxDir: string): Map<string, string> {
   return rawImports;
 }
 
-/** Replaces every JSX element with the markdown content it contributes. */
+/**
+ * Replaces every JSX component with the markdown content it contributes, and
+ * keeps HTML elements.
+ */
 function replaceJsxElements(tree: Root, rawImports: Map<string, string>): void {
   visit(tree, (node, index, parent) => {
     if (
       (node.type !== 'mdxJsxFlowElement' &&
         node.type !== 'mdxJsxTextElement') ||
+      isHtmlElement(node) ||
       index === undefined ||
       !parent
     ) {
@@ -154,6 +176,20 @@ function searchableContent(
     ];
   }
   return [];
+}
+
+/** In JSX, lowercase names are HTML elements and capitalized names components. */
+function isHtmlElement(node: MdxJsxElement): boolean {
+  return node.name !== null && /^[a-z]/.test(node.name);
+}
+
+function htmlElementToHast(state: State, node: MdxJsxElement) {
+  return {
+    type: 'element' as const,
+    tagName: node.name ?? 'div',
+    properties: {},
+    children: state.all(node),
+  };
 }
 
 /**
