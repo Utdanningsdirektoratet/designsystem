@@ -42,6 +42,21 @@ const PROSE_WRAPPER_COMPONENTS: Record<string, true> = {
   Unstyled: true,
 };
 
+/**
+ * JSX components used for prose, indexed as the HTML element they render.
+ * Keeping the element, rather than only its children, keeps the text in
+ * separate cells and links apart.
+ */
+const PROSE_ELEMENT_COMPONENTS: Record<string, string> = {
+  Link: 'a',
+  Table: 'table',
+  'Table.Head': 'thead',
+  'Table.Body': 'tbody',
+  'Table.Row': 'tr',
+  'Table.HeaderCell': 'th',
+  'Table.Cell': 'td',
+};
+
 export type SearchHtml = {
   html: string;
   /** Text of the first `<h1>`, which Pagefind uses as the result title. */
@@ -69,7 +84,7 @@ export function mdxToSearchHtml(mdx: string, mdxPath: string): SearchHtml {
   const hast = toHast(tree, {
     allowDangerousHtml: true,
     handlers: {
-      // Only HTML elements are left after `replaceJsxElements`.
+      // Only elements with an `htmlTagName` are left after `replaceJsxElements`.
       mdxJsxFlowElement: htmlElementToHast,
       mdxJsxTextElement: htmlElementToHast,
     },
@@ -136,7 +151,7 @@ function replaceJsxElements(tree: Root, rawImports: Map<string, string>): void {
     if (
       (node.type !== 'mdxJsxFlowElement' &&
         node.type !== 'mdxJsxTextElement') ||
-      isHtmlElement(node) ||
+      htmlTagName(node) ||
       index === undefined ||
       !parent
     ) {
@@ -178,15 +193,22 @@ function searchableContent(
   return [];
 }
 
-/** In JSX, lowercase names are HTML elements and capitalized names components. */
-function isHtmlElement(node: MdxJsxElement): boolean {
-  return node.name !== null && /^[a-z]/.test(node.name);
+/**
+ * The HTML element to index a JSX element as. In JSX, lowercase names are HTML
+ * elements and capitalized names are components.
+ */
+function htmlTagName(node: MdxJsxElement): string | undefined {
+  if (node.name === null) return undefined;
+  if (/^[a-z]/.test(node.name)) return node.name;
+  return Object.hasOwn(PROSE_ELEMENT_COMPONENTS, node.name)
+    ? PROSE_ELEMENT_COMPONENTS[node.name]
+    : undefined;
 }
 
 function htmlElementToHast(state: State, node: MdxJsxElement) {
   return {
     type: 'element' as const,
-    tagName: node.name ?? 'div',
+    tagName: htmlTagName(node) ?? 'div',
     properties: {},
     children: state.all(node),
   };

@@ -30,6 +30,33 @@ describe('mdxToSearchHtml', () => {
     expect(html).toContain('<li>Andre</li>');
   });
 
+  it('indexes prose in tables and links, as in the navigation table in Header.mdx', () => {
+    const { html } = convert(
+      [
+        '<Unstyled>',
+        '  <Table border>',
+        '    <Table.Body>',
+        '      <Table.Row>',
+        '        <Table.HeaderCell scope="row">Navigasjonslenker</Table.HeaderCell>',
+        '        <Table.Cell>',
+        '          <ul>',
+        '            <li>Sidene er like viktige</li>',
+        '          </ul>',
+        '        </Table.Cell>',
+        '      </Table.Row>',
+        '    </Table.Body>',
+        '  </Table>',
+        '</Unstyled>',
+        '',
+        'Se <Link href="/typedoc">dokumentasjonen</Link>.',
+        '',
+      ].join('\n'),
+    );
+    expect(html).toContain('<th>Navigasjonslenker</th>');
+    expect(html).toContain('<li>Sidene er like viktige</li>');
+    expect(html).toContain('<a>dokumentasjonen</a>');
+  });
+
   it('leaves out components that are not prose wrappers', () => {
     const { html } = convert('<Canvas>Eksempel</Canvas>\n\nTekst\n');
     expect(html).not.toContain('Eksempel');
