@@ -7,36 +7,9 @@ import { configureInstance } from '@pagefind/component-ui';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
-import { type TagProps } from 'src/components/tag';
 import customTheme from './docs/customTheme';
+import { getRootCategory, getTierBadge } from './utils/sidebarLabels';
 import { isSidebarEntryVisible } from './utils/sidebarVisibility';
-
-const tagBadges = {
-  alpha: {
-    text: 'Alpha',
-    color: 'danger',
-  },
-  beta: {
-    text: 'Beta',
-    color: 'warning',
-  },
-} satisfies Record<string, { text: string; color: TagProps['data-color'] }>;
-
-type TagWithBadge = keyof typeof tagBadges;
-
-const isTagBadge = (tag: string): tag is TagWithBadge =>
-  tagBadges[tag as TagWithBadge] !== undefined;
-
-const getBadgeFromTags = (tags: string[]) => {
-  const typedTag = tags.find(isTagBadge);
-  if (!typedTag) {
-    return;
-  }
-  return {
-    tag: typedTag,
-    ...tagBadges[typedTag],
-  };
-};
 
 addons.setConfig({
   theme: customTheme,
@@ -47,67 +20,12 @@ addons.setConfig({
     },
     renderLabel(item) {
       if (item.type === 'root') {
-        if (item.id === 'introduksjon') {
+        const category = getRootCategory(item.id);
+        if (category) {
           return (
             <>
-              <SidebarIcon name="informationSquare" />
-              Introduksjon
-            </>
-          );
-        }
-        if (item.id === 'iconsandsymbols') {
-          return (
-            <>
-              <SidebarIcon name="image" />
-              Ikoner og symboler
-            </>
-          );
-        }
-        if (item.id === 'demo') {
-          return (
-            <>
-              <SidebarIcon name="rectangleSections" />
-              Demosider
-            </>
-          );
-        }
-        if (item.id === 'design-tokens') {
-          return (
-            <>
-              <SidebarIcon name="token" />
-              Design tokens
-            </>
-          );
-        }
-        if (item.id === 'patterns') {
-          return (
-            <>
-              <SidebarIcon name="layers" />
-              Bruksmønstre
-            </>
-          );
-        }
-        if (item.id === 'components') {
-          return (
-            <>
-              <SidebarIcon name="component" />
-              Komponenter
-            </>
-          );
-        }
-        if (item.id === 'hooks') {
-          return (
-            <>
-              <SidebarIcon name="puzzlePiece" />
-              Hooks
-            </>
-          );
-        }
-        if (item.id === 'utilities') {
-          return (
-            <>
-              <SidebarIcon name="wrench" />
-              Hjelpeverktøy
+              <SidebarIcon name={category.icon} />
+              {category.label}
             </>
           );
         }
@@ -131,14 +49,11 @@ addons.setConfig({
             : // For non-component docs, use the parent's name
               (item.title.split('/').at(-1) ?? item.name);
         }
-        let hierarchicalName = item.title
-          .replaceAll('/', ' › ')
-          .replace('iconsandsymbols', 'Ikoner og symboler')
-          .replace('patterns', 'Bruksmønstre')
-          .replace('components', 'Komponenter')
-          .replace('hooks', 'Hooks')
-          .replace('design-tokens', 'Design tokens')
-          .replace('utilities', 'Hjelpeverktøy');
+        const [root, ...rest] = item.title.split('/');
+        let hierarchicalName = [
+          getRootCategory(root)?.label ?? root,
+          ...rest,
+        ].join(' › ');
         if (item.type === 'story') {
           // For stories, add the story name as well
           hierarchicalName += ` › ${item.name}`;
@@ -179,7 +94,7 @@ function RenderWithTagBadge({
   children?: React.ReactNode;
 }) {
   // Add Tag component to tags that need it
-  const badge = getBadgeFromTags(item.tags);
+  const badge = getTierBadge(item.tags);
   if (badge && item.type !== 'story') {
     return (
       <>

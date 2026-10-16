@@ -1,8 +1,9 @@
 import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
+import type { StoryIndexGenerator } from 'storybook/internal/core-server';
 import type { Plugin, UserConfig } from 'vite';
-import { pagefindIndexerPlugin } from './plugins/pagefind-indexer.js';
+import { pagefindPlugin } from './plugins/pagefind/index.js';
 import { createTierIndexers } from './utils/createTierIndexers.js';
 import { storySourceLocationPlugin } from './utils/storySourceLocationPlugin.js';
 
@@ -56,7 +57,7 @@ export default defineMain({
 
   experimental_indexers: createTierIndexers,
 
-  async viteFinal(cfg) {
+  async viteFinal(cfg, options) {
     const { mergeConfig } = await import('vite');
     process.env['IS_STORYBOOK'] = 'true';
     const githubActionsHeadRef = process.env['GITHUB_HEAD_REF'];
@@ -86,7 +87,19 @@ export default defineMain({
         // `addon-vitest` also loads this config, and tests don't need the search index.
         ...(process.env['VITEST']
           ? []
-          : [pagefindIndexerPlugin({ srcDir: 'src' })]),
+          : [
+              pagefindPlugin({
+                // Not a documented preset, but it's how Storybook's own presets
+                // read the index. It returns the generator the dev server uses,
+                // so the index is up to date with changed files.
+                getStoryIndex: async () =>
+                  (
+                    await options.presets.apply<StoryIndexGenerator>(
+                      'storyIndexGenerator',
+                    )
+                  ).getIndex(),
+              }),
+            ]),
       ],
       optimizeDeps: {
         /*
