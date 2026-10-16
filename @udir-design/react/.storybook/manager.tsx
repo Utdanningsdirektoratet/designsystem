@@ -127,48 +127,48 @@ configureInstance('default', {
 // the sidebar is hidden, and on small screens where the sidebar is in a menu.
 const searchModal = document.createElement('pagefind-modal') as PagefindModal;
 searchModal.innerHTML = `
-    <pagefind-modal-header>
-      <pagefind-input></pagefind-input>
-      <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
-    </pagefind-modal-header>
-    <pagefind-modal-body>
-      <pagefind-summary></pagefind-summary>
-      <pagefind-results>
-        <script type="text/pagefind-template">
-          <li class="pf-result">
-            <div class="pf-result-card">
-              <div class="pf-result-content">
-                <p class="pf-result-title">
-                  {{#if meta.category}}
-                  <span class="pf-result-category" style="display:block;font-size:0.7rem;opacity:0.5;margin-bottom:0.1rem">{{ meta.category }}</span>
-                  {{/if}}
-                  <a class="pf-result-link" href="{{ meta.url | default(url) | safeUrl }}">{{ meta.title }}</a>
-                  {{#if meta.tier}}
-                    <span class="ds-tag storybook-tag-badge" data-size="custom" data-variant="outline" data-color="{{ meta.tier_color }}">{{ meta.tier }}</span>
-                    {{/if}}
-                  </p>
-                  {{#if excerpt}}
-                <p class="pf-result-excerpt">{{+ excerpt +}}</p>
+  <pagefind-modal-header>
+    <pagefind-input></pagefind-input>
+    <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
+  </pagefind-modal-header>
+  <pagefind-modal-body>
+    <pagefind-summary></pagefind-summary>
+    <pagefind-results>
+      <script type="text/pagefind-template">
+        <li class="pf-result">
+          <div class="pf-result-card">
+            <div class="pf-result-content">
+              <p class="pf-result-title">
+                {{#if meta.category}}
+                  <span class="uds-search-result-category">{{ meta.category }}</span>
                 {{/if}}
-              </div>
+                <a class="pf-result-link" href="{{ meta.url | default(url) | safeUrl }}">{{ meta.title }}</a>
+                {{#if meta.tier}}
+                  <span class="ds-tag storybook-tag-badge" data-size="custom" data-variant="outline" data-color="{{ meta.tier_color }}">{{ meta.tier }}</span>
+                {{/if}}
+              </p>
+              {{#if excerpt}}
+                <p class="pf-result-excerpt">{{+ excerpt +}}</p>
+              {{/if}}
             </div>
-            {{#if sub_results}}
+          </div>
+          {{#if sub_results}}
             <ul class="pf-heading-chips">
               {{#each sub_results as sub}}
-              <li class="pf-heading-chip">
-                <a class="pf-heading-link" href="{{ sub.url | safeUrl }}">{{ sub.title }}</a>
-                <p class="pf-heading-excerpt">{{+ sub.excerpt +}}</p>
-              </li>
+                <li class="pf-heading-chip">
+                  <a class="pf-heading-link" href="{{ sub.url | safeUrl }}">{{ sub.title }}</a>
+                  <p class="pf-heading-excerpt">{{+ sub.excerpt +}}</p>
+                </li>
               {{/each}}
             </ul>
-            {{/if}}
-          </li>
-        </script>
-      </pagefind-results>
-    </pagefind-modal-body>
-    <pagefind-modal-footer>
-      <pagefind-keyboard-hints></pagefind-keyboard-hints>
-    </pagefind-modal-footer>
+          {{/if}}
+        </li>
+      </script>
+    </pagefind-results>
+  </pagefind-modal-body>
+  <pagefind-modal-footer>
+    <pagefind-keyboard-hints></pagefind-keyboard-hints>
+  </pagefind-modal-footer>
 `;
 document.body.append(searchModal);
 

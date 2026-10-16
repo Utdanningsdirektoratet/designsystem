@@ -44,29 +44,24 @@ pagefind-modal pagefind-filter-dropdown {
   margin-top: var(--ds-size-2);
 }
 
-/* Hide the simple "Find components" input (replaced by Pagefind) but keep the tag filtering button */
-label[for='storybook-explorer-searchfield'] + [role='search'] {
+.uds-search-result-category {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+/*
+ * Storybook's own sidebar search is replaced by Pagefind. Hide its search
+ * field, icon and shortcut, but keep the tag filter button next to them.
+ */
+[role='search']:has(#storybook-explorer-searchfield) {
   justify-content: flex-end;
 }
-label[for='storybook-explorer-searchfield']
-  + [role='search']
-  [role='combobox'] {
-  width: unset;
+[role='combobox']:has(> #storybook-explorer-searchfield) {
+  width: auto;
   flex-grow: 0;
 }
-label[for='storybook-explorer-searchfield']
-  + [role='search']
-  [role='combobox']
-  /* hide search icon, input field, and shortcut legend */
-  > :is(:first-child, input, code) {
+[role='combobox']:has(> #storybook-explorer-searchfield) > :not(:has(button)) {
   display: none;
 }
-/* if we want text on the filter button, we can uncomment this */
-/*
-label[for='storybook-explorer-searchfield']
-  + [role='search']
-  [role='combobox']
-  button[aria-haspopup='dialog']::before {
-  content: attr(aria-label);
-}
-*/
