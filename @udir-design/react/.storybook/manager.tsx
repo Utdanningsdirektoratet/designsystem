@@ -115,6 +115,11 @@ function RenderWithTagBadge({
 
 // ── Search ───────────────────────────────────────────────────────────────────
 // Pagefind search, using the index built by `plugins/pagefind`.
+//
+// The search is in Norwegian while Storybook's own controls are in English, so
+// the search elements get `lang="nb"` for screen readers, and `setLanguage`
+// translates Pagefind's texts. Pagefind picks the index language from
+// `<html lang>`, but the index only has `nb`, which it falls back to.
 
 configureInstance('default', {
   // Resolve against the page URL, so the search works when Storybook is
@@ -126,6 +131,7 @@ configureInstance('default', {
 // The modal lives in <body>, outside the sidebar, so it keeps working while
 // the sidebar is hidden, and on small screens where the sidebar is in a menu.
 const searchModal = document.createElement('pagefind-modal') as PagefindModal;
+searchModal.lang = 'nb';
 searchModal.innerHTML = `
   <pagefind-modal-header>
     <pagefind-input></pagefind-input>
@@ -206,6 +212,7 @@ new MutationObserver(() => {
       const trigger = document.createElement('pagefind-modal-trigger');
       // The Norwegian translation would use the lowercase "søk".
       trigger.setAttribute('placeholder', 'Søk');
+      trigger.lang = 'nb';
       wrapper?.after(trigger);
     }
   }
