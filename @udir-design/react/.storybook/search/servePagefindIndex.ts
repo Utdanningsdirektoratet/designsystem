@@ -25,11 +25,20 @@ export function servePagefindIndexPlugin(): Plugin {
     name: 'udir:serve-pagefind-index',
     apply: 'serve',
     configureServer(server) {
+      // Connect doesn't handle errors from async middleware, and an unhandled
+      // error stops the dev server, so this handler must not throw.
       server.middlewares.use('/pagefind', async (req, res) => {
-        const { pathname } = new URL(req.url ?? '/', 'http://localhost');
-        const filePath = path.join(INDEX_DIR, decodeURIComponent(pathname));
-        // Reading can fail while `build:storybook` replaces the index, and an
-        // unhandled error would stop the dev server.
+        let filePath: string;
+        try {
+          const { pathname } = new URL(req.url ?? '/', 'http://localhost');
+          filePath = path.join(INDEX_DIR, decodeURIComponent(pathname));
+        } catch {
+          // A malformed URL, such as `/pagefind/%`.
+          res.statusCode = 400;
+          res.end();
+          return;
+        }
+        // Reading also fails while `build:storybook` replaces the index.
         const content = filePath.startsWith(INDEX_DIR)
           ? await readFile(filePath).catch(() => undefined)
           : undefined;
