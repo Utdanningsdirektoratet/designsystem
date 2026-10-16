@@ -117,9 +117,11 @@ function RenderWithTagBadge({
 // Pagefind search, using the index built by `plugins/pagefind`.
 
 configureInstance('default', {
-  baseUrl: window.location.pathname,
-  bundlePath: `${window.location.pathname}pagefind/`,
-});
+  // Resolve against the page URL, so the search works when Storybook is
+  // hosted in a subdirectory, also when the URL ends with `index.html`.
+  baseUrl: new URL('.', window.location.href).pathname,
+  bundlePath: new URL('pagefind/', window.location.href).pathname,
+}).setLanguage('nb');
 
 // The modal lives in <body>, outside the sidebar, so it keeps working while
 // the sidebar is hidden, and on small screens where the sidebar is in a menu.
@@ -202,7 +204,8 @@ new MutationObserver(() => {
     const wrapper = header.parentElement;
     if (wrapper?.nextElementSibling?.localName !== 'pagefind-modal-trigger') {
       const trigger = document.createElement('pagefind-modal-trigger');
-      trigger.setAttribute('placeholder', 'Search');
+      // The Norwegian translation would use the lowercase "søk".
+      trigger.setAttribute('placeholder', 'Søk');
       wrapper?.after(trigger);
     }
   }
