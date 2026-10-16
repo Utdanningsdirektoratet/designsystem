@@ -1,3 +1,4 @@
+import { expect, waitFor, within } from 'storybook/test';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
@@ -166,7 +167,11 @@ export const Translations = Preview.extend({
     await expectLanguageVariables(
       canvasElement,
       () => canvasElement.querySelector('.uds-form-summary'),
-      ['--udsc-formSummary-empty-text'],
+      ['--udsc-formSummary-empty-text', '--udsc-formSummary-edit-text'],
     );
+
+    const editLink = within(canvasElement).getAllByRole('link')[0];
+    canvasElement.lang = 'en';
+    await waitFor(() => expect(editLink).toHaveAccessibleName('Edit answers'));
   },
 });

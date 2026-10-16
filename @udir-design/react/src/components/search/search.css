@@ -1,3 +1,17 @@
+[lang|='nb' i],
+[lang|='no' i],
+:root {
+  --udsc-search-button-text: 'Søk';
+}
+
+[lang|='nn' i] {
+  --udsc-search-button-text: 'Søk';
+}
+
+[lang|='en' i] {
+  --udsc-search-button-text: 'Search';
+}
+
 .ds-search {
   /* adjust icon size to before Digdir v1.16.0 */
   --ds-icon-size: var(--ds-size-7);
