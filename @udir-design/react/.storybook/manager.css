@@ -58,6 +58,31 @@ pagefind-modal pagefind-filter-dropdown {
 }
 
 /*
+ * Pagefind's own excerpt classes cut excerpts to one line, which often hides
+ * the matching words. Show up to three lines instead.
+ */
+.uds-search-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: 4px 0 0;
+  font-size: var(--pf-result-excerpt-font-size);
+  line-height: 1.5;
+  color: var(--pf-text-secondary);
+}
+.uds-search-excerpt--section {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.uds-search-excerpt mark {
+  background: transparent;
+  font-weight: 500;
+  color: var(--pf-mark);
+}
+
+/*
  * Storybook's own sidebar search is replaced by Pagefind. Hide its search
  * field, icon and shortcut, but keep the tag filter button next to them.
  */

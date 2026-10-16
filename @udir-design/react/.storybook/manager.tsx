@@ -171,7 +171,7 @@ searchModal.innerHTML = `
                 {{/if}}
               </p>
               {{#if excerpt}}
-                <p class="pf-result-excerpt">{{+ excerpt +}}</p>
+                <p class="uds-search-excerpt">{{+ excerpt +}}</p>
               {{/if}}
             </div>
           </div>
@@ -180,7 +180,7 @@ searchModal.innerHTML = `
               {{#each sub_results as sub}}
                 <li class="pf-heading-chip">
                   <a class="pf-heading-link" href="{{ sub.url | safeUrl }}">{{ sub.title }}</a>
-                  <p class="pf-heading-excerpt">{{+ sub.excerpt +}}</p>
+                  <p class="uds-search-excerpt uds-search-excerpt--section">{{+ sub.excerpt +}}</p>
                 </li>
               {{/each}}
             </ul>
