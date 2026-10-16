@@ -5,17 +5,19 @@ import {
   type SourceProps,
 } from '@storybook/addon-docs/blocks';
 import { toHtml } from 'hast-util-to-html';
-import type { Heading, Root, RootContent, Text } from 'mdast';
+import type { Root, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
-import { applyTo, dropWhile, pipe, takeWhile } from 'ramda';
 import { Fragment, useMemo } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import remarkHeadingId from 'remark-heading-id';
-import type { RemarkHeadingIdOptions } from 'remark-heading-id';
 import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
+import {
+  remarkGetSection,
+  remarkSlugHeadings,
+  slugifyHeading,
+} from '../../utils/remarkGetSection.js';
 import { componentOverrides } from '../ComponentOverrides';
 import componentStyles from '../componentOverrides.module.scss';
 import { SimpleAlert } from './SimpleAlert/SimpleAlert';
@@ -34,9 +36,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
     () =>
       unified()
         .use(remarkParse)
-        .use(remarkHeadingId, {
-          defaults: true,
-        } satisfies RemarkHeadingIdOptions)
+        .use(remarkSlugHeadings)
         .use(remarkGetSection, { sectionId })
         .use(remarkIncreaseHeadingDepth, { increaseBy: increaseHeadingDepthBy })
         .use(remarkGithubAlert)
@@ -48,6 +48,8 @@ export const IncludeMarkdown: React.FC<Props> = ({
   return (
     <Markdown
       options={{
+        // Match the ids that `sectionId` and the surrounding MDX headings use.
+        slugify: slugifyHeading,
         overrides: {
           ...componentOverrides,
           pre: ({ children }: React.HTMLAttributes<HTMLPreElement>) => {
@@ -84,43 +86,6 @@ export const IncludeMarkdown: React.FC<Props> = ({
     </Markdown>
   );
 };
-
-declare module 'mdast' {
-  export interface HeadingData {
-    id: string;
-  }
-}
-
-interface RemarkGetSectionOptions {
-  sectionId?: string;
-}
-
-function remarkGetSection({ sectionId }: RemarkGetSectionOptions) {
-  return function (tree: Root): void {
-    const isWantedHeading = (x: RootContent): x is Heading =>
-      x.type === 'heading' &&
-      sectionId !== undefined &&
-      x.data?.id === sectionId;
-
-    const wantedHeading = tree.children.find(isWantedHeading);
-    if (!wantedHeading) {
-      return;
-    }
-
-    const isInThisSection = (x: RootContent) =>
-      x.type !== 'heading' ||
-      x.data?.id === sectionId ||
-      x.depth > wantedHeading.depth;
-
-    const newChildren = applyTo(tree.children)(
-      pipe(
-        dropWhile((x) => !isWantedHeading(x)),
-        takeWhile(isInThisSection),
-      ),
-    );
-    tree.children = newChildren;
-  };
-}
 
 interface RemarkIncreaseHeadingDepthOptions {
   increaseBy: number;

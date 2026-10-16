@@ -1,5 +1,11 @@
 # Agent Guidelines
 
+## Monorepo tooling
+
+- This is a **pnpm** workspace. Use `pnpm` for all package management.
+- Use `pnpm turbo <package>#<task>` to run tasks (e.g. `pnpm turbo @udir-design/react#typecheck`).
+  Do **not** pass `--force` to turbo unless there is a specific reason — it skips caching and is slow.
+
 ## Commit messages
 
 - Use [conventional commits](https://www.conventionalcommits.org/) (`ci:`, `build:`, `feat:`, `fix:`, etc.)

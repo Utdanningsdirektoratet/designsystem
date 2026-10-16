@@ -35,3 +35,64 @@
 [aria-controls='storybook-mobile-menu'] .uds-sb-mobile-nav-button {
   display: inline;
 }
+
+pagefind-modal-trigger {
+  display: block;
+}
+
+pagefind-modal pagefind-filter-dropdown {
+  margin-top: var(--ds-size-2);
+}
+
+.uds-search-dev-note {
+  margin: 0 0 var(--ds-size-3);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.uds-search-result-category {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+/*
+ * Pagefind's own excerpt classes cut excerpts to one line, which often hides
+ * the matching words. Show up to three lines instead.
+ */
+.uds-search-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: 4px 0 0;
+  font-size: var(--pf-result-excerpt-font-size);
+  line-height: 1.5;
+  color: var(--pf-text-secondary);
+}
+.uds-search-excerpt--section {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.uds-search-excerpt mark {
+  background: transparent;
+  font-weight: 500;
+  color: var(--pf-mark);
+}
+
+/*
+ * Storybook's own sidebar search is replaced by Pagefind. Hide its search
+ * field, icon and shortcut, but keep the tag filter button next to them.
+ */
+[role='search']:has(#storybook-explorer-searchfield) {
+  justify-content: flex-end;
+}
+[role='combobox']:has(> #storybook-explorer-searchfield) {
+  width: auto;
+  flex-grow: 0;
+}
+[role='combobox']:has(> #storybook-explorer-searchfield) > :not(:has(button)) {
+  display: none;
+}
