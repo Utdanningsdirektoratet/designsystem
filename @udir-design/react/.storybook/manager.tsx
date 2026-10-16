@@ -156,8 +156,8 @@ searchModal.innerHTML = `
       process.env.NODE_ENV === 'production'
         ? ''
         : `<p class="uds-search-dev-note">
-            Søket bruker indeksen fra siste bygg av Storybook. Kjør
-            <code>pnpm build:storybook</code> for å oppdatere den.
+            Søket bruker indeksen fra siste bygg av Storybook. For å oppdatere
+            den, kjør <code>pnpm build:storybook</code> og last inn siden på nytt.
           </p>`
     }
     <pagefind-summary></pagefind-summary>
