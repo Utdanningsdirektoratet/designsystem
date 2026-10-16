@@ -126,6 +126,11 @@ configureInstance('default', {
   // hosted in a subdirectory, also when the URL ends with `index.html`.
   baseUrl: new URL('.', window.location.href).pathname,
   bundlePath: new URL('pagefind/', window.location.href).pathname,
+  // In Norwegian, å is a separate letter, not a with an accent. By default,
+  // Pagefind treats them as the same, so "å" matched every word starting with
+  // "a", and a quoted phrase with "å" found nothing on pages that also contain
+  // the word "a", such as in `<a>` in code examples.
+  exactDiacritics: true,
 }).setLanguage('nb');
 
 // The instance adds its screen reader announcements, such as the number of
