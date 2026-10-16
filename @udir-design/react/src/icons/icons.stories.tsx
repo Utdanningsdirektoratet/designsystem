@@ -5,6 +5,7 @@ import preview from '.storybook/preview';
 
 const meta = preview.meta({
   title: 'iconsandsymbols/Ikoner',
+  tags: ['!autodocs'],
   parameters: {
     componentOrigin: {
       originator: 'nav',
