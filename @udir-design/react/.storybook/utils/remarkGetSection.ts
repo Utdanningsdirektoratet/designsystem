@@ -1,3 +1,4 @@
+import { slug } from 'github-slugger';
 import type { Heading, Root, RootContent } from 'mdast';
 
 declare module 'mdast' {
@@ -6,51 +7,46 @@ declare module 'mdast' {
   }
 }
 
-// ─── Heading ID Assignment ──────────────────────────────────────────────────
+// ─── Heading IDs ─────────────────────────────────────────────────────────────
 
-/** Recursively extracts plain text from an mdast node. */
-function mdastNodeToText(node: {
-  type: string;
-  value?: string;
+/** Concatenates the text in an mdast or hast node, like `Node.textContent`. */
+export function nodeText(node: {
+  value?: unknown;
   children?: unknown[];
 }): string {
-  if (node.type === 'text') return node.value ?? '';
-  if (node.children)
-    return (node.children as (typeof node)[]).map(mdastNodeToText).join('');
-  return '';
+  if (typeof node.value === 'string') return node.value;
+  return (node.children ?? [])
+    .map((child) => nodeText(child as Parameters<typeof nodeText>[0]))
+    .join('');
 }
 
 /**
- * GitHub-style heading slugification.
- * Preserves Unicode letters (e.g. Norwegian æ, ø, å).
+ * Slugifies heading text with GitHub's rules, which Storybook also uses for
+ * MDX headings (through `rehype-slug`). Passed to markdown-to-jsx as the
+ * `slugify` option in `<IncludeMarkdown>`, whose default would transliterate
+ * letters such as `ø`. Don't pass `slug` directly: markdown-to-jsx calls it
+ * with its default slugifier as the second argument, which `slug` reads as
+ * `maintainCase`.
  */
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim();
+export function slugifyHeading(text: string): string {
+  return slug(text);
 }
 
 /**
- * Remark plugin that assigns `data.id` to headings by slugifying their text.
- * This is a lightweight replacement for `remark-heading-id` that covers the
- * `{ defaults: true }` behaviour without needing the patched package.
- *
- * Used by both the `<IncludeMarkdown>` component and the Pagefind indexer
- * so that `remarkGetSection` can match headings by their slugified ID.
+ * Remark plugin that sets the `id` that `<IncludeMarkdown>` renders on each
+ * top-level heading, both as `data.id` for `remarkGetSection` and as an HTML
+ * attribute for `mdast-util-to-hast`.
  */
 export function remarkSlugHeadings() {
   return function (tree: Root): void {
     for (const node of tree.children) {
-      if (node.type === 'heading') {
-        const data = (node.data ?? {}) as Record<string, unknown>;
-        if (!data.id) {
-          data.id = slugify(mdastNodeToText(node));
-        }
-        node.data = data as unknown as typeof node.data;
-      }
+      if (node.type !== 'heading') continue;
+      const id = slugifyHeading(nodeText(node));
+      node.data = {
+        ...node.data,
+        id,
+        hProperties: { ...node.data?.hProperties, id },
+      };
     }
   };
 }

@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import GithubSlugger from 'github-slugger';
 import { toHtml } from 'hast-util-to-html';
 import type {
   PhrasingContentMap,
@@ -15,6 +16,7 @@ import { unified } from 'unified';
 import { remove } from 'unist-util-remove';
 import { SKIP, visit } from 'unist-util-visit';
 import {
+  nodeText,
   remarkGetSection,
   remarkSlugHeadings,
 } from '../../utils/remarkGetSection.js';
@@ -46,8 +48,8 @@ export type SearchHtml = {
 
 /**
  * Converts an MDX docs page to the HTML that Pagefind indexes: the prose only,
- * with `<IncludeMarkdown>` resolved, and `id`s on `<h2>`–`<h6>` so Pagefind can
- * link to sections of the page.
+ * with `<IncludeMarkdown>` resolved, and the same heading `id`s as the
+ * rendered page so Pagefind can link to sections of it.
  */
 export function mdxToSearchHtml(mdx: string, mdxPath: string): SearchHtml {
   const tree = unified()
@@ -62,12 +64,19 @@ export function mdxToSearchHtml(mdx: string, mdxPath: string): SearchHtml {
 
   const hast = toHast(tree);
   let title: string | undefined;
+  // Storybook gives MDX headings ids with `rehype-slug`, which numbers
+  // repeated slugs per page. Headings from `<IncludeMarkdown>` already have
+  // ids from `remarkSlugHeadings`, and aren't part of the numbering.
+  const slugger = new GithubSlugger();
   visit(hast, 'element', (node) => {
+    if (!/^h[1-6]$/.test(node.tagName) || node.properties.id) return;
+    const id = slugger.slug(nodeText(node));
     if (node.tagName === 'h1') {
-      // Pagefind uses the first h1 as the title, so it gets no section id.
+      // Pagefind uses the first h1 as the title. Without an id, it doesn't
+      // also become a section of the page.
       title ??= nodeText(node);
-    } else if (/^h[2-6]$/.test(node.tagName) && !node.properties.id) {
-      node.properties.id = slugify(nodeText(node));
+    } else {
+      node.properties.id = id;
     }
   });
 
@@ -184,25 +193,4 @@ function findAttribute(
     (attribute): attribute is MdxJsxAttribute =>
       attribute.type === 'mdxJsxAttribute' && attribute.name === name,
   );
-}
-
-/** Concatenates the text in a syntax tree node, like `Node.textContent`. */
-function nodeText(node: { value?: unknown; children?: unknown[] }): string {
-  if (typeof node.value === 'string') return node.value;
-  return (node.children ?? [])
-    .map((child) => nodeText(child as Parameters<typeof nodeText>[0]))
-    .join('');
-}
-
-/**
- * GitHub-style heading slugification matching Storybook's anchor scheme.
- * Preserves Unicode letters (Norwegian å, ø, æ, etc.).
- */
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .trim();
 }

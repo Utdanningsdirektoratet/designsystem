@@ -338,6 +338,9 @@ catalogs:
     fuse.js:
       specifier: ^7.5.0
       version: 7.5.0
+    github-slugger:
+      specifier: ^2.0.0
+      version: 2.0.0
     handlebars:
       specifier: ^4.7.10
       version: 4.7.10
@@ -891,6 +894,9 @@ importers:
       fuse.js:
         specifier: 'catalog:'
         version: 7.5.0
+      github-slugger:
+        specifier: 'catalog:'
+        version: 2.0.0
       hast-util-from-html:
         specifier: 'catalog:'
         version: 2.0.3
@@ -4936,6 +4942,9 @@ packages:
 
   git-log-parser@1.2.1:
     resolution: {integrity: sha512-PI+sPDvHXNPl5WNOErAK05s3j0lgwUzMN6o8cyQrDaKfT3qd7TmNJKeXX+SknI5I0QhG5fVPAEwSY4tRGDtYoQ==}
+
+  github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -11207,6 +11216,8 @@ snapshots:
       stream-combiner2: 1.1.1
       through2: 2.0.5
       traverse: 0.6.8
+
+  github-slugger@2.0.0: {}
 
   glob-parent@5.1.2:
     dependencies:

@@ -16,6 +16,7 @@ import { visit } from 'unist-util-visit';
 import {
   remarkGetSection,
   remarkSlugHeadings,
+  slugifyHeading,
 } from '../../utils/remarkGetSection.js';
 import { componentOverrides } from '../ComponentOverrides';
 import componentStyles from '../componentOverrides.module.scss';
@@ -47,6 +48,8 @@ export const IncludeMarkdown: React.FC<Props> = ({
   return (
     <Markdown
       options={{
+        // Match the heading ids of the surrounding MDX and of the search index.
+        slugify: slugifyHeading,
         overrides: {
           ...componentOverrides,
           pre: ({ children }: React.HTMLAttributes<HTMLPreElement>) => {
