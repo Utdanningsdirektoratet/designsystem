@@ -134,12 +134,21 @@ async function renderDocsPage(
   }
   // Docs components may load more code or data after the first render.
   await page.waitForLoadState('networkidle');
+  // The page is only used for indexing, so it's fine to change it here.
   return page.locator(ROOT_SELECTOR).evaluate((root) => {
-    const clone = root.cloneNode(true) as HTMLElement;
+    // React renders elements without whitespace between them, and Pagefind
+    // joins the text of adjacent table cells, so "Tracking categories" and
+    // "Nødvendige" in two cells would be indexed as "categoriesNødvendige".
+    // Separate the text of every element that isn't shown inline.
+    for (const element of root.querySelectorAll('*')) {
+      if (!getComputedStyle(element).display.startsWith('inline')) {
+        element.after(' ');
+      }
+    }
     // Pagefind uses the h1 as the title. Without an id, it doesn't also become
     // a section of the page.
-    clone.querySelector('h1')?.removeAttribute('id');
-    return clone.outerHTML;
+    root.querySelector('h1')?.removeAttribute('id');
+    return root.outerHTML;
   });
 }
 
