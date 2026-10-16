@@ -36,11 +36,11 @@
   display: inline;
 }
 
-#pagefind-search-root pagefind-modal-trigger {
+pagefind-modal-trigger {
   display: block;
 }
 
-#pagefind-search-root pagefind-filter-dropdown {
+pagefind-modal pagefind-filter-dropdown {
   margin-top: var(--ds-size-2);
 }
 

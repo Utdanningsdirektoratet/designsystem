@@ -31,7 +31,7 @@
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         e.stopPropagation();
-        window.parent.postMessage('pagefind:open', '*');
+        window.parent.postMessage('pagefind:open', window.location.origin);
       }
     },
     { capture: true },

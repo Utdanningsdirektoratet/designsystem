@@ -1,9 +1,8 @@
 import './style.css';
 import './manager.css';
 import './addons/sourceCodeToolbar';
-import '@pagefind/component-ui';
 import '@pagefind/component-ui/css';
-import { configureInstance } from '@pagefind/component-ui';
+import { type PagefindModal, configureInstance } from '@pagefind/component-ui';
 import React from 'react';
 import type { API_HashEntry } from 'storybook/internal/types';
 import { addons } from 'storybook/manager-api';
@@ -114,48 +113,18 @@ function RenderWithTagBadge({
   }
 }
 
-// —— Pagefind config
+// ── Search ───────────────────────────────────────────────────────────────────
+// Pagefind search, using the index built by `plugins/pagefind`.
 
 configureInstance('default', {
   baseUrl: window.location.pathname,
   bundlePath: `${window.location.pathname}pagefind/`,
 });
 
-// ── Pagefind search modal (PoC) ─────────────────────────────────────────
-// Storybook has no sidebar slot API, so we inject the search trigger into
-// the sidebar DOM once it renders.
-
-// Intercept ⌘K / Ctrl+K before Storybook's handler fires, so the
-// Pagefind modal opens instead of "Find components". We stop the event
-// AND programmatically click the trigger since stopPropagation blocks
-// Pagefind's own listener too.
-document.addEventListener(
-  'keydown',
-  (e) => {
-    if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-      e.preventDefault();
-      e.stopPropagation();
-      document
-        .querySelector<HTMLElement>('pagefind-modal-trigger button')
-        ?.click();
-    }
-  },
-  { capture: true },
-);
-
-// Listen for ⌘K from the preview iframe (which is a separate browsing context)
-window.addEventListener('message', (e) => {
-  if (e.data === 'pagefind:open') {
-    document
-      .querySelector<HTMLElement>('pagefind-modal-trigger button')
-      ?.click();
-  }
-});
-const searchRoot = document.createElement('div');
-searchRoot.id = 'pagefind-search-root';
-searchRoot.innerHTML = `
-  <pagefind-modal-trigger placeholder="Search"></pagefind-modal-trigger>
-  <pagefind-modal>
+// The modal lives in <body>, outside the sidebar, so it keeps working while
+// the sidebar is hidden, and on small screens where the sidebar is in a menu.
+const searchModal = document.createElement('pagefind-modal') as PagefindModal;
+searchModal.innerHTML = `
     <pagefind-modal-header>
       <pagefind-input></pagefind-input>
       <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
@@ -198,22 +167,43 @@ searchRoot.innerHTML = `
     <pagefind-modal-footer>
       <pagefind-keyboard-hints></pagefind-keyboard-hints>
     </pagefind-modal-footer>
-  </pagefind-modal>
 `;
+document.body.append(searchModal);
 
-const observer = new MutationObserver(() => {
-  // The sidebar's flex container is the grandparent of .sidebar-header.
-  // Insert our search root as a sibling of the wrapper div that contains
-  // .sidebar-header, the filter input, and the tree nav.
-  const sidebarHeaderWrapper = document.querySelector(
-    'div:has(> .sidebar-header)',
-  );
+// Take over ⌘K / Ctrl+K from Storybook's sidebar search, which manager.css
+// hides. Listen in the capture phase to run before Storybook's listener.
+document.addEventListener(
+  'keydown',
+  (event) => {
+    if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
+      event.preventDefault();
+      event.stopPropagation();
+      searchModal.open();
+    }
+  },
+  { capture: true },
+);
+
+// The preview iframe forwards the shortcut, see `preview-head.html`.
+window.addEventListener('message', (event) => {
   if (
-    sidebarHeaderWrapper &&
-    !document.getElementById('pagefind-search-root')
+    event.origin === window.location.origin &&
+    event.data === 'pagefind:open'
   ) {
-    sidebarHeaderWrapper.after(searchRoot);
-    observer.disconnect();
+    searchModal.open();
   }
 });
-observer.observe(document.body, { childList: true, subtree: true });
+
+// Storybook has no API for adding to the sidebar, so add a search button below
+// the sidebar header whenever Storybook renders one: on load, after the sidebar
+// is hidden and shown again, and when the menu opens on small screens.
+new MutationObserver(() => {
+  for (const header of document.querySelectorAll('.sidebar-header')) {
+    const wrapper = header.parentElement;
+    if (wrapper?.nextElementSibling?.localName !== 'pagefind-modal-trigger') {
+      const trigger = document.createElement('pagefind-modal-trigger');
+      trigger.setAttribute('placeholder', 'Search');
+      wrapper?.after(trigger);
+    }
+  }
+}).observe(document.body, { childList: true, subtree: true });
