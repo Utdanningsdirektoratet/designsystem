@@ -44,6 +44,8 @@ export type SearchHtml = {
   html: string;
   /** Text of the first `<h1>`, which Pagefind uses as the result title. */
   title: string | undefined;
+  /** Absolute paths of the markdown files the page imports with `?raw`. */
+  includedFiles: string[];
 };
 
 /**
@@ -80,7 +82,7 @@ export function mdxToSearchHtml(mdx: string, mdxPath: string): SearchHtml {
     }
   });
 
-  return { html: toHtml(hast), title };
+  return { html: toHtml(hast), title, includedFiles: [...rawImports.values()] };
 }
 
 /**
@@ -163,26 +165,28 @@ function includedMarkdown(
   rawImports: Map<string, string>,
 ): RootContent[] {
   const markdownValue = findAttribute(node, 'markdown')?.value;
-  const filePath =
+  const variable =
     typeof markdownValue === 'object' && markdownValue !== null
-      ? rawImports.get(markdownValue.value)
+      ? markdownValue.value
       : undefined;
-  const sectionId = findAttribute(node, 'sectionId')?.value;
-  if (!filePath) return [];
-
-  try {
-    const processor = unified()
-      .use(remarkParse)
-      .use(remarkSlugHeadings)
-      .use(remarkGetSection, {
-        sectionId: typeof sectionId === 'string' ? sectionId : undefined,
-      });
-    const markdownTree = processor.parse(fs.readFileSync(filePath, 'utf-8'));
-    processor.runSync(markdownTree);
-    return markdownTree.children;
-  } catch {
-    return [];
+  const filePath = variable && rawImports.get(variable);
+  if (!filePath) {
+    throw new Error(
+      `Can't resolve <IncludeMarkdown markdown={${variable ?? ''}} />. ` +
+        "Pass a variable imported with `import NAME from './file.md?raw'`.",
+    );
   }
+
+  const sectionId = findAttribute(node, 'sectionId')?.value;
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkSlugHeadings)
+    .use(remarkGetSection, {
+      sectionId: typeof sectionId === 'string' ? sectionId : undefined,
+    });
+  const markdownTree = processor.parse(fs.readFileSync(filePath, 'utf-8'));
+  processor.runSync(markdownTree);
+  return markdownTree.children;
 }
 
 function findAttribute(

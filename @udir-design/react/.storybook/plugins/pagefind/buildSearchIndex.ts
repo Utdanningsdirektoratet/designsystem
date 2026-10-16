@@ -9,8 +9,12 @@ import type {
 import { getRootCategory, getTierBadge } from '../../utils/sidebarLabels.js';
 import { type SearchHtml, mdxToSearchHtml } from './mdxToSearchHtml.js';
 
-/** Pagefind's output files, keyed by path relative to the `pagefind/` directory. */
-export type SearchIndexFiles = Map<string, Uint8Array>;
+export type SearchIndex = {
+  /** Pagefind's output files, keyed by path relative to `pagefind/`. */
+  files: Map<string, Uint8Array>;
+  /** Absolute paths of the source files the index was built from. */
+  sourceFiles: Set<string>;
+};
 
 /**
  * Indexes every MDX docs page in Storybook's story index. The story index
@@ -18,7 +22,7 @@ export type SearchIndexFiles = Map<string, Uint8Array>;
  */
 export async function buildSearchIndex(
   storyIndex: StoryIndex,
-): Promise<SearchIndexFiles> {
+): Promise<SearchIndex> {
   const { index, errors } = await pagefind.createIndex({ forceLanguage: 'nb' });
   if (!index) {
     throw new Error(`Failed to create Pagefind index: ${errors.join('\n')}`);
@@ -26,15 +30,30 @@ export async function buildSearchIndex(
 
   try {
     const pages = Object.values(storyIndex.entries).filter(isMdxDocsEntry);
-    let indexed = 0;
+    const sourceFiles = new Set<string>();
     for (const entry of pages) {
-      // Storybook resolves `importPath` against its working directory, which
+      // Storybook resolves these paths against its working directory, which
       // is the current working directory.
       const mdxPath = path.resolve(entry.importPath);
-      const searchHtml = mdxToSearchHtml(
-        fs.readFileSync(mdxPath, 'utf-8'),
-        mdxPath,
-      );
+      sourceFiles.add(mdxPath);
+      for (const storiesPath of entry.storiesImports) {
+        sourceFiles.add(path.resolve(storiesPath));
+      }
+
+      let searchHtml: SearchHtml;
+      try {
+        searchHtml = mdxToSearchHtml(
+          fs.readFileSync(mdxPath, 'utf-8'),
+          mdxPath,
+        );
+      } catch (error) {
+        // Storybook only prints the message, not the cause.
+        const reason = error instanceof Error ? error.message : String(error);
+        throw new Error(`Failed to index ${entry.importPath}: ${reason}`, {
+          cause: error,
+        });
+      }
+      for (const file of searchHtml.includedFiles) sourceFiles.add(file);
       if (!searchHtml.html.trim()) continue;
 
       const result = await index.addHTMLFile({
@@ -42,18 +61,18 @@ export async function buildSearchIndex(
         content: toPageHtml(entry, searchHtml),
       });
       if (result.errors.length > 0) {
-        console.warn(
-          `[pagefind] Errors indexing ${entry.importPath}:`,
-          result.errors,
+        throw new Error(
+          `Pagefind failed to index ${entry.importPath}: ${result.errors.join('\n')}`,
         );
-      } else {
-        indexed++;
       }
     }
-    console.log(`[pagefind] Indexed ${indexed}/${pages.length} MDX docs pages`);
+    console.log(`[pagefind] Indexed ${pages.length} MDX docs pages`);
 
     const { files } = await index.getFiles();
-    return new Map(files.map((file) => [file.path, file.content]));
+    return {
+      files: new Map(files.map((file) => [file.path, file.content])),
+      sourceFiles,
+    };
   } finally {
     await index.deleteIndex();
   }

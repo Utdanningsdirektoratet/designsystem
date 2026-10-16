@@ -68,7 +68,8 @@ export function remarkGetSection({ sectionId }: RemarkGetSectionOptions) {
 
     const startIndex = tree.children.findIndex(isWantedHeading);
     if (startIndex === -1) {
-      return;
+      // Otherwise a typo would silently include the whole document.
+      throw new Error(`Found no heading with the id "${sectionId}"`);
     }
 
     const wantedHeading = tree.children[startIndex] as Heading;

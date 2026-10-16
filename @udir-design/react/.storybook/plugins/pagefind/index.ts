@@ -2,7 +2,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import type { StoryIndex } from 'storybook/internal/types';
 import type { Plugin, ResolvedConfig } from 'vite';
-import { type SearchIndexFiles, buildSearchIndex } from './buildSearchIndex.js';
+import { type SearchIndex, buildSearchIndex } from './buildSearchIndex.js';
 
 type PagefindPluginOptions = {
   /** Returns Storybook's current story index. */
@@ -21,7 +21,7 @@ const CONTENT_TYPES: Record<string, string> = {
  * the search in `manager.tsx`.
  *
  * - In dev mode, the index is kept in memory, served at `/pagefind/`, and
- *   rebuilt when MDX files change.
+ *   rebuilt when an MDX file or a file the index was built from changes.
  * - In production builds, the index is written to `pagefind/` in the output
  *   directory.
  */
@@ -30,13 +30,13 @@ export function pagefindPlugin({
 }: PagefindPluginOptions): Plugin {
   let config: ResolvedConfig;
 
-  async function build(): Promise<SearchIndexFiles> {
+  async function build(): Promise<SearchIndex> {
     const start = Date.now();
-    const files = await buildSearchIndex(await getStoryIndex());
+    const searchIndex = await buildSearchIndex(await getStoryIndex());
     console.log(
-      `[pagefind] Search index ready in ${Date.now() - start} ms (${files.size} files)`,
+      `[pagefind] Search index ready in ${Date.now() - start} ms (${searchIndex.files.size} files)`,
     );
-    return files;
+    return searchIndex;
   }
 
   return {
@@ -47,21 +47,34 @@ export function pagefindPlugin({
     },
 
     configureServer(server) {
-      let files: Promise<SearchIndexFiles | undefined> =
+      let searchIndex: Promise<SearchIndex | undefined> =
         Promise.resolve(undefined);
       const rebuild = () => {
-        const previous = files;
-        files = build().catch((error: unknown) => {
-          console.error('[pagefind] Failed to build search index:', error);
-          return previous;
-        });
+        const previous = searchIndex;
+        searchIndex = build().then(
+          (built) => {
+            // Vite only watches files outside its root once a page imports
+            // them, such as the repository's README.md.
+            server.watcher.add([...built.sourceFiles]);
+            return built;
+          },
+          (error: unknown) => {
+            console.error('[pagefind] Failed to build search index:', error);
+            return previous;
+          },
+        );
       };
       rebuild();
 
       let rebuildTimer: NodeJS.Timeout | undefined;
-      server.watcher.on('all', (_event, changedPath) => {
-        if (!changedPath.endsWith('.mdx')) return;
-        // Debounce bursts of changes, such as when switching branches.
+      server.watcher.on('all', async (_event, changedPath) => {
+        const isSource =
+          changedPath.endsWith('.mdx') ||
+          (await searchIndex)?.sourceFiles.has(changedPath);
+        if (!isSource) return;
+        // Debounce bursts of changes, such as when switching branches. This
+        // also gives Storybook time to update its story index, which reacts
+        // to the same changes.
         clearTimeout(rebuildTimer);
         rebuildTimer = setTimeout(rebuild, 200);
       });
@@ -71,7 +84,7 @@ export function pagefindPlugin({
           req.url ?? '/',
           'http://localhost',
         ).pathname.slice(1);
-        const content = (await files)?.get(filePath);
+        const content = (await searchIndex)?.files.get(filePath);
         if (!content) {
           res.statusCode = 404;
           res.end();
@@ -90,7 +103,7 @@ export function pagefindPlugin({
       if (config.command !== 'build') return;
 
       const outDir = path.resolve(config.root, config.build.outDir, 'pagefind');
-      for (const [filePath, content] of await build()) {
+      for (const [filePath, content] of (await build()).files) {
         const outputPath = path.join(outDir, filePath);
         fs.mkdirSync(path.dirname(outputPath), { recursive: true });
         fs.writeFileSync(outputPath, content);
