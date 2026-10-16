@@ -83,7 +83,10 @@ export default defineMain({
       plugins: [
         storySourceLocationPlugin(),
         fixStorybookMockerEntryPlugin(),
-        pagefindIndexerPlugin({ srcDir: 'src' }),
+        // `addon-vitest` also loads this config, and tests don't need the search index.
+        ...(process.env['VITEST']
+          ? []
+          : [pagefindIndexerPlugin({ srcDir: 'src' })]),
       ],
       optimizeDeps: {
         /*
