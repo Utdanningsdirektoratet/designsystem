@@ -1,4 +1,4 @@
-import * as fs from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import * as path from 'node:path';
 import type { Plugin } from 'vite';
 
@@ -25,13 +25,15 @@ export function servePagefindIndexPlugin(): Plugin {
     name: 'udir:serve-pagefind-index',
     apply: 'serve',
     configureServer(server) {
-      server.middlewares.use('/pagefind', (req, res) => {
+      server.middlewares.use('/pagefind', async (req, res) => {
         const { pathname } = new URL(req.url ?? '/', 'http://localhost');
         const filePath = path.join(INDEX_DIR, decodeURIComponent(pathname));
-        const isFile =
-          filePath.startsWith(INDEX_DIR) &&
-          fs.statSync(filePath, { throwIfNoEntry: false })?.isFile();
-        if (!isFile) {
+        // Reading can fail while `build:storybook` replaces the index, and an
+        // unhandled error would stop the dev server.
+        const content = filePath.startsWith(INDEX_DIR)
+          ? await readFile(filePath).catch(() => undefined)
+          : undefined;
+        if (!content) {
           res.statusCode = 404;
           res.end();
           return;
@@ -41,7 +43,7 @@ export function servePagefindIndexPlugin(): Plugin {
           CONTENT_TYPES[path.extname(filePath)] ?? 'application/octet-stream',
         );
         res.setHeader('Cache-Control', 'no-cache');
-        fs.createReadStream(filePath).pipe(res);
+        res.end(content);
       });
     },
   };
