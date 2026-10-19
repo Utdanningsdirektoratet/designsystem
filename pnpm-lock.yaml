@@ -260,9 +260,6 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.3.0
       version: 19.3.0
-    '@types/remark-heading-id':
-      specifier: ^1.0.0
-      version: 1.0.0
     '@types/yargs':
       specifier: ^17.0.35
       version: 17.0.35
@@ -338,6 +335,9 @@ catalogs:
     fuse.js:
       specifier: ^7.5.0
       version: 7.5.0
+    github-slugger:
+      specifier: ^2.0.0
+      version: 2.0.0
     handlebars:
       specifier: ^4.7.10
       version: 4.7.10
@@ -425,9 +425,6 @@ catalogs:
     remark-gfm:
       specifier: ^4.0.1
       version: 4.0.1
-    remark-heading-id:
-      specifier: ^1.0.1
-      version: 1.0.1
     remark-parse:
       specifier: ^11.0.0
       version: 11.0.0
@@ -525,7 +522,6 @@ packageExtensionsChecksum: sha256-07xmg4SazmzESNQEz3OnnilKhJ9UejYKdXlUiI/HtzA=
 
 patchedDependencies:
   '@andrewbranch/untar.js@1.0.4': dd1df3710e3a728052b1b198501d63b1260c762cc8efe6c5cada7fc550064241
-  remark-heading-id@1.0.1: 01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0
 
 importers:
 
@@ -838,9 +834,6 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.3.0(@types/react@19.3.0)
-      '@types/remark-heading-id':
-        specifier: 'catalog:'
-        version: 1.0.0
       '@udir-design/symbols':
         specifier: workspace:*
         version: link:../symbols
@@ -889,6 +882,9 @@ importers:
       fuse.js:
         specifier: 'catalog:'
         version: 7.5.0
+      github-slugger:
+        specifier: 'catalog:'
+        version: 2.0.0
       hast-util-from-html:
         specifier: 'catalog:'
         version: 2.0.3
@@ -934,9 +930,6 @@ importers:
       remark-gfm:
         specifier: 'catalog:'
         version: 4.0.1(supports-color@7.2.0)
-      remark-heading-id:
-        specifier: 'catalog:'
-        version: 1.0.1(patch_hash=01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0)
       remark-parse:
         specifier: 'catalog:'
         version: 11.0.0(supports-color@7.2.0)
@@ -3346,9 +3339,6 @@ packages:
   '@types/react@19.3.0':
     resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
 
-  '@types/remark-heading-id@1.0.0':
-    resolution: {integrity: sha512-V6OgBN2Uv3kaYHOrBI2+j9xIo6N56bMpIFoKVkGltoJtzHr7Vo8pFxDZxNqUXC5NScV991Iq3BYD52BkCFMY+w==}
-
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
 
@@ -4869,6 +4859,9 @@ packages:
 
   git-log-parser@1.2.1:
     resolution: {integrity: sha512-PI+sPDvHXNPl5WNOErAK05s3j0lgwUzMN6o8cyQrDaKfT3qd7TmNJKeXX+SknI5I0QhG5fVPAEwSY4tRGDtYoQ==}
+
+  github-slugger@2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -6726,10 +6719,6 @@ packages:
   remark-gfm@4.0.1:
     resolution: {integrity: sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==}
 
-  remark-heading-id@1.0.1:
-    resolution: {integrity: sha512-GmJjuCeEkYvwFlvn/Skjc/1Qafj71412gbQnrwUmP/tKskmAf1cMRlZRNoovV+aIvsSRkTb2rCmGv2b9RdoJbQ==}
-    engines: {node: '>=8'}
-
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
 
@@ -7411,9 +7400,6 @@ packages:
     resolution: {integrity: sha512-VGXBUVwxKMBUznyffQweQABPRRW1vHZAbadFZud4pLFAqRGvv/96vafgjWFqzourzr8YonlQiPgH0YCJfawoGQ==}
     engines: {node: '>=12'}
 
-  unist-util-is@3.0.0:
-    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
-
   unist-util-is@6.0.1:
     resolution: {integrity: sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g==}
 
@@ -7426,14 +7412,8 @@ packages:
   unist-util-stringify-position@4.0.0:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
 
-  unist-util-visit-parents@2.1.2:
-    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
-
   unist-util-visit-parents@6.0.2:
     resolution: {integrity: sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ==}
-
-  unist-util-visit@1.4.1:
-    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
 
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
@@ -9603,10 +9583,6 @@ snapshots:
     dependencies:
       csstype: 3.2.3
 
-  '@types/remark-heading-id@1.0.0':
-    dependencies:
-      unified: 11.0.5
-
   '@types/resolve@1.20.6': {}
 
   '@types/unist@3.0.3': {}
@@ -11046,6 +11022,8 @@ snapshots:
       stream-combiner2: 1.1.1
       through2: 2.0.5
       traverse: 0.6.8
+
+  github-slugger@2.0.0: {}
 
   glob-parent@5.1.2:
     dependencies:
@@ -12925,11 +12903,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-heading-id@1.0.1(patch_hash=01a0e789c972e5f10120bc9c842127ba4f31c5cb60f00b73b1a4fdbc07538ae0):
-    dependencies:
-      lodash: 4.18.1
-      unist-util-visit: 1.4.1
-
   remark-parse@11.0.0(supports-color@7.2.0):
     dependencies:
       '@types/mdast': 4.0.4
@@ -13690,8 +13663,6 @@ snapshots:
     dependencies:
       crypto-random-string: 4.0.0
 
-  unist-util-is@3.0.0: {}
-
   unist-util-is@6.0.1:
     dependencies:
       '@types/unist': 3.0.3
@@ -13710,18 +13681,10 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  unist-util-visit-parents@2.1.2:
-    dependencies:
-      unist-util-is: 3.0.0
-
   unist-util-visit-parents@6.0.2:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.1
-
-  unist-util-visit@1.4.1:
-    dependencies:
-      unist-util-visit-parents: 2.1.2
 
   unist-util-visit@5.1.0:
     dependencies:
