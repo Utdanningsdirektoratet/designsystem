@@ -2,6 +2,7 @@ import { execSync } from 'node:child_process';
 import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
+import { servePagefindIndexPlugin } from './search/servePagefindIndex.js';
 import { createTierIndexers } from './utils/createTierIndexers.js';
 import { storySourceLocationPlugin } from './utils/storySourceLocationPlugin.js';
 
@@ -79,7 +80,11 @@ export default defineMain({
         cssCodeSplit: false,
         chunkSizeWarningLimit: Infinity,
       },
-      plugins: [storySourceLocationPlugin(), fixStorybookMockerEntryPlugin()],
+      plugins: [
+        storySourceLocationPlugin(),
+        fixStorybookMockerEntryPlugin(),
+        servePagefindIndexPlugin(),
+      ],
       optimizeDeps: {
         /*
         Sometimes we get a message like this, and then tests fail:
