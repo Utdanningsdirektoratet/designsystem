@@ -3,6 +3,7 @@ import cl from 'clsx/lite';
 import { forwardRef, useCallback, useId, useRef } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
 import { Button, type ButtonProps } from '../button';
+import { announce, prepareAnnouncements } from './announce';
 
 export interface FileUploadItemButtonProps extends Omit<
   ButtonProps,
@@ -370,18 +371,11 @@ function announceRemoval(button: HTMLButtonElement) {
 
 /**
  * Called as the delete button comes onto the page. Puts the live region in
- * place before it has anything to say, since a screen reader only announces
- * what changes in a region it already knows about. A button that comes back
- * while its row waits to be removed means the removal did not happen.
+ * place before it has anything to say. A button that comes back while its row
+ * waits to be removed means the removal did not happen.
  */
 function keepAnnouncing(button: HTMLButtonElement) {
-  if (!status) {
-    status = document.createElement('div');
-    status.setAttribute('role', 'status');
-    status.setAttribute('aria-live', 'polite');
-    status.className = 'ds-sr-only';
-  }
-  if (!status.isConnected) document.body.append(status);
+  prepareAnnouncements();
 
   const row = button.closest('.uds-file-upload__item');
   const removal = row && removals.get(row);
@@ -389,30 +383,4 @@ function keepAnnouncing(button: HTMLButtonElement) {
     removal.stop();
     removals.delete(row);
   }
-}
-
-/**
- * One region for the whole page, outside every list, so it stays when the
- * consumer hides a list that is left empty.
- */
-let status: HTMLElement | undefined;
-let statusTimer = 0;
-
-/**
- * Sets the text a moment after focus has moved. VoiceOver in Safari read the
- * text after the next file's button when it came right away, but dropped it
- * when focus went to an upload field, as the consumer does when the list is
- * left empty. Half a second later, it read the field and then the text. When
- * focus fell to the page instead, it dropped the text even a second later.
- */
-function announce(text: string) {
-  clearTimeout(statusTimer);
-  statusTimer = window.setTimeout(() => {
-    if (!status) return;
-    /* The same text again may not be read again, so it is told apart by a
-       non-breaking space. */
-    status.textContent = status.textContent === text ? `${text}\u00a0` : text;
-    /* Emptied again, so the text is not found later when reading the page. */
-    statusTimer = window.setTimeout(() => status?.replaceChildren(), 5000);
-  }, 500);
 }
