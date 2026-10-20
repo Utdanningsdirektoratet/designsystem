@@ -34,7 +34,12 @@
     },
     "build:storybook": {
       "dependsOn": ["build", "inject"],
-      "inputs": ["$TURBO_DEFAULT$", "!**/*.test.*", "!**/*.spec.*"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/*.test.*",
+        "!**/*.spec.*",
+        "$TURBO_ROOT$/README.md"
+      ],
       "env": ["GITHUB_HEAD_REF"],
       "outputs": ["storybook-static/**"]
     },
