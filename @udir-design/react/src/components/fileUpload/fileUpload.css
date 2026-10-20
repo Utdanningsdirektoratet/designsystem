@@ -8,8 +8,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Slipp filen her';
   --udsc-fileUpload-dropFiles-active-text: 'Slipp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Laster opp...';
+  --udsc-fileUpload-loading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
+  --udsc-fileUpload-removed-text: 'er fjernet';
+  --udsc-fileUpload-downloadFile-text: 'Last ned filen';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -22,8 +25,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Slepp fila her';
   --udsc-fileUpload-dropFiles-active-text: 'Slepp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Lastar opp...';
+  --udsc-fileUpload-loading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
+  --udsc-fileUpload-removed-text: 'er fjerna';
+  --udsc-fileUpload-downloadFile-text: 'Last ned fila';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -36,8 +42,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Drop the file here';
   --udsc-fileUpload-dropFiles-active-text: 'Drop the files here';
   --udsc-fileUpload-or-text: 'or';
-  --udsc-fileUpload-uploading-text: 'Uploading...';
+  --udsc-fileUpload-loading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
+  --udsc-fileUpload-removed-text: 'removed';
+  --udsc-fileUpload-downloadFile-text: 'Download file';
+  --udsc-fileUpload-invalid-text: 'invalid';
   --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
   --udsc-fileUpload-disabled-text-line-two: 'upload files';
 }
@@ -52,8 +61,31 @@
   width: fit-content;
   height: fit-content;
 
-  > input {
-    display: none;
+  /*
+  * The file input is the interactive control: it covers the drop zone (or the
+  * trigger button) as a transparent overlay, so clicks, drops and focus all
+  * land on a real form control. The button inside is presentational.
+  */
+  input[type='file'] {
+    position: absolute;
+    inset: 0;
+    /* `ds-input` is here for the readonly lock on the label, and it sizes the
+       input like a text field. The overlay is sized by `inset` instead. */
+    height: auto;
+    width: auto;
+    margin: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: inherit;
+  }
+
+  &:has(input[type='file']:focus-visible) {
+    > .ds-card,
+    .uds-file-upload__trigger > .ds-button {
+      box-shadow: var(--dsc-focus-boxShadow);
+      outline: var(--dsc-focus-outline);
+      outline-offset: var(--ds-border-width-focus);
+    }
   }
 
   /* Loading state */
@@ -69,6 +101,7 @@
     flex-direction: column;
   }
   > .ds-card {
+    position: relative;
     margin-block-start: var(--ds-size-2);
     width: 100%;
     flex-basis: 100%;
@@ -79,6 +112,13 @@
     gap: var(--ds-size-2);
     --dsc-card-border-style: dashed;
     --dsc-card-border-color: var(--ds-color-border-strong);
+  }
+
+  /* Positioning context for the trigger's input overlay */
+  > .uds-file-upload__trigger {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
   }
 
   &[data-drag-global]:not([data-drag-active]),
@@ -150,7 +190,7 @@
   }
 
   /* Trigger texts */
-  > .ds-button::after {
+  > .uds-file-upload__trigger > .ds-button::after {
     content: var(--udsc-fileUpload-button-text);
   }
 
@@ -218,6 +258,10 @@
       &[data-invalid] {
         --dsc-card-border-color: var(--ds-color-danger-border-strong);
       }
+
+      &[data-valid] {
+        --dsc-card-border-color: var(--ds-color-success-border-strong);
+      }
     }
   }
 
@@ -251,7 +295,7 @@
       }
     }
 
-    .uds-file-upload__item-error > p {
+    .uds-file-upload__item-message > p {
       font-size: var(--ds-font-size-minus-1);
     }
   }
@@ -259,15 +303,38 @@
 
 /* FileUpload.Item */
 .uds-file-upload__item {
-  word-break: break-all;
+  /* The row takes focus while `loading` hides the button that had it. The same
+     ring as Digdir's `ds-focus`. */
+  &:focus-visible {
+    box-shadow: var(--dsc-focus-boxShadow);
+    outline: var(--dsc-focus-outline);
+    outline-offset: var(--ds-border-width-focus);
+  }
 
-  [data-tooltip] {
+  /* A long file name has nowhere to break, so it may break anywhere. Messages
+     are prose and break between words like other text. */
+  .uds-file-upload__item-name {
+    word-break: break-all;
+  }
+
+  /* Two classes, to win over Digdir's `[data-tooltip]` reset on the button. */
+  .uds-file-upload__delete-button {
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
   }
 
-  /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .ds-link + .ds-paragraph::before {
-    content: var(--udsc-fileUpload-uploading-text);
+  .uds-file-upload__download-button {
+    --ds-tooltip: var(--udsc-fileUpload-downloadFile-text);
+  }
+
+  /* The default text while loading. On the empty element, so that a
+     `loadingText` takes its place rather than landing next to it. */
+  &[aria-busy='true'] .uds-file-upload__item-description:empty::before {
+    content: var(--udsc-fileUpload-loading-text);
+  }
+
+  /* Invalid text after the file name */
+  .uds-file-upload__item-invalid::before {
+    content: ', ' var(--udsc-fileUpload-invalid-text);
   }
 }
 
@@ -275,10 +342,13 @@
   display: flex;
   align-items: center;
   width: 100%;
+}
 
-  > .ds-button {
-    margin-inline-start: auto;
-  }
+.uds-file-upload__item-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
+  margin-inline-start: auto;
 }
 
 .uds-file-upload__item-icon > svg {
@@ -294,19 +364,25 @@
   flex: 1;
 }
 
-.uds-file-upload__item-error {
+.uds-file-upload__item-description {
+  color: var(--ds-color-neutral-text-subtle);
+  font-size: var(--ds-font-size-minus-1);
+}
+
+.uds-file-upload__item-message {
   margin-block-start: 0;
 
-  > p {
-    padding-inline-start: calc(
+  > .ds-validation-message {
+    /* Smaller than the icon on a field message, which stands beside a whole
+       field rather than inside a row. */
+    --dsc-validation-message-icon-size: 1em;
+
+    /* Lines the message up with the file name, past the file type icon. */
+    margin-inline-start: calc(
       var(--udsc-fileUpload-item-icon-size) +
         var(--udsc-fileUpload-item-icon-gap)
     );
-    color: var(--ds-color-danger-text-subtle);
-    display: flex;
-    gap: var(--ds-size-2);
     margin-block-start: var(--ds-size-1);
-    align-items: center;
   }
 }
 
@@ -317,8 +393,7 @@
   gap: var(--ds-size-3);
   flex-wrap: wrap;
 
-  > .ds-paragraph {
-    color: var(--ds-color-neutral-text-subtle);
+  > .uds-file-upload__item-description {
     white-space: nowrap;
   }
 }

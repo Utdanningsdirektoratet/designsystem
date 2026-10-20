@@ -3,7 +3,7 @@
 exports[`Compact List 1`] = `
 <div>
   <h3 data-size="2xs">
-    Vedlegg (4):
+    Vedlegg (5):
   </h3>
   <ul
     role="list"
@@ -38,45 +38,141 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <a download="kandidat-13.pdf">
+          <span id="<generated>-name">
+            kandidat-12.pdf
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-12.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
             kandidat-13.pdf
-          </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-13.pdf"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -108,45 +204,58 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <a download="kandidat-14.pdf">
+          <span id="<generated>-name">
             kandidat-14.pdf
-          </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-14.pdf"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -178,45 +287,58 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <a download="kandidat-15.pdf">
+          <span id="<generated>-name">
             kandidat-15.pdf
-          </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-15.pdf"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -243,17 +365,161 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <a download="kandidat-16.tsx">
+          <span id="<generated>-name">
             kandidat-16.tsx
-          </a>
-          <p data-size="sm">
-            0.82 MB
-          </p>
+            <span>
+            </span>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              844 KB
+            </span>
+          </div>
         </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="kandidat-16.tsx"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <p data-field="validation">
+          <span>
+            kandidat-16.tsx:
+          </span>
+          Filformatet støttes ikke
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Custom Item Button 1`] = `
+<ul
+  role="list"
+  data-variant="default"
+>
+  <li>
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span id="<generated>-name">
+          vitnemal.pdf
+        </span>
+        <div id="<generated>-description">
+          Vitnemål fra videregående skole (
+          <span>
+            293 KB
+          </span>
+          )
+        </div>
+      </div>
+      <div>
         <button
           data-icon="true"
           data-variant="tertiary"
           type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Beskriv filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Beskriv filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="vitnemal.pdf"
+        >
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
           data-tooltip="Fjern filen"
           data-placement="top"
           data-autoplacement="true"
@@ -278,12 +544,70 @@ exports[`Compact List 1`] = `
             </path>
           </svg>
         </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="vitnemal.pdf"
+        >
+        </span>
       </div>
-      <div
-        aria-relevant="additions removals"
-        aria-live="polite"
-      >
-        <p>
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+  <li>
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span id="<generated>-name">
+          attest.pdf
+        </span>
+        <div id="<generated>-description">
+          <span>
+            293 KB
+          </span>
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Beskriv filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Beskriv filen"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -297,286 +621,217 @@ exports[`Compact List 1`] = `
             <path
               fill="currentColor"
               fill-rule="evenodd"
-              d="M7.742 2.47a.75.75 0 0 1 .53-.22h7.456a.75.75 0 0 1 .53.22l5.272 5.272c.141.14.22.331.22.53v7.456a.75.75 0 0 1-.22.53l-5.272 5.272a.75.75 0 0 1-.53.22H8.272a.75.75 0 0 1-.53-.22L2.47 16.258a.75.75 0 0 1-.22-.53V8.272a.75.75 0 0 1 .22-.53zm1.288 5.5a.75.75 0 0 0-1.06 1.06L10.94 12l-2.97 2.97a.75.75 0 1 0 1.06 1.06L12 13.06l2.97 2.97a.75.75 0 1 0 1.06-1.06L13.06 12l2.97-2.97a.75.75 0 0 0-1.06-1.06L12 10.94z"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
               clip-rule="evenodd"
             >
             </path>
           </svg>
-          Filformatet støttes ikke
-        </p>
-      </div>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`Example Drop Zone 1`] = `
-<div>
-  <label
-    id="<generated>-label"
-    for="<generated>-button"
-  >
-    Last opp dokumentasjon
-  </label>
-  <div
-    data-field="description"
-    id="<generated>-description"
-  >
-    Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
-  </div>
-  <div role="presentation">
-    <div>
-    </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg filer"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-  </div>
-  <input
-    accept="application/pdf"
-    multiple
-    tabindex="-1"
-    type="file"
-    style="<removed>"
-  >
-</div>
-<h3 data-size="2xs">
-  Vedlegg (1):
-</h3>
-<ul
-  role="list"
-  data-variant="default"
->
-  <li>
-    <div>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
           role="img"
-          aria-hidden="true"
+          aria-label="attest.pdf"
         >
-          <path
-            fill="currentColor"
-            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Fjern filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Fjern filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
           >
-          </path>
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </div>
-      <div>
-        <a download="eksempel1.pdf">
-          eksempel1.pdf
-        </a>
-        <p data-size="sm">
-          0.29 MB
-        </p>
-      </div>
-      <button
-        data-icon="true"
-        data-variant="tertiary"
-        type="button"
-        data-tooltip="Fjern filen"
-        data-placement="top"
-        data-autoplacement="true"
-        aria-label="Fjern filen"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
           role="img"
-          aria-hidden="true"
+          aria-label="attest.pdf"
         >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
+        </span>
+      </div>
     </div>
     <div
-      aria-relevant="additions removals"
       aria-live="polite"
+      aria-atomic="true"
     >
     </div>
   </li>
 </ul>
+<dialog
+  data-placement="center"
+  data-modal="true"
+  id="<generated>"
+  closedby="any"
+>
+  <button
+    data-icon="true"
+    commandfor="<generated>"
+    data-variant="tertiary"
+    type="button"
+    aria-label="Lukk dialogvindu"
+    data-color="neutral"
+    command="close"
+  >
+  </button>
+  <form
+    method="dialog"
+    style="<removed>"
+  >
+    <h2>
+      Beskriv filen
+    </h2>
+    <ds-field>
+      <label for="<generated>">
+        Beskrivelse
+      </label>
+      <div
+        data-field="description"
+        id="<generated>"
+      >
+        For eksempel "Vitnemål" eller "Legeerklæring"
+      </div>
+      <div>
+        <input
+          type="text"
+          name="description"
+          id="<generated>"
+          aria-describedby="<generated>"
+        >
+      </div>
+    </ds-field>
+    <div style="<removed>">
+      <button type="submit">
+        Lagre
+      </button>
+      <button
+        data-variant="secondary"
+        type="button"
+      >
+        Avbryt
+      </button>
+    </div>
+  </form>
+</dialog>
+`;
+
+exports[`Example Drop Zone 1`] = `
+<form style="<removed>">
+  <ds-field>
+    <label for="<generated>">
+      Last opp dokumentasjon
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
+    >
+      Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
+    </div>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="application/pdf"
+        multiple
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
+</form>
 `;
 
 exports[`Example Dropzone With Explicit Size 1`] = `
 <style>
   .uds-file-upload { height: 600px; width: 100%; }
 </style>
-<div>
-  <label
-    id="<generated>-label"
-    for="<generated>-button"
-  >
-    Last opp dokumentasjon
-  </label>
-  <div
-    data-field="description"
-    id="<generated>-description"
-  >
-    Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
-  </div>
-  <div role="presentation">
-    <div>
-    </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg filer"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-  </div>
-  <input
-    accept="application/pdf"
-    multiple
-    tabindex="-1"
-    type="file"
-    style="<removed>"
-  >
-</div>
-<h3 data-size="2xs">
-  Vedlegg (1):
-</h3>
-<ul
-  role="list"
-  data-variant="default"
->
-  <li>
-    <div>
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
-          >
-          </path>
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </div>
-      <div>
-        <a download="eksempel1.pdf">
-          eksempel1.pdf
-        </a>
-        <p data-size="sm">
-          0.29 MB
-        </p>
-      </div>
-      <button
-        data-icon="true"
-        data-variant="tertiary"
-        type="button"
-        data-tooltip="Fjern filen"
-        data-placement="top"
-        data-autoplacement="true"
-        aria-label="Fjern filen"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          fill="none"
-          viewbox="0 0 24 24"
-          focusable="false"
-          role="img"
-          aria-hidden="true"
-        >
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-            clip-rule="evenodd"
-          >
-          </path>
-        </svg>
-      </button>
-    </div>
+<form style="<removed>">
+  <ds-field>
+    <label for="<generated>">
+      Last opp dokumentasjon
+    </label>
     <div
-      aria-relevant="additions removals"
-      aria-live="polite"
+      data-field="description"
+      id="<generated>"
     >
+      Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB.
     </div>
-  </li>
-</ul>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="application/pdf"
+        multiple
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
+</form>
 `;
 
 exports[`Example Items 1`] = `
@@ -589,12 +844,97 @@ exports[`Example Items 1`] = `
 </style>
 <div>
   <h3 data-size="2xs">
-    Vedlegg (3):
+    Vedlegg (5):
   </h3>
   <ul
     role="list"
     data-variant="default"
   >
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
+            eksempel1.pdf
+          </span>
+          <div id="<generated>-description">
+            Filopplasting 1 (
+            <span>
+              293 KB
+            </span>
+            )
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel1.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
     <li>
       <div>
         <div>
@@ -623,45 +963,60 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel2.docx">
+          <span id="<generated>-name">
             eksempel2.docx
-          </a>
-          <p data-size="sm">
-            Filopplasting 1
-          </p>
+          </span>
+          <div id="<generated>-description">
+            Filopplasting 2 (
+            <span>
+              29 KB
+            </span>
+            )
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel2.docx"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -688,101 +1043,70 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel3.png">
+          <a
+            id="<generated>-name"
+            href="/eksempel3.png"
+          >
             eksempel3.png
           </a>
-          <p data-size="sm">
-            Filopplasting 2
-          </p>
+          <div id="<generated>-description">
+            Filopplasting 3 (
+            <span>
+              2,86 MB
+            </span>
+            )
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
-          >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
-            >
-            </path>
-          </svg>
-        </button>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
-    <li>
+    <li
+      aria-busy="true"
+      aria-labelledby="<generated>-name <generated>-description"
+    >
       <div>
         <div>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
             role="img"
+            viewbox="0 0 50 50"
             aria-hidden="true"
           >
-            <path
-              fill="currentColor"
-              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            <circle
+              cx="25"
+              cy="25"
+              r="20"
+              fill="none"
+              stroke-width="5"
             >
-            </path>
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
-              clip-rule="evenodd"
+            </circle>
+            <circle
+              cx="25"
+              cy="25"
+              r="20"
+              fill="none"
+              stroke-width="5"
             >
-            </path>
+            </circle>
           </svg>
         </div>
         <div>
-          <a download="eksempel4.pdf">
+          <span id="<generated>-name">
             eksempel4.pdf
-          </a>
-          <p data-size="sm">
-            Filopplasting 3
-          </p>
+          </span>
+          <div id="<generated>-description">
+          </div>
         </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
-  </ul>
-  <h3
-    data-size="2xs"
-    style="<removed>"
-  >
-    Vedlegg med feil:
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
     <li data-invalid="true">
       <div>
         <div>
@@ -806,65 +1130,67 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel5.tsx">
+          <span id="<generated>-name">
             eksempel5.tsx
-          </a>
-          <p data-size="sm">
-            0.82 MB
-          </p>
+            <span>
+            </span>
+          </span>
+          <div id="<generated>-description">
+            Filopplasting 5 (
+            <span>
+              844 KB
+            </span>
+            )
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel5.tsx"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
-        <p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
-          >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M7.742 2.47a.75.75 0 0 1 .53-.22h7.456a.75.75 0 0 1 .53.22l5.272 5.272c.141.14.22.331.22.53v7.456a.75.75 0 0 1-.22.53l-5.272 5.272a.75.75 0 0 1-.53.22H8.272a.75.75 0 0 1-.53-.22L2.47 16.258a.75.75 0 0 1-.22-.53V8.272a.75.75 0 0 1 .22-.53zm1.288 5.5a.75.75 0 0 0-1.06 1.06L10.94 12l-2.97 2.97a.75.75 0 1 0 1.06 1.06L12 13.06l2.97 2.97a.75.75 0 1 0 1.06-1.06L13.06 12l2.97-2.97a.75.75 0 0 0-1.06-1.06L12 10.94z"
-              clip-rule="evenodd"
-            >
-            </path>
-          </svg>
+        <p data-field="validation">
+          <span>
+            eksempel5.tsx:
+          </span>
           Filformatet støttes ikke
         </p>
       </div>
@@ -881,62 +1207,103 @@ exports[`Example Trigger 1`] = `
           gap: var(--ds-size-3);
         }
 </style>
-<div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+<form>
+  <ds-field>
+    <label for="<generated>">
       Last opp profilbilde
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Du kan laste opp filer i PNG- og JPEG-format.
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
+    <span>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
-        </path>
-      </svg>
-    </button>
-    <input
-      accept="image/png, image/jpeg"
-      type="file"
-    >
-  </div>
-  <h3 data-size="2xs">
-    Vedlegg (1):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
-    <li>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="image/png, image/jpeg"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
+</form>
+`;
+
+exports[`Item Actions 1`] = `
+<ul
+  role="list"
+  data-variant="default"
+>
+  <li>
+    <div>
       <div>
-        <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </div>
+      <div>
+        <span id="<generated>-name">
+          soknad.pdf
+        </span>
+        <div id="<generated>-description">
+          <span>
+            293 KB
+          </span>
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Last ned filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned filen"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -950,24 +1317,25 @@ exports[`Example Trigger 1`] = `
             <path
               fill="currentColor"
               fill-rule="evenodd"
-              d="M6.5 3.25c-.69 0-1.25.56-1.25 1.25v15c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V8a.75.75 0 0 0-.22-.53l-4-4a.75.75 0 0 0-.53-.22zm10.75 15.763V8.75H14.5c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v14.5h1.855l3.777-5.666a.75.75 0 0 1 1.248 0zm-6.842.237h5.197l-2.599-3.898zm5.781-12L14.75 5.81v1.44zM10 9.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5m-2.25.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
               clip-rule="evenodd"
             >
             </path>
           </svg>
-        </div>
-        <div>
-          <a download="eksempel1.png">
-            eksempel1.png
-          </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
-        </div>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="soknad.pdf"
+        >
+        </span>
         <button
           data-icon="true"
           data-variant="tertiary"
           type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
           data-tooltip="Fjern filen"
           data-placement="top"
           data-autoplacement="true"
@@ -992,15 +1360,148 @@ exports[`Example Trigger 1`] = `
             </path>
           </svg>
         </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="soknad.pdf"
+        >
+        </span>
       </div>
-      <div
-        aria-relevant="additions removals"
-        aria-live="polite"
-      >
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+  <li>
+    <div>
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+          >
+          </path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
       </div>
-    </li>
-  </ul>
-</div>
+      <div>
+        <span id="<generated>-name">
+          vedtak.pdf
+        </span>
+        <div id="<generated>-description">
+          <span>
+            293 KB
+          </span>
+        </div>
+      </div>
+      <div>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          id="<generated>"
+          aria-labelledby="<generated> <generated>-file"
+          data-tooltip="Last ned filen"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned filen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <span
+          hidden
+          id="<generated>-file"
+          role="img"
+          aria-label="vedtak.pdf"
+        >
+        </span>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+  <li
+    aria-busy="true"
+    aria-labelledby="<generated>-name <generated>-description"
+  >
+    <div>
+      <div>
+        <svg
+          role="img"
+          viewbox="0 0 50 50"
+          aria-hidden="true"
+        >
+          <circle
+            cx="25"
+            cy="25"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          >
+          </circle>
+          <circle
+            cx="25"
+            cy="25"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          >
+          </circle>
+        </svg>
+      </div>
+      <div>
+        <span id="<generated>-name">
+          vedlegg.pdf
+        </span>
+        <div id="<generated>-description">
+        </div>
+      </div>
+    </div>
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    </div>
+  </li>
+</ul>
 `;
 
 exports[`Preview 1`] = `
@@ -1012,72 +1513,18 @@ exports[`Preview 1`] = `
         }
 </style>
 <div>
-  <div data-size="md">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field data-size="md">
+    <label for="<generated>">
       Label
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Beskrivelse
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-    <input type="file">
-  </div>
-  <div data-size="md">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Label
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Beskrivelse
-    </div>
-    <div role="presentation">
-      <div>
-      </div>
-      <button
-        data-variant="secondary"
-        type="button"
-        id="<generated>-button"
-        aria-labelledby="<generated>-label"
-        aria-describedby="<generated>-description"
-        aria-label="Velg fil"
-      >
+    <span>
+      <span data-variant="secondary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -1096,15 +1543,55 @@ exports[`Preview 1`] = `
           >
           </path>
         </svg>
-      </button>
-    </div>
-    <input
-      accept="application/pdf"
-      tabindex="-1"
-      type="file"
-      style="<removed>"
+      </span>
+      <input
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
+  <ds-field data-size="md">
+    <label for="<generated>">
+      Label
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
     >
-  </div>
+      Beskrivelse
+    </div>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="application/pdf"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
 </div>
 `;
 
@@ -1120,110 +1607,20 @@ exports[`Readonly 1`] = `
 }
 </style>
 <div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+  <ds-field>
+    <label for="<generated>">
       Lesemodus
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Beskrivelse for Trigger
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      disabled
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
-        >
-        </path>
-      </svg>
-    </button>
-    <input
-      readonly
-      type="file"
-    >
-  </div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Lesemodus
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Beskrivelse for Dropzone
-    </div>
-    <div>
-      <div>
-      </div>
-    </div>
-    <input
-      readonly
-      max="2"
-      type="file"
-    >
-  </div>
-</div>
-`;
-
-exports[`Too Many Files 1`] = `
-<style>
-  .file-upload-too-many-files-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }
-</style>
-<div>
-  <div style="<removed>">
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
-      Last opp dokumentasjon
-    </label>
-    <div
-      data-field="description"
-      id="<generated>-description"
-    >
-      Du kan kun laste opp 2 filer.
-    </div>
-    <div role="presentation">
-      <div>
-      </div>
-      <button
+    <span>
+      <span
+        aria-disabled="true"
         data-variant="secondary"
-        type="button"
-        id="<generated>-button"
-        aria-labelledby="<generated>-label"
-        aria-describedby="<generated>-description"
-        aria-label="Velg filer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -1243,18 +1640,515 @@ exports[`Too Many Files 1`] = `
           >
           </path>
         </svg>
-      </button>
-    </div>
-    <input
-      multiple
-      tabindex="-1"
-      type="file"
-      style="<removed>"
+      </span>
+      <input
+        readonly
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </span>
+  </ds-field>
+  <ds-field>
+    <label for="<generated>">
+      Lesemodus
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
     >
-    <p data-field="validation">
+      Beskrivelse for Dropzone
+    </div>
+    <div>
+      <div>
+      </div>
+      <input
+        readonly
+        max="2"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
+</div>
+`;
+
+exports[`Slow Item Actions 1`] = `
+<form style="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
+    <input
+      type="checkbox"
+      id="<generated>"
+    >
+    <label
+      data-weight="regular"
+      for="<generated>"
+    >
+      La slettingen feile
+    </label>
+  </ds-field>
+  <ds-field>
+    <label for="<generated>">
+      Last opp dokumentasjon
+    </label>
+    <span>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        type="file"
+        id="<generated>"
+      >
+    </span>
+  </ds-field>
+  <ul
+    role="list"
+    data-variant="default"
+  >
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
+            soknad.pdf
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Last ned filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Last ned filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="soknad.pdf"
+          >
+          </span>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="soknad.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
+            vitnemal.pdf
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Last ned filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Last ned filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="vitnemal.pdf"
+          >
+          </span>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="vitnemal.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
+    <li>
+      <div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M7.7 14.835q.336 0 .532.189a.63.63 0 0 1 .203.49.65.65 0 0 1-.203.497q-.196.182-.532.182h-.693v-1.358zM12.002 14.87q.323 0 .518.182a.62.62 0 0 1 .196.476v1.827q0 .3-.196.483a.73.73 0 0 1-.518.182h-.609v-3.15z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M5.25 4.5c0-.69.56-1.25 1.25-1.25H14a.75.75 0 0 1 .53.22l4 4c.141.14.22.331.22.53v4.25H21a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-7a.75.75 0 0 1 .75-.75h2.25zm9.25 4.25c-.69 0-1.25-.56-1.25-1.25V4.75h-6.5v7.5h10.5v-3.5zm.25-2.94 1.44 1.44h-1.44zm-6.112 8.283a2.04 2.04 0 0 0-.938-.203H5.957V19h1.05v-1.862H7.7q.54 0 .938-.203.4-.203.623-.567a1.6 1.6 0 0 0 .224-.854q0-.49-.224-.854a1.47 1.47 0 0 0-.623-.567m4.288 0a2 2 0 0 0-.924-.203h-1.659V19h1.66q.531 0 .923-.203.4-.21.616-.581.224-.37.224-.861v-1.827a1.6 1.6 0 0 0-.224-.861 1.47 1.47 0 0 0-.616-.574M14.8 19v-5.11h3.29v.98h-2.254v1.134h2.072v.98H15.85V19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </div>
+        <div>
+          <span id="<generated>-name">
+            attest.pdf
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
+        </div>
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Last ned filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Last ned filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="attest.pdf"
+          >
+          </span>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="attest.pdf"
+          >
+          </span>
+        </div>
+      </div>
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </div>
+    </li>
+  </ul>
+  <div
+    role="alert"
+    style="<removed>"
+  >
+  </div>
+</form>
+`;
+
+exports[`Too Many Files 1`] = `
+<style>
+  .file-upload-too-many-files-main {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ds-size-3);
+        }
+</style>
+<form>
+  <ds-field style="<removed>">
+    <label for="<generated>">
+      Last opp dokumentasjon
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
+    >
+      Du kan kun laste opp 2 filer.
+    </div>
+    <div role="presentation">
+      <div>
+      </div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        multiple
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated> <generated>"
+        aria-invalid="true"
+      >
+    </div>
+    <p
+      data-field="validation"
+      id="<generated>"
+    >
       Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.
     </p>
-  </div>
+  </ds-field>
   <h3 data-size="2xs">
     Vedlegg (3):
   </h3>
@@ -1290,45 +2184,58 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel1.pdf">
+          <span id="<generated>-name">
             eksempel1.pdf
-          </a>
-          <p data-size="sm">
-            0.29 MB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              293 KB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel1.pdf"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -1360,45 +2267,58 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel2.docx">
+          <span id="<generated>-name">
             eksempel2.docx
-          </a>
-          <p data-size="sm">
-            8.79 KB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              9 KB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel2.docx"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
@@ -1425,50 +2345,63 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <a download="eksempel3.png">
+          <span id="<generated>-name">
             eksempel3.png
-          </a>
-          <p data-size="sm">
-            2.86 MB
-          </p>
+          </span>
+          <div id="<generated>-description">
+            <span>
+              2,86 MB
+            </span>
+          </div>
         </div>
-        <button
-          data-icon="true"
-          data-variant="tertiary"
-          type="button"
-          data-tooltip="Fjern filen"
-          data-placement="top"
-          data-autoplacement="true"
-          aria-label="Fjern filen"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            fill="none"
-            viewbox="0 0 24 24"
-            focusable="false"
-            role="img"
-            aria-hidden="true"
+        <div>
+          <button
+            data-icon="true"
+            data-variant="tertiary"
+            type="button"
+            id="<generated>"
+            aria-labelledby="<generated> <generated>-file"
+            data-tooltip="Fjern filen"
+            data-placement="top"
+            data-autoplacement="true"
+            aria-label="Fjern filen"
           >
-            <path
-              fill="currentColor"
-              fill-rule="evenodd"
-              d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
-              clip-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="none"
+              viewbox="0 0 24 24"
+              focusable="false"
+              role="img"
+              aria-hidden="true"
             >
-            </path>
-          </svg>
-        </button>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
+          </button>
+          <span
+            hidden
+            id="<generated>-file"
+            role="img"
+            aria-label="eksempel3.png"
+          >
+          </span>
+        </div>
       </div>
       <div
-        aria-relevant="additions removals"
         aria-live="polite"
+        aria-atomic="true"
       >
       </div>
     </li>
   </ul>
-</div>
+</form>
 `;
 
 exports[`Upload 1`] = `
@@ -1479,96 +2412,104 @@ exports[`Upload 1`] = `
           gap: var(--ds-size-3);
         }
 </style>
-<div>
-  <div>
-    <label
-      id="<generated>-label"
-      for="<generated>-button"
-    >
+<form>
+  <ds-field>
+    <label for="<generated>">
       Last opp rapport
     </label>
     <div
       data-field="description"
-      id="<generated>-description"
+      id="<generated>"
     >
       Du kan legge ved 1 fil.
     </div>
-    <button
-      data-variant="secondary"
-      type="button"
-      id="<generated>-button"
-      aria-labelledby="<generated>-label"
-      aria-describedby="<generated>-description"
-      aria-label="Velg fil"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1em"
-        height="1em"
-        fill="none"
-        viewbox="0 0 24 24"
-        focusable="false"
-        role="img"
-        aria-hidden="true"
-      >
-        <path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
-          clip-rule="evenodd"
+    <span>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
         >
-        </path>
-      </svg>
-    </button>
-    <input type="file">
-  </div>
-  <h3 data-size="2xs">
-    Vedlegg (1):
-  </h3>
-  <ul
-    role="list"
-    data-variant="default"
-  >
-    <li aria-busy="true">
-      <div>
-        <div>
-          <svg
-            aria-label="spinner"
-            role="img"
-            viewbox="0 0 50 50"
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
           >
-            <circle
-              cx="25"
-              cy="25"
-              r="20"
-              fill="none"
-              stroke-width="5"
-            >
-            </circle>
-            <circle
-              cx="25"
-              cy="25"
-              r="20"
-              fill="none"
-              stroke-width="5"
-            >
-            </circle>
-          </svg>
-        </div>
-        <div>
-          <a download="rapport.pdf">
-            rapport.pdf
-          </a>
-          <p data-size="sm">
-          </p>
-        </div>
-      </div>
-      <div
-        aria-relevant="additions removals"
-        aria-live="polite"
+          </path>
+        </svg>
+      </span>
+      <input
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
       >
+    </span>
+  </ds-field>
+</form>
+`;
+
+exports[`Upload And Validate 1`] = `
+<form style="<removed>">
+  <ds-field data-clickdelegatefor="<generated>">
+    <input
+      type="checkbox"
+      id="<generated>"
+    >
+    <label
+      data-weight="regular"
+      for="<generated>"
+    >
+      <span>
+        La valideringen avvise filen
+      </span>
+    </label>
+  </ds-field>
+  <ds-field>
+    <label for="<generated>">
+      Last opp kandidatliste
+    </label>
+    <div
+      data-field="description"
+      id="<generated>"
+    >
+      Du kan laste opp én fil i CSV-format.
+    </div>
+    <div role="presentation">
+      <div>
       </div>
-    </li>
-  </ul>
-</div>
+      <span data-variant="secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="none"
+          viewbox="0 0 24 24"
+          focusable="false"
+          role="img"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M6.97 9.03a.75.75 0 0 0 1.06 0l3.22-3.22v8.69a.75.75 0 0 0 1.5 0V5.81l3.22 3.22a.75.75 0 1 0 1.06-1.06l-4.5-4.5a.75.75 0 0 0-1.06 0l-4.5 4.5a.75.75 0 0 0 0 1.06M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </span>
+      <input
+        accept="text/csv, .csv"
+        type="file"
+        id="<generated>"
+        aria-describedby="<generated>"
+      >
+    </div>
+  </ds-field>
+</form>
 `;
