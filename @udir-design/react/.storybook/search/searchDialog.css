@@ -30,6 +30,16 @@ pagefind-modal pagefind-filter-dropdown {
   opacity: 0.4;
 }
 
+/*
+ * Pagefind only shows the close button on small screens. Show it everywhere,
+ * so the dialog can be closed without the keyboard or clicking outside it, and
+ * align it with the search field rather than between it and the filter.
+ */
+:is(*, #\#):is(*, #\#):is(*, #\#) pagefind-modal-header .pf-modal-close {
+  display: flex;
+  align-self: start;
+}
+
 .uds-search-dev-note {
   margin: 0 0 var(--ds-size-3);
   font-size: 0.8rem;

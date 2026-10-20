@@ -58,7 +58,12 @@ const tierBadgeTemplate = getTierBadges()
 // the sidebar is hidden, and on small screens where the sidebar is in a menu.
 const searchModal = document.createElement('pagefind-modal') as PagefindModal;
 searchModal.lang = 'nb';
-searchModal.innerHTML = `
+// The modal moves its children into a <dialog> when it's added to the page.
+// Pagefind's elements set themselves up again each time they're moved, so the
+// header would get two close buttons. Elements in a <template> aren't set up
+// until the modal is added, after the move.
+const searchModalContent = document.createElement('template');
+searchModalContent.innerHTML = `
   <pagefind-modal-header>
     <pagefind-input></pagefind-input>
     <pagefind-filter-dropdown filter="category" label="Kategori"></pagefind-filter-dropdown>
@@ -112,6 +117,7 @@ searchModal.innerHTML = `
     <pagefind-keyboard-hints></pagefind-keyboard-hints>
   </pagefind-modal-footer>
 `;
+searchModal.append(searchModalContent.content);
 document.body.append(searchModal);
 
 // Pagefind's dialog closes on Escape in a capture-phase listener, before the
