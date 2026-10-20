@@ -606,8 +606,12 @@ describe('FileUpload.Item', () => {
   });
 
   describe('while `loading` hides the focused button', () => {
-    /* Loading lasts long enough to be seen before it ends. */
-    const later = (done: () => void) => setTimeout(done, 200);
+    /* Loading ends when the test says so. A set time could run out before the
+       test has seen the file loading, as it did when the machine was busy. */
+    let finish = () => {};
+    const later = (done: () => void) => {
+      finish = done;
+    };
 
     function Files() {
       const [names, setNames] = useState(['a.pdf', 'b.pdf']);
@@ -667,6 +671,7 @@ describe('FileUpload.Item', () => {
       render(<Files />);
 
       await press('a.pdf', 'download');
+      act(() => finish());
 
       await vi.waitFor(() =>
         expect(buttonIn('a.pdf', 'download')).toHaveFocus(),
@@ -679,6 +684,7 @@ describe('FileUpload.Item', () => {
 
       await press('a.pdf', 'download');
       outside.focus();
+      act(() => finish());
 
       await vi.waitFor(() =>
         expect(buttonIn('a.pdf', 'download')).toBeInTheDocument(),
@@ -690,6 +696,7 @@ describe('FileUpload.Item', () => {
       render(<Files />);
 
       await press('a.pdf', 'delete');
+      act(() => finish());
 
       await vi.waitFor(() => expect(buttonIn('b.pdf', 'delete')).toHaveFocus());
     });
@@ -698,7 +705,7 @@ describe('FileUpload.Item', () => {
       render(<Files />);
 
       await press('a.pdf', 'download');
-      // Past the moment the announcement would be made, still loading.
+      // Past the moment the announcement would be made.
       await new Promise((resolve) => setTimeout(resolve, 50));
 
       const row = screen.getByText('a.pdf').closest('li') as Element;
