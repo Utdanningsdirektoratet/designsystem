@@ -174,18 +174,28 @@ window.addEventListener('message', (event) => {
   }
 });
 
-// Storybook has no API for adding to the sidebar, so add a search button below
-// the sidebar header whenever Storybook renders one: on load, after the sidebar
-// is hidden and shown again, and when the menu opens on small screens.
+// Storybook has no API for adding to the sidebar, so add a search button
+// whenever the sidebar appears in the DOM.
 new MutationObserver(() => {
-  for (const header of document.querySelectorAll('.sidebar-header')) {
-    const wrapper = header.parentElement;
-    if (wrapper?.nextElementSibling?.localName !== 'pagefind-modal-trigger') {
-      const trigger = document.createElement('pagefind-modal-trigger');
-      // The Norwegian translation would use the lowercase "søk".
-      trigger.setAttribute('placeholder', 'Søk');
-      trigger.lang = 'nb';
-      wrapper?.after(trigger);
+  const header = document.getElementById('storybook-sidebar-region');
+  const wrapper = header?.querySelector('[role="search"]');
+  if (wrapper?.firstElementChild?.localName !== 'pagefind-modal-trigger') {
+    const trigger = document.createElement('pagefind-modal-trigger');
+    // The Norwegian translation would use the lowercase "søk".
+    trigger.setAttribute('placeholder', 'Søk');
+    trigger.lang = 'nb';
+    wrapper?.prepend(trigger);
+  }
+  // Storybook's search field now only shows the tag filter button, but would
+  // still be announced as a combobox. Remove its role and ARIA attributes.
+  // React only sets attributes again when the value it renders changes, so
+  // this lasts until the sidebar is rendered again.
+  const field = wrapper?.querySelector('.search-field');
+  if (field?.hasAttribute('role')) {
+    for (const name of field.getAttributeNames()) {
+      if (name === 'role' || name.startsWith('aria-')) {
+        field.removeAttribute(name);
+      }
     }
   }
 }).observe(document.body, { childList: true, subtree: true });
