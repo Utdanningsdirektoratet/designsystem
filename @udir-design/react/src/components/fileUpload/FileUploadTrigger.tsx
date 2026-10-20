@@ -10,6 +10,7 @@ import type { InputProps } from '../input';
 import { Label } from '../typography/label';
 import { ValidationMessage } from '../typography/validationMessage';
 import './fileUpload.css';
+import { markAttached } from './attached';
 import { useFileInput } from './useFileInput';
 
 type InputProps_ = Omit<
@@ -120,6 +121,7 @@ export const FileUploadTrigger = forwardRef<DSFieldElement, FileUploadProps>(
             {...inputProps}
             ref={inputRef}
             onChange={(e) => {
+              markAttached(e.currentTarget);
               inputProps?.onChange?.(e);
               if (files) return;
               // Without `files` the input cannot be kept accurate, so keep it

@@ -5,6 +5,7 @@ import { userEvent } from 'vitest/browser';
 import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadItem } from './FileUploadItem';
 import { FileUploadItemButton } from './FileUploadItemButton';
+import { FileUploadTrigger } from './FileUploadTrigger';
 import './fileUpload.css';
 
 afterEach(cleanup);
@@ -229,6 +230,163 @@ describe('FileUpload.Item', () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it('does not announce the loading text a file has as the page loads, until it changes', () => {
+    // The screen reader reads it along with the page.
+    vi.useFakeTimers();
+    try {
+      const file = new File([new Uint8Array(1024)], 'eksempel.txt');
+      const item = (loadingText: string) => (
+        <ul>
+          <FileUploadItem
+            file={file}
+            loading
+            loadingText={loadingText}
+            onRemove={() => {}}
+          />
+        </ul>
+      );
+      const region = () =>
+        screen.getByRole('listitem').querySelector('[aria-live]') as Element;
+
+      const { rerender } = render(item('Laster opp…'));
+      act(() => {
+        vi.advanceTimersByTime(0);
+      });
+
+      expect(region()).toBeEmptyDOMElement();
+
+      rerender(item('Sjekker innholdet…'));
+      act(() => {
+        vi.advanceTimersByTime(0);
+      });
+
+      expect(region()).toHaveTextContent('eksempel.txt: Sjekker innholdet…');
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  describe('with a message from the start', () => {
+    // Text that reaches a region already on the page, which is what a screen
+    // reader announces. A row that arrives with its message is not counted.
+    const watchRegions = () => {
+      const announced: string[] = [];
+      const observer = new MutationObserver((records) => {
+        for (const { target, addedNodes } of records) {
+          const element =
+            target instanceof Element ? target : target.parentElement;
+          const region = element?.closest('[aria-live]');
+          if (region && addedNodes.length > 0) {
+            announced.push(region.textContent ?? '');
+          }
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+      return { announced, stop: () => observer.disconnect() };
+    };
+
+    function Attach() {
+      const [files, setFiles] = useState<File[]>([]);
+      return (
+        <>
+          <FileUploadTrigger
+            label="Last opp"
+            inputProps={{
+              multiple: true,
+              onChange: (e) => setFiles(Array.from(e.target.files ?? [])),
+            }}
+          />
+          <ul>
+            {files.map((file) => (
+              <FileUploadItem
+                key={file.name}
+                file={file}
+                error="Filformatet støttes ikke"
+                onRemove={() => {}}
+              />
+            ))}
+          </ul>
+        </>
+      );
+    }
+    const text = (name: string) =>
+      new File(['tekst'], name, { type: 'text/plain' });
+
+    it('shows it at once and announces it when the user has just added the file', async () => {
+      render(<Attach />);
+      const regions = watchRegions();
+
+      try {
+        await userEvent.upload(
+          screen.getByLabelText('Last opp'),
+          text('a.txt'),
+        );
+
+        expect(screen.getByText('Filformatet støttes ikke')).toBeVisible();
+        await vi.waitFor(() =>
+          expect(regions.announced).toContain(
+            'a.txt: Filformatet støttes ikke.',
+          ),
+        );
+      } finally {
+        regions.stop();
+      }
+    });
+
+    it('announces the files added together with the same message in one sentence', async () => {
+      // The list of names follows the language the files are in.
+      render(
+        <div lang="nb">
+          <Attach />
+        </div>,
+      );
+      const regions = watchRegions();
+
+      try {
+        await userEvent.upload(screen.getByLabelText('Last opp'), [
+          text('a.txt'),
+          text('b.txt'),
+        ]);
+
+        await vi.waitFor(() => expect(regions.announced).toHaveLength(1));
+        expect(screen.getByRole('status')).toHaveTextContent(
+          /^a\.txt og b\.txt: Filformatet støttes ikke\.$/,
+        );
+      } finally {
+        regions.stop();
+      }
+    });
+
+    it('shows it without announcing it when the file is there as the page loads', async () => {
+      // The screen reader reads the page, message and all.
+      vi.useFakeTimers();
+      const regions = watchRegions();
+      try {
+        render(
+          <ul>
+            <FileUploadItem
+              file={new File([new Uint8Array(1024)], 'notat.txt')}
+              error="Filformatet støttes ikke"
+              onRemove={() => {}}
+            />
+          </ul>,
+        );
+
+        expect(screen.getByText('Filformatet støttes ikke')).toBeVisible();
+
+        act(() => {
+          vi.runAllTimers();
+        });
+        await Promise.resolve();
+
+        expect(regions.announced).toEqual([]);
+      } finally {
+        regions.stop();
+        vi.useRealTimers();
+      }
+    });
   });
 
   it('renders file size when description is unset', () => {

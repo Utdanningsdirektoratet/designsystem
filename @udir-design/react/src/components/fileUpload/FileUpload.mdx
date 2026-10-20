@@ -250,17 +250,17 @@ Stopp innsendingen så lenge en fil i lista har feil. Da kan ikke brukeren sende
 
 Feil på feltnivå blir lest opp sammen med label og beskrivelse, og feltet blir meldt som ugyldig. Feilmeldingen kommer før beskrivelsen, fordi det er den brukeren må handle på. Feilen blir lest opp både når brukeren kommer til feltet, og når den oppstår mens feltet har fokus.
 
-Meldinger som dukker opp på en fil, for eksempel når serveren avviser eller godkjenner den etter opplasting, blir lest opp med det samme. Dette gjelder `error`, `success` og teksten som vises mens `loading` er satt. Filnavnet blir lest opp sammen med meldingen, så du trenger ikke gjenta det i teksten. `error` og `success` blir bare lest opp når de kommer på en fil som allerede ligger i lista. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
+Meldinger som dukker opp på en fil, blir lest opp med det samme. Det gjelder når serveren avviser eller godkjenner en fil etter opplasting, og når en fil brukeren nettopp har lagt ved i `FileUpload.Dropzone` eller `FileUpload.Trigger` får en melding med en gang, for eksempel fordi filformatet ikke støttes. Dette gjelder `error`, `success` og teksten som vises mens `loading` er satt. Filnavnet blir lest opp sammen med meldingen, så du trenger ikke gjenta det i teksten. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
 
 Går brukeren gjennom lista, blir filnavnet på en fil med feil lest opp som ugyldig. Da trenger ikke brukeren lese hele raden for å finne ut hvilke filer som må ses på.
 
-Filer som får en melding idet de legges ved, blir ikke lest opp. Raden og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder en fil som allerede er godkjent når sida lastes, for eksempel når et skjema henter fram lagrede svar.
+Meldinger på filer som allerede ligger i lista når sida lastes, for eksempel når et skjema henter fram lagrede svar, blir ikke lest opp. Skjermleseren leser dem sammen med resten av sida. Det samme gjelder teksten på en fil som laster når sida lastes, helt til teksten endres eller filen er ferdig. Filer som legges ved med et eget filfelt i stedet for `FileUpload.Dropzone` eller `FileUpload.Trigger`, blir heller ikke lest opp med meldingen de får idet de legges ved.
 
-Derfor bør du vise en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+Vis også en feilmelding på feltet så lenge en fil i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". En melding på en fil blir bare lest opp når den dukker opp, mens feilen på feltet blir lest opp hver gang brukeren kommer til feltet, og blir stående til feilen er ute av veien.
 
 ### Feil og innsending
 
-Eksempelet under viser hvordan feil henger sammen med innsendingen: en fil som blir avvist med en gang, en fil serveren avviser etterpå, og en opplasting som ikke er ferdig. Alle tre ligger i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
+Eksempelet under viser hvordan feil henger sammen med innsendingen: en fil som blir avvist med en gang, en fil serveren avviser etterpå, og en opplasting som ikke er ferdig. Alle tre ligger i den samme lista og sier fra på feltet, siden feilen på feltet blir lest opp hver gang brukeren kommer til feltet.
 
 Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
 
