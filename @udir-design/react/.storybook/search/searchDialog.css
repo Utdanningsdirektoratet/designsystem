@@ -1,5 +1,6 @@
 pagefind-modal-trigger {
   display: block;
+  flex-grow: 1;
 }
 
 pagefind-modal pagefind-filter-dropdown {
@@ -75,16 +76,38 @@ pagefind-modal pagefind-filter-dropdown {
 }
 
 /*
- * Storybook's own sidebar search is replaced by Pagefind. Hide its search
- * field, icon and shortcut, but keep the tag filter button next to them.
+ * Storybook's own sidebar search is replaced by Pagefind. Hide its search field,
+ * icon and shortcut, but keep the tag filter and add story button next to them.
+ * `searchDialog.ts` removes the field's combobox role, so select it by class.
  */
-[role='search']:has(#storybook-explorer-searchfield) {
-  justify-content: flex-end;
-}
-[role='combobox']:has(> #storybook-explorer-searchfield) {
-  width: auto;
-  flex-grow: 0;
-}
-[role='combobox']:has(> #storybook-explorer-searchfield) > :not(:has(button)) {
+.search-field:has(> #storybook-explorer-searchfield) > :not(:has(button)) {
   display: none;
+}
+
+/*
+ * Prevent the tag filter from growing in width, and remove the search field's
+ * outline, so only the button shows.
+ */
+.search-field:has(> #storybook-explorer-searchfield) {
+  flex-grow: 0;
+  box-shadow: none;
+}
+
+/* Resize tag filter and add story button to match Pagefind's search trigger. */
+#storybook-sidebar-region [role='search'] > :is(.search-field, button) {
+  height: var(--pf-input-height);
+  width: var(--pf-input-height);
+  justify-content: center;
+}
+#storybook-sidebar-region [role='search'] > .search-field button {
+  height: var(--pf-input-height);
+  width: var(--pf-input-height);
+}
+
+/*
+ * Storybook offsets the tag filter's focus ring by 4px to go around the search
+ * field. Use the add story button's 2px instead.
+ */
+#storybook-sidebar-region [role='search'] > .search-field button:focus-visible {
+  outline-offset: 2px;
 }
