@@ -8,6 +8,7 @@ import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { sourceCodeToolbarAddon } from './addons/sourceCodeToolbar';
+import { withDocumentTitle } from './decorators/withDocumentTitle';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
 import type {
@@ -79,7 +80,7 @@ export default definePreview({
     viewport: { value: 'desktop' },
   },
 
-  decorators: [CustomStylesDecorator],
+  decorators: [CustomStylesDecorator, withDocumentTitle],
 
   addons: [
     addonA11y(),
