@@ -1090,6 +1090,23 @@ export const ItemsInDialog_Test = ItemsInDialog.extend({
         );
       },
     );
+
+    await step(
+      'The message on a file just added is announced inside the dialog',
+      async () => {
+        await userEvent.upload(
+          dialog.getByLabelText('Last opp filer'),
+          new File(['tekst'], 'notat.txt', { type: 'text/plain' }),
+        );
+        await waitFor(
+          () =>
+            expect(dialog.getByRole('status')).toHaveTextContent(
+              'notat.txt: Filformatet støttes ikke.',
+            ),
+          { timeout: 2000 },
+        );
+      },
+    );
   },
 });
 

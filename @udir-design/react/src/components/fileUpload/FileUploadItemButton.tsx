@@ -3,6 +3,7 @@ import cl from 'clsx/lite';
 import { forwardRef, useCallback, useId, useRef } from 'react';
 import type { MouseEvent, ReactNode } from 'react';
 import { Button, type ButtonProps } from '../button';
+import { announce, prepareAnnouncements } from './announce';
 
 export interface FileUploadItemButtonProps extends Omit<
   ButtonProps,
@@ -401,56 +402,4 @@ function keepAnnouncing(button: HTMLButtonElement) {
     removal.stop();
     removals.delete(row);
   }
-}
-
-/**
- * One region for the page, and one for each dialog with files in it: while a
- * modal dialog is open, the rest of the page is inert, and a screen reader
- * hears nothing from a region there. Outside every list, so it stays when the
- * consumer hides a list that is left empty. Found by the dialog or page.
- */
-const regions = new WeakMap<Element, HTMLElement>();
-const timers = new WeakMap<HTMLElement, number>();
-
-/**
- * Puts the region for where `element` is in place before it has anything to
- * say, since a screen reader only announces what changes in a region it
- * already knows about: the region in the nearest dialog, native or with
- * `aria-modal`, or else the one for the page.
- */
-function prepareAnnouncements(element: Element) {
-  const container =
-    element.closest('dialog, [aria-modal="true"]') ?? document.body;
-  let status = regions.get(container);
-  if (!status) {
-    status = document.createElement('div');
-    status.setAttribute('role', 'status');
-    status.setAttribute('aria-live', 'polite');
-    status.className = 'ds-sr-only';
-    regions.set(container, status);
-  }
-  if (status.parentNode !== container) container.append(status);
-  return status;
-}
-
-/**
- * Sets the text a moment after focus has moved. VoiceOver in Safari read the
- * text after the next file's button when it came right away, but dropped it
- * when focus went to an upload field, as the consumer does when the list is
- * left empty. Half a second later, it read the field and then the text. When
- * focus fell to the page instead, it dropped the text even a second later.
- */
-function announce(text: string, status: HTMLElement) {
-  clearTimeout(timers.get(status));
-  const timer = window.setTimeout(() => {
-    /* The same text again may not be read again, so it is told apart by a
-       non-breaking space. */
-    status.textContent = status.textContent === text ? `${text}\u00a0` : text;
-    /* Emptied again, so the text is not found later when reading the page. */
-    timers.set(
-      status,
-      window.setTimeout(() => status.replaceChildren(), 5000),
-    );
-  }, 500);
-  timers.set(status, timer);
 }
