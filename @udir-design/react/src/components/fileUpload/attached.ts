@@ -1,9 +1,10 @@
 /**
  * When and where the user last chose or dropped files in a
- * `FileUpload.Dropzone` or `FileUpload.Trigger`. A file that shows up loading
- * soon after is one the user just added, and has its loading text announced.
- * One that is loading when the page loads does not: the screen reader reads
- * the page, loading text and all.
+ * `FileUpload.Dropzone` or `FileUpload.Trigger`. A file that shows up with a
+ * message or loading text soon after is one the user just added, such as a
+ * file of the wrong type, and has it announced. One that is there when the
+ * page loads, such as from saved answers, does not: the screen reader reads
+ * the page, message and all.
  */
 let attachedAt = -Infinity;
 let attachedIn: Element | undefined;
