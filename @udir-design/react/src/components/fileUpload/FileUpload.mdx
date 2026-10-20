@@ -232,7 +232,7 @@ Eksempelet under viser hvordan feil henger sammen med innsendingen. Last opp fil
 - en fil serveren avviser etterpå, når du trykker "La serveren avvise filen"
 - en opplasting som ikke er ferdig, så lenge du ikke trykker "Fullfør opplastingen"
 
-Alle havner i den samme lista og sier fra på feltet, siden det bare er der brukeren får det lest opp.
+Alle havner i den samme lista og sier fra på feltet, siden feilen på feltet blir lest opp hver gang brukeren kommer til feltet.
 
 Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
 
@@ -251,7 +251,7 @@ Feilmeldinger hører hjemme på to nivåer:
 
 La feilmeldingen på feltet si at noe må ses på og hvor, og la feilmeldingen på hvert vedlegg si hva. Da er meldingen på feltet korrekt uansett hva som er galt med den enkelte filen.
 
-Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". Feltet er det eneste stedet brukeren får beskjed uten å lete, og meldingen blir stående til feilen er ute av veien.
+Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". En melding på et vedlegg blir bare lest opp når den dukker opp, mens feilen på feltet blir lest opp hver gang brukeren kommer til feltet, og blir stående til feilen er ute av veien.
 
 Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
 
@@ -309,7 +309,7 @@ Skjermlesere leser `tooltip` på `FileUpload.ItemButton` med filnavnet etter, s�
 
 Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
 
-Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. `error` og `success` blir bare lest opp når de dukker opp på et vedlegg som allerede ligger i lista. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
+Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. Et vedlegg som legges til med en melding, blir også lest opp, så lenge filen ble lagt ved i `FileUpload.Dropzone` eller `FileUpload.Trigger`. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
 
 Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
 
@@ -317,7 +317,7 @@ Skjermlesere leser knappene på et vedlegg med filnavnet etter, for eksempel "Fj
 
 Når brukeren bruker den innebygde knappen for å fjerne et vedlegg, annonseres dette av skjermleseren når vedlegget blir borte, for eksempel "soknad.pdf er fjernet". Fjerner du vedlegg på andre måter, må du selv sørge for at dette annonseres.
 
-Skjermlesere leser ikke opp meldingen på et vedlegg som legges til med en melding, for eksempel en fil som blir avvist idet den legges ved. Vedlegget og meldingen kommer da samtidig, og en skjermleser leser bare opp det som dukker opp senere. Det samme gjelder meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Har et vedlegg `loading` satt allerede når siden lastes, blir teksten lest sammen med resten av siden, og ikke lest opp før `loadingText` endres.
+Skjermlesere leser ikke opp meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Meldingene blir lest sammen med resten av siden. Det samme gjelder teksten på et vedlegg som har `loading` satt allerede når siden lastes. Det som skjer etterpå, for eksempel at `loadingText` endres eller vedlegget får en melding, blir lest opp som vanlig.
 
 ### Fokus
 

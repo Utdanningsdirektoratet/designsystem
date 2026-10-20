@@ -26,6 +26,7 @@ import { Link } from '../link';
 import { Spinner } from '../spinner';
 import { FileUploadFileSize } from './FileUploadFileSize';
 import { ItemButton } from './FileUploadItemButton';
+import { announceMessage } from './announce';
 import { justAttached } from './attached';
 import type { FileMeta } from './types';
 
@@ -116,9 +117,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
     const rowRef = useRef<HTMLLIElement>(null);
     useImperativeHandle(ref, () => rowRef.current as HTMLLIElement);
 
-    /* A file that is there when the page loads has its loading text read
-       along with the rest of the page, so it is not announced until it
-       changes or loading ends. A file the user just added is announced. */
+    /* A file that is there when the page loads has its message and loading
+       text read along with the rest of the page, so neither is announced: the
+       message is in the region from the start, and the loading text stays
+       quiet until it changes or loading ends. A file the user just added is
+       announced, see below. */
     const [justAdded] = useState(justAttached);
     const quietLoading = useRef(
       loading && !justAdded ? { text: loadingText } : undefined,
@@ -211,6 +214,24 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
       };
     }, [loading, loadingText]);
 
+    /* The row's own region cannot announce a message that arrives with the
+       row. It goes to the region for the whole page instead, which also
+       waits long enough for VoiceOver in Safari, and puts files with the same
+       message in one sentence. The message is read off the row's region,
+       after the file name it starts with there, so one given as an element
+       works too. */
+    const [newFileName] = useState(() =>
+      justAdded && Boolean(message) ? file.name : undefined,
+    );
+    useEffect(() => {
+      const region = regionRef.current;
+      const prefix = `${newFileName}: `;
+      const text = region?.textContent;
+      if (newFileName && region && text?.startsWith(prefix)) {
+        announceMessage(newFileName, text.slice(prefix.length), region);
+      }
+    }, [newFileName]);
+
     const deleteButton = onRemove && !readonly && (
       <ItemButton
         kind="delete"
@@ -267,14 +288,11 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
             </div>
           )}
         </div>
-        {/* Announces what happens to a file that is already listed: the
+        {/* Announces what happens to a file that is already listed: its
             loading text, see above, and a verdict such as the one a server
-            reports once the upload finishes. An item that is added with a
-            message cannot announce it: the region and the message arrive
-            together, and a region only announces what reaches it after it is
-            in the dom. `aria-atomic` keeps the file name in the announcement
-            when one text replaces another, where only the text itself would
-            otherwise be new. */}
+            reports once the upload finishes. `aria-atomic` keeps the file name
+            in the announcement when one text replaces another, where only the
+            text itself would otherwise be new. */}
         <div
           ref={regionRef}
           aria-live="polite"
