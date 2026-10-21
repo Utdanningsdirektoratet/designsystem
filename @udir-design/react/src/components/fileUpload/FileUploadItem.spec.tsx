@@ -652,8 +652,7 @@ describe('FileUpload.Item', () => {
       await userEvent.keyboard('{Enter}');
       await vi.waitFor(() =>
         expect(screen.getByText(name).closest('li')).toHaveAttribute(
-          'aria-busy',
-          'true',
+          'data-loading',
         ),
       );
     };
@@ -777,7 +776,7 @@ describe('FileUpload.Item', () => {
       await new Promise((resolve) => setTimeout(resolve, 50));
 
       const row = screen.getByText('a.pdf').closest('li') as Element;
-      expect(row).toHaveAttribute('aria-busy', 'true');
+      expect(row).toHaveAttribute('data-loading');
       expect(row.querySelector('[aria-live]')).toBeEmptyDOMElement();
     });
   });
@@ -901,10 +900,7 @@ describe('FileUpload.Item', () => {
 
       await userEvent.click(buttonIn('x.pdf', 'delete') as HTMLElement);
       await vi.waitFor(() =>
-        expect(screen.getByRole('listitem')).toHaveAttribute(
-          'aria-busy',
-          'true',
-        ),
+        expect(screen.getByRole('listitem')).toHaveAttribute('data-loading'),
       );
       await pastTheWait();
       expect(status()).not.toMatchTextContent('x.pdf');
