@@ -552,9 +552,9 @@ export const ExampleItems_Test = ExampleItems.extend({
       await expect(removeButtons).toHaveLength(3);
     });
 
-    await step('Loading item has aria-busy set', async () => {
-      const busyItem = canvasElement.querySelector('[aria-busy="true"]');
-      await expect(busyItem).toBeInTheDocument();
+    await step('Loading item is marked as loading', async () => {
+      const loadingItem = canvasElement.querySelector('[data-loading]');
+      await expect(loadingItem).toBeInTheDocument();
     });
 
     await step('Error item is marked as invalid', async () => {
@@ -1004,8 +1004,7 @@ export const Upload_Test = Upload.extend({
 
     await step('Item is loading after upload', async () => {
       await expect(canvas.getByRole('listitem')).toHaveAttribute(
-        'aria-busy',
-        'true',
+        'data-loading',
       );
     });
   },
@@ -1345,8 +1344,8 @@ export const UploadAndValidate_Test = UploadAndValidate.extend({
       await waitFor(() => expect(rows()).toHaveLength(2));
       await expect(canvas.getByText(tooMany)).toBeVisible();
       // Neither is worth sending until the user has settled which it is.
-      await expect(rows()[0]).not.toHaveAttribute('aria-busy');
-      await expect(rows()[1]).not.toHaveAttribute('aria-busy');
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
+      await expect(rows()[1]).not.toHaveAttribute('data-loading');
     });
 
     await step('Removing one starts the file that is left', async () => {
@@ -1393,7 +1392,7 @@ export const UploadAndValidate_Test = UploadAndValidate.extend({
       await expect(rows()).toHaveLength(1);
       await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
       // Not sent a second time: it was handled when it was first alone.
-      await expect(rows()[0]).not.toHaveAttribute('aria-busy');
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
       await expect(canvas.getByText('Filen er godkjent')).toBeVisible();
     });
 
@@ -1434,9 +1433,9 @@ export const UploadAndValidate_Test = UploadAndValidate.extend({
       await waitFor(() =>
         expect(canvas.getByText('Filformatet støttes ikke')).toBeVisible(),
       );
-      // Sent, it would be busy for the length of both checks.
+      // Sent, it would be loading for the length of both checks.
       await delay(300);
-      await expect(rows()[0]).not.toHaveAttribute('aria-busy');
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
     });
   },
 });

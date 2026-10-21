@@ -1061,7 +1061,7 @@ exports[`Example Items 1`] = `
       >
       </div>
     </li>
-    <li aria-busy="true">
+    <li data-loading="true">
       <span
         tabindex="-1"
         hidden
@@ -1458,7 +1458,7 @@ exports[`Item Actions 1`] = `
     >
     </div>
   </li>
-  <li aria-busy="true">
+  <li data-loading="true">
     <span
       tabindex="-1"
       hidden
