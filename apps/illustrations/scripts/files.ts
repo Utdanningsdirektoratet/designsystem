@@ -62,10 +62,7 @@ export async function replaceDirectory(
     }
     if (backup) await rm(backup, { recursive: true, force: true });
   } finally {
-    try {
-      if (stage) await rm(stage, { recursive: true, force: true });
-    } finally {
-      await release();
-    }
+    if (stage) await rm(stage, { recursive: true, force: true });
+    await release();
   }
 }

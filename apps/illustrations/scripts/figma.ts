@@ -72,29 +72,6 @@ export async function request(
   throw new Error('Figma retry limit reached.');
 }
 
-export interface FigmaNode {
-  id: string;
-  name: string;
-  type: string;
-  visible?: boolean;
-  absoluteBoundingBox?: { width: number; height: number };
-  children?: FigmaNode[];
-  componentId?: string;
-  componentPropertyDefinitions?: Record<string, FigmaPropertyDefinition>;
-  componentProperties?: Record<string, FigmaProperty>;
-}
-
-export interface FigmaPropertyDefinition {
-  type: string;
-  defaultValue: string | boolean;
-  variantOptions?: string[];
-}
-
-export interface FigmaProperty {
-  type: string;
-  value: string | boolean;
-}
-
 const propertyDefinitionSchema = z.object({
   type: z.string(),
   defaultValue: z.union([z.string(), z.boolean()]),
@@ -104,6 +81,21 @@ const propertySchema = z.object({
   type: z.string(),
   value: z.union([z.string(), z.boolean()]),
 });
+
+export interface FigmaNode {
+  id: string;
+  name: string;
+  type: string;
+  visible?: boolean;
+  absoluteBoundingBox?: { width: number; height: number };
+  children?: FigmaNode[];
+  componentId?: string;
+  componentPropertyDefinitions?: Record<
+    string,
+    z.infer<typeof propertyDefinitionSchema>
+  >;
+  componentProperties?: Record<string, z.infer<typeof propertySchema>>;
+}
 
 const nodeSchema: z.ZodType<FigmaNode> = z.lazy(() =>
   z.object({
@@ -122,39 +114,44 @@ const nodeSchema: z.ZodType<FigmaNode> = z.lazy(() =>
     componentProperties: z.record(z.string(), propertySchema).optional(),
   }),
 );
-const hierarchySchema = z.object({
-  nodes: z.record(z.string(), z.object({ document: nodeSchema }).nullable()),
+const pageSchema = z.object({
+  nodes: z.record(
+    z.string(),
+    z
+      .object({
+        document: nodeSchema,
+        // Names of referenced components, including ones outside the fetched depth.
+        components: z
+          .record(z.string(), z.object({ name: z.string() }))
+          .optional(),
+        // Descriptions live here, not on the nodes themselves.
+        componentSets: z
+          .record(z.string(), z.object({ description: z.string() }))
+          .optional(),
+      })
+      .nullable(),
+  ),
 });
 
-export function parseHierarchy(value: unknown, pageNodeId: string): FigmaNode {
-  const root = hierarchySchema.parse(value).nodes[pageNodeId]?.document;
-  if (!root || root.id !== pageNodeId)
+export function parsePage(value: unknown, pageNodeId: string) {
+  const page = pageSchema.parse(value).nodes[pageNodeId];
+  if (!page)
     throw new Error('Intended Figma page node is missing from hierarchy.');
-  return root;
+  return {
+    root: page.document,
+    components: page.components ?? {},
+    descriptions: Object.fromEntries(
+      Object.entries(page.componentSets ?? {}).map(([id, set]) => [
+        id,
+        set.description,
+      ]),
+    ),
+  };
 }
 
-// Figma keeps component set descriptions in this map, not on the nodes themselves.
-export function componentSetDescriptions(value: unknown, pageNodeId: string) {
-  const page = z
-    .object({
-      nodes: z.record(
-        z.string(),
-        z
-          .object({
-            componentSets: z
-              .record(z.string(), z.object({ description: z.string() }))
-              .optional(),
-          })
-          .nullable(),
-      ),
-    })
-    .parse(value).nodes[pageNodeId];
-  return Object.fromEntries(
-    Object.entries(page?.componentSets ?? {}).map(([id, { description }]) => [
-      id,
-      description,
-    ]),
-  );
+export function* walk(node: FigmaNode): Generator<FigmaNode> {
+  yield node;
+  for (const child of node.children ?? []) yield* walk(child);
 }
 
 export async function getHierarchy(
@@ -165,9 +162,7 @@ export async function getHierarchy(
     `https://api.figma.com/v1/files/${source.fileKey}/nodes?ids=${encodeURIComponent(source.pageNodeId)}&depth=3`,
     token,
   );
-  const raw: unknown = await response.json();
-  parseHierarchy(raw, source.pageNodeId);
-  return raw;
+  return parsePage(await response.json(), source.pageNodeId);
 }
 
 const imagesSchema = z.object({
@@ -180,7 +175,6 @@ export async function exportSvgUrls(
   token: string,
   fileKey: string,
   fetcher: Fetch = fetch,
-  format: 'svg' | 'png' = 'svg',
 ) {
   const urls = new Map<string, string>();
   // Sequential batches and sequential downloads bound concurrency and URL length.
@@ -188,7 +182,7 @@ export async function exportSvgUrls(
     const batch = ids.slice(offset, offset + 25);
     const query = new URLSearchParams({
       ids: batch.join(','),
-      format,
+      format: 'svg',
       scale: '2',
       svg_include_id: 'false',
       use_absolute_bounds: 'true',

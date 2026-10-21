@@ -56,9 +56,9 @@ Run from this directory, or with `pnpm turbo run <task> --filter=@udir-design/ap
   unmapped colour theme and similar). It also warns about entries whose Figma node is gone (for example
   a recreated component) and about nodes beyond the fetched depth. `--prune` removes the stale entries;
   follow it with `sync:figma --allow-removals`. Review the diff after.
-- `sync:figma --category=<id>`: refreshes the category's entries in `metadata.json` from the live Figma
+- `sync:figma [--category=<id>]`: refreshes the category's entries in `metadata.json` from the live Figma
   page (bounds, tags, identity checks). `--allow-removals` is required to drop families or variants.
-  `--all` syncs every category in `sources`, one at a time, and stops at the first failure. Families keep
+  Without `--category` it syncs every category in `sources`, one at a time, and stops at the first failure. Families keep
   their position in the file, so a sync with no real change gives no diff.
   It does not download artwork. Run `fetch:svgs --force --category=<id>` afterwards if artwork changed.
 - `typecheck`, `lint`, `test:unit`: normal checks. Tests never access Figma.

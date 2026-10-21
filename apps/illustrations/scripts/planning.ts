@@ -2,7 +2,6 @@ import { readFileSync } from 'node:fs';
 import { z } from 'zod';
 import { getSource } from '../src/schema.ts';
 import type { CategoryId, ImportMap } from '../src/schema.ts';
-import { parseHierarchy } from './figma.ts';
 import type { FigmaNode } from './figma.ts';
 import { resolveMapping } from './mapping.ts';
 
@@ -20,7 +19,6 @@ const exclusions = exclusionsSchema.parse(
 const excludedSections = new Set(exclusions.sections.map(({ name }) => name));
 const excludedNodes = new Set(exclusions.nodes.map(({ id }) => id));
 
-const numericId = /^\d+:\d+$/;
 const axes: Record<string, string> = {
   Format: 'Format',
   'Color theme': 'Fargetema',
@@ -72,12 +70,10 @@ function assignments(node: FigmaNode) {
 
 // Derives the full import mapping for a category's Figma page. Issues list anything ambiguous.
 export function planMapping(
-  hierarchy: unknown,
+  root: FigmaNode,
   referenceComponents: Record<string, { name: string }>,
   categoryId: CategoryId,
 ) {
-  const source = getSource(categoryId);
-  const root = parseHierarchy(hierarchy, source.pageNodeId);
   const entries: { node: FigmaNode; art: boolean }[] = [];
   const warnings: string[] = [];
   function visit(node: FigmaNode, art = false) {
@@ -100,7 +96,9 @@ export function planMapping(
       visit(child, art || ['COMPONENT', 'INSTANCE'].includes(node.type));
   }
   visit(root);
-  const issues = new Set<string>();
+  const issues: { nodeIds: string[]; message: string }[] = [];
+  const report = (nodeIds: string | string[], message: string) =>
+    issues.push({ nodeIds: [nodeIds].flat(), message });
   const allSets = entries.filter(
     ({ node, art }) => node.type === 'COMPONENT_SET' && !art,
   );
@@ -136,39 +134,17 @@ export function planMapping(
   const sourceNames = new Map(entries.map(({ node }) => [node.id, node.name]));
   for (const [id, component] of Object.entries(referenceComponents))
     sourceNames.set(id, component.name);
-  const response = z
-    .object({
-      nodes: z.record(
-        z.string(),
-        z
-          .object({
-            components: z
-              .record(z.string(), z.object({ name: z.string() }))
-              .optional(),
-          })
-          .nullable(),
-      ),
-    })
-    .parse(hierarchy);
-  for (const [id, component] of Object.entries(
-    response.nodes[source.pageNodeId]?.components ?? {},
-  ))
-    sourceNames.set(id, component.name);
   const families: ImportMap['families'] = sets.map(({ node: set }) => {
-    const familySlug = `${source.idPrefix}${slug(set.name)}`;
+    const familySlug = `${getSource(categoryId).idPrefix}${slug(set.name)}`;
     const definitions = set.componentPropertyDefinitions ?? {};
-    if (
-      !familySlug ||
-      !numericId.test(set.id) ||
-      !Object.keys(definitions).length
-    )
-      issues.add(`Missing family identity/property definitions: ${set.id}.`);
+    if (!Object.keys(definitions).length)
+      report(set.id, `Missing family property definitions: ${set.id}.`);
     const children = (set.children ?? []).filter(
       (child) => !excludedNodes.has(child.id),
     );
     const bases = children.filter((child) => child.type === 'COMPONENT');
     if (!bases.length || bases.length !== children.length)
-      issues.add(`Unexpected family children: ${set.id}.`);
+      report(set.id, `Unexpected family children: ${set.id}.`);
     const instances = entries
       .filter(
         ({ node, art }) =>
@@ -179,18 +155,13 @@ export function planMapping(
       .map(({ node }) => node);
     const variants = [...bases, ...instances].map((node) => {
       const base =
-        node.type === 'INSTANCE'
-          ? components.get(node.componentId ?? '')
-          : node;
-      if (!base) throw new Error(`Missing source component for ${node.id}.`);
+        node.type === 'INSTANCE' ? components.get(node.componentId!)! : node;
       const exact = assignments(base);
       const properties: Record<string, string> = {};
       for (const [key, definition] of Object.entries(definitions)) {
         const displayKey = key.replace(/#\d+:\d+$/, '');
         if (displayKey.startsWith('_')) continue;
         const override = node.componentProperties?.[key];
-        if (override && override.type !== definition.type)
-          issues.add(`Property type conflict: ${node.id} ${key}.`);
         let property =
           override?.value ??
           (definition.type === 'VARIANT'
@@ -202,7 +173,8 @@ export function planMapping(
             !definition.variantOptions?.includes(property) ||
             (override && property !== exact[key]))
         )
-          issues.add(
+          report(
+            node.id,
             `Invalid/conflicting VARIANT evidence: ${node.id} ${key}.`,
           );
         if (
@@ -211,28 +183,29 @@ export function planMapping(
           ) ||
           property === undefined
         )
-          issues.add(
+          report(
+            node.id,
             `Unsupported/missing appearance property: ${node.id} ${key}.`,
           );
-        if (definition.type === 'BOOLEAN' && typeof property !== 'boolean')
-          issues.add(`Invalid BOOLEAN evidence: ${node.id} ${key}.`);
         if (definition.type === 'INSTANCE_SWAP') {
           const readable = sourceNames.get(String(property));
           if (!readable || readable.length > 120)
-            issues.add(
-              `Unresolved readable INSTANCE_SWAP label: ${set.name} ${key} = ${String(property)}.`,
+            report(
+              node.id,
+              `Unresolved readable INSTANCE_SWAP label: ${node.id} ${key} = ${String(property)}.`,
             );
           else property = readable.replaceAll('=', ': ');
         }
         const label = axes[displayKey] ?? displayKey;
         if (axes[displayKey] === undefined)
-          issues.add(`Unknown property name: ${node.id} "${displayKey}".`);
+          report(node.id, `Unknown property name: ${node.id} "${displayKey}".`);
         if (properties[label] !== undefined)
-          issues.add(`Appearance label collision: ${node.id} ${label}.`);
+          report(node.id, `Appearance label collision: ${node.id} ${label}.`);
         // Preserve unresolved short references in the candidate only; approval is blocked.
         if (label === 'Fargetema') {
           if (colorThemes[String(property)] === undefined)
-            issues.add(
+            report(
+              node.id,
               `Unmapped Fargetema value: ${node.id} ${String(property)}.`,
             );
           properties[label] = colorThemes[String(property)] ?? String(property);
@@ -241,7 +214,8 @@ export function planMapping(
             definition.type === 'VARIANT' &&
             values[String(property)] === undefined
           )
-            issues.add(
+            report(
+              node.id,
               `Unknown value: ${node.id} ${displayKey} = "${String(property)}".`,
             );
           properties[label] = values[String(property)] ?? String(property);
@@ -249,10 +223,13 @@ export function planMapping(
       }
       for (const key of Object.keys(exact))
         if (definitions[key]?.type !== 'VARIANT')
-          issues.add(`Unrepresented VARIANT axis: ${node.id} ${key}.`);
+          report(node.id, `Unrepresented VARIANT axis: ${node.id} ${key}.`);
       for (const key of Object.keys(node.componentProperties ?? {}))
         if (!definitions[key] && !key.startsWith('_'))
-          issues.add(`Unrepresented appearance override: ${node.id} ${key}.`);
+          report(
+            node.id,
+            `Unrepresented appearance override: ${node.id} ${key}.`,
+          );
       return {
         id: `${familySlug}-${node.id.replace(':', '-')}`,
         nodeId: node.id,
@@ -263,7 +240,7 @@ export function planMapping(
         ...(node.type === 'INSTANCE' ? { componentId: node.componentId } : {}),
       };
     });
-    const signatures = new Map<string, typeof variants>();
+    const signatures = new Map<string, string[]>();
     for (const variant of variants) {
       const signature = JSON.stringify(
         Object.entries(variant.properties).sort(([a], [b]) =>
@@ -272,19 +249,15 @@ export function planMapping(
       );
       signatures.set(signature, [
         ...(signatures.get(signature) ?? []),
-        variant,
+        variant.nodeId,
       ]);
     }
-    const duplicates = [...signatures.values()]
-      .filter((group) => group.length > 1)
-      .map((group) => ({
-        properties: group[0].properties,
-        nodeIds: group.map((variant) => variant.nodeId),
-      }));
-    for (const duplicate of duplicates)
-      issues.add(
-        `Repeated property signatures in ${set.name}: ${duplicate.nodeIds.join(', ')}.`,
-      );
+    for (const nodeIds of signatures.values())
+      if (nodeIds.length > 1)
+        report(
+          nodeIds,
+          `Repeated property signatures in ${set.name}: ${nodeIds.join(', ')}.`,
+        );
     return {
       id: `${familySlug}-${set.id.replace(':', '-')}`,
       categoryId,
@@ -302,5 +275,5 @@ export function planMapping(
     false,
     categoryId,
   );
-  return { families, issues: [...issues], warnings };
+  return { families, issues, warnings };
 }

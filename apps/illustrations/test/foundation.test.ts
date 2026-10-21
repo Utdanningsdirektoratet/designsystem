@@ -3,11 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { describe, expect, it, vi } from 'vitest';
-import {
-  componentSetDescriptions,
-  exportSvgUrls,
-  request,
-} from '../scripts/figma.ts';
+import { exportSvgUrls, parsePage, request } from '../scripts/figma.ts';
 import { replaceDirectory } from '../scripts/files.ts';
 import { parseTags, resolveMapping } from '../scripts/mapping.ts';
 import { renderPng, validateSvg } from '../scripts/svg.ts';
@@ -168,10 +164,11 @@ describe('catalog and reviewed mappings', () => {
     ]);
     expect(parseTags('Tags: kontor, piler')).toEqual(['kontor', 'piler']);
     expect(parseTags('')).toEqual([]);
-    const descriptions = componentSetDescriptions(
+    const { descriptions } = parsePage(
       {
         nodes: {
           [FIGMA_PAGE_NODE_ID]: {
+            document: root,
             componentSets: { '1:1': { description: 'kontor, piler' } },
           },
         },

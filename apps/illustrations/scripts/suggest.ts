@@ -1,15 +1,13 @@
-import { readFile, rename, writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { getSource, importMapSchema, sources } from '../src/schema.ts';
 import type { CategoryId, ImportMap } from '../src/schema.ts';
 import { parseCli } from './category.ts';
-import { getHierarchy, getToken, parseHierarchy, request } from './figma.ts';
+import { getHierarchy, getToken, request, walk } from './figma.ts';
 import type { FigmaNode } from './figma.ts';
 import { packageRoot } from './files.ts';
 import { planMapping } from './planning.ts';
-
-type PlannedVariant = ImportMap['families'][number]['variants'][number];
 
 const referenceSchema = z.object({
   nodes: z.record(
@@ -27,7 +25,7 @@ async function getReferenceComponents(
   fileKey: string,
 ) {
   const references = new Set<string>();
-  function collect(node: FigmaNode) {
+  for (const node of walk(root)) {
     for (const definition of Object.values(
       node.componentPropertyDefinitions ?? {},
     ))
@@ -42,9 +40,7 @@ async function getReferenceComponents(
         typeof property.value === 'string'
       )
         references.add(property.value);
-    for (const child of node.children ?? []) collect(child);
   }
-  collect(root);
   const result: Record<string, { name: string }> = {};
   const ids = [...references];
   for (let offset = 0; offset < ids.length; offset += 25) {
@@ -69,24 +65,22 @@ async function getReferenceComponents(
 async function suggest(categoryId: CategoryId, prune: boolean) {
   const source = getSource(categoryId);
   const token = getToken();
-  const hierarchy = await getHierarchy(token, source);
-  const root = parseHierarchy(hierarchy, source.pageNodeId);
+  const { root, components } = await getHierarchy(token, source);
   const {
     families: plannedFamilies,
     issues,
     warnings,
   } = planMapping(
-    hierarchy,
-    await getReferenceComponents(root, token, source.fileKey),
+    root,
+    {
+      ...(await getReferenceComponents(root, token, source.fileKey)),
+      ...components,
+    },
     categoryId,
   );
   for (const warning of warnings)
     console.warn(`Warning (${categoryId}): ${warning}`);
-  const pageIds = new Set<string>();
-  (function collect(node: FigmaNode) {
-    pageIds.add(node.id);
-    for (const child of node.children ?? []) collect(child);
-  })(root);
+  const pageIds = new Set([...walk(root)].map((node) => node.id));
 
   const mapPath = join(packageRoot, 'source/import-map.json');
   const current = importMapSchema.parse(
@@ -95,26 +89,14 @@ async function suggest(categoryId: CategoryId, prune: boolean) {
   const families: ImportMap['families'] = structuredClone(current.families);
   const added: string[] = [];
   const addedNodeIds = new Set<string>();
-  const addedByProperties = new Map<string, string>();
-  const track = (familyNodeId: string, variant: PlannedVariant) => {
-    addedNodeIds.add(variant.nodeId);
-    addedByProperties.set(
-      `${familyNodeId}|${JSON.stringify(variant.properties)}`,
-      variant.nodeId,
-    );
-  };
   for (const family of plannedFamilies) {
-    const existing = families.find(
+    let existing = families.find(
       (item) => item.categoryId === categoryId && item.nodeId === family.nodeId,
     );
     if (!existing) {
-      families.push(family);
-      added.push(
-        `${family.name} (${family.nodeId}): new family, ${family.variants.length} variants`,
-      );
+      existing = { ...family, variants: [] };
+      families.push(existing);
       addedNodeIds.add(family.nodeId);
-      for (const variant of family.variants) track(family.nodeId, variant);
-      continue;
     }
     const known = new Set(existing.variants.map((variant) => variant.nodeId));
     const missing = family.variants.filter(
@@ -125,7 +107,7 @@ async function suggest(categoryId: CategoryId, prune: boolean) {
     added.push(
       `${family.name} (${family.nodeId}): ${missing.length} new variants`,
     );
-    for (const variant of missing) track(family.nodeId, variant);
+    for (const variant of missing) addedNodeIds.add(variant.nodeId);
   }
 
   // Entries whose Figma node no longer exists, for example after a component was recreated.
@@ -134,27 +116,18 @@ async function suggest(categoryId: CategoryId, prune: boolean) {
   for (const family of families) {
     if (family.categoryId !== categoryId) {
       kept.push(family);
-      continue;
-    }
-    if (!pageIds.has(family.nodeId)) {
+    } else if (!pageIds.has(family.nodeId)) {
       stale.push(
         `${family.name} (${family.nodeId}): family is gone from Figma`,
       );
-      continue;
+    } else {
+      const live = family.variants.filter((variant) => {
+        if (pageIds.has(variant.nodeId)) return true;
+        stale.push(`${variant.id} (${variant.nodeId}): gone from Figma`);
+        return false;
+      });
+      if (live.length) kept.push({ ...family, variants: live });
     }
-    const live = family.variants.filter((variant) =>
-      pageIds.has(variant.nodeId),
-    );
-    for (const variant of family.variants) {
-      if (pageIds.has(variant.nodeId)) continue;
-      const replacement = addedByProperties.get(
-        `${family.nodeId}|${JSON.stringify(variant.properties)}`,
-      );
-      stale.push(
-        `${variant.id} (${variant.nodeId}): gone from Figma${replacement ? `, probably recreated as ${replacement}` : ''}`,
-      );
-    }
-    if (live.length) kept.push({ ...family, variants: live });
   }
   const removed = prune && stale.length > 0;
 
@@ -166,22 +139,18 @@ async function suggest(categoryId: CategoryId, prune: boolean) {
     console.log(`import-map.json already covers ${categoryId}. Nothing added.`);
   } else {
     // Issues about already-mapped nodes are ignored; anything about a new node blocks the write.
-    const blocking = issues.filter((issue) =>
-      [...addedNodeIds].some((id) =>
-        new RegExp(`(?<!\\d)${id}(?!\\d)`).test(issue),
-      ),
+    const blocking = issues.filter(({ nodeIds }) =>
+      nodeIds.some((id) => addedNodeIds.has(id)),
     );
     if (blocking.length)
       throw new Error(
-        `Cannot add new nodes confidently; fix them in Figma or edit the map by hand:\n- ${blocking.join('\n- ')}`,
+        `Cannot add new nodes confidently; fix them in Figma or edit the map by hand:\n- ${blocking.map(({ message }) => message).join('\n- ')}`,
       );
     const next = importMapSchema.parse({
       ...current,
       families: removed ? kept : families,
     });
-    const temporary = `${mapPath}.tmp`;
-    await writeFile(temporary, JSON.stringify(next, null, 2) + '\n');
-    await rename(temporary, mapPath);
+    await writeFile(mapPath, JSON.stringify(next, null, 2) + '\n');
     console.log(
       `Updated import-map.json (${categoryId}).${added.length ? `\nAdded:\n- ${added.join('\n- ')}` : ''}${removed ? `\nRemoved ${stale.length} stale entries; run sync:figma --allow-removals --category=${categoryId}.` : ''}\nReview the diff, then run sync:figma --category=${categoryId}.`,
     );
