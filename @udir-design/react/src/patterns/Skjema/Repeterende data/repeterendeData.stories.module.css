@@ -1,0 +1,216 @@
+.root {
+  container: page / inline-size;
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: 100%;
+}
+
+.navigation {
+  padding-block-start: 1.5rem;
+  position: sticky;
+}
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ds-size-6);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 55rem;
+}
+
+@container page (min-width: 50rem) {
+  .page {
+    flex-direction: row;
+  }
+
+  .navigation {
+    padding-block-start: 0;
+  }
+
+  .desktop {
+    display: block;
+    position: sticky;
+    top: var(--ds-size-6);
+    align-self: flex-start;
+    /* Container padding + heading, so the nav lines up with the first gray box. */
+    margin-block-start: 5rem;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .container {
+    flex: 1;
+    padding: var(--ds-size-6);
+  }
+}
+
+.avdelinger {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: 100%;
+}
+
+.avdeling {
+  container: avdeling / inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--ds-color-neutral-surface-tinted);
+  border-radius: var(--ds-border-radius-md);
+  padding: var(--ds-size-3);
+}
+
+@container page (min-width: 23.5rem) {
+  .avdeling {
+    padding: var(--ds-size-6);
+  }
+}
+
+.avdelingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: var(--ds-size-4);
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 36rem;
+}
+
+/* Cells size to their content, but wrap long values such as e-mail addresses. */
+.table td:nth-child(3) {
+  min-width: 8rem;
+  overflow-wrap: anywhere;
+}
+
+.actionColumn {
+  width: 4.5rem;
+}
+
+.avdelingForm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: var(--ds-size-2);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.avdelingTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.addSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  width: 100%;
+}
+
+/* Extra space between the table and the form below it. */
+.tableScroll + .addSection {
+  margin-block-start: var(--ds-size-6);
+}
+
+.summary {
+  width: 100%;
+  max-width: 36rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: start;
+  column-gap: var(--ds-size-2);
+  row-gap: var(--ds-size-4);
+  width: 100%;
+}
+
+.formButtons {
+  grid-column: 4;
+}
+
+/* The foresatt name gets its own row; the child's fields and the button share the next. */
+.form > :first-child {
+  grid-column: 1 / -1;
+  max-width: 20rem;
+}
+
+/* Stack fields when the avdeling is too narrow to line up with the table. */
+@container avdeling (max-width: 34rem) {
+  .form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form > * {
+    max-width: 20rem;
+  }
+
+  .formButtons {
+    grid-column: 1;
+  }
+}
+
+.dialog {
+  @media (min-width: 40.001rem) {
+    width: 28rem;
+  }
+}
+
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  padding: var(--ds-size-2);
+}
+
+.dialogHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+}
+
+.dialogForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--ds-size-3);
+}
+
+.navigationGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-2);
+}
