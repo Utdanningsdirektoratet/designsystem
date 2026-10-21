@@ -328,7 +328,7 @@
 
   /* The default text while loading. On the empty element, so that a
      `loadingText` takes its place rather than landing next to it. */
-  &[aria-busy='true'] .uds-file-upload__item-description:empty::before {
+  &[data-loading] .uds-file-upload__item-description:empty::before {
     content: var(--udsc-fileUpload-loading-text);
   }
 

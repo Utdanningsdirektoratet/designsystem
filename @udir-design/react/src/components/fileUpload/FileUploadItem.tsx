@@ -230,7 +230,9 @@ export const FileUploadItem = forwardRef<HTMLLIElement, FileUploadItemProps>(
         className={cl('ds-card', 'uds-file-upload__item', className)}
         data-invalid={Boolean(error) || undefined}
         data-valid={(!error && Boolean(success)) || undefined}
-        aria-busy={Boolean(loading) || undefined}
+        /* Not `aria-busy`: VoiceOver in Safari read everything inside a busy
+           row as "busy", and NVDA does not read it at all. */
+        data-loading={Boolean(loading) || undefined}
         /* While loading, the row is just its name and loading text, and takes
            focus when the button that had it is hidden. Named, it is read as
            that; unnamed, VoiceOver in Safari read only its first item. */

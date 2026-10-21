@@ -1065,7 +1065,7 @@ exports[`Example Items 1`] = `
       </div>
     </li>
     <li
-      aria-busy="true"
+      data-loading="true"
       aria-labelledby="<generated>-name <generated>-description"
     >
       <div>
@@ -1459,7 +1459,7 @@ exports[`Item Actions 1`] = `
     </div>
   </li>
   <li
-    aria-busy="true"
+    data-loading="true"
     aria-labelledby="<generated>-name <generated>-description"
   >
     <div>
