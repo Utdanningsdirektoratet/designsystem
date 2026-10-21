@@ -1,4 +1,5 @@
-import { access, mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { catalogSchema, getSource, isCategoryId } from '../src/schema.ts';
 import type { IllustrationVariant } from '../src/schema.ts';
@@ -7,15 +8,6 @@ import { packageRoot } from './files.ts';
 import { checkSvg } from './svg.ts';
 
 const svgDirectory = join(packageRoot, 'source/catalog/svg');
-
-async function exists(path: string) {
-  try {
-    await access(path);
-    return true;
-  } catch {
-    return false;
-  }
-}
 
 // Downloads artwork named by metadata.json into the ignored svg directory. Existing files are
 // kept unless --force is passed, so an interrupted run resumes where it stopped.
@@ -37,21 +29,18 @@ try {
     ),
   );
   const wanted = new Map<string, IllustrationVariant[]>();
-  let total = 0;
   for (const family of catalog.families) {
     if (only && family.categoryId !== only) continue;
     for (const variant of family.variants) {
-      total++;
-      if (!force && (await exists(join(svgDirectory, variant.svg)))) continue;
-      wanted.set(family.categoryId, [
-        ...(wanted.get(family.categoryId) ?? []),
-        variant,
-      ]);
+      if (!force && existsSync(join(svgDirectory, variant.svg))) continue;
+      const list = wanted.get(family.categoryId) ?? [];
+      list.push(variant);
+      wanted.set(family.categoryId, list);
     }
   }
   const count = [...wanted.values()].reduce((n, list) => n + list.length, 0);
   if (!count) {
-    console.log(`All ${total} SVGs are present.`);
+    console.log('All SVGs are present.');
   } else {
     const token = getToken();
     await mkdir(svgDirectory, { recursive: true });

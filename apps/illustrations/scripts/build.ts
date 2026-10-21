@@ -30,26 +30,21 @@ await replaceDirectory(
       throw new Error(`No families found for category "${only}".`);
     await mkdir(join(stage, 'svg'));
     await mkdir(join(stage, 'png'));
-    const missing = catalog.families
-      .flatMap((family) => family.variants)
-      .filter((variant) => !existsSync(join(svgDirectory, variant.svg)));
+    const variants = catalog.families.flatMap((family) => family.variants);
+    const missing = variants.filter(
+      (variant) => !existsSync(join(svgDirectory, variant.svg)),
+    );
     if (missing.length)
       throw new Error(
         `${missing.length} SVGs are missing from source/catalog/svg. Run "pnpm fetch:svgs" (needs FIGMA_TOKEN).`,
       );
-    const total = catalog.families.reduce(
-      (n, family) => n + family.variants.length,
-      0,
-    );
+    const total = variants.length;
     const started = Date.now();
     let done = 0;
     for (const family of catalog.families) {
       for (const variant of family.variants) {
         const svg = optimizeSvg(
-          await readFile(
-            join(packageRoot, 'source/catalog/svg', variant.svg),
-            'utf8',
-          ),
+          await readFile(join(svgDirectory, variant.svg), 'utf8'),
         );
         const png = await renderPng(svg, variant);
         await writeFile(join(stage, 'svg', variant.svg), svg);
@@ -70,4 +65,3 @@ await replaceDirectory(
     );
   },
 );
-console.log('Offline build complete.');

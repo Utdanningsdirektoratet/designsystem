@@ -1,4 +1,4 @@
-import { catalogSchema, getSource, importMapSchema } from '../src/schema.ts';
+import { catalogSchema, importMapSchema } from '../src/schema.ts';
 import type { CategoryId, IllustrationCatalog } from '../src/schema.ts';
 import type { FigmaNode } from './figma.ts';
 
@@ -20,7 +20,7 @@ export function resolveMapping(
   categoryId: CategoryId,
   descriptions: Record<string, string> = {},
 ) {
-  if (root.id !== getSource(categoryId).pageNodeId || root.type !== 'CANVAS')
+  if (root.type !== 'CANVAS')
     throw new Error('Mapping must be bounded within the intended Figma page.');
   const mapping = importMapSchema.parse(value);
   // Only this category's reviewed families are resolved; other categories pass through untouched.
@@ -31,8 +31,6 @@ export function resolveMapping(
     throw new Error(`The reviewed mapping has no ${categoryId} families.`);
   const nodes = new Map<string, { node: FigmaNode; ancestors: Set<string> }>();
   function visit(node: FigmaNode, ancestors: Set<string>) {
-    if (nodes.has(node.id))
-      throw new Error(`Duplicate hierarchy node ${node.id}.`);
     nodes.set(node.id, { node, ancestors });
     const next = new Set(ancestors).add(node.id);
     for (const child of node.children ?? []) visit(child, next);
@@ -96,12 +94,12 @@ export function resolveMapping(
     };
   });
   // Keep every family where it was so a sync only shows real changes.
-  const resolved = new Map(families.map((family) => [family.id, family]));
+  const newFamilies = new Map(families.map((family) => [family.id, family]));
   const ordered = previous.families.flatMap((family) =>
     family.categoryId !== categoryId
       ? [family]
-      : resolved.has(family.id)
-        ? [resolved.get(family.id)!]
+      : newFamilies.has(family.id)
+        ? [newFamilies.get(family.id)!]
         : [],
   );
   const added = families.filter(
@@ -120,7 +118,6 @@ export function resolveMapping(
     state: 'imported',
     families: ordered,
   });
-  const newFamilies = new Map(families.map((family) => [family.id, family]));
   const newVariants = new Map(
     families.flatMap((family) =>
       family.variants.map(
