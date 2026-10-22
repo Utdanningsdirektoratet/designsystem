@@ -531,6 +531,8 @@ function translateNames(value: unknown, rules: Rules): void {
   for (const [key, item] of Object.entries(object)) {
     if (key === 'mainComponent' && main !== undefined) {
       object[key] = main;
+    } else if (key === 'ownerComponents') {
+      object[key] = mapStrings(item, (label) => translateLabel(label, rules));
     } else if (key === 'colorVariable' && typeof item === 'string') {
       object[key] = mapVariableLabel(item, rules);
     } else if (key === 'boundVariables') {
@@ -614,29 +616,46 @@ function addInstanceDefaults(
   if (value === null || typeof value !== 'object') return;
   const object = value as Record<string, unknown>;
   if (typeof object.mainComponent === 'string') {
-    const label = parseLabel(object.mainComponent);
-    const entry = defaults.get(label.name);
-    if (entry && label.variant !== undefined) {
-      const [property, propertyValue] = entry;
-      const parts = parseVariant(label.variant);
-      if (!parts.has(property)) {
-        parts.set(property, propertyValue);
-        object.mainComponent = formatLabel({
-          ...label,
-          variant: formatVariant(parts),
-        });
-        const properties = (object.componentProperties ?? {}) as Record<
-          string,
-          unknown
-        >;
-        object.componentProperties = {
-          ...properties,
-          [property]: propertyValue,
-        };
-      }
+    const added = withInstanceDefault(object.mainComponent, defaults);
+    if (added) {
+      object.mainComponent = added.label;
+      const properties = (object.componentProperties ?? {}) as Record<
+        string,
+        unknown
+      >;
+      object.componentProperties = {
+        ...properties,
+        [added.property]: added.value,
+      };
     }
   }
+  if (Array.isArray(object.ownerComponents)) {
+    object.ownerComponents = object.ownerComponents.map((label) =>
+      typeof label === 'string'
+        ? (withInstanceDefault(label, defaults)?.label ?? label)
+        : label,
+    );
+  }
   for (const item of Object.values(object)) addInstanceDefaults(item, defaults);
+}
+
+/** A component label with the color variant value added, if its component gets one. */
+function withInstanceDefault(
+  componentLabel: string,
+  defaults: Map<string, [string, string]>,
+): { label: string; property: string; value: string } | undefined {
+  const label = parseLabel(componentLabel);
+  const entry = defaults.get(label.name);
+  if (!entry || label.variant === undefined) return undefined;
+  const [property, value] = entry;
+  const parts = parseVariant(label.variant);
+  if (parts.has(property)) return undefined;
+  parts.set(property, value);
+  return {
+    label: formatLabel({ ...label, variant: formatVariant(parts) }),
+    property,
+    value,
+  };
 }
 
 // ---------------------------------------------------------------------------------------------
