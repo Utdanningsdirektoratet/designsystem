@@ -16,7 +16,7 @@
 
 // Bump whenever the extracted facts change, so `compare-snapshots.ts` refuses to compare
 // snapshots made by different versions of this script. Keep it identical there.
-const SNAPSHOT_SCHEMA = 4;
+const SNAPSHOT_SCHEMA = 5;
 
 /**
  * Entry point, called by the line appended when the script is sent to `use_figma`.
@@ -358,19 +358,24 @@ async function instanceFacts(instance) {
       // overridden too, and aren't part of `nodeFacts`.
       Object.assign(targetFacts, await instanceReference(target));
     }
+    // The instances the target sits in, nearest first. Their components' rules apply to it, and
+    // the override path alone doesn't say which of its layers are instances.
+    const owners = await owningComponents(target, instance);
+    if (owners.length > 0) targetFacts.ownerComponents = owners;
     const fields = [...override.overriddenFields].sort(compareText);
     const values = {};
     for (const field of fields) {
       const key = STYLE_FIELDS[field] ?? field;
       if (targetFacts[key] !== undefined) values[key] = targetFacts[key];
     }
-    // Keep the target's bindings, explicit modes and, for nested instances, which component and
-    // property values it uses, whichever fields are listed. A rebinding between two variables
-    // with equal values, or a change to a nested instance's property, is then recorded however
-    // Figma lists it.
+    // Keep the target's bindings, explicit modes, the instances it sits in and, for nested
+    // instances, which component and property values it uses, whichever fields are listed. A
+    // rebinding between two variables with equal values, or a change to a nested instance's
+    // property, is then recorded however Figma lists it.
     for (const key of [
       'boundVariables',
       'variableModes',
+      'ownerComponents',
       'mainComponent',
       'mainComponentContainer',
       'componentProperties',
@@ -382,6 +387,20 @@ async function instanceFacts(instance) {
   if (Object.keys(overrides).length > 0) facts.overrides = overrides;
   if (unreadable > 0) facts.unreadableOverrides = unreadable;
   return facts;
+}
+
+/** Main components of the instances between a layer and `outer`, nearest first. */
+async function owningComponents(layer, outer) {
+  const owners = [];
+  let node = layer.parent;
+  while (node && node.id !== outer.id) {
+    if (node.type === 'INSTANCE') {
+      const main = await node.getMainComponentAsync();
+      owners.push(main ? componentLabel(main) : '<missing>');
+    }
+    node = node.parent;
+  }
+  return owners;
 }
 
 /**

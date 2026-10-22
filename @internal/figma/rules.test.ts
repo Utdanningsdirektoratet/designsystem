@@ -212,6 +212,27 @@ function udirLibrary(): Library {
                 },
               },
             }),
+            // A ruled Button inside an instance of a component without a rule, with an override
+            // on a text layer inside a Paragraph instance in the Button. There's no override
+            // record for the Button itself; only `ownerComponents` says the text is in it.
+            layer('_Container', {
+              type: 'INSTANCE',
+              mainComponent: '_Container',
+              overrides: {
+                'Footer > Button > Paragraph > Text': {
+                  fields: ['fills'],
+                  values: {
+                    ownerComponents: [
+                      'Paragraph [size=md]',
+                      'Button [color=neutral, variant=secondary]',
+                    ],
+                    fills: [
+                      paint('Semantic/color/neutral/base-contrast-default'),
+                    ],
+                  },
+                },
+              },
+            }),
           ],
         }),
       },
@@ -364,6 +385,27 @@ test('an override breaking the rule of a ruled component is a violation inside a
       layer: 'Button › override .',
       problem:
         'in an instance of Button [color=neutral, variant=primary]: fills is bound to Color/base-hover, which follows the Color mode instead of a fixed color',
+    },
+  ]);
+});
+
+test('an override deep inside a ruled instance nested in an instance without a rule follows the nearest rule', () => {
+  const udir = udirLibrary();
+  const container = component(udir, 'Card').tree?.children?.[2];
+  const overrides = container?.overrides as
+    | Record<string, { values: NodeData }>
+    | undefined;
+  const text = overrides?.['Footer > Button > Paragraph > Text'];
+  if (text) {
+    text.values.fills = [paint('Semantic/color/danger/base-contrast-default')];
+  }
+  expect(checkColors(files(udir), RULES)).toEqual([
+    {
+      component: 'Card',
+      variant: '',
+      layer: '_Container › override Footer > Button > Paragraph > Text',
+      problem:
+        'in an instance of Button [color=neutral, variant=secondary]: fills is bound to Semantic/color/danger/base-contrast-default; the rule allows neutral',
     },
   ]);
 });

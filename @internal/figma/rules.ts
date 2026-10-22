@@ -205,16 +205,45 @@ export function checkColors(
           checkBindings(node, allowed, (problem) => report(layer, problem));
           checkColorMode(node, allowed, (problem) => report(layer, problem));
         }
-        if (!allowed) return;
         const overrides = (node.overrides ?? {}) as Record<string, JsonObject>;
         for (const [overridePath, override] of Object.entries(overrides)) {
           const values = override.values as JsonObject | undefined;
           if (!values) continue;
           const where = `${layer} › override ${overridePath}`;
+          // A nested instance, or a layer inside nested instances, follows the rule of the
+          // nearest of those instances that has one; otherwise the rule of the instance or
+          // component the override is made in.
+          let overrideAllowed = allowed;
+          let overridePrefix = prefix;
+          const candidates = [
+            values.mainComponent,
+            ...(Array.isArray(values.ownerComponents)
+              ? values.ownerComponents
+              : []),
+          ].filter((label) => typeof label === 'string');
+          const ownerLabel = candidates.find(
+            (label) => rules.colors?.[parseLabel(label).name] !== undefined,
+          );
+          const owner =
+            ownerLabel === undefined ? undefined : parseLabel(ownerLabel);
+          const ownerRule = owner && rules.colors?.[owner.name];
+          if (owner && ownerRule) {
+            overridePrefix = `in an instance of ${ownerLabel}: `;
+            const ownerAllowed = allowedColors(ownerRule, owner.variant ?? '');
+            if (typeof ownerAllowed === 'string') {
+              report(
+                where,
+                `${overridePrefix}the instance has ${ownerAllowed}`,
+              );
+              continue;
+            }
+            overrideAllowed = ownerAllowed;
+          }
+          if (!overrideAllowed) continue;
           const reportHere = (problem: string) =>
-            report(where, prefix + problem);
-          checkBindings(values, allowed, reportHere);
-          checkColorMode(values, allowed, reportHere);
+            report(where, overridePrefix + problem);
+          checkBindings(values, overrideAllowed, reportHere);
+          checkColorMode(values, overrideAllowed, reportHere);
         }
       });
     }
