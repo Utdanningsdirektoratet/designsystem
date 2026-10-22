@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import catalog from '../source/catalog/metadata.json';
+import catalog from '../../source/catalog/metadata.json';
+import { catalogSchema } from '../schema';
 import { binaryFixtureCatalog, fixtureCatalog } from './gallery.fixtures';
 import {
   countMatchesByCategory,
@@ -13,7 +14,6 @@ import {
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
-import { catalogSchema } from './schema';
 
 const metadata = catalogSchema.parse(catalog);
 

@@ -6,10 +6,10 @@ import {
   Paragraph,
   SkipLink,
 } from '@udir-design/react';
-import { AuthGate } from './AuthGate';
-import { IllustrationGallery } from './IllustrationGallery';
 import { AssetError, useAssetSource } from './assets';
-import { readAuthConfig } from './auth';
+import { AuthGate } from './auth/AuthGate';
+import { readAuthConfig } from './auth/auth';
+import { IllustrationGallery } from './gallery/IllustrationGallery';
 import type { IllustrationCatalog } from './metadata';
 
 const authConfig = readAuthConfig();

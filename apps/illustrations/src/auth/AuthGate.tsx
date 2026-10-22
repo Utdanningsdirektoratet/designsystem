@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Button, Heading, Paragraph } from '@udir-design/react';
-import { AssetContext } from './assets';
+import { AssetContext } from '../assets';
+import { createStorageSource } from '../storage';
 import { createSession } from './auth';
 import type { AuthConfig, Session } from './auth';
 import styles from './authGate.module.css';
-import { createStorageSource } from './storage';
 
 // One MSAL instance per page; React may run effects twice in development.
 let session: Session | undefined;

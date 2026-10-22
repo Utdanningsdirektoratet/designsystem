@@ -1,4 +1,4 @@
-import type { IllustrationFamily, IllustrationVariant } from './metadata';
+import type { IllustrationFamily, IllustrationVariant } from '../metadata';
 
 const familyCollator = new Intl.Collator('nb', { numeric: true });
 

@@ -5,7 +5,7 @@ import {
   PublicClientApplication,
 } from '@azure/msal-browser';
 import type { AccountInfo } from '@azure/msal-browser';
-import type { StorageConfig } from './storage';
+import type { StorageConfig } from '../storage';
 
 export interface AuthConfig extends StorageConfig {
   clientId: string;
