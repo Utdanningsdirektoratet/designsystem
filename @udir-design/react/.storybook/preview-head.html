@@ -23,3 +23,24 @@
 <script>
   document.documentElement.lang = 'nb';
 </script>
+<!--
+  Storybook names the page after the story id as it selects a story, and a
+  screen reader reads every new title: "components bindestrek fileupload
+  bindestrek bindestrek …" before the name `withDocumentTitle` gives it. Leave
+  out that step, so the page goes straight from "Storybook" to the story's name.
+-->
+<script>
+  (() => {
+    const title = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+    Object.defineProperty(document, 'title', {
+      configurable: true,
+      get() {
+        return title.get.call(this);
+      },
+      set(value) {
+        if (value === new URLSearchParams(location.search).get('id')) return;
+        title.set.call(this, value);
+      },
+    });
+  })();
+</script>
