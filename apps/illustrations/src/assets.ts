@@ -1,6 +1,6 @@
 import { createContext, use, useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
-import { illustrationAssetUrl } from './gallery.utils';
+import { illustrationAssetUrl } from './gallery/gallery.utils';
 import { catalogSchema } from './schema';
 import type { IllustrationCatalog, IllustrationVariant } from './schema';
 

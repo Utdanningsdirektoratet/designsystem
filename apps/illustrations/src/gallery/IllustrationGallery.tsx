@@ -15,9 +15,15 @@ import {
   Tag,
   ToggleGroup,
 } from '@udir-design/react';
+import { useAssetLinkProps, useAssetSource } from '../assets';
+import { categories } from '../metadata';
+import type {
+  CategoryId,
+  IllustrationCatalog,
+  IllustrationVariant,
+} from '../metadata';
 import { AssetImage } from './AssetImage';
 import { CopyImageButton } from './CopyImageButton';
-import { useAssetLinkProps, useAssetSource } from './assets';
 import {
   countMatchesByCategory,
   familyDisplayName,
@@ -31,12 +37,6 @@ import {
   sortFamilies,
 } from './gallery.utils';
 import styles from './illustrationGallery.module.css';
-import { categories } from './metadata';
-import type {
-  CategoryId,
-  IllustrationCatalog,
-  IllustrationVariant,
-} from './metadata';
 
 // Maps Fargetema to the theme color it is drawn for (see design-tokens config).
 const fargetemaColors: Record<string, string> = {

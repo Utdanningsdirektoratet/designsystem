@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
-import { useAssetUrl } from './assets';
-import type { AssetFormat } from './assets';
-import type { IllustrationVariant } from './metadata';
+import { useAssetUrl } from '../assets';
+import type { AssetFormat } from '../assets';
+import type { IllustrationVariant } from '../metadata';
 
 export function AssetImage({
   variant,

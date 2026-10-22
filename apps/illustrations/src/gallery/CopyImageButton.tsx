@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ClipboardCheckmarkIcon, FilesIcon } from '@udir-design/icons';
 import { Button } from '@udir-design/react';
-import { useAssetSource } from './assets';
+import { useAssetSource } from '../assets';
+import type { IllustrationVariant } from '../metadata';
 import styles from './copyButton.module.css';
-import type { IllustrationVariant } from './metadata';
 
 export function CopyImageButton({ variant }: { variant: IllustrationVariant }) {
   const source = useAssetSource();

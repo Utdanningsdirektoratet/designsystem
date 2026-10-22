@@ -7,10 +7,10 @@ import {
   waitFor,
 } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { AssetImage } from './AssetImage';
 import { AssetContext, AssetError, useAssetLinkProps } from './assets';
 import type { AssetSource } from './assets';
-import { fixtureCatalog } from './gallery.fixtures';
+import { AssetImage } from './gallery/AssetImage';
+import { fixtureCatalog } from './gallery/gallery.fixtures';
 import { createStorageSource } from './storage';
 
 afterEach(() => {

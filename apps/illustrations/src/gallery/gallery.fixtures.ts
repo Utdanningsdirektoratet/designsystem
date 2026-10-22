@@ -1,4 +1,4 @@
-import type { IllustrationCatalog, IllustrationVariant } from './metadata';
+import type { IllustrationCatalog, IllustrationVariant } from '../metadata';
 
 /** Synthetic metadata only. These IDs do not refer to approved illustrations or files. */
 function variant(
