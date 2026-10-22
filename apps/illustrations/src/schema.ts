@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const categories = [
   { id: 'barnehage', label: 'Barnehage' },
   { id: 'grunnskole', label: 'Grunnskole' },
-  { id: 'videregaende-opplaering', label: 'Videregående opplæring' },
+  { id: 'videregaende-opplaering', label: 'Videregående' },
   { id: 'voksen-og-generell', label: 'Voksen og generell' },
   { id: 'internbruk', label: 'Internbruk' },
 ] as const;

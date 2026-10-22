@@ -35,7 +35,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
   gap: var(--ds-size-4);
   padding: 0;
   margin: 0;
@@ -221,6 +221,17 @@
   }
 
   .categorySelect {
+    display: grid;
+  }
+}
+
+/* Hit badges add roughly 2rem per category, so the toggle group needs more room while they show. */
+@container (max-width: 57rem) {
+  .toolbar[data-hits='true'] .categoryToggle {
+    display: none;
+  }
+
+  .toolbar[data-hits='true'] .categorySelect {
     display: grid;
   }
 }

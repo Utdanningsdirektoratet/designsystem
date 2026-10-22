@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { DownloadIcon } from '@udir-design/icons';
 import {
+  Badge,
   Button,
   Checkbox,
   Dialog,
@@ -67,13 +68,32 @@ function SvgDownload({ variant }: { variant: IllustrationVariant }) {
   );
 }
 
+const MIN_SEARCH_LENGTH = 2;
+const SEARCH_DELAY_MS = 250;
+
+/**
+ * Filtering and hit counts follow the input after a pause, and only once the query is long enough,
+ * so the grid and toggles do not jump around on every keystroke. Clearing applies immediately.
+ */
+function useSearchQuery(input: string): string {
+  const [debounced, setDebounced] = useState(input);
+  useEffect(() => {
+    if (!input.trim()) return;
+    const timer = setTimeout(() => setDebounced(input), SEARCH_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [input]);
+  const query = input.trim() ? debounced : '';
+  return query.trim().length >= MIN_SEARCH_LENGTH ? query : '';
+}
+
 export function IllustrationGallery({
   catalog,
 }: {
   catalog: IllustrationCatalog;
 }) {
   const [categoryId, setCategoryId] = useState<CategoryId>(categories[0].id);
-  const [query, setQuery] = useState('');
+  const [input, setInput] = useState('');
+  const query = useSearchQuery(input);
   const [selection, setSelection] = useState<{
     familyId: string;
     variantId: string;
@@ -127,17 +147,17 @@ export function IllustrationGallery({
     matchesFamilySearch(item.name, query, item.tags),
   );
 
-  const otherCategoryHits = useMemo(() => {
-    const counts = countMatchesByCategory(catalog.families, query, categoryId);
-    return categories.flatMap(({ id, label }) => {
-      const hit = counts.find((item) => item.categoryId === id);
-      return hit ? [{ id, label, count: hit.count }] : [];
-    });
-  }, [catalog.families, query, categoryId]);
+  const hitCounts = useMemo(() => {
+    const counts = countMatchesByCategory(catalog.families, query);
+    return new Map(counts.map((item) => [item.categoryId, item.count]));
+  }, [catalog.families, query]);
+  const otherCategoryHits = categories.flatMap(({ id, label }) => {
+    const count = hitCounts.get(id);
+    return count && id !== categoryId ? [{ id, label, count }] : [];
+  });
 
-  const selectCategory = (value: CategoryId, keepQuery = false) => {
+  const selectCategory = (value: CategoryId) => {
     setCategoryId(value);
-    if (!keepQuery) setQuery('');
     setSelection(null);
   };
 
@@ -177,7 +197,7 @@ export function IllustrationGallery({
                 <Button
                   key={id}
                   variant="secondary"
-                  onClick={() => selectCategory(id, true)}
+                  onClick={() => selectCategory(id)}
                 >
                   {count} treff i {label}
                 </Button>
@@ -188,7 +208,7 @@ export function IllustrationGallery({
             <Button
               variant="secondary"
               onClick={() => {
-                setQuery('');
+                setInput('');
                 searchRef.current?.focus();
               }}
             >
@@ -234,22 +254,22 @@ export function IllustrationGallery({
 
   return (
     <div className={styles.root}>
-      <div className={styles.toolbar}>
+      <div className={styles.toolbar} data-hits={hitCounts.size > 0}>
         <ToggleGroup
           className={styles.categoryToggle}
           aria-label="Kategori"
           value={categoryId}
-          onChange={(value) => {
-            setCategoryId(value as CategoryId);
-            setQuery('');
-            setSelection(null);
-          }}
+          onChange={(value) => selectCategory(value as CategoryId)}
         >
-          {categories.map((item) => (
-            <ToggleGroup.Item key={item.id} value={item.id}>
-              {item.label}
-            </ToggleGroup.Item>
-          ))}
+          {categories.map((item) => {
+            const count = hitCounts.get(item.id);
+            return (
+              <ToggleGroup.Item key={item.id} value={item.id}>
+                {item.label}
+                {query && count ? <Badge count={count} maxCount={99} /> : null}
+              </ToggleGroup.Item>
+            );
+          })}
         </ToggleGroup>
         <Field className={styles.categorySelect}>
           <Label htmlFor={categorySelectId}>Kategori</Label>
@@ -260,11 +280,14 @@ export function IllustrationGallery({
               selectCategory(event.target.value as CategoryId)
             }
           >
-            {categories.map((item) => (
-              <Select.Option key={item.id} value={item.id}>
-                {item.label}
-              </Select.Option>
-            ))}
+            {categories.map((item) => {
+              const count = hitCounts.get(item.id);
+              return (
+                <Select.Option key={item.id} value={item.id}>
+                  {count ? `${item.label} (${count} treff)` : item.label}
+                </Select.Option>
+              );
+            })}
           </Select>
         </Field>
         <Search>
@@ -275,8 +298,8 @@ export function IllustrationGallery({
             aria-label="Søk"
             placeholder="Søk"
             autoComplete="off"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
           />
           <Search.Clear />
         </Search>
