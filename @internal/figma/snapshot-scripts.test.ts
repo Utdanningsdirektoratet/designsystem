@@ -1,19 +1,17 @@
 /**
- * Runs `extract-snapshot.js` and the development plugin against a minimal stand-in for the Figma
- * Plugin API, saves the results like the documented workflows do, and checks them with
+ * Runs the development plugin, with the extractor, against a minimal stand-in for the Figma
+ * Plugin API, saves the bundle like the documented workflow does, and checks the results with
  * `compare-snapshots.ts`.
  */
 import { execFileSync, spawnSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { runInNewContext } from 'node:vm';
 import { expect, test } from 'vitest';
 import { pluginCode } from './plugin/plugin-code.ts';
 
-const here = import.meta.dirname;
-const extractor = readFileSync(path.join(here, 'extract-snapshot.js'), 'utf8');
-const compareScript = path.join(here, 'compare-snapshots.ts');
+const compareScript = path.join(import.meta.dirname, 'compare-snapshots.ts');
 
 type MockNode = {
   id?: string;
@@ -51,6 +49,10 @@ type LibraryOptions = {
   spaceVariableDeleted?: boolean;
   /** The Color mode set explicitly on the card component. */
   cardColorMode?: 'accent' | 'neutral';
+  /** Put a component named Card on the Patterns page too. */
+  patternsCard?: boolean;
+  /** Reverse the order of the pages. */
+  pagesReversed?: boolean;
 };
 
 type PluginMessage = { type: string; [key: string]: unknown };
@@ -259,19 +261,21 @@ function mockFigma(options: LibraryOptions) {
       : []),
   ];
 
-  // A different component with the same name as the card, on another page.
+  // Optionally a different component with the same name as the card, on another page.
   const patterns: MockNode = { name: 'Patterns', type: 'PAGE', children: [] };
   register(patterns, null);
-  patterns.children = [
-    register(
-      {
-        ...frame('Card', { paddingLeft: 24 }),
-        type: 'COMPONENT',
-        componentPropertyDefinitions: {},
-      },
-      patterns,
-    ),
-  ];
+  patterns.children = options.patternsCard
+    ? [
+        register(
+          {
+            ...frame('Card', { paddingLeft: 24 }),
+            type: 'COMPONENT',
+            componentPropertyDefinitions: {},
+          },
+          patterns,
+        ),
+      ]
+    : [];
 
   // Separator pages, which often share a name.
   const separator = (children: MockNode[]): MockNode => {
@@ -293,6 +297,7 @@ function mockFigma(options: LibraryOptions) {
       : [],
   );
   const pages = [page, firstSeparator, patterns, secondSeparator];
+  if (options.pagesReversed) pages.reverse();
 
   const findAll = (node: MockNode, types: string[]): MockNode[] =>
     (node.children ?? []).flatMap((child) => [
@@ -341,33 +346,8 @@ function mockFigma(options: LibraryOptions) {
   };
 }
 
-const componentsCall = (page: string) =>
-  `return await extractSnapshot({ part: 'components', page: '${page}' });`;
-
-/** Runs the extractor like `use_figma` does and saves each result as a separate file. */
-async function snapshot(
-  options: LibraryOptions,
-  files: [file: string, call: string][] = [
-    ['variables.json', "return await extractSnapshot({ part: 'variables' });"],
-    ['components.json', componentsCall('Components')],
-  ],
-): Promise<string> {
-  const dir = mkdtempSync(path.join(tmpdir(), 'figma-snapshot-'));
-  const figma = mockFigma(options);
-  const AsyncFunction = Object.getPrototypeOf(async () => {})
-    .constructor as new (
-    ...args: string[]
-  ) => (figma: unknown) => Promise<unknown>;
-  for (const [file, call] of files) {
-    const run = new AsyncFunction('figma', `${extractor}\n${call}`);
-    mkdirSync(dir, { recursive: true });
-    writeFileSync(path.join(dir, file), JSON.stringify(await run(figma)));
-  }
-  return dir;
-}
-
 /** Runs the built plugin, presses "Extract snapshot" and saves the bundle as `snapshot.json`. */
-async function pluginSnapshot(options: LibraryOptions): Promise<string> {
+async function snapshot(options: LibraryOptions): Promise<string> {
   const figma = mockFigma(options);
   // Runs the generated plugin code the way Figma does: as a script with these globals.
   runInNewContext(pluginCode(), { figma, __html__: '' });
@@ -422,37 +402,16 @@ test('reordered layers are a difference', async () => {
   expect(keys).toEqual(['component Card @ . :: children']);
 });
 
-test('same-named components on different pages keep their identity when files are renamed', async () => {
+test('same-named components on different pages keep their identity when pages are reordered', async () => {
   const keys = diffKeys(
-    await snapshot(base, [
-      ['components-1.json', componentsCall('Components')],
-      ['components-2.json', componentsCall('Patterns')],
-    ]),
-    await snapshot(base, [
-      ['components-1.json', componentsCall('Patterns')],
-      ['components-2.json', componentsCall('Components')],
-    ]),
+    await snapshot({ ...base, patternsCard: true }),
+    await snapshot({ ...base, patternsCard: true, pagesReversed: true }),
   );
   expect(keys).toEqual([]);
 });
 
-test('a plugin snapshot matches the same library extracted part by part', async () => {
-  const keys = diffKeys(
-    await snapshot(base, [
-      [
-        'variables.json',
-        "return await extractSnapshot({ part: 'variables' });",
-      ],
-      ['components-1.json', componentsCall('Components')],
-      ['components-2.json', componentsCall('Patterns')],
-    ]),
-    await pluginSnapshot(base),
-  );
-  expect(keys).toEqual([]);
-});
-
-test('a plugin snapshot with a page that could not be extracted fails verification', async () => {
-  const dir = await pluginSnapshot({ ...base, brokenPatternsPage: true });
+test('a snapshot with a page that could not be extracted fails verification', async () => {
+  const dir = await snapshot({ ...base, brokenPatternsPage: true });
   const result = spawnSync(process.execPath, [compareScript, 'verify', dir], {
     encoding: 'utf8',
   });
@@ -487,7 +446,7 @@ test('an instance switching between same-named components is a difference', asyn
 });
 
 test('the plugin extracts every page when several pages share a name', async () => {
-  const dir = await pluginSnapshot({ ...base, separatorComponent: true });
+  const dir = await snapshot({ ...base, separatorComponent: true });
   const result = spawnSync(process.execPath, [compareScript, 'verify', dir], {
     encoding: 'utf8',
   });
@@ -575,10 +534,17 @@ test('a change of the Color mode set on a component is a difference', async () =
 
 test('an override inside nested instances records the instances it sits in, nearest first', async () => {
   const dir = await snapshot(base);
-  const { data } = JSON.parse(
-    readFileSync(path.join(dir, 'components.json'), 'utf8'),
-  ) as { data: { name: string; tree: { children: MockNode[] } }[] };
-  const card = data.find((component) => component.name === 'Card');
+  const bundle = JSON.parse(
+    readFileSync(path.join(dir, 'snapshot.json'), 'utf8'),
+  ) as {
+    files: {
+      options: { page?: string };
+      data: { name: string; tree: { children: MockNode[] } }[];
+    }[];
+  };
+  const card = bundle.files
+    .find((file) => file.options.page === 'Components')
+    ?.data.find((component) => component.name === 'Card');
   const button = card?.tree.children.find((child) => child.name === 'Button');
   const overrides = button?.overrides as Record<
     string,

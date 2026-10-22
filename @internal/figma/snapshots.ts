@@ -2,7 +2,7 @@
  * Reading, verifying and flattening snapshots made with `extract-snapshot.js`, shared by
  * `compare-snapshots.ts`, `rules.ts` and `suggest.ts`.
  */
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
 export type Json =
@@ -43,6 +43,7 @@ export type NodeData = { name: string; type: string; children?: NodeData[] } & {
   [field: string]: Json | NodeData[] | undefined;
 };
 
+/** One part of a snapshot: all variables, or the components on one page. */
 export type SnapshotFile = {
   schema: number;
   file: string;
@@ -52,7 +53,7 @@ export type SnapshotFile = {
   checksum: string;
 };
 
-/** One file holding every part, as saved by the development plugin. */
+/** A snapshot as saved by the development plugin: `snapshot.json`. */
 type SnapshotBundle = {
   schema: number;
   kind: 'bundle';
@@ -68,7 +69,7 @@ export type Facts = Map<string, string>;
 export type Change = { key: string; before?: string; after?: string };
 
 /** Keep identical to `SNAPSHOT_SCHEMA` in `extract-snapshot.js`. */
-export const SNAPSHOT_SCHEMA = 5;
+export const SNAPSHOT_SCHEMA = 6;
 
 // ---------------------------------------------------------------------------------------------
 // Checksum. Keep identical to `extract-snapshot.js`.
@@ -102,67 +103,49 @@ export function checksum(value: unknown): string {
 // ---------------------------------------------------------------------------------------------
 // Loading
 
-function jsonFiles(dir: string): string[] {
-  return readdirSync(dir)
-    .sort()
-    .flatMap((entry) => {
-      const full = path.join(dir, entry);
-      if (statSync(full).isDirectory()) return jsonFiles(full);
-      return entry.endsWith('.json') ? [full] : [];
-    });
-}
-
+/** Reads and verifies `snapshot.json` in a snapshot directory. */
 export function loadSnapshot(dir: string): {
   files: SnapshotFile[];
   errors: string[];
 } {
-  const files: SnapshotFile[] = [];
-  const errors: string[] = [];
+  const file = path.join(dir, 'snapshot.json');
+  if (!existsSync(file)) return { files: [], errors: [`${file}: not found`] };
+  let bundle: SnapshotBundle;
+  try {
+    bundle = JSON.parse(readFileSync(file, 'utf8')) as SnapshotBundle;
+  } catch (error) {
+    return {
+      files: [],
+      errors: [`${file}: not valid JSON (${(error as Error).message})`],
+    };
+  }
   const schemaError = (label: string, schema: number) =>
     `${label}: made with snapshot schema ${String(schema)}, but this script reads schema ${SNAPSHOT_SCHEMA}; extract it again with the current extractor`;
-  const addPart = (label: string, part: SnapshotFile) => {
+  if (bundle.kind !== 'bundle' || !Array.isArray(bundle.files)) {
+    return { files: [], errors: [`${file}: not a snapshot from the plugin`] };
+  }
+  if (bundle.schema !== SNAPSHOT_SCHEMA) {
+    return { files: [], errors: [schemaError(file, bundle.schema)] };
+  }
+
+  const files: SnapshotFile[] = [];
+  const errors: string[] = [];
+  bundle.files.forEach((part, index) => {
+    const label = `${file} part ${index + 1} (${part.part})`;
+    const actual = checksum(part.data);
     if (part.schema !== SNAPSHOT_SCHEMA) {
       errors.push(schemaError(label, part.schema));
-      return;
-    }
-    const actual = checksum(part.data);
-    if (actual !== part.checksum) {
+    } else if (actual !== part.checksum) {
       errors.push(
         `${label}: checksum mismatch (saved ${part.checksum}, data gives ${actual}); extract and save it again`,
       );
-      return;
-    }
-    files.push(part);
-  };
-
-  for (const file of jsonFiles(dir)) {
-    let parsed: SnapshotFile | SnapshotBundle;
-    try {
-      parsed = JSON.parse(readFileSync(file, 'utf8')) as
-        | SnapshotFile
-        | SnapshotBundle;
-    } catch (error) {
-      errors.push(`${file}: not valid JSON (${(error as Error).message})`);
-      continue;
-    }
-    if ('kind' in parsed && parsed.kind === 'bundle') {
-      if (parsed.schema !== SNAPSHOT_SCHEMA) {
-        errors.push(schemaError(file, parsed.schema));
-        continue;
-      }
-      parsed.files.forEach((part, index) =>
-        addPart(`${file} part ${index + 1} (${part.part})`, part),
-      );
-      // An incomplete snapshot would report the missing pages as removed components.
-      for (const { page, message } of parsed.errors) {
-        errors.push(`${file}: page "${page}" was not extracted: ${message}`);
-      }
     } else {
-      addPart(file, parsed as SnapshotFile);
+      files.push(part);
     }
-  }
-  if (files.length === 0 && errors.length === 0) {
-    errors.push(`${dir}: no snapshot files`);
+  });
+  // An incomplete snapshot would report the missing pages as removed components.
+  for (const { page, message } of bundle.errors) {
+    errors.push(`${file}: page "${page}" was not extracted: ${message}`);
   }
   return { files, errors };
 }

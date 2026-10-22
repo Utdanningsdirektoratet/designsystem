@@ -5,8 +5,7 @@ Udir's Figma component library is a copy of [Digdir's Figma library](https://www
 The scripts here make structured snapshots of both libraries, so that updates can be checked instead of trusted:
 
 - `extract-snapshot.js` reads variables and components inside Figma and returns them as JSON with a checksum. It never changes the file.
-- `plugin/` is a development plugin that runs the extractor on every page of the open file and saves the result as one `snapshot.json`. This is the recommended way to make a snapshot.
-- The extractor can also be run through the Figma MCP server's `use_figma` tool, but that is slow, costly and limited to 48,000 bytes per call (see below).
+- `plugin/` is a development plugin that runs the extractor on every page of the open file and saves the result as one `snapshot.json`.
 - `compare-snapshots.ts` verifies saved snapshots and compares them, optionally with the rules in `udir-to-digdir.json` (see [Rules](#rules)).
 
 ## Approach
@@ -23,13 +22,13 @@ The first update after the initial snapshots is an exception if Digdir's snapsho
 
 ## Making a snapshot
 
-Save each snapshot in its own directory: `@internal/figma/snapshots/digdir/<release>/` for Digdir, since each copy of Digdir's library is a release (for example `@internal/figma/snapshots/digdir/v1.23.0/`, made from the copy "[v1.23.0] Designsystemet - Core UI Kit" in the Figma folder "Digdirs bibliotek, versjonert"), and `@internal/figma/snapshots/udir/<YYYY-MM-DD>/` for Udir. A directory holds either the plugin's `snapshot.json` or separately saved `use_figma` results, never both, since the same components would then be counted twice. Commit the snapshots, so the next comparison has them.
+Save each snapshot in its own directory: `@internal/figma/snapshots/digdir/<release>/` for Digdir, since each copy of Digdir's library is a release (for example `@internal/figma/snapshots/digdir/v1.23.0/`, made from the copy "[v1.23.0] Designsystemet - Core UI Kit" in the Figma folder "Digdirs bibliotek, versjonert"), and `@internal/figma/snapshots/udir/<YYYY-MM-DD>/` for Udir. Commit the snapshots, so the next comparison has them.
 
 Digdir's library has to be copied into one of Udir's Figma teams first: open the community file and duplicate it.
 
-Every snapshot records the schema version of the extractor that made it (`SNAPSHOT_SCHEMA` in `extract-snapshot.js` and `compare-snapshots.ts`). Bump it whenever a change to the extractor changes what is recorded; `compare-snapshots.ts` then refuses older snapshots, since comparing snapshots from different extractor versions would report differences that are not in the libraries. Snapshots that will be compared with each other must be extracted again after such a change.
+Every snapshot records the schema version of the extractor that made it (`SNAPSHOT_SCHEMA` in `extract-snapshot.js` and `snapshots.ts`). Bump it whenever a change to the extractor changes what is recorded; `compare-snapshots.ts` then refuses older snapshots, since comparing snapshots from different extractor versions would report differences that are not in the libraries. Snapshots that will be compared with each other must be extracted again after such a change.
 
-### With the development plugin
+To make a snapshot:
 
 1. Build the plugin: `pnpm turbo @internal/figma#build`. This writes `@internal/figma/plugin/dist/code.js`, the extractor and `plugin/main.js` combined.
 2. In the Figma desktop app, choose Plugins → Development → Import plugin from manifest, and select `@internal/figma/plugin/manifest.json`. This is only needed once, and only you see the plugin.
@@ -37,36 +36,7 @@ Every snapshot records the schema version of the extractor that made it (`SNAPSH
 4. Press **Download snapshot.json**, or **Copy JSON** and paste it into a file, and save it as `snapshot.json` in the snapshot directory. Pages the plugin couldn't extract are listed in the plugin, and are recorded in the file so that `verify` fails.
 5. Run `node @internal/figma/compare-snapshots.ts verify <snapshot-dir>`.
 
-### Through `use_figma`
-
-This needs an MCP client that Figma allows on its remote MCP server, such as Claude Code (see the [Figma MCP catalog](https://www.figma.com/mcp-catalog/)), and a Full seat; rate limits apply. Extracting Digdir v1.23.0 this way took four agents about 34 minutes of work and several million tokens, and still left out 22 component sets that were too large. Save the results as separate files named after what they contain: `variables-<collection>.json` and `components-<page>.json`, with a suffix when a page is split into several calls.
-
-Each call sends the full contents of `extract-snapshot.js` to `use_figma`, followed by one line:
-
-| Part         | Line to append                                                                                  | Use                                                      |
-| ------------ | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `pages`      | `return await extractSnapshot({ part: 'pages' });`                                              | List the pages (not saved)                               |
-| `index`      | `return await extractSnapshot({ part: 'index', page: '<page>' });`                              | List component sets and components on a page (not saved) |
-| `variables`  | `return await extractSnapshot({ part: 'variables', collections: ['Size'] });`                   | Variables in the given collections (all if empty)        |
-| `components` | `return await extractSnapshot({ part: 'components', page: '<page>', components: ['Button'] });` | Components on a page (all on the page if empty)          |
-
-The returned object includes `size`, the length of the data as JSON. `use_figma` rejects results over 48,000 bytes, so split a page into more calls with fewer components when needed. A single component set can't be split, and many of the larger sets exceed the limit on their own (in Digdir v1.23.0, 22 sets, from Breadcrumbs at about 51 KB to `.Aspect Ratio Spacer` at about 1.3 MB).
-
-Prompt for Claude Code, run from this repository:
-
-```text
-Make a snapshot of the Figma library <file URL> and save it in @internal/figma/snapshots/<digdir/<release> or udir/<today's date YYYY-MM-DD>>/, following @internal/figma/README.md.
-
-Use the Figma MCP server's use_figma tool. Every call must send the full contents of @internal/figma/extract-snapshot.js unchanged, followed by one `return await extractSnapshot({...});` line as described in the README. Do not run any other code in use_figma, and do not change anything in the Figma file.
-
-1. Run the `pages` part, then the `index` part for each page that contains components.
-2. Run the `variables` part, one call per collection (or a few collections per call if they are small).
-3. Run the `components` part for every page with components, splitting a page into several calls if the result is too large. <Leave out Digdir's FileUpload component, which Udir does not use.>
-4. Save each `variables` and `components` result as a separate JSON file, exactly as returned, including `checksum`. Don't edit or reformat the values.
-5. Run `node @internal/figma/compare-snapshots.ts verify <snapshot-dir>`. Extract any file it reports again.
-
-Report the files saved and any components or pages you could not extract.
-```
+A Figma MCP server can't replace the plugin: its `use_figma` tool is only available to MCP clients Figma has approved, and rejects results over 48,000 bytes, which many single component sets exceed.
 
 ## Comparing snapshots
 
@@ -127,7 +97,7 @@ The rules file names components and properties as they are in the snapshots; `co
 
 - **Variables:** per collection, the mode names and the default mode; per variable, its type, scopes, code syntax and value in each mode. Aliases are recorded as `Collection/variable`, colors as hex.
 - **Components:** component property definitions, and for every variant the layer tree with the order of each layer's children, auto layout, padding, gaps, min and max sizes, corner radii, strokes, fills, effects, styles, text properties, the variable bound to each property, and the variable modes set explicitly on each layer (`variableModes`, for example `{ "Color": "accent" }`).
-- **Instances inside components** are not expanded. They record their main component, component property values and overrides, so changes to the main component are reported once, where it is defined. For each overridden layer, the snapshot keeps the overridden values, all of the layer's variable bindings, the instances it sits in, and for a nested instance also its main component and property values. Overrides whose layer can't be looked up are counted in `unreadableOverrides`; this happened through `use_figma` for 186 overrides in Digdir v1.23.0 that the plugin could read.
+- **Instances inside components** are not expanded. They record their main component, component property values and overrides, so changes to the main component are reported once, where it is defined. For each overridden layer, the snapshot keeps the overridden values, all of the layer's variable bindings, the instances it sits in, and for a nested instance also its main component and property values. Overrides whose layer can't be looked up are counted in `unreadableOverrides`.
 
 Things to keep in mind when reading a comparison:
 
@@ -142,4 +112,4 @@ Things to keep in mind when reading a comparison:
 
 ## Tests
 
-`pnpm turbo @internal/figma#test:unit` runs the extractor (as `use_figma` runs it) and the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts` (`snapshot-scripts.test.ts`). `rules.test.ts` checks the rules on small hand-built snapshots. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.
+`pnpm turbo @internal/figma#test:unit` runs the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts` (`snapshot-scripts.test.ts`). `rules.test.ts` checks the rules on small hand-built snapshots. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.
