@@ -1,4 +1,10 @@
 :not(.ds-toggle-group) > .ds-button {
+  --dsc-button-size: var(--udsc-density-button-size, var(--ds-size-12));
+  --dsc-button-padding: var(
+    --udsc-density-button-padding,
+    var(--ds-size-2) var(--ds-size-4)
+  );
+
   &[data-variant='tertiary']:not([data-color='danger']),
   &[data-variant='secondary']:not([data-color='danger']) {
     --dsc-button-color: var(--ds-color-text-default);

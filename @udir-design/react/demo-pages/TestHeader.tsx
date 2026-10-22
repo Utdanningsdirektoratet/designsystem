@@ -115,6 +115,17 @@ export function TestHeader({ basePath = '' }: Props) {
               </List.Item>
               <List.Item>
                 <Link
+                  href={`${basePath}/density`}
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <ArrowRightIcon aria-hidden />
+                  <span>Kompakt visning</span>
+                </Link>
+              </List.Item>
+              <List.Item>
+                <Link
                   href={`${basePath}/page`}
                   style={{
                     textDecoration: 'none',

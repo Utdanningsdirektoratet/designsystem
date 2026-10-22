@@ -76,6 +76,7 @@ export const Preview = meta.story({
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
+    const chips = [...canvasElement.querySelectorAll('.ds-chip')];
     const inputButton = canvas.getByRole('button', { name: 'Button' });
     const inputCheckbox = canvas.getByRole('checkbox', { name: 'Checkbox' });
     const inputRadio = canvas.getByRole('radio', { name: 'Radio' });
@@ -89,6 +90,26 @@ export const Preview = meta.story({
     await step('Render labels', async () => {
       const label = canvas.getByLabelText('Radio');
       expect(label).toBeInTheDocument();
+    });
+
+    await step('All chip variants respond to inherited density', async () => {
+      for (const chip of chips) {
+        expect(chip.getBoundingClientRect().height).toBe(32);
+      }
+
+      canvasElement.setAttribute('data-density', 'compact');
+      for (const chip of chips) {
+        expect(chip.getBoundingClientRect().height).toBe(24);
+        const style = getComputedStyle(chip);
+        expect(Number.parseFloat(style.paddingBlockStart)).toBeCloseTo(
+          Number.parseFloat(style.paddingBlockEnd),
+        );
+      }
+      expect(inputCheckbox.getBoundingClientRect().width).toBe(16);
+      expect(inputCheckbox.getBoundingClientRect().height).toBe(16);
+      expect(inputRadio.getBoundingClientRect().width).toBe(16);
+      expect(inputRadio.getBoundingClientRect().height).toBe(16);
+      canvasElement.removeAttribute('data-density');
     });
 
     await step('Select Checkbox', async () => {

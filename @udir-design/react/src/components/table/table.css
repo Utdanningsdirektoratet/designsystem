@@ -16,6 +16,10 @@
   --dsc-table-header-background--sorted: var(--ds-color-surface-active);
   /* adjust border radius to before Digdir v1.21.1 */
   --dsc-table-border-radius: var(--ds-border-radius-md);
+  --dsc-table-padding: var(
+    --udsc-density-table-padding,
+    var(--ds-size-2) var(--ds-size-3)
+  );
 
   td {
     font-feature-settings: 'tnum' 1;
