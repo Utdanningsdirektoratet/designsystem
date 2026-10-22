@@ -1,0 +1,19 @@
+{
+  "name": "@internal/figma",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node plugin/build.ts",
+    "lint": "oxlint",
+    "test:unit": "vitest run",
+    "typecheck": "tsc --build"
+  },
+  "devDependencies": {
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}
