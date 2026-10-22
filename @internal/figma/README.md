@@ -2,11 +2,17 @@
 
 Udir's Figma component library is a copy of [Digdir's Figma library](https://www.figma.com/community/file/1322138390374166141/designsystemet-core-ui-kit) with our own changes and components. It does not receive Digdir's updates automatically: we apply them by hand, following Digdir's change guides ([Figma Community changelog](https://github.com/digdir/designsystemet/wiki/Figma-Community-Changelog)). As of October 2026, the last guide applied is the one for 1.19.0. Udir has its own FileUpload component and does not use Digdir's.
 
-The scripts here make structured snapshots of both libraries, so that updates can be checked instead of trusted:
+The change guides don't cover everything a release changes. Digdir's 1.23.0 release, for example, describes "updates to spacing, corner radius, icon sizes, disabled states, and more", but its only step-by-step guide is for the Select list. The scripts here make structured snapshots of both libraries, so that updates can be checked instead of trusted:
 
 - `extract-snapshot.js` reads variables and components inside Figma and returns them as JSON with a checksum. It never changes the file.
 - `plugin/` is a development plugin that runs the extractor on every page of the open file and saves the result as one `snapshot.json`.
 - `compare-snapshots.ts` verifies saved snapshots and compares them, optionally with the rules in `udir-to-digdir.json` (see [Rules](#rules)).
+- `notes/` has notes for reviews of the comparisons.
+
+## Figma files
+
+- Udir's library: [Komponentbibliotek](https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek)
+- Digdir's library at v1.23.0: [[v1.23.0] Designsystemet - Core UI Kit](https://www.figma.com/design/ktnz2KCAra39ZO2a1OShrw/-v1.23.0--Designsystemet---Core-UI-Kit), a copy of Digdir's community file in the Figma folder "Digdirs bibliotek, versjonert". Each Digdir release to compare with gets its own copy there, named after the release.
 
 ## Approach
 
@@ -22,7 +28,7 @@ The first update after the initial snapshots is an exception if Digdir's snapsho
 
 ## Making a snapshot
 
-Save each snapshot in its own directory: `@internal/figma/snapshots/digdir/<release>/` for Digdir, since each copy of Digdir's library is a release (for example `@internal/figma/snapshots/digdir/v1.23.0/`, made from the copy "[v1.23.0] Designsystemet - Core UI Kit" in the Figma folder "Digdirs bibliotek, versjonert"), and `@internal/figma/snapshots/udir/<YYYY-MM-DD>/` for Udir. Commit the snapshots, so the next comparison has them.
+Save each snapshot in its own directory: `@internal/figma/snapshots/digdir/<release>/` for Digdir, since each copy of Digdir's library is a release (for example `@internal/figma/snapshots/digdir/v1.23.0/`), and `@internal/figma/snapshots/udir/<YYYY-MM-DD>/` for Udir. Commit the snapshots, so the next comparison has them.
 
 Digdir's library has to be copied into one of Udir's Figma teams first: open the community file and duplicate it.
 
