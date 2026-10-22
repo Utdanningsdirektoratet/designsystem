@@ -7,7 +7,7 @@ The scripts here make structured snapshots of both libraries, so that updates ca
 - `extract-snapshot.js` reads variables and components inside Figma and returns them as JSON with a checksum. It never changes the file.
 - `plugin/` is a development plugin that runs the extractor on every page of the open file and saves the result as one `snapshot.json`. This is the recommended way to make a snapshot.
 - The extractor can also be run through the Figma MCP server's `use_figma` tool, but that is slow, costly and limited to 48,000 bytes per call (see below).
-- `compare-snapshots.ts` verifies saved snapshots and compares them.
+- `compare-snapshots.ts` verifies saved snapshots and compares them, optionally with the rules in `udir-to-digdir.json` (see [Rules](#rules)).
 
 ## Approach
 
@@ -85,6 +85,44 @@ node @internal/figma/compare-snapshots.ts changes \
 
 Both comparing commands print a Markdown report with every differing fact. `--summary` prints one table row per component or variable collection instead, with counts and the variants that exist in only one snapshot; use it first, since a comparison of the two libraries has well over 100,000 differing facts. Component rows count facts (one per recorded property of a layer), variable rows count variables; the `Counted` column says which. `--json` prints the raw result. `--ignore <prefix>` leaves out facts whose key starts with the prefix, and can be repeated. Keys start with `collection <name>`, `variable <collection>/<name>` or `component <name>`, for example `--ignore 'variable Theme/' --ignore 'component FileUpload'`.
 
+## Rules
+
+Udir differs from Digdir on purpose in many places: components and variant values are named differently, and many components are restricted to fewer colors (Digdir allows every color on every component). `udir-to-digdir.json` describes these decisions, so a comparison can tell them apart from accidental omissions.
+
+```sh
+# Udir's library checked against its color rules
+node @internal/figma/compare-snapshots.ts check @internal/figma/snapshots/udir/2026-10-22 --rules @internal/figma/udir-to-digdir.json
+
+# Udir compared with Digdir, with the rules applied
+node @internal/figma/compare-snapshots.ts compare @internal/figma/snapshots/digdir/v1.23.0 @internal/figma/snapshots/udir/2026-10-22 \
+  --rules @internal/figma/udir-to-digdir.json --summary
+
+# Candidates for rules the file doesn't have yet
+node @internal/figma/compare-snapshots.ts suggest @internal/figma/snapshots/digdir/v1.23.0 @internal/figma/snapshots/udir/2026-10-22 \
+  --rules @internal/figma/udir-to-digdir.json
+```
+
+`changes` also takes `--rules`, so that a Digdir change to `Icon button` lines up with the same change to Udir's `IconButton`. Rules are never applied when a library is compared with its own earlier snapshot (`diff`).
+
+The sections of the rules file:
+
+- `components`: Udir component name → Digdir component name.
+- `variantProperties`: Digdir component name → { Udir variant property → Digdir variant property }.
+- `variantValues`: Digdir component name → Digdir variant property → { Udir value → Digdir value }, such as `large` → `lg`.
+- `variableNames`: Udir → Digdir names for parts of variable names and for mode names, such as the theme name (`udir` → `starter-theme`) and color names (`support1` → `brand1`).
+- `colors`: Udir component name → the colors it may use, with a `reason` giving the evidence. Either `fixed` (every color binding uses that color) or `variantProperty` with `values` (each variant uses the color its value of that property names, such as Button's `color=danger`). `alsoAllowed` lists further fixed colors allowed anywhere in the component, such as `danger` for error states.
+- `restructured`: Udir component name → why Udir rebuilt it, for example with Figma slots. Its differences are counted per component instead of listed.
+- `notes`: free text.
+
+Color rules are used twice:
+
+1. **`check`, and the first section of `compare` and `changes`,** checks Udir's library as it is. In a component with a color rule, every binding that follows the Color mode (`Color/…`), every binding to a color the rule doesn't allow, an explicit Color mode the rule doesn't allow, and a variant value the rule doesn't list are reported. This catches a layer left unconverted even where Digdir has the same binding. Instances of a component with a rule are checked in every component they're used in, including components without a rule and rebuilt ones: their overrides and their own explicit Color mode must follow the rule of the component they're an instance of. An override binding a neutral Button's text to `danger`, for example, is reported; the component should use Button's `color=danger` variant instead, or the rule should allow it.
+2. **Then the comparison:** in the same components, Digdir's bindings that follow the Color mode are bound to the rule's color instead (`Color/base-default` → `Semantic/color/neutral/base-default`), and a component with a color variant property gets one copy of each Digdir variant per color. What remains in the comparison is what no rule explains.
+
+The rules file names components and properties as they are in the snapshots; `compare`, `check` and `suggest` stop with a list if a name doesn't exist, since that rule would do nothing.
+
+`suggest` proposes rules from the snapshots: components and variant values whose names differ only in case, spacing or size synonyms, components where Digdir follows the Color mode and Udir binds fixed colors only, components using slots, and, for a decision by hand, components where only some bindings were converted to fixed colors. Check each suggestion before adding it: the colors a component may use are a design decision, and the code (prop types narrowing `data-color`, and `@udir-design/theme/build/postprocess-css-colors.ts`, which resets some components to neutral) is the evidence to give in `reason`.
+
 ## What a snapshot records
 
 - **Variables:** per collection, the mode names and the default mode; per variable, its type, scopes, code syntax and value in each mode. Aliases are recorded as `Collection/variable`, colors as hex.
@@ -104,4 +142,4 @@ Things to keep in mind when reading a comparison:
 
 ## Tests
 
-`pnpm turbo @internal/figma#test:unit` runs the extractor (as `use_figma` runs it) and the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts`. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.
+`pnpm turbo @internal/figma#test:unit` runs the extractor (as `use_figma` runs it) and the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts` (`snapshot-scripts.test.ts`). `rules.test.ts` checks the rules on small hand-built snapshots. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.

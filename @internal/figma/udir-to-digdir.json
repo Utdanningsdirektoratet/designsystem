@@ -1,0 +1,114 @@
+{
+  "notes": [
+    "Draft from `compare-snapshots.ts suggest` on Digdir v1.23.0 and Udir 2026-10-22, limited to cases supported by code or certain from the names. To be confirmed with the designer.",
+    "Not included yet: `.Scalable checkmark` (maybe Digdir's `.Scalable checkmark/medium`), `.input radio` (variant names differ), `_tab elements base` (case of state values), Dropdown, SkipLink/neutral and `.BaseTekst og understrek` (fixed to neutral in Figma, but not restricted to neutral in code), and the components using slots besides Card."
+  ],
+  "components": {
+    "AvatarStack": "Avatar stack",
+    "ErrorSummary": "Error summary",
+    "IconButton": "Icon button",
+    "IconToggleGroup": "Icon toggle group",
+    "Multisuggestion": "Multi suggestion",
+    "Popover Trigger": "Popover.Trigger",
+    "SkipLink/neutral": "Skip link"
+  },
+  "variantProperties": {
+    ".ToggleGroup.Button": { "variant": "type" }
+  },
+  "variantValues": {
+    "Heading": {
+      "size": {
+        "2xsmall": "2xs",
+        "xsmall": "xs",
+        "small": "sm",
+        "medium": "md",
+        "large": "lg",
+        "xlarge": "xl",
+        "2xlarge": "2xl"
+      }
+    },
+    "Paragraph": {
+      "size": {
+        "xsmall": "xs",
+        "small": "sm",
+        "medium": "md",
+        "large": "lg",
+        "xlarge": "xl"
+      }
+    }
+  },
+  "variableNames": {
+    "udir": "starter-theme",
+    "support1": "brand1",
+    "support2": "brand2"
+  },
+  "colors": {
+    "Button": {
+      "variantProperty": "color",
+      "values": ["neutral", "danger"],
+      "reason": "@udir-design/react/src/components/button/Button.tsx: 'data-color'?: 'neutral' | 'danger'; neutral by default through `.ds-button` in @udir-design/theme/build/postprocess-css-colors.ts"
+    },
+    "IconButton": {
+      "variantProperty": "color",
+      "values": ["neutral", "danger"],
+      "reason": "Button with an icon; same restriction as Button"
+    },
+    "Breadcrumbs": {
+      "fixed": "neutral",
+      "reason": "Breadcrumbs.tsx omits data-color; `.ds-breadcrumbs` is reset to neutral in postprocess-css-colors.ts"
+    },
+    "Link": {
+      "fixed": "neutral",
+      "reason": "Link.tsx omits data-color; `.ds-link` is reset to neutral in postprocess-css-colors.ts"
+    },
+    "Pagination": {
+      "fixed": "neutral",
+      "reason": "Pagination.tsx omits data-color; `.ds-pagination` is reset to neutral in postprocess-css-colors.ts"
+    },
+    "ToggleGroup": {
+      "fixed": "neutral",
+      "reason": "ToggleGroup.tsx omits data-color; `.ds-togglegroup` is reset to neutral in postprocess-css-colors.ts"
+    },
+    ".ToggleGroup.Button": {
+      "fixed": "neutral",
+      "reason": "Part of ToggleGroup"
+    },
+    "IconToggleGroup": {
+      "fixed": "neutral",
+      "reason": "ToggleGroup with icons; same restriction as ToggleGroup"
+    },
+    ".input checkbox": {
+      "fixed": "neutral",
+      "alsoAllowed": ["danger"],
+      "reason": "Checkbox.tsx omits data-color; `.ds-input` is reset to neutral in postprocess-css-colors.ts. Danger for the error state, as in Digdir"
+    },
+    ".input radio": {
+      "fixed": "neutral",
+      "alsoAllowed": ["danger"],
+      "reason": "Radio renders `.ds-input`, which is reset to neutral in postprocess-css-colors.ts. Danger for the error state, as in Digdir"
+    },
+    "Switch": {
+      "fixed": "neutral",
+      "reason": "Switch.tsx omits data-color; Digdir's Switch renders `.ds-field` and `.ds-input`, which are reset to neutral in postprocess-css-colors.ts"
+    },
+    ".switch base component": {
+      "fixed": "neutral",
+      "reason": "Part of Switch"
+    },
+    ".Item in suggestion": {
+      "fixed": "neutral",
+      "reason": "Part of Suggestion; `.ds-suggestion` is reset to neutral in postprocess-css-colors.ts"
+    },
+    ".Item in multiselect": {
+      "fixed": "neutral",
+      "reason": "Part of Suggestion (multiple); `.ds-suggestion` is reset to neutral in postprocess-css-colors.ts"
+    },
+    ".Clearable": {
+      "fixed": "neutral",
+      "reason": "Clear button in Suggestion and Search, which render `.ds-input` and `.ds-suggestion`, reset to neutral in postprocess-css-colors.ts"
+    }
+  },
+  "restructured": {
+    "Card": "Rebuilt with Figma slots (Container slot 1, Container slot 2, Image slot); Digdir's library doesn't use slots"
+  }
+}
