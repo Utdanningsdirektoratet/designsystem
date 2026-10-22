@@ -1,0 +1,51 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { CssToggle } from '.storybook/docs/components';
+
+import * as RepeterendeDataStories from './RepeterendeData.stories';
+import storiesSource from './RepeterendeData.stories.tsx?raw';
+import css from './repeterendeData.stories.module.css?raw';
+
+<Meta of={RepeterendeDataStories} />
+
+# Repeterende data
+
+Noen skjema krever at brukeren registrerer samme type informasjon flere ganger, og at oppføringene hører til ulike grupper. I dette eksempelet kan brukeren opprette flere avdelinger, og registrere foresatte under hver avdeling.
+
+Brukeren oppretter en ny gruppe fra en dialog. Hver gruppe får sin egen overskrift, tabell og skjema, slik at dataene holdes adskilt. Når brukeren lagrer en oppføring, legges den til som en ny rad i tabellen, og feltene tømmes slik at brukeren kan fortsette med neste oppføring.
+
+<Canvas
+  of={RepeterendeDataStories.Preview}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
+## Gruppene i egne steg
+
+Når gruppene er enkle, men oppføringene under dem er mange, kan du dele registreringen i to steg. Det første steget registrerer bare gruppene (avdelingene) med ett felt, og det neste steget registrerer oppføringene (foresatte) under hver gruppe. Gruppene kan ikke endres i det andre steget, og hvis brukeren ikke har opprettet noen grupper, får hen en lenke tilbake til første steg.
+
+<Canvas
+  of={RepeterendeDataStories.EgneSteg}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
+## Oppsummering
+
+Det siste steget, «Send invitasjon», er likt i begge variantene. Det viser en oppsummering med `FormSummary` før brukeren sender inn. Hver gruppe får en egen seksjon, og hver oppføring ligger som en nøstet seksjon under gruppen. «Endre svar» sender brukeren tilbake til steget der svaret ble registrert og åpner dialogen for det som skal endres. Har brukeren ikke registrert noe, vises en melding med en knapp tilbake.
+
+## Anbefalinger
+
+- Bruk `Dialog` for å opprette nye grupper, slik at brukeren beholder oversikten over siden.
+- Vis registrerte oppføringer i en `Table` rett over feltene de legges til med.
+- Valider feltene når brukeren lagrer, og vis feilmeldinger ved det aktuelle feltet.
+- Tøm feltene etter at en oppføring er lagret.
+
+## Kildekode
+
+Begge eksemplene bruker den samme filen. Den inneholder skjemaene, valideringen og alle komponentene som brukes i eksemplene, og de to variantene er til slutt i filen (`Preview` og `EgneSteg`).
+
+<CssToggle code={storiesSource} language="tsx" label="kildekode" />
+
+<br />
+
+<CssToggle code={css} />
