@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 12px;
+        font:
+          12px/1.5 Inter,
+          system-ui,
+          sans-serif;
+        color: var(--figma-color-text);
+        background: var(--figma-color-bg);
+      }
+      button {
+        font: inherit;
+        padding: 6px 12px;
+        margin-block-end: 8px;
+      }
+      ul {
+        padding-inline-start: 16px;
+        color: var(--figma-color-text-danger);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Extracts variables and components from every page of this file into one
+      JSON snapshot. Nothing in the file is changed.
+    </p>
+    <button id="extract" type="button">Extract snapshot</button>
+    <p id="status" role="status"></p>
+    <div id="result" hidden>
+      <button id="download" type="button">Download snapshot.json</button>
+      <button id="copy" type="button">Copy JSON</button>
+      <ul id="errors"></ul>
+    </div>
+    <script>
+      const extractButton = document.getElementById('extract');
+      const status = document.getElementById('status');
+      const result = document.getElementById('result');
+      const errorList = document.getElementById('errors');
+      let json = '';
+
+      extractButton.addEventListener('click', () => {
+        extractButton.disabled = true;
+        result.hidden = true;
+        status.textContent = 'Starting…';
+        parent.postMessage({ pluginMessage: { type: 'extract' } }, '*');
+      });
+
+      window.addEventListener('message', (event) => {
+        const message = event.data.pluginMessage;
+        if (!message) return;
+        if (message.type === 'progress') {
+          status.textContent = message.text;
+        } else if (message.type === 'error') {
+          status.textContent = `Failed: ${message.message}`;
+          extractButton.disabled = false;
+        } else if (message.type === 'done') {
+          const { bundle } = message;
+          json = JSON.stringify(bundle);
+          const megabytes = (json.length / 1e6).toFixed(1);
+          status.textContent = `${bundle.files.length} parts, ${megabytes} MB. Save it as snapshot.json in the snapshot directory.`;
+          errorList.replaceChildren(
+            ...bundle.errors.map(({ page, message: text }) => {
+              const item = document.createElement('li');
+              item.textContent = `${page}: ${text}`;
+              return item;
+            }),
+          );
+          result.hidden = false;
+          extractButton.disabled = false;
+        }
+      });
+
+      document.getElementById('download').addEventListener('click', () => {
+        const url = URL.createObjectURL(
+          new Blob([json], { type: 'application/json' }),
+        );
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'snapshot.json';
+        link.click();
+        // Revoking right away can cancel the download in some browsers.
+        setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      });
+
+      document.getElementById('copy').addEventListener('click', () => {
+        // The Clipboard API is often blocked in plugin iframes; fall back to a selected textarea.
+        const area = document.createElement('textarea');
+        area.value = json;
+        document.body.append(area);
+        area.select();
+        const copied = document.execCommand('copy');
+        area.remove();
+        status.textContent = copied
+          ? 'Copied. Paste it into snapshot.json in the snapshot directory.'
+          : 'Copying failed; use the download button instead.';
+      });
+    </script>
+  </body>
+</html>

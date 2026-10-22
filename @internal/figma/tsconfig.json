@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // Node runs these scripts directly with type stripping, so imports use `.ts` and nothing is
+    // emitted. The plugin build concatenates plain JavaScript files instead of compiling.
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "incremental": true,
+    "tsBuildInfoFile": "../../dist/out-tsc/internal-figma.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": ["*.ts", "plugin/*.ts"]
+}
