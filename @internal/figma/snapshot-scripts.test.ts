@@ -127,12 +127,28 @@ function mockFigma(options: LibraryOptions) {
       'Visible#1:2': { type: 'BOOLEAN', defaultValue: true },
     },
   };
+  const shapeComponent: MockNode = {
+    ...frame('Shape'),
+    type: 'COMPONENT',
+    componentPropertyDefinitions: {},
+  };
   const iconInstance = (visible: boolean): MockNode => ({
     ...frame('Icon'),
     type: 'INSTANCE',
     getMainComponentAsync: async () => iconComponent,
     componentProperties: { 'Visible#1:2': { type: 'BOOLEAN', value: visible } },
     overrides: [],
+    children: [
+      frame('Glyph'),
+      {
+        ...frame('Shape'),
+        type: 'INSTANCE',
+        getMainComponentAsync: async () => shapeComponent,
+        componentProperties: {},
+        overrides: [],
+        children: [frame('Path')],
+      },
+    ],
   });
   const buttonChildren = (iconVisible: boolean, nestedHeader: 'A' | 'B') => [
     frame('Text', { boundVariables: { paddingLeft: alias('size/3') } }),
@@ -232,6 +248,11 @@ function mockFigma(options: LibraryOptions) {
     { id: firstText.id, overriddenFields: ['paddingLeft'] },
     { id: secondText.id, overriddenFields: ['characters'] },
     { id: nestedIcon.id, overriddenFields: ['componentProperties'] },
+    { id: nestedIcon.children?.[0].id, overriddenFields: ['fills'] },
+    {
+      id: nestedIcon.children?.[1].children?.[0].id,
+      overriddenFields: ['fills'],
+    },
     { id: nestedHeader.id, overriddenFields: ['mainComponent'] },
     ...(options.unreadableOverride
       ? [{ id: 'I999:1;1:1', overriddenFields: ['characters'] }]
@@ -550,4 +571,23 @@ test('a change of the Color mode set on a component is a difference', async () =
     await snapshot({ ...base, cardColorMode: 'neutral' }),
   );
   expect(keys).toEqual(['component Card @ . :: variableModes[Color]']);
+});
+
+test('an override inside nested instances records the instances it sits in, nearest first', async () => {
+  const dir = await snapshot(base);
+  const { data } = JSON.parse(
+    readFileSync(path.join(dir, 'components.json'), 'utf8'),
+  ) as { data: { name: string; tree: { children: MockNode[] } }[] };
+  const card = data.find((component) => component.name === 'Card');
+  const button = card?.tree.children.find((child) => child.name === 'Button');
+  const overrides = button?.overrides as Record<
+    string,
+    { values: Record<string, unknown> }
+  >;
+  expect(overrides['Icon > Shape > Path'].values.ownerComponents).toEqual([
+    'Shape',
+    'Icon',
+  ]);
+  expect(overrides['Icon > Glyph'].values.ownerComponents).toEqual(['Icon']);
+  expect(overrides.Icon.values.ownerComponents).toBeUndefined();
 });

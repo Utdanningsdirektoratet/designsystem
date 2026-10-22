@@ -68,7 +68,7 @@ export type Facts = Map<string, string>;
 export type Change = { key: string; before?: string; after?: string };
 
 /** Keep identical to `SNAPSHOT_SCHEMA` in `extract-snapshot.js`. */
-export const SNAPSHOT_SCHEMA = 4;
+export const SNAPSHOT_SCHEMA = 5;
 
 // ---------------------------------------------------------------------------------------------
 // Checksum. Keep identical to `extract-snapshot.js`.
