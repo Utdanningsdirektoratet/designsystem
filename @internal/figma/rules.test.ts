@@ -410,6 +410,41 @@ test('an override deep inside a ruled instance nested in an instance without a r
   ]);
 });
 
+test('labels of the instances an override sits in are compared after renames and color defaults', () => {
+  const owners = (iconButton: string, button: string) => ({
+    name: 'Section',
+    type: 'COMPONENT',
+    tree: layer('Section', {
+      children: [
+        layer('_Container', {
+          type: 'INSTANCE',
+          mainComponent: '_Container',
+          overrides: {
+            'Footer > Icon button > Button > Label': {
+              fields: ['characters'],
+              values: {
+                characters: 'Lagre',
+                ownerComponents: [button, iconButton],
+              },
+            },
+          },
+        }),
+      ],
+    }),
+  });
+  const digdir = digdirLibrary();
+  digdir.components.push(
+    owners('Icon button [size=md]', 'Button [variant=secondary]'),
+  );
+  const udir = udirLibrary();
+  udir.components.push(
+    owners('IconButton [size=md]', 'Button [color=neutral, variant=secondary]'),
+  );
+  expect(
+    compareWithRules(files(digdir), files(udir), RULES).differences,
+  ).toEqual([]);
+});
+
 test('rules naming components the snapshots do not have are reported', () => {
   const rules: Rules = {
     ...RULES,
