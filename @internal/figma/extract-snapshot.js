@@ -1,65 +1,40 @@
 /* global figma */
 /**
- * Read-only snapshot extractor for a Figma component library.
- *
- * Run it through the Figma MCP server's `use_figma` tool: send this file's full contents followed
- * by one line that calls `extractSnapshot`, for example
- *
- *   return await extractSnapshot({ part: 'variables', collections: ['Size'] });
- *
- * See `@internal/figma/README.md` for the parts, the workflow and how the result is saved and compared.
+ * Read-only snapshot extractor for a Figma component library, run by the development plugin in
+ * `plugin/` (see `@internal/figma/README.md`).
  *
  * The script only reads. It never sets a property or creates, changes or removes nodes, variables
- * or styles. The only state it touches is the plugin's current page, which `use_figma` resets at
- * the start of every call.
+ * or styles. The only state it touches is the current page, which it switches to load pages; the
+ * plugin switches back afterwards.
  */
 
 // Bump whenever the extracted facts change, so `compare-snapshots.ts` refuses to compare
 // snapshots made by different versions of this script. Keep it identical there.
-const SNAPSHOT_SCHEMA = 5;
+const SNAPSHOT_SCHEMA = 6;
 
 /**
- * Entry point, called by the line appended when the script is sent to `use_figma`.
+ * Extracts one part of a snapshot: all variables, or the components on one page.
  *
- * @param {{
- *   part: 'pages' | 'index' | 'variables' | 'components',
- *   page?: string,
- *   pageIndex?: number,
- *   components?: string[],
- *   collections?: string[],
- * }} options
+ * @param {{ part: 'variables' } | { part: 'components', page: string, pageIndex: number }} options
  */
+// Called by `plugin/main.js`, which is concatenated after this file.
 // oxlint-disable-next-line no-unused-vars
 async function extractSnapshot(options) {
   let data;
-  switch (options.part) {
-    case 'pages':
-      data = figma.root.children.map((page) => page.name);
-      break;
-    case 'index':
-      data = await indexPage(options.page, options.pageIndex);
-      break;
-    case 'variables':
-      data = await extractVariables(options.collections ?? []);
-      break;
-    case 'components':
-      data = await extractComponents(
-        options.page,
-        options.pageIndex,
-        options.components ?? [],
-      );
-      break;
-    default:
-      throw new Error(
-        `Unknown part "${String(options.part)}". Use pages, index, variables or components.`,
-      );
+  if (options.part === 'variables') {
+    data = await extractVariables();
+  } else if (options.part === 'components') {
+    data = await extractComponents(options.page, options.pageIndex);
+  } else {
+    throw new Error(
+      `Unknown part "${String(options.part)}". Use variables or components.`,
+    );
   }
   return {
     schema: SNAPSHOT_SCHEMA,
     file: figma.root.name,
     part: options.part,
     options,
-    size: stableStringify(data).length,
     data,
     checksum: checksum(data),
   };
@@ -69,20 +44,17 @@ async function extractSnapshot(options) {
 // Parts
 
 /**
- * Opens a page by name, or by position when `index` is given. Pages can share a name (separator
- * pages are often all called `---`), so the plugin passes the position as well; the name must
- * still match, so a reordered file fails instead of extracting the wrong page.
+ * Opens a page by its position, checking its name. Pages can share a name (separator pages are
+ * often all called `---`), and checking the name makes a reordered file fail instead of
+ * extracting the wrong page.
  */
 async function openPage(name, index) {
   const pages = figma.root.children;
-  const page =
-    index === undefined
-      ? pages.find((candidate) => candidate.name === name)
-      : pages[index];
+  const page = pages[index];
   if (!page || page.name !== name) {
     const names = pages.map((candidate) => candidate.name);
     throw new Error(
-      `No page named "${name}"${index === undefined ? '' : ` at position ${index}`}. Pages: ${names.join(' | ')}`,
+      `No page named "${name}" at position ${index}. Pages: ${names.join(' | ')}`,
     );
   }
   await figma.setCurrentPageAsync(page);
@@ -99,36 +71,11 @@ function findComponents(page) {
     );
 }
 
-async function indexPage(pageName, pageIndex) {
-  const page = await openPage(pageName, pageIndex);
-  return findComponents(page)
-    .map((node) => ({
-      name: node.name,
-      type: node.type,
-      variants:
-        node.type === 'COMPONENT_SET' ? node.children.length : undefined,
-    }))
-    .sort(byName);
-}
-
-async function extractVariables(collectionNames) {
+async function extractVariables() {
   const all = await figma.variables.getLocalVariableCollectionsAsync();
-  const selected =
-    collectionNames.length === 0
-      ? all
-      : collectionNames.map((name) => {
-          const collection = all.find((candidate) => candidate.name === name);
-          if (!collection) {
-            const names = all.map((candidate) => candidate.name);
-            throw new Error(
-              `No variable collection named "${name}". Collections: ${names.join(' | ')}`,
-            );
-          }
-          return collection;
-        });
 
   const result = [];
-  for (const collection of selected) {
+  for (const collection of all) {
     const variables = [];
     for (const id of collection.variableIds) {
       const variable = await figma.variables.getVariableByIdAsync(id);
@@ -161,24 +108,10 @@ async function extractVariables(collectionNames) {
   return result.sort(byName);
 }
 
-async function extractComponents(pageName, pageIndex, componentNames) {
+async function extractComponents(pageName, pageIndex) {
   const page = await openPage(pageName, pageIndex);
-  const all = findComponents(page);
-  let selected = all;
-  if (componentNames.length > 0) {
-    const missing = componentNames.filter(
-      (name) => !all.some((node) => node.name === name),
-    );
-    if (missing.length > 0) {
-      throw new Error(
-        `Not found on page "${pageName}": ${missing.join(' | ')}. Run the index part to list the names.`,
-      );
-    }
-    selected = all.filter((node) => componentNames.includes(node.name));
-  }
-
   const result = [];
-  for (const node of selected) {
+  for (const node of findComponents(page)) {
     const entry = {
       name: node.name,
       type: node.type,
@@ -347,8 +280,8 @@ async function instanceFacts(instance) {
   for (const override of instance.overrides) {
     const target = await figma.getNodeByIdAsync(override.id);
     if (!target) {
-      // Seen through `use_figma`, where some nested layers could not be looked up while the
-      // plugin could read them. Count them, so a comparison shows the gap instead of hiding it.
+      // Never seen with the plugin, but counted so a comparison would show such a gap instead of
+      // hiding it.
       unreadable++;
       continue;
     }
@@ -617,8 +550,7 @@ async function variableValue(value) {
 
 /**
  * Variable and collection labels by id. Valid for one snapshot only: in a plugin session the file
- * can change between exports, so `clearCaches` must be called before each one. (`use_figma` loads
- * the script afresh for every call.)
+ * can change between exports, so `clearCaches` must be called before each one.
  */
 const variableNames = new Map();
 const collections = new Map();

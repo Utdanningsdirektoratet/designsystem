@@ -2,9 +2,9 @@
  * Verifies and compares snapshots made with `extract-snapshot.js`, optionally with the rules in a
  * rules file (`rules.ts`). Run without arguments for usage. See `@internal/figma/README.md`.
  *
- * A snapshot directory holds one library's snapshot: either the plugin's `snapshot.json` bundle or
- * separately saved `use_figma` results. Every part's checksum is verified before it is used, so a
- * file that was changed while being saved is reported instead of compared.
+ * A snapshot directory holds one library's snapshot, `snapshot.json`, as saved by the development
+ * plugin. Every part's checksum is verified before it is used, so a file that was changed while
+ * being saved is reported instead of compared.
  */
 import {
   type Rules,
@@ -291,7 +291,7 @@ function main(): void {
       for (const error of errors) console.error(error);
       failed ||= errors.length > 0;
       console.log(
-        `${dir}: ${files.length} valid file(s), ${errors.length} problem(s)`,
+        `${dir}: ${files.length} valid part(s), ${errors.length} problem(s)`,
       );
     }
     process.exit(failed ? 1 : 0);
