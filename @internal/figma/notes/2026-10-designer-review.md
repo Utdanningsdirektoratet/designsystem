@@ -19,7 +19,7 @@ Without `--summary`, `compare` lists every differing fact; add `--ignore` for co
 - Udir's library has the updates from Digdir's change guides up to 1.19.0. Digdir's [1.23.0 release](https://github.com/digdir/designsystemet/issues/5150) says it brings "updates to spacing, corner radius, icon sizes, disabled states, and more", but its only step-by-step guide is for the Select list ([#4436](https://github.com/digdir/designsystemet/issues/4436)). Many differences below may therefore be Digdir changes since 1.19.0 that no guide describes, not Udir decisions.
 - Every difference needs one of three outcomes: **a Udir decision** (add a rule, so it stops showing up), **to be changed in Udir's library**, or **a Digdir change to apply**.
 
-## 1. Instances that break the color rules (28)
+## 1. Instances that break the color rules (29)
 
 `check` reports overrides on instances of Button, IconButton and Link that break those components' color rules:
 
@@ -28,6 +28,7 @@ Without `--summary`, `compare` lists every differing fact; add `--ignore` for co
 | `.Section` (FormNavigation) | A tertiary `color=neutral` Button with text and icon overridden to `danger`, in the `State=Error` variants                        | 16    |
 | `.Step` (FormNavigation)    | The same, in `State=Error`                                                                                                        | 4     |
 | `.ReadMoreButton`           | A `color=neutral` Button with text and icon overridden to `info`; Button allows `neutral` and `danger` only (`Button.tsx`)        | 4     |
+| ReadMore                    | The same Button's icon, overridden to `info` again on the `.ReadMoreButton` instance in `IsOpen=true`                             | 1     |
 | FileCard                    | An IconButton's icon overridden to `Color/text-default` (follows the Color mode) in `State=Default`, to `danger` in `State=Error` | 2     |
 | `.Anchor link`              | A Link's text and arrow overridden to `Color/text-default` (follows the Color mode); Link is neutral in code                      | 2     |
 
@@ -88,7 +89,7 @@ This only covers layers that exist under the same path in both libraries. Where 
 
 ## 5. Bindings to deleted variables
 
-Udir's library has about 740 bindings to 14 variables that no longer exist in their collection. They keep the value they had, but don't follow the current variables or the size modes. Several have the same name as a current variable, so they were probably left behind when variables were recreated.
+Udir's library has about 740 bindings to 14 variables that are no longer in their collection. The bindings still point to those deleted variables, not to the current variables with the same name, so changes to the current variables won't reach them. Whether they still respond to the size modes, and which values they now have, hasn't been checked in Figma. Several have the same name as a current variable, so they were probably left behind when variables were recreated.
 
 | Deleted variable                           | Bindings | Mostly in                                                            |
 | ------------------------------------------ | -------- | -------------------------------------------------------------------- |
@@ -134,7 +135,7 @@ Not in the rules yet:
 
 ## 9. Largest remaining differences
 
-With the rules applied, about 134,500 facts remain (variables in the Theme and Color scheme collections left out). The largest, apart from Udir's own components (Header, the logos, Footer, FileUpload, FileCard, TableOfContents, FormSummary, FormNavigation):
+With the rules applied, about 134,600 facts remain (variables in the Theme and Color scheme collections left out). The largest, apart from Udir's own components (Header, the logos, Footer, FileUpload, FileCard, TableOfContents, FormSummary, FormNavigation):
 
 | Component                  | Only in Digdir | Only in Udir | Changed | Likely cause                                             |
 | -------------------------- | -------------- | ------------ | ------- | -------------------------------------------------------- |
