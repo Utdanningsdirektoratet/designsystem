@@ -111,6 +111,13 @@ describe('countMatchesByCategory', () => {
     ]);
   });
 
+  it('counts every category when none is excluded', () => {
+    expect(countMatchesByCategory(families, 'syntetisk')).toEqual([
+      { categoryId: 'barnehage', count: 1 },
+      { categoryId: 'internbruk', count: 1 },
+    ]);
+  });
+
   it('matches tags by prefix and ignores families without variants', () => {
     expect(countMatchesByCategory(families, 'sko', 'barnehage')).toEqual([
       { categoryId: 'internbruk', count: 1 },

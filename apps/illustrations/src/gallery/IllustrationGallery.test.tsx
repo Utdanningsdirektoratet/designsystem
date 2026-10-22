@@ -1,13 +1,34 @@
 // @vitest-environment jsdom
-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { IllustrationGallery } from './IllustrationGallery';
 import { fixtureCatalog } from './gallery.fixtures';
 import { illustrationAssetUrl } from './gallery.utils';
 
-afterEach(cleanup);
+beforeEach(() => {
+  vi.useFakeTimers();
+});
+
+afterEach(() => {
+  cleanup();
+  vi.useRealTimers();
+});
 
 const searchLabel = 'Søk';
+
+// Filtering is debounced, so flush the timer after typing.
+function typeSearch(search: HTMLElement, value: string) {
+  fireEvent.change(search, { target: { value } });
+  act(() => {
+    vi.advanceTimersByTime(300);
+  });
+}
 
 describe('IllustrationGallery', () => {
   it('shows a pending state without controls', () => {
@@ -58,7 +79,7 @@ describe('IllustrationGallery', () => {
     expect(list.querySelectorAll('button')).toHaveLength(2);
 
     const search = screen.getByRole('searchbox', { name: searchLabel });
-    fireEvent.change(search, { target: { value: 'INGEN TREFF' } });
+    typeSearch(search, 'INGEN TREFF');
     expect(
       screen.getByRole('heading', {
         name: 'Ingen illustrasjoner å vise i denne kategorien',
@@ -68,7 +89,46 @@ describe('IllustrationGallery', () => {
       'polite',
     );
 
-    fireEvent.change(search, { target: { value: 'TESTFAMILIE' } });
+    typeSearch(search, 'TESTFAMILIE');
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+  });
+
+  it('keeps the query and shows hit badges when switching category', () => {
+    render(
+      <IllustrationGallery
+        catalog={{
+          ...fixtureCatalog,
+          families: [
+            fixtureCatalog.families[0],
+            { ...fixtureCatalog.families[1], categoryId: 'internbruk' },
+          ],
+        }}
+      />,
+    );
+    const search = screen.getByRole('searchbox', { name: searchLabel });
+    expect(screen.getByRole('radio', { name: 'Internbruk' })).toBeTruthy();
+
+    typeSearch(search, 'a');
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+    expect(
+      screen
+        .getByRole('radio', { name: 'Internbruk' })
+        .closest('label')
+        ?.querySelector('[data-count]'),
+    ).toBeNull();
+
+    typeSearch(search, 'annen');
+    const countOf = (name: string | RegExp) =>
+      screen
+        .getByRole('radio', { name })
+        .closest('label')
+        ?.querySelector('[data-count]')
+        ?.getAttribute('data-count');
+    expect(countOf(/Internbruk/)).toBe('1');
+    expect(countOf('Barnehage')).toBeUndefined();
+
+    fireEvent.click(screen.getByRole('radio', { name: /Internbruk/ }));
+    expect((search as HTMLInputElement).value).toBe('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
@@ -85,7 +145,7 @@ describe('IllustrationGallery', () => {
       />,
     );
     const search = screen.getByRole('searchbox', { name: searchLabel });
-    fireEvent.change(search, { target: { value: 'annen' } });
+    typeSearch(search, 'annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(0);
 
     fireEvent.click(

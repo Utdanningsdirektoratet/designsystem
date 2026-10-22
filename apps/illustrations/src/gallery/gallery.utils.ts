@@ -44,11 +44,11 @@ export function matchesFamilySearch(
   );
 }
 
-/** Search hits per category, skipping `excludeCategoryId` and categories without hits. */
+/** Search hits per category, skipping `excludeCategoryId` (if given) and categories without hits. */
 export function countMatchesByCategory(
   families: IllustrationFamily[],
   query: string,
-  excludeCategoryId: string,
+  excludeCategoryId?: string,
 ): { categoryId: string; count: number }[] {
   if (!query.trim()) return [];
   const counts = new Map<string, number>();
