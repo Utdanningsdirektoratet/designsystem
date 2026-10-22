@@ -23,16 +23,16 @@ Without `--summary`, `compare` lists every differing fact; add `--ignore` for co
 
 `check` reports overrides on instances of Button, IconButton and Link that break those components' color rules:
 
-| Component                   | What                                                                                                                              | Count |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| `.Section` (FormNavigation) | A tertiary `color=neutral` Button with text and icon overridden to `danger`, in the `State=Error` variants                        | 16    |
-| `.Step` (FormNavigation)    | The same, in `State=Error`                                                                                                        | 4     |
-| `.ReadMoreButton`           | A `color=neutral` Button with text and icon overridden to `info`; Button allows `neutral` and `danger` only (`Button.tsx`)        | 4     |
-| ReadMore                    | The same Button's icon, overridden to `info` again on the `.ReadMoreButton` instance in `IsOpen=true`                             | 1     |
-| FileCard                    | An IconButton's icon overridden to `Color/text-default` (follows the Color mode) in `State=Default`, to `danger` in `State=Error` | 2     |
-| `.Anchor link`              | A Link's text and arrow overridden to `Color/text-default` (follows the Color mode); Link is neutral in code                      | 2     |
+| Component                   | What                                                                                                                                                                | Count |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| `.Section` (FormNavigation) | A tertiary `color=neutral` Button with text and icon overridden to `danger` in the `State=Error` variants (8) and to `success` in the `State=Verified` variants (8) | 16    |
+| `.Step` (FormNavigation)    | The same: `danger` in `State=Error` (2), `success` in `State=Verified` (2)                                                                                          | 4     |
+| `.ReadMoreButton`           | A `color=neutral` Button with text and icon overridden to `info`; Button allows `neutral` and `danger` only (`Button.tsx`)                                          | 4     |
+| ReadMore                    | The same Button's icon, overridden to `info` again on the `.ReadMoreButton` instance in `IsOpen=true`                                                               | 1     |
+| FileCard                    | An IconButton's icon overridden to `Color/text-default` (follows the Color mode) in `State=Default`, to `danger` in `State=Error`                                   | 2     |
+| `.Anchor link`              | A Link's text and arrow overridden to `Color/text-default` (follows the Color mode); Link is neutral in code                                                        | 2     |
 
-To decide: use Button's `color=danger` variant for the error states, allow `info` (or another color) on Button, or change the overrides.
+To decide: use Button's `color=danger` variant for the error states; allow `success` and `info` (or other colors) on Button, since it allows `neutral` and `danger` only; or change the overrides.
 
 ## 2. Color rules to confirm
 
