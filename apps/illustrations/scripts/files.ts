@@ -41,12 +41,16 @@ export async function replaceDirectory(
   let stage: string | undefined;
   let backup: string | undefined;
   try {
-    stage = await mkdtemp(
-      join(packageRoot, destination.endsWith('dist') ? '.dist-' : '.catalog-'),
-    );
-    await prepare(stage);
     // A fresh checkout has no parent folder, such as public/.
     await mkdir(dirname(destination), { recursive: true });
+    // Next to the destination, so the final rename never crosses filesystems.
+    stage = await mkdtemp(
+      join(
+        dirname(destination),
+        destination.endsWith('dist') ? '.dist-' : '.catalog-',
+      ),
+    );
+    await prepare(stage);
     backup = `${stage}-previous`;
     try {
       await rename(destination, backup);
