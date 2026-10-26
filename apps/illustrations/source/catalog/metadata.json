@@ -7,7 +7,7 @@
       "categoryId": "barnehage",
       "nodeId": "23:2433",
       "name": "aktivitet-1",
-      "tags": ["barn", "musikk", "leker"],
+      "tags": ["barn", "musikk", "leker", "voksen"],
       "variants": [
         {
           "id": "aktivitet-1-25-100",
@@ -1069,6 +1069,7 @@
       "categoryId": "barnehage",
       "nodeId": "1684:149048",
       "name": "aktivitet-3a",
+      "tags": ["barn", "voksen"],
       "variants": [
         {
           "id": "aktivitet-3a-1684-149049",
@@ -18494,21 +18495,6 @@
           "svg": "grunnskole-aktivitet-2-49-109784.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-82816",
-          "nodeId": "182:82816",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-82816.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-109939",
           "nodeId": "49:109939",
           "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Summer, Fargetema: brun, Bakgrunn: Nei",
@@ -18522,21 +18508,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-109939.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-82853",
-          "nodeId": "182:82853",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-82853.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-109945",
@@ -18554,21 +18525,6 @@
           "svg": "grunnskole-aktivitet-2-49-109945.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-82890",
-          "nodeId": "182:82890",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-82890.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110100",
           "nodeId": "49:110100",
           "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -18582,21 +18538,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110100.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-82927",
-          "nodeId": "182:82927",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-82927.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110106",
@@ -18614,21 +18555,6 @@
           "svg": "grunnskole-aktivitet-2-49-110106.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-82964",
-          "nodeId": "182:82964",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-82964.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110261",
           "nodeId": "49:110261",
           "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Summer, Fargetema: grønn, Bakgrunn: Nei",
@@ -18642,21 +18568,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110261.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83001",
-          "nodeId": "182:83001",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83001.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110267",
@@ -18674,21 +18585,6 @@
           "svg": "grunnskole-aktivitet-2-49-110267.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83038",
-          "nodeId": "182:83038",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83038.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110420",
           "nodeId": "49:110420",
           "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Summer, Fargetema: brun, Bakgrunn: Nei",
@@ -18702,21 +18598,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110420.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83073",
-          "nodeId": "182:83073",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83073.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110424",
@@ -18734,21 +18615,6 @@
           "svg": "grunnskole-aktivitet-2-49-110424.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83108",
-          "nodeId": "182:83108",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83108.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110577",
           "nodeId": "49:110577",
           "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -18762,21 +18628,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110577.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83143",
-          "nodeId": "182:83143",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83143.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110581",
@@ -18794,21 +18645,6 @@
           "svg": "grunnskole-aktivitet-2-49-110581.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83178",
-          "nodeId": "182:83178",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83178.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110734",
           "nodeId": "49:110734",
           "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Summer, Fargetema: grønn, Bakgrunn: Nei",
@@ -18822,21 +18658,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110734.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83213",
-          "nodeId": "182:83213",
-          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83213.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110738",
@@ -18854,21 +18675,6 @@
           "svg": "grunnskole-aktivitet-2-49-110738.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83248",
-          "nodeId": "182:83248",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83248.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-110891",
           "nodeId": "49:110891",
           "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Summer, Fargetema: brun, Bakgrunn: Nei",
@@ -18882,21 +18688,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-110891.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83283",
-          "nodeId": "182:83283",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83283.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-110895",
@@ -18914,21 +18705,6 @@
           "svg": "grunnskole-aktivitet-2-49-110895.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83318",
-          "nodeId": "182:83318",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83318.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111048",
           "nodeId": "49:111048",
           "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -18942,21 +18718,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111048.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83353",
-          "nodeId": "182:83353",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83353.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111052",
@@ -18974,21 +18735,6 @@
           "svg": "grunnskole-aktivitet-2-49-111052.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-83388",
-          "nodeId": "182:83388",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83388.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111205",
           "nodeId": "49:111205",
           "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Summer, Fargetema: grønn, Bakgrunn: Nei",
@@ -19002,21 +18748,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111205.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-83423",
-          "nodeId": "182:83423",
-          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-83423.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111210",
@@ -19034,21 +18765,6 @@
           "svg": "grunnskole-aktivitet-2-49-111210.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85204",
-          "nodeId": "182:85204",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85204.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111212",
           "nodeId": "49:111212",
           "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Summer, Fargetema: grønn, Bakgrunn: Ja",
@@ -19062,21 +18778,6 @@
             "Bakgrunn": "Ja"
           },
           "svg": "grunnskole-aktivitet-2-49-111212.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85205",
-          "nodeId": "182:85205",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85205.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111214",
@@ -19094,21 +18795,6 @@
           "svg": "grunnskole-aktivitet-2-49-111214.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85206",
-          "nodeId": "182:85206",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85206.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111216",
           "nodeId": "49:111216",
           "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Summer, Fargetema: grønn, Bakgrunn: Nei",
@@ -19122,21 +18808,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111216.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85207",
-          "nodeId": "182:85207",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85207.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111218",
@@ -19154,21 +18825,6 @@
           "svg": "grunnskole-aktivitet-2-49-111218.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85208",
-          "nodeId": "182:85208",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85208.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111220",
           "nodeId": "49:111220",
           "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -19182,21 +18838,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111220.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85209",
-          "nodeId": "182:85209",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85209.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111222",
@@ -19214,21 +18855,6 @@
           "svg": "grunnskole-aktivitet-2-49-111222.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85210",
-          "nodeId": "182:85210",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85210.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111224",
           "nodeId": "49:111224",
           "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -19242,21 +18868,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111224.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85211",
-          "nodeId": "182:85211",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85211.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111226",
@@ -19274,21 +18885,6 @@
           "svg": "grunnskole-aktivitet-2-49-111226.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85212",
-          "nodeId": "182:85212",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85212.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111228",
           "nodeId": "49:111228",
           "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Summer, Fargetema: brun, Bakgrunn: Nei",
@@ -19302,21 +18898,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111228.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85213",
-          "nodeId": "182:85213",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85213.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111230",
@@ -19334,21 +18915,6 @@
           "svg": "grunnskole-aktivitet-2-49-111230.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85214",
-          "nodeId": "182:85214",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85214.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111232",
           "nodeId": "49:111232",
           "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Summer, Fargetema: brun, Bakgrunn: Nei",
@@ -19362,21 +18928,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111232.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85215",
-          "nodeId": "182:85215",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85215.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111234",
@@ -19394,21 +18945,6 @@
           "svg": "grunnskole-aktivitet-2-49-111234.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85216",
-          "nodeId": "182:85216",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85216.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111236",
           "nodeId": "49:111236",
           "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Summer, Fargetema: blå, Bakgrunn: Nei",
@@ -19422,21 +18958,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "grunnskole-aktivitet-2-49-111236.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85217",
-          "nodeId": "182:85217",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: blå, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85217.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111238",
@@ -19454,21 +18975,6 @@
           "svg": "grunnskole-aktivitet-2-49-111238.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85218",
-          "nodeId": "182:85218",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: brun, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85218.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111240",
           "nodeId": "49:111240",
           "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Summer, Fargetema: grønn, Bakgrunn: Ja",
@@ -19482,21 +18988,6 @@
             "Bakgrunn": "Ja"
           },
           "svg": "grunnskole-aktivitet-2-49-111240.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85219",
-          "nodeId": "182:85219",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85219.svg"
         },
         {
           "id": "grunnskole-aktivitet-2-49-111242",
@@ -19514,21 +19005,6 @@
           "svg": "grunnskole-aktivitet-2-49-111242.svg"
         },
         {
-          "id": "grunnskole-aktivitet-2-182-85220",
-          "nodeId": "182:85220",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: blå, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85220.svg"
-        },
-        {
           "id": "grunnskole-aktivitet-2-49-111244",
           "nodeId": "49:111244",
           "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Summer, Fargetema: brun, Bakgrunn: Ja",
@@ -19542,21 +19018,6 @@
             "Bakgrunn": "Ja"
           },
           "svg": "grunnskole-aktivitet-2-49-111244.svg"
-        },
-        {
-          "id": "grunnskole-aktivitet-2-182-85221",
-          "nodeId": "182:85221",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Season: Winter, Fargetema: brun, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Season": "Winter",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "grunnskole-aktivitet-2-182-85221.svg"
         }
       ]
     },
@@ -36966,6 +36427,518 @@
             "Bakgrunn": "Ja"
           },
           "svg": "grunnskole-laering-16-6475-194366.svg"
+        }
+      ]
+    },
+    {
+      "id": "grunnskole-aktivitet-2b-6986-183794",
+      "categoryId": "grunnskole",
+      "nodeId": "6986:183794",
+      "name": "aktivitet-2b",
+      "variants": [
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183813",
+          "nodeId": "6986:183813",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183813.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183846",
+          "nodeId": "6986:183846",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183846.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183879",
+          "nodeId": "6986:183879",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183879.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183912",
+          "nodeId": "6986:183912",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183912.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183945",
+          "nodeId": "6986:183945",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183945.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-183978",
+          "nodeId": "6986:183978",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-183978.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184009",
+          "nodeId": "6986:184009",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184009.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184038",
+          "nodeId": "6986:184038",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184038.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184067",
+          "nodeId": "6986:184067",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184067.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184096",
+          "nodeId": "6986:184096",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184096.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184125",
+          "nodeId": "6986:184125",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184125.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184154",
+          "nodeId": "6986:184154",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184154.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184183",
+          "nodeId": "6986:184183",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184183.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184212",
+          "nodeId": "6986:184212",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184212.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184241",
+          "nodeId": "6986:184241",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184241.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184270",
+          "nodeId": "6986:184270",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184270.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184299",
+          "nodeId": "6986:184299",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184299.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-184328",
+          "nodeId": "6986:184328",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-184328.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197376",
+          "nodeId": "6986:197376",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197376.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197377",
+          "nodeId": "6986:197377",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197377.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197378",
+          "nodeId": "6986:197378",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197378.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197379",
+          "nodeId": "6986:197379",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197379.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197380",
+          "nodeId": "6986:197380",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197380.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-197381",
+          "nodeId": "6986:197381",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-197381.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194973",
+          "nodeId": "6986:194973",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194973.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194974",
+          "nodeId": "6986:194974",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194974.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194975",
+          "nodeId": "6986:194975",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194975.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194628",
+          "nodeId": "6986:194628",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194628.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194629",
+          "nodeId": "6986:194629",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194629.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-194630",
+          "nodeId": "6986:194630",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-194630.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195318",
+          "nodeId": "6986:195318",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195318.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195319",
+          "nodeId": "6986:195319",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195319.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195320",
+          "nodeId": "6986:195320",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195320.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195321",
+          "nodeId": "6986:195321",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195321.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195322",
+          "nodeId": "6986:195322",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195322.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-2b-6986-195323",
+          "nodeId": "6986:195323",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-2b-6986-195323.svg"
         }
       ]
     },
