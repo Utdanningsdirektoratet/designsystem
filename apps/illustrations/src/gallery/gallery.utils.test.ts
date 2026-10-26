@@ -11,6 +11,7 @@ import {
   needsVariantChooser,
   normalizeFamilySearch,
   propertyOptions,
+  resultsSummary,
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
@@ -89,6 +90,32 @@ describe('illustration gallery browsing', () => {
     ]);
     expect(families.map(({ name }) => name)).toEqual(names);
     expect(sortFamilies([])).toEqual([]);
+  });
+});
+
+describe('resultsSummary', () => {
+  it('summarises the list without a search', () => {
+    expect(resultsSummary(7, '', 'Barnehage')).toBe(
+      'Viser 7 illustrasjoner i Barnehage',
+    );
+    expect(resultsSummary(1, '', 'Barnehage')).toBe(
+      'Viser 1 illustrasjon i Barnehage',
+    );
+    expect(resultsSummary(0, '', 'Internbruk')).toBe(
+      'Ingen illustrasjoner i Internbruk',
+    );
+  });
+
+  it('summarises hits for a search', () => {
+    expect(resultsSummary(17, 'aktivitet', 'Barnehage')).toBe(
+      'Viser 17 treff for «aktivitet» i Barnehage',
+    );
+    expect(resultsSummary(1, ' aktivitet ', 'Barnehage')).toBe(
+      'Viser 1 treff for «aktivitet» i Barnehage',
+    );
+    expect(resultsSummary(0, 'aktivitet', 'Barnehage')).toBe(
+      'Ingen treff for «aktivitet» i Barnehage',
+    );
   });
 });
 

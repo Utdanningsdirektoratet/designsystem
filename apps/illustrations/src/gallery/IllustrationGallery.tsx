@@ -34,6 +34,7 @@ import {
   propertyDisplayLabel,
   propertyOptions,
   propertyValueDisplayLabel,
+  resultsSummary,
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
@@ -161,6 +162,13 @@ export function IllustrationGallery({
     setSelection(null);
   };
 
+  const searchTag = (tag: string) => {
+    setInput(tag);
+    setSelection(null);
+    dialogRef.current?.close();
+    searchRef.current?.focus();
+  };
+
   if (catalog.state === 'pending-import') {
     return (
       <div className={styles.empty}>
@@ -176,8 +184,11 @@ export function IllustrationGallery({
   const content = (
     <div className={styles.content}>
       <output aria-live="polite" aria-atomic="true">
-        Viser {families.length} av {availableFamilies.length}{' '}
-        {availableFamilies.length === 1 ? 'illustrasjon' : 'illustrasjoner'}
+        {resultsSummary(
+          families.length,
+          query,
+          categories.find((item) => item.id === categoryId)?.label ?? '',
+        )}
       </output>
       {families.length === 0 ? (
         <div className={styles.empty}>
@@ -188,7 +199,7 @@ export function IllustrationGallery({
             {query.trim()
               ? otherCategoryHits.length > 0
                 ? 'Ingen illustrasjoner i denne kategorien passer til søket, men det finnes treff i andre kategorier.'
-                : 'Ingen illustrasjoner passer til søket. Prøv et annet navn eller tøm søket.'
+                : 'Ingen illustrasjoner passer til søket. Prøv et annet søkeord eller tøm søket.'
               : `Det er ikke importert illustrasjoner for ${categories.find((item) => item.id === categoryId)?.label ?? 'denne kategorien'} ennå.`}
           </Paragraph>
           {otherCategoryHits.length > 0 ? (
@@ -322,8 +333,10 @@ export function IllustrationGallery({
                 <ul className={styles.tags} aria-label="Stikkord">
                   {family.tags.map((tag) => (
                     <li key={tag}>
-                      <Tag data-size="sm" data-color="neutral">
-                        {tag}
+                      <Tag asChild data-size="sm" variant="outline">
+                        <button type="button" onClick={() => searchTag(tag)}>
+                          {tag}
+                        </button>
                       </Tag>
                     </li>
                   ))}
@@ -334,9 +347,8 @@ export function IllustrationGallery({
                   <div className={styles.previewFrame} data-color={themeColor}>
                     {themeColor ? (
                       <Paragraph className={styles.previewNote} data-size="xs">
-                        For bruk på hvit eller{' '}
-                        {variant.properties.Fargetema.toLocaleLowerCase('nb')}{' '}
-                        bakgrunn
+                        Sjekk at illustrasjonen harmonerer med bakgrunnen du
+                        bruker
                       </Paragraph>
                     ) : null}
                     <AssetImage
