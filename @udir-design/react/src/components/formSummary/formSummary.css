@@ -2,14 +2,17 @@
 [lang|='nb' i],
 [lang|='no' i] {
   --udsc-formSummary-empty-text: 'Ikke besvart';
+  --udsc-formSummary-edit-text: 'Endre svar';
 }
 
 [lang|='nn' i] {
   --udsc-formSummary-empty-text: 'Ikkje svart';
+  --udsc-formSummary-edit-text: 'Endre svar';
 }
 
 [lang|='en' i] {
   --udsc-formSummary-empty-text: 'Not answered';
+  --udsc-formSummary-edit-text: 'Edit answers';
 }
 
 .uds-form-summary {
