@@ -63,7 +63,7 @@ export function App() {
   return (
     <>
       <SkipLink href="#main-content">Hopp til hovedinnholdet</SkipLink>
-      <Header applicationName="Illustrasjoner" />
+      <Header applicationName="Udirs illustrasjoner" />
       <main className="content" id="main-content">
         {authConfig ? (
           <AuthGate config={authConfig}>

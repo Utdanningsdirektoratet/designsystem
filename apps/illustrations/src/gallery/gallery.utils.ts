@@ -27,6 +27,22 @@ export function propertyValueDisplayLabel(key: string, value: string): string {
   return label.charAt(0).toLocaleUpperCase('nb') + label.slice(1);
 }
 
+/** Status text for the results; `query` is the active search, empty when none applies. */
+export function resultsSummary(
+  count: number,
+  query: string,
+  categoryLabel: string,
+): string {
+  const search = query.trim();
+  if (search) {
+    return count === 0
+      ? `Ingen treff for «${search}» i ${categoryLabel}`
+      : `Viser ${count} treff for «${search}» i ${categoryLabel}`;
+  }
+  if (count === 0) return `Ingen illustrasjoner i ${categoryLabel}`;
+  return `Viser ${count} ${count === 1 ? 'illustrasjon' : 'illustrasjoner'} i ${categoryLabel}`;
+}
+
 export function normalizeFamilySearch(value: string): string {
   return value.toLocaleLowerCase('nb').replace(/[\s-]+/g, '');
 }

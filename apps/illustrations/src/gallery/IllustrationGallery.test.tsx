@@ -50,7 +50,7 @@ describe('IllustrationGallery', () => {
     render(
       <IllustrationGallery catalog={{ ...fixtureCatalog, families: [] }} />,
     );
-    expect(screen.getByText('Viser 0 av 0 illustrasjoner')).toBeTruthy();
+    expect(screen.getByText('Ingen illustrasjoner i Barnehage')).toBeTruthy();
     expect(
       screen.getByRole('heading', {
         name: 'Ingen illustrasjoner å vise i denne kategorien',
@@ -64,8 +64,9 @@ describe('IllustrationGallery', () => {
       (screen.getByRole('radio', { name: 'Barnehage' }) as HTMLInputElement)
         .checked,
     ).toBe(true);
+    expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
     fireEvent.click(screen.getByRole('radio', { name: 'Internbruk' }));
-    expect(screen.getByText('Viser 0 av 0 illustrasjoner')).toBeTruthy();
+    expect(screen.getByText('Ingen illustrasjoner i Internbruk')).toBeTruthy();
     expect(
       screen.getByText(
         'Det er ikke importert illustrasjoner for Internbruk ennå.',
@@ -85,11 +86,14 @@ describe('IllustrationGallery', () => {
         name: 'Ingen illustrasjoner å vise i denne kategorien',
       }),
     ).toBeTruthy();
-    expect(screen.getByText('Viser 0 av 2 illustrasjoner').ariaLive).toBe(
-      'polite',
-    );
+    expect(
+      screen.getByText('Ingen treff for «INGEN TREFF» i Barnehage').ariaLive,
+    ).toBe('polite');
 
     typeSearch(search, 'TESTFAMILIE');
+    expect(
+      screen.getByText('Viser 1 treff for «TESTFAMILIE» i Barnehage'),
+    ).toBeTruthy();
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
@@ -157,6 +161,35 @@ describe('IllustrationGallery', () => {
     ).toBe(true);
     expect((search as HTMLInputElement).value).toBe('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+  });
+
+  it('searches for a tag when it is clicked in the details dialog', () => {
+    render(
+      <IllustrationGallery
+        catalog={{
+          ...fixtureCatalog,
+          families: [
+            { ...fixtureCatalog.families[0], tags: ['lekeplass'] },
+            { ...fixtureCatalog.families[1], tags: ['bøker'] },
+          ],
+        }}
+      />,
+    );
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Syntetisk testfamilie' }),
+    );
+    fireEvent.click(
+      screen.getByRole('button', { name: 'lekeplass', hidden: true }),
+    );
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+    const search = screen.getByRole('searchbox', {
+      name: searchLabel,
+    }) as HTMLInputElement;
+    expect(search.value).toBe('lekeplass');
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+    expect(document.querySelector('dialog')?.hasAttribute('open')).toBe(false);
   });
 
   it('exposes download links for the selected variant', () => {
