@@ -205,6 +205,7 @@ Monorepoet vårt består av
 - [`@udir-design/icons`](./@udir-design/icons/): Ikonbibliotek for bruk med React
 - [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, og dokumentasjon for designsystemet.
 - [`@internal/*`](./@internal/): Interne pakker og konfigurasjon som brukes i utviklingen av designsystemet, men ikke publiseres på npm.
+- [`apps/*`](./apps/): Interne applikasjoner, for eksempel [`illustrations`](./apps/illustrations/) som viser illustrasjonsgalleriet.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
 
 Avhengighetsforholdene kan illustreres slik:
@@ -222,6 +223,7 @@ flowchart-elk BT
   subgraph apps [demo-applikasjoner]
     vite(test-apps/vite):::app
     nextjs(test-apps/nextjs):::app
+    illustrations("apps/illustrations"):::app
   end
 
   %% dependencies
@@ -231,6 +233,8 @@ flowchart-elk BT
   react --> icons
   vite --> react
   nextjs --> react
+  illustrations --> react
+  illustrations --> icons
 
   %% styling
   classDef default fill:#303030,stroke:#7e7e7e,color:#fff
