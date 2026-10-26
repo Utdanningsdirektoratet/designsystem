@@ -13,6 +13,7 @@ The change guides don't cover everything a release changes. Digdir's 1.23.0 rele
 
 - Udir's library: [Komponentbibliotek](https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek)
 - Digdir's library at v1.23.0: [[v1.23.0] Designsystemet - Core UI Kit](https://www.figma.com/design/ktnz2KCAra39ZO2a1OShrw/-v1.23.0--Designsystemet---Core-UI-Kit), a copy of Digdir's community file in the Figma folder "Digdirs bibliotek, versjonert". Each Digdir release to compare with gets its own copy there, named after the release.
+- Digdir's library at v1.19.0, the last release whose change guide Udir has applied: [[v1.19.0] Designsystemet - Core UI Kit](https://www.figma.com/design/H7oKskFOhpAN7iqYcSBLH6/-v1.19.0--Designsystemet---Core-UI-Kit), in the same folder.
 
 ## Approach
 
@@ -24,7 +25,7 @@ We have no copy of Digdir's library from when Udir's was made, so differences th
    - Udir before → after is what we changed.
    - Comparing the two shows changes we missed or applied differently, and changes only Udir made.
 
-The first update after the initial snapshots is an exception if Digdir's snapshot is already of the release being applied (for example a Digdir 1.23.0 snapshot taken before Udir applies the 1.23.0 guide). There is then no Digdir "before" snapshot; compare `diff` of Digdir with Udir before and after applying the guide instead. Differences that disappear were resolved by the update.
+For the first update there is no Udir "before" snapshot taken right after the previous guide was applied, but there is a Digdir one: `snapshots/digdir/v1.19.0/` is Digdir's library at the last release whose guide Udir has applied. `changes` with Udir's current snapshot as both its before and after sorts every fact Digdir changed since then into "already matching" (Udir has Digdir's new value) and "not made" (Udir doesn't). Differences between Udir and Digdir's current library on facts Digdir didn't change since that release are not explained by the update: they are Udir's own changes or older differences.
 
 ## Making a snapshot
 
@@ -57,6 +58,12 @@ node @internal/figma/compare-snapshots.ts diff @internal/figma/snapshots/udir/20
 node @internal/figma/compare-snapshots.ts changes \
   --digdir @internal/figma/snapshots/digdir/<before> @internal/figma/snapshots/digdir/<after> \
   --udir @internal/figma/snapshots/udir/<before> @internal/figma/snapshots/udir/<after>
+
+# Before the first update: Digdir's changes since the last applied release, sorted by whether Udir has them
+node @internal/figma/compare-snapshots.ts changes \
+  --digdir @internal/figma/snapshots/digdir/v1.19.0 @internal/figma/snapshots/digdir/v1.23.0 \
+  --udir @internal/figma/snapshots/udir/2026-10-22 @internal/figma/snapshots/udir/2026-10-22 \
+  --rules @internal/figma/udir-to-digdir.json --summary
 ```
 
 Both comparing commands print a Markdown report with every differing fact. `--summary` prints one table row per component or variable collection instead, with counts and the variants that exist in only one snapshot; use it first, since a comparison of the two libraries has well over 100,000 differing facts. Component rows count facts (one per recorded property of a layer), variable rows count variables; the `Counted` column says which. `--json` prints the raw result. `--ignore <prefix>` leaves out facts whose key starts with the prefix, and can be repeated. Keys start with `collection <name>`, `variable <collection>/<name>` or `component <name>`, for example `--ignore 'variable Theme/' --ignore 'component FileUpload'`.
