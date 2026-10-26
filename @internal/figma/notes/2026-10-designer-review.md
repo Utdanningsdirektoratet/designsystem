@@ -1,13 +1,16 @@
 # Udir's Figma library compared with Digdir v1.23.0: points for review
 
-For the review of Udir's Figma library with the designer. Based on the snapshots `snapshots/digdir/v1.23.0` and `snapshots/udir/2026-10-22`, and the draft rules in `udir-to-digdir.json`. Everything below can be regenerated, in more detail, with the commands in `README.md`; the most useful ones are:
+For the review of Udir's Figma library with the designer. Based on the snapshots `snapshots/digdir/v1.23.0`, `snapshots/digdir/v1.19.0` and `snapshots/udir/2026-10-22`, and the draft rules in `udir-to-digdir.json`. Everything below can be regenerated, in more detail, with the commands in `README.md`; the most useful ones are:
 
 ```sh
 D=@internal/figma/snapshots/digdir/v1.23.0
+D19=@internal/figma/snapshots/digdir/v1.19.0
 U=@internal/figma/snapshots/udir/2026-10-22
 R=@internal/figma/udir-to-digdir.json
 node @internal/figma/compare-snapshots.ts check $U --rules $R
 node @internal/figma/compare-snapshots.ts compare $D $U --rules $R --summary \
+  --ignore 'variable Theme/' --ignore 'collection Theme' --ignore 'variable Color scheme/'
+node @internal/figma/compare-snapshots.ts changes --digdir $D19 $D --udir $U $U --rules $R --summary \
   --ignore 'variable Theme/' --ignore 'collection Theme' --ignore 'variable Color scheme/'
 node @internal/figma/compare-snapshots.ts suggest $D $U --rules $R
 ```
@@ -16,7 +19,12 @@ Without `--summary`, `compare` lists every differing fact; add `--ignore` for co
 
 ## Background
 
-- Udir's library has the updates from Digdir's change guides up to 1.19.0. Digdir's [1.23.0 release](https://github.com/digdir/designsystemet/issues/5150) says it brings "updates to spacing, corner radius, icon sizes, disabled states, and more", but its only step-by-step guide is for the Select list ([#4436](https://github.com/digdir/designsystemet/issues/4436)). Many differences below may therefore be Digdir changes since 1.19.0 that no guide describes, not Udir decisions.
+- Udir's library has the updates from Digdir's change guides up to 1.19.0. Digdir's [1.23.0 release](https://github.com/digdir/designsystemet/issues/5150) says it brings "updates to spacing, corner radius, icon sizes, disabled states, and more", but its only step-by-step guide is for the Select list ([#4436](https://github.com/digdir/designsystemet/issues/4436)).
+- Comparing with a snapshot of Digdir's v1.19.0 library shows how much of the gap the 1.23.0 update explains. With the rules applied, Udir and Digdir v1.23.0 differ in 134,552 facts:
+  - 2,191 are facts where Udir still has Digdir's v1.19.0 value: Digdir changes since 1.19.0 that Udir hasn't made.
+  - 518 are facts Digdir changed since 1.19.0 where Udir has neither the old nor the new value.
+  - 131,843 are facts Digdir didn't change since 1.19.0. They are Udir's own changes or older differences, not something the 1.23.0 update explains.
+- Udir already has 6,566 of the facts Digdir changed since 1.19.0, 6,493 of them in the Select list: Udir's Select matches Digdir's v1.23.0 Select (586 Select facts still differ).
 - Every difference needs one of three outcomes: **a Udir decision** (add a rule, so it stops showing up), **to be changed in Udir's library**, or **a Digdir change to apply**.
 
 ## 1. Instances that break the color rules (29)
@@ -70,20 +78,25 @@ Search and the checkbox look like omissions: in code, both are neutral.
 
 ## 4. Spacing and sizes
 
-`compare` reports a layer bound to another size variable as a changed fact, for example `boundVariables[paddingLeft]: "Semantic/size/3" → "Semantic/size/4"` (Digdir first, Udir second). 221 layer properties are bound to a different size step in the two libraries:
+`compare` reports a layer bound to another size variable as a changed fact, for example `boundVariables[paddingLeft]: "Semantic/size/3" → "Semantic/size/4"` (Digdir first, Udir second). 221 layer properties are bound to a different size step in the two libraries. Digdir changed 100 of them after 1.19.0, where Udir still has the v1.19.0 value; 117 were already different from v1.19.0, and in 4 (Select) Udir has neither value:
 
-| Component                                                                                   | Difference (Digdir → Udir)                                                                                         |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Textfield                                                                                   | Field padding left and right `size/3` → `size/4`; gap between label and description `size/0` → `size/1`            |
-| Search                                                                                      | Field padding left `size/3` → `size/4`; label/description gap `size/0` → `size/1`                                  |
-| Icon button                                                                                 | Icon `size/6` → `size/7`, as in Udir's CSS (`button.css` sets `--ds-icon-size: var(--ds-size-7)` for icon buttons) |
-| Switch, Radio, Checkbox, Textarea, Select, Suggestion, Multi suggestion, `.input and label` | Label/description gap `size/0` → `size/1`                                                                          |
-| Suggestion, Multi suggestion                                                                | Gap in the input's right content `size/1` and `size/2` → `size/0`                                                  |
-| `.Item in suggestion`                                                                       | Gap `size/2` → `size/1`, padding left and right `size/3` → `size/2`                                                |
-| Error summary                                                                               | Padding `size/7` → `size/6` (top, bottom) and `size/8` (left, right)                                               |
-| List                                                                                        | Padding left of the list `size/1` → `size/0`                                                                       |
+| Component                                                                           | Difference (Digdir → Udir)                                                                                         | Digdir change since 1.19.0?                    |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Textfield                                                                           | Field padding left and right `size/3` → `size/4`                                                                   | Yes: v1.19.0 has `size/4`                      |
+| Textfield                                                                           | Gap between label and description `size/0` → `size/1`                                                              | No                                             |
+| Search                                                                              | Field padding left `size/3` → `size/4`                                                                             | Yes: v1.19.0 has `size/4`                      |
+| Search                                                                              | Label/description gap `size/0` → `size/1`                                                                          | No                                             |
+| Icon button                                                                         | Icon `size/6` → `size/7`, as in Udir's CSS (`button.css` sets `--ds-icon-size: var(--ds-size-7)` for icon buttons) | Yes: v1.19.0 has `size/7`                      |
+| Switch, Radio, Checkbox, Textarea, Suggestion, Multi suggestion, `.input and label` | Label/description gap `size/0` → `size/1`                                                                          | No                                             |
+| Select                                                                              | Label/description gap `size/0` → `size/1`                                                                          | New in v1.23.0 (v1.19.0 has `.Select` instead) |
+| Suggestion, Multi suggestion                                                        | Gap in the input's right content `size/1` and `size/2` → `size/0`                                                  | No                                             |
+| `.Item in suggestion`                                                               | Gap `size/2` → `size/1`, padding left and right `size/3` → `size/2`                                                | No                                             |
+| Error summary                                                                       | Padding `size/7` → `size/6` (top, bottom) and `size/8` (left, right)                                               | Yes: v1.19.0 has Udir's values                 |
+| List                                                                                | Padding left of the list `size/1` → `size/0`                                                                       | Yes: v1.19.0 has `size/0`                      |
 
-Udir's `header.css` keeps the spacing before the search icon in the header search "from before Digdir 1.23.0", so Digdir changed search field spacing in 1.23.0. The Search padding difference may therefore be a Digdir change Udir hasn't applied, not a Udir decision.
+The Icon button difference matches Udir's CSS, which keeps the larger icon, so it may be a Udir decision rather than a change to make. The label/description gap of `size/1` is the same in every form component in the table, and outside Select it already differed from v1.19.0.
+
+Udir's `header.css` keeps the spacing before the search icon in the header search "from before Digdir 1.23.0". The snapshots confirm that Digdir also changed the search field's padding after 1.19.0, so the Search padding difference is a Digdir change Udir hasn't made.
 
 This only covers layers that exist under the same path in both libraries. Where layers, variants or components are named or structured differently (Checkbox, Textfield and Radio have thousands of facts on one side only), spacing can't be compared automatically; those components need to be looked at in Figma, or have their layer names aligned first.
 
