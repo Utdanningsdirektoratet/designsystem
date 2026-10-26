@@ -42,6 +42,12 @@ Without `--summary`, `compare` lists every differing fact; add `--ignore` for co
 
 To decide: use Button's `color=danger` variant for the error states; allow `success` and `info` (or other colors) on Button, since it allows `neutral` and `danger` only; or change the overrides.
 
+COMMENT:
+
+- `.Section`, `.Step`, `.ReadMoreButton`: these are just internal reuse of the Button, and the overrides are expected. Consumers just see the FormNavigation / ReadMore components.
+- FileCard: fixed, icon button color is now default in both cases
+- `.Anchor link`: fixed, base component was overriden for some reason (but the actual states were correct). Now all use `Color/neutral/text-default`
+
 ## 2. Color rules to confirm
 
 The draft rules restrict these components, based on `@udir-design/theme/build/postprocess-css-colors.ts` (which resets `.ds-breadcrumbs`, `.ds-button`, `.ds-field`, `.ds-input`, `.ds-link`, `.ds-pagination`, `.ds-suggestion` and `.ds-togglegroup` to neutral) and the prop types:
@@ -53,28 +59,60 @@ The draft rules restrict these components, based on `@udir-design/theme/build/po
 Not in the rules yet, because Figma and code disagree or the rule type doesn't exist:
 
 - **Dropdown, SkipLink/neutral, `.BaseTekst og understrek`:** fixed to `neutral` in Figma. In code they only omit `data-color`, so they take the color of what they're placed in.
+  - COMMENT: Figma is correct, should fix in code
 - **Badge:** restricted in code to `neutral`, `success`, `danger`, `info` and `warning` (`Badge.tsx`). A rule for "any of these colors, through the Color mode" doesn't exist yet.
-- **Tabs:** restricted in code to `neutral` and `accent` (`Tabs.tsx`), but `_tab elements base` binds `danger` (6) and `accent` (3) directly, alongside bindings that follow the Color mode.
+  - COMMENT: Code is correct, but we deliberately chose to not restrict this thorugh a color property in Figma because it will add a lot of "variants"
+- **Tabs:** restricted in code to `neutral` and `accent` (`Tabs.tsx`). `_tab elements base` has 3 `accent` bindings of its own: overrides on the pencil icon (`Text container > Pencil › override shape`) in the `Variant=Default` variants `state=default`, `state=Hover` and `state=Active`. The 6 `danger` bindings counted here earlier aren't its own: they are the fill of the `BadgeOLD [Dot=False, color=danger, variant=base]` instance in each variant (`Text container > BadgeOLD`), inherited from that component.
+  - COMMENT: Code is correct, we will restrict in Figma. Note: Can't quite find the "danger" and "accent" bindings you claim.
 
 ## 3. Components with only some colors converted
 
 Udir binds some layers to fixed colors where Digdir follows the Color mode, but not all. Each needs a decision: convert the rest, or keep them following the mode on purpose.
 
-| Component                          | Following the mode | Fixed                               | Example of a binding following the mode                                             |
-| ---------------------------------- | ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------- |
-| Search                             | 6                  | 54 `neutral`                        | The Clear button's icon (`Clear › override icon-left > shape`): `Color/text-subtle` |
-| `.input and label` (Checkbox page) | 2                  | 62 `neutral`, 9 `danger`            | `outline=true`: stroke `Color/border-default`                                       |
-| Details                            | 82                 | 40 `neutral`                        | `.Details.Header`: fill `Color/surface-default`                                     |
-| Popover Trigger                    | 8                  | 7 `neutral`                         | `State=Focus` Popover: fill `Color/surface-default`                                 |
-| Card                               | 32                 | 32 `neutral`                        | Root: fill `Color/surface-default`                                                  |
-| Tag                                | 7                  | 2 `neutral`                         | Label: fill `Color/text-default`                                                    |
-| TableColumn                        | 30                 | 2 `neutral`                         | `.cell and header`: stroke `Color/border-subtle`                                    |
-| `.cell and header`                 | 21                 | 2 `neutral`                         | Sortable header: fill `Color/surface-active`                                        |
-| Avatar                             | 4                  | 2 `danger`                          | Root: fill `Color/base-default`                                                     |
-| `_tab elements base`               | 14                 | 6 `danger`, 3 `accent`, 2 `neutral` | `Variant=Card`: stroke `Color/border-subtle`                                        |
-| FileUpload (Udir's own)            | 10                 | 78 `neutral`                        | Dropzone: fill `Color/surface-default`                                              |
+Bindings are counted in the component where they are set: on its own layers, or as overrides on the instances in it. A binding an instance inherits from its main component is counted in that component only. (An earlier version of this table also counted inherited bindings, which made Details, TableColumn, Popover Trigger, Avatar and `_tab elements base` look larger.)
+
+| Component                          | Following the mode | Fixed                    | Example of a binding following the mode                                                     |
+| ---------------------------------- | ------------------ | ------------------------ | ------------------------------------------------------------------------------------------- |
+| Search                             | 6                  | 50 `neutral`, 3 `focus`  | The Clear button's icon (`Clear › override icon-left > shape`): `Color/text-subtle`         |
+| `.input and label` (Checkbox page) | 2                  | 40 `neutral`, 3 `danger` | `check=checked` and `check=intermediate` with `outline=true`: stroke `Color/border-default` |
+| `.Details.Header`                  | 36                 | 8 `neutral`              | Root: fill `Color/surface-default`                                                          |
+| Details                            | 2                  | 40 `neutral`             | `border=true`: stroke `Color/border-subtle`                                                 |
+| Card                               | 32                 | 32 `neutral`             | Root: fill `Color/surface-default`                                                          |
+| Tag                                | 7                  | 2 `neutral`              | Label: fill `Color/text-default`                                                            |
+| `.cell and header`                 | 21                 | 2 `neutral`              | Sortable header: fill `Color/surface-active`                                                |
+| TableColumn                        | 6                  | 2 `neutral`              | Zebra stripes (`.cell and header › override Zebra`): fill `Color/background-tinted`         |
+| `_tab elements base`               | 14                 | 3 `accent`, 2 `neutral`  | `Variant=Card`: stroke `Color/border-subtle`                                                |
+| FileUpload (Udir's own)            | 10                 | 67 `neutral`             | Dropzone: fill `Color/surface-default`                                                      |
+
+Inherited bindings, counted in the component they come from:
+
+- **Details:** each of its 4 variants has 10 `.Details.Header` instances, which inherit the header's fill and stroke: 80 bindings following the mode. The 40 fixed bindings in Details are overrides on those instances, setting the title and chevron to `neutral`, while `.Details.Header` itself binds them to `Color/text-default`. Converting `.Details.Header` would fix the 80 and make the 40 overrides unnecessary.
+- **TableColumn:** 24 inherited from its `.cell and header` instances.
+- **Popover Trigger:** its own 7 bindings are all `neutral`. The 8 following the mode are the fill and stroke of the 4 Popover instances in `State=Focus`, inherited from Popover, which follows the mode throughout.
+- **Avatar:** its own 4 bindings all follow the mode; the 2 `danger` are the fill of its `Badge/base/danger/true` instances. Avatar is therefore not partly converted and is left out of the table.
+- **`_tab elements base`:** the 6 `danger` are its `BadgeOLD` instances (see section 2).
 
 Search and the checkbox look like omissions: in code, both are neutral.
+
+Layers to change, from going through the bindings:
+
+- **Tag:** the right icon (`InformationSquare #2 › override shape`) is fixed to `Semantic/color/neutral/text-default` in both variants, while the left icon and the label follow the mode (`Color/text-default`), as both icons do in Digdir. Change the right icon to `Color/text-default`.
+- **`.cell and header`:**
+  - `type=cell`, `Zebra`: fixed to `Semantic/color/neutral/background-tinted`. Should follow the mode: `Color/background-tinted`, as in `table.css` (`--dsc-table-background--zebra`).
+  - `type=header row`, `Zebra`: fixed to `Semantic/color/neutral/surface-tinted`. Should keep the zebra stripes unless the row header is tinted, so the same as `type=cell`.
+  - `type=header row`, root layer: has a stroke bound to `Color/surface-default`. The row header shouldn't have a border; remove the stroke.
+
+COMMENT:
+
+- We converted to fixed: `.input and label` (Checkbox page), Tabs (with color property for neutral or accent)
+- We converted to fixed, but haven't removed the instance overrides: Details, FileUpload
+- We converted to mode-following: Table
+- We need to fully convert to fixed: Search
+- We need to fully convert to mode-following: Card, Tag, Table
+
+We also changed FileUpload's border in Figma to always be border-default and have a "dashed" style more similar to code. We should change code to add hover effect on the whole dropzone, no just the button.
+
+We should also change Table so a row header doesn't disable the zebra stripe for that cell (unless tinted headers is enabled)
 
 ## 4. Spacing and sizes
 
