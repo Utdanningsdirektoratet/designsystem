@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { catalogSchema } from '../src/schema.ts';
+import { loadCatalog } from './catalog.ts';
 import { packageRoot, replaceDirectory } from './files.ts';
 import { optimizeSvg, renderPng } from './svg.ts';
 
@@ -12,22 +12,7 @@ const only = process.env.ILLUSTRATIONS_CATEGORY || undefined;
 await replaceDirectory(
   join(packageRoot, 'public/illustrations-assets'),
   async (stage) => {
-    const full = catalogSchema.parse(
-      JSON.parse(
-        await readFile(
-          join(packageRoot, 'source/catalog/metadata.json'),
-          'utf8',
-        ),
-      ),
-    );
-    const catalog = {
-      ...full,
-      families: full.families.filter(
-        (family) => !only || family.categoryId === only,
-      ),
-    };
-    if (only && !catalog.families.length)
-      throw new Error(`No families found for category "${only}".`);
+    const catalog = await loadCatalog(only);
     await mkdir(join(stage, 'svg'));
     await mkdir(join(stage, 'png'));
     const variants = catalog.families.flatMap((family) => family.variants);

@@ -20,6 +20,7 @@ env:
   STORAGE_ACCOUNT: stdsillustrations
   CONTAINER: illustrations
   # Bump to refetch all SVGs from Figma when artwork changed without a metadata change.
+  # The artwork version ignores tags, names and grouping, so those only upload metadata.json.
   ASSET_REVISION: ${{ vars.ILLUSTRATIONS_ASSET_REVISION || '1' }}
   # Empty means every category.
   CATEGORY: ${{ inputs.category }}
@@ -69,8 +70,10 @@ jobs:
         id: version
         run: |
           if [[ ! "$CATEGORY" =~ ^[a-z-]*$ ]]; then echo "Invalid category"; exit 1; fi
-          # Includes the processing scripts, so an svgo or PNG change uploads a new version without refetching from Figma.
-          HASH=$(cat apps/illustrations/source/catalog/metadata.json apps/illustrations/scripts/svg.ts apps/illustrations/scripts/build.ts | sha256sum | cut -c1-16)
+          # Hashes what shapes the files (ids, SVG names, node ids, sizes) and the processing scripts, so an
+          # svgo or PNG change uploads a new version, but a tag or name change does not.
+          # Also writes the metadata that is uploaded on every deploy.
+          HASH=$(ILLUSTRATIONS_CATEGORY="$CATEGORY" pnpm --silent --filter @udir-design/apps-illustrations exec tsx scripts/version.ts "$PWD/apps/illustrations/metadata.upload.json")
           SUFFIX=${CATEGORY:+-$CATEGORY}
           echo "value=${HASH}-r${ASSET_REVISION}${SUFFIX}" >> "$GITHUB_OUTPUT"
 
@@ -81,7 +84,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      # metadata.json is uploaded last, so its presence means the version is complete.
+      # The `complete` blob is uploaded last, so its presence means the artwork version is complete.
       - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
         name: Check if the artwork version is already uploaded
         id: uploaded
@@ -90,7 +93,7 @@ jobs:
         with:
           azcliversion: 2.78.0
           inlineScript: |
-            EXISTS=$(az storage blob exists --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --query exists --output tsv)
+            EXISTS=$(az storage blob exists --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/complete" --query exists --output tsv)
             echo "exists=$EXISTS" >> "$GITHUB_OUTPUT"
 
       - name: Restore downloaded SVGs
@@ -120,7 +123,19 @@ jobs:
             ASSETS=apps/illustrations/public/illustrations-assets
             az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/svg" --source "$ASSETS/svg" --overwrite true --content-type image/svg+xml
             az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination "$CONTAINER" --destination-path "$VERSION/png" --source "$ASSETS/png" --overwrite true --content-type image/png
-            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --file "$ASSETS/metadata.json" --overwrite true --content-type application/json
+            echo complete > apps/illustrations/complete.txt
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/complete" --file apps/illustrations/complete.txt --overwrite true --content-type text/plain
+
+      # Runs on every deploy: tag and name changes only update this small file. It is the same artwork
+      # version, so the app and the files it refers to stay compatible. no-cache makes browsers revalidate.
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload metadata
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --file apps/illustrations/metadata.upload.json --overwrite true --content-type application/json --content-cache-control no-cache
 
       - name: Build app
         run: pnpm turbo run build --filter=@udir-design/apps-illustrations

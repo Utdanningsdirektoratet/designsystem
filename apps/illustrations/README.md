@@ -24,8 +24,12 @@ as redirect URIs.
   adds only its own origin group, rule set and route to the shared Front Door.
 - [.github/workflows/azure-illustrations-deploy.yml](../../.github/workflows/azure-illustrations-deploy.yml):
   fetches SVGs (cached), renders PNGs, uploads artwork to `<hash>-r<revision>/` and the app to
-  `$web/illustrasjoner`. Set the repository variable `ILLUSTRATIONS_ASSET_REVISION` to force a full
-  refetch when artwork changed in Figma without a `metadata.json` change.
+  `$web/illustrasjoner`. The hash (`scripts/version.ts`) covers only what shapes the files: each
+  variant's `id`, `svg`, `nodeId`, `width` and `height`, plus `scripts/svg.ts` and `scripts/build.ts`.
+  Editing tags, names, properties or grouping keeps the same version, so only `metadata.json` is
+  uploaded again (on every deploy, overwriting the one in that folder). A `complete` blob, uploaded last,
+  marks the artwork as fully uploaded. Set the repository variable `ILLUSTRATIONS_ASSET_REVISION` to force
+  a full refetch when artwork changed in Figma without a `metadata.json` change.
 
 ## Where things live
 
