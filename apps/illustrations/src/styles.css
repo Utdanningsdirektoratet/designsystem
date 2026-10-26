@@ -1,5 +1,17 @@
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Compact size mode on small screens, medium otherwise. */
+/* Not on <html>: the theme matches `:root, [data-size]`, so the root would get the mode applied twice. */
+[data-size='auto'] {
+  --ds-size: var(--ds-size--sm);
+
+  @media (min-width: 30rem) {
+    --ds-size: var(--ds-size--md);
+  }
 }
 
 body {
