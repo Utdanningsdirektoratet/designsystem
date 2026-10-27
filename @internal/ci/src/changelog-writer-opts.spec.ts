@@ -358,6 +358,12 @@ ${commitLine({
   Omitted props:
   - \`Dialog\`: \`asChild\`
   - \`Select\`: \`readOnly\``);
+    const entry = commitLine({
+      scope: null,
+      subject: 'omit deprecated props from component types',
+      hash: 'ef2b0d699261cc52ae839794f053e13e74f6defc',
+    });
+    expect(changelog.split(entry)).toHaveLength(2);
     expect(changelog).not.toContain('### 🚀 Features');
     expect(changelog).not.toContain('### 🩹 Fixes');
     expectNoRawTemplates(changelog);

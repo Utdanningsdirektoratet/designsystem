@@ -128,8 +128,14 @@ function extendCommitPartial(
 }
 
 /**
- * Prefix each note with its commit subject and link. The preset only renders
- * `**scope:** text`; ours renders `**scope:** subject ([hash](url))\n\ntext`.
+ * Customise the preset's template:
+ *
+ * 1. Prefix each note with its commit subject and link. The preset only renders
+ *    `**scope:** text`; ours renders `**scope:** subject ([hash](url))\n\ntext`.
+ * 2. Drop commit groups without a title. The preset keeps hidden-type commits
+ *    with breaking changes so their notes are rendered, but files them under no
+ *    section. That group has no heading, so its list merges with the breaking
+ *    changes list above it and repeats the entry without its note.
  */
 function extendTemplate(
   presetTemplate: TemplateFunction<ChangelogCommit>,
@@ -137,6 +143,7 @@ function extendTemplate(
   return (context) =>
     presetTemplate({
       ...context,
+      commitGroups: context.commitGroups?.filter((group) => group.title),
       noteGroups: context.noteGroups?.map((group) => ({
         ...group,
         notes: (group.notes as RenderedNote[]).map((note) => {
