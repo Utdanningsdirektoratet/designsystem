@@ -421,7 +421,7 @@ export function IllustrationGallery({
                                     value={`value:${value}`}
                                   >
                                     {value
-                                      ? propertyValueDisplayLabel(key, value)
+                                      ? propertyValueDisplayLabel(value)
                                       : '(Tom verdi)'}
                                   </Select.Option>
                                 ))}

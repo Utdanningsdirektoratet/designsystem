@@ -10,11 +10,6 @@ export function familyDisplayName(name: string): string {
 
 const propertyLabels: Record<string, string> = {
   'Geometrisk form': 'Organisk form',
-  Season: 'Sesong',
-};
-
-const valueLabels: Record<string, Record<string, string>> = {
-  Season: { Summer: 'Sommer', Winter: 'Vinter' },
 };
 
 /** Presentation only: canonical property keys and values stay unchanged. */
@@ -22,9 +17,8 @@ export function propertyDisplayLabel(key: string): string {
   return propertyLabels[key] ?? key;
 }
 
-export function propertyValueDisplayLabel(key: string, value: string): string {
-  const label = valueLabels[key]?.[value] ?? value;
-  return label.charAt(0).toLocaleUpperCase('nb') + label.slice(1);
+export function propertyValueDisplayLabel(value: string): string {
+  return value.charAt(0).toLocaleUpperCase('nb') + value.slice(1);
 }
 
 /** Status text for the results; `query` is the active search, empty when none applies. */

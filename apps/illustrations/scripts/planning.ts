@@ -25,7 +25,6 @@ const axes: Record<string, string> = {
   Background: 'Bakgrunn',
   'Geometric shape': 'Geometrisk form',
   Character: 'Karakter',
-  Season: 'Season',
 };
 // Figma's alt N labels map to the artwork's actual colors; unknown labels block approval.
 const colorThemes: Record<string, string> = {
@@ -37,8 +36,6 @@ const values: Record<string, string> = {
   'Landscape (16:9)': 'Landskap (16:9)',
   'Portrait (4:5)': 'Portrett (4:5)',
   'Square (1:1)': 'Kvadrat (1:1)',
-  Summer: 'Summer',
-  Winter: 'Winter',
   True: 'Ja',
   False: 'Nei',
   true: 'Ja',
