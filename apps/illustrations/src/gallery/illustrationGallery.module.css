@@ -1,12 +1,28 @@
 .root,
 .content {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--ds-size-4);
   min-width: 0;
 }
 
 .content {
   padding-block-start: var(--ds-size-4);
+}
+
+.intro {
+  padding-block-end: var(--ds-size-2);
+}
+
+.intro h1 {
+  /* Long compound words must wrap instead of forcing horizontal scroll on narrow screens. */
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.introText {
+  /* Keeps the line length comfortable to read on wide screens. */
+  max-width: 45rem;
 }
 
 .toolbar {

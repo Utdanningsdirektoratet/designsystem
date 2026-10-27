@@ -67,7 +67,9 @@ export function AuthGate({
     <div className={styles.root}>
       {state === 'error' ? (
         <>
-          <Heading level={2}>Innloggingen feilet</Heading>
+          <Heading level={1} data-size="lg">
+            Innloggingen feilet
+          </Heading>
           <Paragraph>Prøv å laste siden på nytt.</Paragraph>
           <Button
             onClick={() => {

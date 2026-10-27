@@ -172,7 +172,9 @@ export function IllustrationGallery({
   if (catalog.state === 'pending-import') {
     return (
       <div className={styles.empty}>
-        <Heading level={2}>Illustrasjonene er ikke importert ennå</Heading>
+        <Heading level={1} data-size="lg">
+          Illustrasjonene er ikke importert ennå
+        </Heading>
         <Paragraph>
           Katalogen venter på import av godkjente illustrasjoner. Det finnes
           foreløpig ingen forhåndsvisninger eller filer å laste ned.
@@ -265,6 +267,13 @@ export function IllustrationGallery({
 
   return (
     <div className={styles.root}>
+      <div className={styles.intro}>
+        <Paragraph data-size="lg" className={styles.introText}>
+          Illustrasjonene er laget for å bidra til helhetlig design i Udirs
+          eksterne kommunikasjon. De skal ikke brukes av andre enn Udir. Klikk
+          på en illustrasjon for å velge farge, bakgrunn og format.
+        </Paragraph>
+      </div>
       <div className={styles.toolbar} data-hits={hitCounts.size > 0}>
         <ToggleGroup
           className={styles.categoryToggle}

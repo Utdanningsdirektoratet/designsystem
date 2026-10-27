@@ -45,7 +45,7 @@ function CatalogGallery() {
   if (state.status === 'loading') return null;
   return (
     <div>
-      <Heading level={2}>
+      <Heading level={1} data-size="lg">
         {state.status === 'denied'
           ? 'Du har ikke tilgang'
           : 'Kunne ikke laste illustrasjonene'}
