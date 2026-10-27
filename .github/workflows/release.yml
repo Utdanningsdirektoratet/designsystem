@@ -39,6 +39,13 @@ jobs:
       # Build only the projects we are releasing
       - run: pnpm turbo run build --filter="@udir-design/*"
 
+      # semantic-release 26 checks push access with `git push --dry-run -- <url>`, which needs a
+      # current branch and fails on the detached merge commit that pull_request events check out.
+      # The branch is never pushed: the preview is a dry run, where every push is `--dry-run`.
+      - name: Check out a local branch for semantic-release
+        if: success() && github.event_name == 'pull_request'
+        run: git checkout -B "$BRANCH_NAME"
+
       - name: Preview semantic-release for this PR
         if: success() && github.event_name == 'pull_request'
         run: ./@internal/ci/bin/semantic-release.ts --branch $BRANCH_NAME --preview-changelog
