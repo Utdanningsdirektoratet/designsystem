@@ -34,10 +34,20 @@ runs:
 
     # Runs on its own, with no sibling tasks competing for the dpkg lock. The
     # lock timeout covers the runner image's own background apt activity.
+    #
+    # The westus3 node behind azure.archive.ubuntu.com serves packages at ~45 kB/s,
+    # turning this step into ~10 minutes, and apt never fails over because nothing
+    # errors. Drop that mirror so apt uses archive.ubuntu.com, the image's next entry.
+    # Remove once https://github.com/actions/runner-images/issues/14823 is fixed.
     - name: Install Playwright system dependencies
       if: inputs.playwright-deps == 'true'
       shell: bash
       run: |
+        mirror=$(getent ahosts azure.archive.ubuntu.com | awk 'NR == 1 { print $3 }') || true
+        if [[ $mirror == cloud-mirror-lb.westus3.* ]]; then
+          echo "Bypassing slow apt mirror $mirror"
+          sudo sed -i '/azure\.archive\.ubuntu\.com/d' /etc/apt/apt-mirrors.txt
+        fi
         echo 'DPkg::Lock::Timeout "120";' | sudo tee /etc/apt/apt.conf.d/99lock-timeout
         pnpm exec playwright install-deps chromium
 
