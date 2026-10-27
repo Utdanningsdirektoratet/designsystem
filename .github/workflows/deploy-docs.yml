@@ -72,5 +72,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          BODY="📚 **Docs preview**: https://stdesignsystemdocs.z1.web.core.windows.net/${DESTINATION_PATH}/"
-          gh pr comment "$PR_NUMBER" --edit-last --create-if-none --body "$BODY"
+          echo "📚 **Docs preview**: https://stdesignsystemdocs.z1.web.core.windows.net/${DESTINATION_PATH}/" |
+            ./@internal/ci/bin/pr-comment.sh "$PR_NUMBER" docs-preview

@@ -179,6 +179,37 @@ jobs:
       post-preview-comment: true
     secrets: inherit
 
+  changelog-preview:
+    runs-on: ubuntu-latest
+    # Pull requests into release branches get a full release preview from the release job instead.
+    # Pull requests from forks, and events Dependabot triggers, get a read-only token that cannot
+    # comment.
+    if: |
+      github.event_name == 'pull_request' &&
+      github.event.action != 'closed' &&
+      !startsWith(github.base_ref, 'release/') &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/pnpm-setup
+
+      - name: Comment the changelog entries this PR adds
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        # Write the preview to a file first: in a pipeline, a failed preview would still post an
+        # empty comment. The default shell runs with `-e`, so the comment step only runs on success.
+        run: |
+          preview="$RUNNER_TEMP/changelog-preview.md"
+          ./@internal/ci/bin/preview-pr-changelog.ts --base "origin/$BASE_REF" --head "$HEAD_SHA" > "$preview"
+          ./@internal/ci/bin/pr-comment.sh "$PR_NUMBER" changelog-preview < "$preview"
+
   cleanup-docs-preview:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -193,8 +224,15 @@ jobs:
           inlineScript: |
             az storage blob delete-batch --account-name stdesignsystemdocs -s '$web' --pattern "pr-${{ github.event.pull_request.number }}/*"
 
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The merge ref of a closed pull request may no longer exist
+          ref: ${{ github.event.pull_request.base.ref }}
+          sparse-checkout: '@internal/ci/bin/pr-comment.sh'
+          sparse-checkout-cone-mode: false
+
       - name: Delete preview comment
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: gh pr comment "$PR_NUMBER" --delete-last --yes || true
+        run: ./@internal/ci/bin/pr-comment.sh --delete "$PR_NUMBER" docs-preview || true

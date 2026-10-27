@@ -23,7 +23,9 @@ Releases are fully automated via
 7. **Tags** the commit as `v<version>`.
 
 Pull requests to release branches get a **changelog preview** posted as a PR
-comment, so reviewers can see exactly what will be released.
+comment, so reviewers can see exactly what will be released. Other pull requests
+get a comment listing the changelog entries their commits will add to the next
+release, and the version bump they cause at minimum.
 
 semantic-release records which npm channel a tag was published on as a git note
 (`refs/notes/semantic-release-<tag>`) on the tagged commit, and pushes it along
@@ -92,7 +94,11 @@ Each changelog entry includes:
 - The commit scope (if any), bolded
 - A link to the commit on GitHub
 - The commit body text (indented), with footer tokens stripped
-- A dedicated **⚠ BREAKING CHANGES** section at the top when applicable
+
+Breaking changes are listed first, under **⚠️ Breaking Changes**. Each entry
+there shows the commit scope, subject and link, followed by the text of its
+`BREAKING CHANGE` footer. Commits of types that are otherwise left out of the
+changelog, such as `refactor`, appear only in that section.
 
 This matches the format produced by the former Nx-based `changelog-renderer.ts`.
 
@@ -104,6 +110,8 @@ This matches the format produced by the former Nx-based `changelog-renderer.ts`.
 | `@internal/ci/src/semantic-release.ts`      | Calls `semantic-release` programmatically; branch config, plugin setup        |
 | `@internal/ci/src/changelog-writer-opts.ts` | Customises the changelog format (adds commit body text)                       |
 | `@internal/ci/bin/sync-package-versions.ts` | Syncs a version string into all publishable `package.json` files              |
+| `@internal/ci/bin/preview-pr-changelog.ts`  | Prints the changelog entries a pull request's commits will add                |
+| `@internal/ci/bin/pr-comment.sh`            | Creates, updates or deletes a named PR comment from CI                        |
 | `.github/workflows/release.yml`             | CI workflow that runs the release script                                      |
 
 ## Local testing

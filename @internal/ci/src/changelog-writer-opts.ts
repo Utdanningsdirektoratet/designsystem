@@ -1,17 +1,48 @@
 /**
  * Custom `writerOpts` for `@semantic-release/release-notes-generator`.
  *
- * Wraps the default `conventional-changelog-conventionalcommits` preset to add
- * one feature: commit body text (indented, with footers stripped) is rendered
- * below each changelog entry. This matches the behaviour of the former
- * Nx-based `changelog-renderer.ts`.
+ * Wraps the default `conventional-changelog-conventionalcommits` preset to
+ * match the changelogs produced by the former Nx-based `changelog-renderer.ts`:
  *
- * Everything else — type grouping, BREAKING CHANGES section, commit links,
- * issue linking, @mention linking, sorting, compare URLs — is inherited from
- * the preset as-is.
+ * - commit body text (with footers stripped) is rendered below each entry
+ * - breaking change notes include the commit subject and a link
+ * - the breaking changes heading reads `⚠️ Breaking Changes`
+ *
+ * Everything else — type grouping, commit links, issue linking, @mention
+ * linking, sorting, compare URLs — is inherited from the preset as-is.
  */
 
-import createPreset from 'conventional-changelog-conventionalcommits';
+import createPreset, {
+  type CommitType,
+  formatCommitUrl,
+  formatNoteTitle,
+  type PresetConfig,
+} from 'conventional-changelog-conventionalcommits';
+import type {
+  CommitKnownProps,
+  CommitNote,
+  CommitPartialFunction,
+  CommitTransformFunction,
+  Options,
+  TemplateFunction,
+} from 'conventional-changelog-writer';
+
+/** Commit fields set by the preset's transform and read by our templates. */
+export interface ChangelogCommit extends CommitKnownProps {
+  scope?: string | null;
+  subject?: string | null;
+  shortHash?: string | null;
+}
+
+/** The writer attaches the transformed commit to each note before rendering. */
+interface RenderedNote extends CommitNote {
+  commit: ChangelogCommit;
+}
+
+type WriterOpts = Options<ChangelogCommit> &
+  Required<
+    Pick<Options<ChangelogCommit>, 'transform' | 'commitPartial' | 'template'>
+  >;
 
 // ─── Footer patterns (same as the old changelog-renderer) ────────────────────
 
@@ -22,123 +53,119 @@ const footerPattern = new RegExp(
   'm',
 );
 
-function indent(text: string, indentation = '  '): string {
-  return text
-    .split('\n')
-    .map((line) => (line.trim() ? `${indentation}${line}` : ''))
-    .join('\n');
-}
-
-// ─── Commit types ────────────────────────────────────────────────────────────
+// ─── Preset configuration ────────────────────────────────────────────────────
 
 /**
  * Section headers use emojis to stay consistent with the changelogs produced by
  * the former Nx-based renderer.
  */
-export const commitTypes = [
+export const commitTypes: CommitType[] = [
   { type: 'feat', section: '🚀 Features' },
   { type: 'fix', section: '🩹 Fixes' },
   { type: 'perf', section: '🏎 Performance Improvements' },
   { type: 'revert', section: '⏪ Reverts' },
-  { type: 'docs', hidden: true },
-  { type: 'style', hidden: true },
-  { type: 'chore', hidden: true },
-  { type: 'refactor', hidden: true },
-  { type: 'test', hidden: true },
-  { type: 'build', hidden: true },
-  { type: 'ci', hidden: true },
-] satisfies { type: string; section?: string; hidden?: boolean }[];
+  { type: 'docs', effect: 'hidden' },
+  { type: 'style', effect: 'hidden' },
+  { type: 'chore', effect: 'hidden' },
+  { type: 'refactor', effect: 'hidden' },
+  { type: 'test', effect: 'hidden' },
+  { type: 'build', effect: 'hidden' },
+  { type: 'ci', effect: 'hidden' },
+];
+
+const breakingChangesTitle = 'Breaking Changes';
+
+const presetConfig: PresetConfig = {
+  types: commitTypes,
+  // The preset groups breaking changes under `⚠ BREAKING CHANGES`
+  formatNoteTitle: (context, title) => {
+    const presetTitle = formatNoteTitle(context, title);
+    return presetTitle === 'BREAKING CHANGES'
+      ? breakingChangesTitle
+      : presetTitle;
+  },
+  formatNoteIcon: (_context, title) =>
+    title === breakingChangesTitle ? '⚠️' : '',
+};
+
+// The preset declares its return type as `{}`; this is the part we use.
+const preset = createPreset(presetConfig) as { writer: WriterOpts };
+const presetWriterOpts = preset.writer;
 
 // ─── Build writerOpts ────────────────────────────────────────────────────────
 
-const preset = createPreset({ types: commitTypes });
-const presetWriterOpts = preset.writer;
-
 /**
- * Wrap the preset's transform to preserve and format the commit body.
+ * Wrap the preset's transform to preserve the commit body.
  *
  * The default transform returns `{ notes, type, scope, shortHash, subject,
  * references }` — it does NOT forward `body`. We save `body` before calling
- * the default, strip footer tokens, indent, and attach it to the result.
+ * the default, strip footer tokens, and attach it to the result.
  */
 function wrapTransform(
-  presetTransform: (
-    commit: Record<string, unknown>,
-    context: unknown,
-  ) => Record<string, unknown> | undefined,
-) {
-  return (commit: Record<string, unknown>, context: unknown) => {
-    // Save body before the preset transform drops it
-    const rawBody =
-      typeof commit['body'] === 'string'
-        ? (commit['body'] as string).trim()
-        : null;
-
-    const result = presetTransform(commit, context);
+  presetTransform: CommitTransformFunction<ChangelogCommit>,
+): CommitTransformFunction<ChangelogCommit> {
+  return async (commit, context, options) => {
+    const result = await presetTransform(commit, context, options);
     if (!result) return result; // commit was filtered out by the preset
 
-    // Rename "BREAKING CHANGES" → "Breaking Changes" to match old format
-    const notes = result['notes'] as
-      | { title: string; text: string }[]
-      | undefined;
-    if (notes) {
-      for (const note of notes) {
-        if (note.title === 'BREAKING CHANGES') {
-          note.title = 'Breaking Changes';
-        }
-      }
-    }
-
-    if (rawBody) {
-      const stripped = rawBody.split(footerPattern)[0].trim();
-      result['body'] = stripped ? indent(stripped) : null;
-    }
-
-    return result;
+    const body = commit.body?.trim().split(footerPattern)[0].trim();
+    return { ...result, body: body || null };
   };
 }
 
 /**
- * Extend the preset's `commitPartial` Handlebars template to render `{{body}}`
- * (indented) below each changelog entry when present.
+ * Render the commit body below each changelog entry when present. The preset
+ * renders entries with `list()`, which indents continuation lines so the body
+ * stays inside the list item.
  */
-function extendCommitPartial(template: string): string {
-  // Append inline with the last line to prevent Handlebars standalone-tag
-  // stripping from eating the trailing newline when body is absent.
-  return template.trimEnd() + '{{#if body}}\n\n{{body}}{{/if}}\n';
+function extendCommitPartial(
+  presetCommitPartial: CommitPartialFunction<ChangelogCommit>,
+): CommitPartialFunction<ChangelogCommit> {
+  return (context, commit) => {
+    const entry = presetCommitPartial(context, commit);
+    return commit.body ? `${entry}\n\n${commit.body}` : entry;
+  };
 }
 
 /**
- * Customise the `mainTemplate`:
+ * Customise the preset's template:
  *
- * 1. The ⚠️ Breaking Changes section includes the commit subject and a link,
- *    matching the format used by the former Nx-based renderer.
- * 2. The section heading uses `⚠️  Breaking Changes` instead of the preset's
- *    `⚠ BREAKING CHANGES`.
- *
- * The default preset template only renders `{{text}}` (the note body). Our
- * version renders: `* **scope:** subject ([hash](url))\n\n  text`.
+ * 1. Prefix each note with its commit subject and link. The preset only renders
+ *    `**scope:** text`; ours renders `**scope:** subject ([hash](url))\n\ntext`.
+ * 2. Drop commit groups without a title. The preset keeps hidden-type commits
+ *    with breaking changes so their notes are rendered, but files them under no
+ *    section. That group has no heading, so its list merges with the breaking
+ *    changes list above it and repeats the entry without its note.
  */
-function extendMainTemplate(template: string): string {
-  // Replace the note entry to include commit subject + link
-  const defaultNoteEntry =
-    '* {{#if commit.scope}}**{{commit.scope}}:** {{/if}}{{text}}';
-  const enhancedNoteEntry = [
-    '* {{#if commit.scope}}**{{commit.scope}}:** {{/if}}{{commit.subject}}',
-    '{{#if commit.shortHash}}',
-    ' ([{{commit.shortHash}}]({{@root.host}}/{{@root.owner}}/{{@root.repository}}/commit/{{commit.hash}}))',
-    '{{/if}}',
-    '\n\n  {{text}}\n',
-  ].join('');
-
-  return template
-    .replace(defaultNoteEntry, enhancedNoteEntry)
-    .replace('### ⚠ {{title}}', '### ⚠️  {{title}}');
+function extendTemplate(
+  presetTemplate: TemplateFunction<ChangelogCommit>,
+): TemplateFunction<ChangelogCommit> {
+  return (context) =>
+    presetTemplate({
+      ...context,
+      commitGroups: context.commitGroups?.filter((group) => group.title),
+      noteGroups: context.noteGroups?.map((group) => ({
+        ...group,
+        notes: (group.notes as RenderedNote[]).map((note) => {
+          const { commit } = note;
+          const commitLink = commit.hash
+            ? ` ([${commit.shortHash}](${formatCommitUrl(context, commit)}))`
+            : '';
+          return {
+            ...note,
+            text: `${commit.subject}${commitLink}\n\n${note.text}`,
+          };
+        }),
+      })),
+    });
 }
 
-export const writerOpts = {
+export const writerOpts: WriterOpts = {
   ...presetWriterOpts,
   transform: wrapTransform(presetWriterOpts.transform),
   commitPartial: extendCommitPartial(presetWriterOpts.commitPartial),
-  mainTemplate: extendMainTemplate(presetWriterOpts.mainTemplate),
+  template: extendTemplate(presetWriterOpts.template),
+  // The preset sorts notes by text since v10; keep them in commit order instead,
+  // as the subject that now leads each note is not part of the sorted text.
+  notesSort: () => 0,
 };
