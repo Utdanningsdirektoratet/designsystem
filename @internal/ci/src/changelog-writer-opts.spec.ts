@@ -1,6 +1,10 @@
-import { writeChangelogString } from 'conventional-changelog-writer';
+import {
+  type FinalOptions,
+  type FinalTemplateContext,
+  writeChangelogString,
+} from 'conventional-changelog-writer';
 import { describe, expect, it } from 'vitest';
-import { writerOpts } from './changelog-writer-opts.js';
+import { type ChangelogCommit, writerOpts } from './changelog-writer-opts.js';
 
 const { transform } = writerOpts;
 const renderContext = {
@@ -15,11 +19,7 @@ const renderContext = {
 };
 
 async function renderChangelog(commits: ReturnType<typeof parsedCommit>[]) {
-  return writeChangelogString(
-    commits,
-    renderContext,
-    writerOpts as Record<string, unknown>,
-  );
+  return writeChangelogString(commits, renderContext, writerOpts);
 }
 
 /**
@@ -44,14 +44,18 @@ function parsedCommit(overrides: Record<string, unknown> = {}) {
   };
 }
 
-/** Minimal writer context (the second argument to transform). */
+/**
+ * Minimal writer context and options (the second and third arguments to
+ * transform). The preset's transform only reads the repository fields.
+ */
 const context = {
   host: 'https://github.com',
   owner: 'Utdanningsdirektoratet',
   repository: 'designsystem',
-};
+} as FinalTemplateContext<ChangelogCommit>;
+const options = writerOpts as FinalOptions<ChangelogCommit>;
 
-const breakingChangesHeading = '### ⚠️  Breaking Changes';
+const breakingChangesHeading = '### ⚠️ Breaking Changes';
 const repositoryUrl = `${renderContext.host}/${renderContext.owner}/${renderContext.repository}`;
 
 function commitUrl(hash: string) {
@@ -83,31 +87,47 @@ function expectNoRawTemplates(changelog: string) {
 }
 
 describe('changelog writerOpts.transform', () => {
-  it('passes through feat commits', () => {
-    const result = transform(parsedCommit({ type: 'feat' }), context);
+  it('passes through feat commits', async () => {
+    const result = await transform(
+      parsedCommit({ type: 'feat' }),
+      context,
+      options,
+    );
     expect(result).toBeDefined();
     expect(result!['type']).toBe('🚀 Features');
   });
 
-  it('passes through fix commits', () => {
-    const result = transform(parsedCommit({ type: 'fix' }), context);
+  it('passes through fix commits', async () => {
+    const result = await transform(
+      parsedCommit({ type: 'fix' }),
+      context,
+      options,
+    );
     expect(result).toBeDefined();
     expect(result!['type']).toBe('🩹 Fixes');
   });
 
-  it('passes through perf commits', () => {
-    const result = transform(parsedCommit({ type: 'perf' }), context);
+  it('passes through perf commits', async () => {
+    const result = await transform(
+      parsedCommit({ type: 'perf' }),
+      context,
+      options,
+    );
     expect(result).toBeDefined();
     expect(result!['type']).toBe('🏎 Performance Improvements');
   });
 
-  it('passes through revert commits', () => {
-    const result = transform(parsedCommit({ type: 'revert' }), context);
+  it('passes through revert commits', async () => {
+    const result = await transform(
+      parsedCommit({ type: 'revert' }),
+      context,
+      options,
+    );
     expect(result).toBeDefined();
     expect(result!['type']).toBe('⏪ Reverts');
   });
 
-  it('filters out hidden types (chore, ci, docs, …)', () => {
+  it('filters out hidden types (chore, ci, docs, …)', async () => {
     for (const type of [
       'chore',
       'ci',
@@ -117,18 +137,19 @@ describe('changelog writerOpts.transform', () => {
       'test',
       'build',
     ]) {
-      const result = transform(parsedCommit({ type }), context);
+      const result = await transform(parsedCommit({ type }), context, options);
       expect(result).toBeUndefined();
     }
   });
 
-  it('keeps commits with BREAKING CHANGE notes regardless of type', () => {
-    const result = transform(
+  it('keeps commits with BREAKING CHANGE notes regardless of type', async () => {
+    const result = await transform(
       parsedCommit({
         type: 'refactor',
         notes: [{ title: 'BREAKING CHANGE', text: 'removed API' }],
       }),
       context,
+      options,
     );
     expect(result).toBeDefined();
     expect(result!['notes']).toEqual(
@@ -141,25 +162,27 @@ describe('changelog writerOpts.transform', () => {
     );
   });
 
-  it('preserves commit body, indented', () => {
-    const result = transform(
+  it('preserves commit body', async () => {
+    const result = await transform(
       parsedCommit({
         body: 'This adds a size prop.\nThe default remains medium.',
       }),
       context,
+      options,
     );
     expect(result).toBeDefined();
     expect(result!['body']).toBe(
-      '  This adds a size prop.\n  The default remains medium.',
+      'This adds a size prop.\nThe default remains medium.',
     );
   });
 
-  it('strips footer tokens from body', () => {
-    const result = transform(
+  it('strips footer tokens from body', async () => {
+    const result = await transform(
       parsedCommit({
         body: 'Adds an icon prop.\n\nReviewed-by: Someone\nRefs: #123',
       }),
       context,
+      options,
     );
     expect(result).toBeDefined();
     expect(result!['body']).toContain('Adds an icon prop.');
@@ -167,27 +190,36 @@ describe('changelog writerOpts.transform', () => {
     expect(result!['body']).not.toContain('Refs');
   });
 
-  it('strips BREAKING CHANGE footer from body', () => {
-    const result = transform(
+  it('strips BREAKING CHANGE footer from body', async () => {
+    const result = await transform(
       parsedCommit({
         body: 'Changes the default variant.\n\nBREAKING CHANGE: old API removed',
         notes: [{ title: 'BREAKING CHANGE', text: 'old API removed' }],
       }),
       context,
+      options,
     );
     expect(result).toBeDefined();
     expect(result!['body']).toContain('Changes the default variant.');
     expect(result!['body']).not.toContain('BREAKING CHANGE');
   });
 
-  it('sets body to null when body is empty or only footers', () => {
-    const result = transform(parsedCommit({ body: 'Refs: #123' }), context);
+  it('sets body to null when body is empty or only footers', async () => {
+    const result = await transform(
+      parsedCommit({ body: 'Refs: #123' }),
+      context,
+      options,
+    );
     expect(result).toBeDefined();
     expect(result!['body']).toBeNull();
   });
 
-  it('shortens the commit hash', () => {
-    const result = transform(parsedCommit({ hash: 'abc1234567890' }), context);
+  it('shortens the commit hash', async () => {
+    const result = await transform(
+      parsedCommit({ hash: 'abc1234567890' }),
+      context,
+      options,
+    );
     expect(result!['shortHash']).toBe('abc1234');
   });
 });
@@ -253,7 +285,7 @@ ${indentedBody('This adds a size prop.\nThe default remains medium.')}`);
     expectNoRawTemplates(changelog);
   });
 
-  it('renders multiline breaking notes from release-style commits', async () => {
+  it('renders multiline breaking notes, including lists, inside their entry', async () => {
     const changelog = await renderChangelog([
       parsedCommit({
         type: 'feat',
@@ -282,8 +314,8 @@ ${commitLine({
 
   Consumers using \`@udir-design/css\` must update their markup.
 
-- Replace \`h3\` with \`span\`
-- Remove \`data-size\``);
+  - Replace \`h3\` with \`span\`
+  - Remove \`data-size\``);
     expect(changelog).toContain('### 🚀 Features');
     expect(changelog).toContain(
       commitLine({
@@ -324,8 +356,8 @@ ${commitLine({
 })}
 
   Omitted props:
-- \`Dialog\`: \`asChild\`
-- \`Select\`: \`readOnly\``);
+  - \`Dialog\`: \`asChild\`
+  - \`Select\`: \`readOnly\``);
     expect(changelog).not.toContain('### 🚀 Features');
     expect(changelog).not.toContain('### 🩹 Fixes');
     expectNoRawTemplates(changelog);
@@ -406,7 +438,7 @@ ${indentedBody('The default variant changes from outline to filled.')}`);
       }),
     ]);
 
-    expect(changelog.match(/### ⚠️ {2}Breaking Changes/g)).toHaveLength(1);
+    expect(changelog.match(/### ⚠️ Breaking Changes/g)).toHaveLength(1);
     expect(changelog).toContain(
       commitLine({
         scope: 'Paragraph',
