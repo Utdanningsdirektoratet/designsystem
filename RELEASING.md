@@ -94,7 +94,11 @@ Each changelog entry includes:
 - The commit scope (if any), bolded
 - A link to the commit on GitHub
 - The commit body text (indented), with footer tokens stripped
-- A dedicated **⚠ BREAKING CHANGES** section at the top when applicable
+
+Breaking changes are listed first, under **⚠️ Breaking Changes**. Each entry
+there shows the commit scope, subject and link, followed by the text of its
+`BREAKING CHANGE` footer. Commits of types that are otherwise left out of the
+changelog, such as `refactor`, appear only in that section.
 
 This matches the format produced by the former Nx-based `changelog-renderer.ts`.
 
