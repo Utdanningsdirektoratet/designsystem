@@ -22,6 +22,20 @@
 />
 <script>
   document.documentElement.lang = 'nb';
+
+  // Forward ⌘K / Ctrl+K to the manager frame so Pagefind's modal opens
+  // instead of Storybook's "Find components"
+  document.addEventListener(
+    'keydown',
+    (e) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.parent.postMessage('pagefind:open', window.location.origin);
+      }
+    },
+    { capture: true },
+  );
 </script>
 <!--
   Storybook names the page after the story id as it selects a story, and a
