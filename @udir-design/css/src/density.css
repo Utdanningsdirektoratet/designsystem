@@ -1,0 +1,47 @@
+@layer udir.density {
+  /* Space toggle: `initial` makes every alias below guaranteed-invalid, so components fall back to
+     their default sizes. The empty value in compact mode leaves the alias value as is. */
+  :root,
+  [data-density='default'] {
+    --_udsc-density-compact: initial;
+  }
+
+  [data-density='compact'] {
+    --_udsc-density-compact: ;
+  }
+
+  /* Declared wherever `--ds-size-*` is recalculated, so that a nested `data-size` resolves the
+     aliases against its own size scale instead of inheriting the values resolved on the
+     `data-density` ancestor. */
+  :root,
+  [data-size],
+  [data-density] {
+    --udsc-density-table-padding: var(--_udsc-density-compact) var(--ds-size-1)
+      var(--ds-size-2);
+    --udsc-density-button-size: var(--_udsc-density-compact) var(--ds-size-10);
+    --udsc-density-button-padding: var(--_udsc-density-compact) var(--ds-size-1)
+      var(--ds-size-2);
+    --udsc-density-chip-height: var(--_udsc-density-compact) var(--ds-size-6);
+    --udsc-density-chip-icon-size: var(--_udsc-density-compact) var(--ds-size-4);
+    --udsc-density-chip-input-size: var(--_udsc-density-compact)
+      var(--ds-size-4);
+    --udsc-density-chip-padding-inline: var(--_udsc-density-compact)
+      var(--ds-size-2);
+    --udsc-density-input-size: var(--_udsc-density-compact) var(--ds-size-10);
+    --udsc-density-suggestion-option-padding: var(--_udsc-density-compact)
+      var(--ds-size-2);
+    --udsc-density-toggle-group-button-size: var(--_udsc-density-compact)
+      var(--ds-size-10);
+    --udsc-density-tabs-tab-padding: var(--_udsc-density-compact)
+      var(--ds-size-2) var(--ds-size-3);
+    --udsc-density-tag-min-height: var(--_udsc-density-compact) var(--ds-size-6);
+    --udsc-density-tag-padding: var(--_udsc-density-compact) 0 var(--ds-size-1);
+    --udsc-density-pagination-gap: var(--_udsc-density-compact) var(--ds-size-1);
+    --udsc-density-alert-padding-block: var(--_udsc-density-compact)
+      var(--ds-size-3);
+    --udsc-density-alert-padding-inline-end: var(--_udsc-density-compact)
+      var(--ds-size-3);
+    --udsc-density-alert-heading-spacing: var(--_udsc-density-compact)
+      var(--ds-size-1);
+  }
+}

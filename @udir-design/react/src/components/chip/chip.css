@@ -1,3 +1,13 @@
+.ds-chip {
+  --dsc-chip-height: var(--udsc-density-chip-height, var(--ds-size-8));
+  --dsc-chip-icon-size: var(--udsc-density-chip-icon-size, var(--ds-icon-size));
+  --dsc-chip-input-size: var(--udsc-density-chip-input-size, var(--ds-size-5));
+  --dsc-chip-padding-inline: var(
+    --udsc-density-chip-padding-inline,
+    var(--ds-size-3)
+  );
+}
+
 .ds-chip:has(input[type='checkbox']) {
   /* Match the end padding to the checkbox inset instead of `--dsc-chip-padding-inline` */
   padding-inline-end: calc(

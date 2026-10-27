@@ -10,6 +10,7 @@
 ) {
   /* This fixes Å looking like Ă (top part of ring was cut off) in Chrome and Safari */
   height: unset;
+  --dsc-input-size: var(--udsc-density-input-size, var(--ds-size-12));
   --dsc-input-line-height: var(--ds-line-height-md);
   --dsc-input-padding-block: calc(
     (var(--dsc-input-size) - var(--dsc-input-line-height) * 1em) / 2 -
@@ -22,6 +23,16 @@
 }
 
 .ds-input:is(select) {
+  --dsc-input-size: var(--udsc-density-input-size, var(--ds-size-12));
+  --dsc-input-line-height: var(--ds-line-height-md);
+  --dsc-input-padding-block: calc(
+    (var(--dsc-input-size) - var(--dsc-input-line-height) * 1em) / 2 -
+      var(--dsc-input-border-width)
+  );
+  --dsc-input-padding: var(--dsc-input-padding-block)
+    var(--dsc-input-padding-inline);
+  line-height: var(--dsc-input-line-height);
+
   /* SVG background-images can't inherit currentColor, so the chevron uses a
      pre-colored icon (see chevronIcon.css) swapped per color scheme, instead
      of using upstream's gradient trick. */
