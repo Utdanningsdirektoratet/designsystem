@@ -11,7 +11,9 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "catalog:",
+    "@semantic-release/commit-analyzer": "catalog:",
     "@semantic-release/exec": "catalog:",
+    "@semantic-release/release-notes-generator": "catalog:",
     "@types/js-yaml": "catalog:",
     "@types/yargs": "catalog:",
     "@udir-design/icons": "workspace:*",
