@@ -14,10 +14,11 @@ The change guides don't cover everything a release changes. Digdir's 1.23.0 rele
 - Udir's library: [Komponentbibliotek](https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek)
 - Digdir's library at v1.23.0: [[v1.23.0] Designsystemet - Core UI Kit](https://www.figma.com/design/ktnz2KCAra39ZO2a1OShrw/-v1.23.0--Designsystemet---Core-UI-Kit), a copy of Digdir's community file in the Figma folder "Digdirs bibliotek, versjonert". Each Digdir release to compare with gets its own copy there, named after the release.
 - Digdir's library at v1.19.0, the last release whose change guide Udir has applied: [[v1.19.0] Designsystemet - Core UI Kit](https://www.figma.com/design/H7oKskFOhpAN7iqYcSBLH6/-v1.19.0--Designsystemet---Core-UI-Kit), in the same folder.
+- Older releases in the same folder, the earliest available: [[v1.17.0]](https://www.figma.com/design/1jyZtHyWFoJjbJC1fYtwDV/-v1.17.0--Designsystemet---Core-UI-Kit), [[v1.14.0]](https://www.figma.com/design/p9XCpa7YVTqo4b3PhpqGRL/-v1.14.0--Designsystemet---Core-UI-Kit) and [[v1.8.0]](https://www.figma.com/design/EjgXplWfgGlQ5XprjT6UrS/-v1.8.0--Designsystemet---Core-UI-Kit).
 
 ## Approach
 
-We have no copy of Digdir's library from when Udir's was made, so differences that exist today can't be explained after the fact. Instead:
+We have no copy of Digdir's library from when Udir's was made (the earliest available is v1.8.0), so differences that exist today can't all be explained after the fact. Instead:
 
 1. **Now:** snapshot Digdir's current library and Udir's library. The differences between them are recorded as existing and unsorted, to be sorted later with the help of the designer, the "before Digdir vX" comments in our component CSS, and Digdir's earlier change guides.
 2. **At each later Digdir update:** snapshot Digdir's library again, and snapshot Udir's again after applying the change guide. Each library is compared with its own previous snapshot:
