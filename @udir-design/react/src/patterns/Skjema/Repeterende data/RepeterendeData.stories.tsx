@@ -101,7 +101,8 @@ const headings: Record<StepId, string> = {
   send: 'Send invitasjon',
 };
 
-const foresattNavnId = (avdelingId: string) => `foresatt-navn-${avdelingId}`;
+const foresattFirstFieldId = (avdelingId: string) =>
+  `foresatt-fornavn-${avdelingId}`;
 const avdelingNavnId = 'avdeling-navn';
 const leggTilAvdelingId = 'legg-til-avdeling';
 
@@ -144,7 +145,7 @@ function validate<TStep extends string>(
       id: avdeling.id,
       step: foreldreStep,
       message: `${avdeling.navn}: Legg til minst én foresatt`,
-      focusId: foresattNavnId(avdeling.id),
+      focusId: foresattFirstFieldId(avdeling.id),
     }));
 }
 
@@ -311,7 +312,7 @@ type ForesattFieldsProps = {
   register: UseFormRegister<ForesattValues>;
   errors: FieldErrors<ForesattValues>;
   focusFirst?: boolean;
-  navnId?: string;
+  firstFieldId?: string;
 };
 
 // React's autoFocus prop doesn't work inside a Dialog; the native attribute does.
@@ -321,22 +322,22 @@ const ForesattFields = ({
   register,
   errors,
   focusFirst,
-  navnId,
+  firstFieldId,
 }: ForesattFieldsProps) => (
   <>
     <Textfield
       {...(focusFirst ? nativeAutofocus : {})}
-      id={navnId}
-      label="Navn på foresatt"
-      autoComplete="off"
-      {...register('navn')}
-      error={errors.navn?.message}
-    />
-    <Textfield
+      id={firstFieldId}
       label="Barnets fornavn"
       autoComplete="off"
       {...register('fornavn')}
       error={errors.fornavn?.message}
+    />
+    <Textfield
+      label="Navn på foresatt"
+      autoComplete="off"
+      {...register('navn')}
+      error={errors.navn?.message}
     />
     <Textfield
       label="E-post"
@@ -385,7 +386,7 @@ const AvdelingSection = ({
 
   // Focus after the re-render so it isn't lost when the list updates.
   useEffect(() => {
-    if (focusRequest > 0) setFocus('navn');
+    if (focusRequest > 0) setFocus('fornavn');
   }, [focusRequest, setFocus]);
 
   const onSubmit = async (event: SyntheticEvent) => {
@@ -483,8 +484,8 @@ const AvdelingSection = ({
             </colgroup>
             <Table.Head>
               <Table.Row>
-                <Table.HeaderCell>Foresatt</Table.HeaderCell>
                 <Table.HeaderCell>Barnets fornavn</Table.HeaderCell>
+                <Table.HeaderCell>Foresatt</Table.HeaderCell>
                 <Table.HeaderCell>E-post</Table.HeaderCell>
                 <Table.HeaderCell>Mobilnummer</Table.HeaderCell>
                 <Table.HeaderCell>
@@ -498,8 +499,8 @@ const AvdelingSection = ({
             <Table.Body>
               {avdeling.foresatte.map((foresatt) => (
                 <Table.Row key={foresatt.id}>
-                  <Table.Cell>{foresatt.navn}</Table.Cell>
                   <Table.Cell>{foresatt.fornavn}</Table.Cell>
+                  <Table.Cell>{foresatt.navn}</Table.Cell>
                   <Table.Cell>{foresatt.epost}</Table.Cell>
                   <Table.Cell>{foresatt.mobilnummer}</Table.Cell>
                   <Table.Cell>
@@ -547,7 +548,7 @@ const AvdelingSection = ({
           <ForesattFields
             register={register}
             errors={errors}
-            navnId={foresattNavnId(avdeling.id)}
+            firstFieldId={foresattFirstFieldId(avdeling.id)}
           />
           <Field className={classes.formButtons}>
             {/* Invisible label keeps the button level with the labelled inputs. */}
@@ -781,7 +782,7 @@ const Oppsummering = ({
             avdeling.foresatte.map((foresatt) => (
               <FormSummary.Section
                 key={foresatt.id}
-                title={foresatt.navn}
+                title={foresatt.fornavn}
                 headingLevel={5}
                 onEdit={() =>
                   onEdit({ avdelingId: avdeling.id, foresattId: foresatt.id })
@@ -789,8 +790,8 @@ const Oppsummering = ({
               >
                 <FormSummary.Fields>
                   <FormSummary.Field
-                    label="Barnets fornavn"
-                    value={foresatt.fornavn}
+                    label="Navn på foresatt"
+                    value={foresatt.navn}
                   />
                   <FormSummary.Field label="E-post" value={foresatt.epost} />
                   <FormSummary.Field
