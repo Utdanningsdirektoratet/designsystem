@@ -206,3 +206,51 @@ export const VariantOutline = meta.story({
     );
   },
 });
+
+const clickableTags = [
+  { color: 'accent', label: 'Barnehage' },
+  { color: 'support1', label: 'Grunnskole' },
+  { color: 'support2', label: 'Videregående' },
+];
+
+export const AsLink = meta.story({
+  render: (args) => {
+    return (
+      <>
+        {clickableTags.map(({ color, label }) => (
+          <Tag
+            key={color}
+            data-color={color as TagProps['data-color']}
+            {...args}
+            asChild
+            variant="outline"
+          >
+            <a href="/">{label}</a>
+          </Tag>
+        ))}
+      </>
+    );
+  },
+});
+
+export const AsButton = meta.story({
+  render: (args) => {
+    return (
+      <>
+        {clickableTags.map(({ color, label }) => (
+          <Tag
+            key={color}
+            data-color={color as TagProps['data-color']}
+            {...args}
+            asChild
+            variant="outline"
+          >
+            <button type="button" onClick={() => alert(`${label} clicked`)}>
+              {label}
+            </button>
+          </Tag>
+        ))}
+      </>
+    );
+  },
+});

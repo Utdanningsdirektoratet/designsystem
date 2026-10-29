@@ -62,6 +62,16 @@ ville vært for dårlig, siden outline kan gjøre det lettere å forveksle tagge
 
 <Canvas of={TagStories.VariantOutline} />
 
+### Klikkbar
+
+I noen tilfeller kan det være riktig å gjøre `Tag` klikkbar. Dette kan for eksempel være for navigasjon eller å utføre et søk eller filtrering basert på taggen.
+
+Du kan gjøre `Tag` klikkbar enten som en knapp eller som en lenke, avhengig av hva som er mest hensiktsmessig for konteksten. Bruk `<Tag asChild variant="outline">` for å komposere `Tag` med en `<button>` eller `<a>`. Bruk `variant="outline"` slik at `Tag` ser mest mulig klikkbar ut. Eksempelet under bruker `Tag` som en knapp.
+
+`Tag` brukes først og fremst til å kommunisere kategori eller status. Unngå derfor å bruke klikkbar `Tag` hvis hovedpoenget med elementet er å utføre en handling eller navigere. Bruk da heller [`Button`](/docs/components-button--docs), [`Chip`](/docs/components-chip--docs) eller [`Link`](/docs/components-link--docs).
+
+<Canvas of={TagStories.AsButton} />
+
 ### Komponering
 
 <Canvas of={TagStories.Article} />

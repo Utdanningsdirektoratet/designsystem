@@ -75,6 +75,54 @@ exports[`Article 1`] = `
 </div>
 `;
 
+exports[`As Button 1`] = `
+<button
+  type="button"
+  data-variant="outline"
+  data-color="accent"
+>
+  Barnehage
+</button>
+<button
+  type="button"
+  data-variant="outline"
+  data-color="support1"
+>
+  Grunnskole
+</button>
+<button
+  type="button"
+  data-variant="outline"
+  data-color="support2"
+>
+  Videregående
+</button>
+`;
+
+exports[`As Link 1`] = `
+<a
+  href="/"
+  data-variant="outline"
+  data-color="accent"
+>
+  Barnehage
+</a>
+<a
+  href="/"
+  data-variant="outline"
+  data-color="support1"
+>
+  Grunnskole
+</a>
+<a
+  href="/"
+  data-variant="outline"
+  data-color="support2"
+>
+  Videregående
+</a>
+`;
+
 exports[`Colors 1`] = `
 <span data-color="neutral">
   neutral
