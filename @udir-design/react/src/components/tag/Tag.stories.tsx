@@ -209,9 +209,8 @@ export const VariantOutline = meta.story({
 
 const clickableTags = [
   { color: 'accent', label: 'Barnehage' },
-  { color: 'support1', label: 'Skole' },
-  { color: 'support2', label: 'Barnevern' },
-  { color: 'support3', label: 'Helse' },
+  { color: 'support1', label: 'Grunnskole' },
+  { color: 'support2', label: 'Videregående' },
 ];
 
 export const AsLink = meta.story({

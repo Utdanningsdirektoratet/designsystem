@@ -88,21 +88,14 @@ exports[`As Button 1`] = `
   data-variant="outline"
   data-color="support1"
 >
-  Skole
+  Grunnskole
 </button>
 <button
   type="button"
   data-variant="outline"
   data-color="support2"
 >
-  Barnevern
-</button>
-<button
-  type="button"
-  data-variant="outline"
-  data-color="support3"
->
-  Helse
+  Videregående
 </button>
 `;
 
@@ -119,21 +112,14 @@ exports[`As Link 1`] = `
   data-variant="outline"
   data-color="support1"
 >
-  Skole
+  Grunnskole
 </a>
 <a
   href="/"
   data-variant="outline"
   data-color="support2"
 >
-  Barnevern
-</a>
-<a
-  href="/"
-  data-variant="outline"
-  data-color="support3"
->
-  Helse
+  Videregående
 </a>
 `;
 
