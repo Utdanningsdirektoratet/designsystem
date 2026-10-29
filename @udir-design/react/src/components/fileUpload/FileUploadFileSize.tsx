@@ -1,3 +1,4 @@
+import cl from 'clsx/lite';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useState } from 'react';
 
@@ -17,7 +18,7 @@ export interface FileUploadFileSizeProps extends Omit<
 export const FileUploadFileSize = forwardRef<
   HTMLSpanElement,
   FileUploadFileSizeProps
->(function FileUploadFileSize({ size, lang, ...rest }, ref) {
+>(function FileUploadFileSize({ size, lang, className, ...rest }, ref) {
   const [locale, setNode] = useResolvedLocale(lang);
   const formatted = size ? formatFileSize(size, locale) : null;
 
@@ -38,7 +39,12 @@ export const FileUploadFileSize = forwardRef<
   }
 
   return (
-    <span lang={lang} ref={setRef} {...rest}>
+    <span
+      lang={lang}
+      ref={setRef}
+      className={cl('uds-file-upload__file-size', className)}
+      {...rest}
+    >
       {formatted}
     </span>
   );

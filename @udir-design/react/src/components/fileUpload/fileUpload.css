@@ -364,6 +364,11 @@
     width: fit-content;
   }
 
+  /* A number and its unit, such as "844 KB", stay on one line. */
+  .uds-file-upload__file-size {
+    white-space: nowrap;
+  }
+
   /* Two classes, to win over Digdir's `[data-tooltip]` reset on the button. */
   .uds-file-upload__delete-button {
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
@@ -459,8 +464,4 @@
   align-items: center;
   gap: var(--ds-size-3);
   flex-wrap: wrap;
-
-  > .uds-file-upload__item-description {
-    white-space: nowrap;
-  }
 }
