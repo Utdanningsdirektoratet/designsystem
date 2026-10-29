@@ -139,7 +139,7 @@ export const WithLinks = meta.story({
       <style>
         {`
 .list-with-links-list-unordered {
-  list-style: none; 
+  list-style-type: '';
   padding: 0;
 }`}
       </style>
@@ -177,7 +177,7 @@ export const AsNav = meta.story({
       <style>
         {`
 .list-as-nav-list-unordered {
-  list-style: none; 
+  list-style-type: '';
   padding: 0;
 }`}
       </style>
