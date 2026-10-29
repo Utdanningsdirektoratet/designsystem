@@ -90,7 +90,7 @@ export const Preview = meta.story({
               flex-wrap: wrap;
             }
             .cookies-details ul {
-              list-style: none;
+              list-style-type: '';
               padding: 0;
               margin: 0;
             }
@@ -271,7 +271,7 @@ export const NecessaryCookiesDialog = meta.story({
           {`
             /* Styles defined in application-specific css */
             .cookies-details ul {
-              list-style: none;
+              list-style-type: '';
               padding: 0;
               margin: 0;
             }

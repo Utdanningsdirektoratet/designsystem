@@ -241,7 +241,7 @@ export const Controlled = meta.story({
         <style>
           {`
         .tabs-controlled-list-unordered {
-          list-style: none;
+          list-style-type: '';
           padding: 0;
         }
         .tabs-controlled-list-item {

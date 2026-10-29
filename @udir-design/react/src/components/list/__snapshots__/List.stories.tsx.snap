@@ -3,7 +3,7 @@
 exports[`As Nav 1`] = `
 <style>
   .list-as-nav-list-unordered {
-  list-style: none; 
+  list-style-type: '';
   padding: 0;
 }
 </style>
@@ -144,7 +144,7 @@ exports[`Unordered 1`] = `
 exports[`With Links 1`] = `
 <style>
   .list-with-links-list-unordered {
-  list-style: none; 
+  list-style-type: '';
   padding: 0;
 }
 </style>
