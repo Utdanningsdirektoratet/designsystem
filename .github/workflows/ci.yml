@@ -92,6 +92,9 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm commitlint --from ${{ github.event.pull_request.base.sha}} --to ${{ github.event.pull_request.head.sha }} --verbose
 
+      - name: Check that @types/node matches the Node version in devEngines
+        run: ./@internal/ci/bin/check-types-node.ts
+
       - run: pnpm build
 
       - name: Fail if the build changed any checked-in files
