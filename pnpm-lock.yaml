@@ -357,8 +357,8 @@ catalogs:
       specifier: ^9.0.6
       version: 9.0.6
     highcharts:
-      specifier: ^12.6.2
-      version: 12.6.2
+      specifier: ^13.1.1
+      version: 13.1.1
     highcharts-react-official:
       specifier: ^3.2.3
       version: 3.2.3
@@ -911,10 +911,10 @@ importers:
         version: 9.0.6
       highcharts:
         specifier: 'catalog:'
-        version: 12.6.2
+        version: 13.1.1
       highcharts-react-official:
         specifier: 'catalog:'
-        version: 3.2.3(highcharts@12.6.2)(react@19.3.1)
+        version: 3.2.3(highcharts@13.1.1)(react@19.3.1)
       mdast-util-to-hast:
         specifier: 'catalog:'
         version: 13.2.1
@@ -4798,8 +4798,8 @@ packages:
       highcharts: '>=6.0.0'
       react: '>=16.8.0'
 
-  highcharts@12.6.2:
-    resolution: {integrity: sha512-I089uxv6AN2+qIQGhOSzFMjZJFnW+TAuP3WaEj1qRrH7XN3UR8wYzPsoIYX1sDTdQiHl4KJwGd+4bAwhaF1/3w==}
+  highcharts@13.1.1:
+    resolution: {integrity: sha512-k/smhxCgaqHDsuy9ZCWs8FJNTPrbzc8BmMA4M/8f9JMwv9HgmNZjulyWwZ9q9ly6AzHpskL9mhlW8vgsSqnstg==}
     peerDependencies:
       jspdf: ^4.1.0
       svg2pdf.js: ^2.7.0
@@ -10580,12 +10580,12 @@ snapshots:
       property-information: 7.2.0
       space-separated-tokens: 2.0.2
 
-  highcharts-react-official@3.2.3(highcharts@12.6.2)(react@19.3.1):
+  highcharts-react-official@3.2.3(highcharts@13.1.1)(react@19.3.1):
     dependencies:
-      highcharts: 12.6.2
+      highcharts: 13.1.1
       react: 19.3.1
 
-  highcharts@12.6.2: {}
+  highcharts@13.1.1: {}
 
   highlight.js@10.7.3: {}
 
