@@ -9,9 +9,13 @@
   & ol {
     @composes ds-list--unstyled from '@digdir/designsystemet-css/base.css';
 
-    /* Inline so the (empty) list marker shares a line with the link in Safari */
+    /*
+    Inline so the (empty) list marker shares a line with the link in Safari.
+    vertical-align: top stops baseline alignment from adding extra height to the line box.
+    */
     .ds-link {
       display: inline-flex;
+      vertical-align: top;
       width: fit-content;
 
       & svg {
