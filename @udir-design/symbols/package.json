@@ -51,7 +51,8 @@
     "postbuild": "pnpm run copy:svgs",
     "fetch-new:symbols": "node --env-file=../../.env.local --import tsx config/figma/index.ts",
     "generate:pngs": "node config/svg-to-png.js",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.tooling.json"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "catalog:",
