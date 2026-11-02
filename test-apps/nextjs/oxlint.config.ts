@@ -1,12 +1,14 @@
 import { defineConfig } from 'oxlint';
-import { TS_FILES, coreRulesForTypeScript } from '../../oxlint.shared.ts';
+import {
+  TS_FILES,
+  coreRulesForTypeScript,
+  rootOptions,
+} from '../../oxlint.shared.ts';
 
-// Standalone config (no `extends`), so `categories`/`env` are declared here.
+// Standalone config: it extends only the shared run options, not the root
+// config, so `categories`/`env` are declared here.
 export default defineConfig({
-  options: {
-    typeAware: true,
-    denyWarnings: true,
-  },
+  extends: [{ options: rootOptions }],
   plugins: ['nextjs', 'typescript'],
   categories: {
     correctness: 'off',

@@ -25,6 +25,23 @@ export type RestrictedPattern = Extract<PossiblePattern, object>;
 type NoUnusedVarsRule = Tuple<NonNullable<DummyRuleMap['no-unused-vars']>>;
 
 // ---------------------------------------------------------------------------
+// Run options
+// ---------------------------------------------------------------------------
+
+/**
+ * `options` for the root config and for standalone configs that `lint` runs
+ * from their own package directory, where that config becomes the root.
+ * Oxlint rejects `options` set directly in a nested config, which the
+ * language server reports when the editor opens the repository root, but
+ * accepts it when it comes through `extends`. Standalone configs therefore use
+ * `extends: [{ options: rootOptions }]`.
+ */
+export const rootOptions: NonNullable<OxlintConfig['options']> = {
+  typeAware: true,
+  denyWarnings: true,
+};
+
+// ---------------------------------------------------------------------------
 // File-pattern globs
 // ---------------------------------------------------------------------------
 
