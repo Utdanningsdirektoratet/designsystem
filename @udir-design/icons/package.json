@@ -59,7 +59,6 @@
     "@navikt/aksel-icons": "catalog:"
   },
   "devDependencies": {
-    "@babel/types": "catalog:",
     "@svgr/cli": "catalog:",
     "@svgr/core": "catalog:",
     "@types/react": "catalog:",
@@ -87,7 +86,6 @@
     "tsdown",
     "camelcase",
     "rimraf",
-    "@babel/types",
     "oxfmt"
   ]
 }
