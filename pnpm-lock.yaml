@@ -198,8 +198,8 @@ catalogs:
       specifier: ^7.0.1
       version: 7.0.1
     '@navikt/aksel-icons':
-      specifier: 8.15.0
-      version: 8.15.0
+      specifier: 8.21.0
+      version: 8.21.0
     '@pagefind/component-ui':
       specifier: ^1.6.0
       version: 1.6.0
@@ -747,7 +747,7 @@ importers:
     dependencies:
       '@navikt/aksel-icons':
         specifier: 'catalog:'
-        version: 8.15.0(@types/react@19.3.0)(react@19.3.1)
+        version: 8.21.0(@types/react@19.3.0)(react@19.3.1)
     devDependencies:
       '@svgr/cli':
         specifier: 'catalog:'
@@ -2090,17 +2090,6 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1 || 2.0.0-beta.2
       '@emnapi/runtime': ^1.7.1 || 2.0.0-beta.2
-
-  '@navikt/aksel-icons@8.15.0':
-    resolution: {integrity: sha512-+A/jWvZaMWkuG0SiG2GdJK0rlLTi/EIccV/3ax+y2hI9CmIqDzyUR9yflr24Q9wy2xwKY212kfrphSnVy1Zgiw==}
-    peerDependencies:
-      '@types/react': ^18.3.11 || ^19.0.0
-      react: ^18.3.1 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
 
   '@navikt/aksel-icons@8.21.0':
     resolution: {integrity: sha512-/RXiUI1dt4lt/prvz2ngVp7BryHzLFIpq0wW1cjMKxqaaJwE4eYvTDFAdAFUpu3dL4hNRaXsji1GOxGGAK/jqw==}
@@ -8187,11 +8176,6 @@ snapshots:
       '@emnapi/runtime': 1.9.2
       '@tybys/wasm-util': 0.10.4
     optional: true
-
-  '@navikt/aksel-icons@8.15.0(@types/react@19.3.0)(react@19.3.1)':
-    optionalDependencies:
-      '@types/react': 19.3.0
-      react: 19.3.1
 
   '@navikt/aksel-icons@8.21.0(@types/react@19.3.0)(react@19.3.1)':
     optionalDependencies:
