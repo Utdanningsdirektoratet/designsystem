@@ -80,7 +80,7 @@ catalog:
   camelcase: ^10.0.0
   chromatic: ^18.13.6
   clsx: 2.1.1
-  cssnano: ^7.1.9
+  cssnano: ^9.9.0
   diffable-html: ^6.0.1
   eslint-plugin-storybook: ^10.6.5
   fast-glob: ^3.3.3
@@ -102,6 +102,7 @@ catalog:
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
   postcss-nesting: ^14.0.3
+  postcss-svgo: ^9.1.0
   oxfmt: 0.74.0
   prettier: ^3.9.10
   ramda: ^0.32.0
@@ -244,6 +245,12 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   # ast-v8-to-istanbul@1.0.2 is safe according to https://socket.dev/npm/package/ast-v8-to-istanbul/overview/1.0.2
   - ast-v8-to-istanbul@1.0.2
+  # cssnano's plugin packages were staged publishes approved with 2FA until 2026-08-16
+  # (postcss-svgo 8.0.2–8.0.6, cssnano-utils 6.0.2–6.0.4). Later releases are not, but
+  # their provenance shows the same repository, workflow and branch (cssnano/cssnano,
+  # .github/workflows/publish.yml, main).
+  - cssnano-utils@9.0.0
+  - postcss-svgo@9.1.0
   # tinyexec@1.2.2 is safe according to https://github.com/tinylibs/tinyexec/issues/136
   # and https://socket.dev/npm/package/tinyexec/overview/1.2.2
   - tinyexec@1.2.2
