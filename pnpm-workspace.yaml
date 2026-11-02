@@ -70,10 +70,10 @@ catalog:
   "@u-elements/u-details": ^1.0.0
   "@u-elements/u-progress": ^1.1.0
   "@vitejs/plugin-react": ^6.1.2
-  "@vitest/browser": ^4.1.12
-  "@vitest/browser-playwright": ^4.1.12
-  "@vitest/coverage-v8": ^4.1.12
-  "@vitest/ui": ^4.1.12
+  "@vitest/browser": ^5.0.5
+  "@vitest/browser-playwright": ^5.0.5
+  "@vitest/coverage-v8": ^5.0.5
+  "@vitest/ui": ^5.0.5
   autoprefixer: ^10.6.2
   axe-core: ^4.14.0
   axe-playwright: ^2.2.2
@@ -131,7 +131,7 @@ catalog:
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.2.0
   vite: ^8.3.5
-  vitest: ^4.1.12
+  vitest: ^5.0.5
   yargs: ^18.2.0
   zod: ^4.6.7
   turbo: ^2.11.10
