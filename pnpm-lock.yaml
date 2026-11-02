@@ -192,8 +192,8 @@ catalogs:
       specifier: 1.23.0
       version: 1.23.0
     '@figma/rest-api-spec':
-      specifier: ^0.41.0
-      version: 0.41.0
+      specifier: ^0.47.0
+      version: 0.47.0
     '@hookform/resolvers':
       specifier: ^7.0.1
       version: 7.0.1
@@ -1001,7 +1001,7 @@ importers:
     devDependencies:
       '@figma/rest-api-spec':
         specifier: 'catalog:'
-        version: 0.41.0
+        version: 0.47.0
       '@svgr/cli':
         specifier: 'catalog:'
         version: 8.1.0(@typescript/typescript6@6.0.2)(supports-color@7.2.0)
@@ -1631,8 +1631,8 @@ packages:
       eslint:
         optional: true
 
-  '@figma/rest-api-spec@0.41.0':
-    resolution: {integrity: sha512-v43HkJE+ZRB0G1MXwN85LKhOE65WG1205kSCjGihdzNN2U9DyOz4Hnb7swjv+9dWyhJ+aYSQt76lFKIFqrLGNQ==}
+  '@figma/rest-api-spec@0.47.0':
+    resolution: {integrity: sha512-gU1Z8kF+cXyMREA+0mHVkKF4d6641zsDR7rLxJXIxa4r60SJzrK+etSrumiSWmyoYe/xkkCgTmm7lk0R/KzKDg==}
 
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
@@ -7832,7 +7832,7 @@ snapshots:
     dependencies:
       eslint-visitor-keys: 3.4.3
 
-  '@figma/rest-api-spec@0.41.0': {}
+  '@figma/rest-api-spec@0.47.0': {}
 
   '@floating-ui/core@1.8.0':
     dependencies:
