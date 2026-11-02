@@ -21,11 +21,8 @@ const searchInstance = configureInstance('default', {
   bundlePath: new URL('pagefind/', window.location.href).pathname,
   // In Norwegian, å is a separate letter, not a with an accent. By default,
   // Pagefind treats them as the same, so "å" matched every word starting with
-  // "a", and a quoted phrase with "å" found nothing on pages that also contain
-  // the word "a", such as in `<a>` in code examples. This also stops "ide" from
-  // matching "idé". Reconsider when these are fixed:
-  // https://github.com/Pagefind/pagefind/issues/1377
-  // https://github.com/Pagefind/pagefind/issues/1378
+  // "a". This also stops "ide" from matching "idé". Reconsider when this is
+  // fixed: https://github.com/Pagefind/pagefind/issues/1377
   exactDiacritics: true,
 });
 searchInstance.setLanguage('nb');

@@ -1,9 +1,3 @@
-import {
-  identifier,
-  isIdentifier,
-  isObjectPattern,
-  isObjectProperty,
-} from '@babel/types';
 import type { Config } from '@svgr/core';
 
 type Template = Required<Config>['template'];
@@ -20,19 +14,21 @@ const template: Template = (variables, { tpl }) => {
   // svgr destructures `titleId` from the props. Rename it to `_titleId` so the
   // `titleId` variable below can fall back to a generated id.
   const [propsPattern] = variables.props;
-  const titleIdProperty = isObjectPattern(propsPattern)
-    ? propsPattern.properties.find(
-        (property) =>
-          isObjectProperty(property) &&
-          isIdentifier(property.key, { name: 'titleId' }),
-      )
-    : undefined;
-  if (!isObjectProperty(titleIdProperty)) {
+  const titleIdProperty =
+    propsPattern?.type === 'ObjectPattern'
+      ? propsPattern.properties.find(
+          (property) =>
+            property.type === 'ObjectProperty' &&
+            property.key.type === 'Identifier' &&
+            property.key.name === 'titleId',
+        )
+      : undefined;
+  if (titleIdProperty?.type !== 'ObjectProperty') {
     throw new Error(
       'Expected svgr to destructure `titleId` from the props. Is `titleProp` enabled?',
     );
   }
-  titleIdProperty.value = identifier('_titleId');
+  titleIdProperty.value = { type: 'Identifier', name: '_titleId' };
   titleIdProperty.shorthand = false;
 
   // Explicit `forwardRef` type arguments without `ref`: with `SVGProps`, `@types/react`

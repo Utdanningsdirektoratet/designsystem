@@ -23,6 +23,10 @@ audit:
     # tools expand glob patterns from our own configuration, never from
     # outside input.
     - GHSA-vfj7-8cjw-p6xm
+    # deepmerge: prototype poisoning when merging untrusted objects, with no fix
+    # published. Only build tooling depends on it (`@svgr/cli`, and the copy
+    # bundled in style-dictionary), and it merges our own configuration there.
+    - GHSA-gcqx-w48m-w2h4
 
 # Peer dependencies are declared explicitly rather than auto-installed, so that
 # optional peers for features we don't use (such as unplugin-dts's api-extractor
@@ -34,7 +38,6 @@ autoInstallPeers: false
 
 catalog:
   "@arethetypeswrong/cli": ^0.18.5
-  "@babel/types": ^7.29.11
   "@types/js-yaml": ^4.0.9
   "@commitlint/cli": ^21.2.4
   "@commitlint/config-conventional": ^21.2.4
@@ -44,10 +47,10 @@ catalog:
   "@digdir/designsystemet-react": 1.23.0
   "@digdir/designsystemet-types": 1.23.0
   "@digdir/designsystemet-web": 1.23.0
-  "@figma/rest-api-spec": ^0.41.0
-  "@hookform/resolvers": ^5.9.2
-  "@navikt/aksel-icons": 8.15.0
-  "@pagefind/component-ui": ^1.5.2
+  "@figma/rest-api-spec": ^0.47.0
+  "@hookform/resolvers": ^7.0.1
+  "@navikt/aksel-icons": 8.21.0
+  "@pagefind/component-ui": ^1.6.0
   "@radix-ui/react-slot": ^1.5.0
   "@storybook/addon-a11y": ^10.6.5
   "@storybook/addon-docs": ^10.6.5
@@ -61,7 +64,7 @@ catalog:
   "@tokens-studio/sd-transforms": ^2.0.3
   "@types/diffable-html": ^5.0.2
   "@types/mdast": ^4.0.4
-  "@types/node": ^24.19.2
+  "@types/node": ^26.6.6
   "@types/ramda": ^0.32.0
   "@types/react": ^19.3.0
   "@types/react-dom": ^19.3.0
@@ -70,17 +73,17 @@ catalog:
   "@u-elements/u-details": ^1.0.0
   "@u-elements/u-progress": ^1.1.0
   "@vitejs/plugin-react": ^6.1.2
-  "@vitest/browser": ^4.1.12
-  "@vitest/browser-playwright": ^4.1.12
-  "@vitest/coverage-v8": ^4.1.12
-  "@vitest/ui": ^4.1.12
+  "@vitest/browser": ^5.0.5
+  "@vitest/browser-playwright": ^5.0.5
+  "@vitest/coverage-v8": ^5.0.5
+  "@vitest/ui": ^5.0.5
   autoprefixer: ^10.6.2
   axe-core: ^4.14.0
   axe-playwright: ^2.2.2
-  camelcase: ^9.0.0
+  camelcase: ^10.0.0
   chromatic: ^18.13.6
   clsx: 2.1.1
-  cssnano: ^7.1.9
+  cssnano: ^9.9.0
   diffable-html: ^6.0.1
   eslint-plugin-storybook: ^10.6.5
   fast-glob: ^3.3.3
@@ -89,22 +92,22 @@ catalog:
   hast-util-from-html: ^2.0.3
   hast-util-is-element: ^3.0.0
   hast-util-to-html: ^9.0.6
-  highcharts: ^12.6.2
+  highcharts: ^13.1.1
   highcharts-react-official: ^3.2.3
   husky: ^9.1.7
   js-yaml: ^5.5.0
-  jsdom: ^29.1.1
   mdast-util-to-hast: ^13.2.1
   next: ^16.4.3
-  pagefind: ^1.5.2
+  pagefind: ^1.6.0
   playwright: ^1.64.1
   postcss: ^8.5.32
-  postcss-cli: ^11.0.1
+  postcss-cli: ^12.0.0
   postcss-easy-import: ^4.0.0
   postcss-load-config: ^6.0.1
   postcss-nesting: ^14.0.3
+  postcss-svgo: ^9.1.0
   oxfmt: 0.74.0
-  prettier: 3.9.5
+  prettier: ^3.9.10
   ramda: ^0.32.0
   react: ^19.3.1
   react-dom: ^19.3.1
@@ -122,7 +125,7 @@ catalog:
   storybook-addon-pseudo-states: ^10.6.5
   style-dictionary: ^5.7.1
   svgo: ^4.1.0
-  tsdown: ^0.22.14
+  tsdown: ^0.23.4
   tslib: ^2.9.1
   tsx: ^4.23.15
   type-fest: ^5.10.0
@@ -132,7 +135,7 @@ catalog:
   unist-util-remove: ^4.0.0
   unist-util-visit: ^5.2.0
   vite: ^8.3.5
-  vitest: ^4.1.12
+  vitest: ^5.0.5
   yargs: ^18.2.0
   zod: ^4.6.7
   turbo: ^2.11.10
@@ -186,9 +189,20 @@ overrides:
   # Those it uses exist unchanged in TypeScript 6, and `lint:package-types` gave
   # the same results with both, so use the workspace's TypeScript instead.
   "@arethetypeswrong/core>typescript": "catalog:"
+  # `@svgr/cli` 8.1.0 depends on glob 8 and only calls `glob.sync()`, which glob
+  # 14 still has. It is passed directory paths, which glob returns unchanged.
+  "@svgr/cli>glob": ^14.0.2
   axios@>=1.0.0 <1.15.0: ">=1.15.0"
   brace-expansion@<=5.0.7: ^5.0.8
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  # minimatch 11 removed `Minimatch#matchOne()`, which TypeDoc needs a patch
+  # for, see `patchedDependencies`.
+  minimatch@<11.0.1: ^11.0.1
+  # globby 6 uses glob 7. globby 11 is the newest that can be `require`d, and
+  # uses fast-glob instead. The patch in `patchedDependencies` keeps the import
+  # order the same.
+  postcss-easy-import>globby: ^11.1.0
   postcss@<8.5.10: ^8.5.10
   semver@<7: ^7
   sharp@<0.35.0: ^0.35.0
@@ -232,6 +246,16 @@ patchedDependencies:
   # `BallongBlå.mjs` in `@udir-design/symbols`, fails in `lint:package-types`.
   # The patch decodes them as UTF-8.
   "@andrewbranch/untar.js@1.0.4": patches/@andrewbranch__untar.js@1.0.4.patch
+  # glob 7, which globby 6 used, sorted the files a pattern matches. globby 11
+  # returns them in the order it reads directories, which would change the
+  # order of the CSS that `components.css` imports, so the patch sorts them the
+  # way glob 7 did.
+  postcss-easy-import@^4.0.0: patches/postcss-easy-import@4.0.0.patch
+  # minimatch 11 removed `Minimatch#matchOne()`, which TypeDoc calls to decide
+  # which directories to search for entry points. The patch calls the public
+  # `match()` with `partial`, which runs `matchOne()` for each pattern the same
+  # way. Remove it when TypeDoc supports minimatch 11.
+  typedoc@^0.28.20: patches/typedoc@0.28.20.patch
 
 strictPeerDependencies: true
 
@@ -245,6 +269,12 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   # ast-v8-to-istanbul@1.0.2 is safe according to https://socket.dev/npm/package/ast-v8-to-istanbul/overview/1.0.2
   - ast-v8-to-istanbul@1.0.2
+  # cssnano's plugin packages were staged publishes approved with 2FA until 2026-08-16
+  # (postcss-svgo 8.0.2–8.0.6, cssnano-utils 6.0.2–6.0.4). Later releases are not, but
+  # their provenance shows the same repository, workflow and branch (cssnano/cssnano,
+  # .github/workflows/publish.yml, main).
+  - cssnano-utils@9.0.0
+  - postcss-svgo@9.1.0
   # tinyexec@1.2.2 is safe according to https://github.com/tinylibs/tinyexec/issues/136
   # and https://socket.dev/npm/package/tinyexec/overview/1.2.2
   - tinyexec@1.2.2

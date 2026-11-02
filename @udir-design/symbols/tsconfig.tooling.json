@@ -1,0 +1,17 @@
+{
+  // The build tooling, which runs in Node. Kept out of tsconfig.json, which tsdown
+  // uses to emit the published declarations.
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["config/**/*.ts", "*.ts", ".svgrrc.ts"]
+}

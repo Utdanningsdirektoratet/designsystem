@@ -1,41 +1,25 @@
-import {
-  blockStatement,
-  identifier,
-  importDefaultSpecifier,
-  isImportDeclaration,
-  isStringLiteral,
-  traverseFast,
-} from '@babel/types';
-import type {
-  JSXAttribute,
-  JSXIdentifier,
-  JSXOpeningElement,
-  JSXSpreadAttribute,
-} from '@babel/types';
 import type { Config } from '@svgr/core';
 
 type Template = Required<Config>['template'];
+type JSXOpeningElement = Parameters<Template>[0]['jsx']['openingElement'];
+type JSXAttributeOrSpread = JSXOpeningElement['attributes'][number];
+type JSXAttribute = Extract<JSXAttributeOrSpread, { type: 'JSXAttribute' }>;
+type JSXSpreadAttribute = Extract<
+  JSXAttributeOrSpread,
+  { type: 'JSXSpreadAttribute' }
+>;
 
 const template: Template = (variables, { tpl }) => {
-  traverseFast(blockStatement(variables.imports), (node) => {
-    if (
-      isImportDeclaration(node) &&
-      node.source.value === 'react' &&
-      node.importKind !== 'type'
-    ) {
-      node.specifiers.unshift(importDefaultSpecifier(identifier('React')));
-    }
-  });
-
   // Analyze original SVG dimensions (width/height or viewBox)
-  const svgOpen = variables.jsx.openingElement as JSXOpeningElement;
+  const svgOpen = variables.jsx.openingElement;
   const findAttr = (
     name: 'width' | 'height' | 'viewBox',
   ): JSXAttribute | undefined =>
     svgOpen.attributes.find(
       (a): a is JSXAttribute =>
         a.type === 'JSXAttribute' &&
-        (a.name as JSXIdentifier | undefined)?.name === name,
+        a.name.type === 'JSXIdentifier' &&
+        a.name.name === name,
     );
 
   const widthAttr = findAttr('width');
@@ -44,7 +28,7 @@ const template: Template = (variables, { tpl }) => {
 
   const asNumber = (attr?: JSXAttribute): number | null => {
     if (!attr?.value) return null;
-    if (isStringLiteral(attr.value))
+    if (attr.value.type === 'StringLiteral')
       return parseFloat(String(attr.value.value).replace(/px$/i, ''));
     if (
       attr.value.type === 'JSXExpressionContainer' &&

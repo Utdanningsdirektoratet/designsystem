@@ -302,8 +302,10 @@ describe('Cookie Information template', () => {
       detailsContent,
     );
     expect(detailsContent.nextElementSibling).toBe(domainInformation);
-    expect(detailsContent).toHaveTextContent('Detaljert informasjon.');
-    expect(detailsContent).toHaveTextContent('Nødvendige informasjonskapsler.');
+    expect(detailsContent).toMatchTextContent('Detaljert informasjon.');
+    expect(detailsContent).toMatchTextContent(
+      'Nødvendige informasjonskapsler.',
+    );
   });
 
   it('numbers cookie detail headings within their category', async () => {
@@ -350,7 +352,7 @@ describe('Cookie Information template', () => {
     templateWindow.renewCookieConsent();
     expect(dialog.open).toBe(true);
     expect(document.documentElement).toHaveClass('no-scroll');
-    expect(dialog).toHaveTextContent('Detaljert informasjon.');
+    expect(dialog).toMatchTextContent('Detaljert informasjon.');
   });
 
   it('shows optional category controls when optional categories exist', async () => {

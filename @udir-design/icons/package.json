@@ -53,13 +53,13 @@
     "generate-css": "tsx generate-css.ts",
     "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
     "clean": "rimraf ./dist && mkdir ./dist",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.tooling.json"
   },
   "dependencies": {
     "@navikt/aksel-icons": "catalog:"
   },
   "devDependencies": {
-    "@babel/types": "catalog:",
     "@svgr/cli": "catalog:",
     "@svgr/core": "catalog:",
     "@types/react": "catalog:",
@@ -87,7 +87,6 @@
     "tsdown",
     "camelcase",
     "rimraf",
-    "@babel/types",
     "oxfmt"
   ]
 }

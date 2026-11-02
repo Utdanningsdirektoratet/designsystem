@@ -45,6 +45,7 @@ build-storybook.log
 .env.*
 **/vite.config.*.timestamp*
 test-reports/
+.vitest/
 
 # Next.js
 .next

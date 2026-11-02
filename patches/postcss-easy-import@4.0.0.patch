@@ -1,0 +1,19 @@
+diff --git a/lib/resolve-glob.js b/lib/resolve-glob.js
+index a84251c5af99ee62010d3800a408469bd8f4e7d1..a89c6e239865383b0e1a759759ea5e438fabde78 100644
+--- a/lib/resolve-glob.js
++++ b/lib/resolve-glob.js
+@@ -40,7 +40,13 @@ module.exports = function resolveGlob(id, base, opts) {
+         return acc;
+     }, [], paths);
+ 
+-    return globby(patterns)
++    // globby 6 globbed each pattern with glob 7, which sorted the matches, and
++    // joined the results in pattern order. Newer globby keeps the order in
++    // which it reads directories, which would change the order of the imports.
++    return Promise.all(patterns.map(pattern => globby(pattern)))
++        .then(results => Array.from(new Set(results.flatMap(
++            matches => matches.sort((a, b) => a.localeCompare(b, 'en'))
++        ))))
+         .then(files => {
+             return flow(
+                 // Allows a file through if it has a prefix. If it doesn't have
