@@ -306,8 +306,8 @@ catalogs:
       specifier: ^2.2.2
       version: 2.2.2
     camelcase:
-      specifier: ^9.0.0
-      version: 9.0.0
+      specifier: ^10.0.0
+      version: 10.0.0
     chromatic:
       specifier: ^18.13.6
       version: 18.13.6
@@ -766,7 +766,7 @@ importers:
         version: 19.3.0
       camelcase:
         specifier: 'catalog:'
-        version: 9.0.0
+        version: 10.0.0
       oxfmt:
         specifier: 'catalog:'
         version: 0.74.0
@@ -884,7 +884,7 @@ importers:
         version: 2.2.2(playwright@1.64.1)
       camelcase:
         specifier: 'catalog:'
-        version: 9.0.0
+        version: 10.0.0
       chromatic:
         specifier: 'catalog:'
         version: 18.13.6
@@ -3998,13 +3998,13 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
+  camelcase@10.0.0:
+    resolution: {integrity: sha512-p1wew5BGDCONz/5R+xHF6ByqXQM2V+5r4e+FdlFUeROawuMPimdDOFLw5k2QSqp1rm5h2QAglToqJyvnsl3ArQ==}
+    engines: {node: '>=22'}
+
   camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
-
-  camelcase@9.0.0:
-    resolution: {integrity: sha512-TO9xmyXTZ9HUHI8M1OnvExxYB0eYVS/1e5s7IDMTAoIcwUd+aNcFODs6Xk83mobk0velyHFQgA1yIrvYc6wclw==}
-    engines: {node: '>=20'}
 
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
@@ -10159,9 +10159,9 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  camelcase@6.3.0: {}
+  camelcase@10.0.0: {}
 
-  camelcase@9.0.0: {}
+  camelcase@6.3.0: {}
 
   caniuse-api@3.0.0:
     dependencies:
