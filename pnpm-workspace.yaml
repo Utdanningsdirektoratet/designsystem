@@ -23,6 +23,10 @@ audit:
     # tools expand glob patterns from our own configuration, never from
     # outside input.
     - GHSA-vfj7-8cjw-p6xm
+    # deepmerge: prototype poisoning when merging untrusted objects, with no fix
+    # published. Only build tooling depends on it (`@svgr/cli`, and the copy
+    # bundled in style-dictionary), and it merges our own configuration there.
+    - GHSA-gcqx-w48m-w2h4
 
 # Peer dependencies are declared explicitly rather than auto-installed, so that
 # optional peers for features we don't use (such as unplugin-dts's api-extractor
@@ -185,9 +189,20 @@ overrides:
   # Those it uses exist unchanged in TypeScript 6, and `lint:package-types` gave
   # the same results with both, so use the workspace's TypeScript instead.
   "@arethetypeswrong/core>typescript": "catalog:"
+  # `@svgr/cli` 8.1.0 depends on glob 8 and only calls `glob.sync()`, which glob
+  # 14 still has. It is passed directory paths, which glob returns unchanged.
+  "@svgr/cli>glob": ^14.0.2
   axios@>=1.0.0 <1.15.0: ">=1.15.0"
   brace-expansion@<=5.0.7: ^5.0.8
   esbuild@>=0.17.0 <0.28.1: ^0.28.1
+  glob@>=9.0.0 <=14.0.1: ^14.0.2
+  # minimatch 11 removed `Minimatch#matchOne()`, which TypeDoc needs a patch
+  # for, see `patchedDependencies`.
+  minimatch@<11.0.1: ^11.0.1
+  # globby 6 uses glob 7. globby 11 is the newest that can be `require`d, and
+  # uses fast-glob instead. The patch in `patchedDependencies` keeps the import
+  # order the same.
+  postcss-easy-import>globby: ^11.1.0
   postcss@<8.5.10: ^8.5.10
   semver@<7: ^7
   sharp@<0.35.0: ^0.35.0
@@ -231,6 +246,16 @@ patchedDependencies:
   # `BallongBlå.mjs` in `@udir-design/symbols`, fails in `lint:package-types`.
   # The patch decodes them as UTF-8.
   "@andrewbranch/untar.js@1.0.4": patches/@andrewbranch__untar.js@1.0.4.patch
+  # glob 7, which globby 6 used, sorted the files a pattern matches. globby 11
+  # returns them in the order it reads directories, which would change the
+  # order of the CSS that `components.css` imports, so the patch sorts them the
+  # way glob 7 did.
+  postcss-easy-import@^4.0.0: patches/postcss-easy-import@4.0.0.patch
+  # minimatch 11 removed `Minimatch#matchOne()`, which TypeDoc calls to decide
+  # which directories to search for entry points. The patch calls the public
+  # `match()` with `partial`, which runs `matchOne()` for each pattern the same
+  # way. Remove it when TypeDoc supports minimatch 11.
+  typedoc@^0.28.20: patches/typedoc@0.28.20.patch
 
 strictPeerDependencies: true
 
