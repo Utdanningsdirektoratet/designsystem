@@ -146,9 +146,12 @@ jobs:
           VITE_STORAGE_CONTAINER: ${{ env.CONTAINER }}
           VITE_ASSET_VERSION: ${{ steps.version.outputs.value }}
 
+      # Hashed files never change, so they cache for a year. index.html is uploaded last and must be
+      # revalidated, so a new deploy is live immediately without purging Front Door.
       - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
         name: Upload app
         with:
           azcliversion: 2.78.0
           inlineScript: |
-            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination '$web' --destination-path illustrasjoner --source apps/illustrations/dist --overwrite true
+            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination '$web' --destination-path illustrasjoner/assets --source apps/illustrations/dist/assets --overwrite true --content-cache-control 'public, max-age=31536000, immutable'
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name '$web' --name illustrasjoner/index.html --file apps/illustrations/dist/index.html --overwrite true --content-type text/html --content-cache-control no-cache
