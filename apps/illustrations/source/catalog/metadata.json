@@ -9,9 +9,10 @@
       "name": "aktivitet-1",
       "tags": [
         "barn",
-        "musikk",
-        "leker",
-        "voksen"
+        "voksen",
+        "sammen",
+        "inne",
+        "lek"
       ],
       "variants": [
         {
@@ -563,8 +564,10 @@
       "name": "aktivitet-2",
       "tags": [
         "barn",
-        "kostyme",
-        "prinsesse"
+        "alene",
+        "ute",
+        "natur",
+        "lek"
       ],
       "variants": [
         {
@@ -1080,7 +1083,9 @@
       "name": "aktivitet-3a",
       "tags": [
         "barn",
-        "voksen"
+        "voksen",
+        "sammen",
+        "inne"
       ],
       "variants": [
         {
@@ -1594,6 +1599,14 @@
       "categoryId": "barnehage",
       "nodeId": "2005:480660",
       "name": "aktivitet-4",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "ute",
+        "natur",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-4-2005-480661",
@@ -2106,6 +2119,14 @@
       "categoryId": "barnehage",
       "nodeId": "2114:387753",
       "name": "aktivitet-5a",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "bok",
+        "lese"
+      ],
       "variants": [
         {
           "id": "aktivitet-5a-2114-387754",
@@ -2618,6 +2639,14 @@
       "categoryId": "barnehage",
       "nodeId": "2139:70014",
       "name": "aktivitet-5b",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "bok",
+        "lese"
+      ],
       "variants": [
         {
           "id": "aktivitet-5b-2139-70015",
@@ -3130,6 +3159,12 @@
       "categoryId": "barnehage",
       "nodeId": "2127:389253",
       "name": "aktivitet-6",
+      "tags": [
+        "barn",
+        "sammen",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-6-2127-389254",
@@ -3642,6 +3677,13 @@
       "categoryId": "barnehage",
       "nodeId": "4677:274215",
       "name": "aktivitet-3b",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "aktivitet-3b-4677-274216",
@@ -4154,6 +4196,13 @@
       "categoryId": "barnehage",
       "nodeId": "4865:141078",
       "name": "aktivitet-3c",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "aktivitet-3c-4865-141079",
@@ -4666,6 +4715,14 @@
       "categoryId": "barnehage",
       "nodeId": "4677:130459",
       "name": "aktivitet-8",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "ute",
+        "lek",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "aktivitet-8-4677-130460",
@@ -5178,6 +5235,14 @@
       "categoryId": "barnehage",
       "nodeId": "4677:135608",
       "name": "aktivitet-9",
+      "tags": [
+        "barn",
+        "voksen",
+        "inne",
+        "natur",
+        "digital",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-9-4677-135609",
@@ -5690,6 +5755,12 @@
       "categoryId": "barnehage",
       "nodeId": "4677:138579",
       "name": "aktivitet-10",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "aktivitet-10-4677-138580",
@@ -6202,6 +6273,13 @@
       "categoryId": "barnehage",
       "nodeId": "4677:144826",
       "name": "aktivitet-11a",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-11a-4677-144827",
@@ -6714,6 +6792,14 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122261",
       "name": "aktivitet-11b",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "lek",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "aktivitet-11b-4686-122262",
@@ -7226,6 +7312,13 @@
       "categoryId": "barnehage",
       "nodeId": "2262:426611",
       "name": "aktivitet-7",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-7-2262-426612",
@@ -7738,6 +7831,15 @@
       "categoryId": "barnehage",
       "nodeId": "4914:147953",
       "name": "aktivitet-12",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "natur",
+        "digital",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "aktivitet-12-4914-147954",
@@ -8250,6 +8352,14 @@
       "categoryId": "barnehage",
       "nodeId": "4937:151840",
       "name": "aktivitet-13",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "lek",
+        "digital"
+      ],
       "variants": [
         {
           "id": "aktivitet-13-4937-151841",
@@ -8762,6 +8872,12 @@
       "categoryId": "barnehage",
       "nodeId": "1258:175622",
       "name": "miljø-1",
+      "tags": [
+        "barn",
+        "alene",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "miljo-1-1258-175623",
@@ -9274,6 +9390,14 @@
       "categoryId": "barnehage",
       "nodeId": "722:41045",
       "name": "miljø-2",
+      "tags": [
+        "barn",
+        "voksen",
+        "alene",
+        "sammen ute",
+        "natur",
+        "lek"
+      ],
       "variants": [
         {
           "id": "miljo-2-722-41046",
@@ -9786,6 +9910,14 @@
       "categoryId": "barnehage",
       "nodeId": "1684:157929",
       "name": "miljø-3",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "ute",
+        "natur",
+        "lek"
+      ],
       "variants": [
         {
           "id": "miljo-3-1684-157930",
@@ -10298,6 +10430,12 @@
       "categoryId": "barnehage",
       "nodeId": "4022:390227",
       "name": "miljø-4",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "digital"
+      ],
       "variants": [
         {
           "id": "miljo-4-4022-390228",
@@ -10810,6 +10948,13 @@
       "categoryId": "barnehage",
       "nodeId": "4305:121337",
       "name": "miljø-5",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "lek"
+      ],
       "variants": [
         {
           "id": "miljo-5-4305-121338",
@@ -11322,6 +11467,12 @@
       "categoryId": "barnehage",
       "nodeId": "245:72917",
       "name": "lek-1a",
+      "tags": [
+        "barn",
+        "alene",
+        "inne",
+        "lek"
+      ],
       "variants": [
         {
           "id": "lek-1a-245-72918",
@@ -11834,6 +11985,13 @@
       "categoryId": "barnehage",
       "nodeId": "731:52808",
       "name": "lek-2",
+      "tags": [
+        "barn",
+        "sammen",
+        "ute",
+        "lek",
+        "natur"
+      ],
       "variants": [
         {
           "id": "lek-2-731-52809",
@@ -12346,6 +12504,14 @@
       "categoryId": "barnehage",
       "nodeId": "1684:156266",
       "name": "lek-3",
+      "tags": [
+        "barn",
+        "sammen",
+        "inne",
+        "lek",
+        "tegne",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "lek-3-1684-156267",
@@ -12858,6 +13024,12 @@
       "categoryId": "barnehage",
       "nodeId": "2005:480809",
       "name": "lek-4a",
+      "tags": [
+        "barn",
+        "sammen",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "lek-4a-2005-480810",
@@ -13370,6 +13542,13 @@
       "categoryId": "barnehage",
       "nodeId": "2056:396701",
       "name": "lek-5",
+      "tags": [
+        "barn",
+        "alene",
+        "natur",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "lek-5-2056-396702",
@@ -13882,6 +14061,14 @@
       "categoryId": "barnehage",
       "nodeId": "2114:387902",
       "name": "lek-6",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "ute",
+        "lek",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "lek-6-2114-387903",
@@ -14394,6 +14581,13 @@
       "categoryId": "barnehage",
       "nodeId": "2127:390306",
       "name": "lek-7",
+      "tags": [
+        "barn",
+        "sammen",
+        "ute",
+        "lek",
+        "natur"
+      ],
       "variants": [
         {
           "id": "lek-7-2127-390307",
@@ -14906,6 +15100,14 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122709",
       "name": "lek-1b",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "inne",
+        "lek",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "lek-1b-4686-122710",
@@ -15418,6 +15620,13 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122857",
       "name": "lek-4b",
+      "tags": [
+        "barn",
+        "sammen",
+        "ute",
+        "lek",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "lek-4b-4686-122858",
@@ -15930,6 +16139,12 @@
       "categoryId": "barnehage",
       "nodeId": "4677:223572",
       "name": "lek-9a",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "inne"
+      ],
       "variants": [
         {
           "id": "lek-9a-4677-223573",
@@ -16442,6 +16657,13 @@
       "categoryId": "barnehage",
       "nodeId": "4677:227497",
       "name": "lek-10a",
+      "tags": [
+        "barn",
+        "voksen",
+        "lek",
+        "natur",
+        "ute"
+      ],
       "variants": [
         {
           "id": "lek-10a-4677-227498",
@@ -16954,6 +17176,13 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122413",
       "name": "lek-10b",
+      "tags": [
+        "barn",
+        "voksen",
+        "samisk",
+        "lek natur",
+        "ute"
+      ],
       "variants": [
         {
           "id": "lek-10b-4686-122414",
@@ -17466,6 +17695,13 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122561",
       "name": "lek-9b",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "inne",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "lek-9b-4686-122562",
@@ -17978,6 +18214,12 @@
       "categoryId": "barnehage",
       "nodeId": "2262:426462",
       "name": "lek-8",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "inne"
+      ],
       "variants": [
         {
           "id": "lek-8-2262-426463",
@@ -18490,6 +18732,13 @@
       "categoryId": "grunnskole",
       "nodeId": "49:109783",
       "name": "aktivitet-2",
+      "tags": [
+        "barn",
+        "alene",
+        "natur",
+        "ute",
+        "lek"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-2-49-109784",
@@ -19003,9 +19252,10 @@
       "nodeId": "49:122551",
       "name": "aktivitet-1",
       "tags": [
-        "skole",
         "barn",
-        "lek",
+        "sammen",
+        "natur",
+        "bygning",
         "ute"
       ],
       "variants": [
@@ -19520,6 +19770,15 @@
       "categoryId": "grunnskole",
       "nodeId": "229:54967",
       "name": "aktivitet-3",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "sammen",
+        "digital",
+        "inne",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-3-229-54968",
@@ -20032,6 +20291,14 @@
       "categoryId": "grunnskole",
       "nodeId": "954:9526",
       "name": "aktivitet-4",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "digital",
+        "inne",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-4-954-9527",
@@ -20544,6 +20811,13 @@
       "categoryId": "grunnskole",
       "nodeId": "1289:188332",
       "name": "aktivitet-5",
+      "tags": [
+        "barn",
+        "alene",
+        "lek",
+        "natur",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-5-1289-188333",
@@ -21056,6 +21330,15 @@
       "categoryId": "grunnskole",
       "nodeId": "1516:191739",
       "name": "aktivitet-6",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "lek",
+        "natur",
+        "dyr",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-6-1516-191740",
@@ -21568,6 +21851,11 @@
       "categoryId": "grunnskole",
       "nodeId": "1635:137344",
       "name": "aktivitet-8",
+      "tags": [
+        "barn",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-8-1635-137345",
@@ -22080,6 +22368,14 @@
       "categoryId": "grunnskole",
       "nodeId": "1635:150798",
       "name": "aktivitet-9",
+      "tags": [
+        "barn",
+        "ungdom",
+        "sammen",
+        "ute",
+        "bygning",
+        "bok"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-9-1635-150799",
@@ -22592,6 +22888,14 @@
       "categoryId": "grunnskole",
       "nodeId": "1635:121925",
       "name": "aktivitet-7",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "natur",
+        "bygning",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-7-1635-121926",
@@ -23104,6 +23408,15 @@
       "categoryId": "grunnskole",
       "nodeId": "2056:396549",
       "name": "aktivitet-10",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "lek",
+        "bygning",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-10-2056-396550",
@@ -23616,6 +23929,15 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:205330",
       "name": "aktivitet-11",
+      "tags": [
+        "barn",
+        "ungdom",
+        "sammen",
+        "lek",
+        "samisk",
+        "bygning",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-11-6102-205331",
@@ -24128,6 +24450,17 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:209039",
       "name": "aktivitet-12",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "bok",
+        "lese",
+        "skrive",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-12-6102-209040",
@@ -24640,6 +24973,14 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:219073",
       "name": "aktivitet-13",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "bok",
+        "lese",
+        "inne"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-13-6102-219074",
@@ -25152,6 +25493,13 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:243856",
       "name": "aktivitet-14",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "lek",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-14-6102-243857",
@@ -25664,6 +26012,13 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:246161",
       "name": "aktivitet-15",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "digital",
+        "inne"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-15-6102-246162",
@@ -26176,6 +26531,16 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:250392",
       "name": "aktivitet-16",
+      "tags": [
+        "barn",
+        "sammen",
+        "lek",
+        "natur",
+        "dyr",
+        "digital",
+        "inne",
+        "tegne"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-16-6102-250393",
@@ -26688,6 +27053,13 @@
       "categoryId": "grunnskole",
       "nodeId": "6099:166552",
       "name": "aktivitet-17",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "lek",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-17-6099-166553",
@@ -27200,6 +27572,19 @@
       "categoryId": "grunnskole",
       "nodeId": "246:89086",
       "name": "læring-1",
+      "tags": [
+        "barn",
+        "ungdom",
+        "sammen",
+        "bok",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-1-246-89087",
@@ -27712,6 +28097,18 @@
       "categoryId": "grunnskole",
       "nodeId": "1217:77746",
       "name": "læring-2",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-2-1217-77747",
@@ -28224,6 +28621,18 @@
       "categoryId": "grunnskole",
       "nodeId": "1219:25522",
       "name": "læring-3",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "bok",
+        "lese",
+        "skrive",
+        "regne",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-3-1219-25523",
@@ -28736,6 +29145,18 @@
       "categoryId": "grunnskole",
       "nodeId": "1219:32330",
       "name": "læring-4a",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "bok",
+        "lese",
+        "skrive",
+        "regne",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-4a-1219-32331",
@@ -29248,6 +29669,17 @@
       "categoryId": "grunnskole",
       "nodeId": "3251:136941",
       "name": "læring-4b",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "bok",
+        "lese",
+        "skrive",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-4b-3251-136942",
@@ -29760,6 +30192,19 @@
       "categoryId": "grunnskole",
       "nodeId": "1417:157540",
       "name": "læring-5",
+      "tags": [
+        "barn",
+        "sammen",
+        "bok",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-5-1417-157541",
@@ -30272,6 +30717,20 @@
       "categoryId": "grunnskole",
       "nodeId": "1516:212670",
       "name": "læring-6",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "bok",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "inne",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-6-1516-212671",
@@ -30784,6 +31243,17 @@
       "categoryId": "grunnskole",
       "nodeId": "1532:84339",
       "name": "læring-7",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "bok",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "inne"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-7-1532-84340",
@@ -31296,6 +31766,19 @@
       "categoryId": "grunnskole",
       "nodeId": "1635:150650",
       "name": "læring-8",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "bok",
+        "digital",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "inne",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-8-1635-150651",
@@ -31808,6 +32291,15 @@
       "categoryId": "grunnskole",
       "nodeId": "2056:340947",
       "name": "læring-9",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "lese",
+        "inne",
+        "klasserom",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-9-2056-340948",
@@ -32320,6 +32812,14 @@
       "categoryId": "grunnskole",
       "nodeId": "3495:127697",
       "name": "læring-10",
+      "tags": [
+        "barn",
+        "voksen",
+        "sammen",
+        "natur",
+        "digital",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-10-3495-127698",
@@ -33344,6 +33844,19 @@
       "categoryId": "grunnskole",
       "nodeId": "6102:213894",
       "name": "læring-12a",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "bok",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "inne",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-12a-6102-213895",
@@ -33856,6 +34369,19 @@
       "categoryId": "grunnskole",
       "nodeId": "6284:178576",
       "name": "læring-12b",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "bok",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "inne",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-12b-6284-178577",
@@ -34368,6 +34894,17 @@
       "categoryId": "grunnskole",
       "nodeId": "6396:173117",
       "name": "læring-13",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "alene",
+        "sammen",
+        "digital",
+        "skjerm",
+        "inne",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-13-6396-173118",
@@ -34880,6 +35417,20 @@
       "categoryId": "grunnskole",
       "nodeId": "6475:186660",
       "name": "læring-14",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "alene",
+        "sammen",
+        "digital",
+        "skjerm",
+        "inne",
+        "lese",
+        "skrive",
+        "regne",
+        "bok"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-14-6475-186661",
@@ -35392,6 +35943,18 @@
       "categoryId": "grunnskole",
       "nodeId": "6475:194116",
       "name": "læring-15",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "digital",
+        "skjerm",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-15-6475-194117",
@@ -35904,6 +36467,19 @@
       "categoryId": "grunnskole",
       "nodeId": "6475:194264",
       "name": "læring-16",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "sammen",
+        "digital",
+        "skjerm",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-16-6475-194265",
@@ -36416,6 +36992,13 @@
       "categoryId": "grunnskole",
       "nodeId": "6986:183794",
       "name": "aktivitet-2b",
+      "tags": [
+        "barn",
+        "alene",
+        "lek",
+        "natur",
+        "ute"
+      ],
       "variants": [
         {
           "id": "grunnskole-aktivitet-2b-6986-183813",
@@ -36928,6 +37511,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "49:146607",
       "name": "arbeid-1",
+      "tags": [
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital",
+        "regning"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-1-49-146608",
@@ -37440,6 +38030,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1596:159551",
       "name": "arbeid-3a",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "alene",
+        "sammen",
+        "bok",
+        "lese"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-3a-1596-159552",
@@ -37952,6 +38550,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2072:59431",
       "name": "arbeid-3b",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "alene",
+        "sammen",
+        "bok",
+        "lese"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-3b-2072-59432",
@@ -38464,6 +39070,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1959:132397",
       "name": "arbeid-4",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "alene",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-4-1959-132398",
@@ -38976,6 +39589,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1959:135950",
       "name": "arbeid-5",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "alene",
+        "sammen",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-5-1959-135951",
@@ -39228,258 +39849,6 @@
             "Bakgrunn": "Nei"
           },
           "svg": "voksen-og-generell-arbeid-5-1959-136031.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136035",
-          "nodeId": "1959:136035",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136035.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136036",
-          "nodeId": "1959:136036",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136036.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136037",
-          "nodeId": "1959:136037",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136037.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136038",
-          "nodeId": "1959:136038",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136038.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136039",
-          "nodeId": "1959:136039",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136039.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136040",
-          "nodeId": "1959:136040",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136040.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136041",
-          "nodeId": "1959:136041",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136041.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136042",
-          "nodeId": "1959:136042",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136042.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136043",
-          "nodeId": "1959:136043",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136043.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136044",
-          "nodeId": "1959:136044",
-          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1350,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Portrett (4:5)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136044.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136045",
-          "nodeId": "1959:136045",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136045.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136046",
-          "nodeId": "1959:136046",
-          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
-          "width": 1080,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Kvadrat (1:1)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136046.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136047",
-          "nodeId": "1959:136047",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136047.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136048",
-          "nodeId": "1959:136048",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136048.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136049",
-          "nodeId": "1959:136049",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136049.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136050",
-          "nodeId": "1959:136050",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "grønn",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136050.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136051",
-          "nodeId": "1959:136051",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136051.svg"
-        },
-        {
-          "id": "voksen-og-generell-arbeid-5-1959-136052",
-          "nodeId": "1959:136052",
-          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Nei",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "brun",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "voksen-og-generell-arbeid-5-1959-136052.svg"
         }
       ]
     },
@@ -39488,6 +39857,12 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1959:136098",
       "name": "arbeid-6",
+      "tags": [
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-6-1959-136099",
@@ -40000,6 +40375,11 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1959:136246",
       "name": "arbeid-7",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "alene"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-7-1959-136247",
@@ -40512,6 +40892,12 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1258:148567",
       "name": "arbeid-2",
+      "tags": [
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-2-1258-148568",
@@ -41024,6 +41410,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2108:378792",
       "name": "arbeid-8",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-8-2108-378793",
@@ -41536,6 +41929,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2108:378940",
       "name": "arbeid-9",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-9-2108-378941",
@@ -42048,6 +42448,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2101:358479",
       "name": "arbeid-10",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "skjerm",
+        "digital",
+        "regning"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-10-2101-358480",
@@ -43072,6 +43480,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1536:200003",
       "name": "samarbeid-2",
+      "tags": [
+        "voksen",
+        "sammen",
+        "inne",
+        "bok",
+        "skrive",
+        "lese"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-2-1536-200004",
@@ -43584,6 +44000,11 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1689:275963",
       "name": "samarbeid-3",
+      "tags": [
+        "voksen",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-3-1689-275964",
@@ -44096,6 +44517,17 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2005:480511",
       "name": "samarbeid-4",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "inne",
+        "sammen",
+        "skjerm",
+        "digital",
+        "regne",
+        "lese",
+        "tavle"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-4-2005-480512",
@@ -44608,6 +45040,16 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "4022:398013",
       "name": "samarbeid-5",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "skjerm",
+        "digital",
+        "lese",
+        "inne",
+        "tavle"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-5-4022-398014",
@@ -45120,6 +45562,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "4038:403832",
       "name": "samarbeid-6",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne",
+        "skjerm",
+        "tavle"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-6-4038-403833",
@@ -45632,6 +46082,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "6077:197258",
       "name": "samarbeid-7",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-7-6077-197259",
@@ -46144,6 +46601,13 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "957:18895",
       "name": "sikkerhet-1",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "sammen",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-sikkerhet-1-957-35037",
@@ -46656,6 +47120,12 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "962:24016",
       "name": "sikkerhet-2",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-sikkerhet-2-962-24017",
@@ -47168,6 +47638,10 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "3951:274592",
       "name": "sikkerhet-3",
+      "tags": [
+        "bok",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-sikkerhet-3-3951-274593",
@@ -47680,6 +48154,10 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "3952:278842",
       "name": "sikkerhet-4",
+      "tags": [
+        "bok",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-sikkerhet-4-3952-278843",
@@ -48192,6 +48670,16 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2056:333197",
       "name": "læring-1",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "barn",
+        "lek",
+        "bygning",
+        "sammen",
+        "ute",
+        "natur"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-1-2056-333198",
@@ -48704,6 +49192,16 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2317:247943",
       "name": "læring-2a",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "barn",
+        "lek",
+        "bygning",
+        "sammen",
+        "ute",
+        "natur"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-2a-2317-247944",
@@ -49216,6 +49714,16 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "3111:428146",
       "name": "læring-2b",
+      "tags": [
+        "voksen",
+        "ungdom",
+        "barn",
+        "lek",
+        "bygning",
+        "sammen",
+        "ute",
+        "natur"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-2b-3111-428147",
@@ -49728,6 +50236,12 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2337:95963",
       "name": "læring-3",
+      "tags": [
+        "barn",
+        "ungdom",
+        "lese",
+        "digital"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-3-2337-95964",
@@ -50240,6 +50754,19 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "2884:197173",
       "name": "læring-4",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "lese",
+        "skrive",
+        "regne",
+        "tegne",
+        "digital",
+        "bok",
+        "skjerm",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-4-2884-197174",
@@ -50752,6 +51279,14 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "6503:188006",
       "name": "læring-5",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "ute",
+        "natur",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-laering-5-6503-188007",
@@ -51264,6 +51799,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "49:133687",
       "name": "læring-1",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "bok",
+        "skjerm",
+        "lese",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-1-49-133688",
@@ -51776,6 +52320,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1058:88773",
       "name": "læring-2",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-2-1058-88774",
@@ -52288,6 +52838,17 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1077:7351",
       "name": "læring-3",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne",
+        "tavle",
+        "regne",
+        "lese",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-3-1077-7352",
@@ -52800,6 +53361,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1241:133650",
       "name": "læring-4",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne",
+        "tavle",
+        "skrive"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-4-1241-133651",
@@ -53312,6 +53882,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "49:140147",
       "name": "læring-5",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "ute",
+        "natur"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-5-49-140148",
@@ -53824,6 +54401,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1686:238177",
       "name": "læring-6",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital",
+        "lese",
+        "skrive"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-6-1686-238178",
@@ -54336,6 +54922,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1860:54433",
       "name": "læring-7",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-7-1860-54434",
@@ -54848,6 +55440,11 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1866:63371",
       "name": "læring-8",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-8-1866-63372",
@@ -55360,6 +55957,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1903:92411",
       "name": "læring-10",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-10-1903-92412",
@@ -55872,6 +56475,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1912:221266",
       "name": "læring-11",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "ute"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-11-1912-221267",
@@ -56384,6 +56993,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:253947",
       "name": "læring-12",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-12-1932-253948",
@@ -56896,6 +57511,11 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:260488",
       "name": "læring-13",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-13-1932-260489",
@@ -57408,6 +58028,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:260636",
       "name": "læring-14",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-14-1932-260637",
@@ -57920,6 +58546,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:260784",
       "name": "læring-15",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "natur",
+        "ute",
+        "samisk"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-15-1932-260785",
@@ -58432,6 +59066,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:260932",
       "name": "læring-16",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-16-1932-260933",
@@ -58944,6 +59584,11 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2005:474693",
       "name": "læring-17",
+      "tags": [
+        "ungdom",
+        "alene",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-17-2005-474694",
@@ -59456,6 +60101,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1932:261080",
       "name": "læring-9",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "natur"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-9-1932-261081",
@@ -59968,6 +60619,18 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2114:398734",
       "name": "læring-18",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen",
+        "skjerm",
+        "bok",
+        "lese",
+        "skrive",
+        "regne",
+        "digital"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-18-2114-398735",
@@ -60480,6 +61143,17 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2114:398883",
       "name": "læring-19",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen",
+        "skjerm",
+        "lese",
+        "skrive",
+        "regne",
+        "digital"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-19-2114-398884",
@@ -60992,6 +61666,17 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2114:406276",
       "name": "læring-20",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen",
+        "skjerm",
+        "lese",
+        "skrive",
+        "regne",
+        "digital"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-20-2114-406277",
@@ -61504,6 +62189,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1241:176531",
       "name": "aktivitet-1",
+      "tags": [
+        "barn",
+        "ungdom",
+        "voksen",
+        "lek",
+        "sammen",
+        "inne",
+        "ute"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-aktivitet-1-1241-176532",
@@ -62016,6 +62710,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2056:399106",
       "name": "aktivitet-2",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-aktivitet-2-2056-399107",
@@ -62528,6 +63228,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2056:399254",
       "name": "aktivitet-3a",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "ute"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-aktivitet-3a-2056-399255",
@@ -63040,6 +63746,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3111:367609",
       "name": "aktivitet-3b",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "ute"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-aktivitet-3b-3111-367610",
@@ -63552,6 +64264,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "1533:153325",
       "name": "miljø-1",
+      "tags": [
+        "ungdom",
+        "alene",
+        "sammen",
+        "ute",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-miljo-1-1533-153326",
@@ -64064,6 +64783,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "2127:385340",
       "name": "miljø-2",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "bok",
+        "sammen"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-miljo-2-2127-385341",
@@ -64576,6 +65301,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3869:363956",
       "name": "læring-21",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "digital",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-21-3869-363957",
@@ -65088,6 +65820,16 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3869:366981",
       "name": "læring-22",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "digital",
+        "skjerm",
+        "lese",
+        "skrive",
+        "regne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-22-3869-366982",
@@ -65600,6 +66342,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:160805",
       "name": "læring-23",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "digital",
+        "skjerm"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-23-3872-160806",
@@ -66112,6 +66861,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:160953",
       "name": "læring-24",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "digital",
+        "skjerm",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-24-3872-160954",
@@ -66624,6 +67381,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161101",
       "name": "læring-25",
+      "tags": [
+        "voksen",
+        "alene",
+        "sammen",
+        "bok",
+        "lese"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-25-3872-161102",
@@ -67136,6 +67900,17 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161249",
       "name": "læring-26",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "sammen",
+        "digital",
+        "skjerm",
+        "regne",
+        "lese",
+        "skrive"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-26-3872-161250",
@@ -67648,6 +68423,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161397",
       "name": "læring-27",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "skjerm",
+        "digital",
+        "lese",
+        "skrive"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-27-3872-161398",
@@ -68160,6 +68943,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161545",
       "name": "læring-28",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "ute"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-28-3872-161546",
@@ -68672,6 +69461,13 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161693",
       "name": "læring-29",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "ute",
+        "bygning"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-29-3872-161694",
@@ -69184,6 +69980,12 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161841",
       "name": "læring-30",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "lese"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-30-3872-161842",
@@ -69696,6 +70498,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "4038:404130",
       "name": "læring-31",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "lese",
+        "skrive",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-31-4038-404131",
@@ -70208,6 +71018,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "6044:150921",
       "name": "læring-32",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "skrive",
+        "regne",
+        "sammen",
+        "inne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-32-6044-150922",
@@ -70720,6 +71538,14 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "6069:154021",
       "name": "læring-33",
+      "tags": [
+        "ungdom",
+        "voksen",
+        "sammen",
+        "inne",
+        "tavle",
+        "klasserom"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-33-6069-154022",
@@ -71233,9 +72059,7 @@
       "nodeId": "1382:184124",
       "name": "sikkerhet-1",
       "tags": [
-        "sikkerhet",
-        "innlogging",
-        "trussel"
+        "intern"
       ],
       "variants": [
         {
@@ -71498,9 +72322,7 @@
       "nodeId": "1382:186279",
       "name": "sikkerhet-2",
       "tags": [
-        "sikkerhet",
-        "ansatt",
-        "id"
+        "intern"
       ],
       "variants": [
         {
@@ -71762,11 +72584,6 @@
       "categoryId": "internbruk",
       "nodeId": "1956:102026",
       "name": "hverdag-1",
-      "tags": [
-        "kontor",
-        "retning",
-        "piler"
-      ],
       "variants": [
         {
           "id": "internbruk-hverdag-1-1956-102269",
@@ -71798,9 +72615,7 @@
       "nodeId": "1956:109166",
       "name": "hverdag-2",
       "tags": [
-        "kontor",
-        "kaffe",
-        "kopper"
+        "intern"
       ],
       "variants": [
         {
@@ -71833,9 +72648,7 @@
       "nodeId": "1956:109240",
       "name": "hverdag-3",
       "tags": [
-        "kontor",
-        "kaffe",
-        "kopp"
+        "intern"
       ],
       "variants": [
         {
@@ -71869,54 +72682,11 @@
       ]
     },
     {
-      "id": "internbruk-hverdag-4-1956-109314",
-      "categoryId": "internbruk",
-      "nodeId": "1956:109314",
-      "name": "hverdag-4",
-      "tags": [
-        "måke",
-        "pølse",
-        "rot"
-      ],
-      "variants": [
-        {
-          "id": "internbruk-hverdag-4-1956-109315",
-          "nodeId": "1956:109315",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Ja"
-          },
-          "svg": "internbruk-hverdag-4-1956-109315.svg"
-        },
-        {
-          "id": "internbruk-hverdag-4-2370-462583",
-          "nodeId": "2370:462583",
-          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
-          "width": 1920,
-          "height": 1080,
-          "properties": {
-            "Geometrisk form": "Ja",
-            "Format": "Landskap (16:9)",
-            "Fargetema": "blå",
-            "Bakgrunn": "Nei"
-          },
-          "svg": "internbruk-hverdag-4-2370-462583.svg"
-        }
-      ]
-    },
-    {
       "id": "internbruk-feiring-2072-62981",
       "categoryId": "internbruk",
       "nodeId": "2072:62981",
       "name": "feiring",
       "tags": [
-        "ballonger",
-        "bursdag",
         "feiring"
       ],
       "variants": [
