@@ -5,26 +5,6 @@ import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './ResourceLinks.module.css';
 
-export function ComponentResourceLink() {
-  return (
-    <Card className={styles.horizontalCard}>
-      <Card.Block className={styles.illustration} style={{ height: 150 }}>
-        {figmaIllustration}
-      </Card.Block>
-      <Card.Block>
-        <Heading level={2}>
-          <a href="https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek--beta-?m=auto&node-id=4-476&t=m9jA1aHGUTH3tuve-1">
-            Komponenter i Figma
-          </a>
-        </Heading>
-        <Paragraph style={{ lineBreak: 'auto' }}>
-          Oversikten over komponentene finnes også tilgjengelig i Figma.
-        </Paragraph>
-      </Card.Block>
-    </Card>
-  );
-}
-
 export function ResourceLink({
   href,
   illustration,
