@@ -21,6 +21,17 @@ export function propertyValueDisplayLabel(value: string): string {
   return value.charAt(0).toLocaleUpperCase('nb') + value.slice(1);
 }
 
+/** The text before and after the search term, so the term can be rendered as its own element. */
+export function searchSummaryParts(
+  count: number,
+  categoryLabel: string,
+): { before: string; after: string } {
+  return {
+    before: count === 0 ? 'Ingen treff for' : `Viser ${count} treff for`,
+    after: `i ${categoryLabel}`,
+  };
+}
+
 /** Status text for the results; `query` is the active search, empty when none applies. */
 export function resultsSummary(
   count: number,
@@ -29,9 +40,8 @@ export function resultsSummary(
 ): string {
   const search = query.trim();
   if (search) {
-    return count === 0
-      ? `Ingen treff for «${search}» i ${categoryLabel}`
-      : `Viser ${count} treff for «${search}» i ${categoryLabel}`;
+    const { before, after } = searchSummaryParts(count, categoryLabel);
+    return `${before} «${search}» ${after}`;
   }
   if (count === 0) return `Ingen illustrasjoner i ${categoryLabel}`;
   return `Viser ${count} ${count === 1 ? 'illustrasjon' : 'illustrasjoner'} i ${categoryLabel}`;

@@ -97,6 +97,40 @@ describe('IllustrationGallery', () => {
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
+  it('clears the search from the chip in the results summary', () => {
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
+    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
+
+    const search = screen.getByRole('searchbox', {
+      name: searchLabel,
+    }) as HTMLInputElement;
+    typeSearch(search, 'TESTFAMILIE');
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Tøm søket «TESTFAMILIE»' }),
+    );
+    act(() => {
+      vi.advanceTimersByTime(300);
+    });
+
+    expect(search.value).toBe('');
+    expect(document.activeElement).toBe(search);
+    expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
+  });
+
+  it('does not bring back a cleared search when typing again', () => {
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
+    const search = screen.getByRole('searchbox', { name: searchLabel });
+    typeSearch(search, 'TESTFAMILIE');
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Tøm søket «TESTFAMILIE»' }),
+    );
+
+    fireEvent.change(search, { target: { value: 'T' } });
+    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
+    expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
+  });
+
   it('keeps the query and shows hit badges when switching category', () => {
     render(
       <IllustrationGallery

@@ -4,6 +4,7 @@ import {
   Badge,
   Button,
   Checkbox,
+  Chip,
   Dialog,
   Divider,
   Field,
@@ -35,6 +36,7 @@ import {
   propertyOptions,
   propertyValueDisplayLabel,
   resultsSummary,
+  searchSummaryParts,
   selectProperty,
   sortFamilies,
 } from './gallery.utils';
@@ -78,6 +80,8 @@ const SEARCH_DELAY_MS = 250;
  */
 function useSearchQuery(input: string): string {
   const [debounced, setDebounced] = useState(input);
+  // Forget the previous search once cleared, or it resurfaces on the next keystroke.
+  if (!input.trim() && debounced) setDebounced('');
   useEffect(() => {
     if (!input.trim()) return;
     const timer = setTimeout(() => setDebounced(input), SEARCH_DELAY_MS);
@@ -169,6 +173,11 @@ export function IllustrationGallery({
     searchRef.current?.focus();
   };
 
+  const clearSearch = () => {
+    setInput('');
+    searchRef.current?.focus();
+  };
+
   if (catalog.state === 'pending-import') {
     return (
       <div className={styles.empty}>
@@ -183,15 +192,36 @@ export function IllustrationGallery({
     );
   }
 
+  const search = query.trim();
+  const categoryLabel =
+    categories.find((item) => item.id === categoryId)?.label ?? '';
+  const summaryParts = searchSummaryParts(families.length, categoryLabel);
+
   const content = (
     <div className={styles.content}>
-      <output aria-live="polite" aria-atomic="true">
-        {resultsSummary(
-          families.length,
-          query,
-          categories.find((item) => item.id === categoryId)?.label ?? '',
-        )}
-      </output>
+      <div className={styles.summary}>
+        <output
+          className={search ? styles.visuallyHidden : undefined}
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {resultsSummary(families.length, query, categoryLabel)}
+        </output>
+        {search ? (
+          <>
+            <span aria-hidden>{summaryParts.before}</span>
+            <Chip.Removable
+              data-size="sm"
+              aria-label={`Tøm søket «${search}»`}
+              title={`Tøm søket «${search}»`}
+              onClick={clearSearch}
+            >
+              <span className={styles.searchTerm}>«{search}»</span>
+            </Chip.Removable>
+            <span aria-hidden>{summaryParts.after}</span>
+          </>
+        ) : null}
+      </div>
       {families.length === 0 ? (
         <div className={styles.empty}>
           <Heading level={2} data-size="sm">
@@ -218,13 +248,7 @@ export function IllustrationGallery({
             </div>
           ) : null}
           {query.trim() ? (
-            <Button
-              variant="secondary"
-              onClick={() => {
-                setInput('');
-                searchRef.current?.focus();
-              }}
-            >
+            <Button variant="secondary" onClick={clearSearch}>
               Tøm søket
             </Button>
           ) : null}

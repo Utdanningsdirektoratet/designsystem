@@ -43,6 +43,34 @@
   border-radius: var(--ds-border-radius-md);
 }
 
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-size-2);
+  /* Keeps the grid from shifting when the chip appears. */
+  min-height: var(--ds-size-8);
+}
+
+.searchTerm {
+  display: block;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .otherHits {
   display: flex;
   flex-wrap: wrap;
