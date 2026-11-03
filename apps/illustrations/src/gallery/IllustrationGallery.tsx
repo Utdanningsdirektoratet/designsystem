@@ -63,12 +63,7 @@ function PngDownload({ variant }: { variant: IllustrationVariant }) {
 
 function SvgDownload({ variant }: { variant: IllustrationVariant }) {
   const props = useAssetLinkProps(variant, 'svg');
-  return (
-    <Link {...props}>
-      <DownloadIcon aria-hidden />
-      <span>Last ned SVG</span>
-    </Link>
-  );
+  return <Link {...props}>Last ned SVG</Link>;
 }
 
 const MIN_SEARCH_LENGTH = 2;
@@ -294,8 +289,8 @@ export function IllustrationGallery({
       <div className={styles.intro}>
         <Paragraph data-size="lg" className={styles.introText}>
           Illustrasjonene er laget for å bidra til helhetlig design i Udirs
-          eksterne kommunikasjon. De skal ikke brukes av andre enn Udir. Klikk
-          på en illustrasjon for å velge farge, bakgrunn og format.
+          tjenester og kanaler. Klikk på illustrasjonen for å velge farge,
+          bakgrunn og format.
         </Paragraph>
       </div>
       <div className={styles.toolbar} data-hits={hitCounts.size > 0}>
@@ -511,21 +506,13 @@ export function IllustrationGallery({
                     <div className={styles.downloads}>
                       <PngDownload variant={variant} />
                       <Paragraph data-size="sm" data-color="neutral">
-                        Trenger du SVG til nett eller utvikling?
+                        Trenger du en skalerbar fil til design eller utvikling?{' '}
+                        <SvgDownload variant={variant} />.
                       </Paragraph>
-                      <SvgDownload variant={variant} />
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={styles.footer}>
-              <Button
-                variant="secondary"
-                onClick={() => dialogRef.current?.close()}
-              >
-                Lukk
-              </Button>
             </div>
           </>
         ) : (

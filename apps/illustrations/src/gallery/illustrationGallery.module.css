@@ -128,6 +128,7 @@
 
   width: min(65rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
+  padding-block-end: var(--ds-size-10);
 }
 
 .tags {
@@ -235,12 +236,6 @@
 .downloads > p {
   margin-top: var(--ds-size-2);
   margin-bottom: calc(-1 * var(--ds-size-1));
-}
-
-.footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: var(--ds-size-6);
 }
 
 @media (min-width: 48rem) {
