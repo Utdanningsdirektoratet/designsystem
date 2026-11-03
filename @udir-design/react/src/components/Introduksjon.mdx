@@ -1,7 +1,10 @@
 import README from '../../../../README.md?raw';
 import { IncludeMarkdown } from '.storybook/docs/components';
 import { Unstyled } from '@storybook/addon-docs/blocks';
-import { ComponentResourceLink } from '../docs/ResourceLinks';
+import {
+  ComponentResourceLink,
+  ComponentResourceLinks,
+} from './docs/ResourceLinks';
 
 import { HideToc } from '.storybook/docs/components';
 
@@ -9,14 +12,18 @@ import { HideToc } from '.storybook/docs/components';
 
 # Komponenter
 
-Bruk venstremenyen for å navigere i dokumentasjonen.
+Her finner du dokumentasjon for komponentene i Udirs designsystem.
 
-Overskriften "Demosider" inneholder eksempler som viser komponenter brukt sammen. Alle individuelle komponenter finner du under "Komponenter".
-
-Komponenter er markert med "Alpha" eller "Beta" dersom de ikke er stabile (les mer om livsfaser lenger ned).
+Komponenter er markert med "Alpha" eller "Beta" i sidemenyen dersom de ikke er stabile (les mer om livsfaser lenger ned).
 
 <Unstyled>
   <ComponentResourceLink />
+</Unstyled>
+
+## Alle komponenter
+
+<Unstyled>
+  <ComponentResourceLinks />
 </Unstyled>
 
 <IncludeMarkdown markdown={README} sectionId="livsfaser-for-en-komponent" />
