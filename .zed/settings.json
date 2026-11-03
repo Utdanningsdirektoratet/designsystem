@@ -38,5 +38,8 @@
         "package_version": "7.0.2"
       }
     }
-  }
+  },
+  // workaround for https://github.com/zed-industries/zed/issues/63693
+  // which causes significant lag in Git features and general UI slowness
+  "file_scan_exclusions": ["**/node_modules", "..."]
 }
