@@ -57,7 +57,7 @@ Vi kan legge en liste under et enkelt listepunkt når punktet inneholder tillegg
 
 ### Liste med lenker
 
-Vi kan bruke `List` til å lage en liste med lenker. I eksempelet under har vi skrudd av list-stylingen på `List.Unordered`.
+Vi kan bruke `List` til å lage en liste med lenker. I eksempelet under har vi skrudd av list-stylingen på `List.Unordered`. Se [Skjule kulepunkter](#skjule-kulepunkter) for hvorfor vi bruker `list-style-type: ''` og ikke `list-style: none`.
 
 <Canvas of={ListStories.WithLinks} />
 
@@ -85,3 +85,16 @@ kan du legge et `<nav>` element rundt med en `aria-label` for å gi skjermlesere
 [W3C anbefaler](https://www.w3.org/TR/using-aria/#label-support) å unngå `aria-label` / `aria-labelledby` rett på `ul`/`ol`.
 
 <Canvas of={ListStories.AsNav} />
+
+### Skjule kulepunkter
+
+Når du fjerner kulepunkter eller tall med `list-style: none` eller `list-style-type: none`, slutter Safari å annonsere elementet som en liste for VoiceOver. Unntaket er når listen ligger inni en `<nav>`.
+
+Bruk i stedet en tom streng som listemarkør. Det skjuler markørene, men bevarer listesemantikken:
+
+```css
+.my-list {
+  padding: 0;
+  list-style-type: '';
+}
+```

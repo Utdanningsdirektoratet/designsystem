@@ -102,7 +102,7 @@
   > ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style-type: '';
     display: flex;
     flex-wrap: wrap;
     gap: var(--ds-size-2);

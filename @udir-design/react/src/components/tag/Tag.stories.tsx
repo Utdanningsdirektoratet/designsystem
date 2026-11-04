@@ -130,7 +130,7 @@ export const Article = meta.story({
   margin-bottom: var(--ds-size-2);
 }
 .tag-article-list {
-    list-style: none;
+    list-style-type: '';
     display: flex;
     gap: 10px;
     padding: 0;

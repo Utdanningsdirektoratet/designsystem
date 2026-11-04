@@ -32,7 +32,7 @@ export const Preview = meta.story({
   margin: var(--ds-size-4) 0;
 }
 .divider-preview-list-unordered {
-  list-style: none;
+  list-style-type: '';
   padding: 0;
 }`}
       </style>

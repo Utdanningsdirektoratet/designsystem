@@ -139,9 +139,7 @@
     inset-inline-start: 0;
 
     & ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @composes ds-list--unstyled from '@digdir/designsystemet-css/base.css';
       .uds-header__menu-link {
         text-decoration: none;
         display: flex;
@@ -262,12 +260,10 @@
 
   .uds-header__navigation {
     ul {
+      @composes ds-list--unstyled from '@digdir/designsystemet-css/base.css';
       display: flex;
       align-items: center;
       gap: var(--ds-size-8);
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
 
     .ds-link {
