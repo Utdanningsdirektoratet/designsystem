@@ -10,7 +10,7 @@ import { Label } from 'src/components/typography/label';
 import { Paragraph } from 'src/components/typography/paragraph';
 import { useDebounceCallback } from 'src/utilities/useDebounceCallback';
 import { ColorTokensTable } from '../color/color-table';
-import allDatavisTokens from '../design-tokens/color-datavis.json';
+import datavisTokens from '../design-tokens/color-datavis.json';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
 import sizeTokens from '../design-tokens/size.json';
@@ -22,8 +22,6 @@ import type { PreviewToken } from '../types';
 import { TypographyTable } from '../typography/typography-table';
 import { has, includes, pick } from '../utilities/search-utitilites';
 import classes from './token-list.module.css';
-
-const datavisTokens = { categorical: allDatavisTokens.categorical };
 
 const tokenSearchFilter = (token: PreviewToken, searchValue: string) =>
   `${token.variable}${token.value}`
