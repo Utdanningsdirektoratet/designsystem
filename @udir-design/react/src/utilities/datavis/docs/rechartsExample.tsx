@@ -2,6 +2,7 @@
 //@ts-expect-error example code
 import { Cell, Pie, PieChart } from 'recharts';
 import { getCategoricalColors } from '@udir-design/react/beta/utilities';
+import '@udir-design/theme/datavis.css';
 
 export function MyChart() {
   const data = [

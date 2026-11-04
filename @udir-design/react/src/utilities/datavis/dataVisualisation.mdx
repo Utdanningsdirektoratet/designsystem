@@ -15,12 +15,17 @@ import * as stories from './dataVisualisation.stories.tsx';
 
 # Hjelpefunksjoner for datavisualisering
 
-Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Funksjonene returnerer hex-fargeverdier som fungerer direkte i alle diagrambiblioteker og stilark.
+Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer.
+
+To av funksjonene returnerer variabelreferanser, som gir ulike farger i light mode og dark mode. Disse krever at du også importerer `'@udir-design/theme/datavis.css'`:
 
 - `getCategoricalColors()`
+- `getHighchartsTheme()`
+
+Resten av funksjonene returnerer hex-fargeverdier som fungerer direkte i alle diagrambiblioteker og stilark:
+
 - `generateSequentialMonochromaticColors(count: number)`
 - `generateSequentialDivergentColors(count: number)`
-- `getHighchartsTheme()`
 
 Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
 
@@ -30,21 +35,16 @@ Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_no
   for retningslinjer om når og hvordan de ulike palettene skal brukes.
 </SimpleAlert>
 
-## Oppsett
-
-Importer CSS for datavisualiseringsfarger i applikasjonen din:
-
-```tsx
-import '@udir-design/theme/datavis.css';
-```
-
 ## Kategorisk palett
 
 For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
 
-**`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
+**`getCategoricalColors()`** - Returnerer 8 CSS-variabelreferanser.
+
+Merk: funksjonen krever at du har importert CSS for datavisualiseringsfarger i applikasjonen din.
 
 ```tsx
+import '@udir-design/theme/datavis.css';
 import { getCategoricalColors } from '@udir-design/react/beta/utilities';
 
 const colors = getCategoricalColors();
@@ -109,6 +109,8 @@ For å bruke fargene som CSS-variabler, kan du kopiere koden over og legge den i
 ### Tema
 
 Ferdigkonfigurert tema for Highcharts med kategorisk fargepalett og typografi fra designsystemet.
+
+Merk: funksjonen krever at du har importert CSS for datavisualiseringsfarger i applikasjonen din.
 
 **`getHighchartsTheme()`** - Returnerer `Partial<Highcharts.Options>`.
 

@@ -1,8 +1,7 @@
 /**
  * Utilities for working with data visualisation colors from the design system.
- * These functions return CSS custom property references.
- *
- * @requires @udir-design/theme/datavis.css must be imported in your application
+ * `getCategoricalColors` returns CSS custom property references and requires
+ * `@udir-design/theme/datavis.css`; the sequential generators return hex values.
  */
 
 import { sequential } from '@udir-design/tokens/datavis-light.json';
