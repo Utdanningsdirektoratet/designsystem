@@ -172,6 +172,9 @@ const generateOptions = (count: number): SuggestionItem[] =>
 
 const DATA_LARGE = generateOptions(5000);
 
+/* Value of the option that selects every option matching the search */
+const SELECT_ALL = '__select-all__';
+
 export const Preview = meta.story({
   parameters: {
     layout: 'none',
@@ -942,6 +945,331 @@ export const MultipleEnterSelectsOnlyMatchingOption = Multiple.extend({
         { label: 'Oslo', value: 'Oslo' },
       ]),
     );
+  },
+});
+
+/* u-combobox resets `selected` on every option that has no matching chip when
+   the selection changes. An option that isn't a real value, like "select all",
+   therefore has to be checked again after each reset. */
+function useCheckedOption(checked: boolean) {
+  const ref = useRef<HTMLOptionElement>(null);
+  useEffect(() => {
+    const option = ref.current;
+    if (!option) return;
+    const sync = () => option.toggleAttribute('selected', checked);
+    const observer = new MutationObserver(sync);
+    sync();
+    observer.observe(option, { attributeFilter: ['selected'] });
+    return () => observer.disconnect();
+  }, [checked]);
+  return ref;
+}
+
+export const MultipleSelectAllMatches = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: {
+      width: 320,
+      justifySelf: 'center',
+      story: {
+        height: 430,
+      },
+    },
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState<string[]>([]);
+    const [query, setQuery] = useState('');
+
+    /* The options Suggestion shows for the search, using the same rule as its own filter */
+    const search = query.trim().toLowerCase();
+    const matches = DATA_PLACES.filter((place) =>
+      place.toLowerCase().includes(search),
+    );
+    const allSelected = matches.every((place) => selected.includes(place));
+    const selectAllRef = useCheckedOption(allSelected);
+
+    /* Toggles only the matches, so selections made under other searches are kept */
+    const toggleMatches = () => {
+      const next = allSelected
+        ? selected.filter((place) => !matches.includes(place))
+        : [...new Set([...selected, ...matches])];
+      setSelected(next);
+    };
+
+    return (
+      <Field>
+        {/* The line is a pseudo-element on the option itself, since a separator
+            element inside the listbox would not be a valid child */}
+        <style>{`
+          .select-all-option {
+            margin-block-end: var(--ds-size-2);
+          }
+          .select-all-option::after {
+            content: '';
+            position: absolute;
+            inset-inline: var(--ds-size-3);
+            bottom: calc((var(--ds-size-1) + var(--ds-size-2)) / -2);
+            height: var(--ds-border-width-default);
+            background: var(--ds-color-border-subtle);
+            pointer-events: none;
+          }
+        `}</style>
+        <Label>Velg destinasjoner</Label>
+        <Suggestion
+          {...(args as SuggestionMultipleProps)}
+          multiple
+          selected={selected}
+          filter={({ value, label }) =>
+            value === SELECT_ALL
+              ? matches.length > 1
+              : label.toLowerCase().includes(search)
+          }
+          onSelectedChange={(items) => {
+            const values = items.map((item) => item.value);
+            if (values.includes(SELECT_ALL)) return toggleMatches();
+            setSelected(values);
+          }}
+        >
+          <Suggestion.Input
+            onInput={({ currentTarget }) => {
+              setQuery(currentTarget.value);
+            }}
+          />
+          <Suggestion.Toggle />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty />
+            {/* An option, so it takes part in arrow key navigation and Enter */}
+            <Suggestion.Option
+              value={SELECT_ALL}
+              ref={selectAllRef}
+              className="select-all-option"
+            >
+              {search ? `Velg alle treff (${matches.length})` : 'Velg alle'}
+            </Suggestion.Option>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place} label={place} value={place}>
+                {place}
+              </Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const input = await waitFor(() =>
+      within(canvasElement).getByRole('combobox'),
+    );
+
+    await step('Selects every option matching the search', async () => {
+      await userEvent.click(input);
+      await userEvent.type(input, 'st');
+      await userEvent.click(
+        await within(canvasElement).findByRole('option', {
+          name: 'Velg alle treff (2)',
+        }),
+      );
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+      ]);
+      await expect(input).toHaveValue('st');
+    });
+
+    await step('Is checked while all matches are selected', async () => {
+      await waitFor(() =>
+        expect(
+          within(canvasElement).getByRole('option', {
+            name: 'Velg alle treff (2)',
+          }),
+        ).toHaveAttribute('aria-selected', 'true'),
+      );
+    });
+
+    await step('Is reachable and selectable with the keyboard', async () => {
+      await userEvent.clear(input);
+      await userEvent.type(input, 'o');
+      await userEvent.keyboard('{ArrowDown}');
+      await expect(input).toHaveAttribute(
+        'aria-activedescendant',
+        expect.stringMatching(/.+/),
+      );
+      await userEvent.keyboard('{Enter}');
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+        'Sogndal',
+        'Oslo',
+        'Trondheim',
+      ]);
+    });
+
+    await step('Selecting again removes only the matches', async () => {
+      await userEvent.keyboard('{Enter}');
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+      ]);
+      await waitFor(() =>
+        expect(
+          within(canvasElement).getByRole('option', {
+            name: 'Velg alle treff (3)',
+          }),
+        ).toHaveAttribute('aria-selected', 'false'),
+      );
+    });
+
+    await step('Is hidden when there is only one match', async () => {
+      await userEvent.clear(input);
+      await userEvent.type(input, 'sog');
+      await expect(
+        await within(canvasElement).findByRole('option', { name: 'Sogndal' }),
+      ).toBeVisible();
+      await expect(
+        within(canvasElement).queryByRole('option', { name: /^Velg alle/ }),
+      ).not.toBeInTheDocument();
+    });
+  },
+});
+
+/* Variant of `MultipleSelectAllMatches` where "select all" looks like a button.
+   It is still an option, so keyboard and screen reader support is unchanged.
+   The label says what the next click does, so the option never needs to look checked. */
+export const MultipleSelectAllMatchesButtonStyle = meta.story({
+  parameters: {
+    layout: 'none',
+    customStyles: {
+      width: 320,
+      justifySelf: 'center',
+      story: {
+        height: 430,
+      },
+    },
+  },
+  render: (args) => {
+    const [selected, setSelected] = useState<string[]>([]);
+    const [query, setQuery] = useState('');
+
+    const search = query.trim().toLowerCase();
+    const matches = DATA_PLACES.filter((place) =>
+      place.toLowerCase().includes(search),
+    );
+    const allSelected = matches.every((place) => selected.includes(place));
+
+    const toggleMatches = () => {
+      const next = allSelected
+        ? selected.filter((place) => !matches.includes(place))
+        : [...new Set([...selected, ...matches])];
+      setSelected(next);
+    };
+
+    const count = search ? ` treff (${matches.length})` : '';
+
+    return (
+      <Field>
+        {/* Styles the option like a secondary button with the same tokens as `Button` */}
+        <style>{`
+          .select-all-button {
+            display: flex;
+            justify-content: center;
+            margin-block-end: var(--ds-size-2);
+            padding: var(--ds-size-2) var(--ds-size-4);
+            border: var(--ds-border-width-default) solid var(--ds-color-border-strong);
+            border-radius: var(--ds-border-radius-default);
+            font-weight: var(--ds-font-weight-medium);
+            color: var(--ds-color-text-default);
+          }
+          .select-all-button:hover {
+            background: var(--ds-color-surface-hover);
+          }
+          .select-all-button::before {
+            display: none;
+          }
+        `}</style>
+        <Label>Velg destinasjoner</Label>
+        <Suggestion
+          {...(args as SuggestionMultipleProps)}
+          multiple
+          selected={selected}
+          filter={({ value, label }) =>
+            value === SELECT_ALL
+              ? matches.length > 1
+              : label.toLowerCase().includes(search)
+          }
+          onSelectedChange={(items) => {
+            const values = items.map((item) => item.value);
+            if (values.includes(SELECT_ALL)) return toggleMatches();
+            setSelected(values);
+          }}
+        >
+          <Suggestion.Input
+            onInput={({ currentTarget }) => {
+              setQuery(currentTarget.value);
+            }}
+          />
+          <Suggestion.Toggle />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty />
+            <Suggestion.Option value={SELECT_ALL} className="select-all-button">
+              {allSelected ? 'Fjern alle' : 'Velg alle'}
+              {count}
+            </Suggestion.Option>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place} label={place} value={place}>
+                {place}
+              </Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const input = await waitFor(() =>
+      within(canvasElement).getByRole('combobox'),
+    );
+
+    await step('Selects every option matching the search', async () => {
+      await userEvent.click(input);
+      await userEvent.type(input, 'st');
+      await userEvent.click(
+        await within(canvasElement).findByRole('option', {
+          name: 'Velg alle treff (2)',
+        }),
+      );
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+      ]);
+    });
+
+    await step('Says what the next click does', async () => {
+      await expect(
+        await within(canvasElement).findByRole('option', {
+          name: 'Fjern alle treff (2)',
+        }),
+      ).toBeVisible();
+    });
+
+    await step('Removes only the matches with the keyboard', async () => {
+      await userEvent.clear(input);
+      await userEvent.type(input, 'o');
+      await userEvent.keyboard('{ArrowDown}{Enter}');
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+        'Sogndal',
+        'Oslo',
+        'Trondheim',
+      ]);
+      await userEvent.keyboard('{Enter}');
+      await expect(await getChipValues(canvasElement)).toEqual([
+        'Stavanger',
+        'Lillestrøm',
+      ]);
+    });
   },
 });
 
