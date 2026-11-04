@@ -45,7 +45,7 @@ For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
 **`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
 
 ```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/alpha';
+import { getCategoricalColors } from '@udir-design/react/beta/utilities';
 
 const colors = getCategoricalColors();
 // ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
@@ -64,10 +64,10 @@ For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-k
 **`generateSequentialMonochromaticColors(count: number)`** - Genererer et egenvalgt antall hex-fargeverdier (minimum 1).
 
 ```tsx
-import { generateSequentialMonochromaticColors } from '@udir-design/react/utilities/alpha';
+import { generateSequentialMonochromaticColors } from '@udir-design/react/beta/utilities';
 
 const colors = generateSequentialMonochromaticColors(7);
-// ['#7edfae', '#75d0a2', '#6dc297', ...]
+// ['#7edfae', '#69bb92', '#549876', ...]
 ```
 
 <Unstyled>
@@ -85,10 +85,10 @@ For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
 **`generateSequentialDivergentColors(count: number)`** - Genererer et egenvalgt antall hex-fargeverdier (oddetall, minimum 3). Paletten deles i to armer (grønn og blå) med et nøytralt midtpunkt som alltid er med i resultatet.
 
 ```tsx
-import { generateSequentialDivergentColors } from '@udir-design/react/utilities/alpha';
+import { generateSequentialDivergentColors } from '@udir-design/react/beta/utilities';
 
 const colors = generateSequentialDivergentColors(7);
-// ['#1e422f', '#294f3a', ..., '#dedede', ..., '#3a4d68', '#2e3c51']
+// ['#1e422f', '#427a5d', ..., '#dedede', ..., '#5e6f86', '#2e3c51']
 ```
 
 <Unstyled>

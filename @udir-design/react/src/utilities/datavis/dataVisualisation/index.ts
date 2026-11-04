@@ -189,10 +189,10 @@ function interpolateOklabMultiStop(
  *
  * @example
  * ```tsx
- * import { generateSequentialMonochromaticColors } from '@udir-design/react/alpha/utilities';
+ * import { generateSequentialMonochromaticColors } from '@udir-design/react/beta/utilities';
  *
  * const colors = generateSequentialMonochromaticColors(10);
- * // ['#5ba27e', '#519470', ..., '#0b1e15']
+ * // ['#7edfae', '#70c79b', ..., '#0b1e15']
  * ```
  */
 export function generateSequentialMonochromaticColors(
@@ -254,7 +254,7 @@ function isOdd(count: number): boolean {
  *
  * @example
  * ```tsx
- * import { generateSequentialDivergentColors } from '@udir-design/react/alpha/utilities';
+ * import { generateSequentialDivergentColors } from '@udir-design/react/beta/utilities';
  *
  * const colors = generateSequentialDivergentColors(11);
  * // ['#1e422f', ..., '#dedede', ..., '#2e3c51']
