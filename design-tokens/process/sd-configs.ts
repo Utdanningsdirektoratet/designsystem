@@ -1,5 +1,5 @@
 import { basename } from 'node:path';
-import { Config } from 'style-dictionary/types';
+import { Config, type TransformedToken } from 'style-dictionary/types';
 import { type ColorScheme, colorScheme } from './formats.js';
 
 export const createConfig = (scheme: ColorScheme): Config => ({
@@ -23,6 +23,18 @@ export const createConfig = (scheme: ColorScheme): Config => ({
           filter: (t) =>
             basename(t.filePath).toLowerCase() === `${scheme}.json`,
         },
+        // Bundled by `@udir-design/react` as the anchors of the generated sequential palettes,
+        // which are light mode only
+        ...(scheme === 'light'
+          ? [
+              {
+                destination: 'datavis-light.json',
+                format: 'json/nested',
+                filter: (t: TransformedToken) =>
+                  basename(t.filePath).toLowerCase() === 'light.json',
+              },
+            ]
+          : []),
       ],
     },
   },

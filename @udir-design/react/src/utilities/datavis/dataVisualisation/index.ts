@@ -5,6 +5,8 @@
  * @requires @udir-design/theme/datavis.css must be imported in your application
  */
 
+import { sequential } from '@udir-design/tokens/datavis-light.json';
+
 /**
  * Gets the categorical color palette for data visualisation.
  * Returns CSS variable references that automatically update with theme changes.
@@ -45,10 +47,9 @@ export function getSequentialMonochromaticColors(): readonly string[] {
 
 /**
  * Anchor hex values for the monochromatic palette (light mode).
- * These mirror --uds-data-color-sequential-monochromatic-1 and -8.
  */
-const MONOCHROMATIC_HEX_START = '#7edfae';
-const MONOCHROMATIC_HEX_END = '#0b1e15';
+const MONOCHROMATIC_HEX_START = sequential.monochromatic.min;
+const MONOCHROMATIC_HEX_END = sequential.monochromatic.max;
 
 function hexToRgb(hex: string): [number, number, number] {
   const n = parseInt(hex.slice(1), 16);
@@ -231,9 +232,10 @@ export function getSequentialDivergentColors(): readonly string[] {
  * Green arm keys go from darkest to lightest; blue arm from lightest to darkest.
  * The neutral center is shared by both arms.
  */
-const DIVERGENT_GREEN_KEYS = ['#1e422f', '#36674e', '#5ba27e'] as const;
-const DIVERGENT_NEUTRAL = '#dedede';
-const DIVERGENT_BLUE_KEYS = ['#6c7c94', '#485970', '#2e3c51'] as const;
+const { divergent } = sequential;
+const DIVERGENT_GREEN_KEYS = [divergent[1], divergent[2], divergent[3]];
+const DIVERGENT_NEUTRAL = divergent[4];
+const DIVERGENT_BLUE_KEYS = [divergent[5], divergent[6], divergent[7]];
 
 function isOdd(count: number): boolean {
   // This rejects all non-odd and non-integer numbers
