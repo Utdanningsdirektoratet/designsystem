@@ -30,22 +30,6 @@ export function getCategoricalColors(): readonly string[] {
 }
 
 /**
- * Gets the sequential monochromatic color palette for data visualisation.
- * Returns CSS variable references.
- *
- * @deprecated Use {@link generateSequentialMonochromaticColors} instead.
- * The CSS variables referenced by this function will be removed in a future version.
- *
- * @returns Array of 8 CSS variable references from light to dark
- */
-export function getSequentialMonochromaticColors(): readonly string[] {
-  return Array.from(
-    { length: 8 },
-    (_, i) => `var(--uds-data-color-sequential-monochromatic-${i + 1})`,
-  );
-}
-
-/**
  * Anchor hex values for the monochromatic palette (light mode).
  */
 const MONOCHROMATIC_HEX_START = sequential.monochromatic.min;
@@ -208,22 +192,6 @@ export function generateSequentialMonochromaticColors(
       MONOCHROMATIC_HEX_END,
       i / (count - 1),
     ),
-  );
-}
-
-/**
- * Gets the sequential divergent color palette for data visualisation.
- * Returns CSS variable references.
- *
- * @deprecated Use {@link generateSequentialDivergentColors} instead.
- * The CSS variables referenced by this function will be removed in a future version.
- *
- * @returns Array of 7 CSS variable references
- */
-export function getSequentialDivergentColors(): readonly string[] {
-  return Array.from(
-    { length: 7 },
-    (_, i) => `var(--uds-data-color-sequential-divergent-${i + 1})`,
   );
 }
 
