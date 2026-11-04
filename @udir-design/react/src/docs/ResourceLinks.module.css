@@ -5,22 +5,83 @@
   margin-top: var(--ds-size-6);
   margin-bottom: var(--ds-size-10);
 
-  @media (min-width: 600px) {
+  @media (min-width: 38rem) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 56rem) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.horisontalWrapper {
+.resourceLinks {
+  display: grid;
+  gap: var(--ds-size-6);
+  grid-template-columns: 1fr;
   margin-top: var(--ds-size-6);
   margin-bottom: var(--ds-size-10);
+
+  @media (min-width: 45rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.componentResourceLinks {
+  display: grid;
+  gap: var(--ds-size-6);
+  margin-top: var(--ds-size-6);
+  margin-bottom: var(--ds-size-10);
+}
+
+.componentResourceFilters {
+  display: grid;
+  gap: var(--ds-size-3);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.componentResourceFilterOptions {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 1 70%;
-  gap: var(--ds-size-4);
+  gap: var(--ds-size-2);
+}
+
+.componentResourceLinkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--ds-size-3);
+}
+
+.resourceLinkCompact {
+  --dsc-card-padding: var(--ds-size-3) var(--ds-size-4);
+
+  .resourceLinkCompactContent {
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+    min-height: var(--ds-size-8);
+  }
+
+  .resourceLinkCompactIcon {
+    display: flex;
+    flex-shrink: 0;
+
+    > svg {
+      width: var(--ds-size-6);
+      height: var(--ds-size-6);
+    }
+  }
+}
+
+.horizontalCard {
+  display: flex;
+  max-width: 35rem;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
 }
 
 .illustration {
@@ -29,10 +90,47 @@
   justify-content: center;
   align-items: center;
   padding: var(--ds-size-10);
+  flex-shrink: 0;
 }
 
 .icon {
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.resourceLinkHorizontal {
+  display: flex;
+
+  > :global(.ds-card__block) {
+    width: 100%;
+
+    > :global(.ds-heading) {
+      display: flex;
+      align-items: center;
+      gap: var(--ds-size-2);
+      justify-content: space-between;
+      & svg {
+        width: var(--ds-size-7);
+        height: var(--ds-size-7);
+        flex-shrink: 0;
+      }
+
+      > svg:nth-of-type(2) {
+        display: none;
+      }
+    }
+  }
+
+  &:is(:hover, :has(:focus-visible))
+    > :global(.ds-card__block)
+    > :global(.ds-heading) {
+    > svg:first-of-type:not(:only-of-type) {
+      display: none;
+    }
+
+    > svg:nth-of-type(2) {
+      display: block;
+    }
+  }
 }
