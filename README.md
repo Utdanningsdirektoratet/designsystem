@@ -185,8 +185,6 @@ Vi bruker [Turborepo](https://turbo.build/) for task-orkestrering og caching av 
 
 I CI bruker vi GitHub Actions Cache for å dele cache mellom kjøringer. Release-workflowen bygger alltid fra scratch uten cache for å garantere at publiserte pakker ikke er påvirket av eventuell cache poisoning.
 
-Hvis du har `AZURE_STORAGE_CONNECTION_STRING` eller `NX_KEY` i din lokale `.env.local` kan du fjerne disse, siden de ikke lenger er i bruk.
-
 ### Sjekke at oppsettet funker
 
 Kjør `pnpm i && pnpm dev`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
@@ -444,7 +442,7 @@ pnpm test:storybook:update
 Smoketesten bruker [Playwright](https://playwright.dev/) til å bygge og starte Next.js-appen (`test-apps/nextjs`) og besøke alle demosider i Chromium.
 
 ```bash
-pnpm nx test:e2e test-app-nextjs
+pnpm turbo test-app-nextjs#test:e2e
 ```
 
 I CI kjøres denne automatisk på pull requests som påvirker `test-app-nextjs` eller dens avhengigheter (`@udir-design/react`, `@udir-design/theme`, `@udir-design/icons`, `@udir-design/symbols`).
