@@ -4,13 +4,6 @@ This folder contains Bicep templates for provisioning infrastructure required by
 
 Before running any of the below commands, run `az login` and choose the subscription `Udir-Designteam` when prompted.
 
-## Build-time infrastructure
-
-> [!NOTE]
-> The `nx-remotecache` storage container defined in `designsystem-build.bicep` is no longer
-> in use. CI caching is now handled by Turborepo via GitHub Actions cache. The container can
-> be deleted from Azure once confirmed no longer needed.
-
 ## Testapp infrastructure
 
 The test app is a Nextjs application hosted as an Azure Container App.
