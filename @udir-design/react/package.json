@@ -106,6 +106,7 @@
     "@u-elements/u-progress": "catalog:",
     "@udir-design/css": "workspace:*",
     "@udir-design/icons": "workspace:*",
+    "clsx": "catalog:",
     "tslib": "catalog:"
   },
   "devDependencies": {
@@ -134,7 +135,6 @@
     "axe-playwright": "catalog:",
     "camelcase": "catalog:",
     "chromatic": "catalog:",
-    "clsx": "catalog:",
     "diffable-html": "catalog:",
     "dpdm": "catalog:",
     "eslint-plugin-storybook": "catalog:",
