@@ -100,8 +100,6 @@ there shows the commit scope, subject and link, followed by the text of its
 `BREAKING CHANGE` footer. Commits of types that are otherwise left out of the
 changelog, such as `refactor`, appear only in that section.
 
-This matches the format produced by the former Nx-based `changelog-renderer.ts`.
-
 Hard-wrapped lines within paragraphs of commit bodies and `BREAKING CHANGE`
 footers are joined, because GitHub renders a single newline in release notes as
 a line break. Paragraphs, lists, headings, code, tables and blockquotes keep

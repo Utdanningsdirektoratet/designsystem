@@ -95,8 +95,6 @@ function buildEnv(
 // ─── Semantic-release configuration ──────────────────────────────────────────
 
 /**
- * The `branches` array maps directly from the former `defaultReleaseConfigs`.
- *
  * semantic-release matches the current git branch against this list and
  * determines the channel, pre-release identifier, etc. automatically.
  *

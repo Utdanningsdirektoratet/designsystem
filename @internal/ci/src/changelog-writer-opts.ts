@@ -1,8 +1,7 @@
 /**
  * Custom `writerOpts` for `@semantic-release/release-notes-generator`.
  *
- * Wraps the default `conventional-changelog-conventionalcommits` preset to
- * match the changelogs produced by the former Nx-based `changelog-renderer.ts`:
+ * Wraps the default `conventional-changelog-conventionalcommits` preset:
  *
  * - commit body text (with footers stripped) is rendered below each entry
  * - hard-wrapped lines in bodies and breaking change notes are joined
@@ -49,7 +48,7 @@ type WriterOpts = Options<ChangelogCommit> &
     Pick<Options<ChangelogCommit>, 'transform' | 'commitPartial' | 'template'>
   >;
 
-// ─── Footer patterns (same as the old changelog-renderer) ────────────────────
+// ─── Footer patterns ─────────────────────────────────────────────────────────
 
 const breakingChangePattern = /^BREAKING[ -]CHANGE:\s*/m;
 const tokenFooterPattern = /^[A-Za-z-]+(?:: | #)/m;
@@ -102,8 +101,7 @@ function unwrappableTexts(node: Nodes): Text[] {
 // ─── Preset configuration ────────────────────────────────────────────────────
 
 /**
- * Section headers use emojis to stay consistent with the changelogs produced by
- * the former Nx-based renderer.
+ * Section headers use emojis, as in the release notes of earlier versions.
  */
 export const commitTypes: CommitType[] = [
   { type: 'feat', section: '🚀 Features' },
