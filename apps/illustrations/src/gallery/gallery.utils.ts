@@ -51,6 +51,11 @@ export function normalizeFamilySearch(value: string): string {
   return value.toLocaleLowerCase('nb').replace(/[\s-]+/g, '');
 }
 
+/** Shared by the grid and the tag suggestions so a suggested tag always matches. */
+export function matchesTag(tag: string, query: string): boolean {
+  return normalizeFamilySearch(tag).startsWith(normalizeFamilySearch(query));
+}
+
 export function matchesFamilySearch(
   name: string,
   query: string,
@@ -60,7 +65,7 @@ export function matchesFamilySearch(
   return (
     [name, familyDisplayName(name)].some((value) =>
       normalizeFamilySearch(value).includes(search),
-    ) || tags.some((tag) => normalizeFamilySearch(tag).startsWith(search))
+    ) || tags.some((tag) => matchesTag(tag, query))
   );
 }
 

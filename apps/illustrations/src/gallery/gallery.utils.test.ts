@@ -8,6 +8,7 @@ import {
   illustrationAssetUrl,
   isBinaryProperty,
   matchesFamilySearch,
+  matchesTag,
   needsVariantChooser,
   normalizeFamilySearch,
   propertyOptions,
@@ -56,6 +57,11 @@ describe('illustration gallery browsing', () => {
     expect(matchesFamilySearch('hverdag-1', 'PIL', tags)).toBe(true);
     expect(matchesFamilySearch('hverdag-1', 'ontor', tags)).toBe(false);
     expect(matchesFamilySearch('hverdag-1', 'kont')).toBe(false);
+  });
+
+  it('matchesTag matches the start of the tag only', () => {
+    expect(matchesTag('kontor', 'KONT')).toBe(true);
+    expect(matchesTag('kontor', 'ontor')).toBe(false);
   });
 
   it('sorts Norwegian names and numeric suffixes without mutating metadata', () => {

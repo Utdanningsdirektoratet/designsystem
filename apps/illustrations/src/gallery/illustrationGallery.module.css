@@ -60,6 +60,19 @@
   white-space: nowrap;
 }
 
+/* The floating list sets an inline max-height to fill the viewport; cap it so it stays compact. */
+.search > u-datalist {
+  max-height: 32rem !important;
+  overflow-y: auto;
+}
+
+/* Marks a suggested tag that is not in the current category. */
+.tagHint {
+  display: block;
+  font-size: var(--ds-body-xs-font-size);
+  color: var(--ds-color-neutral-text-subtle);
+}
+
 .visuallyHidden {
   position: absolute;
   width: 1px;

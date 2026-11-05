@@ -79,7 +79,7 @@ describe('IllustrationGallery', () => {
     const list = screen.getByRole('list');
     expect(list.querySelectorAll('button')).toHaveLength(2);
 
-    const search = screen.getByRole('searchbox', { name: searchLabel });
+    const search = screen.getByRole('combobox', { name: searchLabel });
     typeSearch(search, 'INGEN TREFF');
     expect(
       screen.getByRole('heading', {
@@ -101,7 +101,7 @@ describe('IllustrationGallery', () => {
     render(<IllustrationGallery catalog={fixtureCatalog} />);
     expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
 
-    const search = screen.getByRole('searchbox', {
+    const search = screen.getByRole('combobox', {
       name: searchLabel,
     }) as HTMLInputElement;
     typeSearch(search, 'TESTFAMILIE');
@@ -120,7 +120,7 @@ describe('IllustrationGallery', () => {
 
   it('does not bring back a cleared search when typing again', () => {
     render(<IllustrationGallery catalog={fixtureCatalog} />);
-    const search = screen.getByRole('searchbox', { name: searchLabel });
+    const search = screen.getByRole('combobox', { name: searchLabel });
     typeSearch(search, 'TESTFAMILIE');
     fireEvent.click(
       screen.getByRole('button', { name: 'Tøm søket «TESTFAMILIE»' }),
@@ -143,7 +143,7 @@ describe('IllustrationGallery', () => {
         }}
       />,
     );
-    const search = screen.getByRole('searchbox', { name: searchLabel });
+    const search = screen.getByRole('combobox', { name: searchLabel });
     expect(screen.getByRole('radio', { name: 'Internbruk' })).toBeTruthy();
 
     typeSearch(search, 'a');
@@ -182,7 +182,7 @@ describe('IllustrationGallery', () => {
         }}
       />,
     );
-    const search = screen.getByRole('searchbox', { name: searchLabel });
+    const search = screen.getByRole('combobox', { name: searchLabel });
     typeSearch(search, 'annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(0);
 
@@ -218,7 +218,7 @@ describe('IllustrationGallery', () => {
     act(() => {
       vi.advanceTimersByTime(300);
     });
-    const search = screen.getByRole('searchbox', {
+    const search = screen.getByRole('combobox', {
       name: searchLabel,
     }) as HTMLInputElement;
     expect(search.value).toBe('lekeplass');

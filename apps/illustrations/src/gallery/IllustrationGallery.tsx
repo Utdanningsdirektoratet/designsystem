@@ -1,4 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import type { FocusEvent } from 'react';
 import { DownloadIcon } from '@udir-design/icons';
 import {
   Badge,
@@ -17,6 +18,7 @@ import {
   Tag,
   ToggleGroup,
 } from '@udir-design/react';
+import { Suggestion } from '@udir-design/react/alpha';
 import { useAssetLinkProps, useAssetSource } from '../assets';
 import { categories } from '../metadata';
 import type {
@@ -31,6 +33,7 @@ import {
   familyDisplayName,
   isBinaryProperty,
   matchesFamilySearch,
+  matchesTag,
   needsVariantChooser,
   propertyDisplayLabel,
   propertyOptions,
@@ -147,6 +150,30 @@ export function IllustrationGallery({
     matchesFamilySearch(item.name, query, item.tags),
   );
 
+  // Which categories each tag appears in, so suggestions can say where a tag belongs.
+  const tagCategories = useMemo(() => {
+    const map = new Map<string, Set<CategoryId>>();
+    for (const item of catalog.families) {
+      if (item.variants.length === 0) continue;
+      for (const tag of item.tags ?? []) {
+        const ids = map.get(tag) ?? new Set<CategoryId>();
+        ids.add(item.categoryId as CategoryId);
+        map.set(tag, ids);
+      }
+    }
+    return map;
+  }, [catalog.families]);
+
+  // Tags from the current category first, then the rest, each group alphabetical.
+  const tagSuggestions = [...tagCategories]
+    .filter(([tag]) => matchesTag(tag, input))
+    .map(([tag, ids]) => ({ tag, inCategory: ids.has(categoryId) }))
+    .sort(
+      (a, b) =>
+        Number(b.inCategory) - Number(a.inCategory) ||
+        a.tag.localeCompare(b.tag, 'nb'),
+    );
+
   const hitCounts = useMemo(() => {
     const counts = countMatchesByCategory(catalog.families, query);
     return new Map(counts.map((item) => [item.categoryId, item.count]));
@@ -161,15 +188,31 @@ export function IllustrationGallery({
     setSelection(null);
   };
 
+  // The combobox owns the input value, so write to it directly instead of controlling it from React.
+  const writeSearch = (value: string) => {
+    setInput(value);
+    if (searchRef.current) searchRef.current.value = value;
+  };
+
+  /* On blur the combobox resets the input to its selected item, which wipes free text. Enter
+     commits the typed text as a selection, so do the same before the combobox's own blur
+     handler runs (it defers with setTimeout). */
+  const commitSearchOnBlur = (event: FocusEvent<HTMLInputElement>) => {
+    if (!event.currentTarget.value.trim()) return;
+    event.currentTarget.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
+    );
+  };
+
   const searchTag = (tag: string) => {
-    setInput(tag);
+    writeSearch(tag);
     setSelection(null);
     dialogRef.current?.close();
     searchRef.current?.focus();
   };
 
   const clearSearch = () => {
-    setInput('');
+    writeSearch('');
     searchRef.current?.focus();
   };
 
@@ -329,7 +372,7 @@ export function IllustrationGallery({
             })}
           </Select>
         </Field>
-        <Search>
+        <Search data-creatable className={styles.search}>
           <Search.Input
             ref={searchRef}
             id={searchId}
@@ -337,10 +380,24 @@ export function IllustrationGallery({
             aria-label="Søk"
             placeholder="Søk"
             autoComplete="off"
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
+            onChange={(event) => setInput(event.currentTarget.value)}
+            onKeyUp={(event) => setInput(event.currentTarget.value)}
+            onBlur={commitSearchOnBlur}
           />
+          <Suggestion.Toggle />
           <Search.Clear />
+          <Suggestion.List>
+            {tagSuggestions.map(({ tag, inCategory }) => (
+              <Suggestion.Option key={tag} label={tag} value={tag}>
+                {tag}
+                {inCategory ? null : (
+                  <span className={styles.tagHint}>
+                    Treff i andre kategorier
+                  </span>
+                )}
+              </Suggestion.Option>
+            ))}
+          </Suggestion.List>
         </Search>
       </div>
       {content}
