@@ -791,7 +791,7 @@ Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer me
 
 #### Fikse sikkerhetsadvarsler
 
-Se en liste over sikkerhetsadvarsler med
+Når Dependabot finner nye sårbarheter i avhengighetene, kommer det et varsel i Slack. Alle åpne varsler ligger under [Security → Dependabot](https://github.com/Utdanningsdirektoratet/designsystem/security/dependabot), og du kan også se dem lokalt med
 
 ```sh
 pnpm audit
@@ -805,6 +805,8 @@ Vi kan da be `pnpm` overstyre installerte transitive avhengigheter:
 pnpm audit --fix
 pnpm install
 ```
+
+Dersom en sårbarhet ikke kan fikses, må vi vurdere om den faktisk kan utnyttes hos oss. At det ikke finnes noen fiks, er ikke i seg selv en grunn til å avvise varselet. Kommer vi fram til at den ikke kan utnyttes, for eksempel fordi bare byggeverktøy bruker pakken og den bare får input fra vår egen konfigurasjon, avviser vi varselet i GitHub med begrunnelsen. Legg da også ID-en (`GHSA-…`) til under `audit.ignore` i `pnpm-workspace.yaml` med samme begrunnelse, slik at `pnpm audit` ignorerer den.
 
 ## Hvordan oppdatere symboler
 
