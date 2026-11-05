@@ -15,12 +15,17 @@ import * as stories from './dataVisualisation.stories.tsx';
 
 # Hjelpefunksjoner for datavisualisering
 
-Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer. Funksjonene returnerer hex-fargeverdier som fungerer direkte i alle diagrambiblioteker og stilark.
+Verktøy for å bruke datavisualiseringsfarger i diagrammer og grafer.
+
+To av funksjonene returnerer variabelreferanser, som gir ulike farger i light mode og dark mode. Disse krever at du også importerer `'@udir-design/theme/datavis.css'`:
 
 - `getCategoricalColors()`
+- `getHighchartsTheme()`
+
+Resten av funksjonene returnerer hex-fargeverdier som fungerer direkte i alle diagrambiblioteker og stilark:
+
 - `generateSequentialMonochromaticColors(count: number)`
 - `generateSequentialDivergentColors(count: number)`
-- `getHighchartsTheme()`
 
 Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_none">detaljert dokumentasjon generert fra kildekoden (på engelsk)</Link>.
 
@@ -30,22 +35,17 @@ Les også <Link href="./typedoc/modules/utilities_datavis_beta.html" target="_no
   for retningslinjer om når og hvordan de ulike palettene skal brukes.
 </SimpleAlert>
 
-## Oppsett
-
-Importer CSS for datavisualiseringsfarger i applikasjonen din:
-
-```tsx
-import '@udir-design/theme/datavis.css';
-```
-
 ## Kategorisk palett
 
 For distinkte kategorier i diagrammer (fagområder, elevgrupper, etc.).
 
-**`getCategoricalColors()`** - Returnerer 8 CSS-fargeverdier.
+**`getCategoricalColors()`** - Returnerer 8 CSS-variabelreferanser.
+
+Merk: funksjonen krever at du har importert CSS for datavisualiseringsfarger i applikasjonen din.
 
 ```tsx
-import { getCategoricalColors } from '@udir-design/react/utilities/alpha';
+import '@udir-design/theme/datavis.css';
+import { getCategoricalColors } from '@udir-design/react/beta/utilities';
 
 const colors = getCategoricalColors();
 // ['var(--uds-data-color-categorical-1)', 'var(--uds-data-color-categorical-2)', ...]
@@ -64,10 +64,10 @@ For sekvensiell data med gradert skala fra lys til mørk (heatmaps, choropleth-k
 **`generateSequentialMonochromaticColors(count: number)`** - Genererer et egenvalgt antall hex-fargeverdier (minimum 1).
 
 ```tsx
-import { generateSequentialMonochromaticColors } from '@udir-design/react/utilities/alpha';
+import { generateSequentialMonochromaticColors } from '@udir-design/react/beta/utilities';
 
 const colors = generateSequentialMonochromaticColors(7);
-// ['#7edfae', '#75d0a2', '#6dc297', ...]
+// ['#7edfae', '#69bb92', '#549876', ...]
 ```
 
 <Unstyled>
@@ -85,10 +85,10 @@ For divergerende skalaer med nøytralt midtpunkt (avvik fra gjennomsnitt).
 **`generateSequentialDivergentColors(count: number)`** - Genererer et egenvalgt antall hex-fargeverdier (oddetall, minimum 3). Paletten deles i to armer (grønn og blå) med et nøytralt midtpunkt som alltid er med i resultatet.
 
 ```tsx
-import { generateSequentialDivergentColors } from '@udir-design/react/utilities/alpha';
+import { generateSequentialDivergentColors } from '@udir-design/react/beta/utilities';
 
 const colors = generateSequentialDivergentColors(7);
-// ['#1e422f', '#294f3a', ..., '#dedede', ..., '#3a4d68', '#2e3c51']
+// ['#1e422f', '#427a5d', ..., '#dedede', ..., '#5e6f86', '#2e3c51']
 ```
 
 <Unstyled>
@@ -109,6 +109,8 @@ For å bruke fargene som CSS-variabler, kan du kopiere koden over og legge den i
 ### Tema
 
 Ferdigkonfigurert tema for Highcharts med kategorisk fargepalett og typografi fra designsystemet.
+
+Merk: funksjonen krever at du har importert CSS for datavisualiseringsfarger i applikasjonen din.
 
 **`getHighchartsTheme()`** - Returnerer `Partial<Highcharts.Options>`.
 

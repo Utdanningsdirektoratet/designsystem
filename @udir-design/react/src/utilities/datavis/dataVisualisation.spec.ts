@@ -3,8 +3,6 @@ import {
   generateSequentialDivergentColors,
   generateSequentialMonochromaticColors,
   getCategoricalColors,
-  getSequentialDivergentColors,
-  getSequentialMonochromaticColors,
 } from './dataVisualisation';
 import { getHighchartsTheme } from './highcharts';
 
@@ -27,34 +25,6 @@ describe('getCategoricalColors', () => {
 
   it('returns the same color sequence each call', () => {
     expect(getCategoricalColors()).toEqual(getCategoricalColors());
-  });
-});
-
-describe('getSequentialMonochromaticColors', () => {
-  it('returns 8 sequential monochromatic CSS-colorvalues', () => {
-    expect(getSequentialMonochromaticColors()).toHaveLength(8);
-  });
-
-  it('returns a list of 8 sequential monochromatic CSS-colorvalues', () => {
-    for (const color of getSequentialMonochromaticColors()) {
-      expect(color).toMatch(
-        /^var\(--uds-data-color-sequential-monochromatic-\d+\)$/,
-      );
-    }
-  });
-
-  it('returns colors numbered 1-8 in order', () => {
-    getSequentialMonochromaticColors().forEach((color, i) => {
-      expect(color).toBe(
-        `var(--uds-data-color-sequential-monochromatic-${i + 1})`,
-      );
-    });
-  });
-
-  it('returns the same color sequence each call', () => {
-    expect(getSequentialMonochromaticColors()).toEqual(
-      getSequentialMonochromaticColors(),
-    );
   });
 });
 
@@ -132,32 +102,6 @@ describe('generateSequentialMonochromaticColors', () => {
     for (const step of steps) {
       expect(step).toBeCloseTo(meanStep, 2);
     }
-  });
-});
-
-describe('getSequentialDivergentColors', () => {
-  it('returns 7 sequential divergent CSS-colorvalues', () => {
-    expect(getSequentialDivergentColors()).toHaveLength(7);
-  });
-
-  it('returns a list of 7 sequential divergent CSS-colorvalues', () => {
-    for (const color of getSequentialDivergentColors()) {
-      expect(color).toMatch(
-        /^var\(--uds-data-color-sequential-divergent-\d+\)$/,
-      );
-    }
-  });
-
-  it('returns colors numbered 1-7 in order', () => {
-    getSequentialDivergentColors().forEach((color, i) => {
-      expect(color).toBe(`var(--uds-data-color-sequential-divergent-${i + 1})`);
-    });
-  });
-
-  it('returns the same color sequence each call', () => {
-    expect(getSequentialDivergentColors()).toEqual(
-      getSequentialDivergentColors(),
-    );
   });
 });
 
