@@ -1,5 +1,8 @@
+import { FileUploadDownloadButton } from './FileUploadDownloadButton';
 import { FileUploadDropzone } from './FileUploadDropzone';
+import { FileUploadFileSize } from './FileUploadFileSize';
 import { FileUploadItem } from './FileUploadItem';
+import { FileUploadItemButton } from './FileUploadItemButton';
 import { FileUploadList } from './FileUploadList';
 import { FileUploadTrigger } from './FileUploadTrigger';
 
@@ -12,16 +15,14 @@ export type FileUpload = {
    */
   Trigger: typeof FileUploadTrigger;
   /**
-   * Component that provides a dropzone
-   * for file upload
+   * Component that provides a dropzone for file upload
    *
    * @example
    * <FileUpload.Dropzone />
    */
   Dropzone: typeof FileUploadDropzone;
   /**
-   * Component that previews a file
-   * uploaded by the user.
+   * Component that previews a file uploaded by the user.
    *
    * Must be placed inside a `FileUpload.List`.
    *
@@ -41,6 +42,52 @@ export type FileUpload = {
    * </FileUpload.List>
    */
   List: typeof FileUploadList;
+  /**
+   * Component that displays the size of a file with proper formatting.
+   *
+   * Is used automatically in `FileUpload.Item` if description is not set.
+   * Useful for customising the item description while still displaying file size.
+   *
+   * @example
+   * <FileUpload.Item
+   *   file={file}
+   *   onRemove={handleRemove}
+   *   description={
+   *     <>
+   *       <FileUpload.FileSize size={file.size} />{' '}
+   *       <span>Endret 23. april 2026</span>
+   *     </>
+   *   }
+   * />
+   */
+  FileSize: typeof FileUploadFileSize;
+  /**
+   * Button that downloads a file, for use in `actions` on `FileUpload.Item`.
+   *
+   * Does not download anything by itself: do it in `onClick`, for example with
+   * `downloadFile` from `@udir-design/react/alpha/utilities`.
+   *
+   * @example
+   * <FileUpload.DownloadButton
+   *   fileName={file.name}
+   *   onClick={() => downloadFile(file)}
+   * />
+   */
+  DownloadButton: typeof FileUploadDownloadButton;
+  /**
+   * Icon button for your own action, for use in `actions` on
+   * `FileUpload.Item`. Shows `tooltip` and is named by it followed by
+   * `fileName`.
+   *
+   * @example
+   * <FileUpload.ItemButton
+   *   icon={<NotePencilIcon aria-hidden />}
+   *   tooltip="Beskriv filen"
+   *   fileName={file.name}
+   *   onClick={() => edit(file)}
+   * />
+   */
+  ItemButton: typeof FileUploadItemButton;
 };
 
 export const FileUpload: FileUpload = {
@@ -48,9 +95,15 @@ export const FileUpload: FileUpload = {
   Dropzone: FileUploadDropzone,
   Item: FileUploadItem,
   List: FileUploadList,
+  FileSize: FileUploadFileSize,
+  DownloadButton: FileUploadDownloadButton,
+  ItemButton: FileUploadItemButton,
 };
 
 FileUpload.Trigger.displayName = 'FileUpload.Trigger';
 FileUpload.Dropzone.displayName = 'FileUpload.Dropzone';
 FileUpload.Item.displayName = 'FileUpload.Item';
 FileUpload.List.displayName = 'FileUpload.List';
+FileUpload.FileSize.displayName = 'FileUpload.FileSize';
+FileUpload.DownloadButton.displayName = 'FileUpload.DownloadButton';
+FileUpload.ItemButton.displayName = 'FileUpload.ItemButton';
