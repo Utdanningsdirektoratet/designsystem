@@ -5,6 +5,7 @@
  * match the changelogs produced by the former Nx-based `changelog-renderer.ts`:
  *
  * - commit body text (with footers stripped) is rendered below each entry
+ * - hard-wrapped lines in bodies and breaking change notes are joined
  * - breaking change notes include the commit subject and a link
  * - the breaking changes heading reads `⚠️ Breaking Changes`
  *
@@ -26,6 +27,10 @@ import type {
   Options,
   TemplateFunction,
 } from 'conventional-changelog-writer';
+import type { Nodes, Text } from 'mdast';
+import { fromMarkdown } from 'mdast-util-from-markdown';
+import { gfmFromMarkdown } from 'mdast-util-gfm';
+import { gfm } from 'micromark-extension-gfm';
 
 /** Commit fields set by the preset's transform and read by our templates. */
 export interface ChangelogCommit extends CommitKnownProps {
@@ -52,6 +57,47 @@ const footerPattern = new RegExp(
   `(?:${breakingChangePattern.source})|(?:${tokenFooterPattern.source})`,
   'm',
 );
+
+// ─── Line unwrapping ─────────────────────────────────────────────────────────
+
+/**
+ * Join hard-wrapped lines within paragraphs. GitHub renders a single newline in
+ * release bodies and PR comments as a line break, so commit bodies wrapped at
+ * 100 characters would break mid-sentence.
+ *
+ * Only newlines inside `text` nodes are replaced, so headings, lists, code,
+ * tables and hard breaks keep their markdown as written. The spaces around a
+ * newline are replaced with it, as the continuation indent of a newline between
+ * two inline nodes lies outside any `text` node.
+ */
+function unwrapLines(markdown: string): string {
+  const tree = fromMarkdown(markdown, {
+    extensions: [gfm()],
+    mdastExtensions: [gfmFromMarkdown()],
+  });
+  const texts = unwrappableTexts(tree);
+
+  return markdown.replace(/[ \t]*\r?\n[ \t]*/g, (lineBreak, offset: number) => {
+    const newline = offset + lineBreak.indexOf('\n');
+    const inText = texts.some(
+      ({ position }) =>
+        (position?.start.offset ?? 0) <= newline &&
+        newline < (position?.end.offset ?? 0),
+    );
+    return inText ? ' ' : lineBreak;
+  });
+}
+
+/**
+ * The `text` nodes below `node`, except those in blockquotes: GitHub alerts
+ * need `[!NOTE]` on a line of its own, and quoted continuation lines start with
+ * `>` prefixes.
+ */
+function unwrappableTexts(node: Nodes): Text[] {
+  if (node.type === 'text') return [node];
+  if (node.type === 'blockquote' || !('children' in node)) return [];
+  return node.children.flatMap(unwrappableTexts);
+}
 
 // ─── Preset configuration ────────────────────────────────────────────────────
 
@@ -95,7 +141,8 @@ const presetWriterOpts = preset.writer;
 // ─── Build writerOpts ────────────────────────────────────────────────────────
 
 /**
- * Wrap the preset's transform to preserve the commit body.
+ * Wrap the preset's transform to preserve the commit body and unwrap the body
+ * and breaking change notes.
  *
  * The default transform returns `{ notes, type, scope, shortHash, subject,
  * references }` — it does NOT forward `body`. We save `body` before calling
@@ -109,7 +156,14 @@ function wrapTransform(
     if (!result) return result; // commit was filtered out by the preset
 
     const body = commit.body?.trim().split(footerPattern)[0].trim();
-    return { ...result, body: body || null };
+    return {
+      ...result,
+      body: body ? unwrapLines(body) : null,
+      notes: result.notes?.map((note) => ({
+        ...note,
+        text: unwrapLines(note.text),
+      })),
+    };
   };
 }
 

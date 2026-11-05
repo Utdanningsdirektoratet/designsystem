@@ -102,6 +102,12 @@ changelog, such as `refactor`, appear only in that section.
 
 This matches the format produced by the former Nx-based `changelog-renderer.ts`.
 
+Hard-wrapped lines within paragraphs of commit bodies and `BREAKING CHANGE`
+footers are joined, because GitHub renders a single newline in release notes as
+a line break. Paragraphs, lists, headings, code, tables and blockquotes keep
+their line breaks. To force a line break within a paragraph, end the line with
+`\`.
+
 ## Configuration reference
 
 | File                                        | Purpose                                                                       |

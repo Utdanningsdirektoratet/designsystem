@@ -165,14 +165,14 @@ describe('changelog writerOpts.transform', () => {
   it('preserves commit body', async () => {
     const result = await transform(
       parsedCommit({
-        body: 'This adds a size prop.\nThe default remains medium.',
+        body: 'This adds a size prop.\n\nThe default remains medium.',
       }),
       context,
       options,
     );
     expect(result).toBeDefined();
     expect(result!['body']).toBe(
-      'This adds a size prop.\nThe default remains medium.',
+      'This adds a size prop.\n\nThe default remains medium.',
     );
   });
 
@@ -224,6 +224,90 @@ describe('changelog writerOpts.transform', () => {
   });
 });
 
+describe('changelog writerOpts line unwrapping', () => {
+  async function transformedBody(body: string) {
+    const result = await transform(parsedCommit({ body }), context, options);
+    return result!['body'];
+  }
+
+  it('joins wrapped lines within a paragraph and keeps paragraph breaks', async () => {
+    expect(
+      await transformedBody(
+        'Adds a size prop, which defaults\nto medium.\n\nThe icon size follows it.',
+      ),
+    ).toBe(
+      'Adds a size prop, which defaults to medium.\n\nThe icon size follows it.',
+    );
+  });
+
+  it('keeps list items on separate lines and joins their wrapped continuations', async () => {
+    expect(
+      await transformedBody(
+        'Also of note:\n- `Avatar` renders `initials` as text, in favour of\n  passing the text as `children`.\n- `Tag` supports `asChild`.',
+      ),
+    ).toBe(
+      'Also of note:\n- `Avatar` renders `initials` as text, in favour of passing the text as `children`.\n- `Tag` supports `asChild`.',
+    );
+  });
+
+  it('keeps headings and fenced code separate from the prose around them', async () => {
+    expect(
+      await transformedBody(
+        '# Migration\nReplace the\nimport:\n```ts\nimport { A } from "a";\nimport { B } from "b";\n```\nThen remove\nthe old one.',
+      ),
+    ).toBe(
+      '# Migration\nReplace the import:\n```ts\nimport { A } from "a";\nimport { B } from "b";\n```\nThen remove the old one.',
+    );
+  });
+
+  it('leaves indented code and tables unchanged', async () => {
+    const body =
+      'Example:\n\n    const a = 1;\n    const b = 2;\n\n| Prop | Default |\n| ---- | ------- |\n| size | medium  |';
+    expect(await transformedBody(body)).toBe(body);
+  });
+
+  it('keeps explicit hard line breaks', async () => {
+    expect(
+      await transformedBody('First line\\\nsecond line  \nthird\nline'),
+    ).toBe('First line\\\nsecond line  \nthird line');
+  });
+
+  it('joins lines between inline code and links with a single space', async () => {
+    expect(
+      await transformedBody(
+        'Supports `@types/react`\n  `^18.3.7`, see [1.22.0](https://example.com/a) and\n[1.23.0](https://example.com/b).',
+      ),
+    ).toBe(
+      'Supports `@types/react` `^18.3.7`, see [1.22.0](https://example.com/a) and [1.23.0](https://example.com/b).',
+    );
+  });
+
+  it('leaves blockquotes unchanged, so GitHub alerts keep their marker line', async () => {
+    const body = '> [!NOTE]\n> Requires React\n> 19.';
+    expect(await transformedBody(body)).toBe(body);
+  });
+
+  it('joins wrapped lines in breaking change notes', async () => {
+    const result = await transform(
+      parsedCommit({
+        notes: [
+          {
+            title: 'BREAKING CHANGE',
+            text: 'The default variant is now\n`filled`.\n\n- Remove `variant="outline"`',
+          },
+        ],
+      }),
+      context,
+      options,
+    );
+    expect(result!['notes']).toEqual([
+      expect.objectContaining({
+        text: 'The default variant is now `filled`.\n\n- Remove `variant="outline"`',
+      }),
+    ]);
+  });
+});
+
 describe('changelog writerOpts rendering', () => {
   it('renders commit bodies without collapsing adjacent commits', async () => {
     const changelog = await renderChangelog([
@@ -238,7 +322,7 @@ describe('changelog writerOpts rendering', () => {
         scope: 'button',
         subject: 'add size prop',
         header: 'feat(button): add size prop',
-        body: 'This adds a size prop.\nThe default remains medium.',
+        body: 'This adds a size prop.\n\nThe default remains medium.',
         hash: 'def1234567890abcdef1234567890abcdef123456',
       }),
     ]);
@@ -256,7 +340,7 @@ ${commitLine({
   hash: 'def1234567890abcdef1234567890abcdef123456',
 })}
 
-${indentedBody('This adds a size prop.\nThe default remains medium.')}`);
+${indentedBody('This adds a size prop.\n\nThe default remains medium.')}`);
     expectNoRawTemplates(changelog);
   });
 
