@@ -1,5 +1,6 @@
 import { Paragraph, Tooltip } from '@digdir/designsystemet-react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import cl from 'clsx/lite';
 import {
   useEffect,
   useId,
@@ -10,6 +11,7 @@ import {
   type SyntheticEvent,
   type ReactNode,
 } from 'react';
+import { useDropzone } from 'react-dropzone';
 import {
   useForm,
   type FieldErrors,
@@ -24,14 +26,18 @@ import {
 } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { Alert } from 'src/components/alert';
 import { Button } from 'src/components/button';
 import { Dialog } from 'src/components/dialog';
 import { ErrorSummary } from 'src/components/errorSummary';
 import { Field } from 'src/components/field';
+import { FileUpload } from 'src/components/fileUpload';
 import { FormNavigation } from 'src/components/formNavigation';
 import { FormSummary } from 'src/components/formSummary';
+import { List } from 'src/components/list';
 import { Table } from 'src/components/table';
 import { Textfield } from 'src/components/textfield';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label/Label';
 import { demoParameters } from 'src/demo/demoParameters';
@@ -116,7 +122,8 @@ type SendError<TStep extends string> = {
 function validate<TStep extends string>(
   avdelinger: Avdeling[],
   avdelingerStep: TStep,
-  foreldreStep: TStep,
+  // A function gives each avdeling its own step.
+  foreldreStep: TStep | ((avdeling: Avdeling) => TStep),
   avdelingerFocusId: string,
 ): SendError<TStep>[] {
   if (avdelinger.length === 0) {
@@ -129,7 +136,7 @@ function validate<TStep extends string>(
       },
     ];
     // Foreldre can't be complete without avdelinger.
-    if (foreldreStep !== avdelingerStep) {
+    if (typeof foreldreStep !== 'function' && foreldreStep !== avdelingerStep) {
       errors.push({
         id: 'foreldre',
         step: foreldreStep,
@@ -143,7 +150,10 @@ function validate<TStep extends string>(
     .filter((avdeling) => avdeling.foresatte.length === 0)
     .map((avdeling) => ({
       id: avdeling.id,
-      step: foreldreStep,
+      step:
+        typeof foreldreStep === 'function'
+          ? foreldreStep(avdeling)
+          : foreldreStep,
       message: `${avdeling.navn}: Legg til minst én foresatt`,
       focusId: foresattFirstFieldId(avdeling.id),
     }));
@@ -297,15 +307,155 @@ type AvdelingSectionProps = {
   avdeling: Avdeling;
   onChange: (avdeling: Avdeling) => void;
   canEditName?: boolean;
+  // Hide when the surrounding step heading already names the avdeling.
+  showHeading?: boolean;
+  // Lets the user choose between the form and a CSV import, with the table below.
+  bulkImport?: boolean;
   request?: EditRequest;
   onRequestHandled?: () => void;
 };
+
+type RegistreringsMetode = 'skjema' | 'fil';
 
 const emptyForesatt: ForesattValues = {
   navn: '',
   fornavn: '',
   epost: '',
   mobilnummer: '',
+};
+
+type CsvRowError = { line: number; text: string; message: string };
+
+const csvHeaderStart = 'barnets fornavn';
+
+// Rows are `Barnets fornavn; Foresatt; E-post; Mobilnummer`, with an optional header row.
+const parseForesattCsv = (text: string) => {
+  const lines = text
+    .replace(/^\uFEFF/, '')
+    .split(/\r?\n/)
+    .map((line, index) => ({ text: line, line: index + 1 }))
+    .filter(({ text }) => text.trim() !== '');
+  const delimiter =
+    [';', '\t', ','].find((d) => lines[0]?.text.includes(d)) ?? ';';
+  const rows: ForesattValues[] = [];
+  const errors: CsvRowError[] = [];
+
+  lines.forEach(({ text, line }, index) => {
+    const cells = text
+      .split(delimiter)
+      .map((cell) => cell.trim().replace(/^"(.*)"$/, '$1'));
+    if (index === 0 && cells[0].toLowerCase() === csvHeaderStart) return;
+    if (cells.length !== 4) {
+      errors.push({
+        line,
+        text,
+        message: 'Raden må ha fire kolonner',
+      });
+      return;
+    }
+    const [fornavn, navn, epost, mobilnummer] = cells;
+    const result = ForesattSchema.safeParse({
+      fornavn,
+      navn,
+      epost,
+      mobilnummer,
+    });
+    if (result.success) rows.push(result.data);
+    else errors.push({ line, text, message: result.error.issues[0].message });
+  });
+
+  return { rows, errors };
+};
+
+const maxCsvSize = 1024 * 1024;
+
+const rejectionMessage = (code: string) => {
+  switch (code) {
+    case 'file-too-large':
+      return 'Filen er for stor. Maks størrelse er 1 MB.';
+    case 'file-invalid-type':
+      return 'Filen må være en CSV-fil (.csv).';
+    default:
+      return 'Du kan bare laste opp én fil om gangen.';
+  }
+};
+
+type ImportResult = { imported: number; errors: CsvRowError[] };
+
+const ForesattImport = ({
+  onImport,
+}: {
+  onImport: (rows: ForesattValues[]) => void;
+}) => {
+  const [result, setResult] = useState<ImportResult>();
+  const [fileError, setFileError] = useState<string>();
+
+  const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+    useDropzone({
+      multiple: false,
+      maxSize: maxCsvSize,
+      accept: {
+        'text/csv': ['.csv'],
+        'application/vnd.ms-excel': ['.csv'],
+        'text/plain': ['.csv', '.txt'],
+      },
+      onDropAccepted: async ([file]) => {
+        setFileError(undefined);
+        const { rows, errors } = parseForesattCsv(await file.text());
+        if (rows.length === 0 && errors.length === 0) {
+          setResult(undefined);
+          setFileError('Filen inneholder ingen rader.');
+          return;
+        }
+        if (rows.length > 0) onImport(rows);
+        setResult({ imported: rows.length, errors });
+      },
+      onDropRejected: ([rejection]) => {
+        setResult(undefined);
+        setFileError(rejectionMessage(rejection.errors[0].code));
+      },
+    });
+
+  return (
+    <div className={classes.addSection}>
+      <Heading level={4} data-size="xs">
+        Importer foresatte
+      </Heading>
+      <FileUpload.Dropzone
+        label="Last opp CSV-fil"
+        description="Én rad per foresatt, med kolonnene Barnets fornavn, Foresatt, E-post og Mobilnummer atskilt med semikolon, komma eller tabulator. Første rad kan være en overskriftsrad."
+        inputProps={getInputProps()}
+        cardProps={getRootProps()}
+        isDragActive={isDragActive}
+        isDragGlobal={isDragGlobal}
+        error={fileError}
+      />
+      <output>
+        {result && (
+          <Alert data-color={result.errors.length > 0 ? 'warning' : 'success'}>
+            <Paragraph>
+              {result.imported === 1
+                ? 'Importerte 1 foresatt.'
+                : `Importerte ${result.imported} foresatte.`}
+              {result.errors.length > 0 &&
+                (result.errors.length === 1
+                  ? ' 1 rad hadde feil og ble ikke importert. Rett opp raden i filen og last den opp på nytt.'
+                  : ` ${result.errors.length} rader hadde feil og ble ikke importert. Rett opp radene i filen og last den opp på nytt.`)}
+            </Paragraph>
+            {result.errors.length > 0 && (
+              <List.Unordered>
+                {result.errors.map(({ line, text, message }) => (
+                  <List.Item key={line}>
+                    Rad {line}: {message} ({text})
+                  </List.Item>
+                ))}
+              </List.Unordered>
+            )}
+          </Alert>
+        )}
+      </output>
+    </div>
+  );
 };
 
 type ForesattFieldsProps = {
@@ -361,11 +511,15 @@ const AvdelingSection = ({
   avdeling,
   onChange,
   canEditName = true,
+  showHeading = true,
+  bulkImport = false,
   request,
   onRequestHandled,
 }: AvdelingSectionProps) => {
   const headingId = useId();
   const formHeadingId = useId();
+  const tableHeadingId = useId();
+  const [mode, setMode] = useState<RegistreringsMetode>('skjema');
   const editDialogRef = useRef<HTMLDialogElement>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [focusRequest, setFocusRequest] = useState(0);
@@ -450,113 +604,162 @@ const AvdelingSection = ({
     setFocusRequest((n) => n + 1);
   };
 
+  const table = avdeling.foresatte.length > 0 && (
+    <div className={classes.tableScroll}>
+      <Table className={classes.table}>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col className={classes.actionColumn} />
+          <col className={classes.actionColumn} />
+        </colgroup>
+        <Table.Head>
+          <Table.Row>
+            <Table.HeaderCell>Barnets fornavn</Table.HeaderCell>
+            <Table.HeaderCell>Foresatt</Table.HeaderCell>
+            <Table.HeaderCell>E-post</Table.HeaderCell>
+            <Table.HeaderCell>Mobilnummer</Table.HeaderCell>
+            <Table.HeaderCell>
+              <span className="ds-sr-only">Rediger</span>
+            </Table.HeaderCell>
+            <Table.HeaderCell>
+              <span className="ds-sr-only">Slett</span>
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          {avdeling.foresatte.map((foresatt) => (
+            <Table.Row key={foresatt.id}>
+              <Table.Cell>{foresatt.fornavn}</Table.Cell>
+              <Table.Cell>{foresatt.navn}</Table.Cell>
+              <Table.Cell>{foresatt.epost}</Table.Cell>
+              <Table.Cell>{foresatt.mobilnummer}</Table.Cell>
+              <Table.Cell>
+                <Tooltip content="Rediger">
+                  <Button
+                    icon
+                    variant="tertiary"
+                    aria-label={`Rediger ${foresatt.navn}`}
+                    aria-haspopup="dialog"
+                    onClick={() => startEdit(foresatt)}
+                  >
+                    <NotePencilIcon aria-hidden />
+                  </Button>
+                </Tooltip>
+              </Table.Cell>
+              <Table.Cell>
+                <Tooltip content="Slett">
+                  <Button
+                    icon
+                    variant="tertiary"
+                    data-color="danger"
+                    aria-label={`Slett ${foresatt.navn}`}
+                    onClick={() => remove(foresatt)}
+                  >
+                    <TrashIcon aria-hidden />
+                  </Button>
+                </Tooltip>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>
+    </div>
+  );
+
+  const addForm = (
+    <div className={classes.addSection}>
+      <Heading id={formHeadingId} level={4} data-size="xs">
+        Legg til foresatt
+      </Heading>
+      <form
+        className={cl(classes.form, bulkImport && classes.formStacked)}
+        onSubmit={onSubmit}
+        noValidate
+        aria-labelledby={formHeadingId}
+      >
+        <ForesattFields
+          register={register}
+          errors={errors}
+          firstFieldId={foresattFirstFieldId(avdeling.id)}
+        />
+        <Field className={classes.formButtons}>
+          {/* Invisible label keeps the button level with the labelled inputs. */}
+          {!bulkImport && <Label aria-hidden>&nbsp;</Label>}
+          <Button type="submit">{bulkImport ? 'Legg til' : 'Lagre'}</Button>
+        </Field>
+      </form>
+    </div>
+  );
+
   return (
-    <section className={classes.avdeling} aria-labelledby={headingId}>
-      <div className={classes.avdelingHeader}>
-        <Heading id={headingId} level={3} data-size="sm">
-          {avdeling.navn}
-        </Heading>
-        {canEditName && (
-          <AvdelingDialog
-            title="Rediger navn"
-            description="Navnet vises som overskrift for avdelingen."
-            triggerLabel="Rediger navn"
-            triggerVariant="tertiary"
-            triggerIcon={<NotePencilIcon aria-hidden />}
-            submitLabel="Lagre navn"
-            currentName={avdeling.navn}
-            onSubmit={(navn) => onChange({ ...avdeling, navn })}
-            openRequested={!!ownRequest && !ownRequest.foresattId}
-            onOpenHandled={onRequestHandled}
-          />
-        )}
-      </div>
-      {avdeling.foresatte.length > 0 && (
-        <div className={classes.tableScroll}>
-          <Table className={classes.table}>
-            <colgroup>
-              <col />
-              <col />
-              <col />
-              <col />
-              <col className={classes.actionColumn} />
-              <col className={classes.actionColumn} />
-            </colgroup>
-            <Table.Head>
-              <Table.Row>
-                <Table.HeaderCell>Barnets fornavn</Table.HeaderCell>
-                <Table.HeaderCell>Foresatt</Table.HeaderCell>
-                <Table.HeaderCell>E-post</Table.HeaderCell>
-                <Table.HeaderCell>Mobilnummer</Table.HeaderCell>
-                <Table.HeaderCell>
-                  <span className="ds-sr-only">Rediger</span>
-                </Table.HeaderCell>
-                <Table.HeaderCell>
-                  <span className="ds-sr-only">Slett</span>
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
-              {avdeling.foresatte.map((foresatt) => (
-                <Table.Row key={foresatt.id}>
-                  <Table.Cell>{foresatt.fornavn}</Table.Cell>
-                  <Table.Cell>{foresatt.navn}</Table.Cell>
-                  <Table.Cell>{foresatt.epost}</Table.Cell>
-                  <Table.Cell>{foresatt.mobilnummer}</Table.Cell>
-                  <Table.Cell>
-                    <Tooltip content="Rediger">
-                      <Button
-                        icon
-                        variant="tertiary"
-                        aria-label={`Rediger ${foresatt.navn}`}
-                        aria-haspopup="dialog"
-                        onClick={() => startEdit(foresatt)}
-                      >
-                        <NotePencilIcon aria-hidden />
-                      </Button>
-                    </Tooltip>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Tooltip content="Slett">
-                      <Button
-                        icon
-                        variant="tertiary"
-                        data-color="danger"
-                        aria-label={`Slett ${foresatt.navn}`}
-                        onClick={() => remove(foresatt)}
-                      >
-                        <TrashIcon aria-hidden />
-                      </Button>
-                    </Tooltip>
-                  </Table.Cell>
-                </Table.Row>
-              ))}
-            </Table.Body>
-          </Table>
+    <section
+      className={cl(classes.avdeling, bulkImport && classes.avdelingBulk)}
+      aria-labelledby={showHeading ? headingId : undefined}
+      aria-label={showHeading ? undefined : avdeling.navn}
+    >
+      {showHeading && (
+        <div className={classes.avdelingHeader}>
+          <Heading id={headingId} level={3} data-size="sm">
+            {avdeling.navn}
+          </Heading>
+          {canEditName && (
+            <AvdelingDialog
+              title="Rediger navn"
+              description="Navnet vises som overskrift for avdelingen."
+              triggerLabel="Rediger navn"
+              triggerVariant="tertiary"
+              triggerIcon={<NotePencilIcon aria-hidden />}
+              submitLabel="Lagre navn"
+              currentName={avdeling.navn}
+              onSubmit={(navn) => onChange({ ...avdeling, navn })}
+              openRequested={!!ownRequest && !ownRequest.foresattId}
+              onOpenHandled={onRequestHandled}
+            />
+          )}
         </div>
       )}
-      <div className={classes.addSection}>
-        <Heading id={formHeadingId} level={4} data-size="xs">
-          Legg til foresatt
-        </Heading>
-        <form
-          className={classes.form}
-          onSubmit={onSubmit}
-          noValidate
-          aria-labelledby={formHeadingId}
-        >
-          <ForesattFields
-            register={register}
-            errors={errors}
-            firstFieldId={foresattFirstFieldId(avdeling.id)}
-          />
-          <Field className={classes.formButtons}>
-            {/* Invisible label keeps the button level with the labelled inputs. */}
-            <Label aria-hidden>&nbsp;</Label>
-            <Button type="submit">Lagre</Button>
-          </Field>
-        </form>
-      </div>
+      {bulkImport ? (
+        <>
+          <ToggleGroup
+            aria-label="Hvordan vil du registrere foreldre?"
+            value={mode}
+            onChange={(value) => setMode(value as RegistreringsMetode)}
+          >
+            <ToggleGroup.Item value="skjema">Fyll ut skjema</ToggleGroup.Item>
+            <ToggleGroup.Item value="fil">Importer fra fil</ToggleGroup.Item>
+          </ToggleGroup>
+          <div hidden={mode !== 'skjema'}>{addForm}</div>
+          <div hidden={mode !== 'fil'}>
+            <ForesattImport
+              onImport={(rows) =>
+                onChange({
+                  ...avdeling,
+                  foresatte: [
+                    ...avdeling.foresatte,
+                    ...rows.map((row) => ({ id: crypto.randomUUID(), ...row })),
+                  ],
+                })
+              }
+            />
+          </div>
+          <div className={cl(classes.addSection, classes.registrerte)}>
+            <Heading id={tableHeadingId} level={4} data-size="xs">
+              Registrerte foresatte ({avdeling.foresatte.length})
+            </Heading>
+            {table || (
+              <Paragraph>Ingen foresatte er registrert ennå.</Paragraph>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          {table}
+          {addForm}
+        </>
+      )}
       <Dialog
         ref={editDialogRef}
         closedby="any"
@@ -1209,4 +1412,176 @@ export const EgneSteg = meta.story({
       </StepLayout>
     );
   },
+});
+
+type DynamiskStegId = 'avdelinger' | 'send' | `avdeling-${string}`;
+
+const avdelingStepId = (avdeling: Avdeling): DynamiskStegId =>
+  `avdeling-${avdeling.id}`;
+
+const DynamiskeStegEksempel = ({ gruppert }: { gruppert?: boolean }) => {
+  const navDialogRef = useRef<HTMLDialogElement>(null);
+  const {
+    avdelinger,
+    editRequest,
+    setEditRequest,
+    clearEditRequest,
+    onCreate,
+    onChange,
+    onRemove,
+  } = useAvdelinger();
+  const avdelingSteps = avdelinger.map(avdelingStepId);
+  const {
+    getStepProps,
+    getGroupProps,
+    id,
+    setId,
+    markInvalid,
+    markCompleted,
+    hasPrev,
+    hasNext,
+    prev,
+    next,
+  } = useFormNavigation<DynamiskStegId>({
+    value: 'avdelinger',
+    // Explicit order, since the steps change as avdelinger are added and removed.
+    order: ['avdelinger', ...avdelingSteps, 'send'],
+    onChange: () => navDialogRef.current?.close(),
+  });
+  const errors = validate<DynamiskStegId>(
+    avdelinger,
+    'avdelinger',
+    avdelingStepId,
+    avdelingNavnId,
+  );
+  const { submitted, sent, attempt, submit } = useInnsending({
+    errors,
+    steps: ['avdelinger', ...avdelingSteps],
+    markInvalid,
+    markCompleted,
+  });
+
+  const activeAvdeling = avdelinger.find(
+    (avdeling) => avdelingStepId(avdeling) === id,
+  );
+  const heading =
+    id === 'avdelinger'
+      ? 'Registrer avdelinger'
+      : id === 'send'
+        ? 'Send invitasjon'
+        : activeAvdeling && `Registrer foreldre i ${activeAvdeling.navn}`;
+
+  const avdelingStepElements = avdelinger.map((avdeling) => (
+    <FormNavigation.Step
+      key={avdeling.id}
+      {...getStepProps(avdelingStepId(avdeling))}
+    >
+      {avdeling.navn}
+    </FormNavigation.Step>
+  ));
+
+  const navigation = gruppert ? (
+    <FormNavigation className={classes.navigation}>
+      <FormNavigation.Step {...getStepProps('avdelinger')}>
+        Registrer avdelinger
+      </FormNavigation.Step>
+      {avdelinger.length > 0 && (
+        <FormNavigation.Group
+          title="Foreldre"
+          {...getGroupProps(avdelingSteps)}
+        >
+          {avdelingStepElements}
+        </FormNavigation.Group>
+      )}
+      <FormNavigation.Step variant="submission" {...getStepProps('send')}>
+        Send invitasjon
+      </FormNavigation.Step>
+    </FormNavigation>
+  ) : (
+    <FormNavigation className={classes.navigation}>
+      <FormNavigation.Group
+        title="Invitasjon av foreldre"
+        {...getGroupProps(['avdelinger', ...avdelingSteps, 'send'])}
+      >
+        <FormNavigation.Step {...getStepProps('avdelinger')}>
+          Registrer avdelinger
+        </FormNavigation.Step>
+        {avdelingStepElements}
+        <FormNavigation.Step variant="submission" {...getStepProps('send')}>
+          Send invitasjon
+        </FormNavigation.Step>
+      </FormNavigation.Group>
+    </FormNavigation>
+  );
+
+  return (
+    <StepLayout
+      navigation={navigation}
+      navDialogRef={navDialogRef}
+      heading={heading}
+      hasPrev={hasPrev()}
+      hasNext={hasNext()}
+      prev={prev}
+      next={next}
+      onSend={id === 'send' && !sent ? submit : undefined}
+    >
+      {id === 'avdelinger' && (
+        <AvdelingRegistrering
+          avdelinger={avdelinger}
+          onCreate={onCreate}
+          onChange={onChange}
+          onRemove={onRemove}
+          request={editRequest}
+          onRequestHandled={clearEditRequest}
+        />
+      )}
+      {activeAvdeling && (
+        <div className={classes.avdelinger}>
+          <AvdelingSection
+            key={activeAvdeling.id}
+            avdeling={activeAvdeling}
+            onChange={onChange}
+            canEditName={false}
+            showHeading={false}
+            bulkImport={gruppert}
+            request={editRequest}
+            onRequestHandled={clearEditRequest}
+          />
+        </div>
+      )}
+      {id === 'send' && (
+        <Innsending
+          avdelinger={avdelinger}
+          errors={errors}
+          attempt={attempt}
+          sent={sent}
+          submitted={submitted}
+          onEdit={(request) => {
+            setEditRequest(request);
+            setId(
+              request.foresattId
+                ? `avdeling-${request.avdelingId}`
+                : 'avdelinger',
+            );
+          }}
+          onRegister={() => setId('avdelinger')}
+          registerLabel="Registrer avdelinger"
+          onNavigateToError={(error) => {
+            setId(error.step);
+            requestAnimationFrame(() => focusFormField(error.focusId));
+          }}
+        />
+      )}
+    </StepLayout>
+  );
+};
+
+export const DynamiskeSteg = meta.story({
+  name: 'Repeterende data i dynamiske steg',
+  render: () => <DynamiskeStegEksempel />,
+});
+
+export const DynamiskeStegIGruppe = meta.story({
+  name: 'Repeterende data i dynamiske steg med gruppe',
+  render: () => <DynamiskeStegEksempel gruppert />,
 });

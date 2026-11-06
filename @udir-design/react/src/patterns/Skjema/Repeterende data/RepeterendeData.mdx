@@ -29,20 +29,46 @@ Når gruppene er enkle, men oppføringene under dem er mange, kan du dele regist
   story={{ inline: false, height: '800px' }}
 />
 
+## Gruppene som dynamiske steg
+
+Når hver gruppe har mange oppføringer, kan du i stedet lage ett steg per gruppe. Det første steget registrerer avdelingene, og så får hver avdeling sitt eget steg i `FormNavigation` med tabell og skjema for foresatte. Stegene opprettes og fjernes etter hvert som brukeren legger til og sletter avdelinger.
+
+Siden stegene endrer seg må du sende rekkefølgen eksplisitt til `useFormNavigation` med `order`. Ellers havner nye steg bakerst, etter «Send invitasjon».
+
+<Canvas
+  of={RepeterendeDataStories.DynamiskeSteg}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
+### Med egen gruppe for stegene
+
+Når skjemaet har flere steg rundt de repeterende stegene, kan du samle avdelingsstegene i en `FormNavigation.Group`. «Registrer avdelinger» og «Send invitasjon» ligger som vanlige steg utenfor gruppen, og gruppen «Foreldre» viser ett steg per avdeling. Gruppen vises først når brukeren har opprettet en avdeling, og blir markert med feil hvis en av avdelingene mangler foresatte. Unngå en gruppe med bare ett steg, siden den bare gir et ekstra nivå uten å hjelpe brukeren.
+
+I dette eksempelet kan brukeren også velge hvordan foreldrene registreres. En `ToggleGroup` over feltene bytter mellom å fylle ut skjemaet og å importere flere foresatte samtidig fra en CSV-fil med `FileUpload.Dropzone`. Tabellen med registrerte foresatte ligger under begge valgene, slik at brukeren ser resultatet uansett hvordan de ble lagt til.
+
+CSV-filen har én rad per foresatt, med kolonnene «Barnets fornavn», «Foresatt», «E-post» og «Mobilnummer» atskilt med semikolon, komma eller tabulator. Overskriftsraden er valgfri. Gyldige rader legges til med en gang, og ugyldige rader listes opp med radnummer og feilmelding, slik at brukeren kan rette filen og laste den opp på nytt.
+
+<Canvas
+  of={RepeterendeDataStories.DynamiskeStegIGruppe}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
 ## Oppsummering
 
-Det siste steget, «Send invitasjon», er likt i begge variantene. Det viser en oppsummering med `FormSummary` før brukeren sender inn. Hver gruppe får en egen seksjon, og hver oppføring ligger som en nøstet seksjon under gruppen. «Endre svar» sender brukeren tilbake til steget der svaret ble registrert og åpner dialogen for det som skal endres. Har brukeren ikke registrert noe, vises en melding med en knapp tilbake.
+Det siste steget, «Send invitasjon», er likt i alle variantene. Det viser en oppsummering med `FormSummary` før brukeren sender inn. Hver gruppe får en egen seksjon, og hver oppføring ligger som en nøstet seksjon under gruppen. «Endre svar» sender brukeren tilbake til steget der svaret ble registrert og åpner dialogen for det som skal endres. Har brukeren ikke registrert noe, vises en melding med en knapp tilbake.
 
 ## Anbefalinger
 
 - Bruk `Dialog` for å opprette nye grupper, slik at brukeren beholder oversikten over siden.
-- Vis registrerte oppføringer i en `Table` rett over feltene de legges til med.
+- Vis registrerte oppføringer i en `Table` rett over feltene de legges til med. Når brukeren kan velge mellom flere måter å registrere på, legger du tabellen under valgene.
 - Valider feltene når brukeren lagrer, og vis feilmeldinger ved det aktuelle feltet.
 - Tøm feltene etter at en oppføring er lagret.
 
 ## Kildekode
 
-Begge eksemplene bruker den samme filen. Den inneholder skjemaene, valideringen og alle komponentene som brukes i eksemplene, og de to variantene er til slutt i filen (`Preview` og `EgneSteg`).
+Alle eksemplene bruker den samme filen. Den inneholder skjemaene, valideringen og alle komponentene som brukes i eksemplene, og variantene er til slutt i filen (`Preview`, `EgneSteg`, `DynamiskeSteg` og `DynamiskeStegIGruppe`).
 
 <CssToggle code={storiesSource} language="tsx" label="kildekode" />
 
