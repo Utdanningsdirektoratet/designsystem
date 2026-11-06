@@ -54,7 +54,7 @@
     "inject": "echo 'Uncached dummy script: trigger pnpm injected-dependency sync for Turbo builds'",
     "clean": "rimraf ./dist && mkdir ./dist",
     "lint": "oxlint",
-    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.tooling.json"
+    "typecheck": "tsc --build"
   },
   "dependencies": {
     "@navikt/aksel-icons": "catalog:"

@@ -6,7 +6,8 @@
     "moduleResolution": "nodenext",
     "module": "nodenext",
     "target": "esnext",
-    "types": ["node"]
+    "types": ["node"],
+    "lib": ["es2023", "dom", "esnext.array"]
   },
   "extends": "../../tsconfig.base.json"
 }
