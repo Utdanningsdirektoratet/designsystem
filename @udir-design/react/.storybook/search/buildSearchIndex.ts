@@ -12,6 +12,7 @@
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
+import { setInterval } from 'node:timers/promises';
 import * as pagefind from 'pagefind';
 import {
   type BrowserContext,
@@ -62,17 +63,16 @@ const storyIndex: StoryIndex = JSON.parse(
 );
 const pages = Object.values(storyIndex.entries).filter(isMdxDocsEntry);
 
-const { index, errors } = await pagefind.createIndex({
-  forceLanguage: 'nb',
-  excludeSelectors: EXCLUDE_SELECTORS,
-});
-if (!index) {
-  throw new Error(`Failed to create Pagefind index: ${errors.join('\n')}`);
-}
-
-const browser = await chromium.launch();
 try {
-  const context = await browser.newContext();
+  const { index } = checkPagefind(
+    'Failed to create Pagefind index',
+    await pagefind.createIndex({
+      forceLanguage: 'nb',
+      excludeSelectors: EXCLUDE_SELECTORS,
+    }),
+  );
+  await using browser = await chromium.launch();
+  await using context = await browser.newContext();
   await serveBuildDir(context);
   // Track only changes to the content that is indexed. Changes inside live
   // examples don't count, since some keep changing, but adding or removing an
@@ -82,46 +82,55 @@ try {
     exclude: EXCLUDE_SELECTORS.join(', '),
   });
 
-  // Render several pages at a time. Each worker takes the next page until
-  // none are left.
-  const queue = [...pages];
+  // Render several pages at a time. The workers share one iterator, so each
+  // takes the next page until none are left.
+  const remaining = pages.values();
   const workers = Math.min(os.availableParallelism(), 8);
   await Promise.all(
     Array.from({ length: workers }, async () => {
-      const page = await context.newPage();
-      for (let entry = queue.shift(); entry; entry = queue.shift()) {
+      await using page = await context.newPage();
+      for (const entry of remaining) {
         const html = await renderDocsPage(page, entry).catch((error) => {
           throw new Error(`Failed to render ${entry.importPath}`, {
             cause: error,
           });
         });
-        const result = await index.addHTMLFile({
-          url: `?path=/docs/${entry.id}`,
-          content: toPageHtml(entry, html),
-        });
-        if (result.errors.length > 0) {
-          throw new Error(
-            `Pagefind failed to index ${entry.importPath}: ${result.errors.join('\n')}`,
-          );
-        }
+        checkPagefind(
+          `Pagefind failed to index ${entry.importPath}`,
+          await index.addHTMLFile({
+            url: `?path=/docs/${entry.id}`,
+            content: toPageHtml(entry, html),
+          }),
+        );
       }
-      await page.close();
     }),
   );
 
   const outputPath = path.join(buildDir, 'pagefind');
-  const written = await index.writeFiles({ outputPath });
-  if (written.errors.length > 0) {
-    throw new Error(
-      `Failed to write Pagefind index: ${written.errors.join('\n')}`,
-    );
-  }
+  checkPagefind(
+    'Failed to write Pagefind index',
+    await index.writeFiles({ outputPath }),
+  );
   console.log(
     `[pagefind] Indexed ${pages.length} MDX docs pages in ${Date.now() - start} ms, written to ${outputPath}`,
   );
 } finally {
-  await browser.close();
   await pagefind.close();
+}
+
+/**
+ * Returns a Pagefind response with all its fields, or throws `failure` with
+ * Pagefind's errors if the response reports any.
+ */
+function checkPagefind<T extends { errors: string[] }>(
+  failure: string,
+  response: T,
+): Required<T> {
+  if (response.errors.length > 0) {
+    throw new Error(`${failure}: ${response.errors.join('\n')}`);
+  }
+  // Pagefind only leaves out the other fields when it reports errors.
+  return response as Required<T>;
 }
 
 function isMdxDocsEntry(entry: IndexEntry): entry is DocsIndexEntry {
@@ -149,9 +158,8 @@ async function serveBuildDir(context: BrowserContext) {
 }
 
 /**
- * Runs in the page and records when content inside `root`, but not inside
- * `exclude`, last changed. Playwright runs it from its source in the browser,
- * so it can only use its arguments, not the constants in this module.
+ * Records in `window.lastContentChange` when content inside `root`, but not
+ * inside `exclude`, last changed. Added to every page as an init script.
  */
 function trackContentChanges({
   root,
@@ -160,6 +168,8 @@ function trackContentChanges({
   root: string;
   exclude: string;
 }) {
+  // Playwright runs this function from its source in the browser, so it can
+  // only use its arguments, not the constants in this module.
   window.lastContentChange = performance.now();
   const isIndexed = (node: Node) => {
     const element = node instanceof Element ? node : node.parentElement;
@@ -177,59 +187,66 @@ function trackContentChanges({
   });
 }
 
-/** Renders a docs page in Storybook's preview, and returns its HTML. */
-async function renderDocsPage(
-  page: Page,
-  entry: DocsIndexEntry,
-): Promise<string> {
-  // Requests from the docs page itself. Live examples rendered in iframes
-  // aren't indexed, so their requests don't count.
+/**
+ * Tracks the requests from the docs page itself, to tell when it has stopped
+ * loading. Stops tracking when disposed.
+ */
+function trackRequests(page: Page) {
   const pending = new Set<Request>();
-  let lastRequestChange = Date.now();
+  let lastChange = Date.now();
   const onRequest = (request: Request) => {
+    // Live examples rendered in iframes aren't indexed, so their requests
+    // don't count.
     if (request.frame() !== page.mainFrame()) return;
     pending.add(request);
-    lastRequestChange = Date.now();
+    lastChange = Date.now();
   };
   const onRequestDone = (request: Request) => {
-    if (pending.delete(request)) lastRequestChange = Date.now();
+    if (pending.delete(request)) lastChange = Date.now();
   };
-  page.on('request', onRequest);
-  page.on('requestfinished', onRequestDone);
-  page.on('requestfailed', onRequestDone);
-  try {
-    await page.goto(`${ORIGIN}/iframe.html?id=${entry.id}&viewMode=docs`);
-    // Storybook's error display is always in the page, but hidden until a
-    // page fails to render.
-    const heading = page.locator(`${ROOT_SELECTOR} h1`);
-    const error = page.locator('.sb-errordisplay:visible');
-    await heading.or(error).first().waitFor();
-    if (await error.isVisible()) {
-      throw new Error(await error.innerText());
-    }
-    // Parts of the page, such as code blocks, load their code and appear after
-    // the heading, in steps. Storybook has no event for when they're done: its
-    // `docsRendered` comes before them. Playwright's `networkidle` can miss
-    // the end of the requests and wait forever, and is discouraged:
-    // https://github.com/microsoft/playwright/issues/42598
-    const deadline = Date.now() + SETTLE_TIMEOUT_MS;
-    for (;;) {
-      const contentQuiet = await page.evaluate(
-        () => performance.now() - window.lastContentChange,
+  page
+    .on('request', onRequest)
+    .on('requestfinished', onRequestDone)
+    .on('requestfailed', onRequestDone);
+  return {
+    /** How many requests from the page are in flight. */
+    inFlight: () => pending.size,
+    /** How long the page has had no requests in flight. */
+    quietFor: () => (pending.size ? 0 : Date.now() - lastChange),
+    [Symbol.dispose]: () =>
+      page
+        .off('request', onRequest)
+        .off('requestfinished', onRequestDone)
+        .off('requestfailed', onRequestDone),
+  };
+}
+
+/** Renders a docs page in Storybook's preview, and returns its HTML. */
+async function renderDocsPage(page: Page, entry: DocsIndexEntry) {
+  using requests = trackRequests(page);
+  await page.goto(`${ORIGIN}/iframe.html?id=${entry.id}&viewMode=docs`);
+  // Storybook's error display is always in the page, but hidden until a page
+  // fails to render.
+  const heading = page.locator(`${ROOT_SELECTOR} h1`);
+  const error = page.locator('.sb-errordisplay:visible');
+  await heading.or(error).first().waitFor();
+  if (await error.isVisible()) throw new Error(await error.innerText());
+  // Parts of the page, such as code blocks, load their code and appear after
+  // the heading, in steps. Storybook has no event for when they're done: its
+  // `docsRendered` comes before them. Playwright's `networkidle` can miss the
+  // end of the requests and wait forever, and is discouraged:
+  // https://github.com/microsoft/playwright/issues/42598
+  const deadline = Date.now() + SETTLE_TIMEOUT_MS;
+  for await (const _ of setInterval(100)) {
+    const contentQuiet = await page.evaluate(
+      () => performance.now() - window.lastContentChange,
+    );
+    if (Math.min(contentQuiet, requests.quietFor()) >= SETTLE_MS) break;
+    if (Date.now() > deadline) {
+      throw new Error(
+        `Still changing after ${SETTLE_TIMEOUT_MS} ms, with ${requests.inFlight()} requests in flight`,
       );
-      const requestsQuiet = pending.size ? 0 : Date.now() - lastRequestChange;
-      if (Math.min(contentQuiet, requestsQuiet) >= SETTLE_MS) break;
-      if (Date.now() > deadline) {
-        throw new Error(
-          `Still changing after ${SETTLE_TIMEOUT_MS} ms, with ${pending.size} requests in flight`,
-        );
-      }
-      await page.waitForTimeout(100);
     }
-  } finally {
-    page.off('request', onRequest);
-    page.off('requestfinished', onRequestDone);
-    page.off('requestfailed', onRequestDone);
   }
   // The page is only used for indexing, so it's fine to change it here.
   return page.locator(ROOT_SELECTOR).evaluate((root) => {
@@ -250,14 +267,14 @@ async function renderDocsPage(
 }
 
 /**
- * Wraps the page content in an HTML document with the category and tier for
- * the result template in `searchDialog.ts`, and the category filter. Pagefind
- * also matches searches against this metadata, so only store names that are
- * fine to find, not icon names or colours.
+ * Wraps the page content in an HTML document with the title, the category and
+ * tier for the result template in `searchDialog.ts`, and the category filter.
  */
 function toPageHtml(entry: DocsIndexEntry, html: string) {
   const category = getRootCategory(entry.title)?.label;
   const tier = getTierBadge(entry.tags ?? [])?.text;
+  // Pagefind also matches searches against this metadata, so only store names
+  // that are fine to find, not icon names or colours.
   const head = [
     `<title>${escapeHtml(entry.title.split('/').at(-1) ?? '')}</title>`,
     tier && `<meta data-pagefind-meta="tier:${escapeHtml(tier)}">`,
