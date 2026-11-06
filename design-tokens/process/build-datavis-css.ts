@@ -29,11 +29,8 @@ async function buildSchemeCss(scheme: ColorScheme) {
 }
 
 try {
-  // One scheme at a time, so that the console output stays in order
-  const css: string[] = [];
-  for (const scheme of colorSchemes) {
-    css.push(await buildSchemeCss(scheme));
-  }
+  // `fromAsync` builds one scheme at a time, so the console output stays in order
+  const css = await Array.fromAsync(colorSchemes, buildSchemeCss);
   await writeFile(OUT, css.map((block) => `${block}\n\n`).join(''), 'utf8');
 } finally {
   await Promise.all(
