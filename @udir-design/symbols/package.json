@@ -52,7 +52,7 @@
     "fetch-new:symbols": "node --env-file=../../.env.local --import tsx config/figma/index.ts",
     "generate:pngs": "node --import tsx config/svg-to-png.ts",
     "lint": "oxlint",
-    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.tooling.json"
+    "typecheck": "tsc --build"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "catalog:",

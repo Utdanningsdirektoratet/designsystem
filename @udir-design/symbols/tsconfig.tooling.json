@@ -1,6 +1,6 @@
 {
-  // The build tooling, which runs in Node. Kept out of tsconfig.json, which tsdown
-  // uses to emit the published declarations.
+  // The build tooling, which runs in Node. Kept out of tsconfig.lib.json, which
+  // tsdown uses to emit the published declarations.
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",

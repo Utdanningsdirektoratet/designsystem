@@ -1091,6 +1091,9 @@ importers:
       '@tokens-studio/sd-transforms':
         specifier: 'catalog:'
         version: 2.0.3(style-dictionary@5.7.1)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.6.6
       '@types/ramda':
         specifier: 'catalog:'
         version: 0.32.0
@@ -1100,6 +1103,9 @@ importers:
       style-dictionary:
         specifier: 'catalog:'
         version: 5.7.1
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
 
   test-apps/nextjs:
     dependencies:
