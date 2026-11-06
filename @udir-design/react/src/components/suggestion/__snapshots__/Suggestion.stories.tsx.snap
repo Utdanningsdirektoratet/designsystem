@@ -2562,6 +2562,427 @@ exports[`Multiple Creatable 1`] = `
 </ds-field>
 `;
 
+exports[`Multiple Select All Matches 1`] = `
+<ds-field>
+  <style>
+    .select-all-option {
+            margin-block-end: var(--ds-size-2);
+          }
+          .select-all-option::after {
+            content: '';
+            position: absolute;
+            inset-inline: var(--ds-size-3);
+            bottom: calc((var(--ds-size-1) + var(--ds-size-2)) / -2);
+            height: var(--ds-border-width-default);
+            background: var(--ds-color-border-subtle);
+            pointer-events: none;
+          }
+  </style>
+  <label for="<generated>">
+    Velg destinasjoner
+  </label>
+  <ds-suggestion
+    data-multiple
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
+    <data
+      value="Stavanger"
+      aria-label="Stavanger, Trykk for å fjerne"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Stavanger
+    </data>
+    <data
+      value="Lillestrøm"
+      aria-label="Lillestrøm, Trykk for å fjerne"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Lillestrøm
+    </data>
+    <input
+      placeholder
+      type="text"
+      id="<generated>"
+      aria-description="Naviger til venstre for å finne 2 valgte"
+      list="<generated>"
+      popovertarget="<generated>"
+      aria-autocomplete="list"
+      aria-controls="<generated>"
+      aria-expanded="true"
+      autocomplete="off"
+      enterkeyhint="done"
+      role="combobox"
+    >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
+    >
+    </button>
+    <button
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <u-datalist
+      data-nofilter
+      popover="manual"
+      role="listbox"
+      data-sr-of="av"
+      tabindex="-1"
+      aria-multiselectable="true"
+      id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
+      data-is-floating="true"
+      aria-label="Velg destinasjoner"
+      style="<removed>"
+      data-floating="bottom"
+    >
+      <u-option
+        data-empty
+        label="sog"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+      </u-option>
+      <u-option
+        value="__select-all__"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Velg alle treff (1)
+      </u-option>
+      <u-option
+        label="Sogndal"
+        value="Sogndal"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Sogndal
+      </u-option>
+      <u-option
+        label="Oslo"
+        value="Oslo"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Oslo
+      </u-option>
+      <u-option
+        label="Brønnøysund"
+        value="Brønnøysund"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Brønnøysund
+      </u-option>
+      <u-option
+        label="Stavanger"
+        value="Stavanger"
+        role="option"
+        aria-disabled="true"
+        aria-selected="true"
+        id="<generated>"
+        aria-hidden="true"
+        selected
+        disabled
+      >
+        Stavanger
+      </u-option>
+      <u-option
+        label="Trondheim"
+        value="Trondheim"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Trondheim
+      </u-option>
+      <u-option
+        label="Bergen"
+        value="Bergen"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Bergen
+      </u-option>
+      <u-option
+        label="Lillestrøm"
+        value="Lillestrøm"
+        role="option"
+        aria-disabled="true"
+        aria-selected="true"
+        id="<generated>"
+        aria-hidden="true"
+        selected
+        disabled
+      >
+        Lillestrøm
+      </u-option>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+`;
+
+exports[`Multiple Select All Matches Button Style 1`] = `
+<ds-field>
+  <style>
+    .select-all-button {
+            display: flex;
+            justify-content: center;
+            margin-block-end: var(--ds-size-2);
+            padding: var(--ds-size-2) var(--ds-size-4);
+            border: var(--ds-border-width-default) solid var(--ds-color-border-strong);
+            border-radius: var(--ds-border-radius-default);
+            font-weight: var(--ds-font-weight-medium);
+            color: var(--ds-color-text-default);
+          }
+          .select-all-button:hover {
+            background: var(--ds-color-surface-hover);
+          }
+          .select-all-button::before {
+            display: none;
+          }
+  </style>
+  <label for="<generated>">
+    Velg destinasjoner
+  </label>
+  <ds-suggestion
+    data-multiple
+    data-sr-added="La til"
+    data-sr-clear="Fjern tekst"
+    data-sr-empty="Ingen valgte"
+    data-sr-found="Naviger til venstre for å finne %d valgte"
+    data-sr-invalid="Ugyldig valg"
+    data-sr-items="Valgte"
+    data-sr-of="av"
+    data-sr-plural="%d forslag"
+    data-sr-remove="Trykk for å fjerne"
+    data-sr-removed="Fjernet"
+    data-sr-singular="%d forslag"
+    data-sr-toggle="Valg"
+  >
+    <data
+      value="Stavanger"
+      aria-label="Stavanger, Trykk for å fjerne"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Stavanger
+    </data>
+    <data
+      value="Lillestrøm"
+      aria-label="Lillestrøm, Trykk for å fjerne"
+      role="option"
+      slot="items"
+      tabindex="-1"
+    >
+      Lillestrøm
+    </data>
+    <input
+      placeholder
+      type="text"
+      id="<generated>"
+      aria-description="Naviger til venstre for å finne 2 valgte"
+      list="<generated>"
+      popovertarget="<generated>"
+      aria-autocomplete="list"
+      aria-controls="<generated>"
+      aria-expanded="true"
+      autocomplete="off"
+      enterkeyhint="done"
+      role="combobox"
+      aria-activedescendant="<generated>"
+    >
+    <button
+      aria-expanded="true"
+      aria-label="Valg"
+      type="button"
+      aria-hidden="false"
+      tabindex="-1"
+      hidden
+    >
+    </button>
+    <button
+      type="reset"
+      aria-label="Fjern tekst"
+      aria-hidden="false"
+      tabindex="-1"
+    >
+    </button>
+    <u-datalist
+      data-nofilter
+      popover="manual"
+      role="listbox"
+      data-sr-of="av"
+      tabindex="-1"
+      aria-multiselectable="true"
+      id="<generated>"
+      data-sr-plural="%d forslag"
+      data-sr-singular="%d forslag"
+      data-is-floating="true"
+      aria-label="Velg destinasjoner"
+      style="<removed>"
+      data-floating="bottom"
+    >
+      <u-option
+        data-empty
+        label="o"
+        value
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+      </u-option>
+      <u-option
+        value="__select-all__"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+        data-activedescendant
+      >
+        Velg alle treff (3)
+      </u-option>
+      <u-option
+        label="Sogndal"
+        value="Sogndal"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Sogndal
+      </u-option>
+      <u-option
+        label="Oslo"
+        value="Oslo"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Oslo
+      </u-option>
+      <u-option
+        label="Brønnøysund"
+        value="Brønnøysund"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Brønnøysund
+      </u-option>
+      <u-option
+        label="Stavanger"
+        value="Stavanger"
+        role="option"
+        aria-disabled="true"
+        aria-selected="true"
+        id="<generated>"
+        aria-hidden="true"
+        selected
+        disabled
+      >
+        Stavanger
+      </u-option>
+      <u-option
+        label="Trondheim"
+        value="Trondheim"
+        role="option"
+        aria-disabled="false"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="false"
+      >
+        Trondheim
+      </u-option>
+      <u-option
+        label="Bergen"
+        value="Bergen"
+        role="option"
+        aria-disabled="true"
+        aria-selected="false"
+        id="<generated>"
+        aria-hidden="true"
+        disabled
+      >
+        Bergen
+      </u-option>
+      <u-option
+        label="Lillestrøm"
+        value="Lillestrøm"
+        role="option"
+        aria-disabled="true"
+        aria-selected="true"
+        id="<generated>"
+        aria-hidden="true"
+        selected
+        disabled
+      >
+        Lillestrøm
+      </u-option>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+`;
+
 exports[`Preview 1`] = `
 <ds-field>
   <label for="<generated>">
