@@ -30,7 +30,11 @@ jobs:
 
       - name: Determine whether to deploy
         id: should_deploy
-        run: echo "should_deploy=$(./@internal/ci/bin/should-deploy-testapp.ts)" >> "$GITHUB_OUTPUT"
+        # Assign first: `echo "x=$(script)"` would take echo's exit status and
+        # hide a failing script.
+        run: |
+          should_deploy=$(./@internal/ci/bin/should-deploy-testapp.ts)
+          echo "should_deploy=$should_deploy" >> "$GITHUB_OUTPUT"
         env:
           IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
 

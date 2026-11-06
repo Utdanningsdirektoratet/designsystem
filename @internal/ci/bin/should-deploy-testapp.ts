@@ -11,54 +11,31 @@
  *
  * Outputs "true" or "false" to stdout (no trailing newline).
  * Also prints diagnostic info to stderr for CI logging.
+ * Exits non-zero if turbo fails.
  */
 
-import { execSync } from 'node:child_process';
-
-/** Write to stderr so diagnostics appear in CI logs without affecting captured stdout. */
-function log(msg: string) {
-  process.stderr.write(msg + '\n');
-}
+import { execFileSync } from 'node:child_process';
+import { isTaskAffected, reportDecision } from '../src/ci-decision.js';
 
 const IS_DISPATCH = process.env['IS_DISPATCH'] === 'true';
-
-function isNextjsAffected(): boolean {
-  try {
-    const output = execSync(
-      'pnpm turbo run build --filter="test-app-nextjs" --affected --dry-run=json',
-      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] },
-    );
-    const result = JSON.parse(output);
-    return result.tasks.some(
-      (t: { taskId: string }) => t.taskId === 'test-app-nextjs#build',
-    );
-  } catch {
-    return false;
-  }
-}
-
-function isWorkflowModified(): boolean {
-  try {
-    const output = execSync(
-      './@internal/ci/bin/is-file-modified.sh .github/workflows/azure-testapp-deploy.yml',
-      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] },
-    );
-    return output.trim() === 'true';
-  } catch {
-    return false;
-  }
-}
-
-const nextjsAffected = isNextjsAffected();
-const workflowModified = isWorkflowModified();
-
-log(`Is test-app-nextjs#build affected? ${nextjsAffected}`);
-log(`Is the deployment workflow modified? ${workflowModified}`);
-log(
-  `Is the deploy triggered through a manual workflow dispatch? ${IS_DISPATCH}`,
-);
+const nextjsAffected = isTaskAffected('test-app-nextjs', 'build');
+// is-file-modified.sh prints "false" if git fails, so this only throws if the
+// script can't be started at all.
+const workflowModified =
+  execFileSync(
+    './@internal/ci/bin/is-file-modified.sh',
+    ['.github/workflows/azure-testapp-deploy.yml'],
+    { encoding: 'utf8' },
+  ).trim() === 'true';
 
 const shouldDeploy = IS_DISPATCH || nextjsAffected || workflowModified;
 
-log(`Conclusion: should we deploy the test app? ${shouldDeploy}`);
-process.stdout.write(String(shouldDeploy));
+reportDecision(
+  {
+    'Is test-app-nextjs#build affected?': nextjsAffected,
+    'Is the deployment workflow modified?': workflowModified,
+    'Is the deploy triggered through a manual workflow dispatch?': IS_DISPATCH,
+  },
+  'should we deploy the test app?',
+  shouldDeploy,
+);
