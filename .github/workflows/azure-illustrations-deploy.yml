@@ -11,10 +11,6 @@ on:
   push:
     branches:
       - main
-  # Temporary: lets the PR be tried before the workflow is on main. Runs only with the label
-  # `illustrations-test`, for every category. Remove after launch.
-  pull_request:
-    types: [labeled, synchronize]
 
 env:
   STORAGE_ACCOUNT: stdsillustrations
@@ -27,7 +23,6 @@ env:
 
 jobs:
   check:
-    if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'illustrations-test')
     runs-on: ubuntu-latest
     name: Check if deploy should be initiated
     outputs:
