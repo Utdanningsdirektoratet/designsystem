@@ -5,12 +5,12 @@ import { binaryFixtureCatalog, fixtureCatalog } from './gallery.fixtures';
 import {
   countMatchesByCategory,
   familyDisplayName,
+  familyFilterOptions,
   illustrationAssetUrl,
   isBinaryProperty,
-  matchesFamilySearch,
-  matchesTag,
+  matchesFilter,
+  namePrefix,
   needsVariantChooser,
-  normalizeFamilySearch,
   propertyOptions,
   resultsSummary,
   selectProperty,
@@ -36,32 +36,36 @@ describe('illustration gallery browsing', () => {
     },
   );
 
-  it('normalizes Norwegian case, hyphens and whitespace', () => {
-    expect(normalizeFamilySearch('  MILJØ- 1\t')).toBe('miljø1');
-    for (const query of [
-      'Aktivitet 1',
-      'AKTIVITET-1',
-      'aktivitet1',
-      ' aktivitet  1 ',
-    ]) {
-      expect(matchesFamilySearch('aktivitet-1', query)).toBe(true);
-    }
-    expect(matchesFamilySearch('miljø-1', 'MILJØ 1')).toBe(true);
-    expect(matchesFamilySearch('aktivitet-1', 'lek')).toBe(false);
-    expect(matchesFamilySearch('aktivitet-1', '  ')).toBe(true);
+  it.each([
+    ['aktivitet-3a', 'aktivitet'],
+    ['Miljø-1', 'miljø'],
+    ['feiring', 'feiring'],
+    ['Syntetisk testfamilie', 'syntetisk'],
+    ['', ''],
+  ])('takes the first part of %s as its name option', (name, expected) => {
+    expect(namePrefix(name)).toBe(expected);
   });
 
-  it('matches tags by prefix only', () => {
-    const tags = ['kontor', 'retning', 'piler'];
-    expect(matchesFamilySearch('hverdag-1', 'kont', tags)).toBe(true);
-    expect(matchesFamilySearch('hverdag-1', 'PIL', tags)).toBe(true);
-    expect(matchesFamilySearch('hverdag-1', 'ontor', tags)).toBe(false);
-    expect(matchesFamilySearch('hverdag-1', 'kont')).toBe(false);
+  it('offers the name prefix and tags once each', () => {
+    expect(
+      familyFilterOptions({
+        ...family,
+        name: 'lek-1a',
+        tags: ['barn', 'lek', 'ute'],
+      }),
+    ).toEqual(['lek', 'barn', 'ute']);
+    expect(familyFilterOptions({ ...family, name: 'miljø-1' })).toEqual([
+      'miljø',
+    ]);
   });
 
-  it('matchesTag matches the start of the tag only', () => {
-    expect(matchesTag('kontor', 'KONT')).toBe(true);
-    expect(matchesTag('kontor', 'ontor')).toBe(false);
+  it('matches a family on its name prefix or a tag, exactly', () => {
+    const item = { ...family, name: 'aktivitet-1', tags: ['barn', 'ute'] };
+    expect(matchesFilter(item, 'aktivitet')).toBe(true);
+    expect(matchesFilter(item, 'ute')).toBe(true);
+    expect(matchesFilter(item, 'akt')).toBe(false);
+    expect(matchesFilter(item, 'lek')).toBe(false);
+    expect(matchesFilter(item, '')).toBe(true);
   });
 
   it('sorts Norwegian names and numeric suffixes without mutating metadata', () => {
@@ -112,12 +116,9 @@ describe('resultsSummary', () => {
     );
   });
 
-  it('summarises hits for a search', () => {
+  it('summarises hits for a filter', () => {
     expect(resultsSummary(17, 'aktivitet', 'Barnehage')).toBe(
       'Viser 17 treff for «aktivitet» i Barnehage',
-    );
-    expect(resultsSummary(1, ' aktivitet ', 'Barnehage')).toBe(
-      'Viser 1 treff for «aktivitet» i Barnehage',
     );
     expect(resultsSummary(0, 'aktivitet', 'Barnehage')).toBe(
       'Ingen treff for «aktivitet» i Barnehage',
@@ -139,7 +140,7 @@ describe('countMatchesByCategory', () => {
   ];
 
   it('counts hits in other categories only', () => {
-    expect(countMatchesByCategory(families, 'syntetisk', 'barnehage')).toEqual([
+    expect(countMatchesByCategory(families, 'annen', 'barnehage')).toEqual([
       { categoryId: 'internbruk', count: 1 },
     ]);
   });
@@ -147,21 +148,21 @@ describe('countMatchesByCategory', () => {
   it('counts every category when none is excluded', () => {
     expect(countMatchesByCategory(families, 'syntetisk')).toEqual([
       { categoryId: 'barnehage', count: 1 },
+    ]);
+    expect(countMatchesByCategory(families, 'annen')).toEqual([
       { categoryId: 'internbruk', count: 1 },
     ]);
   });
 
-  it('matches tags by prefix and ignores families without variants', () => {
-    expect(countMatchesByCategory(families, 'sko', 'barnehage')).toEqual([
+  it('matches tags and ignores families without variants', () => {
+    expect(countMatchesByCategory(families, 'skole', 'barnehage')).toEqual([
       { categoryId: 'internbruk', count: 1 },
     ]);
-    expect(countMatchesByCategory(families, 'syntetisk', 'internbruk')).toEqual(
-      [{ categoryId: 'barnehage', count: 1 }],
-    );
+    expect(countMatchesByCategory(families, 'annen', 'internbruk')).toEqual([]);
   });
 
-  it('returns nothing for an empty query', () => {
-    expect(countMatchesByCategory(families, '  ', 'barnehage')).toEqual([]);
+  it('returns nothing without a filter', () => {
+    expect(countMatchesByCategory(families, '', 'barnehage')).toEqual([]);
   });
 });
 

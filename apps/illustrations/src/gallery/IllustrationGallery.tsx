@@ -1,5 +1,4 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
-import type { FocusEvent } from 'react';
 import { DownloadIcon } from '@udir-design/icons';
 import {
   Badge,
@@ -13,7 +12,6 @@ import {
   Label,
   Link,
   Paragraph,
-  Search,
   Select,
   Tag,
   ToggleGroup,
@@ -31,9 +29,9 @@ import { CopyImageButton } from './CopyImageButton';
 import {
   countMatchesByCategory,
   familyDisplayName,
+  familyFilterOptions,
   isBinaryProperty,
-  matchesFamilySearch,
-  matchesTag,
+  matchesFilter,
   needsVariantChooser,
   propertyDisplayLabel,
   propertyOptions,
@@ -69,41 +67,20 @@ function SvgDownload({ variant }: { variant: IllustrationVariant }) {
   return <Link {...props}>Last ned SVG</Link>;
 }
 
-const MIN_SEARCH_LENGTH = 2;
-const SEARCH_DELAY_MS = 250;
-
-/**
- * Filtering and hit counts follow the input after a pause, and only once the query is long enough,
- * so the grid and toggles do not jump around on every keystroke. Clearing applies immediately.
- */
-function useSearchQuery(input: string): string {
-  const [debounced, setDebounced] = useState(input);
-  // Forget the previous search once cleared, or it resurfaces on the next keystroke.
-  if (!input.trim() && debounced) setDebounced('');
-  useEffect(() => {
-    if (!input.trim()) return;
-    const timer = setTimeout(() => setDebounced(input), SEARCH_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, [input]);
-  const query = input.trim() ? debounced : '';
-  return query.trim().length >= MIN_SEARCH_LENGTH ? query : '';
-}
-
 export function IllustrationGallery({
   catalog,
 }: {
   catalog: IllustrationCatalog;
 }) {
   const [categoryId, setCategoryId] = useState<CategoryId>(categories[0].id);
-  const [input, setInput] = useState('');
-  const query = useSearchQuery(input);
+  const [filter, setFilter] = useState('');
   const [selection, setSelection] = useState<{
     familyId: string;
     variantId: string;
   } | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const searchRef = useRef<HTMLInputElement>(null);
-  const searchId = useId();
+  const filterRef = useRef<HTMLInputElement>(null);
+  const filterId = useId();
   const titleId = useId();
   const fieldId = useId();
   const categorySelectId = useId();
@@ -147,37 +124,36 @@ export function IllustrationGallery({
     [catalog.families, categoryId],
   );
   const families = availableFamilies.filter((item) =>
-    matchesFamilySearch(item.name, query, item.tags),
+    matchesFilter(item, filter),
   );
 
-  // Which categories each tag appears in, so suggestions can say where a tag belongs.
-  const tagCategories = useMemo(() => {
+  // Which categories each option (name prefix or tag) appears in, so suggestions can say where it belongs.
+  const optionCategories = useMemo(() => {
     const map = new Map<string, Set<CategoryId>>();
     for (const item of catalog.families) {
       if (item.variants.length === 0) continue;
-      for (const tag of item.tags ?? []) {
-        const ids = map.get(tag) ?? new Set<CategoryId>();
+      for (const option of familyFilterOptions(item)) {
+        const ids = map.get(option) ?? new Set<CategoryId>();
         ids.add(item.categoryId as CategoryId);
-        map.set(tag, ids);
+        map.set(option, ids);
       }
     }
     return map;
   }, [catalog.families]);
 
-  // Tags from the current category first, then the rest, each group alphabetical.
-  const tagSuggestions = [...tagCategories]
-    .filter(([tag]) => matchesTag(tag, input))
-    .map(([tag, ids]) => ({ tag, inCategory: ids.has(categoryId) }))
+  // Options from the current category first, then the rest, each group alphabetical.
+  const filterOptions = [...optionCategories]
+    .map(([option, ids]) => ({ option, inCategory: ids.has(categoryId) }))
     .sort(
       (a, b) =>
         Number(b.inCategory) - Number(a.inCategory) ||
-        a.tag.localeCompare(b.tag, 'nb'),
+        a.option.localeCompare(b.option, 'nb'),
     );
 
   const hitCounts = useMemo(() => {
-    const counts = countMatchesByCategory(catalog.families, query);
+    const counts = countMatchesByCategory(catalog.families, filter);
     return new Map(counts.map((item) => [item.categoryId, item.count]));
-  }, [catalog.families, query]);
+  }, [catalog.families, filter]);
   const otherCategoryHits = categories.flatMap(({ id, label }) => {
     const count = hitCounts.get(id);
     return count && id !== categoryId ? [{ id, label, count }] : [];
@@ -188,32 +164,16 @@ export function IllustrationGallery({
     setSelection(null);
   };
 
-  // The combobox owns the input value, so write to it directly instead of controlling it from React.
-  const writeSearch = (value: string) => {
-    setInput(value);
-    if (searchRef.current) searchRef.current.value = value;
-  };
-
-  /* On blur the combobox resets the input to its selected item, which wipes free text. Enter
-     commits the typed text as a selection, so do the same before the combobox's own blur
-     handler runs (it defers with setTimeout). */
-  const commitSearchOnBlur = (event: FocusEvent<HTMLInputElement>) => {
-    if (!event.currentTarget.value.trim()) return;
-    event.currentTarget.dispatchEvent(
-      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
-    );
-  };
-
-  const searchTag = (tag: string) => {
-    writeSearch(tag);
+  const selectFilter = (tag: string) => {
+    setFilter(tag);
     setSelection(null);
     dialogRef.current?.close();
-    searchRef.current?.focus();
+    filterRef.current?.focus();
   };
 
-  const clearSearch = () => {
-    writeSearch('');
-    searchRef.current?.focus();
+  const clearFilter = () => {
+    setFilter('');
+    filterRef.current?.focus();
   };
 
   if (catalog.state === 'pending-import') {
@@ -230,7 +190,6 @@ export function IllustrationGallery({
     );
   }
 
-  const search = query.trim();
   const categoryLabel =
     categories.find((item) => item.id === categoryId)?.label ?? '';
   const summaryParts = searchSummaryParts(families.length, categoryLabel);
@@ -239,22 +198,22 @@ export function IllustrationGallery({
     <div className={styles.content}>
       <div className={styles.summary}>
         <output
-          className={search ? styles.visuallyHidden : undefined}
+          className={filter ? styles.visuallyHidden : undefined}
           aria-live="polite"
           aria-atomic="true"
         >
-          {resultsSummary(families.length, query, categoryLabel)}
+          {resultsSummary(families.length, filter, categoryLabel)}
         </output>
-        {search ? (
+        {filter ? (
           <>
             <span aria-hidden>{summaryParts.before}</span>
             <Chip.Removable
               data-size="sm"
-              aria-label={`Tøm søket «${search}»`}
-              title={`Tøm søket «${search}»`}
-              onClick={clearSearch}
+              aria-label={`Fjern valget ${filter}`}
+              title={`Fjern valget ${filter}`}
+              onClick={clearFilter}
             >
-              <span className={styles.searchTerm}>«{search}»</span>
+              <span className={styles.searchTerm}>{filter}</span>
             </Chip.Removable>
             <span aria-hidden>{summaryParts.after}</span>
           </>
@@ -266,10 +225,10 @@ export function IllustrationGallery({
             Ingen illustrasjoner å vise i denne kategorien
           </Heading>
           <Paragraph>
-            {query.trim()
+            {filter
               ? otherCategoryHits.length > 0
-                ? 'Ingen illustrasjoner i denne kategorien passer til søket, men det finnes treff i andre kategorier.'
-                : 'Ingen illustrasjoner passer til søket. Prøv et annet søkeord eller tøm søket.'
+                ? 'Ingen illustrasjoner i denne kategorien passer til valget, men det finnes treff i andre kategorier.'
+                : 'Ingen illustrasjoner passer til valget. Velg et annet stikkord eller fjern valget.'
               : `Det er ikke importert illustrasjoner for ${categories.find((item) => item.id === categoryId)?.label ?? 'denne kategorien'} ennå.`}
           </Paragraph>
           {otherCategoryHits.length > 0 ? (
@@ -285,9 +244,9 @@ export function IllustrationGallery({
               ))}
             </div>
           ) : null}
-          {query.trim() ? (
-            <Button variant="secondary" onClick={clearSearch}>
-              Tøm søket
+          {filter ? (
+            <Button variant="secondary" onClick={clearFilter}>
+              Fjern valg
             </Button>
           ) : null}
         </div>
@@ -348,7 +307,7 @@ export function IllustrationGallery({
             return (
               <ToggleGroup.Item key={item.id} value={item.id}>
                 {item.label}
-                {query && count ? <Badge count={count} maxCount={99} /> : null}
+                {filter && count ? <Badge count={count} maxCount={99} /> : null}
               </ToggleGroup.Item>
             );
           })}
@@ -372,24 +331,25 @@ export function IllustrationGallery({
             })}
           </Select>
         </Field>
-        <Search data-creatable className={styles.search}>
-          <Search.Input
-            ref={searchRef}
-            id={searchId}
-            name="illustrasjonssøk"
-            aria-label="Søk"
-            placeholder="Søk"
-            autoComplete="off"
-            onChange={(event) => setInput(event.currentTarget.value)}
-            onKeyUp={(event) => setInput(event.currentTarget.value)}
-            onBlur={commitSearchOnBlur}
+        <Suggestion
+          className={styles.search}
+          selected={filter}
+          onSelectedChange={(item) => setFilter(item?.value ?? '')}
+        >
+          <Suggestion.Input
+            ref={filterRef}
+            id={filterId}
+            name="illustrasjonsfilter"
+            aria-label="Filtrer på stikkord"
+            placeholder="Søk på filter"
           />
           <Suggestion.Toggle />
-          <Search.Clear />
+          <Suggestion.Clear />
           <Suggestion.List>
-            {tagSuggestions.map(({ tag, inCategory }) => (
-              <Suggestion.Option key={tag} label={tag} value={tag}>
-                {tag}
+            <Suggestion.Empty>Ingen treff</Suggestion.Empty>
+            {filterOptions.map(({ option, inCategory }) => (
+              <Suggestion.Option key={option} label={option} value={option}>
+                {option}
                 {inCategory ? null : (
                   <span className={styles.tagHint}>
                     Treff i andre kategorier
@@ -398,7 +358,7 @@ export function IllustrationGallery({
               </Suggestion.Option>
             ))}
           </Suggestion.List>
-        </Search>
+        </Suggestion>
       </div>
       {content}
       <Dialog
@@ -419,7 +379,7 @@ export function IllustrationGallery({
                   {family.tags.map((tag) => (
                     <li key={tag}>
                       <Tag asChild data-size="sm" variant="outline">
-                        <button type="button" onClick={() => searchTag(tag)}>
+                        <button type="button" onClick={() => selectFilter(tag)}>
                           {tag}
                         </button>
                       </Tag>

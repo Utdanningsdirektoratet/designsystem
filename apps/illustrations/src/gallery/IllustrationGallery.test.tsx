@@ -1,33 +1,33 @@
 // @vitest-environment jsdom
 import {
-  act,
   cleanup,
   fireEvent,
   render,
   screen,
+  waitFor,
 } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 import { IllustrationGallery } from './IllustrationGallery';
 import { fixtureCatalog } from './gallery.fixtures';
 import { illustrationAssetUrl } from './gallery.utils';
 
-beforeEach(() => {
-  vi.useFakeTimers();
-});
+afterEach(cleanup);
 
-afterEach(() => {
-  cleanup();
-  vi.useRealTimers();
-});
+const filterLabel = 'Filtrer på stikkord';
 
-const searchLabel = 'Søk';
+const taggedCatalog = {
+  ...fixtureCatalog,
+  families: [
+    { ...fixtureCatalog.families[0], tags: ['lekeplass'] },
+    { ...fixtureCatalog.families[1], tags: ['bøker'] },
+  ],
+};
 
-// Filtering is debounced, so flush the timer after typing.
-function typeSearch(search: HTMLElement, value: string) {
-  fireEvent.change(search, { target: { value } });
-  act(() => {
-    vi.advanceTimersByTime(300);
-  });
+// Typing the exact label and pressing Enter is how the combobox commits an option.
+function chooseOption(label: string) {
+  const input = screen.getByRole('combobox', { name: filterLabel });
+  fireEvent.change(input, { target: { value: label } });
+  fireEvent.keyDown(input, { key: 'Enter' });
 }
 
 describe('IllustrationGallery', () => {
@@ -74,64 +74,86 @@ describe('IllustrationGallery', () => {
     ).toBeTruthy();
   });
 
-  it('filters families by search and clears the query', () => {
+  it('offers name prefixes and tags as options, current category first', () => {
+    render(
+      <IllustrationGallery
+        catalog={{
+          ...fixtureCatalog,
+          families: [
+            { ...fixtureCatalog.families[0], tags: ['lekeplass', 'syntetisk'] },
+            {
+              ...fixtureCatalog.families[1],
+              categoryId: 'internbruk',
+              tags: ['bøker'],
+            },
+          ],
+        }}
+      />,
+    );
+    const options = [...document.querySelectorAll('u-option')]
+      .map((option) => option.getAttribute('value'))
+      .filter(Boolean);
+    expect(options).toEqual(['lekeplass', 'syntetisk', 'annen', 'bøker']);
+    expect(screen.getAllByText('Treff i andre kategorier')).toHaveLength(2);
+  });
+
+  it('filters families on a chosen name prefix and clears the filter', () => {
     render(<IllustrationGallery catalog={fixtureCatalog} />);
-    const list = screen.getByRole('list');
-    expect(list.querySelectorAll('button')).toHaveLength(2);
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(2);
 
-    const search = screen.getByRole('combobox', { name: searchLabel });
-    typeSearch(search, 'INGEN TREFF');
+    chooseOption('syntetisk');
     expect(
-      screen.getByRole('heading', {
-        name: 'Ingen illustrasjoner å vise i denne kategorien',
-      }),
-    ).toBeTruthy();
-    expect(
-      screen.getByText('Ingen treff for «INGEN TREFF» i Barnehage').ariaLive,
+      screen.getByText('Viser 1 treff for «syntetisk» i Barnehage').ariaLive,
     ).toBe('polite');
-
-    typeSearch(search, 'TESTFAMILIE');
     expect(
-      screen.getByText('Viser 1 treff for «TESTFAMILIE» i Barnehage'),
+      screen.getByRole('button', { name: 'Fjern valget syntetisk' }),
     ).toBeTruthy();
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
-  });
+    expect(
+      screen.getByRole('button', { name: 'Syntetisk testfamilie' }),
+    ).toBeTruthy();
 
-  it('clears the search from the chip in the results summary', () => {
-    render(<IllustrationGallery catalog={fixtureCatalog} />);
-    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
-
-    const search = screen.getByRole('combobox', {
-      name: searchLabel,
-    }) as HTMLInputElement;
-    typeSearch(search, 'TESTFAMILIE');
-    fireEvent.click(
-      screen.getByRole('button', { name: 'Tøm søket «TESTFAMILIE»' }),
-    );
-    act(() => {
-      vi.advanceTimersByTime(300);
-    });
-
-    expect(search.value).toBe('');
-    expect(document.activeElement).toBe(search);
-    expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
-    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
-  });
-
-  it('does not bring back a cleared search when typing again', () => {
-    render(<IllustrationGallery catalog={fixtureCatalog} />);
-    const search = screen.getByRole('combobox', { name: searchLabel });
-    typeSearch(search, 'TESTFAMILIE');
-    fireEvent.click(
-      screen.getByRole('button', { name: 'Tøm søket «TESTFAMILIE»' }),
-    );
-
-    fireEvent.change(search, { target: { value: 'T' } });
-    expect(screen.queryByRole('button', { name: /^Tøm søket/ })).toBeNull();
+    const clear = document.querySelector('button[type="reset"]');
+    if (!clear) throw new Error('No clear button');
+    fireEvent.click(clear);
     expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
   });
 
-  it('keeps the query and shows hit badges when switching category', () => {
+  it('clears the filter from the chip in the results summary', async () => {
+    render(<IllustrationGallery catalog={fixtureCatalog} />);
+    expect(screen.queryByRole('button', { name: /^Fjern valget/ })).toBeNull();
+
+    chooseOption('syntetisk');
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Fjern valget syntetisk' }),
+    );
+
+    expect(screen.getByText('Viser 2 illustrasjoner i Barnehage')).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /^Fjern valget/ })).toBeNull();
+    await waitFor(() =>
+      expect(
+        (
+          screen.getByRole('combobox', {
+            name: filterLabel,
+          }) as HTMLInputElement
+        ).value,
+      ).toBe(''),
+    );
+    expect(document.activeElement).toBe(
+      screen.getByRole('combobox', { name: filterLabel }),
+    );
+  });
+
+  it('filters families on a chosen tag', () => {
+    render(<IllustrationGallery catalog={taggedCatalog} />);
+    chooseOption('bøker');
+    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
+    expect(
+      screen.getByRole('button', { name: 'Annen syntetisk familie' }),
+    ).toBeTruthy();
+  });
+
+  it('keeps the filter and shows hit badges when switching category', () => {
     render(
       <IllustrationGallery
         catalog={{
@@ -143,34 +165,23 @@ describe('IllustrationGallery', () => {
         }}
       />,
     );
-    const search = screen.getByRole('combobox', { name: searchLabel });
-    expect(screen.getByRole('radio', { name: 'Internbruk' })).toBeTruthy();
-
-    typeSearch(search, 'a');
-    expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
-    expect(
-      screen
-        .getByRole('radio', { name: 'Internbruk' })
-        .closest('label')
-        ?.querySelector('[data-count]'),
-    ).toBeNull();
-
-    typeSearch(search, 'annen');
     const countOf = (name: string | RegExp) =>
       screen
         .getByRole('radio', { name })
         .closest('label')
         ?.querySelector('[data-count]')
         ?.getAttribute('data-count');
+    expect(countOf('Internbruk')).toBeUndefined();
+
+    chooseOption('annen');
     expect(countOf(/Internbruk/)).toBe('1');
     expect(countOf('Barnehage')).toBeUndefined();
 
     fireEvent.click(screen.getByRole('radio', { name: /Internbruk/ }));
-    expect((search as HTMLInputElement).value).toBe('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
-  it('links to hits in other categories and keeps the query', () => {
+  it('links to hits in other categories and keeps the filter', () => {
     render(
       <IllustrationGallery
         catalog={{
@@ -182,8 +193,7 @@ describe('IllustrationGallery', () => {
         }}
       />,
     );
-    const search = screen.getByRole('combobox', { name: searchLabel });
-    typeSearch(search, 'annen');
+    chooseOption('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(0);
 
     fireEvent.click(
@@ -193,35 +203,26 @@ describe('IllustrationGallery', () => {
       (screen.getByRole('radio', { name: 'Internbruk' }) as HTMLInputElement)
         .checked,
     ).toBe(true);
-    expect((search as HTMLInputElement).value).toBe('annen');
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
   });
 
-  it('searches for a tag when it is clicked in the details dialog', () => {
-    render(
-      <IllustrationGallery
-        catalog={{
-          ...fixtureCatalog,
-          families: [
-            { ...fixtureCatalog.families[0], tags: ['lekeplass'] },
-            { ...fixtureCatalog.families[1], tags: ['bøker'] },
-          ],
-        }}
-      />,
-    );
+  it('filters on a tag when it is clicked in the details dialog', async () => {
+    render(<IllustrationGallery catalog={taggedCatalog} />);
     fireEvent.click(
       screen.getByRole('button', { name: 'Syntetisk testfamilie' }),
     );
     fireEvent.click(
       screen.getByRole('button', { name: 'lekeplass', hidden: true }),
     );
-    act(() => {
-      vi.advanceTimersByTime(300);
-    });
-    const search = screen.getByRole('combobox', {
-      name: searchLabel,
-    }) as HTMLInputElement;
-    expect(search.value).toBe('lekeplass');
+    await waitFor(() =>
+      expect(
+        (
+          screen.getByRole('combobox', {
+            name: filterLabel,
+          }) as HTMLInputElement
+        ).value,
+      ).toBe('lekeplass'),
+    );
     expect(screen.getByRole('list').querySelectorAll('button')).toHaveLength(1);
     expect(document.querySelector('dialog')?.hasAttribute('open')).toBe(false);
   });

@@ -21,7 +21,7 @@ export function propertyValueDisplayLabel(value: string): string {
   return value.charAt(0).toLocaleUpperCase('nb') + value.slice(1);
 }
 
-/** The text before and after the search term, so the term can be rendered as its own element. */
+/** The text before and after the selected option, so it can be rendered as its own element. */
 export function searchSummaryParts(
   count: number,
   categoryLabel: string,
@@ -32,55 +32,51 @@ export function searchSummaryParts(
   };
 }
 
-/** Status text for the results; `query` is the active search, empty when none applies. */
+/** Status text for the results; `filter` is the selected option, empty when none applies. */
 export function resultsSummary(
   count: number,
-  query: string,
+  filter: string,
   categoryLabel: string,
 ): string {
-  const search = query.trim();
-  if (search) {
+  if (filter) {
     const { before, after } = searchSummaryParts(count, categoryLabel);
-    return `${before} «${search}» ${after}`;
+    return `${before} «${filter}» ${after}`;
   }
   if (count === 0) return `Ingen illustrasjoner i ${categoryLabel}`;
   return `Viser ${count} ${count === 1 ? 'illustrasjon' : 'illustrasjoner'} i ${categoryLabel}`;
 }
 
-export function normalizeFamilySearch(value: string): string {
-  return value.toLocaleLowerCase('nb').replace(/[\s-]+/g, '');
+/** The first part of a name, so `aktivitet-3a` is found under "aktivitet". */
+export function namePrefix(name: string): string {
+  return (name.split(/[-\s]/)[0] ?? '').toLocaleLowerCase('nb');
 }
 
-/** Shared by the grid and the tag suggestions so a suggested tag always matches. */
-export function matchesTag(tag: string, query: string): boolean {
-  return normalizeFamilySearch(tag).startsWith(normalizeFamilySearch(query));
-}
-
-export function matchesFamilySearch(
-  name: string,
-  query: string,
-  tags: string[] = [],
-): boolean {
-  const search = normalizeFamilySearch(query);
-  return (
-    [name, familyDisplayName(name)].some((value) =>
-      normalizeFamilySearch(value).includes(search),
-    ) || tags.some((tag) => matchesTag(tag, query))
+/** The filter options a family can be found under: its name prefix and its tags. */
+export function familyFilterOptions(family: IllustrationFamily): string[] {
+  return [...new Set([namePrefix(family.name), ...(family.tags ?? [])])].filter(
+    Boolean,
   );
 }
 
-/** Search hits per category, skipping `excludeCategoryId` (if given) and categories without hits. */
+export function matchesFilter(
+  family: IllustrationFamily,
+  option: string,
+): boolean {
+  return !option || familyFilterOptions(family).includes(option);
+}
+
+/** Filter hits per category, skipping `excludeCategoryId` (if given) and categories without hits. */
 export function countMatchesByCategory(
   families: IllustrationFamily[],
-  query: string,
+  option: string,
   excludeCategoryId?: string,
 ): { categoryId: string; count: number }[] {
-  if (!query.trim()) return [];
+  if (!option) return [];
   const counts = new Map<string, number>();
   for (const item of families) {
     if (item.categoryId === excludeCategoryId || item.variants.length === 0)
       continue;
-    if (!matchesFamilySearch(item.name, query, item.tags)) continue;
+    if (!matchesFilter(item, option)) continue;
     counts.set(item.categoryId, (counts.get(item.categoryId) ?? 0) + 1);
   }
   return [...counts].map(([categoryId, count]) => ({ categoryId, count }));

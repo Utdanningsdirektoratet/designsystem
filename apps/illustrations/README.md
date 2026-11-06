@@ -99,7 +99,9 @@ that keeps generated IDs unique across files. A category without a source cannot
 
 ## Tags
 
-The search also matches tags, by prefix ("kont" finds "kontor"). Tags are read from the component set's
+The gallery has no free-text search. Users pick an option from a list and the grid filters on it. The
+options are all tags plus the first part of each family name (`aktivitet-3a` is found under
+"aktivitet"). Tags are read from the component set's
 description in Figma, as comma-separated words such as `kontor, retning, piler`. An optional `Tags:`
 prefix is accepted. `sync:figma` stores them as `tags` in `metadata.json` and the preview dialog shows
 them. They are not part of `import-map.json`, so editing a tag needs only a new sync and a commit.
