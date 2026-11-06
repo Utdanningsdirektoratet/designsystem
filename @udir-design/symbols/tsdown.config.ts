@@ -5,6 +5,8 @@ export default defineConfig({
   logLevel: 'warn',
   format: ['cjs', 'esm'],
   dts: true,
+  // tsconfig.json only references the library and tooling configs
+  tsconfig: 'tsconfig.lib.json',
   sourcemap: true,
   clean: true,
   deps: {

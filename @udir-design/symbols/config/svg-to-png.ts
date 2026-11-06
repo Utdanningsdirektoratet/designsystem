@@ -1,23 +1,35 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const inputDir = path.resolve(__dirname, '../symbols');
-const outputDir = path.resolve(__dirname, '../png');
+const inputDir = path.resolve(import.meta.dirname, '../symbols');
+const outputDir = path.resolve(import.meta.dirname, '../png');
 
 const baseCanvas = 64; // reference box
 const finalCanvas = 500; // final box
 const measureDensity = 72; // normalize pt→px: 64pt ⇒ 64px
 const renderDensity = 300; // high DPI for crisp final render
 const scale = finalCanvas / baseCanvas; // shared scale
+const transparent = { r: 255, g: 255, b: 255, alpha: 0 };
+
+/** The size to render a symbol measured at `width`×`height` on the 64×64 reference box. */
+const fitToCanvas = (width: number, height: number) => {
+  // apply shared 64→500 factor
+  const scaledW = Math.max(1, Math.round(width * scale));
+  const scaledH = Math.max(1, Math.round(height * scale));
+  if (scaledW <= finalCanvas && scaledH <= finalCanvas) {
+    return { width: scaledW, height: scaledH };
+  }
+  // safety: clamp if any dimension would exceed the 500×500 canvas
+  const fit = Math.min(finalCanvas / scaledW, finalCanvas / scaledH);
+  return {
+    width: Math.floor(scaledW * fit),
+    height: Math.floor(scaledH * fit),
+  };
+};
 
 // clean + recreate output
-if (fs.existsSync(outputDir))
-  fs.rmSync(outputDir, { recursive: true, force: true });
+fs.rmSync(outputDir, { recursive: true, force: true });
 fs.mkdirSync(outputDir, { recursive: true });
 
 // Find SVGs
@@ -26,6 +38,9 @@ const files = fs
   .filter((f) => f.toLowerCase().endsWith('.svg'));
 console.log(`Found ${files.length} SVG files in ${inputDir}`);
 
+const skipped: string[] = [];
+
+// one file at a time: sharp already spreads each conversion over its own thread pool
 for (const file of files) {
   const inputPath = path.join(inputDir, file);
   const outputPath = path.join(outputDir, file.replace(/\.svg$/i, '.png'));
@@ -34,32 +49,22 @@ for (const file of files) {
   const measuredBuf = await sharp(inputPath, { density: measureDensity })
     .png()
     .toBuffer();
-  const measuredMeta = await sharp(measuredBuf).metadata();
-  const w = measuredMeta.width ?? 0;
-  const h = measuredMeta.height ?? 0;
+  const { width: w, height: h } = await sharp(measuredBuf).metadata();
   if (!Number.isFinite(w) || !Number.isFinite(h) || w === 0 || h === 0) {
     console.warn(`Could not measure ${file} (got ${w}×${h}). Skipping.`);
+    skipped.push(file);
     continue;
   }
 
-  // apply shared 64→500 factor
-  let targetW = Math.max(1, Math.round(w * scale));
-  let targetH = Math.max(1, Math.round(h * scale));
+  const target = fitToCanvas(w, h);
 
-  // safety: clamp if any dimension would exceed the 500×500 canvas
-  if (targetW > finalCanvas || targetH > finalCanvas) {
-    const fit = Math.min(finalCanvas / targetW, finalCanvas / targetH);
-    targetW = Math.floor(targetW * fit);
-    targetH = Math.floor(targetH * fit);
-  }
-
-  // render SVG directly to targetW×targetH
+  // render SVG directly to the target size
   const iconBuffer = await sharp(inputPath, { density: renderDensity })
-    .resize(targetW, targetH, {
+    .resize(target.width, target.height, {
       fit: 'fill',
       withoutEnlargement: false,
       kernel: 'lanczos3',
-      background: { r: 255, g: 255, b: 255, alpha: 0 },
+      background: transparent,
     })
     .png({ compressionLevel: 9 })
     .toBuffer();
@@ -70,7 +75,7 @@ for (const file of files) {
       width: finalCanvas,
       height: finalCanvas,
       channels: 4,
-      background: { r: 255, g: 255, b: 255, alpha: 0 },
+      background: transparent,
     },
   })
     .composite([{ input: iconBuffer, gravity: 'center' }])
@@ -78,8 +83,11 @@ for (const file of files) {
     .toFile(outputPath);
 
   console.log(
-    `✅ ${path.relative(__dirname, outputPath)} — measured ${w}×${h} → scaled ${targetW}×${targetH} into ${finalCanvas}×${finalCanvas}`,
+    `✅ ${path.relative(import.meta.dirname, outputPath)} — measured ${w}×${h} → scaled ${target.width}×${target.height} into ${finalCanvas}×${finalCanvas}`,
   );
 }
 
+if (skipped.length > 0) {
+  console.warn(`Skipped ${skipped.length} file(s): ${skipped.join(', ')}`);
+}
 console.log('All done!');

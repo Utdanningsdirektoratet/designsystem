@@ -12,41 +12,23 @@
  *
  * Outputs "true" or "false" to stdout (no trailing newline).
  * Also prints diagnostic info to stderr for CI logging.
+ * Exits non-zero if turbo fails.
  */
 
-import { execSync } from 'node:child_process';
-
-/** Write to stderr so diagnostics appear in CI logs without affecting captured stdout. */
-function log(msg: string) {
-  process.stderr.write(msg + '\n');
-}
+import { isTaskAffected, reportDecision } from '../src/ci-decision.js';
 
 const IS_PR_READY = process.env['IS_PR_READY'] === 'true';
 const IS_PUSH = process.env['IS_PUSH'] === 'true';
-
-function isReactStorybookAffected(): boolean {
-  try {
-    const output = execSync(
-      'pnpm turbo run build:storybook --filter="@udir-design/react" --affected --dry-run=json',
-      { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] },
-    );
-    const result = JSON.parse(output);
-    return result.tasks.some(
-      (t: { taskId: string }) =>
-        t.taskId === '@udir-design/react#build:storybook',
-    );
-  } catch {
-    return false;
-  }
-}
-
-const reactAffected = isReactStorybookAffected();
-
-log(`Is this a PR which is ready for review? ${IS_PR_READY}`);
-log(`Is @udir-design/react#build:storybook affected? ${reactAffected}`);
-log(`Is this a push to a protected branch? ${IS_PUSH}`);
+const reactAffected = isTaskAffected('@udir-design/react', 'build:storybook');
 
 const shouldRun = (IS_PR_READY || IS_PUSH) && reactAffected;
 
-log(`Conclusion: should we run UI tests? ${shouldRun}`);
-process.stdout.write(String(shouldRun));
+reportDecision(
+  {
+    'Is this a PR which is ready for review?': IS_PR_READY,
+    'Is @udir-design/react#build:storybook affected?': reactAffected,
+    'Is this a push to a protected branch?': IS_PUSH,
+  },
+  'should we run UI tests?',
+  shouldRun,
+);
