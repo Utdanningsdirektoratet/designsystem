@@ -27,39 +27,46 @@ const parseMajorMinor = (version: string) => {
 const rootPkg = JSON.parse(
   readFileSync(path.join(repoRoot, 'package.json'), 'utf-8'),
 );
-const runtimeVersion: string = rootPkg.devEngines.runtime.version;
+const runtimeVersion: unknown = rootPkg.devEngines?.runtime?.version;
+if (typeof runtimeVersion !== 'string') {
+  throw new Error('The root package.json has no devEngines.runtime.version');
+}
 const runtime = parseMajorMinor(runtimeVersion);
 
 const lockfile = parseLockfile(
   readFileSync(path.join(repoRoot, 'pnpm-lock.yaml'), 'utf-8'),
 );
 
-let failed = false;
-for (const [importer, deps] of Object.entries(lockfile.importers)) {
-  const typesNode =
-    deps.dependencies?.['@types/node'] ?? deps.devDependencies?.['@types/node'];
-  if (!typesNode) continue;
+const checks = Object.entries(lockfile.importers).flatMap(
+  ([importer, deps]) => {
+    const typesNode =
+      deps.dependencies?.['@types/node'] ??
+      deps.devDependencies?.['@types/node'];
+    if (!typesNode) return [];
 
-  const types = parseMajorMinor(typesNode.version);
-  const problem =
-    types.major !== runtime.major
-      ? `has major ${types.major}, but devEngines.runtime is Node ${runtimeVersion}`
-      : types.minor > runtime.minor
-        ? `describes Node ${types.major}.${types.minor}, newer than devEngines.runtime ${runtimeVersion}`
-        : undefined;
-  if (!problem) {
+    const types = parseMajorMinor(typesNode.version);
+    const problem =
+      types.major !== runtime.major
+        ? `has major ${types.major}, but devEngines.runtime is Node ${runtimeVersion}`
+        : types.minor > runtime.minor
+          ? `describes Node ${types.major}.${types.minor}, newer than devEngines.runtime ${runtimeVersion}`
+          : undefined;
+    return [{ importer, typesNode, problem }];
+  },
+);
+
+for (const { importer, typesNode, problem } of checks) {
+  if (problem) {
+    console.error(
+      `❌ ${importer}: @types/node ${typesNode.version} (${typesNode.specifier}) ${problem}. ` +
+        'Update devEngines.runtime.version in package.json, or the @types/node range ' +
+        'in the pnpm-workspace.yaml catalog.',
+    );
+  } else {
     console.log(
       `✅ ${importer}: @types/node ${typesNode.version} matches Node ${runtimeVersion}`,
     );
-    continue;
   }
-
-  failed = true;
-  console.error(
-    `❌ ${importer}: @types/node ${typesNode.version} (${typesNode.specifier}) ${problem}. ` +
-      'Update devEngines.runtime.version in package.json, or the @types/node range ' +
-      'in the pnpm-workspace.yaml catalog.',
-  );
 }
 
-if (failed) process.exit(1);
+if (checks.some(({ problem }) => problem)) process.exit(1);
