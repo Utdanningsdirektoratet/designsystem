@@ -21,9 +21,9 @@ const isPlainObject = (value: unknown): value is JsonObject =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
 
 /**
- * Recursively copies the values in `patch` into `target`, replacing only the individual values in
- * the patch. Throws if a path in `patch` is missing from `target`, or if one side has an object
- * where the other has a value. That way an upstream rename fails loudly instead of adding an
+ * Returns a copy of `target` with the values in `patch` applied, replacing only the individual
+ * values in the patch. Throws if a path in `patch` is missing from `target`, or if one side has an
+ * object where the other has a value. That way an upstream rename fails loudly instead of adding an
  * orphan token.
  */
 function applyPatch(
@@ -31,23 +31,25 @@ function applyPatch(
   patch: JsonObject,
   file: string,
   keyPath: string[] = [],
-) {
-  for (const [key, value] of Object.entries(patch)) {
+): JsonObject {
+  const patched = Object.entries(patch).map(([key, value]) => {
     const here = [...keyPath, key];
     if (!Object.hasOwn(target, key)) {
       throw new Error(`Override "${here.join('.')}" does not exist in ${file}`);
     }
     const current = target[key];
     if (isPlainObject(value) && isPlainObject(current)) {
-      applyPatch(current, value, file, here);
-    } else if (isPlainObject(value) || isPlainObject(current)) {
+      return [key, applyPatch(current, value, file, here)];
+    }
+    if (isPlainObject(value) || isPlainObject(current)) {
       throw new Error(
         `Override "${here.join('.')}" does not match the structure of ${file}`,
       );
-    } else {
-      target[key] = value;
     }
-  }
+    return [key, value];
+  });
+  // Every patched key already exists in `target`, so the spread keeps the key order of `target`
+  return { ...target, ...Object.fromEntries(patched) };
 }
 
 for (const { target, patch } of OVERRIDES) {
@@ -59,8 +61,11 @@ for (const { target, patch } of OVERRIDES) {
   if (!isPlainObject(tokens) || !isPlainObject(overrides)) {
     throw new Error(`Expected JSON objects in ${target} and ${patch}`);
   }
-  applyPatch(tokens, overrides, target);
   // Match the formatting of `designsystemet tokens create` (2 spaces, no trailing newline)
-  await writeFile(targetFile, JSON.stringify(tokens, null, 2), 'utf8');
+  await writeFile(
+    targetFile,
+    JSON.stringify(applyPatch(tokens, overrides, target), null, 2),
+    'utf8',
+  );
   console.log(`✔︎ Applied ${patch} to ${target}`);
 }
