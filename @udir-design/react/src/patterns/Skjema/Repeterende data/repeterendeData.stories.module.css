@@ -164,6 +164,23 @@
   max-width: 20rem;
 }
 
+/* Bulk-import variant: all fields stacked, with the button under them. */
+.form.formStacked {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 20rem;
+  row-gap: var(--ds-size-5);
+}
+
+.form.formStacked > :first-child {
+  grid-column: auto;
+  max-width: none;
+}
+
+.form.formStacked .formButtons {
+  grid-column: 1;
+  margin-block-start: var(--ds-size-2);
+}
+
 /* Stack fields when the avdeling is too narrow to line up with the table. */
 @container avdeling (max-width: 34rem) {
   .form {
@@ -177,6 +194,15 @@
   .formButtons {
     grid-column: 1;
   }
+}
+
+/* More room between the toggle, the active panel and the registered rows. */
+.avdelingBulk {
+  gap: var(--ds-size-6);
+}
+
+.registrerte {
+  margin-block-start: var(--ds-size-4);
 }
 
 .dialog {
