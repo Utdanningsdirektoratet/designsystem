@@ -1,4 +1,11 @@
-import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  mkdtempSync,
+  readdirSync,
+  renameSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
 import { resolve } from 'node:path';
 import * as R from 'ramda';
 import { downloadSvg, fetchDownloadUrls, fetchSymbols } from './fetch-symbols';
@@ -23,9 +30,11 @@ const imagesUrls = await fetchDownloadUrls(
   publishedSymbolComponents.map((x) => x.node_id),
 );
 
-/* Lets do a clean install */
-rmSync(symbolFolder, { recursive: true, force: true });
-mkdirSync(symbolFolder);
+/*
+ * Build the new symbols next to `symbols/`, and only replace it once they have
+ * all been downloaded and checked, so a failed update keeps the previous ones.
+ */
+using staging = createStagingFolder();
 
 console.group(`Processing ${Object.keys(imagesUrls).length} symbols...`);
 
@@ -55,7 +64,7 @@ for (const batch of R.splitEvery(CONCURRENCY, downloads)) {
     batch.map(async ({ fileName, url }) => {
       /* Each symbol is now a raw string for a complete SVG */
       const symbolSvg = await downloadSvg(url);
-      writeFileSync(resolve(symbolFolder, fileName), symbolSvg, {
+      writeFileSync(resolve(staging.path, fileName), symbolSvg, {
         encoding: 'utf8',
       });
     }),
@@ -71,9 +80,9 @@ if (downloadsByFileName.size !== publishedSymbolComponents.length) {
 console.info(`Completed processing 🎉`);
 console.groupEnd();
 
-makeConfig(publishedSymbolComponents, symbolFolder);
+makeConfig(publishedSymbolComponents, staging.path);
 
-const filesInDir = readdirSync(symbolFolder);
+const filesInDir = readdirSync(staging.path);
 const svgFiles = filesInDir.filter((x) => x.endsWith('.svg'));
 const ymlFiles = filesInDir.filter((x) => x.endsWith('.yml'));
 
@@ -86,8 +95,46 @@ if (
   );
 }
 
+replaceFolder(symbolFolder, staging.path);
+
 console.info(
   `Success! A total of ${
     Object.keys(imagesUrls).length
   } were fetched and downloaded from Figma 🎉`,
 );
+
+/** A temporary folder next to `symbols/`, removed when disposed if still there. */
+function createStagingFolder() {
+  const path = mkdtempSync('./.symbols-new-');
+  return {
+    path,
+    [Symbol.dispose]: () => rmSync(path, { recursive: true, force: true }),
+  };
+}
+
+/**
+ * Replaces the `target` folder with `staged`. Keeps the previous folder until
+ * the new one is in place, and puts it back if that fails.
+ */
+function replaceFolder(target: string, staged: string) {
+  if (!existsSync(target)) {
+    renameSync(staged, target);
+    return;
+  }
+  const backup = staged.replace('.symbols-new-', '.symbols-old-');
+  renameSync(target, backup);
+  try {
+    renameSync(staged, target);
+  } catch (error) {
+    try {
+      renameSync(backup, target);
+    } catch (restoreError) {
+      throw new Error(
+        `Could not install the new symbols in ${target}, nor put the previous ones back. They are in ${backup}.`,
+        { cause: new AggregateError([error, restoreError]) },
+      );
+    }
+    throw error;
+  }
+  rmSync(backup, { recursive: true, force: true });
+}

@@ -1,2 +1,4 @@
 tmp/
 .svgrrc.mjs
+# Left behind by `fetch-new:symbols` if it is stopped while updating `symbols/`
+.symbols-*/
