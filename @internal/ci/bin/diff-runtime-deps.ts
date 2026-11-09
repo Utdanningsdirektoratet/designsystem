@@ -36,15 +36,17 @@
  *   happen before this script's code runs.
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import yargs, { type Options } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import {
+  type DepDiff,
   type Lockfile,
   type PackageJson,
+  type SourcedKey,
   buildClosure,
   compareClosure,
   computeSources,
@@ -66,217 +68,223 @@ function readPkgJsonFromDisk(
     : null;
 }
 
-/** Returns the package.json for a workspace package read from git, or null. */
+/** Returns the contents of a file at a git ref. */
+function gitShow(repoRoot: string, ref: string, filePath: string): string {
+  return execFileSync('git', ['show', `${ref}:${filePath}`], {
+    cwd: repoRoot,
+    encoding: 'utf-8',
+    stdio: 'pipe',
+  });
+}
+
+/**
+ * Returns the package.json for a workspace package read from git, or null if
+ * the package doesn't exist at that ref.
+ */
 function readPkgJsonFromGit(
   repoRoot: string,
   base: string,
   pkgName: string,
 ): PackageJson | null {
   try {
-    const text = execSync(`git show ${base}:${pkgName}/package.json`, {
-      cwd: repoRoot,
-      encoding: 'utf-8',
-    });
-    return JSON.parse(text) as PackageJson;
-  } catch {
-    return null;
+    return JSON.parse(
+      gitShow(repoRoot, base, `${pkgName}/package.json`),
+    ) as PackageJson;
+  } catch (error) {
+    // git's messages for a path that is missing at the ref, depending on
+    // whether it exists in the working tree. The thrown error's message
+    // includes git's stderr. Any other failure is a real error.
+    if (
+      error instanceof Error &&
+      /does not exist in|exists on disk, but not in/.test(error.message)
+    ) {
+      return null;
+    }
+    throw new Error(
+      `Could not read ${pkgName}/package.json from ref "${base}"`,
+      { cause: error },
+    );
   }
 }
+
+/** Returns the lockfile at the base ref. */
+function readLockfileFromGit(repoRoot: string, base: string): Lockfile {
+  try {
+    return parseLockfile(gitShow(repoRoot, base, 'pnpm-lock.yaml'));
+  } catch (cause) {
+    throw new Error(
+      `Could not read pnpm-lock.yaml from ref "${base}". ` +
+        `Make sure the ref exists and the lockfile is tracked by git.`,
+      { cause },
+    );
+  }
+}
+
+// ─── Output ───────────────────────────────────────────────────────────────────
+
+/** Lists how the dependencies of a snapshot changed, for `--verbose`. */
+function formatDepDiffs(depDiffs: DepDiff[]): string[] {
+  return depDiffs.map(({ name, from, to }) =>
+    from === undefined
+      ? `      + ${name}: ${to}`
+      : to === undefined
+        ? `      - ${name}: ${from}`
+        : `      ~ ${name}: ${from} → ${to}`,
+  );
+}
+
+const byKey = (a: SourcedKey, b: SourcedKey) => a.key.localeCompare(b.key);
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
 /** See "Exit codes" above; must match the `case` in `chromatic.yml`. */
 const EXIT_DEPS_CHANGED = 99;
 
-await (async () => {
-  const yargsInstance = yargs(hideBin(process.argv));
-  const options = await yargsInstance
-    .version(false)
-    .options({
-      base: {
-        alias: 'b',
-        description: 'Base git ref to compare against',
-        type: 'string',
-        default: 'main',
-      },
-      verbose: {
-        alias: 'v',
-        description:
-          'Show which transitive dependencies changed within each snapshot',
-        type: 'boolean',
-        default: false,
-      },
-    } satisfies Record<string, Options>)
-    .wrap(yargsInstance.terminalWidth())
-    .parseAsync();
+const yargsInstance = yargs(hideBin(process.argv));
+const options = await yargsInstance
+  .version(false)
+  .options({
+    base: {
+      alias: 'b',
+      description: 'Base git ref to compare against',
+      type: 'string',
+      default: 'main',
+    },
+    verbose: {
+      alias: 'v',
+      description:
+        'Show which transitive dependencies changed within each snapshot',
+      type: 'boolean',
+      default: false,
+    },
+  } satisfies Record<string, Options>)
+  .wrap(yargsInstance.terminalWidth())
+  .parseAsync();
 
-  // The script lives at <repoRoot>/@internal/ci/bin/, so go up 3 dirs.
-  const repoRoot = path.resolve(import.meta.dirname, '../../..');
-  const lockfilePath = path.join(repoRoot, 'pnpm-lock.yaml');
+// The script lives at <repoRoot>/@internal/ci/bin/, so go up 3 dirs.
+const repoRoot = path.resolve(import.meta.dirname, '../../..');
+const lockfilePath = path.join(repoRoot, 'pnpm-lock.yaml');
 
-  console.log(
-    `Checking runtime dependency changes in @udir-design/* against ${options.base}...\n`,
-  );
+console.log(
+  `Checking runtime dependency changes in @udir-design/* against ${options.base}...\n`,
+);
 
-  const headLockfile = parseLockfile(fs.readFileSync(lockfilePath, 'utf-8'));
+const headLockfile = parseLockfile(fs.readFileSync(lockfilePath, 'utf-8'));
+const baseLockfile = readLockfileFromGit(repoRoot, options.base);
 
-  let baseLockfile: Lockfile;
-  try {
-    const text = execSync(`git show ${options.base}:pnpm-lock.yaml`, {
-      cwd: repoRoot,
-      encoding: 'utf-8',
-    });
-    baseLockfile = parseLockfile(text);
-  } catch {
-    console.error(
-      `Error: could not read pnpm-lock.yaml from ref "${options.base}". ` +
-        `Make sure the ref exists and the lockfile is tracked by git.`,
-    );
-    process.exit(1);
-  }
+const udirDesignDir = path.join(repoRoot, '@udir-design');
 
-  const udirDesignDir = path.join(repoRoot, '@udir-design');
+const headUdirPackageNames = fs
+  .readdirSync(udirDesignDir, { withFileTypes: true })
+  .filter(
+    (e) =>
+      e.isDirectory() &&
+      fs.existsSync(path.join(udirDesignDir, e.name, 'package.json')),
+  )
+  .map((e) => `@udir-design/${e.name}`);
 
-  const headUdirPackageNames = fs
-    .readdirSync(udirDesignDir, { withFileTypes: true })
-    .filter(
-      (e) =>
-        e.isDirectory() &&
-        fs.existsSync(path.join(udirDesignDir, e.name, 'package.json')),
-    )
-    .map((e) => `@udir-design/${e.name}`);
+const baseUdirPackageNames = Object.keys(baseLockfile.importers).filter((k) =>
+  k.startsWith('@udir-design/'),
+);
 
-  const baseUdirPackageNames = Object.keys(baseLockfile.importers).filter((k) =>
-    k.startsWith('@udir-design/'),
-  );
-
-  const headReadPkgJson = (pkgName: string) =>
-    readPkgJsonFromDisk(repoRoot, pkgName);
-  const baseReadPkgJson = (pkgName: string) => {
-    const basePkg = readPkgJsonFromGit(repoRoot, options.base, pkgName);
-    // If the base package.json doesn't declare a devDependency-tracking field
-    // yet, borrow the classification from HEAD so that both sides track the
-    // same set of devDependencies. Without this, introducing (or switching)
-    // the field on a branch would cause every tracked devDep to appear as
-    // "added". `trackedDevDependencies` takes precedence, matching
-    // `parseTrackedDepNames`.
-    if (
-      basePkg &&
-      !basePkg.trackedDevDependencies &&
-      !basePkg.untrackedDevDependencies
-    ) {
-      const headPkg = readPkgJsonFromDisk(repoRoot, pkgName);
-      if (headPkg?.trackedDevDependencies) {
-        basePkg.trackedDevDependencies = headPkg.trackedDevDependencies;
-      } else if (headPkg?.untrackedDevDependencies) {
-        basePkg.untrackedDevDependencies = headPkg.untrackedDevDependencies;
-      }
-    }
+const headReadPkgJson = (pkgName: string) =>
+  readPkgJsonFromDisk(repoRoot, pkgName);
+const baseReadPkgJson = (pkgName: string): PackageJson | null => {
+  const basePkg = readPkgJsonFromGit(repoRoot, options.base, pkgName);
+  if (
+    !basePkg ||
+    basePkg.trackedDevDependencies ||
+    basePkg.untrackedDevDependencies
+  ) {
     return basePkg;
-  };
-
-  const headClosure = buildClosure(
-    headLockfile,
-    headUdirPackageNames,
-    headReadPkgJson,
-  );
-  const baseClosure = buildClosure(
-    baseLockfile,
-    baseUdirPackageNames,
-    baseReadPkgJson,
-  );
-  const headSources = computeSources(
-    headLockfile,
-    headUdirPackageNames,
-    headReadPkgJson,
-  );
-  const baseSources = computeSources(
-    baseLockfile,
-    baseUdirPackageNames,
-    baseReadPkgJson,
-  );
-
-  console.log(`Dependency closure: ${headClosure.size} packages\n`);
-
-  const { added, removed, peerDepsChanged, changed } = compareClosure(
-    baseClosure,
-    headClosure,
-    baseSources,
-    headSources,
-  );
-  const hasChanges =
-    added.length > 0 ||
-    removed.length > 0 ||
-    peerDepsChanged.length > 0 ||
-    changed.length > 0;
-
-  if (!hasChanges) {
-    console.log('✅ No runtime dependency changes detected.');
-    process.exit(0);
   }
-
-  if (removed.length > 0) {
-    console.log('Removed:');
-    for (const { key, sources } of removed.sort((a, b) =>
-      a.key.localeCompare(b.key),
-    )) {
-      console.log(`  - ${formatSnapshotKey(key)}${formatSources(sources)}`);
-    }
-    console.log();
-  }
-
-  if (added.length > 0) {
-    console.log('Added:');
-    for (const { key, sources } of added.sort((a, b) =>
-      a.key.localeCompare(b.key),
-    )) {
-      console.log(`  + ${formatSnapshotKey(key)}${formatSources(sources)}`);
-    }
-    console.log();
-  }
-
-  if (peerDepsChanged.length > 0) {
-    console.log('Peer deps changed:');
-    for (const { formattedKey, sources, depDiffs } of peerDepsChanged) {
-      console.log(`  ~ ${formattedKey}${formatSources(sources)}`);
-      if (options.verbose) {
-        for (const { name, from, to } of depDiffs) {
-          if (from === undefined) {
-            console.log(`      + ${name}: ${to}`);
-          } else if (to === undefined) {
-            console.log(`      - ${name}: ${from}`);
-          } else {
-            console.log(`      ~ ${name}: ${from} → ${to}`);
-          }
+  // The base package.json doesn't declare a devDependency-tracking field yet,
+  // so borrow the classification from HEAD so that both sides track the same
+  // set of devDependencies. Without this, introducing (or switching) the field
+  // on a branch would cause every tracked devDep to appear as "added".
+  // `trackedDevDependencies` takes precedence, matching `parseTrackedDepNames`.
+  const headPkg = readPkgJsonFromDisk(repoRoot, pkgName);
+  return headPkg?.trackedDevDependencies
+    ? { ...basePkg, trackedDevDependencies: headPkg.trackedDevDependencies }
+    : headPkg?.untrackedDevDependencies
+      ? {
+          ...basePkg,
+          untrackedDevDependencies: headPkg.untrackedDevDependencies,
         }
-      }
-    }
-    console.log();
-  }
+      : basePkg;
+};
 
-  if (changed.length > 0) {
-    console.log('Changed (transitive deps updated):');
-    for (const { key, depDiffs, sources } of changed.sort((a, b) =>
-      a.key.localeCompare(b.key),
-    )) {
-      console.log(`  ~ ${formatSnapshotKey(key)}${formatSources(sources)}`);
-      if (options.verbose) {
-        for (const { name, from, to } of depDiffs) {
-          if (from === undefined) {
-            console.log(`      + ${name}: ${to}`);
-          } else if (to === undefined) {
-            console.log(`      - ${name}: ${from}`);
-          } else {
-            console.log(`      ~ ${name}: ${from} → ${to}`);
-          }
-        }
-      }
-    }
-    console.log();
-  }
+const headClosure = buildClosure(
+  headLockfile,
+  headUdirPackageNames,
+  headReadPkgJson,
+);
+const baseClosure = buildClosure(
+  baseLockfile,
+  baseUdirPackageNames,
+  baseReadPkgJson,
+);
+const headSources = computeSources(
+  headLockfile,
+  headUdirPackageNames,
+  headReadPkgJson,
+);
+const baseSources = computeSources(
+  baseLockfile,
+  baseUdirPackageNames,
+  baseReadPkgJson,
+);
 
+console.log(`Dependency closure: ${headClosure.size} packages\n`);
+
+const { added, removed, peerDepsChanged, changed } = compareClosure(
+  baseClosure,
+  headClosure,
+  baseSources,
+  headSources,
+);
+
+const verboseDepDiffs = (depDiffs: DepDiff[]) =>
+  options.verbose ? formatDepDiffs(depDiffs) : [];
+
+// Every change adds at least one line, so a section without lines has no
+// changes.
+const sections = Object.entries({
+  Removed: removed
+    .toSorted(byKey)
+    .map(
+      ({ key, sources }) =>
+        `  - ${formatSnapshotKey(key)}${formatSources(sources)}`,
+    ),
+  Added: added
+    .toSorted(byKey)
+    .map(
+      ({ key, sources }) =>
+        `  + ${formatSnapshotKey(key)}${formatSources(sources)}`,
+    ),
+  'Peer deps changed': peerDepsChanged.flatMap(
+    ({ formattedKey, sources, depDiffs }) => [
+      `  ~ ${formattedKey}${formatSources(sources)}`,
+      ...verboseDepDiffs(depDiffs),
+    ],
+  ),
+  'Changed (transitive deps updated)': changed
+    .toSorted(byKey)
+    .flatMap(({ key, sources, depDiffs }) => [
+      `  ~ ${formatSnapshotKey(key)}${formatSources(sources)}`,
+      ...verboseDepDiffs(depDiffs),
+    ]),
+}).filter(([, lines]) => lines.length > 0);
+
+if (sections.length === 0) {
+  console.log('✅ No runtime dependency changes detected.');
+} else {
+  for (const [title, lines] of sections) {
+    // The empty string ends the section with a blank line.
+    console.log([`${title}:`, ...lines, ''].join('\n'));
+  }
   console.log(
     '⚠️  Runtime dependencies changed — a full Chromatic build is recommended.',
   );
-  process.exit(EXIT_DEPS_CHANGED);
-})();
+  process.exitCode = EXIT_DEPS_CHANGED;
+}
