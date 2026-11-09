@@ -1,0 +1,238 @@
+.actions {
+  container-type: inline-size;
+  min-width: 200px;
+  margin: var(--ds-size-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-5);
+}
+
+.actions-table-scroll {
+  overflow-x: auto;
+
+  > table {
+    min-width: 50rem;
+
+    th {
+      white-space: nowrap;
+    }
+
+    th:nth-child(n + 4):nth-child(-n + 7),
+    td:nth-child(n + 4):nth-child(-n + 7) {
+      text-align: right;
+    }
+    th:last-child,
+    td:last-child {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.actions-filters-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--ds-size-2);
+}
+
+.actions-search-field {
+  width: 100%;
+}
+
+.actions-suggestion-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+  align-items: flex-end;
+  width: 100%;
+}
+
+.actions-suggestion-field {
+  min-width: 150px;
+  width: 100%;
+}
+
+.actions-clear-filters {
+  white-space: nowrap;
+}
+
+.actions-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-4);
+}
+
+.actions-active-filters-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ds-size-2);
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ds-size-2);
+  }
+}
+
+@container (min-width: 30rem) {
+  .actions-filters-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .actions-search-field {
+    width: auto;
+    max-width: 20rem;
+    flex: 1 0 12.5rem;
+  }
+
+  .actions-suggestion-section {
+    flex-direction: row;
+    width: auto;
+    flex: 1 0 28rem;
+  }
+
+  .actions-suggestion-field {
+    max-width: 17.5rem;
+    width: auto;
+  }
+}
+
+.actions-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ds-size-4);
+}
+
+.actions-controls-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-size-2);
+}
+
+.actions-controls-section-select {
+  display: flex;
+  flex-direction: row;
+  gap: var(--ds-size-2);
+  white-space: nowrap;
+  align-items: center;
+  > select {
+    margin-top: 0;
+  }
+}
+
+.actions-controls-section-span {
+  color: var(--ds-color-neutral-text-subtle);
+}
+
+@container (min-width: 30rem) {
+  .actions-controls-section {
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+    gap: var(--ds-size-8);
+  }
+}
+
+@container (min-width: 50rem) {
+  .actions-controls {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .actions-controls-section {
+    gap: var(--ds-size-6);
+  }
+}
+
+.action-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ds-size-2);
+  padding-inline: var(--ds-size-3) 0;
+  margin-block-start: var(--ds-size-4);
+}
+
+.action-toolbar-divider {
+  width: 1px;
+  height: 1.5rem;
+  background-color: var(--ds-color-neutral-border-default);
+}
+
+.action-toolbar-selection {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-4);
+  > p {
+    color: var(--ds-color-neutral-text-subtle);
+  }
+}
+
+.action-toolbar-buttons {
+  display: flex;
+  gap: var(--ds-size-2);
+  align-items: center;
+}
+
+.action-toolbar-buttons,
+.action-toolbar-actions-compact,
+.action-toolbar-actions-desktop {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.action-toolbar-select-count {
+  display: none;
+}
+
+.action-toolbar-actions {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  gap: var(--ds-size-1);
+  align-items: center;
+}
+
+.action-toolbar-actions-compact {
+  display: flex;
+  gap: var(--ds-size-1);
+  align-items: center;
+}
+
+.action-toolbar-actions-desktop {
+  display: none;
+}
+
+@container (min-width: 30rem) {
+  .action-toolbar-select-count {
+    display: inline;
+  }
+
+  .action-toolbar-actions {
+    flex-basis: auto;
+  }
+}
+
+@container (min-width: 44rem) {
+  .action-toolbar-actions-desktop {
+    display: flex;
+    gap: var(--ds-size-1);
+    align-items: center;
+  }
+
+  .action-toolbar-actions-compact {
+    display: none;
+  }
+}

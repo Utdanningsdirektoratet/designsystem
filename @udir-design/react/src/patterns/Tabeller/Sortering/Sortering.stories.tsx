@@ -78,6 +78,7 @@ export const Preview = meta.story({
 
     return (
       <Table {...args}>
+        <caption className="ds-sr-only">Karakterer fordelt på emne</caption>
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell
