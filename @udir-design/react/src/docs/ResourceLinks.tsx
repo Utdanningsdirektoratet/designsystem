@@ -1,102 +1,23 @@
 import type { JSX } from 'react';
-import { ArrowRightIcon } from '@udir-design/icons';
-import { getPath } from '.storybook/docs/components/StorybookLink';
 import { Card } from 'src/components/card';
+import { Link } from 'src/components/link/Link';
 import type { HeadingProps } from 'src/components/typography/heading';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './ResourceLinks.module.css';
 
-export function LandingResourceLinks() {
-  return (
-    <div className={styles.wrapper}>
-      <ResourceLink
-        href={getPath('/docs/components-introduksjon--docs')}
-        illustration={storybookIllustration}
-        headingLevel={3}
-        heading="Komponenter"
-        paragraph="Oversikten over våre komponenter her i Storybook"
-      />
-      <ResourceLink
-        href="https://github.com/Utdanningsdirektoratet/designsystem"
-        illustration={githubIllustration}
-        headingLevel={3}
-        heading="Github-repo"
-        paragraph="Kildekoden finnes tilgjengelig i Udir sin Github-organisasjon."
-      />
-      <ResourceLink
-        href="https://www.udir.no/om-udir/designprofil/"
-        illustration={udirIllustration}
-        headingLevel={3}
-        heading="Designprofil på udir.no"
-        paragraph="Oversikt over farger, typografi, stil og tone, etc."
-      />
-      <ResourceLink
-        href="https://www.figma.com/files/1290654482467394866/project/437326546"
-        illustration={figmaIllustration}
-        headingLevel={3}
-        heading="Illustrasjoner i Figma"
-        paragraph="Alle illustrasjonene våre i flere varianter og formater tilpasset
-              flere typer bruk."
-      />
-      <ResourceLink
-        href="https://www.figma.com/design/SSdGSjSYPDSyX2IfHLfmEL/Symbolbibliotek?node-id=0-1&node-type=canvas&t=caNDp1IPvJWyyCUi-0"
-        illustration={figmaIllustration}
-        headingLevel={3}
-        heading="Symboler i Figma"
-        paragraph="Symboloversikt og symboler i flere varianter."
-      />
-      <ResourceLink
-        href="https://www.figma.com/design/W4tl2t6G22muQfVF8jGeQX/Ikonbibliotek?node-id=9-2879&t=MlJwZ9DOmHhK8zuC-0"
-        illustration={figmaIllustration}
-        headingLevel={3}
-        heading="Ikoner i Figma"
-        paragraph="Ikonoversikt og ikoner i flere varianter."
-      />
-    </div>
-  );
-}
-
-export function ComponentResourceLink() {
-  return (
-    <div className={styles.horisontalWrapper}>
-      <Card style={{ display: 'flex', width: 'fit-content' }}>
-        <Card.Block className={styles.illustration} style={{ height: 150 }}>
-          {figmaIllustration}
-        </Card.Block>
-        <Card.Block>
-          <Heading level={2}>
-            <a href="https://www.figma.com/design/6cS3POn7y9Zost26ofJh0a/Komponentbibliotek--beta-?m=auto&node-id=4-476&t=m9jA1aHGUTH3tuve-1">
-              Komponenter i Figma
-            </a>
-          </Heading>
-          <Paragraph style={{ lineBreak: 'auto' }}>
-            Oversikten over komponentene finnes også tilgjengelig i Figma.
-          </Paragraph>
-          <ArrowRightIcon
-            aria-hidden
-            height="1.5rem"
-            width="auto"
-            className={styles.icon}
-          />
-        </Card.Block>
-      </Card>
-    </div>
-  );
-}
-
-function ResourceLink({
+export function ResourceLink({
   href,
   illustration,
   headingLevel,
   heading,
-  paragraph,
+  description,
 }: {
   href: string;
   illustration: JSX.Element;
   headingLevel: HeadingProps['level'];
   heading: string;
-  paragraph: string;
+  description: string;
 }) {
   return (
     <Card>
@@ -105,13 +26,65 @@ function ResourceLink({
         <Heading level={headingLevel}>
           <a href={href}>{heading}</a>
         </Heading>
-        <Paragraph>{paragraph}</Paragraph>
+        <Paragraph>{description}</Paragraph>
       </Card.Block>
     </Card>
   );
 }
 
-const figmaIllustration = (
+export function ResourceLinkHorizontal({
+  href,
+  icon,
+  activeIcon,
+  headingLevel,
+  heading,
+  description,
+}: {
+  href: string;
+  icon: JSX.Element;
+  activeIcon?: JSX.Element;
+  headingLevel: HeadingProps['level'];
+  heading: string;
+  description?: string;
+}) {
+  return (
+    <Card className={styles.resourceLinkHorizontal} data-color="accent">
+      <Card.Block>
+        <Heading level={headingLevel}>
+          <Link href={href}>{heading}</Link>
+          {icon}
+          {activeIcon}
+        </Heading>
+        {description && <Paragraph>{description}</Paragraph>}
+      </Card.Block>
+    </Card>
+  );
+}
+
+export function ResourceLinkCompact({
+  href,
+  icon,
+  headingLevel,
+  heading,
+}: {
+  href: string;
+  icon?: JSX.Element;
+  headingLevel: HeadingProps['level'];
+  heading: string;
+}) {
+  return (
+    <Card className={styles.resourceLinkCompact}>
+      <Card.Block className={styles.resourceLinkCompactContent}>
+        {icon && <span className={styles.resourceLinkCompactIcon}>{icon}</span>}
+        <Heading level={headingLevel} data-size="xs">
+          <a href={href}>{heading}</a>
+        </Heading>
+      </Card.Block>
+    </Card>
+  );
+}
+
+export const figmaIllustration = (
   <svg
     width="100%"
     height="100%"
@@ -152,28 +125,7 @@ const figmaIllustration = (
   </svg>
 );
 
-const storybookIllustration = (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 176 219"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M6.80067 201.801L0.00789504 21.0337C-0.216444 15.0637 4.36697 10.0042 10.3371 9.63153L164.287 0.0218162C170.365 -0.35751 175.599 4.25506 175.978 10.3243C175.992 10.553 176 10.782 176 11.0111V207.99C176 214.07 171.064 219 164.975 219C164.81 219 164.646 218.997 164.48 218.989L17.3229 212.388C11.5918 212.131 7.01582 207.527 6.80067 201.801Z"
-      fill="#FF4785"
-    />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M152.183 0.777954L130.995 2.1005L129.961 26.9192C129.946 27.3007 130.063 27.6758 130.295 27.9801C130.844 28.7028 131.876 28.8443 132.599 28.296L142.252 20.983L150.405 27.3975C150.711 27.6378 151.091 27.7622 151.48 27.7487C152.388 27.7171 153.099 26.9565 153.067 26.0498L152.183 0.777954ZM135.692 83.8879C131.813 86.8969 102.922 88.95 102.922 84.6663C103.532 68.32 96.2046 67.6035 92.1337 67.6035C88.2664 67.6035 81.7531 68.7711 81.7531 77.5279C81.7531 86.4516 91.2716 91.4893 102.444 97.4025C118.316 105.802 137.523 115.969 137.523 141.551C137.523 166.07 117.577 179.614 92.1337 179.614C65.8767 179.614 42.9311 169.005 45.5225 132.221C46.5403 127.903 79.9212 128.929 79.9212 132.221C79.5141 147.4 82.9744 151.864 91.7266 151.864C98.4435 151.864 101.497 148.167 101.497 141.939C101.497 132.516 91.5792 126.954 80.1702 120.557C64.7223 111.895 46.5403 101.7 46.5403 78.3063C46.5403 54.9546 62.6201 39.3867 91.3195 39.3867C120.019 39.3867 135.692 54.7161 135.692 83.8879Z"
-      fill="white"
-    />
-  </svg>
-);
-
-const githubIllustration = (
+export const githubIllustration = (
   <svg
     width="100%"
     height="100%"
@@ -190,7 +142,7 @@ const githubIllustration = (
   </svg>
 );
 
-const udirIllustration = (
+export const udirIllustration = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

@@ -3,6 +3,7 @@ import { defineMain } from '@storybook/react-vite/node';
 import remarkGfm from 'remark-gfm';
 import type { Plugin, UserConfig } from 'vite';
 import { servePagefindIndexPlugin } from './search/servePagefindIndex.js';
+import { buildComponentDocumentationManifest } from './utils/componentDocumentation.js';
 import { createTierIndexers } from './utils/createTierIndexers.js';
 import { storySourceLocationPlugin } from './utils/storySourceLocationPlugin.js';
 
@@ -75,6 +76,9 @@ export default defineMain({
       logLevel: 'warn',
       define: {
         __GIT_BRANCH__: JSON.stringify(branchName),
+        __COMPONENT_DOCUMENTATION__: JSON.stringify(
+          buildComponentDocumentationManifest(),
+        ),
       },
       build: {
         cssCodeSplit: false,
