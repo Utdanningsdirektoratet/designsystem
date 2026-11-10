@@ -14,6 +14,7 @@ exports[`Backdrop Closedby Any 1`] = `
   id="<generated>"
   closedby="any"
   open
+  aria-label="Dialog med closedby=&quot;any&quot;"
 >
   <button
     data-icon="true"
@@ -54,6 +55,7 @@ exports[`Custom Close Button 1`] = `
   data-modal="true"
   id="custom-close-button-dialog"
   open
+  aria-label="Dialog med tilpasset lukkeknapp"
 >
   <button
     commandfor="custom-close-button-dialog"
@@ -110,6 +112,7 @@ exports[`Dialog Non Modal 1`] = `
   data-modal="false"
   id="<generated>"
   open
+  aria-label="Hva besvarelsen burde inneholde"
 >
   <button
     data-icon="true"
@@ -166,6 +169,7 @@ exports[`Dialog With Form 1`] = `
   id="dialog-with-form"
   closedby="any"
   open
+  aria-label="Skjemainnsending"
 >
   <button
     data-icon="true"
@@ -234,6 +238,7 @@ exports[`Dialog With Max Width 1`] = `
   data-modal="true"
   id="<generated>"
   open
+  aria-label="Dialog som er veldig bred"
 >
   <button
     data-icon="true"
@@ -268,6 +273,7 @@ exports[`Dialog With Open Prop 1`] = `
   data-modal="true"
   id="<generated>"
   open
+  aria-label="Dialog med ekstern tilstand"
 >
   <button
     data-icon="true"
@@ -325,6 +331,7 @@ exports[`Dialog With Suggestion 1`] = `
   data-modal="true"
   id="<generated>"
   open
+  aria-label="Dialog med innhold utenfor"
 >
   <button
     data-icon="true"
@@ -669,6 +676,7 @@ exports[`Preview 1`] = `
   data-modal="true"
   id="<generated>"
   closedby="any"
+  aria-label="Dialog header"
   open
 >
   <button
@@ -707,6 +715,7 @@ exports[`With Header And Footer 1`] = `
   data-modal="true"
   id="<generated>"
   open
+  aria-label="Dette må du vite før du går videre"
 >
   <button
     data-icon="true"
@@ -755,6 +764,7 @@ exports[`Without Dialog Trigger Context 1`] = `
   data-modal="true"
   id="<generated>"
   open
+  aria-label="Dialog med ref"
 >
   <button
     data-icon="true"
@@ -807,6 +817,7 @@ exports[`Without Dialog Trigger Context With Command 1`] = `
   data-modal="true"
   id="dialog-with-command"
   open
+  aria-label="Dialog med command"
 >
   <button
     data-icon="true"
