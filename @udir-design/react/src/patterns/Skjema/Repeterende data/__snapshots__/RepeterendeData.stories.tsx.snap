@@ -9,11 +9,11 @@ exports[`Preview 1`] = `
           <details
             data-state="idle"
             open
-            data-active-step-label="Registrer foreldre"
+            data-active-step-label="Registrer lærere"
           >
             <summary>
               <span>
-                Invitasjon av foreldre
+                Søknad om videreutdanning
               </span>
             </summary>
             <button
@@ -23,7 +23,7 @@ exports[`Preview 1`] = `
             >
               <div>
               </div>
-              Registrer foreldre
+              Registrer lærere
             </button>
             <button
               data-state="idle"
@@ -31,7 +31,7 @@ exports[`Preview 1`] = `
             >
               <div>
               </div>
-              Send invitasjon
+              Send søknad
             </button>
           </details>
         </div>
@@ -87,11 +87,11 @@ exports[`Preview 1`] = `
               <details
                 data-state="idle"
                 open
-                data-active-step-label="Registrer foreldre"
+                data-active-step-label="Registrer lærere"
               >
                 <summary>
                   <span>
-                    Invitasjon av foreldre
+                    Søknad om videreutdanning
                   </span>
                 </summary>
                 <button
@@ -101,7 +101,7 @@ exports[`Preview 1`] = `
                 >
                   <div>
                   </div>
-                  Registrer foreldre
+                  Registrer lærere
                 </button>
                 <button
                   data-state="idle"
@@ -109,19 +109,19 @@ exports[`Preview 1`] = `
                 >
                   <div>
                   </div>
-                  Send invitasjon
+                  Send søknad
                 </button>
               </details>
             </div>
           </dialog>
         </div>
         <h2 data-size="md">
-          Registrer foreldre
+          Registrer lærere
         </h2>
         <button
           data-variant="primary"
           type="button"
-          id="legg-til-avdeling"
+          id="add-subject"
           aria-haspopup="dialog"
         >
           <svg
@@ -140,65 +140,11 @@ exports[`Preview 1`] = `
             >
             </path>
           </svg>
-          Legg til avdeling
+          Legg til fag
         </button>
-        <dialog
-          data-placement="center"
-          data-modal="true"
-          id="<generated>"
-          closedby="any"
-        >
-          <button
-            data-icon="true"
-            commandfor="<generated>"
-            data-variant="tertiary"
-            type="button"
-            aria-label="Lukk dialogvindu"
-            data-color="neutral"
-            command="close"
-          >
-          </button>
-          <div>
-            <div>
-              <h2 data-size="xs">
-                Legg til avdeling
-              </h2>
-              <p data-size="sm">
-                Gi avdelingen et navn. Du kan endre det senere.
-              </p>
-            </div>
-            <form novalidate>
-              <ds-field>
-                <label for="<generated>">
-                  Navn på avdeling
-                </label>
-                <div>
-                  <input
-                    autofocus="true"
-                    autocomplete="off"
-                    type="text"
-                    name="navn"
-                    id="<generated>"
-                  >
-                </div>
-              </ds-field>
-              <div>
-                <button type="submit">
-                  Opprett avdeling
-                </button>
-                <button
-                  data-variant="secondary"
-                  type="button"
-                >
-                  Avbryt
-                </button>
-              </div>
-            </form>
-          </div>
-        </dialog>
         <div>
           <p>
-            Du har ikke lagt til noen avdelinger ennå. Start med å legge til en avdeling, så kan du registrere foresatte under den.
+            Du har ikke lagt til noen fag ennå. Start med å legge til et fag, så kan du registrere lærerne som skal ta videreutdanning i det.
           </p>
         </div>
         <div>
@@ -212,6 +158,136 @@ exports[`Preview 1`] = `
       </div>
     </div>
   </div>
+  <div
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <span>
+    </span>
+  </div>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="<generated>"
+    closedby="any"
+  >
+    <button
+      data-icon="true"
+      commandfor="<generated>"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      command="close"
+    >
+    </button>
+    <div>
+      <div>
+        <h2 data-size="xs">
+          Legg til fag
+        </h2>
+      </div>
+      <form novalidate>
+        <ds-field>
+          <label for="<generated>">
+            Fag
+          </label>
+          <select
+            autofocus="true"
+            id="<generated>"
+          >
+            <option value>
+              Velg et fag …
+            </option>
+            <option value="Engelsk">
+              Engelsk
+            </option>
+            <option value="Kroppsøving">
+              Kroppsøving
+            </option>
+            <option value="KRLE">
+              KRLE
+            </option>
+            <option value="Kunst og håndverk">
+              Kunst og håndverk
+            </option>
+            <option value="Mat og helse">
+              Mat og helse
+            </option>
+            <option value="Matematikk">
+              Matematikk
+            </option>
+            <option value="Musikk">
+              Musikk
+            </option>
+            <option value="Naturfag">
+              Naturfag
+            </option>
+            <option value="Norsk">
+              Norsk
+            </option>
+            <option value="Samfunnsfag">
+              Samfunnsfag
+            </option>
+          </select>
+        </ds-field>
+        <div>
+          <button type="submit">
+            Legg til fag
+          </button>
+          <button
+            data-variant="secondary"
+            type="button"
+          >
+            Avbryt
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="<generated>"
+    closedby="any"
+  >
+    <button
+      data-icon="true"
+      commandfor="<generated>"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      command="close"
+    >
+    </button>
+    <div>
+      <div>
+        <h2 data-size="xs">
+          Vil du fjerne ?
+        </h2>
+        <p data-size="sm">
+          Faget blir fjernet fra søknaden.
+        </p>
+      </div>
+      <div>
+        <button
+          type="button"
+          data-color="danger"
+        >
+          Fjern fag
+        </button>
+        <button
+          data-variant="secondary"
+          type="button"
+          autofocus="true"
+        >
+          Avbryt
+        </button>
+      </div>
+    </div>
+  </dialog>
 </div>
 `;
 
@@ -376,6 +452,68 @@ exports[`Repeterende data i dynamiske steg 1`] = `
               </button>
             </ds-field>
           </form>
+          <div>
+            <h3
+              data-size="xs"
+              tabindex="-1"
+              id="<generated>"
+            >
+              Registrerte avdelinger (0)
+            </h3>
+            <p>
+              Ingen avdelinger er registrert ennå.
+            </p>
+          </div>
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span>
+            </span>
+          </div>
+          <dialog
+            data-placement="center"
+            data-modal="true"
+            id="<generated>"
+            closedby="any"
+          >
+            <button
+              data-icon="true"
+              commandfor="<generated>"
+              data-variant="tertiary"
+              type="button"
+              aria-label="Lukk dialogvindu"
+              data-color="neutral"
+              command="close"
+            >
+            </button>
+            <div>
+              <div>
+                <h2 data-size="xs">
+                  Vil du slette ?
+                </h2>
+                <p data-size="sm">
+                  Avdelingen blir slettet fra invitasjonen.
+                </p>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-color="danger"
+                >
+                  Slett avdeling
+                </button>
+                <button
+                  data-variant="secondary"
+                  type="button"
+                  autofocus="true"
+                >
+                  Avbryt
+                </button>
+              </div>
+            </div>
+          </dialog>
         </div>
         <div>
           <button
@@ -530,6 +668,68 @@ exports[`Repeterende data i dynamiske steg med gruppe 1`] = `
               </button>
             </ds-field>
           </form>
+          <div>
+            <h3
+              data-size="xs"
+              tabindex="-1"
+              id="<generated>"
+            >
+              Registrerte avdelinger (0)
+            </h3>
+            <p>
+              Ingen avdelinger er registrert ennå.
+            </p>
+          </div>
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span>
+            </span>
+          </div>
+          <dialog
+            data-placement="center"
+            data-modal="true"
+            id="<generated>"
+            closedby="any"
+          >
+            <button
+              data-icon="true"
+              commandfor="<generated>"
+              data-variant="tertiary"
+              type="button"
+              aria-label="Lukk dialogvindu"
+              data-color="neutral"
+              command="close"
+            >
+            </button>
+            <div>
+              <div>
+                <h2 data-size="xs">
+                  Vil du slette ?
+                </h2>
+                <p data-size="sm">
+                  Avdelingen blir slettet fra invitasjonen.
+                </p>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-color="danger"
+                >
+                  Slett avdeling
+                </button>
+                <button
+                  data-variant="secondary"
+                  type="button"
+                  autofocus="true"
+                >
+                  Avbryt
+                </button>
+              </div>
+            </div>
+          </dialog>
         </div>
         <div>
           <button
@@ -545,48 +745,29 @@ exports[`Repeterende data i dynamiske steg med gruppe 1`] = `
 </div>
 `;
 
-exports[`Repeterende data i egne steg 1`] = `
+exports[`Repeterende data i dynamiske steg med gruppe og tabell 1`] = `
 <div data-size="auto">
   <div>
     <div>
       <div>
         <div>
-          <details
-            data-state="idle"
-            open
-            data-active-step-label="Registrer avdelinger"
+          <button
+            data-state="active"
+            data-variant="default"
+            aria-current="step"
           >
-            <summary>
-              <span>
-                Invitasjon av foreldre
-              </span>
-            </summary>
-            <button
-              data-state="active"
-              data-variant="default"
-              aria-current="step"
-            >
-              <div>
-              </div>
-              Registrer avdelinger
-            </button>
-            <button
-              data-state="idle"
-              data-variant="default"
-            >
-              <div>
-              </div>
-              Registrer foreldre
-            </button>
-            <button
-              data-state="idle"
-              data-variant="submission"
-            >
-              <div>
-              </div>
-              Send invitasjon
-            </button>
-          </details>
+            <div>
+            </div>
+            Registrer avdelinger
+          </button>
+          <button
+            data-state="idle"
+            data-variant="submission"
+          >
+            <div>
+            </div>
+            Send invitasjon
+          </button>
         </div>
       </div>
       <div>
@@ -637,42 +818,23 @@ exports[`Repeterende data i egne steg 1`] = `
               Naviger
             </h2>
             <div>
-              <details
-                data-state="idle"
-                open
-                data-active-step-label="Registrer avdelinger"
+              <button
+                data-state="active"
+                data-variant="default"
+                aria-current="step"
               >
-                <summary>
-                  <span>
-                    Invitasjon av foreldre
-                  </span>
-                </summary>
-                <button
-                  data-state="active"
-                  data-variant="default"
-                  aria-current="step"
-                >
-                  <div>
-                  </div>
-                  Registrer avdelinger
-                </button>
-                <button
-                  data-state="idle"
-                  data-variant="default"
-                >
-                  <div>
-                  </div>
-                  Registrer foreldre
-                </button>
-                <button
-                  data-state="idle"
-                  data-variant="submission"
-                >
-                  <div>
-                  </div>
-                  Send invitasjon
-                </button>
-              </details>
+                <div>
+                </div>
+                Registrer avdelinger
+              </button>
+              <button
+                data-state="idle"
+                data-variant="submission"
+              >
+                <div>
+                </div>
+                Send invitasjon
+              </button>
             </div>
           </dialog>
         </div>
@@ -722,6 +884,68 @@ exports[`Repeterende data i egne steg 1`] = `
               </button>
             </ds-field>
           </form>
+          <div>
+            <h3
+              data-size="xs"
+              tabindex="-1"
+              id="<generated>"
+            >
+              Registrerte avdelinger (0)
+            </h3>
+            <p>
+              Ingen avdelinger er registrert ennå.
+            </p>
+          </div>
+          <div
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <span>
+            </span>
+          </div>
+          <dialog
+            data-placement="center"
+            data-modal="true"
+            id="<generated>"
+            closedby="any"
+          >
+            <button
+              data-icon="true"
+              commandfor="<generated>"
+              data-variant="tertiary"
+              type="button"
+              aria-label="Lukk dialogvindu"
+              data-color="neutral"
+              command="close"
+            >
+            </button>
+            <div>
+              <div>
+                <h2 data-size="xs">
+                  Vil du slette ?
+                </h2>
+                <p data-size="sm">
+                  Avdelingen blir slettet fra invitasjonen.
+                </p>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-color="danger"
+                >
+                  Slett avdeling
+                </button>
+                <button
+                  data-variant="secondary"
+                  type="button"
+                  autofocus="true"
+                >
+                  Avbryt
+                </button>
+              </div>
+            </div>
+          </dialog>
         </div>
         <div>
           <button
@@ -734,5 +958,223 @@ exports[`Repeterende data i egne steg 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Én oppføring om gangen 1`] = `
+<div data-size="auto">
+  <style>
+    .one-at-a-time,
+            .one-at-a-time__form {
+              display: grid;
+              gap: var(--ds-size-6);
+              justify-items: start;
+            }
+            .one-at-a-time {
+              max-width: 40rem;
+              padding-block: var(--ds-size-4);
+            }
+            .one-at-a-time__form {
+              width: 100%;
+            }
+            .one-at-a-time__buttons {
+              display: flex;
+              flex-wrap: wrap;
+              gap: var(--ds-size-3);
+            }
+            .one-at-a-time__stack {
+              display: grid;
+              gap: var(--ds-size-2);
+            }
+            .one-at-a-time__dialog {
+              display: grid;
+              gap: var(--ds-size-6);
+              padding: var(--ds-size-2);
+            }
+            .one-at-a-time__table {
+              width: 100%;
+            }
+            .one-at-a-time__action {
+              width: 3.5rem;
+            }
+  </style>
+  <div>
+    <div>
+      <h2 data-size="md">
+        Styremedlemmer
+      </h2>
+      <p>
+        Legg til alle som sitter i styret for skolen. Styret må ha minst 3 medlemmer.
+      </p>
+    </div>
+    <form novalidate>
+      <h3
+        data-size="sm"
+        tabindex="-1"
+      >
+        Styremedlem 1
+      </h3>
+      <ds-field>
+        <label for="name">
+          Fullt navn
+        </label>
+        <div>
+          <input
+            id="name"
+            autocomplete="off"
+            type="text"
+            value
+          >
+        </div>
+      </ds-field>
+      <ds-field>
+        <label for="birthDate">
+          Fødselsdato
+        </label>
+        <div
+          data-field="description"
+          id="<generated>"
+        >
+          dd.mm.åååå, for eksempel 17.05.1980
+        </div>
+        <div>
+          <input
+            id="birthDate"
+            autocomplete="off"
+            type="text"
+            value
+            aria-describedby="<generated>"
+          >
+        </div>
+      </ds-field>
+      <ds-field>
+        <label for="email">
+          E-postadresse
+        </label>
+        <div>
+          <input
+            id="email"
+            autocomplete="off"
+            type="email"
+            value
+          >
+        </div>
+      </ds-field>
+      <fieldset aria-labelledby="<generated>">
+        <legend id="<generated>">
+          Rolle i styret
+        </legend>
+        <ds-field data-clickdelegatefor="role-0">
+          <input
+            id="role-0"
+            type="radio"
+            value="Styreleder"
+            name="role"
+          >
+          <label
+            data-weight="regular"
+            for="role-0"
+          >
+            Styreleder
+          </label>
+        </ds-field>
+        <ds-field data-clickdelegatefor="role-1">
+          <input
+            id="role-1"
+            type="radio"
+            value="Nestleder"
+            name="role"
+          >
+          <label
+            data-weight="regular"
+            for="role-1"
+          >
+            Nestleder
+          </label>
+        </ds-field>
+        <ds-field data-clickdelegatefor="role-2">
+          <input
+            id="role-2"
+            type="radio"
+            value="Styremedlem"
+            name="role"
+          >
+          <label
+            data-weight="regular"
+            for="role-2"
+          >
+            Styremedlem
+          </label>
+        </ds-field>
+        <ds-field data-clickdelegatefor="role-3">
+          <input
+            id="role-3"
+            type="radio"
+            value="Varamedlem"
+            name="role"
+          >
+          <label
+            data-weight="regular"
+            for="role-3"
+          >
+            Varamedlem
+          </label>
+        </ds-field>
+        <p
+          data-field="validation"
+          hidden
+          id="<generated>"
+        >
+        </p>
+      </fieldset>
+      <div>
+        <button type="submit">
+          Gå videre
+        </button>
+      </div>
+    </form>
+  </div>
+  <dialog
+    data-placement="center"
+    data-modal="true"
+    id="<generated>"
+    closedby="any"
+  >
+    <button
+      data-icon="true"
+      commandfor="<generated>"
+      data-variant="tertiary"
+      type="button"
+      aria-label="Lukk dialogvindu"
+      data-color="neutral"
+      command="close"
+    >
+    </button>
+    <div>
+      <div>
+        <h2 data-size="xs">
+          Vil du slette ?
+        </h2>
+        <p data-size="sm">
+          Opplysningene om styremedlemmet blir slettet fra søknaden.
+        </p>
+      </div>
+      <div>
+        <button
+          type="button"
+          data-color="danger"
+        >
+          Slett styremedlem
+        </button>
+        <button
+          data-variant="secondary"
+          type="button"
+          autofocus="true"
+        >
+          Avbryt
+        </button>
+      </div>
+    </div>
+  </dialog>
 </div>
 `;
