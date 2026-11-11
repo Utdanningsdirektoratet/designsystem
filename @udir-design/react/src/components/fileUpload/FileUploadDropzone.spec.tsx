@@ -246,3 +246,26 @@ describe('FileUpload.Dropzone attached files', () => {
     expect(onDrop.mock.calls[0][0]).toHaveLength(1);
   });
 });
+
+describe('FileUpload.Dropzone on hover', () => {
+  // The theme is not loaded here, so the zone gets a hover colour to show.
+  const hoverColour = 'rgb(1, 2, 3)';
+  const hoverZone = async (props: { isDragActive?: boolean } = {}) => {
+    const { container } = render(
+      <FileUploadDropzone label="Last opp dokumentasjon" {...props} />,
+    );
+    const zone = container.querySelector('.ds-card') as HTMLElement;
+    zone.style.setProperty('--ds-color-neutral-surface-hover', hoverColour);
+    // The pointer lands on the input, which lies over the zone.
+    await userEvent.hover(screen.getByLabelText('Last opp dokumentasjon'));
+    return getComputedStyle(zone).backgroundColor;
+  };
+
+  it('colours the whole zone', async () => {
+    expect(await hoverZone()).toBe(hoverColour);
+  });
+
+  it('shows the drag state instead while a file is held over the zone', async () => {
+    expect(await hoverZone({ isDragActive: true })).not.toBe(hoverColour);
+  });
+});

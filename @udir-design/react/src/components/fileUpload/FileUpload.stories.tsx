@@ -469,6 +469,44 @@ export const TriggerPseudoStates = meta.story({
   ),
 });
 
+export const DropzonePseudoStates = meta.story({
+  parameters: {
+    pseudo: {
+      // The input lies over the card, so the states are on the card and the
+      // input rather than on the button inside.
+      hover: ['.hover .ds-card'],
+      focusVisible: ['.focusVisible input'],
+    },
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, minmax(0, 24rem))',
+        gap: 'var(--ds-size-6)',
+      }}
+    >
+      {(
+        [
+          ['Default', {}],
+          ['Hover', { className: 'hover' }],
+          ['Focused', { className: 'focusVisible' }],
+          ['Dragging over the window', { isDragGlobal: true }],
+          [
+            'Dragging over the zone',
+            { isDragGlobal: true, isDragActive: true },
+          ],
+        ] as const
+      ).map(([state, props]) => (
+        <div key={state}>
+          <Label data-size="sm">{state}</Label>
+          <FileUpload.Dropzone label="Last opp dokumentasjon" {...props} />
+        </div>
+      ))}
+    </div>
+  ),
+});
+
 export const ExampleItems = meta.story({
   parameters: { docs: advancedCodeDocs },
   render: () => {
