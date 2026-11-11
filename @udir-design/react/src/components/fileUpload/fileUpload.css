@@ -178,6 +178,12 @@
       }
     }
 
+    /* The whole zone shows hover, with the button in its hover state inside
+       it. Not while a file is dragged, which has states of its own. */
+    &:not([data-drag-global], [data-drag-active]) > .ds-card:hover {
+      background: var(--ds-color-neutral-surface-hover);
+    }
+
     /* The input lies over the trigger's button, so the button is never
        hovered or pressed itself. Its states follow the trigger instead, as
        `.ds-button`'s own do. */
