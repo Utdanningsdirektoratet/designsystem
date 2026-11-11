@@ -1,0 +1,73 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as OppsummeringStories from './Oppsummering.stories';
+
+<Meta of={OppsummeringStories} />
+
+# Oppsummering
+
+Før brukeren sender inn et skjema, skal de få se over svarene en siste gang og kunne rette feil. Bruk mønsteret når skjemaet har flere steg eller seksjoner, og svarene ikke kan endres etter innsending.
+
+## Oppbygning
+
+Oppsummeringen er siste steg, rett før innsending. Siden skal ha
+
+- en lenke eller knapp tilbake til forrige steg
+- overskriften «Oppsummering»
+- en kort innledning som sier at skjemaet ikke er sendt inn før brukeren har bekreftet
+- selve oppsummeringen
+- en primærknapp som beskriver handlingen, for eksempel «Send inn søknad». Unngå «Neste» og «Fullfør».
+
+Oppsummeringen skal
+
+- bare vise felt som er relevante for brukeren. Spørsmål brukeren aldri fikk, fordi tidligere svar gjorde dem uaktuelle, skal ikke vises.
+- bruke ledeteksten fra skjemaet som tittel på hvert svar
+- vise svarene i samme rekkefølge som i skjemaet
+
+## Bruk FormSummary for enkle skjemaer
+
+Bruk [`FormSummary`](/docs/components-formsummary--docs) når skjemaet har få felt. Lag én seksjon per steg i skjemaet, med en lenke som tar brukeren rett til riktig steg.
+
+<Canvas of={OppsummeringStories.EnkeltSkjema} />
+
+## Bruk tabell for repeterende felt
+
+Når brukeren har lagt til flere like elementer, blir `FormSummary` lang og repeterende. Bruk en [tabell](/docs/components-table--docs) med handlinger på hver rad når
+
+- elementene er av samme type, for eksempel lærere, skoler eller kostnadslinjer
+- alle elementene har de samme feltene, som kan vises som kolonner
+- brukeren må kunne endre eller slette enkeltelementer
+
+I eksempelet under er det seks lærere med fire opplysninger hver. I `FormSummary` ville det blitt seks seksjoner og 24 felt. I tabellen er det seks rader som er enkle å skanne og sammenligne.
+
+<Canvas of={OppsummeringStories.Tabell} />
+
+### Slik bygger du tabellen
+
+- Følg retningslinjene for [`Table`](/docs/components-table--docs), blant annet `caption` og høyrejusterte tall.
+- Hvis hvert element har mer informasjon enn det som passer i kolonner, bruk [ekspanderende rader](/docs/patterns-tabeller-ekspanderende-rader--docs).
+- Legg handlingene i en egen kolonne til høyre, med skjult overskrift («Handlinger»).
+- Bruk tertiære ikonknapper med [`Tooltip`](/docs/components-tooltip--docs): blyant for «Rediger» og søppelkasse for «Slett». Bruk `danger` på «Slett», og be om bekreftelse før noe slettes.
+- Hver knapp må ha et unikt tilgjengelig navn, for eksempel «Rediger Kari Hansen». Legg navnet i skjult tekst (`ds-sr-only`) inni knappen.
+- Bruk knapper med synlig tekst hvis målgruppen i hovedsak bruker mobil, siden `Tooltip` er lite egnet på berøringsskjermer.
+- Vis en tydelig tekst når tabellen ikke har noen rader, og forklar hvis det kreves minst ett element.
+
+## Tomme og valgfrie svar
+
+Felt som er relevante, men som brukeren ikke har svart på, skal fortsatt vises. Ellers kan det se ut som noe mangler. `FormSummary` viser en standardtekst for [tomme svar](/docs/components-formsummary--docs#tomme-svar). Bruk samme tekst i tomme tabellceller.
+
+## Feil og manglende svar
+
+Brukeren må få vite om manglende eller feil svar før de sender inn.
+
+- Vis feilen ved svaret med [`error` på `FormSummary.Field`](/docs/components-formsummary--docs#med-feil-på-felt). I en tabell vises feilen ved raden den gjelder, eller ved tabellen hvis det mangler elementer.
+- Vis en [oppsummering av feil](/docs/patterns-skjema-feilmeldinger--docs) like over innsendingsknappen.
+- Hver lenke i feiloppsummeringen skal ta brukeren til riktig steg og felt.
+- Feilen skal forsvinne når den er rettet.
+
+## Endring av svar
+
+Svar redigeres i selve skjemaet, ikke i oppsummeringen. Dette gjelder både lenkene i `FormSummary` og «Rediger» i tabellen. Bare sletting av et element i en tabell kan skje direkte i oppsummeringen. Når brukeren velger å redigere et svar
+
+- skal skjemaet være forhåndsutfylt
+- skal brukeren kunne gå rett tilbake til oppsummeringen etter endringen
+- skal nye spørsmål som oppstår på grunn av endringen vises før brukeren kommer tilbake
