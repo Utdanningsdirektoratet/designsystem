@@ -145,55 +145,23 @@
   max-width: 36rem;
 }
 
+.summaryTables {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: 100%;
+}
+
 .form {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  align-items: start;
-  column-gap: var(--ds-size-2);
-  row-gap: var(--ds-size-4);
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 20rem;
+  row-gap: var(--ds-size-5);
   width: 100%;
 }
 
 .formButtons {
-  grid-column: 4;
-}
-
-/* The foresatt name gets its own row; the child's fields and the button share the next. */
-.form > :first-child {
-  grid-column: 1 / -1;
-  max-width: 20rem;
-}
-
-/* Bulk-import variant: all fields stacked, with the button under them. */
-.form.formStacked {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 20rem;
-  row-gap: var(--ds-size-5);
-}
-
-.form.formStacked > :first-child {
-  grid-column: auto;
-  max-width: none;
-}
-
-.form.formStacked .formButtons {
-  grid-column: 1;
   margin-block-start: var(--ds-size-2);
-}
-
-/* Stack fields when the avdeling is too narrow to line up with the table. */
-@container avdeling (max-width: 34rem) {
-  .form {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .form > * {
-    max-width: 20rem;
-  }
-
-  .formButtons {
-    grid-column: 1;
-  }
 }
 
 /* More room between the toggle, the active panel and the registered rows. */
