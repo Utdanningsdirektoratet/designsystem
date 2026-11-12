@@ -119,36 +119,37 @@ Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du
 
 Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
 
+<Canvas of={FileUploadStories.ItemLink} />
+
 Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
 
-Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `FileUpload.FileSize` i `description`:
+<Canvas of={FileUploadStories.ItemDescription} />
 
-```tsx
-<FileUpload.Item
-  file={file}
-  onRemove={handleRemove}
-  description={
-    <>
-      <FileUpload.FileSize size={file.size} />{' '}
-      <span>Endret 23. april 2026</span>
-    </>
-  }
-/>
-```
+Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `FileUpload.FileSize` i `description`.
+
+<Canvas of={FileUploadStories.ItemDescriptionWithFileSize} />
 
 Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
 
+<Canvas of={FileUploadStories.ItemWithoutDescription} />
+
 Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Se [Hvor hører feilen hjemme?](#hvor-hører-feilen-hjemme) for når feilen skal stå på vedlegget og når den skal stå på feltet.
+
+<Canvas of={FileUploadStories.ItemError} />
 
 Med `success` viser du at filen er i orden, for eksempel når serveren har sjekket filen etter opplasting. Sett `error` eller `success`, ikke begge: er begge satt, er det `error` som vises.
 
-<Canvas of={FileUploadStories.ExampleItems} />
+<Canvas of={FileUploadStories.ItemSuccess} />
 
 ### Opplasting og sjekk av filer
 
 `FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil. Mens `loading` er satt, vises en tekst om at filen blir lastet opp i stedet for beskrivelsen, og vedlegget har ingen knapper.
 
+<Canvas of={FileUploadStories.ItemLoading} />
+
 Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer.
+
+<Canvas of={FileUploadStories.ItemLoadingText} />
 
 `loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
 
@@ -164,32 +165,17 @@ Det andre eksempelet viser først standardteksten mens filen lastes opp, og så 
 
 Et vedlegg kan ha handlinger brukeren kan utføre. Setter du `onRemove`, får vedlegget en knapp for å fjerne det. Andre handlinger legger du i `actions`, med `FileUpload.DownloadButton` eller `FileUpload.ItemButton`. Knappen for å fjerne vedlegget kommer alltid sist, slik at den står på samme sted i hvert vedlegg.
 
-```tsx
-import { FileUpload } from '@udir-design/react';
-import { downloadFile } from '@udir-design/react/alpha/utilities';
-
-<FileUpload.Item
-  key={id}
-  file={file}
-  onRemove={() => removeFile(id)}
-  actions={
-    <FileUpload.DownloadButton
-      fileName={file.name}
-      onClick={() => downloadFile(file)}
-    />
-  }
-/>;
-```
-
-<Canvas of={FileUploadStories.ItemActions} />
-
 #### Fjerne vedlegget
+
+<Canvas of={FileUploadStories.ItemRemoveButton} />
 
 Skjermleseren leser opp at vedlegget er fjernet, så det skal du ikke si fra om selv. Se [Opplesing med skjermleser](#opplesing-med-skjermleser).
 
 #### Laste ned filen
 
 `FileUpload.DownloadButton` er en knapp for å laste ned filen. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
+
+<Canvas of={FileUploadStories.ItemDownloadButton} />
 
 `FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. En fil brukeren nettopp har valgt, ligger allerede i nettleseren som et `File`-objekt, også før den er lastet opp. Den kan du gi rett til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link> fra `@udir-design/react/alpha/utilities`. Ligger filen bare på serveren, må du hente den først.
 
@@ -204,6 +190,8 @@ Trenger du andre handlinger på vedlegget, for eksempel en knapp for å beskrive
 #### Når knappene er skjult
 
 `readonly` på `FileUpload.Item` skjuler bare knappen for å fjerne vedlegget. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke. `loading` på `FileUpload.Item` skjuler alle knappene, også dem i `actions`.
+
+<Canvas of={FileUploadStories.ItemReadonly} />
 
 Hvor fokus havner når et vedlegg forsvinner eller knappene blir skjult, står under [Fokus](#fokus).
 
