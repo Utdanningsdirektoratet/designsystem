@@ -15,6 +15,9 @@ import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
 import { useFileUpload } from 'src/hooks/useFileUpload';
 import { downloadFile } from 'src/utilities/file/downloadFile';
+// `?no-inline`: smaller than Vite's inline limit, so a build would otherwise
+// turn it into a `data:` URL, which browsers do not open from a link.
+import vitnemalUrl from '../../../public/files/vitnemal.pdf?no-inline';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
@@ -667,6 +670,207 @@ export const ExampleItems_Test = ExampleItems.extend({
       await userEvent.click(removeButtons[0]);
       await expect(canvas.queryByText('eksempel1.pdf')).not.toBeInTheDocument();
     });
+  },
+});
+
+export const ItemLink = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 629 }}
+          href={vitnemalUrl}
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDescription = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description="Vitnemål fra videregående skole"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDescriptionWithFileSize = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description={
+            <>
+              <FileUpload.FileSize size={300000} />
+              {' · '}
+              <span>Endret 23. april 2026</span>
+            </>
+          }
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemWithoutDescription = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description={null}
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemError = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'notat.txt', size: 2000 }}
+          error="Filformatet støttes ikke"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemSuccess = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'kandidatliste.csv', size: 12000 }}
+          success="Filen er godkjent"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemLoading = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          loading
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemLoadingText = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'kandidatliste.csv', size: 12000 }}
+          loading
+          loadingText="Sjekker innholdet…"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemRemoveButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const [files, setFiles] = useState([
+      { id: 'soknad', name: 'soknad.pdf', size: 300000 },
+    ]);
+
+    return (
+      <FileUpload.List>
+        {files.map((file) => (
+          <FileUpload.Item
+            key={file.id}
+            file={file}
+            onRemove={() =>
+              setFiles((prev) => prev.filter(({ id }) => id !== file.id))
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDownloadButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const [entries, setEntries] = useState(() => [
+      {
+        id: 'soknad',
+        file: new File([new Uint8Array(300000)], 'soknad.pdf', {
+          type: 'application/pdf',
+        }),
+      },
+    ]);
+
+    return (
+      <FileUpload.List>
+        {entries.map(({ id, file }) => (
+          <FileUpload.Item
+            key={id}
+            file={file}
+            onRemove={() =>
+              setEntries((prev) => prev.filter((entry) => entry.id !== id))
+            }
+            actions={
+              <FileUpload.DownloadButton
+                fileName={file.name}
+                onClick={() => downloadFile(file)}
+              />
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemReadonly = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const file = new File([new Uint8Array(300000)], 'vedtak.pdf', {
+      type: 'application/pdf',
+    });
+
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={file}
+          readonly
+          onRemove={() => {}}
+          actions={
+            <FileUpload.DownloadButton
+              fileName={file.name}
+              onClick={() => downloadFile(file)}
+            />
+          }
+        />
+      </FileUpload.List>
+    );
   },
 });
 
