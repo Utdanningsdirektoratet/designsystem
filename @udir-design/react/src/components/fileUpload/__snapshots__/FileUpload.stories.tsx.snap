@@ -38,7 +38,7 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             kandidat-12.pdf
           </span>
           <div>
@@ -121,7 +121,7 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             kandidat-13.pdf
           </span>
           <div>
@@ -204,7 +204,7 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             kandidat-14.pdf
           </span>
           <div>
@@ -287,7 +287,7 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             kandidat-15.pdf
           </span>
           <div>
@@ -365,7 +365,10 @@ exports[`Compact List 1`] = `
           </svg>
         </div>
         <div>
-          <div role="text">
+          <div
+            role="text"
+            dir="auto"
+          >
             kandidat-16.tsx
             <span>
             </span>
@@ -467,7 +470,7 @@ exports[`Custom Item Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vitnemal.pdf
         </span>
         <div>
@@ -589,7 +592,7 @@ exports[`Custom Item Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           attest.pdf
         </span>
         <div>
@@ -1086,7 +1089,7 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel1.pdf
           </span>
           <div>
@@ -1171,7 +1174,7 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel2.docx
           </span>
           <div>
@@ -1251,7 +1254,10 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <a href="/eksempel3.png">
+          <a
+            href="/eksempel3.png"
+            dir="auto"
+          >
             eksempel3.png
           </a>
           <div>
@@ -1302,7 +1308,7 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel4.pdf
           </span>
           <div>
@@ -1338,7 +1344,10 @@ exports[`Example Items 1`] = `
           </svg>
         </div>
         <div>
-          <div role="text">
+          <div
+            role="text"
+            dir="auto"
+          >
             eksempel5.tsx
             <span>
             </span>
@@ -1493,7 +1502,7 @@ exports[`Item Actions 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           soknad.pdf
         </span>
         <div>
@@ -1613,7 +1622,7 @@ exports[`Item Actions 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vedtak.pdf
         </span>
         <div>
@@ -1701,7 +1710,7 @@ exports[`Item Actions 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vedlegg.pdf
         </span>
         <div>
@@ -1750,7 +1759,7 @@ exports[`Item Description 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vitnemal.pdf
         </span>
         <div>
@@ -1800,7 +1809,7 @@ exports[`Item Description With File Size 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vitnemal.pdf
         </span>
         <div>
@@ -1856,7 +1865,7 @@ exports[`Item Download Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           soknad.pdf
         </span>
         <div>
@@ -1979,7 +1988,10 @@ exports[`Item Error 1`] = `
         </svg>
       </div>
       <div>
-        <div role="text">
+        <div
+          role="text"
+          dir="auto"
+        >
           notat.txt
           <span>
           </span>
@@ -2041,7 +2053,10 @@ exports[`Item Link 1`] = `
         </svg>
       </div>
       <div>
-        <a href="/public/files/vitnemal.pdf?no-inline">
+        <a
+          href="/public/files/vitnemal.pdf?no-inline"
+          dir="auto"
+        >
           vitnemal.pdf
         </a>
         <div>
@@ -2098,7 +2113,7 @@ exports[`Item Loading 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vitnemal.pdf
         </span>
         <div>
@@ -2152,7 +2167,7 @@ exports[`Item Loading Text 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           kandidatliste.csv
         </span>
         <div>
@@ -2202,7 +2217,7 @@ exports[`Item Readonly 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vedtak.pdf
         </span>
         <div>
@@ -2293,7 +2308,7 @@ exports[`Item Remove Button 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           soknad.pdf
         </span>
         <div>
@@ -2379,7 +2394,7 @@ exports[`Item Success 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           kandidatliste.csv
         </span>
         <div>
@@ -2442,7 +2457,7 @@ exports[`Item Without Description 1`] = `
         </svg>
       </div>
       <div>
-        <span>
+        <span dir="auto">
           vitnemal.pdf
         </span>
         <div>
@@ -2705,7 +2720,7 @@ exports[`Slow Item Actions 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             soknad.pdf
           </span>
           <div>
@@ -2825,7 +2840,7 @@ exports[`Slow Item Actions 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             vitnemal.pdf
           </span>
           <div>
@@ -2945,7 +2960,7 @@ exports[`Slow Item Actions 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             attest.pdf
           </span>
           <div>
@@ -3138,7 +3153,7 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel1.pdf
           </span>
           <div>
@@ -3221,7 +3236,7 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel2.docx
           </span>
           <div>
@@ -3299,7 +3314,7 @@ exports[`Too Many Files 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             eksempel3.png
           </span>
           <div>
