@@ -393,9 +393,12 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
     <span className="uds-file-upload__hidden-text uds-file-upload__item-invalid" />
   ) : null;
 
+  /* `dir="auto"`: the name takes its direction from its own text rather than
+     the page's, so the characters at its ends that have no direction of
+     their own, such as in "2024-rapport.pdf", stay where they are typed. */
   if (href) {
     return (
-      <Link className="uds-file-upload__item-name" href={href}>
+      <Link className="uds-file-upload__item-name" href={href} dir="auto">
         {file.name}
         {marker}
       </Link>
@@ -403,7 +406,11 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
   }
 
   if (!marker) {
-    return <span className="uds-file-upload__item-name">{file.name}</span>;
+    return (
+      <span className="uds-file-upload__item-name" dir="auto">
+        {file.name}
+      </span>
+    );
   }
 
   /* A `div`: in a `span`, which Chrome leaves out of its tree, Chrome on
@@ -411,7 +418,7 @@ export const FileName = ({ file, href, invalid }: FileNameProps) => {
      "ugyldig" as a stop of its own. */
   return (
     // oxlint-disable-next-line jsx-a11y/aria-role -- `text` is WebKit's own role, not ARIA's: without it, VoiceOver on iOS read the name, the comma and "ugyldig" as three stops. A link is read as one stop already.
-    <div className="uds-file-upload__item-name" role="text">
+    <div className="uds-file-upload__item-name" role="text" dir="auto">
       {file.name}
       {marker}
     </div>
