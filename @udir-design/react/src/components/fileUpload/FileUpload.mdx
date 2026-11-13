@@ -1,6 +1,8 @@
 import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
 import * as FileUploadStories from './FileUpload.stories';
+import * as useFileUploadStories from '../../hooks/useFileUpload/useFileUpload.stories';
 import { CssLanguageVariables } from '.storybook/docs/components/CssVariables/CssLanguageVariables';
+import { Link } from 'src/components/link/Link';
 
 <Meta of={FileUploadStories} />
 
@@ -27,6 +29,74 @@ import { FileUpload } from '@udir-design/react';
 <FileUpload.Trigger />;
 ```
 
+`FileUpload` består av et felt for å velge filer og en liste over filene som er lagt ved:
+
+- `FileUpload.Dropzone` eller `FileUpload.Trigger` er feltet brukeren velger filer med.
+- `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange vedlegg det er og hvor i lista brukeren befinner seg.
+- `FileUpload.Item` viser ett vedlegg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
+- `FileUpload.DownloadButton` og `FileUpload.ItemButton` er knapper du kan legge på et vedlegg, og `FileUpload.FileSize` viser en filstørrelse, for eksempel i beskrivelsen av et vedlegg.
+
+Komponentene holder ikke styr på vedleggene selv. Det gjør [`useFileUpload`](/docs/hooks-usefileupload--docs) for deg: den gir hvert vedlegg en id, skiller ut filene som skal sendes inn, og kjenner igjen en fil som allerede er lagt ved, slik at du kan si fra til brukeren i stedet for å legge den ved to ganger.
+
+### Stabil id per vedlegg
+
+Hver `FileUpload.Item` trenger en `key` som følger vedlegget, ikke posisjonen i lista eller filen.
+
+- **Ikke bruk indeksen.** Når brukeren fjerner et vedlegg, gjenbruker React DOM-nodene og forskyver innholdet oppover. Da kan et element arve feilmeldingen fra vedlegget under, slik at feilen blir lest opp på nytt selv om brukeren bare fjernet et annet vedlegg.
+- **Ikke lag id-en fra filen.** To filer kan ha samme navn, og den samme filen kan bli forsøkt lagt ved flere ganger. Brukeren skal se hva som skjedde med hvert forsøk, så hvert forsøk må få sin egen id.
+
+Bruker du [`useFileUpload`](/docs/hooks-usefileupload--docs), får du id-en derfra og trenger ikke lage den selv.
+
+Holder du styr på vedleggene på egen hånd, lager du id-en idet vedlegget legges til:
+
+```tsx
+type Entry = { id: string; file: File; error?: string };
+
+const addFiles = (files: File[]) =>
+  setEntries((prev) => [
+    ...prev,
+    ...files.map((file) => ({ id: crypto.randomUUID(), file })),
+  ]);
+
+<FileUpload.List>
+  {entries.map(({ id, file, error }) => (
+    <FileUpload.Item
+      key={id}
+      file={file}
+      error={error}
+      onRemove={() =>
+        setEntries((prev) => prev.filter((entry) => entry.id !== id))
+      }
+    />
+  ))}
+</FileUpload.List>;
+```
+
+`crypto.randomUUID` finnes bare på sider som lastes over https eller fra `localhost`.
+
+Har vedleggene dine allerede en id fra serveren, bruk den i stedet.
+
+### Fortell feltet hvilke filer som er lagt ved
+
+Send lista med filer til `files` på `FileUpload.Dropzone` eller `FileUpload.Trigger`:
+
+```tsx
+<FileUpload.Dropzone
+  label="Last opp dokumentasjon"
+  cardProps={getRootProps()}
+  inputProps={getInputProps({ multiple: true })}
+  files={files}
+/>
+```
+
+Komponenten vet ikke selv hvilke filer som er lagt ved. Det er først når du setter `files` at skjermlesere, nettleservalidering med `required` og vanlig innsending av `<form>` får vite om dem.
+
+Send inn de filene du faktisk skal sende, ikke alt som vises i lista. Filer med feil skal ikke være med: de havner ellers i selve filopplastingsfeltet, og blir sendt med hvis skjemaet sendes inn uten at du håndterer innsendingen selv.
+
+Bare ekte `File`-objekter kan legges inn i `files`. Filer du kun har metadata om, for eksempel filer som allerede ligger på serveren, sender du ikke inn her.
+
+Setter du ikke `files`, tømmer komponenten `input`-elementet etter hvert filvalg. Ellers ville elementet bare inneholde det brukeren valgte sist i nettleserens filvelger, og det er dette skjermlesere ville lest opp, ikke vedleggene i lista. Bruker du da `react-dropzone` og skriver din egen `getFilesFromEvent`-funksjon, må den lese `event.target.files` før den første `await`-en. Standardfunksjonen i `react-dropzone` gjør det allerede.
+
 ## Eksempler
 
 Det finnes flere måter å håndtere opplasting av filer. Se eksempler på dette under.
@@ -45,54 +115,161 @@ Varianten `FileUpload.Trigger` er en knapp som åpner nettleserens filvelger. Du
 
 <Canvas of={FileUploadStories.ExampleTrigger} />
 
-### Begrenset antall filer
+### Innhold i hvert vedlegg
 
-Dersom du ønsker å begrense antall filer implementeres dette selv. Om brukeren har lastet opp mer enn det maksimalt tillatte antallet bør du vise en feilmelding for input-feltet, ikke for hver enkelt fil. Se eksempelet under.
+Filnavnet vises som vanlig tekst. Setter du `href`, blir navnet en [`Link`](/docs/components-link--docs) til filen, slik at brukeren kan åpne den ved å klikke på navnet. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
 
-<Canvas of={FileUploadStories.TooManyFiles} />
+<Canvas of={FileUploadStories.ItemLink} />
 
-### Vedlegg
+Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`.
 
-Filer som er lastet opp vises med `FileUpload.List` og én `FileUpload.Item` per fil. `FileUpload.List` viser vedleggene som en liste (`<ul>` med `<li>`), slik at skjermlesere kan lese ut hvor mange filer som er lastet opp og hvor i lista brukeren befinner seg. Derfor må `FileUpload.Item` alltid ligge inni en `FileUpload.List`.
+<Canvas of={FileUploadStories.ItemDescription} />
 
-```tsx
-<FileUpload.List>
-  {files.map((file, index) => (
-    <FileUpload.Item
-      key={index}
-      file={file}
-      onRemove={() => removeFile(file)}
-    />
-  ))}
-</FileUpload.List>
-```
+Du kan også kombinere filstørrelse og egen informasjon fritt ved å bruke `FileUpload.FileSize` i `description`.
 
-Filnavnet er en [`Link`](/docs/components-link--docs) med `download`-attributtet, slik at brukeren kan laste ned en kopi av filen ved å klikke på navnet.
+<Canvas of={FileUploadStories.ItemDescriptionWithFileSize} />
 
-Vi viser filstørrelsen automatisk. Dersom du vil vise noe annet i stedet for filstørrelsen, for eksempel en kort beskrivelse av filen, kan du sette `description`. Du kan fjerne filstørrelsen ved å sette `description` til `null`.
+Om du hverken vil vise filstørrelse eller egen informasjon, sett `description` til `null`.
 
-Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig.
+<Canvas of={FileUploadStories.ItemWithoutDescription} />
 
-<Canvas of={FileUploadStories.ExampleItems} />
+Du kan bruke `error` til å vise feilmeldinger, for eksempel dersom filformatet ikke er riktig. Se [Hvor hører feilen hjemme?](#hvor-hører-feilen-hjemme) for når feilen skal stå på vedlegget og når den skal stå på feltet.
+
+<Canvas of={FileUploadStories.ItemError} />
+
+Med `success` viser du at filen er i orden, for eksempel når serveren har sjekket filen etter opplasting. Sett `error` eller `success`, ikke begge: er begge satt, er det `error` som vises.
+
+<Canvas of={FileUploadStories.ItemSuccess} />
+
+### Opplasting og sjekk av filer
+
+`FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil. Mens `loading` er satt, vises en tekst om at filen blir lastet opp i stedet for beskrivelsen, og vedlegget har ingen knapper.
+
+<Canvas of={FileUploadStories.ItemLoading} />
+
+Skjer det noe annet med filen, for eksempel at serveren leser gjennom den, setter du `loadingText` til en tekst som passer.
+
+<Canvas of={FileUploadStories.ItemLoadingText} />
+
+`loading` beskriver noe som skjer akkurat nå, ikke noe brukeren har fylt ut. Legger du filene i skjemaet, hører den derfor ikke med der. [`useFileUpload`](/docs/hooks-usefileupload--docs) forklarer hvorfor, og hva du gjør hvis brukeren skal kunne forlate siden mens en opplasting pågår.
+
+I eksemplene under viser vi hvordan `loading` fungerer i praksis, ved at du selv laster opp en fil. Det første eksempelet bruker standardteksten.
+
+<Canvas of={FileUploadStories.Upload} />
+
+Det andre eksempelet viser først standardteksten mens filen lastes opp, og så bruker det `loadingText` mens filen blir sjekket.
+
+<Canvas of={FileUploadStories.UploadAndValidate} />
+
+### Handlinger på hvert vedlegg
+
+Et vedlegg kan ha handlinger brukeren kan utføre. Setter du `onRemove`, får vedlegget en knapp for å fjerne det. Andre handlinger legger du i `actions`, med `FileUpload.DownloadButton` eller `FileUpload.ItemButton`. Knappen for å fjerne vedlegget kommer alltid sist, slik at den står på samme sted i hvert vedlegg.
+
+#### Fjerne vedlegget
+
+<Canvas of={FileUploadStories.ItemRemoveButton} />
+
+Skjermleseren leser opp at vedlegget er fjernet, så det skal du ikke si fra om selv. Se [Opplesing med skjermleser](#opplesing-med-skjermleser).
+
+#### Laste ned filen
+
+`FileUpload.DownloadButton` er en knapp for å laste ned filen. Se også [retningslinjen for å velge mellom `href` og en nedlastingsknapp](#lenke-eller-nedlastingsknapp).
+
+<Canvas of={FileUploadStories.ItemDownloadButton} />
+
+`FileUpload.DownloadButton` laster ikke ned noe av seg selv. Det er du som bestemmer hva som skjer i `onClick`. En fil brukeren nettopp har valgt, ligger allerede i nettleseren som et `File`-objekt, også før den er lastet opp. Den kan du gi rett til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link> fra `@udir-design/react/alpha/utilities`. Ligger filen bare på serveren, må du hente den først.
+
+Tar handlingen tid, for eksempel fordi filen må hentes fra serveren først, setter du `loading` på `FileUpload.Item` mens det pågår, og `loadingText` til det som skjer, for eksempel "Henter filen…". Mens `loading` er satt, skjules knappene. Knappen brukeren trykket på får fokus igjen når `loading` fjernes.
+
+#### Andre handlinger
+
+Trenger du andre handlinger på vedlegget, for eksempel en knapp for å beskrive filen, bruker du `FileUpload.ItemButton` med et ikon og en `tooltip`. Navnet på knappen blir teksten i `tooltip` etterfulgt av `fileName`, for eksempel "Beskriv filen attest.pdf", mens tooltipen bare viser "Beskriv filen". Se [Tekst i FileUpload](#tekst-i-fileupload) for hvordan du skriver `tooltip`.
+
+<Canvas of={FileUploadStories.CustomItemButton} />
+
+#### Når knappene er skjult
+
+`readonly` på `FileUpload.Item` skjuler bare knappen for å fjerne vedlegget. Knappene i `actions` vises fortsatt, så legg bare inn de brukeren skal kunne bruke. `loading` på `FileUpload.Item` skjuler alle knappene, også dem i `actions`.
+
+<Canvas of={FileUploadStories.ItemReadonly} />
+
+Hvor fokus havner når et vedlegg forsvinner eller knappene blir skjult, står under [Fokus](#fokus).
 
 ### Visningsvarianter
 
 `FileUpload.List` har to visninger, som du velger med `variant`:
 
-- `default` viser hver fil som sitt eget kort.
-- `compact` samler filene i ett kort, med linjer mellom hver fil. Denne visningen egner seg godt når mange filer skal vises.
+- `default` viser hvert vedlegg som sitt eget kort.
+- `compact` samler vedleggene i ett kort, med linjer mellom hvert vedlegg. Denne visningen egner seg godt når mange vedlegg skal vises.
 
 Visningene støtter det samme, så du kan bytte mellom dem uten å endre på `FileUpload.Item`.
 
 <Canvas of={FileUploadStories.CompactList} />
 
-### Tilstand for lasting
+### Begrenset antall filer
 
-`FileUpload.Item` har en `loading` tilstand som eksempelvis kan brukes om det tar lang tid å laste opp en fil.
+Dersom du ønsker å begrense antall filer, implementeres dette selv. Om brukeren har lastet opp mer enn det maksimalt tillatte antallet, bør du vise en feilmelding for input-feltet, ikke på hvert vedlegg.
 
-<Canvas of={FileUploadStories.Upload} />
+<Canvas of={FileUploadStories.TooManyFiles} />
+
+### Feil og innsending
+
+Eksempelet under viser hvordan feil henger sammen med innsendingen. Last opp filer for å prøve de tre tilfellene som stopper innsendingen:
+
+- en fil som blir avvist med en gang, fordi den ikke er en PDF eller er større enn 512 KB
+- en fil serveren avviser etterpå, når du trykker "La serveren avvise filen"
+- en opplasting som ikke er ferdig, så lenge du ikke trykker "Fullfør opplastingen"
+
+Alle havner i den samme lista og sier fra på feltet, siden feilen på feltet blir lest opp hver gang brukeren kommer til feltet.
+
+Eksempelet bruker [`useFileUpload`](/docs/hooks-usefileupload--docs), som holder styr på filene og skiller mellom alt brukeren har forsøkt å legge ved og de filene som faktisk skal sendes inn.
+
+Eksempelet viser også hvordan man viser feil ved innsending. Når brukeren trykker på knappen, flyttes fokus automatisk til `ErrorSummary`, som viser feilen med en lenke tilbake til opplastingsfeltet. Når brukeren navigerer til opplastingsfeltet, vil en skjermleser også lese opp feilen der.
+
+<Canvas of={useFileUploadStories.SubmittingWithErrors} />
+
+## Retningslinjer
+
+### Hvor hører feilen hjemme?
+
+Feilmeldinger hører hjemme på to nivåer:
+
+- Bruk `error` på `FileUpload.Item` når brukeren må gjøre noe med **én bestemt fil**, for eksempel at filformatet er feil eller at filen er for stor.
+- Bruk `error` på `FileUpload.Dropzone` eller `FileUpload.Trigger` når brukeren må endre **samlingen av filer**, for eksempel at det er lagt ved for mange filer, eller at feltet er påkrevd og tomt.
+
+La feilmeldingen på feltet si at noe må ses på og hvor, og la feilmeldingen på hvert vedlegg si hva. Da er meldingen på feltet korrekt uansett hva som er galt med den enkelte filen.
+
+Vis også en feilmelding på feltet så lenge et vedlegg i lista har feil, for eksempel "Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.". En melding på et vedlegg blir bare lest opp når den dukker opp, mens feilen på feltet blir lest opp hver gang brukeren kommer til feltet, og blir stående til feilen er ute av veien.
+
+Vis alle filene brukeren har forsøkt å legge ved i én liste, uansett hva som gikk galt. En fil som blir avvist med en gang, og en fil serveren avviser etterpå, er det samme for brukeren: noe som ikke ble med. Bruker du `react-dropzone`, kommer avviste filer for seg selv gjennom `onDropRejected`, men de hører hjemme i den samme lista.
+
+Stopp innsendingen og sett en feilmelding på feltet hvis ett eller flere vedlegg i lista har feil. Ikke send inn kun vedleggene uten feil, siden brukeren kanskje ikke har fått med seg feilmeldingene og tror at alt har gått bra. `ErrorSummary` kan da lenke tilbake til feltet slik at brukeren får rettet problemene.
+
+### Lenke eller nedlastingsknapp?
+
+Brukeren kan åpne en fil på to måter: ved å klikke på filnavnet når du har satt `href`, eller med en `FileUpload.DownloadButton`. Velg én av dem for hver fil, ikke begge. Uten `href` vises filnavnet som vanlig tekst, også når vedlegget har en nedlastingsknapp. Trenger ikke brukeren å åpne filen, for eksempel på en kvitteringsside som viser hvilke filer som ble sendt inn, eller mens filen fortsatt lastes opp eller sjekkes, bruker du ingen av dem.
+
+Sett `href` på `FileUpload.Item` når filen ligger på en adresse brukeren kan åpne direkte i nettleseren, for eksempel en fil som allerede er lastet opp. Da er filnavnet en vanlig lenke, og brukeren kan åpne den i en ny fane, kopiere adressen eller lagre filen. Det er serveren og nettleseren, ikke komponenten, som bestemmer om filen blir vist i nettleseren eller lastet ned.
+
+Bruk `FileUpload.DownloadButton` i `actions` når
+
+- brukeren nettopp har lagt ved filen, og den bare finnes som et `File`-objekt i nettleseren. Da sender du objektet til <Link href="./typedoc/functions/utilities_file_alpha.downloadFile.html" target="_none">`downloadFile`</Link>.
+- adressen krever noe en lenke ikke kan sende med, for eksempel et token i `Authorization`-headeren. Da henter du filen med `fetch` i `onClick`, gjør svaret om til en `File` og gir den til `downloadFile`.
+- tjenesten må vite at brukeren har lastet ned filen, for eksempel fordi filen må være åpnet før skjemaet kan sendes inn. En lenke åpner filen uten at du får vite om det.
+
+Ikke lag en adresse til `href` selv med `URL.createObjectURL`. En slik adresse finnes bare så lenge siden som laget den er åpen, og bare i den samme nettleseren, så en kopiert adresse går ikke til filen etterpå. Da vi testet dette, klarte heller ikke Safari å åpne adressen i en ny fane, og Chrome lastet ned en Word-fil med et tilfeldig navn i stedet for filnavnet. En rekke vanlige handlinger på en lenke vil derfor ikke fungere som forventet.
+
+### Error Summary
+
+Ved bruk av `ErrorSummary` bør feil på vedlegg oppsummeres i ett punkt som lenker til feltet. Feilmeldingen på feltet sier hva som er galt, og vedleggslista står rett ved, så brukeren kommer videre derfra. Ett punkt per vedlegg ville fylt oppsummeringen med det samme problemet om igjen.
+
+Punktet i oppsummeringen gjentar som regel feilmeldingen fra feltet. Skriv derfor meldingen slik at den også gir mening der.
+
+Se [eksempelet med feil og innsending](#feil-og-innsending) for hvordan dette henger sammen med innsendingen.
 
 ## Tekst i FileUpload
+
+### Label og beskrivelse
 
 I både `FileUpload.Dropzone` og `FileUpload.Trigger` bruker du `label` og `description` til å beskrive hva slags filer brukeren kan laste opp. Det skal som hovedregel være en `label` på `FileUpload`.
 
@@ -106,9 +283,43 @@ Beskriv hva slags filer som kan lastes opp. Skriv hver begrensning i separate se
 - Filer kan være opptil 10 MB.
 - Du kan legge ved opptil 5 filer.
 
-## Error Summary
+### Meldinger på vedlegg
 
-Ved bruk av `ErrorSummary` bør feil med flere filer oppsummeres i ett punkt, med lenke til knappen på den første filen med feil. Hvis alle feilede filer er samlet under én overskrift, kan dere eventuelt lenke til den overskriften.
+Skjermlesere leser teksten i `error`, `success` og `loadingText` på `FileUpload.Item` med filnavnet foran, for eksempel "notat.txt: Filformatet støttes ikke". Skriv derfor teksten uten filnavnet.
+
+### Egne knapper
+
+Skjermlesere leser `tooltip` på `FileUpload.ItemButton` med filnavnet etter, så skriv den slik at den gir mening da: "Beskriv filen" blir lest som "Beskriv filen attest.pdf" og fungerer fint, mens "Rediger beskrivelse" blir lest som "Rediger beskrivelse attest.pdf". Du må selv sørge for at `tooltip` er på riktig språk.
+
+## Tilgjengelighet
+
+### Opplesing med skjermleser
+
+Feil på feltnivå blir lest opp som for andre skjemafelt. Se [`Field`](/docs/components-field--docs).
+
+Meldinger på et vedlegg blir lest opp med det samme de dukker opp, med filnavnet foran. Det gjelder `error`, `success` og teksten som vises mens `loading` er satt, både når `loading` settes og når `loadingText` endres. Et vedlegg som legges til med en melding, blir også lest opp, så lenge filen ble lagt ved i `FileUpload.Dropzone` eller `FileUpload.Trigger`. Har selve vedlegget fokus mens det laster, leser skjermleseren teksten derfra i stedet.
+
+Går brukeren gjennom vedleggene, blir filnavnet på et vedlegg med feil lest opp med "ugyldig" etter, for eksempel "attest.pdf, ugyldig". Ordet følger språket på siden, se [Språkstøtte](#språkstøtte). Slik skiller vedlegg med feil seg ut også for den som ikke ser dem.
+
+Skjermlesere leser knappene på et vedlegg med filnavnet etter, for eksempel "Fjern filen soknad.pdf" og "Last ned filen soknad.pdf". Da kan knappene skilles fra hverandre også når en skjermleser lister opp alle knappene på siden. På `FileUpload.ItemButton` bestemmer du selv teksten foran filnavnet, se [Egne knapper](#egne-knapper).
+
+Når brukeren bruker den innebygde knappen for å fjerne et vedlegg, annonseres dette av skjermleseren når vedlegget blir borte, for eksempel "soknad.pdf er fjernet". Fjerner du vedlegg på andre måter, må du selv sørge for at dette annonseres.
+
+Skjermlesere leser ikke opp meldinger på vedlegg som allerede ligger i lista når siden lastes, for eksempel når et skjema henter fram lagrede svar. Meldingene blir lest sammen med resten av siden. Det samme gjelder teksten på et vedlegg som har `loading` satt allerede når siden lastes. Det som skjer etterpå, for eksempel at `loadingText` endres eller vedlegget får en melding, blir lest opp som vanlig.
+
+### Fokus
+
+#### Når et vedlegg forsvinner
+
+Hvis en knapp på et vedlegg har fokus, og vedlegget forsvinner, flyttes fokus til samme knapp på neste vedlegg, eller på forrige vedlegg dersom det ikke finnes noe neste. Slik er det tydelig hvor brukeren er, også med skjermleser, og brukeren kan fjerne flere vedlegg etter hverandre. Vanligvis er dette bare aktuelt for den innebygde knappen for å fjerne vedlegget. Fjerner du vedlegg selv, med en egen knapp eller utenfra, gjelder det samme for knappene i `actions` som er `FileUpload.ItemButton` eller `FileUpload.DownloadButton`, men ikke for andre knapper. To `FileUpload.ItemButton` regnes som samme knapp når de har samme `tooltip`.
+
+Finnes det ingen slik knapp å flytte fokus til, for eksempel fordi lista er blitt tom, flyttes fokus til det nærmeste elementet før lista som kan få fokus. Legg derfor lista etter feltet for å laste opp filer, så havner fokus der. Dette skjer bare når lista ligger i et `<form>`-element, og fokus flyttes bare til elementer i det samme skjemaet. Uten `<form>` vet ikke komponenten hva som hører sammen med lista, så fokus blir liggende på selve siden. Da mister skjermleseren plassen sin, og VoiceOver leser heller ikke opp at vedlegget er fjernet. Bruker du ikke `<form>`, må du derfor selv flytte fokus i `onRemove`.
+
+Har du flyttet fokus i `onRemove`, faller denne automatikken bort, og du har selv full kontroll.
+
+#### Når et vedlegg laster
+
+Hvis en knapp på vedlegget har fokus når `loading` settes, får selve vedlegget fokus mens knappene er skjult. Skjermleseren leser opp filnavnet og teksten som viser at det laster. Fokus flyttes ikke til et annet vedlegg. Knappen får fokus igjen når `loading` fjernes, med mindre brukeren har flyttet fokus et annet sted i mellomtiden. Fjernes vedlegget mens det laster, flyttes fokus som beskrevet over.
 
 ## Språkstøtte
 
@@ -123,6 +334,10 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
     '--udsc-fileUpload-dropFile-text',
     '--udsc-fileUpload-dropFiles-text',
     '--udsc-fileUpload-or-text',
-    '--udsc-fileUpload-uploading-text',
+    '--udsc-fileUpload-loading-text',
+    '--udsc-fileUpload-removeFile-text',
+    '--udsc-fileUpload-removed-text',
+    '--udsc-fileUpload-downloadFile-text',
+    '--udsc-fileUpload-invalid-text',
   ]}
 />
