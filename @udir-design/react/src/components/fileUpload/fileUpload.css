@@ -416,6 +416,10 @@
   display: flex;
   align-items: center;
   width: 100%;
+  /* As tall as a button, so a row without buttons, such as one that is
+     loading, is as tall as the rest, and does not grow when its buttons come
+     back. */
+  min-block-size: var(--ds-size-12);
   /* The row is the item's first child except while the hidden focus element
      comes before it, when Digdir's spacing between card children would push
      it down. */
