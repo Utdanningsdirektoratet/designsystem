@@ -472,6 +472,8 @@
 .uds-file-upload__list[data-variant='compact'] .uds-file-upload__item-content {
   display: flex;
   align-items: center;
-  gap: var(--ds-size-3);
+  /* Space beside the file name, but none below it: a description that wraps
+     onto a line of its own sits right under the name, as in `default`. */
+  gap: 0 var(--ds-size-3);
   flex-wrap: wrap;
 }
