@@ -1434,6 +1434,133 @@ export const CompactList_Test = CompactList.extend({
   },
 });
 
+/** Every state of an item, in both list variants, to compare them in one
+    view. */
+export const ItemStates = meta.story({
+  parameters: { snapshot: false },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+    const size = <FileUpload.FileSize size={300000} />;
+    const download = (file: File) => (
+      <FileUpload.DownloadButton
+        fileName={file.name}
+        onClick={() => downloadFile(file)}
+      />
+    );
+    const remove = () => {};
+
+    const items = (
+      <>
+        <FileUpload.Item
+          file={pdf('soknad.pdf')}
+          description={size}
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('vitnemal.pdf')}
+          href={vitnemalUrl}
+          description={size}
+        />
+        <FileUpload.Item file={pdf('vedlegg.pdf')} loading />
+        <FileUpload.Item
+          file={pdf('kandidatliste.csv')}
+          loading
+          loadingText="Sjekker innholdet…"
+        />
+        <FileUpload.Item
+          file={pdf('attest.pdf')}
+          description={null}
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('notat.txt')}
+          error="Filformatet støttes ikke"
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('karakterer.csv')}
+          success="Filen er godkjent"
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('vedtak.pdf')}
+          readonly
+          onRemove={remove}
+          actions={download(pdf('vedtak.pdf'))}
+        />
+        <FileUpload.Item
+          file={pdf('legeerklaering.pdf')}
+          description="Legeerklæring"
+          onRemove={remove}
+          actions={
+            <>
+              <FileUpload.ItemButton
+                icon={<NotePencilIcon aria-hidden />}
+                tooltip="Beskriv filen"
+                fileName="legeerklaering.pdf"
+                onClick={() => {}}
+              />
+              {download(pdf('legeerklaering.pdf'))}
+            </>
+          }
+        />
+        <FileUpload.Item
+          file={pdf(
+            'et-svaert-langt-filnavn-som-ikke-har-plass-paa-en-linje-2026.pdf',
+          )}
+          description="Vitnemål fra videregående skole, med karakterer fra alle tre årene"
+          error="Filen er for stor. Den kan være opptil 2 MB."
+          onRemove={remove}
+        />
+      </>
+    );
+
+    return (
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 30rem))',
+          gap: 'var(--ds-size-8)',
+          alignItems: 'start',
+        }}
+      >
+        {(['default', 'compact'] as const).map((variant) => (
+          <section key={variant} aria-label={variant}>
+            <Heading level={3} data-size="2xs">
+              {variant}
+            </Heading>
+            <FileUpload.List variant={variant}>{items}</FileUpload.List>
+          </section>
+        ))}
+      </div>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    for (const variant of ['default', 'compact']) {
+      await step(
+        `A file without buttons is as tall as one with them in ${variant}`,
+        async () => {
+          const list = within(
+            canvas.getByRole('region', { name: variant }),
+          ).getByRole('list');
+          /* Inside the borders: in `compact`, only the first file has a top
+             border. */
+          const height = (name: string) =>
+            within(list).getByText(name).closest('li')?.clientHeight;
+
+          const withButton = height('soknad.pdf');
+          await expect(height('vitnemal.pdf')).toBe(withButton);
+          await expect(height('vedlegg.pdf')).toBe(withButton);
+          await expect(height('kandidatliste.csv')).toBe(withButton);
+        },
+      );
+    }
+  },
+});
+
 /** Stands in for a server that takes its time. */
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
