@@ -91,7 +91,7 @@ exports[`Submitting With Errors 1`] = `
           </svg>
         </div>
         <div>
-          <span>
+          <span dir="auto">
             rapport.pdf
           </span>
           <div>
@@ -169,7 +169,10 @@ exports[`Submitting With Errors 1`] = `
           </svg>
         </div>
         <div>
-          <div role="text">
+          <div
+            role="text"
+            dir="auto"
+          >
             rapport-2.pdf
             <span>
             </span>
