@@ -8764,7 +8764,7 @@
       "categoryId": "barnehage",
       "nodeId": "1258:175622",
       "name": "miljø-1",
-      "tags": ["barn", "alene", "sammen", "inne"],
+      "tags": ["barn", "sammen", "inne"],
       "variants": [
         {
           "id": "miljo-1-1258-175623",
@@ -9277,7 +9277,7 @@
       "categoryId": "barnehage",
       "nodeId": "722:41045",
       "name": "miljø-2",
-      "tags": ["barn", "voksen", "alene", "sammen", "ute", "natur", "lek"],
+      "tags": ["barn", "voksen", "sammen", "ute", "natur", "lek"],
       "variants": [
         {
           "id": "miljo-2-722-41046",
@@ -14920,7 +14920,7 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122709",
       "name": "lek-1b",
-      "tags": ["barn", "voksen", "sammen", "inne", "lek", "samisk"],
+      "tags": ["barn", "alene", "inne", "lek", "samisk"],
       "variants": [
         {
           "id": "lek-1b-4686-122710",
@@ -16459,7 +16459,7 @@
       "categoryId": "barnehage",
       "nodeId": "4677:227497",
       "name": "lek-10a",
-      "tags": ["barn", "voksen", "lek", "natur", "ute"],
+      "tags": ["barn", "voksen", "lek", "natur", "ute", "sammen"],
       "variants": [
         {
           "id": "lek-10a-4677-227498",
@@ -16972,7 +16972,7 @@
       "categoryId": "barnehage",
       "nodeId": "4686:122413",
       "name": "lek-10b",
-      "tags": ["barn", "voksen", "samisk", "lek", "natur", "ute"],
+      "tags": ["barn", "voksen", "samisk", "lek", "natur", "ute", "sammen"],
       "variants": [
         {
           "id": "lek-10b-4686-122414",
@@ -29889,7 +29889,6 @@
         "regne",
         "tegne",
         "inne",
-        "tavle",
         "klasserom"
       ],
       "variants": [
@@ -31464,7 +31463,9 @@
         "regne",
         "tegne",
         "inne",
-        "klasserom"
+        "klasserom",
+        "tavle",
+        "skjerm"
       ],
       "variants": [
         {
@@ -32499,7 +32500,16 @@
       "categoryId": "grunnskole",
       "nodeId": "3495:127697",
       "name": "læring-10",
-      "tags": ["barn", "voksen", "sammen", "natur", "digital", "ute"],
+      "tags": [
+        "barn",
+        "sammen",
+        "inne",
+        "klasserom",
+        "bok",
+        "lese",
+        "skrive",
+        "regne"
+      ],
       "variants": [
         {
           "id": "grunnskole-laering-10-3495-127698",
@@ -33012,6 +33022,7 @@
       "categoryId": "grunnskole",
       "nodeId": "6288:228378",
       "name": "læring-11",
+      "tags": ["barn", "voksen", "sammen", "digital", "natur", "ute"],
       "variants": [
         {
           "id": "grunnskole-laering-11-6288-228379",
@@ -33535,7 +33546,8 @@
         "regne",
         "tegne",
         "inne",
-        "klasserom"
+        "klasserom",
+        "tavle"
       ],
       "variants": [
         {
@@ -34060,7 +34072,8 @@
         "regne",
         "tegne",
         "inne",
-        "klasserom"
+        "klasserom",
+        "tavle"
       ],
       "variants": [
         {
@@ -37181,11 +37194,2634 @@
       ]
     },
     {
+      "id": "grunnskole-aktivitet-18-7032-187617",
+      "categoryId": "grunnskole",
+      "nodeId": "7032:187617",
+      "name": "aktivitet-18",
+      "tags": ["barn", "sammen", "ute", "dyr", "samisk"],
+      "variants": [
+        {
+          "id": "grunnskole-aktivitet-18-7032-187618",
+          "nodeId": "7032:187618",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187618.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-187686",
+          "nodeId": "7032:187686",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187686.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-187754",
+          "nodeId": "7032:187754",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187754.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-187822",
+          "nodeId": "7032:187822",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187822.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-187890",
+          "nodeId": "7032:187890",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187890.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-187958",
+          "nodeId": "7032:187958",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-187958.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188026",
+          "nodeId": "7032:188026",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188026.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188092",
+          "nodeId": "7032:188092",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188092.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188158",
+          "nodeId": "7032:188158",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188158.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188224",
+          "nodeId": "7032:188224",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188224.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188290",
+          "nodeId": "7032:188290",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188290.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188356",
+          "nodeId": "7032:188356",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188356.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188422",
+          "nodeId": "7032:188422",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188422.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188488",
+          "nodeId": "7032:188488",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188488.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188554",
+          "nodeId": "7032:188554",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188554.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188620",
+          "nodeId": "7032:188620",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188620.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188686",
+          "nodeId": "7032:188686",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188686.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188752",
+          "nodeId": "7032:188752",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188752.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188818",
+          "nodeId": "7032:188818",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188818.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188819",
+          "nodeId": "7032:188819",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188819.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188820",
+          "nodeId": "7032:188820",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188820.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188821",
+          "nodeId": "7032:188821",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188821.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188822",
+          "nodeId": "7032:188822",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188822.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188823",
+          "nodeId": "7032:188823",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188823.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188824",
+          "nodeId": "7032:188824",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188824.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188825",
+          "nodeId": "7032:188825",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188825.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188826",
+          "nodeId": "7032:188826",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188826.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188827",
+          "nodeId": "7032:188827",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188827.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188828",
+          "nodeId": "7032:188828",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188828.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188829",
+          "nodeId": "7032:188829",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188829.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188830",
+          "nodeId": "7032:188830",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188830.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188831",
+          "nodeId": "7032:188831",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188831.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188832",
+          "nodeId": "7032:188832",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188832.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188833",
+          "nodeId": "7032:188833",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188833.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188834",
+          "nodeId": "7032:188834",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188834.svg"
+        },
+        {
+          "id": "grunnskole-aktivitet-18-7032-188835",
+          "nodeId": "7032:188835",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-aktivitet-18-7032-188835.svg"
+        }
+      ]
+    },
+    {
+      "id": "grunnskole-laering-17-7032-190015",
+      "categoryId": "grunnskole",
+      "nodeId": "7032:190015",
+      "name": "læring-17",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "sammen",
+        "digital",
+        "skjerm",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne",
+        "samisk"
+      ],
+      "variants": [
+        {
+          "id": "grunnskole-laering-17-7032-190016",
+          "nodeId": "7032:190016",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190016.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190022",
+          "nodeId": "7032:190022",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190022.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190028",
+          "nodeId": "7032:190028",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190028.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190034",
+          "nodeId": "7032:190034",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190034.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190040",
+          "nodeId": "7032:190040",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190040.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190046",
+          "nodeId": "7032:190046",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190046.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190052",
+          "nodeId": "7032:190052",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190052.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190056",
+          "nodeId": "7032:190056",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190056.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190060",
+          "nodeId": "7032:190060",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190060.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190064",
+          "nodeId": "7032:190064",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190064.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190068",
+          "nodeId": "7032:190068",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190068.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190072",
+          "nodeId": "7032:190072",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190072.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190076",
+          "nodeId": "7032:190076",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190076.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190080",
+          "nodeId": "7032:190080",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190080.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190084",
+          "nodeId": "7032:190084",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190084.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190088",
+          "nodeId": "7032:190088",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190088.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190092",
+          "nodeId": "7032:190092",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190092.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190096",
+          "nodeId": "7032:190096",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190096.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190100",
+          "nodeId": "7032:190100",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190100.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190101",
+          "nodeId": "7032:190101",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190101.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190102",
+          "nodeId": "7032:190102",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190102.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190103",
+          "nodeId": "7032:190103",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190103.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190104",
+          "nodeId": "7032:190104",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190104.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190105",
+          "nodeId": "7032:190105",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190105.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190106",
+          "nodeId": "7032:190106",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190106.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190107",
+          "nodeId": "7032:190107",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190107.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190108",
+          "nodeId": "7032:190108",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190108.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190109",
+          "nodeId": "7032:190109",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190109.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190110",
+          "nodeId": "7032:190110",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190110.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190111",
+          "nodeId": "7032:190111",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190111.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190112",
+          "nodeId": "7032:190112",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190112.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190113",
+          "nodeId": "7032:190113",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190113.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190114",
+          "nodeId": "7032:190114",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-17-7032-190114.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190115",
+          "nodeId": "7032:190115",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190115.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190116",
+          "nodeId": "7032:190116",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190116.svg"
+        },
+        {
+          "id": "grunnskole-laering-17-7032-190117",
+          "nodeId": "7032:190117",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-17-7032-190117.svg"
+        }
+      ]
+    },
+    {
+      "id": "grunnskole-laering-18-7033-193608",
+      "categoryId": "grunnskole",
+      "nodeId": "7033:193608",
+      "name": "læring-18",
+      "tags": [
+        "barn",
+        "ungdom",
+        "sammen",
+        "digital",
+        "skjerm",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne",
+        "samisk"
+      ],
+      "variants": [
+        {
+          "id": "grunnskole-laering-18-7033-193609",
+          "nodeId": "7033:193609",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193609.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193615",
+          "nodeId": "7033:193615",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193615.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193621",
+          "nodeId": "7033:193621",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193621.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193627",
+          "nodeId": "7033:193627",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193627.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193633",
+          "nodeId": "7033:193633",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193633.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193639",
+          "nodeId": "7033:193639",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193639.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193645",
+          "nodeId": "7033:193645",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193645.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193649",
+          "nodeId": "7033:193649",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193649.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193653",
+          "nodeId": "7033:193653",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193653.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193657",
+          "nodeId": "7033:193657",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193657.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193661",
+          "nodeId": "7033:193661",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193661.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193665",
+          "nodeId": "7033:193665",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193665.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193669",
+          "nodeId": "7033:193669",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193669.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193673",
+          "nodeId": "7033:193673",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193673.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193677",
+          "nodeId": "7033:193677",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193677.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193681",
+          "nodeId": "7033:193681",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193681.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193685",
+          "nodeId": "7033:193685",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193685.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193689",
+          "nodeId": "7033:193689",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193689.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193693",
+          "nodeId": "7033:193693",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193693.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193694",
+          "nodeId": "7033:193694",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193694.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193695",
+          "nodeId": "7033:193695",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193695.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193696",
+          "nodeId": "7033:193696",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193696.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193697",
+          "nodeId": "7033:193697",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193697.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193698",
+          "nodeId": "7033:193698",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193698.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193699",
+          "nodeId": "7033:193699",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193699.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193700",
+          "nodeId": "7033:193700",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193700.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193701",
+          "nodeId": "7033:193701",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193701.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193702",
+          "nodeId": "7033:193702",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193702.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193703",
+          "nodeId": "7033:193703",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193703.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193704",
+          "nodeId": "7033:193704",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193704.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193705",
+          "nodeId": "7033:193705",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193705.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193706",
+          "nodeId": "7033:193706",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193706.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193707",
+          "nodeId": "7033:193707",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-18-7033-193707.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193708",
+          "nodeId": "7033:193708",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193708.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193709",
+          "nodeId": "7033:193709",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193709.svg"
+        },
+        {
+          "id": "grunnskole-laering-18-7033-193710",
+          "nodeId": "7033:193710",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-18-7033-193710.svg"
+        }
+      ]
+    },
+    {
+      "id": "grunnskole-laering-19-7033-193756",
+      "categoryId": "grunnskole",
+      "nodeId": "7033:193756",
+      "name": "læring-19",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne",
+        "samisk",
+        "tavle"
+      ],
+      "variants": [
+        {
+          "id": "grunnskole-laering-19-7033-193757",
+          "nodeId": "7033:193757",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193757.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193763",
+          "nodeId": "7033:193763",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193763.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193769",
+          "nodeId": "7033:193769",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193769.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193775",
+          "nodeId": "7033:193775",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193775.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193781",
+          "nodeId": "7033:193781",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193781.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193787",
+          "nodeId": "7033:193787",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193787.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193793",
+          "nodeId": "7033:193793",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193793.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193797",
+          "nodeId": "7033:193797",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193797.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193801",
+          "nodeId": "7033:193801",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193801.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193805",
+          "nodeId": "7033:193805",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193805.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193809",
+          "nodeId": "7033:193809",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193809.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193813",
+          "nodeId": "7033:193813",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193813.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193817",
+          "nodeId": "7033:193817",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193817.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193821",
+          "nodeId": "7033:193821",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193821.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193825",
+          "nodeId": "7033:193825",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193825.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193829",
+          "nodeId": "7033:193829",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193829.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193833",
+          "nodeId": "7033:193833",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193833.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193837",
+          "nodeId": "7033:193837",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193837.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193841",
+          "nodeId": "7033:193841",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193841.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193842",
+          "nodeId": "7033:193842",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193842.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193843",
+          "nodeId": "7033:193843",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193843.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193844",
+          "nodeId": "7033:193844",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193844.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193845",
+          "nodeId": "7033:193845",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193845.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193846",
+          "nodeId": "7033:193846",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193846.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193847",
+          "nodeId": "7033:193847",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193847.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193848",
+          "nodeId": "7033:193848",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193848.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193849",
+          "nodeId": "7033:193849",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193849.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193850",
+          "nodeId": "7033:193850",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193850.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193851",
+          "nodeId": "7033:193851",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193851.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193852",
+          "nodeId": "7033:193852",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193852.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193853",
+          "nodeId": "7033:193853",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193853.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193854",
+          "nodeId": "7033:193854",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193854.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193855",
+          "nodeId": "7033:193855",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-19-7033-193855.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193856",
+          "nodeId": "7033:193856",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193856.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193857",
+          "nodeId": "7033:193857",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193857.svg"
+        },
+        {
+          "id": "grunnskole-laering-19-7033-193858",
+          "nodeId": "7033:193858",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-19-7033-193858.svg"
+        }
+      ]
+    },
+    {
+      "id": "grunnskole-laering-20-7033-193904",
+      "categoryId": "grunnskole",
+      "nodeId": "7033:193904",
+      "name": "læring-20",
+      "tags": [
+        "barn",
+        "ungdom",
+        "alene",
+        "digital",
+        "skjerm",
+        "bok",
+        "inne",
+        "lese",
+        "skrive",
+        "regne",
+        "tavle",
+        "samisk"
+      ],
+      "variants": [
+        {
+          "id": "grunnskole-laering-20-7033-193905",
+          "nodeId": "7033:193905",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193905.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193911",
+          "nodeId": "7033:193911",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193911.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193917",
+          "nodeId": "7033:193917",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193917.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193923",
+          "nodeId": "7033:193923",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193923.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193929",
+          "nodeId": "7033:193929",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193929.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193935",
+          "nodeId": "7033:193935",
+          "name": "Geometrisk form: Ja, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193935.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193941",
+          "nodeId": "7033:193941",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193941.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193945",
+          "nodeId": "7033:193945",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193945.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193949",
+          "nodeId": "7033:193949",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193949.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193953",
+          "nodeId": "7033:193953",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193953.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193957",
+          "nodeId": "7033:193957",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193957.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193961",
+          "nodeId": "7033:193961",
+          "name": "Geometrisk form: Ja, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193961.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193965",
+          "nodeId": "7033:193965",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193965.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193969",
+          "nodeId": "7033:193969",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193969.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193973",
+          "nodeId": "7033:193973",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193973.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193977",
+          "nodeId": "7033:193977",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193977.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193981",
+          "nodeId": "7033:193981",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193981.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193985",
+          "nodeId": "7033:193985",
+          "name": "Geometrisk form: Ja, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Ja",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193985.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193989",
+          "nodeId": "7033:193989",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193989.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193990",
+          "nodeId": "7033:193990",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193990.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193991",
+          "nodeId": "7033:193991",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193991.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193992",
+          "nodeId": "7033:193992",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193992.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193993",
+          "nodeId": "7033:193993",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193993.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193994",
+          "nodeId": "7033:193994",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193994.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193995",
+          "nodeId": "7033:193995",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193995.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193996",
+          "nodeId": "7033:193996",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193996.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193997",
+          "nodeId": "7033:193997",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193997.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193998",
+          "nodeId": "7033:193998",
+          "name": "Geometrisk form: Nei, Format: Portrett (4:5), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1350,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Portrett (4:5)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-193998.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-193999",
+          "nodeId": "7033:193999",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-193999.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194000",
+          "nodeId": "7033:194000",
+          "name": "Geometrisk form: Nei, Format: Kvadrat (1:1), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1080,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Kvadrat (1:1)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-194000.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194001",
+          "nodeId": "7033:194001",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-194001.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194002",
+          "nodeId": "7033:194002",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-194002.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194003",
+          "nodeId": "7033:194003",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Nei",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Nei"
+          },
+          "svg": "grunnskole-laering-20-7033-194003.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194004",
+          "nodeId": "7033:194004",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: grønn, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "grønn",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-194004.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194005",
+          "nodeId": "7033:194005",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: blå, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "blå",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-194005.svg"
+        },
+        {
+          "id": "grunnskole-laering-20-7033-194006",
+          "nodeId": "7033:194006",
+          "name": "Geometrisk form: Nei, Format: Landskap (16:9), Fargetema: brun, Bakgrunn: Ja",
+          "width": 1920,
+          "height": 1080,
+          "properties": {
+            "Geometrisk form": "Nei",
+            "Format": "Landskap (16:9)",
+            "Fargetema": "brun",
+            "Bakgrunn": "Ja"
+          },
+          "svg": "grunnskole-laering-20-7033-194006.svg"
+        }
+      ]
+    },
+    {
       "id": "voksen-og-generell-arbeid-1-49-146607",
       "categoryId": "voksen-og-generell",
       "nodeId": "49:146607",
       "name": "arbeid-1",
-      "tags": ["voksen", "alene", "skjerm", "digital", "regning"],
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "skjerm",
+        "digital",
+        "regne",
+        "lese",
+        "skrive"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-1-49-146608",
@@ -40524,7 +43160,7 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "1258:148567",
       "name": "arbeid-2",
-      "tags": ["voksen", "alene", "skjerm", "digital"],
+      "tags": ["voksen", "alene", "skjerm", "digital", "inne"],
       "variants": [
         {
           "id": "voksen-og-generell-arbeid-2-1258-148568",
@@ -42576,6 +45212,15 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "246:101441",
       "name": "samarbeid-1",
+      "tags": [
+        "voksen",
+        "sammen",
+        "skjerm",
+        "digital",
+        "inne",
+        "lese",
+        "regne"
+      ],
       "variants": [
         {
           "id": "voksen-og-generell-samarbeid-1-246-101442",
@@ -44644,6 +47289,7 @@
         "skjerm",
         "digital",
         "lese",
+        "skrive",
         "inne",
         "tavle"
       ],
@@ -50327,7 +52973,8 @@
         "digital",
         "bok",
         "skjerm",
-        "samisk"
+        "samisk",
+        "sammen"
       ],
       "variants": [
         {
@@ -50841,7 +53488,7 @@
       "categoryId": "voksen-og-generell",
       "nodeId": "6503:188006",
       "name": "læring-5",
-      "tags": ["barn", "ungdom", "voksen", "ute", "natur", "bygning"],
+      "tags": ["barn", "ungdom", "voksen", "ute", "natur", "bygning", "sammen"],
       "variants": [
         {
           "id": "voksen-og-generell-laering-5-6503-188007",
@@ -53936,7 +56583,8 @@
         "skjerm",
         "digital",
         "lese",
-        "skrive"
+        "skrive",
+        "regne"
       ],
       "variants": [
         {
@@ -66289,7 +68937,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:160953",
       "name": "læring-24",
-      "tags": ["ungdom", "voksen", "alene", "digital", "skjerm", "inne"],
+      "tags": [
+        "ungdom",
+        "voksen",
+        "alene",
+        "digital",
+        "skjerm",
+        "inne",
+        "sikkerhet"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-24-3872-160954",
@@ -69377,7 +72033,7 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "3872:161841",
       "name": "læring-30",
-      "tags": ["ungdom", "voksen", "sammen", "lese"],
+      "tags": ["ungdom", "voksen", "sammen", "lese", "regne"],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-30-3872-161842",
@@ -69890,7 +72546,15 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "4038:404130",
       "name": "læring-31",
-      "tags": ["ungdom", "voksen", "inne", "lese", "skrive", "klasserom"],
+      "tags": [
+        "ungdom",
+        "voksen",
+        "inne",
+        "lese",
+        "skrive",
+        "klasserom",
+        "regne"
+      ],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-31-4038-404131",
@@ -70403,7 +73067,7 @@
       "categoryId": "videregaende-opplaering",
       "nodeId": "6044:150921",
       "name": "læring-32",
-      "tags": ["ungdom", "voksen", "skrive", "regne", "sammen", "inne"],
+      "tags": ["ungdom", "voksen", "skrive", "regne", "sammen", "inne", "lese"],
       "variants": [
         {
           "id": "videregaende-opplaering-laering-32-6044-150922",
@@ -71951,6 +74615,7 @@
       "categoryId": "internbruk",
       "nodeId": "1956:102026",
       "name": "hverdag-1",
+      "tags": ["intern"],
       "variants": [
         {
           "id": "internbruk-hverdag-1-1956-102269",
@@ -72049,7 +74714,7 @@
       "categoryId": "internbruk",
       "nodeId": "2072:62981",
       "name": "feiring",
-      "tags": ["feiring"],
+      "tags": ["intern"],
       "variants": [
         {
           "id": "internbruk-feiring-2072-62982",
