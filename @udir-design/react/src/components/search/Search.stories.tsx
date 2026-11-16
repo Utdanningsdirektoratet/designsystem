@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { expect, fn, userEvent, within } from 'storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
@@ -306,7 +306,15 @@ export const Translations = Preview.extend({
     await expectLanguageVariables(
       canvasElement,
       () => canvasElement.querySelector('.ds-search'),
-      ['--dsc-suggestion-sr-clear'],
+      ['--dsc-suggestion-sr-clear', '--udsc-search-button-text'],
     );
+
+    const submit = assertExists(
+      canvasElement.querySelector('button[type="submit"]'),
+      'Search button not found',
+    );
+    await expect(submit).toHaveTextContent('Søk');
+    canvasElement.lang = 'en';
+    await waitFor(() => expect(submit).toHaveTextContent('Search'));
   },
 });

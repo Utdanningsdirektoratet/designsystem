@@ -2,6 +2,7 @@ import cl from 'clsx/lite';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { NotePencilIcon } from '@udir-design/icons';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import { Card } from '../card';
 import { Link } from '../link';
 import { Heading } from '../typography/heading';
@@ -37,6 +38,10 @@ export const FormSummarySection = forwardRef<
   { children, className, title, headingLevel = 3, editHref, onEdit, ...rest },
   ref,
 ) {
+  const [editLabelRef, editLabel] = useLanguageVariable<HTMLSpanElement>(
+    '--udsc-formSummary-edit-text',
+    'Endre svar',
+  );
   const hasEditAction = Boolean(editHref || onEdit);
   const renderEditAction = () => {
     if (!hasEditAction) return null;
@@ -45,7 +50,7 @@ export const FormSummarySection = forwardRef<
         <Link asChild>
           <button onClick={onEdit}>
             <NotePencilIcon aria-hidden />
-            <span>Endre svar</span>
+            <span ref={editLabelRef}>{editLabel}</span>
           </button>
         </Link>
       );
@@ -53,7 +58,7 @@ export const FormSummarySection = forwardRef<
     return (
       <Link href={editHref}>
         <NotePencilIcon aria-hidden />
-        <span>Endre svar</span>
+        <span ref={editLabelRef}>{editLabel}</span>
       </Link>
     );
   };

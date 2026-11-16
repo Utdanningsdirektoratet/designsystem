@@ -2,6 +2,7 @@ import type { Color } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import { ArrowDownRightIcon } from '@udir-design/icons';
+import { useLanguageVariable } from '../../hooks/useLanguageVariable';
 import type { CardProps } from '../card';
 import { Card } from '../card';
 import type { DetailsProps } from '../details';
@@ -65,6 +66,10 @@ export const TableOfContents = forwardRef<HTMLDivElement, TableOfContentsProps>(
     },
     ref,
   ) {
+    const [summaryRef, summaryLabel] = useLanguageVariable<HTMLElement>(
+      '--udsc-tableOfContents-summary-text',
+      'Innhold på denne siden',
+    );
     const detailsProps = { open, onToggle } as DetailsProps;
     return (
       <Card
@@ -74,7 +79,7 @@ export const TableOfContents = forwardRef<HTMLDivElement, TableOfContentsProps>(
         {...rest}
       >
         <Details defaultOpen={!defaultClosed} {...detailsProps}>
-          <Details.Summary>Innhold på denne siden</Details.Summary>
+          <Details.Summary ref={summaryRef}>{summaryLabel}</Details.Summary>
           <Details.Content>
             <ol>
               {headings.map((header) => (
