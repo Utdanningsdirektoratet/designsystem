@@ -41,9 +41,13 @@ jobs:
 
       - name: Determine which conditional jobs need to run
         id: job_condition
+        # Assign first: `echo "x=$(script)"` would take echo's exit status and
+        # hide a failing script.
         run: |
-          echo "run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)" >> "$GITHUB_OUTPUT"
-          echo "run_nextjs_smoke=$(./@internal/ci/bin/should-run-nextjs-smoke.ts)" >> "$GITHUB_OUTPUT"
+          run_ui_tests=$(./@internal/ci/bin/should-run-ui-tests.ts)
+          run_nextjs_smoke=$(./@internal/ci/bin/should-run-nextjs-smoke.ts)
+          echo "run_ui_tests=$run_ui_tests" >> "$GITHUB_OUTPUT"
+          echo "run_nextjs_smoke=$run_nextjs_smoke" >> "$GITHUB_OUTPUT"
         env:
           IS_PR_READY: ${{ github.event_name == 'pull_request' && !github.event.pull_request.draft }}
           IS_PUSH: ${{ github.event_name == 'push' }}

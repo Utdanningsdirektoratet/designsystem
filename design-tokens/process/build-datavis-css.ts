@@ -1,6 +1,6 @@
 #!/usr/bin/env -S pnpm tsx
 
-import { appendFile, readFile, unlink, writeFile } from 'node:fs/promises';
+import { readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
@@ -14,25 +14,28 @@ StyleDictionary.registerFormat(colorScheme);
 const DIST = path.resolve('dist');
 const OUT = path.join(DIST, 'datavis.css');
 
-// 1) clear or create the combined file
-await writeFile(OUT, '', 'utf8');
-
 const colorSchemes: ColorScheme[] = ['light', 'dark'];
 
-for (const scheme of colorSchemes) {
-  console.log(`\n▶ Building ${scheme} theme…`);
+/** The per-scheme CSS file that Style Dictionary writes, see `createConfig`. */
+const tmpFile = (scheme: ColorScheme) =>
+  path.join(DIST, `datavis-${scheme}.css`);
 
-  // 2) run Style Dictionary to generate the per-scheme CSS file
+/** Builds the CSS for one color scheme with Style Dictionary. */
+async function buildSchemeCss(scheme: ColorScheme) {
+  console.log(`\n▶ Building ${scheme} theme…`);
   const sd = await new StyleDictionary().extend(createConfig(scheme));
   await sd.buildAllPlatforms();
+  return readFile(tmpFile(scheme), 'utf8');
+}
 
-  // 3) read that file and append to the combined one
-  const tmpFile = path.join(DIST, `datavis-${scheme}.css`);
-  const css = await readFile(tmpFile, 'utf8');
-  await appendFile(OUT, css + '\n\n', 'utf8');
-
-  // 4) clean up the temporary file
-  await unlink(tmpFile);
+try {
+  // `fromAsync` builds one scheme at a time, so the console output stays in order
+  const css = await Array.fromAsync(colorSchemes, buildSchemeCss);
+  await writeFile(OUT, css.map((block) => `${block}\n\n`).join(''), 'utf8');
+} finally {
+  await Promise.all(
+    colorSchemes.map((scheme) => rm(tmpFile(scheme), { force: true })),
+  );
 }
 
 console.log(`\n✅ All done! File at ${OUT}`);

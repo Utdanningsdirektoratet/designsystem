@@ -4,7 +4,8 @@
     "composite": true,
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": ["node"]
+    "types": ["node"],
+    "lib": ["es2023", "dom", "esnext.iterator"]
   },
   "include": ["bin/**/*.ts", "src/**/*.ts"]
 }
