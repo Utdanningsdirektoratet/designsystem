@@ -1,0 +1,754 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Oppsummering med FormSummary 1`] = `
+<div data-size="auto">
+  <div data-variant="tinted">
+    <div>
+      <h2>
+        Oppsummering
+      </h2>
+    </div>
+    <div>
+      <div>
+        <h3>
+          Om skoleeier
+        </h3>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <span>
+            Endre svar
+          </span>
+        </a>
+      </div>
+      <dl>
+        <div>
+          <dt>
+            Organisasjonsnummer
+          </dt>
+          <dd>
+            <span>
+              987 654 321
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            Skoleeier
+          </dt>
+          <dd>
+            <span>
+              Eksempel kommune
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            Kontaktperson
+          </dt>
+          <dd>
+            <span>
+              Kari Nordmann
+            </span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div>
+      <div>
+        <h3>
+          Kontaktinformasjon
+        </h3>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <span>
+            Endre svar
+          </span>
+        </a>
+      </div>
+      <dl>
+        <div>
+          <dt>
+            E-postadresse
+          </dt>
+          <dd>
+            <span>
+              kari@eksempel.no
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            Telefonnummer
+          </dt>
+          <dd>
+            <span>
+            </span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div>
+      <div>
+        <h3>
+          Om tilskuddet
+        </h3>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M16.97 2.97a2.871 2.871 0 1 1 4.06 4.06l-1.5 1.5-4.333 4.333a1.75 1.75 0 0 1-.684.423l-4.276 1.425a.75.75 0 0 1-.949-.948l1.426-4.276c.086-.258.23-.492.423-.684l4.33-4.33.003-.003.003-.003zM16 6.06l-3.803 3.803a.25.25 0 0 0-.06.098l-.951 2.853 2.853-.95a.25.25 0 0 0 .098-.061L17.939 8zm3 .88L17.06 5l.97-.97a1.371 1.371 0 0 1 1.94 1.94zM3.25 5c0-.966.784-1.75 1.75-1.75h7a.75.75 0 0 1 0 1.5H5a.25.25 0 0 0-.25.25v14c0 .138.112.25.25.25h14a.25.25 0 0 0 .25-.25v-7a.75.75 0 0 1 1.5 0v7A1.75 1.75 0 0 1 19 20.75H5A1.75 1.75 0 0 1 3.25 19z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          <span>
+            Endre svar
+          </span>
+        </a>
+      </div>
+      <dl>
+        <div>
+          <dt>
+            Tilskuddsordning
+          </dt>
+          <dd>
+            <span>
+              Videreutdanning for lærere
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            Skoleår
+          </dt>
+          <dd>
+            <span>
+              2026–2027
+            </span>
+          </dd>
+        </div>
+        <div>
+          <dt>
+            Antall lærere
+          </dt>
+          <dd>
+            <span>
+              12
+            </span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Oppsummering med tabell og handlinger 1`] = `
+<div data-size="auto">
+  <section>
+    <style>
+      .oppsummering-tabell-heading {
+  margin-bottom: var(--ds-size-3);
+}
+
+.oppsummering-tabell-numeric {
+  text-align: right;
+}
+
+.oppsummering-tabell-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ds-size-2);
+}
+
+.oppsummering-tabell-add {
+  margin-top: var(--ds-size-4);
+}
+    </style>
+    <h2 data-size="xs">
+      Lærere som skal få videreutdanning
+    </h2>
+    <table data-zebra="true">
+      <caption>
+        Lærere som er lagt til i søknaden
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Lærer
+          </th>
+          <th>
+            Skole
+          </th>
+          <th>
+            Fag
+          </th>
+          <th>
+            Studiepoeng
+          </th>
+          <th>
+            <span>
+              Handlinger
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Kari Hansen
+          </td>
+          <td>
+            Solbakken skole
+          </td>
+          <td>
+            Norsk
+          </td>
+          <td>
+            30
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Kari Hansen
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Kari Hansen
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ola Berg
+          </td>
+          <td>
+            Solbakken skole
+          </td>
+          <td>
+            Matematikk
+          </td>
+          <td>
+            30
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Ola Berg
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Ola Berg
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Ingrid Moen
+          </td>
+          <td>
+            Nordre Åsen ungdomsskole
+          </td>
+          <td>
+            Engelsk
+          </td>
+          <td>
+            15
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Ingrid Moen
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Ingrid Moen
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Per Solberg
+          </td>
+          <td>
+            Nordre Åsen ungdomsskole
+          </td>
+          <td>
+            Naturfag
+          </td>
+          <td>
+            30
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Per Solberg
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Per Solberg
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Nina Lund
+          </td>
+          <td>
+            Fjellvang videregående skole
+          </td>
+          <td>
+            Matematikk
+          </td>
+          <td>
+            60
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Nina Lund
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Nina Lund
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Henrik Aas
+          </td>
+          <td>
+            Fjellvang videregående skole
+          </td>
+          <td>
+            Samfunnsfag
+          </td>
+          <td>
+            15
+          </td>
+          <td>
+            <div>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-tooltip="Rediger"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Rediger"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M19.638 4.417a3.25 3.25 0 0 0-4.608-.008l-9.378 9.379a.75.75 0 0 0-.191.324l-1.414 4.95a.75.75 0 0 0 .925.927l4.94-1.398a.75.75 0 0 0 .327-.191l9.39-9.391a3.25 3.25 0 0 0 .01-4.592M16.091 5.47a1.752 1.752 0 1 1 2.478 2.478l-.23.23-2.477-2.479zM14.8 6.76 6.85 14.71l-.991 3.47 3.457-.979 7.963-7.963z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Rediger Henrik Aas
+                </span>
+              </button>
+              <button
+                data-variant="tertiary"
+                type="button"
+                data-size="sm"
+                data-color="danger"
+                data-tooltip="Slett"
+                data-placement="top"
+                data-autoplacement="true"
+                aria-description="Slett"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  focusable="false"
+                  role="img"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M4.5 6.25a.75.75 0 0 0 0 1.5h.805l.876 11.384a1.75 1.75 0 0 0 1.745 1.616h8.148a1.75 1.75 0 0 0 1.745-1.616l.876-11.384h.805a.75.75 0 0 0 0-1.5h-2.75V6A2.75 2.75 0 0 0 14 3.25h-4A2.75 2.75 0 0 0 7.25 6v.25zm5.5-1.5c-.69 0-1.25.56-1.25 1.25v.25h6.5V6c0-.69-.56-1.25-1.25-1.25zm-3.19 3 .867 11.27c.01.13.118.23.249.23h8.148c.13 0 .24-.1.25-.23l.866-11.27zm3.19 2a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75m4 0a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
+                <span>
+                  Slett Henrik Aas
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      data-variant="secondary"
+      type="button"
+      data-size="sm"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        fill="none"
+        viewbox="0 0 24 24"
+        focusable="false"
+        role="img"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M12.75 5.5a.75.75 0 0 0-1.5 0v5.75H5.5a.75.75 0 0 0 0 1.5h5.75v5.75a.75.75 0 0 0 1.5 0v-5.75h5.75a.75.75 0 0 0 0-1.5h-5.75z"
+        >
+        </path>
+      </svg>
+      Legg til lærer
+    </button>
+  </section>
+</div>
+`;
