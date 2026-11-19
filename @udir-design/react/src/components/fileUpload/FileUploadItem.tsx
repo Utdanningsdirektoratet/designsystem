@@ -346,13 +346,19 @@ export function Icon({
 }) {
   const extension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
+  /* Hidden, and without the `role="img"` the icons and the spinner come with:
+     with it, VoiceOver on macOS stopped at the icon when moving line by line
+     with the arrow keys, between the file name and the description, although
+     it had nothing to read there. */
+  const hidden = { 'aria-hidden': true, role: undefined } as const;
+
   /* Hidden, since the loading text says the same. */
   if (loading) {
-    return <Spinner aria-hidden />;
+    return <Spinner {...hidden} />;
   }
 
   if (showError) {
-    return <FileXMarkIcon aria-hidden />;
+    return <FileXMarkIcon {...hidden} />;
   }
 
   switch (extension) {
@@ -361,21 +367,21 @@ export function Icon({
     case 'png':
     case 'gif':
     case 'webp':
-      return <FileImageIcon aria-hidden />;
+      return <FileImageIcon {...hidden} />;
     case 'pdf':
-      return <FilePdfIcon aria-hidden />;
+      return <FilePdfIcon {...hidden} />;
     case 'txt':
-      return <FileTextIcon aria-hidden />;
+      return <FileTextIcon {...hidden} />;
     case 'csv':
-      return <FileCsvIcon aria-hidden />;
+      return <FileCsvIcon {...hidden} />;
     case 'xls':
     case 'xlsx':
-      return <FileExcelIcon aria-hidden />;
+      return <FileExcelIcon {...hidden} />;
     case 'doc':
     case 'docx':
-      return <FileWordIcon aria-hidden />;
+      return <FileWordIcon {...hidden} />;
     default:
-      return <FileIcon aria-hidden />;
+      return <FileIcon {...hidden} />;
   }
 }
 
