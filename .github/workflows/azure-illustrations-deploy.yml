@@ -1,0 +1,197 @@
+name: Deploy illustrations to Azure
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Only fetch and upload the artwork of one category, for example internbruk (a small test that leaves the app as it is). Leave empty to deploy everything.'
+        required: false
+        default: ''
+        type: string
+  push:
+    branches:
+      - main
+
+env:
+  STORAGE_ACCOUNT: stdsillustrations
+  CONTAINER: illustrations
+  # Empty means every category.
+  CATEGORY: ${{ inputs.category }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Check if deploy should be initiated
+    outputs:
+      should_deploy: ${{ steps.should_deploy.outputs.should_deploy }}
+    permissions:
+      contents: read
+      actions: 'read'
+      pull-requests: 'read'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          filter: tree:0
+
+      - uses: ./.github/actions/pnpm-setup
+
+      - name: Determine whether to deploy
+        id: should_deploy
+        # Assign first: `echo "x=$(script)"` would take echo's exit status and
+        # hide a failing script.
+        run: |
+          should_deploy=$(./@internal/ci/bin/should-deploy-illustrations.ts)
+          echo "should_deploy=$should_deploy" >> "$GITHUB_OUTPUT"
+        env:
+          IS_DISPATCH: ${{ github.event_name == 'workflow_dispatch'}}
+
+  deploy:
+    needs: check
+    if: needs.check.outputs.should_deploy == 'true'
+    runs-on: ubuntu-latest
+    environment: illustrations
+    # One deploy at a time for every branch and trigger: they share the storage account, and the
+    # cleanup must see `live` as the last finished deploy left it. A running deploy is never cancelled.
+    concurrency:
+      group: illustrations-deploy
+      cancel-in-progress: false
+    name: Build and deploy to Azure Blob Storage
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: ./.github/actions/pnpm-setup
+
+      - name: Compute artwork version
+        id: version
+        run: |
+          if [[ ! "$CATEGORY" =~ ^[a-z-]*$ ]]; then echo "Invalid category"; exit 1; fi
+          # Bumped in git to refetch all SVGs from Figma when artwork changed without a metadata change.
+          ASSET_REVISION=$(tr -d '[:space:]' < apps/illustrations/source/artwork-revision.txt)
+          if [[ ! "$ASSET_REVISION" =~ ^[0-9]+$ ]]; then echo "Invalid artwork revision"; exit 1; fi
+          echo "ASSET_REVISION=$ASSET_REVISION" >> "$GITHUB_ENV"
+          # Hashes what shapes the files (ids, SVG names, node ids, sizes), the processing scripts and the
+          # render revision, so an svgo or PNG change uploads a new version, but a tag or name change does not.
+          # Also writes the metadata that is uploaded on every deploy.
+          HASH=$(ILLUSTRATIONS_CATEGORY="$CATEGORY" pnpm --silent --filter @udir-design/apps-illustrations exec tsx scripts/version.ts "$PWD/apps/illustrations/metadata.upload.json")
+          SUFFIX=${CATEGORY:+-$CATEGORY}
+          echo "value=${HASH}-r${ASSET_REVISION}${SUFFIX}" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to Azure
+        uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # The `complete` blob is uploaded last, so its presence means the artwork version is complete.
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Check if the artwork version is already uploaded
+        id: uploaded
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            EXISTS=$(az storage blob exists --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/complete" --query exists --output tsv)
+            echo "exists=$EXISTS" >> "$GITHUB_OUTPUT"
+
+      # The raw SVGs from Figma are kept per artwork revision under source/, so only new variants are
+      # downloaded from Figma, which takes about 38 minutes for all of them. GitHub's cache would not
+      # do: it drops a cache after 7 days without use, and deploys are further apart.
+      # Raising the artwork revision starts from an empty folder.
+      - name: Restore raw SVGs
+        if: steps.uploaded.outputs.exists != 'true'
+        env:
+          AZCOPY_AUTO_LOGIN_TYPE: AZCLI
+        run: |
+          mkdir -p apps/illustrations/source/catalog/svg
+          azcopy copy "https://$STORAGE_ACCOUNT.blob.core.windows.net/$CONTAINER/source/r$ASSET_REVISION/*" apps/illustrations/source/catalog/svg/ --output-level essential
+
+      - name: Fetch missing SVGs from Figma
+        if: steps.uploaded.outputs.exists != 'true'
+        run: pnpm --filter @udir-design/apps-illustrations run fetch:svgs
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          ILLUSTRATIONS_CATEGORY: ${{ env.CATEGORY }}
+
+      # Also after a failed fetch, so the SVGs it did download are not fetched from Figma again.
+      # --overwrite false skips the ones already stored.
+      - name: Store new raw SVGs
+        if: ${{ !cancelled() && steps.uploaded.outputs.exists != 'true' }}
+        env:
+          AZCOPY_AUTO_LOGIN_TYPE: AZCLI
+        run: azcopy copy "apps/illustrations/source/catalog/svg/*" "https://$STORAGE_ACCOUNT.blob.core.windows.net/$CONTAINER/source/r$ASSET_REVISION/" --include-pattern '*.svg' --overwrite false --content-type image/svg+xml --output-level essential
+
+      - name: Render PNGs
+        if: steps.uploaded.outputs.exists != 'true'
+        run: pnpm turbo run build:assets --filter=@udir-design/apps-illustrations
+        env:
+          ILLUSTRATIONS_CATEGORY: ${{ env.CATEGORY }}
+
+      # AzCopy uploads many files at once, while `az storage blob upload-batch` uploads one at a time,
+      # which took about 24 minutes for every category. It reuses the login from azure/login.
+      # The files are stored uncompressed: Front Door compresses them on the way to the browser (see the
+      # `illustrations-artwork` route in .azure/designsystem-docs.bicep).
+      - name: Upload artwork
+        if: steps.uploaded.outputs.exists != 'true'
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+          AZCOPY_AUTO_LOGIN_TYPE: AZCLI
+        run: |
+          ASSETS=apps/illustrations/public/illustrations-assets
+          DESTINATION="https://$STORAGE_ACCOUNT.blob.core.windows.net/$CONTAINER/$VERSION"
+          azcopy copy "$ASSETS/svg/*" "$DESTINATION/svg/" --overwrite true --content-type image/svg+xml --output-level essential
+          azcopy copy "$ASSETS/png/*" "$DESTINATION/png/" --overwrite true --content-type image/png --output-level essential
+          echo complete > apps/illustrations/complete.txt
+          azcopy copy apps/illustrations/complete.txt "$DESTINATION/complete" --overwrite true --content-type text/plain --output-level essential
+
+      # Runs on every deploy: tag and name changes only update this small file. It is the same artwork
+      # version, so the app and the files it refers to stay compatible. no-cache makes browsers revalidate.
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload metadata
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name "$VERSION/metadata.json" --file apps/illustrations/metadata.upload.json --overwrite true --content-type application/json --content-cache-control no-cache
+
+      - name: Build app
+        run: pnpm turbo run build --filter=@udir-design/apps-illustrations
+        env:
+          VITE_AUTH_CLIENT_ID: ${{ vars.ILLUSTRATIONS_CLIENT_ID }}
+          VITE_AUTH_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          # Same host as the app, so the browser needs no CORS preflight and gets HTTP/2. See the
+          # `illustrations-artwork` route in .azure/designsystem-docs.bicep.
+          VITE_ASSET_BASE_URL: https://design.udir.no/illustrasjoner-filer
+          VITE_ASSET_VERSION: ${{ steps.version.outputs.value }}
+
+      # Hashed files never change, so they cache for a year. index.html is uploaded last and must be
+      # revalidated, so a new deploy is live immediately without purging Front Door. `live` names the
+      # version the app now uses, right after it; the cleanup never deletes that version.
+      # A single-category run is a test, so it leaves the app and `live` as they are.
+      - uses: azure/cli@9eb25b8360668fb0ecbafa808d40e2197b2f5f52 # v3.0.0
+        name: Upload app
+        if: env.CATEGORY == ''
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        with:
+          azcliversion: 2.78.0
+          inlineScript: |
+            az storage blob upload-batch --auth-mode login --account-name "$STORAGE_ACCOUNT" --destination '$web' --destination-path illustrasjoner/assets --source apps/illustrations/dist/assets --overwrite true --content-cache-control 'public, max-age=31536000, immutable'
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name '$web' --name illustrasjoner/index.html --file apps/illustrations/dist/index.html --overwrite true --content-type text/html --content-cache-control no-cache
+            printf '%s' "$VERSION" > apps/illustrations/live.txt
+            az storage blob upload --auth-mode login --account-name "$STORAGE_ACCOUNT" --container-name "$CONTAINER" --name live --file apps/illustrations/live.txt --overwrite true --content-type text/plain --content-cache-control no-cache
+
+      # Retires versions that are no longer live and deletes those retired for a week; see
+      # @internal/ci/src/illustration-cleanup.ts.
+      - name: Clean up old artwork versions
+        run: ./@internal/ci/bin/cleanup-illustrations.ts
+        env:
+          AZCOPY_AUTO_LOGIN_TYPE: AZCLI
