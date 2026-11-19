@@ -66,3 +66,46 @@ az storage blob upload-batch --account-name stdesignsystemdocs -s @udir-design/r
 ```
 
 For other subpaths, replace `--pattern` and `--destination-path` in the commands as appropriate.
+
+## Illustrations infrastructure
+
+The illustrations app at `design.udir.no/illustrasjoner` uses:
+
+- A storage account, `stdsillustrations`, with a static website (`$web`) for the app and a private
+  container, `illustrations`, for the artwork
+- Two routes in the documentation Front Door, defined in `designsystem-docs.bicep`: one for the app,
+  and one that serves the artwork container at `design.udir.no/illustrasjoner-filer`
+
+To recreate the required infrastructure, first deploy the resource group
+
+```
+az deployment sub create --location northeurope --template-file resourcegroup-illustrations.bicep
+```
+
+Then deploy the storage account and container
+
+```
+az deployment group create --resource-group rg-designsystem-illustrations --template-file designsystem-illustrations.bicep
+```
+
+Then enable static website hosting on the storage account. It does not accept account keys, so sign
+in with `--auth-mode login`
+
+```
+az storage blob service-properties update --account-name stdsillustrations --auth-mode login --static-website --index-document index.html
+```
+
+Finally, deploy `designsystem-docs.bicep` (see above) to add the routes. It reads the static website
+and blob addresses from the storage account, so the account must exist first.
+
+### Access
+
+The role assignments are made by IT Operations, not by these templates:
+
+| Who                                                    | Role                          | Scope           |
+| ------------------------------------------------------ | ----------------------------- | --------------- |
+| Managed identity `uai-designsystem-illustrations`      | Storage Blob Data Contributor | Storage account |
+| Group `AlleAnsatteKonsulenterDynamisk` (staff sign-in) | Storage Blob Data Reader      | Storage account |
+
+The managed identity is used by `azure-illustrations-deploy.yml` through a federated credential for the
+`illustrations` GitHub environment.
