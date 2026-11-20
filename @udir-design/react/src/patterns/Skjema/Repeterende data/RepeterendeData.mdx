@@ -1,0 +1,81 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { CssToggle } from '.storybook/docs/components';
+
+import * as RepeterendeDataStories from './RepeterendeData.stories';
+import eksempelKilde from './docs/RepeterendeDataEksempel.tsx?raw';
+import css from './repeterendeData.stories.module.css?raw';
+
+<Meta of={RepeterendeDataStories} />
+
+# Repeterende data
+
+Noen skjemaer krever at brukeren registrerer samme type informasjon flere ganger. Mønsteret viser hvordan du kan håndtere dette på en strukturert måte.
+
+## Når bør man følge bruksmønsteret?
+
+Bruk dette mønsteret når
+
+- brukeren skal registrere flere oppføringer av samme type
+- oppføringene hører til grupper, og brukeren bestemmer selv hvor mange grupper og oppføringer det er
+
+Har skjemaet bare én gruppe, holder det med et skjema og en tabell.
+
+## Alt i ett steg
+
+Den enkleste varianten legger hele registreringen i ett steg, med alle gruppene under hverandre.
+
+- Brukeren oppretter en gruppe i en `Dialog`.
+- Hver gruppe får egen overskrift, skjema og tabell, slik at dataene holdes adskilt.
+- Når brukeren lagrer en oppføring, legges den til som en rad i tabellen, og feltene tømmes.
+
+<Canvas
+  of={RepeterendeDataStories.Preview}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
+## Ett steg per gruppe
+
+Når det er mange grupper, eller hver gruppe har mye å fylle ut, får hver gruppe sitt eget steg i `FormNavigation`. Stegene opprettes og fjernes etter hvert som brukeren legger til og sletter grupper.
+
+- Brukeren oppretter og endrer gruppene i første steg.
+- Send rekkefølgen eksplisitt til `useFormNavigation` med `order`. Ellers havner nye steg bakerst, etter «Send invitasjon».
+- Samle gruppestegene i en `FormNavigation.Group` når skjemaet har flere steg. Vis gruppen først når den første gruppen er opprettet, og unngå en gruppe med bare ett steg.
+- Et steg markeres som fullført når brukeren forlater det med alt utfylt. Etter et innsendingsforsøk markeres steg med feil, for eksempel en avdeling uten foresatte.
+- Valget mellom skjema og import huskes på tvers av stegene, slik at brukeren slipper å velge på nytt for hver gruppe.
+
+<Canvas
+  of={RepeterendeDataStories.DynamiskeStegIGruppeMedTabell}
+  sourceState="hidden"
+  story={{ inline: false, height: '800px' }}
+/>
+
+## Import av mange oppføringer
+
+Når brukeren har mange oppføringer, blir det tungvint å fylle ut ett og ett skjema. Begge eksemplene over lar brukeren velge mellom å fylle ut skjemaet og å importere flere foresatte samtidig fra en CSV-fil. Tabellen ligger under begge valgene, så brukeren ser resultatet uansett hvordan oppføringene ble lagt til.
+
+- Filen har én rad per foresatt med kolonnene «Barnets fornavn», «Foresatt», «E-post» og «Mobilnummer», atskilt med semikolon, komma eller tabulator. Overskriftsraden er valgfri.
+- Gyldige rader legges til med en gang. Ugyldige rader listes med radnummer og feilmelding, slik at brukeren kan rette filen og laste den opp på nytt.
+- Radene valideres som i skjemaet.
+
+Filopplasting er bare én måte å importere på. Du kan like gjerne la brukeren lime inn kommaseparerte data i et `Textarea`, for eksempel fra Excel. Prinsippet er det samme: tolk dataene, legg til gyldige rader, og vis feilene.
+
+## Oppsummeringsside
+
+Siste steg viser en oppsummering før brukeren sender inn. Eksemplet over bruker én tabell per gruppe, siden de samme feltene gjentas for hver oppføring. «Rediger» sender brukeren til steget der svaret ble registrert, og åpner dialogen for det som skal endres. Se [oppsummering](/docs/patterns-skjema-oppsummering--docs) for når du bør bruke tabell i stedet for `FormSummary`.
+
+## Anbefalinger
+
+- Vis registrerte oppføringer i en `Table` under feltene de legges til med.
+- Valider feltene når brukeren lagrer, og vis feilmeldinger ved det aktuelle feltet.
+- Tøm feltene etter at en oppføring er lagret.
+
+## Kildekode
+
+Det siste eksemplet ligger i en egen fil med skjemaer, validering og alle komponentene. Importene peker på kildekoden i dette repoet, så bytt dem til `@udir-design/react` i din egen app.
+
+<CssToggle code={eksempelKilde} language="tsx" label="kildekode" />
+
+<br />
+
+<CssToggle code={css} />

@@ -7,7 +7,7 @@ import { Textfield } from 'src/components/textfield';
 import { ValidationMessage } from 'src/components/typography/validationMessage';
 
 const meta = preview.meta({
-  title: 'patterns/Feilmeldinger',
+  title: 'patterns/Skjema/Feilmeldinger',
   tags: ['alpha', 'udir'],
   parameters: {
     layout: 'centered',
