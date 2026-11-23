@@ -119,6 +119,19 @@ Merk: funksjonen krever at du har importert CSS for datavisualiseringsfarger i a
   language="typescript"
 />
 
+### Med streng Content Security Policy
+
+Highcharts legger som standard fargevariablene sine i et `<style>`-element. En Content Security Policy der `style-src` ikke tillater `'unsafe-inline'`, blokkerer dette elementet. Da forsvinner rutenettlinjene, og teksten blir svart. Skru av elementet med [`palette.injectCSS`](https://api.highcharts.com/highcharts/palette.injectCSS), og importer fargevariablene som en vanlig CSS-fil i stedet:
+
+```tsx
+import 'highcharts/css/highcharts-palette.css';
+
+Highcharts.setOptions({
+  ...getHighchartsTheme(),
+  palette: { injectCSS: false },
+});
+```
+
 ### Sekvensielle paletter i Highcharts
 
 Generer ønsket antall farger med `generateSequentialMonochromaticColors()` eller `generateSequentialDivergentColors()`, og legg dem inn som CSS-variabler i stilarket ditt (se kodesnuttene over). Deretter kan du referere til variablene i `colorAxis`:
