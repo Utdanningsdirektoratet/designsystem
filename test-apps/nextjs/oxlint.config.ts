@@ -99,6 +99,9 @@ export default defineConfig({
         'react/no-unknown-property': 'off',
         'react/no-unsafe': 'off',
         'react/react-in-jsx-scope': 'off',
+        // `e2e/csp.spec.ts` serves the pages with a strict `style-src`, which blocks inline styles
+        'react/forbid-dom-props': ['error', { forbid: ['style'] }],
+        'react/no-danger': 'error',
         'import/no-anonymous-default-export': 'warn',
         'jsx-a11y/alt-text': [
           'warn',

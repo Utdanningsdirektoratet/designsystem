@@ -22,6 +22,12 @@ const STORY_ALL_FILES = [
   '**/*.story.{ts,tsx,js,jsx,mjs,cjs}',
 ];
 
+// Code that ends up on consumers' pages: the library, and the demo pages that the test apps
+// serve. A strict Content Security Policy (`style-src` without `'unsafe-inline'`) blocks the
+// `style` attributes and `<style>` elements that this code could otherwise render.
+const PAGE_TS_FILES = ['src/**/*.{ts,tsx}', 'demo-pages/**/*.{ts,tsx}'];
+const TEST_TS_FILES = ['**/*.{spec,test}.{ts,tsx}'];
+
 // `categories` and `env` are inherited from the root config. The `workspace`
 // jsPlugin is inherited too and merges with the storybook plugin added here.
 export default defineConfig({
@@ -136,6 +142,22 @@ export default defineConfig({
       files: ['**/*.{spec,test}.ts'],
       rules: {
         'typescript/no-deprecated': 'allow',
+      },
+    },
+    {
+      files: PAGE_TS_FILES,
+      rules: {
+        // Set styles with CSS classes, or with CSSOM after render (`useStyleProperties`)
+        'react/forbid-dom-props': ['error', { forbid: ['style'] }],
+        'react/no-danger': 'error',
+      },
+    },
+    {
+      // Storybook runs without a CSP, and tests don't end up on consumers' pages
+      files: [...STORY_TS_FILES, ...TEST_TS_FILES],
+      rules: {
+        'react/forbid-dom-props': 'off',
+        'react/no-danger': 'off',
       },
     },
   ],
