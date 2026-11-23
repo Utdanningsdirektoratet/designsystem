@@ -140,7 +140,9 @@ jobs:
       - uses: ./.github/actions/pnpm-setup
         with:
           playwright-deps: true
-      - name: Run Next.js smoke test
+          # The CSP check runs in Firefox too
+          playwright-browsers: chromium firefox
+      - name: Run Next.js smoke and CSP tests
         run: pnpm turbo run test:e2e --filter=test-app-nextjs
 
   release:

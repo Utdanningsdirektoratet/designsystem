@@ -8,11 +8,16 @@ inputs:
     default: ''
   playwright-deps:
     description: |
-      Install Playwright's Chromium system dependencies once for this runner.
-      Enable in jobs that run browser tests. The per-package `pretest` scripts
-      only download the browser binary, which Playwright serialises with its own
-      lockfile; the apt-get half has no such lock, so it must run exactly once.
+      Install the system dependencies of the `playwright-browsers` once for this
+      runner. Enable in jobs that run browser tests. The per-package `pretest`
+      scripts only download the browser binaries, which Playwright serialises with
+      its own lockfile; the apt-get half has no such lock, so it must run exactly once.
     default: 'false'
+  playwright-browsers:
+    description: |
+      Space-separated Playwright browsers whose system dependencies `playwright-deps`
+      installs. List every browser that the job's `pretest` scripts install.
+    default: 'chromium'
 
 runs:
   using: 'composite'
@@ -42,6 +47,8 @@ runs:
     - name: Install Playwright system dependencies
       if: inputs.playwright-deps == 'true'
       shell: bash
+      env:
+        PLAYWRIGHT_BROWSERS: ${{ inputs.playwright-browsers }}
       run: |
         mirror=$(getent ahosts azure.archive.ubuntu.com | awk 'NR == 1 { print $3 }') || true
         if [[ $mirror == cloud-mirror-lb.westus3.* ]]; then
@@ -49,7 +56,8 @@ runs:
           sudo sed -i '/azure\.archive\.ubuntu\.com/d' /etc/apt/apt-mirrors.txt
         fi
         echo 'DPkg::Lock::Timeout "120";' | sudo tee /etc/apt/apt.conf.d/99lock-timeout
-        pnpm exec playwright install-deps chromium
+        read -ra browsers <<< "$PLAYWRIGHT_BROWSERS"
+        pnpm exec playwright install-deps "${browsers[@]}"
 
     # Turborepo remote cache via GitHub Actions cache.
     # The key includes the job name so parallel/sequential jobs don't overwrite each other.
