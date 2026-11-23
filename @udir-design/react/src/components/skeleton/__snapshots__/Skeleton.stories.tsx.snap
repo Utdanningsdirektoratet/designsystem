@@ -378,14 +378,24 @@ exports[`Components 1`] = `
   <span
     aria-hidden="true"
     data-variant="circle"
-    style="<removed>"
   >
+    <svg
+      width="50px"
+      height="50"
+      aria-hidden="true"
+    >
+    </svg>
   </span>
   <span
     aria-hidden="true"
     data-variant="rectangle"
-    style="<removed>"
   >
+    <svg
+      width="100px"
+      height="50"
+      aria-hidden="true"
+    >
+    </svg>
   </span>
   <p>
     <span
@@ -399,10 +409,13 @@ exports[`Components 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<span
-  aria-hidden="true"
-  style="<removed>"
->
+<span aria-hidden="true">
+  <svg
+    width="200"
+    height="100"
+    aria-hidden="true"
+  >
+  </svg>
 </span>
 `;
 
@@ -474,10 +487,13 @@ exports[`Usage Example 1`] = `
 </style>
 <div>
   <div>
-    <span
-      aria-hidden="true"
-      style="<removed>"
-    >
+    <span aria-hidden="true">
+      <svg
+        width="100%"
+        height="200px"
+        aria-hidden="true"
+      >
+      </svg>
     </span>
     <h2>
       <span
@@ -491,8 +507,13 @@ exports[`Usage Example 1`] = `
       <span
         aria-hidden="true"
         data-variant="circle"
-        style="<removed>"
       >
+        <svg
+          width="40px"
+          height="40px"
+          aria-hidden="true"
+        >
+        </svg>
       </span>
       <span
         aria-hidden="true"
