@@ -25,13 +25,7 @@ export function UserTable() {
             <Popover>
               Er du sikker på at du vil gjennomføre? Handlingen vil utføres på
               alle brukere.
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 'var(--ds-size-2)',
-                  marginTop: 'var(--ds-size-2)',
-                }}
-              >
+              <div className={styles.popoverActions}>
                 <Button data-size="sm">Ja, utfør</Button>
                 <Button data-size="sm" variant="tertiary">
                   Avbryt

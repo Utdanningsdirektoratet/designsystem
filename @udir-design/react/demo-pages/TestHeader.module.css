@@ -1,0 +1,22 @@
+.userMenu {
+  margin-left: auto;
+}
+
+.navigation {
+  display: grid;
+  gap: var(--ds-size-4);
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
+  row-gap: var(--ds-size-10);
+}
+
+.navigationHeading {
+  margin-bottom: var(--ds-size-3);
+}
+
+.navigationLink {
+  text-decoration: none;
+}

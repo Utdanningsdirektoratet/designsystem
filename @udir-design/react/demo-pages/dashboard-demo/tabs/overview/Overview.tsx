@@ -1,3 +1,4 @@
+import 'highcharts/css/highcharts-palette.css';
 import * as Highcharts from 'highcharts';
 import { HighchartsReact } from 'highcharts-react-official';
 import { useRef, useState } from 'react';
@@ -20,7 +21,12 @@ const sentData = testOverview.map((item) => item.sent);
 const receivedData = testOverview.map((item) => item.received);
 const differenceData = testOverview.map((item) => item.sent - item.received);
 
-Highcharts.setOptions(getHighchartsTheme());
+// Load the palette from a stylesheet instead of Highcharts' injected `<style>`, so the demo also
+// works under a strict Content Security Policy
+Highcharts.setOptions({
+  ...getHighchartsTheme(),
+  palette: { injectCSS: false },
+});
 
 const options: Highcharts.Options = {
   title: {

@@ -249,7 +249,7 @@ export const FormDemo = ({
             <Dialog
               closedby="any"
               ref={dialogMobileRef}
-              style={{ width: 'fit-content', minWidth: '20rem' }}
+              className={classes.navigationDialog}
             >
               <Heading level={2}>Skjemanavigasjon</Heading>
               {formNavigationContent}
@@ -274,7 +274,7 @@ export const FormDemo = ({
                   <Button
                     variant="secondary"
                     onClick={prev}
-                    style={{ flex: 1 }}
+                    className={classes.secondaryAction}
                   >
                     <ArrowLeftIcon aria-hidden />
                     Forrige
@@ -284,7 +284,7 @@ export const FormDemo = ({
                   <Button
                     variant="secondary"
                     onClick={next}
-                    style={{ flex: 1 }}
+                    className={classes.secondaryAction}
                   >
                     Neste
                     <ArrowRightIcon aria-hidden />
@@ -292,7 +292,10 @@ export const FormDemo = ({
                 )}
                 {id === 'deliver' &&
                   (!isSubmitSuccessful ? (
-                    <Button style={{ flex: 2 }} onClick={onDeliver}>
+                    <Button
+                      className={classes.primaryAction}
+                      onClick={onDeliver}
+                    >
                       Send inn skjema
                       <PaperplaneIcon aria-hidden />
                     </Button>
@@ -300,7 +303,7 @@ export const FormDemo = ({
                     <Button
                       variant="secondary"
                       onClick={next}
-                      style={{ flex: 1 }}
+                      className={classes.secondaryAction}
                     >
                       Neste
                       <ArrowRightIcon aria-hidden />
@@ -310,7 +313,7 @@ export const FormDemo = ({
               <Dialog
                 closeButton={false}
                 ref={dialogDeliverRef}
-                style={{ width: 'fit-content' }}
+                className={classes.deliverDialog}
               >
                 <Dialog.Block className={classes.dialog}>
                   <Heading data-size="xs">
@@ -320,11 +323,15 @@ export const FormDemo = ({
                     <Button
                       onClick={() => dialogDeliverRef.current?.close()}
                       variant="secondary"
-                      style={{ flex: 1 }}
+                      className={classes.secondaryAction}
                     >
                       Avbryt
                     </Button>
-                    <Button autoFocus type="submit" style={{ flex: 2 }}>
+                    <Button
+                      autoFocus
+                      type="submit"
+                      className={classes.primaryAction}
+                    >
                       Send inn
                       <PaperplaneIcon aria-hidden />
                     </Button>
