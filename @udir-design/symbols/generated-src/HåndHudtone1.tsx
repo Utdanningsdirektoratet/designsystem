@@ -13,18 +13,14 @@ const SvgHndHudtone1 = forwardRef(
     const __sizeProps = (() => {
       if (props?.width != null || props?.height != null) return {};
       const v = size ?? (__isWide ? __srcW : __srcH); // set size based on original aspect ratio
+      // An SVG attribute, not a style: a strict CSP blocks server-rendered style attributes.
+      // The other dimension follows from the viewBox.
       return __isWide
         ? {
-            style: {
-              width: v,
-              height: 'auto',
-            },
+            width: v,
           }
         : {
-            style: {
-              height: v,
-              width: 'auto',
-            },
+            height: v,
           };
     })();
     return (
