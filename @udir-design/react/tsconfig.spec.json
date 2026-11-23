@@ -2,7 +2,15 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["vitest/importMeta", "vite/client", "node", "vitest"]
+    "types": ["vitest/importMeta", "vite/client", "node", "vitest"],
+    "paths": {
+      "src/*": ["./src/*"],
+      "@udir-design/theme": ["../theme/src/index.ts"],
+      "@udir-design/icons": ["../icons/dist/index.d.mts"],
+      "@udir-design/icons/metadata": ["../icons/src/metadata.ts"],
+      "@udir-design/symbols": ["../symbols/generated-src/index.ts"],
+      "@udir-design/symbols/metadata": ["../symbols/generated-src/metadata.ts"]
+    }
   },
   "include": [
     "vite.config.ts",

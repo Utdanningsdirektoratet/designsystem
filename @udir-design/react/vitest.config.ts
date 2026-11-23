@@ -50,9 +50,18 @@ export default defineConfig({
         },
       },
       {
+        // Server rendering, so no browser
+        test: {
+          name: 'ssr',
+          environment: 'node',
+          include: ['src/**/*.ssr.spec.tsx'],
+          alias: viteConfig.resolve?.alias,
+        },
+      },
+      {
         test: {
           name: 'unit',
-          exclude: ['.storybook/**/*.node.spec.ts'],
+          exclude: ['.storybook/**/*.node.spec.ts', 'src/**/*.ssr.spec.tsx'],
           browser: {
             enabled: true,
             instances: [{ browser: 'chromium' }],
