@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { MultiplyIcon, TrashIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Paragraph } from '../typography/paragraph/Paragraph';
@@ -44,32 +45,29 @@ const meta = preview.meta({
 export const Preview = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    css: css`
+      .popover-preview-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+        margin-top: var(--ds-size-2);
+      }
+    `,
   },
   render: (args) => (
-    <>
-      <style>
-        {`
-.popover-preview-button__group {
-  display: flex;
-  gap: var(--ds-size-2);
-  margin-top: var(--ds-size-2);
-}`}
-      </style>
-      <Popover.TriggerContext>
-        <Popover.Trigger variant="tertiary">
-          Fjern <MultiplyIcon aria-hidden />
-        </Popover.Trigger>
-        <Popover {...args}>
-          Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-          <div className="popover-preview-button__group">
-            <Button data-size="sm">Ja, fjern</Button>
-            <Button data-size="sm" variant="tertiary">
-              Avbryt
-            </Button>
-          </div>
-        </Popover>
-      </Popover.TriggerContext>
-    </>
+    <Popover.TriggerContext>
+      <Popover.Trigger variant="tertiary">
+        Fjern <MultiplyIcon aria-hidden />
+      </Popover.Trigger>
+      <Popover {...args}>
+        Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+        <div className="popover-preview-button__group">
+          <Button data-size="sm">Ja, fjern</Button>
+          <Button data-size="sm" variant="tertiary">
+            Avbryt
+          </Button>
+        </div>
+      </Popover>
+    </Popover.TriggerContext>
   ),
   play: async (ctx) => {
     const button = within(ctx.canvasElement).getByRole('button');
@@ -102,32 +100,29 @@ export const Preview = meta.story({
 export const Interactive = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    css: css`
+      .popover-interactive-popover-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+        margin-top: var(--ds-size-2);
+      }
+    `,
   },
   render: (args) => (
-    <>
-      <style>
-        {`
-.popover-interactive-popover-button__group {
-  display: flex;
-  gap: var(--ds-size-2);
-  margin-top: var(--ds-size-2);
-}`}
-      </style>
-      <Popover.TriggerContext>
-        <Popover.Trigger aria-label="Lukk" variant="secondary">
-          Lukk <MultiplyIcon aria-hidden />
-        </Popover.Trigger>
-        <Popover {...args}>
-          <Paragraph>Vil du lagre endringene dine?</Paragraph>
-          <div className="popover-interactive-popover-button__group">
-            <Button data-size="sm">Lagre</Button>
-            <Button data-size="sm" variant="tertiary">
-              Ikke lagre
-            </Button>
-          </div>
-        </Popover>
-      </Popover.TriggerContext>
-    </>
+    <Popover.TriggerContext>
+      <Popover.Trigger aria-label="Lukk" variant="secondary">
+        Lukk <MultiplyIcon aria-hidden />
+      </Popover.Trigger>
+      <Popover {...args}>
+        <Paragraph>Vil du lagre endringene dine?</Paragraph>
+        <div className="popover-interactive-popover-button__group">
+          <Button data-size="sm">Lagre</Button>
+          <Button data-size="sm" variant="tertiary">
+            Ikke lagre
+          </Button>
+        </div>
+      </Popover>
+    </Popover.TriggerContext>
   ),
 });
 
@@ -256,31 +251,28 @@ export const Variants = meta.story({
   parameters: {
     layout: 'none',
     customStyles: { height: 284, padding: '2rem' },
+    css: css`
+      .popover-variants-main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 100px;
+        place-items: center;
+        margin-top: var(--ds-size-12);
+      }
+    `,
   },
   render: (args) => {
     return (
-      <>
-        <style>
-          {`
-.popover-variants-main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 100px;
-  place-items: center;
-  margin-top: var(--ds-size-12);
-}`}
-        </style>
-        <div className="popover-variants-main">
-          {Object.entries(VariantsMap).map(([key, props]) => (
-            <Popover.TriggerContext key={key}>
-              <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-              <Popover open={true} autoPlacement={false} {...props} {...args}>
-                {key}
-              </Popover>
-            </Popover.TriggerContext>
-          ))}
-        </div>
-      </>
+      <div className="popover-variants-main">
+        {Object.entries(VariantsMap).map(([key, props]) => (
+          <Popover.TriggerContext key={key}>
+            <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
+            <Popover open={true} autoPlacement={false} {...props} {...args}>
+              {key}
+            </Popover>
+          </Popover.TriggerContext>
+        ))}
+      </div>
     );
   },
   play: () => {
@@ -292,31 +284,28 @@ export const ColorVariants = meta.story({
   parameters: {
     layout: 'none',
     customStyles: { height: 284, padding: '2rem' },
+    css: css`
+      .popover-color-variants-main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 100px;
+        place-items: center;
+        margin-top: var(--ds-size-12);
+      }
+    `,
   },
   render: (args) => {
     return (
-      <>
-        <style>
-          {`
-.popover-color-variants-main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 100px;
-  place-items: center;
-  margin-top: var(--ds-size-12);
-}`}
-        </style>
-        <div className="popover-color-variants-main">
-          {Object.entries(ColorVariantsMap).map(([key, props]) => (
-            <Popover.TriggerContext key={key}>
-              <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
-              <Popover open={true} autoPlacement={false} {...props} {...args}>
-                {key}
-              </Popover>
-            </Popover.TriggerContext>
-          ))}
-        </div>
-      </>
+      <div className="popover-color-variants-main">
+        {Object.entries(ColorVariantsMap).map(([key, props]) => (
+          <Popover.TriggerContext key={key}>
+            <Popover.Trigger variant="tertiary">popover</Popover.Trigger>
+            <Popover open={true} autoPlacement={false} {...props} {...args}>
+              {key}
+            </Popover>
+          </Popover.TriggerContext>
+        ))}
+      </div>
     );
   },
   play: () => {
@@ -327,42 +316,39 @@ export const ColorVariants = meta.story({
 export const Controlled = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    css: css`
+      .popover-controlled-popover-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+        margin-top: var(--ds-size-2);
+      }
+    `,
     docs: advancedCodeDocs,
   },
   render: (args) => {
     const [open, setOpen] = useState(false);
 
     return (
-      <>
-        <style>
-          {`
-        .popover-controlled-popover-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-          margin-top: var(--ds-size-2);
-        }`}
-        </style>
-        <Popover.TriggerContext>
-          <Popover.Trigger variant="tertiary" onClick={() => setOpen(!open)}>
-            Fjern <MultiplyIcon aria-hidden />
-          </Popover.Trigger>
-          <Popover open={open} {...args}>
-            Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
-            <div className="popover-controlled-popover-button__group">
-              <Button data-size="sm" onClick={() => setOpen(false)}>
-                Ja, fjern
-              </Button>
-              <Button
-                data-size="sm"
-                variant="tertiary"
-                onClick={() => setOpen(false)}
-              >
-                Avbryt
-              </Button>
-            </div>
-          </Popover>
-        </Popover.TriggerContext>
-      </>
+      <Popover.TriggerContext>
+        <Popover.Trigger variant="tertiary" onClick={() => setOpen(!open)}>
+          Fjern <MultiplyIcon aria-hidden />
+        </Popover.Trigger>
+        <Popover open={open} {...args}>
+          Er du sikker på at du vil fjerne raden? Handlingen kan ikke angres.
+          <div className="popover-controlled-popover-button__group">
+            <Button data-size="sm" onClick={() => setOpen(false)}>
+              Ja, fjern
+            </Button>
+            <Button
+              data-size="sm"
+              variant="tertiary"
+              onClick={() => setOpen(false)}
+            >
+              Avbryt
+            </Button>
+          </div>
+        </Popover>
+      </Popover.TriggerContext>
     );
   },
 });
@@ -370,6 +356,13 @@ export const Controlled = meta.story({
 export const WithoutContext = meta.story({
   parameters: {
     customStyles: { story: { height: 260 } },
+    css: css`
+      .popover-without-context-popover-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+        margin-top: var(--ds-size-2);
+      }
+    `,
     docs: advancedCodeDocs,
   },
   render: (args) => {
@@ -377,14 +370,6 @@ export const WithoutContext = meta.story({
 
     return (
       <>
-        <style>
-          {`
-        .popover-without-context-popover-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-          margin-top: var(--ds-size-2);
-        }`}
-        </style>
         <Button
           popovertarget="my-popover"
           aria-label="Slett rad"
