@@ -4,6 +4,7 @@ import symbolLogoDark from '../../../assets/img/udir-circle-logo-dark-mode.svg';
 import symbolLogoLight from '../../../assets/img/udir-circle-logo.svg';
 import symbolPrideLogoDark from '../../../assets/img/udir-circle-pride-logo-dark-mode.svg';
 import symbolPrideLogoLight from '../../../assets/img/udir-circle-pride-logo.svg';
+import { useStyleProperties } from '../../utilities/useStyleProperties';
 import type { LogoProps } from './Logo';
 import './logo.css';
 
@@ -23,30 +24,20 @@ export type LogoSymbolProps = Omit<LogoProps, 'padding'> & {
 
 export const LogoSymbol = forwardRef<HTMLDivElement, LogoSymbolProps>(
   function Header(
-    {
-      className,
-      size,
-      padding = 'var(--ds-size-3)',
-      style,
-      variant = 'default',
-      ...rest
-    },
-    ref,
+    { className, size, padding, variant = 'default', ...rest },
+    forwardedRef,
   ) {
     const logoAlt = 'Utdanningsdirektoratet';
+    const ref = useStyleProperties(forwardedRef, {
+      '--uds-logo-size': size,
+      '--uds-logo-padding': padding,
+    });
 
     return (
       <div
-        className={cl('uds-logo', className)}
+        className={cl('uds-logo', 'uds-logo--symbol', className)}
         ref={ref}
         {...rest}
-        style={
-          {
-            '--uds-logo-size': size,
-            '--uds-logo-padding': padding,
-            ...style,
-          } as React.CSSProperties
-        }
       >
         {/* oxlint-disable jsx-a11y/no-redundant-roles -- Without this, SVG src may cause VoiceOver to enumerate internal SVG elements in older Safari versions. See https://bugs.webkit.org/show_bug.cgi?id=216364 */}
         <img

@@ -43,6 +43,10 @@
     text-wrap: pretty;
     overflow-wrap: break-word;
 
+    .uds-logo {
+      --uds-logo-padding: 0;
+    }
+
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 

@@ -201,17 +201,6 @@ exports[`Page Story 1`] = `
           aria-valuenow="13"
           style="<removed>"
         >
-          <template shadowrootmode="open">
-            <slot>
-            </slot>
-            <style>
-              :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
-:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
-:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
-@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
-@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-            </style>
-          </template>
         </u-progress>
       </div>
       <div>
@@ -236,10 +225,10 @@ exports[`Page Story 1`] = `
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewbox="0 0 36 42"
+            height="5rem"
             focusable="false"
             role="img"
             aria-label="Sikkerhet"
-            style="<removed>"
           >
             <g
               stroke="#303030"
@@ -293,10 +282,10 @@ exports[`Page Story 1`] = `
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewbox="0 0 42 23"
+              width="5rem"
               focusable="false"
               role="img"
               aria-label="Skole"
-              style="<removed>"
             >
               <path
                 fill="#F2E8DA"
@@ -410,10 +399,10 @@ exports[`Page Story 1`] = `
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewbox="0 0 33 42"
+            height="5rem"
             focusable="false"
             role="img"
             aria-label="Kokkehatt"
-            style="<removed>"
           >
             <path
               fill="#C8DEF0"

@@ -53,6 +53,10 @@
     inset-inline-end: 0;
     height: fit-content;
 
+    .uds-logo {
+      --uds-logo-padding: 0;
+    }
+
     @composes ds-focus from '@digdir/designsystemet-css/base.css';
   }
 }

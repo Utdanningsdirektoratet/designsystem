@@ -1,6 +1,7 @@
 import cl from 'clsx/lite';
-import type { CSSProperties, HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
+import { useStyleProperties } from '../../utilities/useStyleProperties';
 import './demoBanner.css';
 
 export type DemoBannerProps = HTMLAttributes<HTMLDivElement> & {
@@ -11,21 +12,14 @@ export type DemoBannerProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 export const DemoBanner = forwardRef<HTMLDivElement, DemoBannerProps>(
-  function DemoBanner({ text, children, className, style, ...rest }, ref) {
+  function DemoBanner({ text, children, className, ...rest }, forwardedRef) {
+    const ref = useStyleProperties(forwardedRef, {
+      // A CSS string, for `content`
+      '--udsc-demo-banner-text': text ? JSON.stringify(text) : undefined,
+    });
+
     return (
-      <div
-        className={cl(`uds-demo-banner`, className)}
-        style={
-          {
-            ...style,
-            ...(text && {
-              '--udsc-demo-banner-text': JSON.stringify(text),
-            }),
-          } as CSSProperties
-        }
-        ref={ref}
-        {...rest}
-      >
+      <div className={cl(`uds-demo-banner`, className)} ref={ref} {...rest}>
         {children}
         <div aria-hidden />
       </div>

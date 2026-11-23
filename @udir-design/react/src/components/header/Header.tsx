@@ -2,8 +2,8 @@ import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
-import type { CSSProperties } from 'react';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
+import { useStyleProperties } from '../../utilities/useStyleProperties';
 import { Logo } from '../logo';
 import { LogoSymbol } from '../logo';
 import { Heading } from '../typography/heading';
@@ -46,18 +46,21 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     children,
     className,
     href = '/',
-    maxWidth = '80rem',
+    maxWidth,
     sticky = true,
     variant = 'default',
     ...rest
   },
-  ref,
+  forwardedRef,
 ) {
   const { dir, isAtTop } = useScrollDirection();
   const dataScrollDirection = sticky ? dir : undefined;
   const dataTop = sticky ? isAtTop : undefined;
   const isMain = applicationName === 'Utdanningsdirektoratet';
   const LogoContainer = href !== null ? 'a' : 'div';
+  const ref = useStyleProperties(forwardedRef, {
+    '--udsc-header-max-width': maxWidth,
+  });
 
   return (
     <header
@@ -65,15 +68,14 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
       ref={ref}
       data-scroll-direction={dataScrollDirection}
       data-top={dataTop}
-      style={{ '--udsc-header-max-width': maxWidth } as CSSProperties}
       {...rest}
     >
       <div>
         <LogoContainer href={href as string} className="uds-header__logo">
           {isMain ? (
-            <Logo padding="0" variant={variant} />
+            <Logo variant={variant} />
           ) : (
-            <LogoSymbol padding="0" variant={variant} />
+            <LogoSymbol variant={variant} />
           )}
           {!isMain && (
             <Heading data-size="xs" asChild>
