@@ -1,0 +1,178 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { CssToggle } from '.storybook/docs/components';
+
+import * as RepeterendeDataStories from './RepeterendeData.stories';
+import eksempelKilde from './docs/RepeterendeDataEksempel.tsx?raw';
+import css from './repeterendeData.stories.module.css?raw';
+
+<Meta of={RepeterendeDataStories} />
+
+{/* Kilde: Altinn 3, repeterende grupper – tabell med redigering per rad, minCount/maxCount, validering ved lagring av rad. https://docs.altinn.studio/en/altinn-studio/v8/reference/ux/fields/grouping/repeating/ */}
+{/* Kilde: NAV Aksel, underskjemaer – «et lite skjema inne i skjemaet» i panel eller modal for ting det kan være flere av, valideres ved «Legg til». https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering */}
+{/* Kilde: GOV.UK har ikke et offisielt mønster for å legge til flere (issue 5859). HMRC og MoJ «Add to a list» bruker én oppføring per side og en liste med «Vil du legge til flere?». https://github.com/alphagov/govuk-design-system/issues/5859 https://design.tax.service.gov.uk/hmrc-design-patterns/add-to-a-list/ https://design-patterns.service.justice.gov.uk/patterns/add-to-a-list/ */}
+{/* Kilde: MoJ «Add another» – flere oppføringer på samme side, ikke for lange eller komplekse data. Fokus flyttes til ny oppføring etter at den er lagt til, og til forrige oppføring etter sletting. https://design-patterns.service.justice.gov.uk/components/add-another/ */}
+{/* Grunnlag: Vi fant ingen designsystemer som beskriver steg som opprettes etter hvert som brukeren legger til grupper. Nærmest er Altinn underskjema (eget skjema per rad) og GOV.UK-løkker med én side per oppføring. https://docs.altinn.studio/en/altinn-studio/v8/guides/development/subform/ */}
+{/* Eksemplene med steg er Udir-tilpasset: barnehager registrerer foreldre per avdeling, slik at de kan inviteres til å svare på Foreldreundersøkelsen i barnehage. */}
+
+# Repeterende data
+
+Noen skjemaer ber brukeren registrere samme type informasjon flere ganger, for eksempel alle foreldrene i en barnehage eller alle lærerne som skal på videreutdanning. Mønsteret viser hvordan brukeren legger til, ser over, endrer og sletter slike oppføringer.
+
+## Når bør man følge bruksmønsteret?
+
+Bruk dette mønsteret når
+
+- brukeren skal registrere flere oppføringer av samme type
+- brukeren selv bestemmer hvor mange oppføringer det er
+
+Mønsteret passer ikke når antallet er fast og lite, for eksempel to foresatte. Da er det enklere å vise feltene for hver av dem direkte i skjemaet.
+
+## Velg riktig løsning
+
+| Situasjon                                                  | Løsning                                                           |
+| ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| Få oppføringer med mange felt hver                         | [Én oppføring om gangen](#én-oppføring-om-gangen)                 |
+| Få felt per oppføring                                      | [Alle oppføringer på samme side](#alle-oppføringer-på-samme-side) |
+| Mange grupper, eller mye å fylle ut per gruppe             | [En side per gruppe](#en-side-per-gruppe)                         |
+| Brukeren har oppføringene i et regneark eller et fagsystem | [Import av mange oppføringer](#import-av-mange-oppføringer)       |
+
+<br />
+
+{/* Grunnlag for tabellen: Altinn og Aksel bruker tabell eller liste med redigering for mange like oppføringer. GOV.UK, HMRC og MoJ anbefaler én oppføring per side for få og komplekse oppføringer, og MoJ fraråder flere oppføringer på samme side for lange eller komplekse data. */}
+
+## Én oppføring om gangen
+
+Har hver oppføring mange felt, eller fyller brukeren ut skjemaet sjelden, kan det være enklere å ta én oppføring om gangen. Brukeren fyller ut én oppføring på en egen side og kommer så til en liste over det som er lagt til. Fra listen kan brukeren legge til en ny oppføring eller gå videre.
+
+Løsningen tar lengre tid når det er mange oppføringer, men hver side er enkel og krever lite av brukeren.
+
+{/* Kilde: HMRC og MoJ «Add to a list» – én oppføring per side, liste med Endre og Fjern, og spørsmål om å legge til flere. MoJ anbefaler den enklere «Add another» når brukeren bare legger til et par oppføringer. https://design-patterns.service.justice.gov.uk/patterns/add-to-a-list/ */}
+{/* Grunnlag: GOV.UK, HMRC og MoJ bruker radioknapper («Vil du legge til flere?») for å tvinge fram et aktivt valg. Vi bruker knapper i stedet, som i resten av mønsteret og som Aksel og MoJ «Add another». Et ja/nei-spørsmål som ikke lagres, gjør skjemaet lengre, og et minimum blir en rar feilmelding på et ja/nei-spørsmål. */}
+{/* Kilde: GOV.UK «Start by asking one question per page». https://design-system.service.gov.uk/patterns/question-pages/ */}
+{/* Eksempelet er Udir-tilpasset: en friskole som søker om godkjenning, oppgir styremedlemmene. Få oppføringer, mange felt og en søker som fyller ut skjemaet én gang. */}
+
+<Canvas
+  of={RepeterendeDataStories.EnOmGangen}
+  story={{ inline: false, height: '850px' }}
+/>
+
+## Alle oppføringer på samme side
+
+Har hver oppføring bare noen få felt, kan skjemaet og tabellen ligge på samme side. Brukeren fyller ut feltene, velger «Legg til», og oppføringen blir en ny rad i tabellen under. Brukeren ser hele tiden det som er lagt til, og slipper å bytte side for hver oppføring.
+
+Hører oppføringene til grupper, for eksempel fag eller avdelinger, får hver gruppe sin egen overskrift, sitt eget skjema og sin egen tabell. Da holdes dataene adskilt, og brukeren ser hvilken gruppe de fyller ut for. I eksempelet under søker en skoleeier om videreutdanning og legger til lærerne per fag, med bare navn og e-post for hver lærer.
+
+Løsningen fungerer best når hele siden er kort nok til at brukeren får oversikt. Blir det mange grupper, er det bedre å bruke [en side per gruppe](#en-side-per-gruppe).
+
+{/* Grunnlag: Aksel beskriver underskjema i modal som et eget lite steg med validering ved «Legg til». Gruppen har bare ett felt, så en Dialog avbryter flyten lite. https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering */}
+{/* Grunnlag: Gruppen velges med Select fordi fagene er en fast liste med mer enn sju valg, se Select-retningslinjene. Et fag fjernes alltid med bekreftelse, siden det også fjerner lærerne i faget, se «Endre og slette». */}
+{/* Eksempelet er Udir-tilpasset: skoleeiere søker om videreutdanning for lærere per fag gjennom Kompetanse for kvalitet. */}
+
+<Canvas
+  of={RepeterendeDataStories.Preview}
+  story={{ inline: false, height: '800px' }}
+/>
+
+## En side per gruppe
+
+Begynner siden med grupper å bli lang, er det bedre å gi hver gruppe sitt eget steg i [`FormNavigation`](/docs/components-formnavigation--docs) og hver sin side. Da jobber brukeren med én gruppe om gangen, og navigasjonen viser hvilke grupper som er ferdige og hvilke som har feil. Brukeren kan også gjøre seg ferdig med noen grupper og komme tilbake til resten senere.
+
+Stegene opprettes og fjernes etter hvert som brukeren legger til og sletter grupper.
+
+- Brukeren oppretter, endrer og sletter gruppene i første steg.
+- Samle gruppestegene i en `FormNavigation.Group`, og vis gruppen når den første gruppen er opprettet. Da ser brukeren at det kommer ett steg per gruppe.
+- Bruk navnet på gruppen som navn på steget, og i overskriften på siden, for eksempel «Registrer foreldre i Blåklokka».
+- Marker et steg som fullført når brukeren forlater det med alt utfylt. Etter et innsendingsforsøk markeres steg med feil, for eksempel en avdeling uten foresatte.
+- Husk hvordan brukeren valgte å legge til oppføringer, slik at de slipper å velge på nytt for hver gruppe.
+
+{/* Grunnlag: Ingen av kildene vi har sett på, beskriver dynamiske steg. Aksel FormProgress og GOV.UK task list har et fast antall steg. Løsningen bygger på FormNavigation.Group, som allerede brukes for å samle relaterte steg. */}
+
+<Canvas
+  of={RepeterendeDataStories.DynamiskeStegIGruppeMedTabell}
+  story={{ inline: false, height: '800px' }}
+/>
+
+## Import av mange oppføringer
+
+Når brukeren har mange oppføringer, blir det tungvint å fylle ut ett og ett skjema. Har de oppføringene i et regneark eller et fagsystem, kan de importere dem i stedet. Eksempelet i [En side per gruppe](#en-side-per-gruppe) lar brukeren velge mellom å fylle ut skjemaet, laste opp en CSV-fil og lime inn rader fra et regneark. Tabellen ligger under alle valgene, så brukeren ser resultatet uansett hvordan oppføringene ble lagt til.
+
+- Forklar hvilke kolonner som trengs og i hvilken rekkefølge, rett ved opplastingen eller innlimingen.
+- Importer alle radene, også de med ugyldige verdier. Da slipper brukeren å rette filen og importere på nytt.
+- Valider radene som i skjemaet, og vis feilene i tabellen. Raden får en lett rød bakgrunn og en rød kant til venstre, og hvert ugyldige felt får en kort melding, for eksempel «Ugyldig e-post».
+- Vis en melding som forteller hvor mange som ble lagt til, og hvor mange som har feil.
+- Brukeren retter feilene med «Rediger». Dialogen viser de fullstendige feilmeldingene med en gang den åpnes.
+- Kan ikke dataene leses i det hele tatt, for eksempel fordi filen har feil filtype, er tom eller har rader med feil antall kolonner, legges ingenting til. Da vises feilen under opplastingen eller innlimingen, som en vanlig feilmelding.
+
+{/* Kilde: GOV.UK file upload har feilmeldinger for hele filen, for eksempel «The selected file must be a CSV», men ingen veiledning om feil i enkeltrader. https://design-system.service.gov.uk/components/file-upload/ */}
+{/* Kilde: MoJ upload files foreslår å vise innholdet i et regneark i en tabell, slik at brukeren kan sjekke det. https://design-patterns.service.justice.gov.uk/patterns/upload-files/ */}
+{/* Grunnlag: Vi fant ingen kilder om feil i enkeltrader. Vi importerer alle radene, fordi det er raskere å rette én rad i skjemaet enn å rette filen og laste den opp på nytt. */}
+
+## Oppsummering
+
+Siste steg viser en oppsummering før brukeren sender inn. Eksempelet i [En side per gruppe](#en-side-per-gruppe) bruker én tabell per gruppe, siden de samme feltene gjentas for hver oppføring. «Rediger» sender brukeren til steget der oppføringen ble registrert, og åpner dialogen for den. Se [oppsummering](/docs/patterns-skjema-oppsummering--docs) for når du bør bruke tabell i stedet for `FormSummary`.
+
+{/* Kilde: GOV.UK check answers anbefaler summary cards når brukeren skal sjekke flere ting av samme type, og summary list fraråder tabelldata. Aksel FormSummary grupperer svar for «Legg til barn». Vi bruker tabell fordi alle oppføringene har de samme feltene, se Oppsummering-mønsteret. https://design-system.service.gov.uk/patterns/check-answers/ https://aksel.nav.no/komponenter/core/formsummary */}
+
+## Retningslinjer
+
+### Legge til
+
+- Valider feltene når brukeren velger «Legg til» eller går videre, og vis feilmeldingene ved feltene.
+- Når skjema og tabell ligger på samme side, plasserer du tabellen under feltene og tømmer feltene etter at en oppføring er lagt til.
+- Vis antallet i overskriften over tabellen eller listen, og vis en tekst når det ikke er lagt til noe ennå.
+- Bruk knappetekster som sier hva som legges til, for eksempel «Legg til foresatt».
+
+{/* Grunnlag: Validering ved lagring følger Aksel underskjema og Altinn validateOnSaveRow. Tømming av feltene følger MoJ «Add another», der en ny tom oppføring er klar etter lagring. */}
+
+### Endre og slette
+
+- La brukeren endre og slette hver oppføring fra tabellen.
+- Vis feltene forhåndsutfylt når brukeren endrer. Ligger skjemaet på samme side som tabellen, endrer brukeren i en `Dialog`. Har hver oppføring en egen side, endrer brukeren på den siden.
+- Slett oppføringer med få felt uten bekreftelse. De er raske å legge til igjen.
+- Be om bekreftelse før du sletter en oppføring med mange felt eller en hel gruppe. Si i dialogen hva som blir slettet, også oppføringene i gruppen.
+
+{/* Kilde: WCAG 3.3.4 krever ikke bekreftelse for hver sletting. HMRC og MoJ ber alltid om bekreftelse, Altinn har det som valg (alertOnDelete) for rader med mye data. https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html https://docs.altinn.studio/en/altinn-studio/v8/reference/ux/fields/grouping/repeating/ */}
+
+### Antall
+
+- Fortell før brukeren starter hvis det er et minimum eller maksimum, for eksempel «Styret må ha minst 3 medlemmer».
+- Ikke deaktiver «Legg til» når maksimum er nådd. Skjul knappen eller feltene og forklar hvorfor, for eksempel «Du har lagt til alle fagene du kan søke om».
+- Sjekk minimum når brukeren går videre eller sender inn, ikke mens de legger til.
+
+{/* Kilde: Altinn minCount og maxCount. Aksel: ikke deaktiver knapper, vis heller en tilbakemelding. https://aksel.nav.no/god-praksis/artikler/navigasjon-i-skjemaer */}
+
+### Innsending
+
+- Ikke deaktiver «Send inn» fordi noe mangler eller har feil. Vis feilene i en [`ErrorSummary`](/docs/components-errorsummary--docs) over knappen, slik [feilmeldinger](/docs/patterns-skjema-feilmeldinger--docs) beskriver.
+- Ta med navnet på gruppen og oppføringen i feilmeldingen, for eksempel «Blåklokka, Kari Nordmann: Skriv inn en gyldig e-postadresse». Lenken går til «Rediger» for raden. Mangler en gruppe oppføringer, går lenken til det første feltet i gruppen.
+
+{/* Kilde: Aksel underskjema – feilmeldinger i ErrorSummary skal si hvilken oppføring de gjelder, for eksempel «Navn på barn 1 må fylles ut». https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering */}
+
+## Tilgjengelighet
+
+- Når skjema og tabell ligger på samme side, blir fokus i det første feltet etter at en oppføring er lagt til, så brukeren kan fortsette å legge til.
+- Når hver oppføring har en egen side, flyttes fokus til overskriften på den nye siden.
+- Etter sletting forsvinner knappen som hadde fokus. Flytt fokus til overskriften over tabellen, som også leser opp det nye antallet. Slettes en hel gruppe, flytter du fokus til knappen for å legge til en ny.
+- Fortell skjermleserbrukere hva som ble lagt til, endret eller slettet, siden fokus ikke viser det. Bruk en `div` med `role="status"` og `aria-live="polite"` som finnes på siden før meldingen kommer, for eksempel «Kari Nordmann er lagt til.»
+- Hver knapp i tabellen må ha et unikt tilgjengelig navn, for eksempel «Rediger Kari Nordmann». Legg navnet i skjult tekst (`ds-sr-only`) inni knappen.
+- Gi hver tabell et navn, for eksempel med `aria-labelledby` som peker på overskriften over den.
+
+{/* Kilde: WCAG 2.4.3 fokusrekkefølge og 4.1.3 statusbeskjeder. https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html */}
+{/* Kilde: MoJ «Add another» flytter fokus til forrige oppføring etter sletting, slik at fokus ikke forsvinner. Vi bruker overskriften, fordi den alltid finnes, også når tabellen er tom. https://design-patterns.service.justice.gov.uk/components/add-another/ */}
+{/* Grunnlag: Live region med role="status" som finnes før teksten kommer, følger FileUpload-forbedringene i branchen feat/fileupload-item-improvements. */}
+
+## Kode
+
+- Når hver gruppe har sitt eget steg, sender du rekkefølgen til `useFormNavigation` med `order`. Ellers havner nye steg bakerst, etter «Send invitasjon».
+- Bruk ID-en til gruppen i ID-en til steget, ikke navnet. Da beholder steget tilstanden sin når brukeren endrer navnet.
+- `autoFocus` i React virker ikke i en `Dialog`. Bruk HTML-attributtet `autofocus` for feltet som skal ha fokus når dialogen åpnes.
+
+## Kildekode
+
+Eksemplene med steg ligger i en egen fil med skjemaer, validering og alle komponentene. Koden for «Én oppføring om gangen» og «Alle oppføringer på samme side» finner du under «Show code» i eksemplene. Importene peker på kildekoden i dette repoet, så bytt dem til `@udir-design/react` i din egen app.
+
+<CssToggle code={eksempelKilde} language="tsx" label="kildekode" />
+
+<br />
+
+<CssToggle code={css} />
