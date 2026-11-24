@@ -62,7 +62,7 @@ export const componentOverrides: MdxComponentOverrides = {
       {...props}
       border={false}
       zebra
-      className="sb-unstyled"
+      className={`sb-unstyled ${componentStyles.table}`}
       style={{ width: '100%' }}
     />
   ),

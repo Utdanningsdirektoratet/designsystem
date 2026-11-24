@@ -11,7 +11,9 @@ import './logo.css';
 export type LogoSymbolProps = Omit<LogoProps, 'padding'> & {
   /**
    * Changes padding on all sides
-   * of the logo
+   * of the logo.
+   * Applied after hydration, so server-rendered pages show the default until then. For a fixed
+   * padding, set `--uds-logo-padding` in your CSS instead, on a class on the logo itself.
    * @default 'var(--ds-size-3)'
    */
   padding?: string;

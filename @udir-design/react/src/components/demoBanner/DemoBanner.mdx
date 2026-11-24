@@ -33,7 +33,7 @@ import { DemoBanner } from '@udir-design/react';
 
 ## Tekst i DemoBanner
 
-Hvis du trenger å tilpasse teksten i banneret, kan du overstyre standardteksten med `text`.
+Hvis du trenger å tilpasse teksten i banneret, kan du overstyre standardteksten med `text`. Er teksten fast, kan du også sette den i ditt eget stilark, se [Kompatibilitet](#kompatibilitet).
 
 ## Språkstøtte
 
@@ -46,3 +46,21 @@ Følgende tekstvariabler er tilgjengelige for overstyring:
 ## Innhold på siden
 
 Vær oppmerksom på at den øverste delen av `DemoBanner` legges under headeren med ekstra margin for å unngå overlapping med øvrig innhold på siden. Den nederste delen legges over annet innhold. Sørg for at det ikke er viktig innhold nederst på siden som kan bli dekket av banneret.
+
+## Kompatibilitet
+
+### Server-side rendering og Content Security Policy
+
+`text` settes med JavaScript etter at siden er lastet. Ved server-side rendering vises derfor standardteksten til JavaScript har lastet. Er teksten fast, kan du heller sette den i ditt eget stilark. Det virker også med en streng Content Security Policy:
+
+```css
+.testmiljo {
+  --udsc-demo-banner-text: 'Testmiljø';
+}
+```
+
+```tsx
+<DemoBanner className="testmiljo">…</DemoBanner>
+```
+
+Teksten er en CSS-streng, så den må stå i anførselstegn. Les mer om [server-side rendering og Content Security Policy](/docs/components-server-side-rendering-og-csp--docs).

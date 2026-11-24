@@ -11,13 +11,17 @@ import './logo.css';
 export type LogoProps = HTMLAttributes<HTMLElement> & {
   /**
    * Changes height of the logo, the width
-   * scales accordingly
+   * scales accordingly.
+   * Applied after hydration, so server-rendered pages show the default until then. For a fixed
+   * size, set `--uds-logo-size` in your CSS instead, on a class on the logo itself.
    * @default 'var(--ds-size-12)'
    */
   size?: string;
   /**
    * Changes padding on all sides
-   * of the logo
+   * of the logo.
+   * Applied after hydration, so server-rendered pages show the default until then. For a fixed
+   * padding, set `--uds-logo-padding` in your CSS instead, on a class on the logo itself.
    * @default 'var(--ds-size-5)'
    */
   padding?: string;

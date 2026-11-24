@@ -6,6 +6,8 @@ import './demoBanner.css';
 
 export type DemoBannerProps = HTMLAttributes<HTMLDivElement> & {
   /**
+   * Applied after hydration, so server-rendered pages show the default until then. For a fixed
+   * text, set `--udsc-demo-banner-text` in your CSS instead.
    * @default "Dette er en demo"
    */
   text?: string;

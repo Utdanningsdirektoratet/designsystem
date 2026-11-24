@@ -81,3 +81,17 @@ I mobilvisning legges kolonnene under hverandre, med logo på slutten.
 Logoen i `Footer` kan byttes ut med en pride-variant ved å sette `variant="pride"` på `Footer`. Varianten brukes i juni for å markere Pride.
 
 <Canvas of={FooterStories.PrideLogo} />
+
+## Kompatibilitet
+
+### Server-side rendering og Content Security Policy
+
+Sett bredden på innholdet i ditt eget stilark. Da er den riktig fra første visning, også ved server-side rendering og med en streng Content Security Policy:
+
+```css
+:root {
+  --udsc-footer-max-width: 60rem;
+}
+```
+
+`maxWidth` er deprecated og kan bli fjernet i en senere versjon. Prop-en settes med JavaScript etter at siden er lastet, så ved server-side rendering vises `Footer` med standardbredden til JavaScript har lastet, og innholdet kan flytte seg. Les mer om [server-side rendering og Content Security Policy](/docs/components-server-side-rendering-og-csp--docs).

@@ -54,6 +54,12 @@
   margin-bottom: 0;
 }
 
+/* Storybook's inline code has the same background as the zebra stripes. This matches the tables
+   in `CssLanguageVariables`. */
+.table code {
+  background-color: var(--ds-color-neutral-surface-tinted);
+}
+
 .code {
   background-color: var(--ds-color-background-tinted);
   font-size: var(--ds-font-size-minus-1);
