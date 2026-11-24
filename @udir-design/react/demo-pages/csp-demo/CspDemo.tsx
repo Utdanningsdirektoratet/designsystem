@@ -275,6 +275,7 @@ export function cspDemoComponents(props: CspDemoProps) {
   );
   const footer = (
     <Footer
+      // oxlint-disable-next-line typescript/no-deprecated -- Checks the prop as long as it exists
       maxWidth={props.maxWidth}
       variant="pride"
       data-size="sm"
@@ -306,6 +307,7 @@ export function cspDemoComponents(props: CspDemoProps) {
   const header = (
     <Header
       applicationName="CSP-test"
+      // oxlint-disable-next-line typescript/no-deprecated -- Checks the prop as long as it exists
       maxWidth={props.maxWidth}
       variant="pride"
       data-testid="csp-header"

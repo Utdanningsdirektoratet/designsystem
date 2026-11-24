@@ -12,6 +12,8 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
    * Should be the same as for header content.
    * @default '80rem'
+   * @deprecated Set `--udsc-footer-max-width` in your CSS instead. This prop is applied after
+   * hydration, so server-rendered pages show the default width until then.
    */
   maxWidth?: string;
   /**
@@ -26,6 +28,7 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
 };
 
 export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
+  // oxlint-disable-next-line typescript/no-deprecated -- Still supported until it is removed
   { children, className, maxWidth, variant = 'default', ...rest },
   forwardedRef,
 ) {

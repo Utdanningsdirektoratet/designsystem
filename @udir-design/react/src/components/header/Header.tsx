@@ -23,6 +23,8 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
    * The maximum width of the header content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
    * @default '80rem'
+   * @deprecated Set `--udsc-header-max-width` in your CSS instead. This prop is applied after
+   * hydration, so server-rendered pages show the default width until then.
    */
   maxWidth?: string;
   /**
@@ -46,6 +48,7 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     children,
     className,
     href = '/',
+    // oxlint-disable-next-line typescript/no-deprecated -- Still supported until it is removed
     maxWidth,
     sticky = true,
     variant = 'default',
