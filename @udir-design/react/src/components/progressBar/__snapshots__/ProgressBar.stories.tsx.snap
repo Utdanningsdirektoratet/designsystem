@@ -1,32 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Example 1`] = `
-<style>
-  .progress-bar-form-example-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-}
-.progress-bar-form-example-legend {
-  /* As tall as the ProgressBar, so the bar does not overhang the legend */
-  display: flex;
-  align-items: flex-end;
-  min-height: var(--ds-size-12);
-}
-.progress-bar-form-example-progress-bar {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-end: 0;
-  transform: translateY(calc(var(--ds-size-4) * -1));
-  width: 30%;
-}
-.progress-bar-form-example-button__group {
-  display: flex;
-  justify-content: flex-start;
-  gap: var(--ds-size-4);
-}
-</style>
 <div>
   <fieldset
     id="rankings"

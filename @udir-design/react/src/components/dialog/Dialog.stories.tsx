@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useRef, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Checkbox } from '../checkbox/Checkbox';
@@ -64,30 +65,27 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: { closedby: 'any' },
+  parameters: {
+    css: css`
+      .dialog-preview-dialog {
+        z-index: 10;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.dialog-preview-dialog {
-  z-index: 10;
-}`}
-      </style>
-      <Dialog.TriggerContext>
-        <Dialog.Trigger data-size={args['data-size']}>
-          Åpne Dialog
-        </Dialog.Trigger>
-        <Dialog {...args} className="dialog-preview-dialog">
-          <Prose>
-            <Heading>Dialog header</Heading>
-            <Paragraph>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Blanditiis doloremque obcaecati assumenda odio ducimus sunt et.
-            </Paragraph>
-          </Prose>
-          <Paragraph data-size="sm">Dialog footer</Paragraph>
-        </Dialog>
-      </Dialog.TriggerContext>
-    </>
+    <Dialog.TriggerContext>
+      <Dialog.Trigger data-size={args['data-size']}>Åpne Dialog</Dialog.Trigger>
+      <Dialog {...args} className="dialog-preview-dialog">
+        <Prose>
+          <Heading>Dialog header</Heading>
+          <Paragraph>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+            doloremque obcaecati assumenda odio ducimus sunt et.
+          </Paragraph>
+        </Prose>
+        <Paragraph data-size="sm">Dialog footer</Paragraph>
+      </Dialog>
+    </Dialog.TriggerContext>
   ),
   play: async (ctx) => {
     await defaultPlay(ctx.canvasElement);
@@ -342,86 +340,84 @@ export const WithHeaderAndFooter = meta.story({
 });
 
 export const DialogWithForm = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .dialog-with-form-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+        margin-top: var(--ds-size-4);
+      }
+    `,
+  },
   render(args) {
     const [input, setInput] = useState('');
 
     return (
-      <>
-        <style>
-          {`
-        .dialog-with-form-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-          margin-top: var(--ds-size-4);
-        }`}
-        </style>
-        <Dialog.TriggerContext>
-          <Dialog.Trigger>Send inn skjema</Dialog.Trigger>
-          <Dialog
-            onClose={() => setInput('')}
-            closedby="any"
-            id="dialog-with-form"
-            {...args}
-          >
-            <Prose>
-              <Heading>Skjemainnsending</Heading>
-              <Textfield
-                // @ts-expect-error React's own autoFocus prop doesn't work due to being inside the Dialog
-                autofocus="true"
-                label="Navn"
-                value={input}
-                autocomplete="name"
-                onChange={(e) => setInput(e.target.value)}
-              />
-            </Prose>
-            <div className="dialog-with-form-button__group">
-              <Button
-                command="close"
-                commandfor="dialog-with-form"
-                onClick={() => {
-                  window.alert(`Du har sendt inn skjema med navn: ${input}`);
-                }}
-              >
-                Send inn skjema
-              </Button>
-              <Button
-                variant="secondary"
-                command="close"
-                commandfor="dialog-with-form"
-              >
-                Avbryt
-              </Button>
-            </div>
-          </Dialog>
-        </Dialog.TriggerContext>
-      </>
+      <Dialog.TriggerContext>
+        <Dialog.Trigger>Send inn skjema</Dialog.Trigger>
+        <Dialog
+          onClose={() => setInput('')}
+          closedby="any"
+          id="dialog-with-form"
+          {...args}
+        >
+          <Prose>
+            <Heading>Skjemainnsending</Heading>
+            <Textfield
+              // @ts-expect-error React's own autoFocus prop doesn't work due to being inside the Dialog
+              autofocus="true"
+              label="Navn"
+              value={input}
+              autocomplete="name"
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </Prose>
+          <div className="dialog-with-form-button__group">
+            <Button
+              command="close"
+              commandfor="dialog-with-form"
+              onClick={() => {
+                window.alert(`Du har sendt inn skjema med navn: ${input}`);
+              }}
+            >
+              Send inn skjema
+            </Button>
+            <Button
+              variant="secondary"
+              command="close"
+              commandfor="dialog-with-form"
+            >
+              Avbryt
+            </Button>
+          </div>
+        </Dialog>
+      </Dialog.TriggerContext>
     );
   },
 });
 
 export const DialogWithMaxWidth = meta.story({
+  parameters: {
+    css: css`
+      .dialog-with-max-width-dialog {
+        max-width: 1200px;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.dialog-with-max-width-dialog {
-  max-width: 1200px;
-}`}
-      </style>
-      <Dialog.TriggerContext>
-        <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-        <Dialog className="dialog-with-max-width-dialog" {...args}>
-          <Prose>
-            <Heading>Dialog som er veldig bred</Heading>
-          </Prose>
-          <Paragraph>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-            doloremque obcaecati assumenda odio ducimus sunt et.
-          </Paragraph>
-        </Dialog>
-      </Dialog.TriggerContext>
-    </>
+    <Dialog.TriggerContext>
+      <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
+      <Dialog className="dialog-with-max-width-dialog" {...args}>
+        <Prose>
+          <Heading>Dialog som er veldig bred</Heading>
+        </Prose>
+        <Paragraph>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+          doloremque obcaecati assumenda odio ducimus sunt et.
+        </Paragraph>
+      </Dialog>
+    </Dialog.TriggerContext>
   ),
 });
 
@@ -439,68 +435,52 @@ export const DialogWithSuggestion = meta.story({
   render: (args) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
-      <>
-        <style>
-          {`
-.dialog-with-suggestion-dialog {
-  overflow: visible;
-}
-.dialog-with-suggestion-dialog-block {
-   display: flex;
-   gap: var(--ds-size-2);
-}`}
-        </style>
-        <Dialog.TriggerContext>
-          <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
-          <Dialog
-            className="dialog-with-suggestion-dialog"
-            ref={dialogRef}
-            {...args}
-          >
-            <Dialog.Block>
-              <Heading>Dialog med innhold utenfor</Heading>
-            </Dialog.Block>
-            <Dialog.Block>
-              <Field>
-                <Label>Velg en kommune</Label>
-                <Suggestion>
-                  <Suggestion.Input />
-                  <Suggestion.Clear />
-                  <Suggestion.List>
-                    <Suggestion.Empty>Tomt</Suggestion.Empty>
-                    {DATA_PLACES.map((place) => (
-                      <Suggestion.Option
-                        key={place}
-                        label={place}
-                        value={place}
-                      >
-                        {place}
-                        <div>Kommune</div>
-                      </Suggestion.Option>
-                    ))}
-                  </Suggestion.List>
-                </Suggestion>
-              </Field>
-            </Dialog.Block>
-            <Dialog.Block className="dialog-with-suggestion-dialog-block">
-              <Button
-                onClick={() => {
-                  window.alert(`Skjema er sendt inn`);
-                  dialogRef.current?.close();
-                }}
-              >
-                Send inn
-              </Button>
-              <Button
-                onClick={() => dialogRef.current?.close()}
-                variant="secondary"
-              >
-                Avbryt
-              </Button>
-            </Dialog.Block>
-          </Dialog>
-        </Dialog.TriggerContext>
-      </>
+      <Dialog.TriggerContext>
+        <Dialog.Trigger variant="secondary">Åpne Dialog</Dialog.Trigger>
+        <Dialog
+          className="dialog-with-suggestion-dialog"
+          ref={dialogRef}
+          {...args}
+        >
+          <Dialog.Block>
+            <Heading>Dialog med innhold utenfor</Heading>
+          </Dialog.Block>
+          <Dialog.Block>
+            <Field>
+              <Label>Velg en kommune</Label>
+              <Suggestion>
+                <Suggestion.Input />
+                <Suggestion.Clear />
+                <Suggestion.List>
+                  <Suggestion.Empty>Tomt</Suggestion.Empty>
+                  {DATA_PLACES.map((place) => (
+                    <Suggestion.Option key={place} label={place} value={place}>
+                      {place}
+                      <div>Kommune</div>
+                    </Suggestion.Option>
+                  ))}
+                </Suggestion.List>
+              </Suggestion>
+            </Field>
+          </Dialog.Block>
+          <Dialog.Block className="dialog-with-suggestion-dialog-block">
+            <Button
+              onClick={() => {
+                window.alert(`Skjema er sendt inn`);
+                dialogRef.current?.close();
+              }}
+            >
+              Send inn
+            </Button>
+            <Button
+              onClick={() => dialogRef.current?.close()}
+              variant="secondary"
+            >
+              Avbryt
+            </Button>
+          </Dialog.Block>
+        </Dialog>
+      </Dialog.TriggerContext>
     );
   },
   parameters: {
@@ -521,6 +501,15 @@ export const DialogWithSuggestion = meta.story({
         ],
       },
     },
+    css: css`
+      .dialog-with-suggestion-dialog {
+        overflow: visible;
+      }
+      .dialog-with-suggestion-dialog-block {
+        display: flex;
+        gap: var(--ds-size-2);
+      }
+    `,
   },
 });
 
@@ -532,21 +521,20 @@ export const DialogNonModal = meta.story({
       alignItems: 'center',
       gap: 'var(--ds-size-4)',
     },
+    css: css`
+      .dialog-non-modal-field {
+        width: 400px;
+      }
+      .dialog-non-modal-dialog {
+        width: 300px;
+        left: 65%;
+      }
+    `,
   },
   render: (args) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
     return (
       <>
-        <style>
-          {`
-.dialog-non-modal-field {
-  width: 400px;
-}
-.dialog-non-modal-dialog {
-   width: 300px;
-   left: 65%;
-}`}
-        </style>
         <Field className="dialog-non-modal-field">
           <Label>Besvarelse</Label>
           <Textarea rows={8} autoComplete="off" />
@@ -595,90 +583,79 @@ export const DialogNonModal = meta.story({
 });
 
 export const Drawer = meta.story({
+  parameters: {
+    css: css`
+      .dialog-drawer-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .dialog-drawer-radio__group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--ds-size-5);
+        margin-bottom: var(--ds-size-4);
+      }
+      .dialog-drawer-dialog {
+        z-index: 10;
+      }
+    `,
+  },
   render: (args) => {
     const [placement, setPlacement] =
       useState<DialogProps['placement']>('bottom');
     const [modal, setModal] = useState(true);
     return (
-      <>
-        <style>
-          {`
-.dialog-drawer-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.dialog-drawer-radio__group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-5);
-  margin-bottom: var(--ds-size-4);
-}
-.dialog-drawer-dialog {
-  z-index: 10;
-}`}
-        </style>
-        <Prose className="dialog-drawer-main">
-          <Checkbox
-            label="Modal"
-            checked={modal}
-            id="modal-checkbox"
-            onChange={(e) => setModal(e.target.checked)}
-          />
-          <Fieldset
-            onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
-              const target = e.target as unknown as HTMLInputElement;
-              setPlacement(target.value as DialogProps['placement']);
-            }}
+      <Prose className="dialog-drawer-main">
+        <Checkbox
+          label="Modal"
+          checked={modal}
+          id="modal-checkbox"
+          onChange={(e) => setModal(e.target.checked)}
+        />
+        <Fieldset
+          onChange={(e: ChangeEvent<HTMLFieldSetElement>) => {
+            const target = e.target as unknown as HTMLInputElement;
+            setPlacement(target.value as DialogProps['placement']);
+          }}
+        >
+          <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
+          <div className="dialog-drawer-radio__group">
+            <Radio
+              name="drawer"
+              label="Midten"
+              value="center"
+              id="center-radio"
+            />
+            <Radio name="drawer" label="Topp" value="top" id="top-radio" />
+            <Radio
+              name="drawer"
+              label="Bunn"
+              value="bottom"
+              id="bottom-radio"
+            />
+            <Radio name="drawer" label="Venstre" value="left" id="left-radio" />
+            <Radio name="drawer" label="Høyre" value="right" id="right-radio" />
+          </div>
+        </Fieldset>
+        <Dialog.TriggerContext>
+          <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+          <Dialog
+            modal={modal}
+            className="dialog-drawer-dialog"
+            closedby="any"
+            placement={placement}
+            {...args}
           >
-            <Fieldset.Legend>Velg plassering for dialogen</Fieldset.Legend>
-            <div className="dialog-drawer-radio__group">
-              <Radio
-                name="drawer"
-                label="Midten"
-                value="center"
-                id="center-radio"
-              />
-              <Radio name="drawer" label="Topp" value="top" id="top-radio" />
-              <Radio
-                name="drawer"
-                label="Bunn"
-                value="bottom"
-                id="bottom-radio"
-              />
-              <Radio
-                name="drawer"
-                label="Venstre"
-                value="left"
-                id="left-radio"
-              />
-              <Radio
-                name="drawer"
-                label="Høyre"
-                value="right"
-                id="right-radio"
-              />
-            </div>
-          </Fieldset>
-          <Dialog.TriggerContext>
-            <Dialog.Trigger>Open Dialog</Dialog.Trigger>
-            <Dialog
-              modal={modal}
-              className="dialog-drawer-dialog"
-              closedby="any"
-              placement={placement}
-              {...args}
-            >
-              <Dialog.Block>
-                <Paragraph>
-                  This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
-                  <code>placement={`"${placement}"`}</code>
-                </Paragraph>
-              </Dialog.Block>
-            </Dialog>
-          </Dialog.TriggerContext>
-        </Prose>
-      </>
+            <Dialog.Block>
+              <Paragraph>
+                This is a {modal ? 'modal' : 'non-modal'} Dialog with{' '}
+                <code>placement={`"${placement}"`}</code>
+              </Paragraph>
+            </Dialog.Block>
+          </Dialog>
+        </Dialog.TriggerContext>
+      </Prose>
     );
   },
 });

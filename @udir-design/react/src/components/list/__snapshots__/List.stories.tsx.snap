@@ -1,12 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`As Nav 1`] = `
-<style>
-  .list-as-nav-list-unordered {
-  list-style-type: '';
-  padding: 0;
-}
-</style>
 <nav aria-label="Snarveier">
   <ul>
     <li>
@@ -142,12 +136,6 @@ exports[`Unordered 1`] = `
 `;
 
 exports[`With Links 1`] = `
-<style>
-  .list-with-links-list-unordered {
-  list-style-type: '';
-  padding: 0;
-}
-</style>
 <ul>
   <li>
     <a

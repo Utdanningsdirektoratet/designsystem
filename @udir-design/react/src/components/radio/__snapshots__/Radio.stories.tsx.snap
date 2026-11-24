@@ -24,13 +24,6 @@ exports[`Focused 1`] = `
 `;
 
 exports[`Inline 1`] = `
-<style>
-  .radio-inline-radio__group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-6);
-}
-</style>
 <fieldset aria-labelledby="<generated> <generated>">
   <legend id="<generated>">
     Kontaktes på e-post?

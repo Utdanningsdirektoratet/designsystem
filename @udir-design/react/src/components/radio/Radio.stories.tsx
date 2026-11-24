@@ -1,5 +1,6 @@
 import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Card } from 'src/components/card';
 import { Fieldset } from 'src/components/fieldset';
 import { Radio } from './Radio';
@@ -65,27 +66,26 @@ export const Outline = Preview.extend({
 });
 
 export const Inline = meta.story({
+  parameters: {
+    css: css`
+      .radio-inline-radio__group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--ds-size-6);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.radio-inline-radio__group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-6);
-}`}
-      </style>
-      <Fieldset>
-        <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
-        <Fieldset.Description>
-          Bekreft om du ønsker å bli kontaktet per e-post.
-        </Fieldset.Description>
-        <div className="radio-inline-radio__group">
-          <Radio name="my-inline" label="Ja" value="ja" {...args} />
-          <Radio name="my-inline" label="Nei" value="nei" {...args} />
-        </div>
-      </Fieldset>
-    </>
+    <Fieldset>
+      <Fieldset.Legend>Kontaktes på e-post?</Fieldset.Legend>
+      <Fieldset.Description>
+        Bekreft om du ønsker å bli kontaktet per e-post.
+      </Fieldset.Description>
+      <div className="radio-inline-radio__group">
+        <Radio name="my-inline" label="Ja" value="ja" {...args} />
+        <Radio name="my-inline" label="Nei" value="nei" {...args} />
+      </div>
+    </Fieldset>
   ),
 });
 

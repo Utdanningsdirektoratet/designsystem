@@ -11,6 +11,7 @@ import {
   PersonIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Avatar } from 'src/components/avatar';
 import { Button } from 'src/components/button';
@@ -233,78 +234,75 @@ export const Controlled = meta.story({
       width: '500px',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .tabs-controlled-list-unordered {
+        list-style-type: '';
+        padding: 0;
+      }
+      .tabs-controlled-list-item {
+        display: flex;
+      }
+      .tabs-controlled-list-content {
+        align-items: center;
+        display: flex;
+        gap: var(--ds-size-2);
+      }
+      .tabs-controlled-list-header {
+        margin-bottom: var(--ds-size-2);
+        margin-top: var(--ds-size-4);
+      }
+    `,
   },
   render: (args) => {
     const [tab, setTab] = useState('users');
     return (
-      <>
-        <style>
-          {`
-        .tabs-controlled-list-unordered {
-          list-style-type: '';
-          padding: 0;
-        }
-        .tabs-controlled-list-item {
-          display: flex;
-        }
-        .tabs-controlled-list-content {
-          align-items: center;
-          display: flex;
-          gap: var(--ds-size-2);
-        }
-        .tabs-controlled-list-header {
-          margin-bottom: var(--ds-size-2);
-          margin-top: var(--ds-size-4);
-        }`}
-        </style>
-        <Tabs {...args} value={tab} onChange={setTab}>
-          <Tabs.List>
-            <Tabs.Tab value="users">
-              <PersonGroupIcon aria-hidden />
-              Brukere
-            </Tabs.Tab>
-            <Tabs.Tab value="profile">
-              <PersonIcon aria-hidden />
-              Din profil
-            </Tabs.Tab>
-          </Tabs.List>
-          <Tabs.Panel value="users">
-            <List.Unordered className="tabs-controlled-list-unordered">
-              <List.Item className="tabs-controlled-list-item">
-                <Button variant="secondary" onClick={() => setTab('profile')}>
-                  <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
-                  Hansen (deg)
-                </Button>
-              </List.Item>
-              <List.Item className="tabs-controlled-list-item">
-                <Link href="#" className="tabs-controlled-list-content">
-                  <Avatar aria-label="Bruker 2" data-color="support1" />
-                  Stian Stølan
-                </Link>
-              </List.Item>
-              <List.Item className="tabs-controlled-list-item">
-                <Link href="#" className="tabs-controlled-list-content">
-                  <Avatar aria-label="Bruker 3" data-color="support2" />
-                  Lina Larsen
-                </Link>
-              </List.Item>
-            </List.Unordered>
-          </Tabs.Panel>
-          <Tabs.Panel value="profile">
-            <div className="tabs-controlled-list-content">
-              <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
-            </div>
+      <Tabs {...args} value={tab} onChange={setTab}>
+        <Tabs.List>
+          <Tabs.Tab value="users">
+            <PersonGroupIcon aria-hidden />
+            Brukere
+          </Tabs.Tab>
+          <Tabs.Tab value="profile">
+            <PersonIcon aria-hidden />
+            Din profil
+          </Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="users">
+          <List.Unordered className="tabs-controlled-list-unordered">
+            <List.Item className="tabs-controlled-list-item">
+              <Button variant="secondary" onClick={() => setTab('profile')}>
+                <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde
+                Hansen (deg)
+              </Button>
+            </List.Item>
+            <List.Item className="tabs-controlled-list-item">
+              <Link href="#" className="tabs-controlled-list-content">
+                <Avatar aria-label="Bruker 2" data-color="support1" />
+                Stian Stølan
+              </Link>
+            </List.Item>
+            <List.Item className="tabs-controlled-list-item">
+              <Link href="#" className="tabs-controlled-list-content">
+                <Avatar aria-label="Bruker 3" data-color="support2" />
+                Lina Larsen
+              </Link>
+            </List.Item>
+          </List.Unordered>
+        </Tabs.Panel>
+        <Tabs.Panel value="profile">
+          <div className="tabs-controlled-list-content">
+            <Avatar aria-label="Bruker 1" data-color="accent" /> Hilde Hansen
+          </div>
 
-            <Heading level={3} className="tabs-controlled-list-header">
-              Detaljer
-            </Heading>
-            <Paragraph>34 år</Paragraph>
-            <Paragraph>Mysen, Norge</Paragraph>
-            <Paragraph>Lærer</Paragraph>
-            <Paragraph>Mysen Videregående skole</Paragraph>
-          </Tabs.Panel>
-        </Tabs>
-      </>
+          <Heading level={3} className="tabs-controlled-list-header">
+            Detaljer
+          </Heading>
+          <Paragraph>34 år</Paragraph>
+          <Paragraph>Mysen, Norge</Paragraph>
+          <Paragraph>Lærer</Paragraph>
+          <Paragraph>Mysen Videregående skole</Paragraph>
+        </Tabs.Panel>
+      </Tabs>
     );
   },
 });
@@ -337,17 +335,15 @@ export const CardPanel = meta.story({
     customStyles: {
       backgroundColor: 'var(--ds-color-background-tinted)',
     },
+    css: css`
+      .tabs {
+        max-width: 40rem;
+        margin-top: var(--ds-size-4);
+      }
+    `,
   },
   render: (args) => (
     <>
-      <style>
-        {`
-        .tabs {
-          max-width: 40rem;
-          margin-top: var(--ds-size-4);
-        }
-      `}
-      </style>
       <Heading level={2}>Designtokens</Heading>
       <Tabs {...args} className="tabs">
         <Tabs.List>

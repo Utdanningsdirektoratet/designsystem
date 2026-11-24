@@ -3,6 +3,7 @@ import type { ComponentType } from 'react';
 import { Fragment } from 'react/jsx-runtime';
 import { ArrowRightIcon, PlusIcon, TrashFillIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
 import { Link as LinkComponent } from '../link/Link';
@@ -190,48 +191,47 @@ const options = [
 ];
 
 export const Composed = meta.story({
+  parameters: {
+    css: css`
+      .card-composed-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.card-composed-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}`}
-      </style>
-      <Card {...args}>
-        <Card.Block>
-          <div className="card-composed-heading">
-            <Heading>Rolle 1</Heading>
-            <Button variant="secondary" data-color="danger" data-size="sm">
-              <TrashFillIcon aria-hidden />
-              Fjern
-            </Button>
-          </div>
-        </Card.Block>
-        <Card.Block>
-          <Field>
-            <Label>Velg rolle</Label>
-            <Select>
-              {options.map(({ value, label }, index) => (
-                <Select.Option key={index} value={value}>
-                  {label}
-                </Select.Option>
-              ))}
-            </Select>
-          </Field>
-          <Textfield label="Fødselsnummer" />
-          <Textfield label="Etternavn" />
-        </Card.Block>
-        <Card.Block>
-          <Button variant="secondary" data-size="sm">
-            Legg til rolle
-            <PlusIcon aria-hidden />
+    <Card {...args}>
+      <Card.Block>
+        <div className="card-composed-heading">
+          <Heading>Rolle 1</Heading>
+          <Button variant="secondary" data-color="danger" data-size="sm">
+            <TrashFillIcon aria-hidden />
+            Fjern
           </Button>
-        </Card.Block>
-      </Card>
-    </>
+        </div>
+      </Card.Block>
+      <Card.Block>
+        <Field>
+          <Label>Velg rolle</Label>
+          <Select>
+            {options.map(({ value, label }, index) => (
+              <Select.Option key={index} value={value}>
+                {label}
+              </Select.Option>
+            ))}
+          </Select>
+        </Field>
+        <Textfield label="Fødselsnummer" />
+        <Textfield label="Etternavn" />
+      </Card.Block>
+      <Card.Block>
+        <Button variant="secondary" data-size="sm">
+          Legg til rolle
+          <PlusIcon aria-hidden />
+        </Button>
+      </Card.Block>
+    </Card>
   ),
 });
 
@@ -310,49 +310,48 @@ export const WithAnchorFocused = WithAnchor.extend({
 });
 
 export const Horizontal = meta.story({
+  parameters: {
+    css: css`
+      .card-horizontal-card {
+        display: grid;
+        grid-auto-flow: column;
+        width: 700px;
+      }
+      .card-horizontal-img {
+        height: 100%;
+        object-fit: cover;
+      }
+    `,
+  },
   render: (args) => {
     const url =
       'https://www.udir.no/contentassets/0ae1c5846c254b9f8800c59c393fd03d/skolemiljo.png';
     return (
-      <>
-        <style>
-          {`
-.card-horizontal-card {
-  display: grid;
-  grid-auto-flow: column;
-  width: 700px;
-}
-.card-horizontal-img {
-  height: 100%;
-  object-fit: cover;
-}`}
-        </style>
-        <Card {...args} className="card-horizontal-card">
-          <Card.Block>
-            <img
-              src={url}
-              alt="Barn som spiser lunsj"
-              className="card-horizontal-img"
-            />
-          </Card.Block>
-          <Card.Block>
-            <Heading>
-              <a
-                href="https://www.udir.no/laring-og-trivsel/skolemiljo/slik-kan-skolen-handtere-et-utrygt-skolemiljo/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Hva gjør du når en elev ikke har det trygt og godt på skolen?
-              </a>
-            </Heading>
-            <Paragraph>
-              Hvis dere mistenker eller kjenner til at en elev ikke har det
-              trygt og godt, skal dere snarest undersøke saken. Vi har laget råd
-              om hva dere kan gjøre.
-            </Paragraph>
-          </Card.Block>
-        </Card>
-      </>
+      <Card {...args} className="card-horizontal-card">
+        <Card.Block>
+          <img
+            src={url}
+            alt="Barn som spiser lunsj"
+            className="card-horizontal-img"
+          />
+        </Card.Block>
+        <Card.Block>
+          <Heading>
+            <a
+              href="https://www.udir.no/laring-og-trivsel/skolemiljo/slik-kan-skolen-handtere-et-utrygt-skolemiljo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hva gjør du når en elev ikke har det trygt og godt på skolen?
+            </a>
+          </Heading>
+          <Paragraph>
+            Hvis dere mistenker eller kjenner til at en elev ikke har det trygt
+            og godt, skal dere snarest undersøke saken. Vi har laget råd om hva
+            dere kan gjøre.
+          </Paragraph>
+        </Card.Block>
+      </Card>
     );
   },
 });
@@ -364,6 +363,40 @@ export const Cluster = meta.story({
       width: '100%',
       maxWidth: 800,
     },
+    css: css`
+      .card-cluster-wrapper {
+        container-type: inline-size;
+      }
+      .card-cluster {
+        --dsc-card-content-margin-block: 0;
+        --dsc-card-padding: var(--ds-size-2) var(--ds-size-6);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+        column-gap: var(--ds-size-4);
+      }
+      .card-cluster__item {
+        padding-block: var(--ds-size-4);
+        border-block-end: 1px solid var(--ds-color-border-subtle);
+        text-decoration: none;
+      }
+      .card-cluster__item:last-child {
+        border-block-end: none;
+      }
+      @container (min-width: 564px) {
+        .card-cluster__item:nth-last-child(2) {
+          border-block-end: none;
+        }
+      }
+      .card-cluster__item:hover {
+        text-decoration: underline;
+      }
+      .card-cluster__item > svg {
+        flex-shrink: 0;
+        width: var(--ds-size-6);
+        height: var(--ds-size-6);
+        align-self: flex-start;
+      }
+    `,
   },
   render: (args) => {
     const links = [
@@ -376,57 +409,20 @@ export const Cluster = meta.story({
     ];
 
     return (
-      <>
-        <style>
-          {`
-.card-cluster-wrapper {
-  container-type: inline-size;
-}
-.card-cluster {
-  --dsc-card-content-margin-block: 0;
-  --dsc-card-padding: var(--ds-size-2) var(--ds-size-6);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
-  column-gap: var(--ds-size-4);
-}
-.card-cluster__item {
-  padding-block: var(--ds-size-4);
-  border-block-end: 1px solid var(--ds-color-border-subtle);
-  text-decoration: none;
-}
-.card-cluster__item:last-child {
-  border-block-end: none;
-}
-@container (min-width: 564px) {
-  .card-cluster__item:nth-last-child(2) {
-    border-block-end: none;
-  }
-}
-.card-cluster__item:hover {
-  text-decoration: underline;
-}
-.card-cluster__item > svg {
-  flex-shrink: 0;
-  width: var(--ds-size-6);
-  height: var(--ds-size-6);
-  align-self: flex-start;
-}`}
-        </style>
-        <div className="card-cluster-wrapper">
-          <Card {...args} className="card-cluster">
-            {links.map((link) => (
-              <LinkComponent
-                href={link.url}
-                key={link.text}
-                className="card-cluster__item"
-              >
-                <ArrowRightIcon aria-hidden />
-                <span>{link.text}</span>
-              </LinkComponent>
-            ))}
-          </Card>
-        </div>
-      </>
+      <div className="card-cluster-wrapper">
+        <Card {...args} className="card-cluster">
+          {links.map((link) => (
+            <LinkComponent
+              href={link.url}
+              key={link.text}
+              className="card-cluster__item"
+            >
+              <ArrowRightIcon aria-hidden />
+              <span>{link.text}</span>
+            </LinkComponent>
+          ))}
+        </Card>
+      </div>
     );
   },
 });

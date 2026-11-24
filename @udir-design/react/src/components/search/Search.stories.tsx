@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { expect, fn, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { assertExists } from '../../utilities/helpers/assertExists';
@@ -94,6 +95,18 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-2)',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .search-controlled-form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+      .search-controlled-chip__group {
+        display: flex;
+        align-items: center;
+        gap: var(--ds-size-3);
+      }
+    `,
   },
   render(args) {
     const [inputValue, setInputValue] = useState('');
@@ -106,19 +119,6 @@ export const Controlled = meta.story({
 
     return (
       <Prose>
-        <style>
-          {`
-        .search-controlled-form {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }
-        .search-controlled-chip__group {
-          display: flex;
-          align-items: center;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
         <form className="search-controlled-form" onSubmit={handleSubmit}>
           <Search {...args}>
             <Search.Input
@@ -255,6 +255,13 @@ export const LiveSearch = meta.story({
       gap: 'var(--ds-size-2)',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .search-live-output__group {
+        display: flex;
+        gap: var(--ds-size-1);
+        align-items: center;
+      }
+    `,
   },
   render(args) {
     const [value, setValue] = useState<string>('');
@@ -262,39 +269,29 @@ export const LiveSearch = meta.story({
     const setSearchValueDebounced = useDebounceCallback(setSearchValue, 500);
 
     return (
-      <>
-        <style>
-          {`
-        .search-live-output__group {
-          display: flex;
-          gap: var(--ds-size-1);
-          align-items: center;
-        }`}
-        </style>
-        <Prose>
-          <Search {...args}>
-            <Search.Input
-              aria-label="Søk"
-              value={value}
-              onChange={(e) => {
-                const newValue = e.target.value;
-                setValue(newValue);
-                // Don't search while typing
-                setSearchValue('');
-                // Search after stopped typing
-                setSearchValueDebounced(newValue);
-              }}
-            />
-            <Search.Clear />
-          </Search>
-          {searchValue !== '' && (
-            <div className="search-live-output__group">
-              <Spinner aria-hidden data-size="xs" />
-              <span>Søker etter: {searchValue}</span>
-            </div>
-          )}
-        </Prose>
-      </>
+      <Prose>
+        <Search {...args}>
+          <Search.Input
+            aria-label="Søk"
+            value={value}
+            onChange={(e) => {
+              const newValue = e.target.value;
+              setValue(newValue);
+              // Don't search while typing
+              setSearchValue('');
+              // Search after stopped typing
+              setSearchValueDebounced(newValue);
+            }}
+          />
+          <Search.Clear />
+        </Search>
+        {searchValue !== '' && (
+          <div className="search-live-output__group">
+            <Spinner aria-hidden data-size="xs" />
+            <span>Søker etter: {searchValue}</span>
+          </div>
+        )}
+      </Prose>
     );
   },
 });

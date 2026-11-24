@@ -1,4 +1,5 @@
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Spinner } from './Spinner';
 
 const meta = preview.meta({
@@ -60,20 +61,19 @@ export const WithText = meta.story({
     'aria-hidden': true,
     'data-size': 'sm',
   },
+  parameters: {
+    css: css`
+      .spinner-with-text {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.spinner-with-text {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}`}
-      </style>
-      <div className="spinner-with-text">
-        <Spinner {...args} />
-        <span>Forbereder filen din</span>
-      </div>
-    </>
+    <div className="spinner-with-text">
+      <Spinner {...args} />
+      <span>Forbereder filen din</span>
+    </div>
   ),
 });

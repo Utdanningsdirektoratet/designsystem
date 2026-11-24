@@ -2,38 +2,6 @@
 
 exports[`Auto Hide Sticky 1`] = `
 <div data-size="auto">
-  <style>
-    .header-auto-hide-sticky-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-auto-hide-sticky-header-menu-nav {
-    justify-items: flex-start;
-  }
-}
-.header-auto-hide-sticky-main {
-  padding: var(--ds-size-18);
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-  max-width: 800px;
-  margin: 0 auto;
-}
-.header-auto-hide-sticky-main hr {
-  margin-top: var(--ds-size-30);
-}
-.header-auto-hide-sticky-main hr + p {
-  margin-top: calc(var(--ds-size-30) * 2);
-  margin-bottom: calc(var(--ds-size-30) * 2);
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -238,38 +206,6 @@ exports[`Auto Hide Sticky 1`] = `
 
 exports[`Auto Hide Sticky Test 1`] = `
 <div data-size="auto">
-  <style>
-    .header-auto-hide-sticky-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-auto-hide-sticky-header-menu-nav {
-    justify-items: flex-start;
-  }
-}
-.header-auto-hide-sticky-main {
-  padding: var(--ds-size-18);
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-  max-width: 800px;
-  margin: 0 auto;
-}
-.header-auto-hide-sticky-main hr {
-  margin-top: var(--ds-size-30);
-}
-.header-auto-hide-sticky-main hr + p {
-  margin-top: calc(var(--ds-size-30) * 2);
-  margin-bottom: calc(var(--ds-size-30) * 2);
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -475,24 +411,6 @@ exports[`Auto Hide Sticky Test 1`] = `
 
 exports[`Long Application Name 1`] = `
 <div data-size="auto">
-  <style>
-    @media (max-width: 30rem) {
-        .uds-header__logo > :last-child {
-          font-size: var(--ds-font-size-4);
-        }
-        @media (max-width: 23rem) {
-          .header-long-application-name-menu-span {
-            // Visually hidden but accessible for screen readers
-            border: 0;
-            clip: rect(0 0 0 0);
-            height: 1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            white-space: nowrap;
-            width: 1px;
-          }
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -594,27 +512,6 @@ exports[`Pride Logo 1`] = `
 
 exports[`Responsive 1`] = `
 <div data-size="auto">
-  <style>
-    .header-responsive-header-menu-user-button {
-  margin: 0 var(--ds-size-5);
-  justify-self: end;
-}
-.header-responsive-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-responsive-header-menu-nav {
-    justify-items: flex-start;
-  }
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -978,24 +875,6 @@ exports[`Responsive 1`] = `
 
 exports[`Udir No 1`] = `
 <div data-size="auto">
-  <style>
-    .header-udir-no-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: var(--ds-size-10) var(--ds-size-15);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-}
-.header-udir-no-header-search {
-  max-width: 280px;
-}
-.header-udir-no-header-menu-search {
-  width: auto;
-  margin: var(--ds-size-5) var(--ds-size-5) 0;
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -1433,22 +1312,6 @@ exports[`With Language Picker 1`] = `
 
 exports[`With Menu 1`] = `
 <div data-size="auto">
-  <style>
-    .header-with-menu-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-with-menu-header-menu-nav {
-  justify-items: flex-start;
-}}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -1570,22 +1433,6 @@ exports[`With Menu 1`] = `
 
 exports[`With Menu Test 1`] = `
 <div data-size="auto">
-  <style>
-    .header-with-menu-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-with-menu-header-menu-nav {
-  justify-items: flex-start;
-}}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -1708,16 +1555,6 @@ exports[`With Menu Test 1`] = `
 
 exports[`With Navigation Links 1`] = `
 <div data-size="auto">
-  <style>
-    .header-with-nav-links-header-menu-nav {
-  max-width: 800px;
-  display: flex;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -1813,23 +1650,6 @@ exports[`With Navigation Links 1`] = `
 
 exports[`With Navigation Links And Menu 1`] = `
 <div data-size="auto">
-  <style>
-    .header-with-nav-links-and-menu-header-menu-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-10) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-  justify-items: center;
-}
-@media (max-width: 34.375rem) {
-  .header-with-nav-links-and-menu-header-menu-nav {
-    justify-items: flex-start;
-  }
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"
@@ -2140,26 +1960,6 @@ exports[`With Tag 1`] = `
 
 exports[`With Theme Menus 1`] = `
 <div data-size="auto">
-  <style>
-    :is(#header-education-menu, #header-learning-menu, #header-mobile-menu) > nav {
-  display: grid;
-  margin: 0 auto;
-  padding: var(--ds-size-5) var(--ds-size-15) var(--ds-size-10);
-  gap: var(--ds-size-4);
-  row-gap: var(--ds-size-10);
-}
-:is(#header-education-menu, #header-mobile-menu) > nav {
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  max-width: 800px;
-}
-:is(#header-education-menu, #header-learning-menu) > nav {
-  justify-items: center;
-}
-#header-learning-menu > nav {
-  grid-template-columns: 1fr 1fr;
-  max-width: 500px;
-}
-  </style>
   <header
     data-scroll-direction="up"
     data-top="true"

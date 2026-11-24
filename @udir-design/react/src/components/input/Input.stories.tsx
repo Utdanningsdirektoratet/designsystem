@@ -2,6 +2,7 @@ import type { Size } from '@digdir/designsystemet-types';
 import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
 import { Field } from '../field/Field';
@@ -119,37 +120,34 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-2)',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .input-controlled-main {
+        display: flex;
+        gap: var(--ds-size-2);
+        align-items: end;
+        width: 100%;
+      }
+    `,
   },
   render(args) {
     const [value, setValue] = useState<string>('');
     return (
-      <>
-        <style>
-          {`
-        .input-controlled-main {
-          display: flex;
-          gap: var(--ds-size-2);
-          align-items: end;
-          width: 100%;
-        }`}
-        </style>
-        <Prose>
-          <div className="input-controlled-main">
-            <Field>
-              <Label>Skriv inn verdi</Label>
-              <Input
-                {...args}
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-              />
-            </Field>
-            <Button variant="secondary" onClick={() => setValue('')}>
-              Tøm feltet
-            </Button>
-          </div>
-          {value && <Paragraph>Valgt verdi: {value}</Paragraph>}
-        </Prose>
-      </>
+      <Prose>
+        <div className="input-controlled-main">
+          <Field>
+            <Label>Skriv inn verdi</Label>
+            <Input
+              {...args}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </Field>
+          <Button variant="secondary" onClick={() => setValue('')}>
+            Tøm feltet
+          </Button>
+        </div>
+        {value && <Paragraph>Valgt verdi: {value}</Paragraph>}
+      </Prose>
     );
   },
 });
@@ -184,6 +182,19 @@ export const Text = meta.story({
       ],
     },
   },
+  parameters: {
+    css: css`
+      .input-text-main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        max-width: 90vw;
+      }
+      .input-text-heading {
+        grid-column: 1 / -1;
+      }
+    `,
+  },
   render: (args) => {
     const states = [
       { label: 'Default', props: {} },
@@ -194,18 +205,6 @@ export const Text = meta.story({
 
     return (
       <>
-        <style>
-          {`
-.input-text-main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-text-heading {
-  grid-column: 1 / -1;
-}`}
-        </style>
         {sizes.map((size) => (
           <div className="input-text-main" key={size} data-size={size}>
             <Heading data-size="2xs" className="input-text-heading">
@@ -286,6 +285,20 @@ export const Radio = meta.story({
       table: { disable: true },
     },
   },
+  parameters: {
+    css: css`
+      .input-radio-main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 90vw;
+      }
+      .input-radio-heading {
+        grid-column: 1 / -1;
+        margin-top: 16px;
+      }
+    `,
+  },
   render: (args) => {
     const states = [
       { label: 'Default', props: {} },
@@ -309,19 +322,6 @@ export const Radio = meta.story({
 
     return (
       <>
-        <style>
-          {`
-.input-radio-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-radio-heading {
-  grid-column: 1 / -1;
-  margin-top: 16px;
-}`}
-        </style>
         {sizes.map((size) => (
           <div className="input-radio-main" key={size} data-size={size}>
             <Heading className="input-radio-heading" data-size="2xs">
@@ -358,6 +358,22 @@ export const Checkbox = meta.story({
     size: {
       table: { disable: true },
     },
+  },
+  parameters: {
+    css: css`
+      .input-checkbox-main {
+        display: grid;
+        gap: 2rem;
+      }
+      .input-checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .input-checkbox-heading {
+        grid-column: 1 / -1;
+      }
+    `,
   },
   render(args) {
     useEffect(() => {
@@ -401,44 +417,27 @@ export const Checkbox = meta.story({
     ];
 
     return (
-      <>
-        <style>
-          {`
-.input-checkbox-main {
-  display: grid;
-  gap: 2rem;
-}
-.input-checkbox-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.input-checkbox-heading {
-  grid-column: 1 / -1;
-}`}
-        </style>
-        <div className="input-checkbox-main">
-          {sizes.map((size) => (
-            <div className="input-checkbox-grid" key={size} data-size={size}>
-              <Heading className="input-checkbox-heading" data-size="2xs">
-                {sizenames[size]}
-              </Heading>
-              {states.map((state) => (
-                <Field key={state.label}>
-                  <Input
-                    {...args}
-                    name={`${size}-${state.label
-                      .toLowerCase()
-                      .replace(' ', '-')}`}
-                    {...state.props}
-                  />
-                  <Label>{state.label}</Label>
-                </Field>
-              ))}
-            </div>
-          ))}
-        </div>
-      </>
+      <div className="input-checkbox-main">
+        {sizes.map((size) => (
+          <div className="input-checkbox-grid" key={size} data-size={size}>
+            <Heading className="input-checkbox-heading" data-size="2xs">
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label
+                    .toLowerCase()
+                    .replace(' ', '-')}`}
+                  {...state.props}
+                />
+                <Label>{state.label}</Label>
+              </Field>
+            ))}
+          </div>
+        ))}
+      </div>
     );
   },
 });
@@ -459,6 +458,23 @@ export const Switch = meta.story({
       table: { disable: true },
     },
   },
+  parameters: {
+    css: css`
+      .input-switch-main {
+        display: grid;
+        gap: 2rem;
+      }
+      .input-switch-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 90vw;
+      }
+      .input-switch-heading {
+        grid-column: 1 / -1;
+      }
+    `,
+  },
   render: (args) => {
     const states = [
       { label: 'Default', props: {} },
@@ -476,45 +492,27 @@ export const Switch = meta.story({
     ];
 
     return (
-      <>
-        <style>
-          {`
-.input-switch-main {
-  display: grid;
-  gap: 2rem;
-}
-.input-switch-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-switch-heading {
-  grid-column: 1 / -1;
-}`}
-        </style>
-        <div className="input-switch-main">
-          {sizes.map((size) => (
-            <div className="input-switch-section" key={size} data-size={size}>
-              <Heading className="input-switch-heading" data-size="2xs">
-                {sizenames[size]}
-              </Heading>
-              {states.map((state) => (
-                <Field key={state.label}>
-                  <Input
-                    {...args}
-                    name={`${size}-${state.label
-                      .toLowerCase()
-                      .replace(' ', '-')}`}
-                    {...state.props}
-                  />
-                  <Label>{state.label}</Label>
-                </Field>
-              ))}
-            </div>
-          ))}
-        </div>
-      </>
+      <div className="input-switch-main">
+        {sizes.map((size) => (
+          <div className="input-switch-section" key={size} data-size={size}>
+            <Heading className="input-switch-heading" data-size="2xs">
+              {sizenames[size]}
+            </Heading>
+            {states.map((state) => (
+              <Field key={state.label}>
+                <Input
+                  {...args}
+                  name={`${size}-${state.label
+                    .toLowerCase()
+                    .replace(' ', '-')}`}
+                  {...state.props}
+                />
+                <Label>{state.label}</Label>
+              </Field>
+            ))}
+          </div>
+        ))}
+      </div>
     );
   },
 });

@@ -1,24 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Globalt systemvarsel 1`] = `
-<style>
-  .systemvarsler-global-alert {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 32rem;
-}
-.systemvarsler-global-alert__main {
-  box-sizing: border-box;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
-}
-</style>
 <div>
   <header>
     <div>
@@ -94,22 +76,6 @@ exports[`Globalt systemvarsel 1`] = `
 `;
 
 exports[`Lokalt systemvarsel 1`] = `
-<style>
-  .systemvarsler-local-alert {
-  box-sizing: border-box;
-  display: grid;
-  gap: var(--ds-size-5);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-4);
-}
-.systemvarsler-local-textfield {
-  width: 10rem;
-}
-.systemvarsler-try-again-button {
-  margin-top: var(--ds-size-3);
-}
-</style>
 <section>
   <div>
     <h4>
@@ -160,27 +126,6 @@ exports[`Lokalt systemvarsel 1`] = `
 `;
 
 exports[`Side ikke funnet 1`] = `
-<style>
-  .systemvarsler-not-found {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 32rem;
-}
-.systemvarsler-not-found__main {
-  box-sizing: border-box;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
-}
-.systemvarsler-not-found__search {
-  max-width: 32rem;
-}
-</style>
 <div>
   <header>
     <div>
@@ -291,24 +236,6 @@ exports[`Side ikke funnet 1`] = `
 `;
 
 exports[`Side ikke funnet 2`] = `
-<style>
-  .systemvarsler-not-found-simple {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 32rem;
-}
-.systemvarsler-not-found-simple__main {
-  box-sizing: border-box;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
-}
-</style>
 <div>
   <header>
     <div>
@@ -366,29 +293,6 @@ exports[`Side ikke funnet 2`] = `
 `;
 
 exports[`Teknisk feilside 1`] = `
-<style>
-  .systemvarsler-technical-error {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 32rem;
-}
-.systemvarsler-technical-error__main {
-  box-sizing: border-box;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-12) var(--ds-size-4) var(--ds-size-18);
-}
-.systemvarsler-technical-error__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-3);
-}
-</style>
 <div>
   <header>
     <div>
@@ -461,21 +365,6 @@ exports[`Teknisk feilside 1`] = `
 `;
 
 exports[`Varsel om utlogging 1`] = `
-<style>
-  .systemvarsler-session-expiry {
-  box-sizing: border-box;
-  display: grid;
-  gap: var(--ds-size-5);
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: var(--ds-size-4);
-}
-.systemvarsler-session-expiry__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-3);
-}
-</style>
 <div style="<removed>">
   <dialog
     data-placement="center"

@@ -2,6 +2,7 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Search } from '../search/Search';
 import { Paragraph } from '../typography/paragraph/Paragraph';
 import type { ChipButtonProps, ChipRadioProps } from './Chip';
@@ -100,34 +101,33 @@ export const Preview = meta.story({
 });
 
 export const Checkbox = meta.story({
+  parameters: {
+    css: css`
+      .chip-checkbox-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-4);
+      }
+      .chip-checkbox-checkbox {
+        display: flex;
+        gap: var(--ds-size-1);
+      }
+    `,
+  },
   render: (args) => {
     const options = ['2020', '2021', '2022', '2023', '2024', '2025'];
 
     return (
-      <>
-        <style>
-          {`
-.chip-checkbox-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-checkbox-checkbox {
-  display: flex;
-  gap: var(--ds-size-1);
-}`}
-        </style>
-        <div className="chip-checkbox-main">
-          <Paragraph>Vis data for</Paragraph>
-          <div className="chip-checkbox-checkbox">
-            {options.map((year) => (
-              <Chip.Checkbox key={year} aria-label={year} {...args}>
-                {year}
-              </Chip.Checkbox>
-            ))}
-          </div>
+      <div className="chip-checkbox-main">
+        <Paragraph>Vis data for</Paragraph>
+        <div className="chip-checkbox-checkbox">
+          {options.map((year) => (
+            <Chip.Checkbox key={year} aria-label={year} {...args}>
+              {year}
+            </Chip.Checkbox>
+          ))}
         </div>
-      </>
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -150,39 +150,38 @@ export const Checkbox = meta.story({
 });
 
 export const Radio = meta.story({
+  parameters: {
+    css: css`
+      .chip-radio-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-4);
+      }
+      .chip-radio-radio__group {
+        display: flex;
+        gap: var(--ds-size-1);
+      }
+    `,
+  },
   render: (args) => {
     const options = ['Barnehage', 'Grunnskole', 'Videregående'];
 
     return (
-      <>
-        <style>
-          {`
-.chip-radio-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-radio-radio__group {
-  display: flex;
-  gap: var(--ds-size-1);
-}`}
-        </style>
-        <div className="chip-radio-main">
-          <Paragraph>Vis data for</Paragraph>
-          <div className="chip-radio-radio__group">
-            {options.map((grade) => (
-              <Chip.Radio
-                key={grade}
-                name="my-radio"
-                aria-label={grade}
-                {...args}
-              >
-                {grade}
-              </Chip.Radio>
-            ))}
-          </div>
+      <div className="chip-radio-main">
+        <Paragraph>Vis data for</Paragraph>
+        <div className="chip-radio-radio__group">
+          {options.map((grade) => (
+            <Chip.Radio
+              key={grade}
+              name="my-radio"
+              aria-label={grade}
+              {...args}
+            >
+              {grade}
+            </Chip.Radio>
+          ))}
         </div>
-      </>
+      </div>
     );
   },
 });
@@ -233,48 +232,47 @@ export const Removable = meta.story({
 });
 
 export const Button = meta.story({
+  parameters: {
+    css: css`
+      .chip-button-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-4);
+      }
+      .chip-button-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+      }
+    `,
+  },
   render: (args) => {
     const [inputValue, setInputValue] = useState('');
 
     return (
-      <>
-        <style>
-          {`
-.chip-button-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-button-button__group {
-  display: flex;
-  gap: var(--ds-size-2);
-}`}
-        </style>
-        <div className="chip-button-main">
-          <Search>
-            <Search.Input
-              aria-label="søk"
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-            <Search.Clear />
-            <Search.Button type="submit" />
-          </Search>
-          <div className="chip-button-button__group">
-            <Paragraph>Hurtigsøk: </Paragraph>
-            <Chip.Button onClick={() => setInputValue('Læreplaner')} {...args}>
-              Læreplaner
-            </Chip.Button>
-            <Chip.Button onClick={() => setInputValue('Skole')} {...args}>
-              Skole
-            </Chip.Button>
-            <Chip.Button onClick={() => setInputValue('Engelsk')} {...args}>
-              Eksamen
-            </Chip.Button>
-          </div>
+      <div className="chip-button-main">
+        <Search>
+          <Search.Input
+            aria-label="søk"
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <Search.Clear />
+          <Search.Button type="submit" />
+        </Search>
+        <div className="chip-button-button__group">
+          <Paragraph>Hurtigsøk: </Paragraph>
+          <Chip.Button onClick={() => setInputValue('Læreplaner')} {...args}>
+            Læreplaner
+          </Chip.Button>
+          <Chip.Button onClick={() => setInputValue('Skole')} {...args}>
+            Skole
+          </Chip.Button>
+          <Chip.Button onClick={() => setInputValue('Engelsk')} {...args}>
+            Eksamen
+          </Chip.Button>
         </div>
-      </>
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {

@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, waitFor } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Input } from '../input/Input';
@@ -152,35 +153,34 @@ export const Format = meta.story({
 });
 
 export const Position = meta.story({
+  parameters: {
+    css: css`
+      .field-position-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-2);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-position-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-2);
-}`}
-      </style>
-      <div className="field-position-main">
-        {/* oxlint-disable jsx-a11y/role-has-required-aria-props --
-            False positive: <input type="checkbox" role="switch"> is
-            spec-compliant. WAI-ARIA §5.2.2 says host-language attributes
-            fulfill "required states" requirements, and §8.4 confirms
-            native semantics satisfy them — the native `checked` state of
-            <input type="checkbox"> provides aria-checked implicitly.
-            Tracked in https://github.com/oxc-project/oxc/issues/24838 */}
-        <Field {...args} position="end">
-          <Label>Flymodus</Label>
-          <Input type="checkbox" role="switch" id={'airplane'} />
-        </Field>
-        <Field {...args} position="end">
-          <Label>Lydløs</Label>
-          <Input type="checkbox" role="switch" id={'sounds'} />
-        </Field>
-        {/* oxlint-enable jsx-a11y/role-has-required-aria-props */}
-      </div>
-    </>
+    <div className="field-position-main">
+      {/* oxlint-disable jsx-a11y/role-has-required-aria-props --
+          False positive: <input type="checkbox" role="switch"> is
+          spec-compliant. WAI-ARIA §5.2.2 says host-language attributes
+          fulfill "required states" requirements, and §8.4 confirms
+          native semantics satisfy them — the native `checked` state of
+          <input type="checkbox"> provides aria-checked implicitly.
+          Tracked in https://github.com/oxc-project/oxc/issues/24838 */}
+      <Field {...args} position="end">
+        <Label>Flymodus</Label>
+        <Input type="checkbox" role="switch" id={'airplane'} />
+      </Field>
+      <Field {...args} position="end">
+        <Label>Lydløs</Label>
+        <Input type="checkbox" role="switch" id={'sounds'} />
+      </Field>
+      {/* oxlint-enable jsx-a11y/role-has-required-aria-props */}
+    </div>
   ),
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
