@@ -1,0 +1,185 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as BetingedeSporsmalStories from './BetingedeSporsmal.stories';
+import { HideDontDisable } from './docs/BetingedeSporsmalDoAndDont';
+
+<Meta of={BetingedeSporsmalStories} />
+
+{/* Basis for the pattern (updated November 2026): */}
+{/* Digdir has no guidance on conditional questions. The maintainers think it should be described as a pattern, not a component: https://github.com/digdir/designsystemet/discussions/4529 */}
+{/* Brønnøysundregistrene, Elmer 3, 4.1 Sporvalg: don't ask irrelevant questions, place new questions «like under the question that activates them» («like under spørsmålet som aktiverer») or in a later step. 4.4: warn before data is lost. https://brukskvalitet.brreg.no/elmer3/ */}
+{/* Altinn Studio hides fields and pages with expressions. Hidden fields are not validated, and hidden data can be removed on submit: https://docs.altinn.studio/nb/altinn-studio/v8/reference/logic/dynamic/ https://docs.altinn.studio/nb/altinn-studio/v8/reference/logic/validation/required/ */}
+{/* GOV.UK: only reveal simple questions conditionally, move complex questions to their own page, and only reveal questions, not information: https://design-system.service.gov.uk/components/radios/#conditionally-revealing-a-related-question https://www.gov.uk/service-manual/design/form-structure https://design-system.service.gov.uk/patterns/check-answers/ */}
+{/* The Danish design system (DKFDS) gives the same advice: https://designsystem.dk/komponenter/radioknap/ */}
+{/* Adam Silver on replacing optional fields with conditional questions: https://adamsilver.io/blog/how-to-avoid-optional-form-fields-with-a-conditional-reveal/ */}
+
+# Betingede spørsmål
+
+Betingede spørsmål avhenger av hva brukeren har svart tidligere. Et svar kan føre til at et nytt spørsmål vises, at brukeren får en melding, eller at skjemaet tar en annen vei videre.
+
+Målet er at brukeren bare skal svare på det som er relevant. Da blir skjemaet kortere, og risikoen for feil blir mindre.
+
+## Når bør man følge bruksmønsteret?
+
+Bruk mønsteret når
+
+- et spørsmål bare er relevant for noen av brukerne
+- et svar gjør at brukeren ikke kan bruke skjemaet
+- ulike brukere skal svare på ulike spørsmål
+
+Et betinget spørsmål kan også erstatte et valgfritt felt. I stedet for et valgfritt felt kan du først spørre om det er relevant, og bare vise feltet til dem som svarer ja.
+
+## Velg riktig løsning
+
+| Situasjon                                          | Løsning                                                                                     |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Brukerens svar gjør et nytt spørsmål relevant      | [Vis spørsmålet under gruppen](#vis-spørsmålet-under-gruppen)                               |
+| Brukeren kan velge «Annet» og legge til egen tekst | [Vis et tekstfelt når brukeren velger «Annet»](#vis-et-tekstfelt-når-brukeren-velger-annet) |
+| Svaret i et tekstfelt gir mer informasjon          | [Vis informasjon ut fra det brukeren skriver](#vis-informasjon-ut-fra-det-brukeren-skriver) |
+| Svaret avgjør hvilke alternativer som passer       | [Tilpass alternativene til svaret](#tilpass-alternativene-til-svaret)                       |
+| Svaret gjør at brukeren ikke kan gå videre         | [Forklar hvorfor brukeren ikke kan gå videre](#forklar-hvorfor-brukeren-ikke-kan-gå-videre) |
+| Svaret fører til nye steg                          | [Gi hvert valg sitt eget steg](#gi-hvert-valg-sitt-eget-steg)                               |
+| Svaret fører til ulike veier gjennom skjemaet      | [Gi hvert svar sin egen vei](#gi-hvert-svar-sin-egen-vei)                                   |
+
+<br />
+
+## Spørsmål på samme side
+
+### Vis spørsmålet under gruppen
+
+Når et svar gjør ett enkelt spørsmål relevant, for eksempel ett tekstfelt eller én gruppe med få alternativer, viser du spørsmålet rett under gruppen med svaralternativer.
+
+<Canvas of={BetingedeSporsmalStories.UnderGruppen} />
+
+- Plasser spørsmålet rett etter [`Fieldset`](/docs/components-fieldset--docs) og før neste spørsmål.
+- Skriv en ledetekst som gir mening alene. «Saksnummer for forrige tilskudd» er bedre enn «Saksnummer».
+- Hvis flere alternativer utløser hvert sitt spørsmål, vis spørsmålene i samme rekkefølge som alternativene. Blir det flere enn to–tre spørsmål, [gi hvert valg sitt eget steg](#gi-hvert-valg-sitt-eget-steg).
+- Bruk [`Radio`](/docs/components-radio--docs) eller [`Checkbox`](/docs/components-checkbox--docs) for å styre spørsmålet. [`Switch`](/docs/components-switch--docs) skal ha umiddelbar effekt og passer ikke i skjema.
+
+{/* Why below the group, and not inside the group under the option as GOV.UK, DKFDS and Elmer show? */}
+{/* We use Radio, Checkbox and Fieldset as they are. They have no support for fields inside the group, and indentation would have to be built in every solution. */}
+{/* The new question gets its own label and error message, and is not mixed with the error message for the group. */}
+{/* It works the same for Radio and Checkbox, also when Ja and Nei are on the same line. */}
+{/* It satisfies Elmer 4.1: new questions should be placed «like under the question that activates them». */}
+{/* Many options is not an argument for nesting either. If the group has many options, it should normally be a Select or Suggestion (see the Radio guidelines), and then the follow-up question ends up below the field anyway. We considered a nested variant in the first draft, but removed it. */}
+
+### Vis et tekstfelt når brukeren velger «Annet»
+
+Et vanlig tilfelle er at brukeren kan velge «Annet» og må beskrive hva de mener. Det gjelder både avkrysningsbokser og radioknapper.
+
+<Canvas of={BetingedeSporsmalStories.AnnetMedCheckbox} />
+
+- Plasser «Annet» sist, så det nye feltet kommer rett under alternativet.
+- Skriv en ledetekst som sier hva brukeren skal beskrive, for eksempel «Beskriv annen tilrettelegging».
+
+### Vis informasjon ut fra det brukeren skriver
+
+Det brukeren skriver i et tekstfelt kan også gjøre at noe nytt vises. Det kan være en dato som gjør at brukeren må forklare hvorfor de klager etter fristen, eller et tall over en grense som krever en begrunnelse. I eksemplet slår vi opp organisasjonsnummeret og viser hvilken skole det gjelder. Prøv med 987 654 321.
+
+<Canvas of={BetingedeSporsmalStories.SvarITekstfelt} />
+
+- Vent til svaret er fullstendig, for eksempel når organisasjonsnummeret har 9 siffer. Ikke vis eller skjul innhold for hvert tegn brukeren skriver.
+- Vis det nye innholdet rett under feltet.
+- Legg resultatet i en live-region, så skjermlesere leser det opp.
+- Finner du ikke noe, vis det som en feilmelding på feltet. Dette er en tilbakemelding på oppslaget, ikke validering av skjemaet, og kan derfor vises med en gang.
+
+### Tilpass alternativene til svaret
+
+Noen ganger endrer et svar hvilke alternativer som passer i neste felt, for eksempel kommuner i et fylke. Se [eksemplet med kontrollert tilstand i `Select`](/docs/components-select--docs#kontrollert-tilstand).
+
+- Vis bare alternativer som passer med svaret over.
+- Tøm det neste feltet hvis det valgte alternativet ikke lenger passer. Dette er et unntak fra regelen om å [beholde svar på skjulte spørsmål](#svar-på-skjulte-spørsmål), fordi et ugyldig valg ellers ville blitt stående.
+
+### Forklar hvorfor brukeren ikke kan gå videre
+
+Noen svar betyr at brukeren ikke kan bruke skjemaet, for eksempel fordi de ikke oppfyller vilkårene for et tilskudd.
+
+<Canvas of={BetingedeSporsmalStories.StoppMelding} />
+
+- Still slike spørsmål tidlig, gjerne først, så brukeren ikke fyller ut mye før de får vite det.
+- Vis en [`Alert`](/docs/components-alert--docs) med `data-color="warning"` rett under spørsmålet. Forklar hvorfor brukeren ikke kan gå videre, og hva de kan gjøre i stedet.
+- Fjern «Gå videre» i stedet for å deaktivere knappen, se [skjul, ikke deaktiver](#skjul-ikke-deaktiver). Brukeren kan fortsatt endre svaret.
+- Legg meldingen i en live-region som finnes på siden før meldingen vises. Se [tilgjengelighet i `Alert`](/docs/components-alert--docs#tilgjengelighet).
+
+Informasjon som følger av et svar, men som ikke stopper brukeren, er ikke en feilmelding. Se [informasjon som følger av et valg](/docs/patterns-skjema-feilmeldinger--docs#informasjon-som-følger-av-et-valg).
+
+{/* Elmer 3, 1.2 Veiledning, has a similar example: «Du kan ikke bruke dette skjemaet …». GOV.UK recommends asking eligibility questions first (Form structure). */}
+
+## Skjema med flere steg
+
+Når et svar gjør flere spørsmål relevante, legger du dem i egne steg i stedet for å vise dem på samme side. Skiller svarene seg bare med ett felt, er det enklere å [vise spørsmålet under gruppen](#vis-spørsmålet-under-gruppen).
+
+{/* GOV.UK has tested conditional questions with screen reader users. They handled simple questions, but were confused by complex ones. This is why complex questions belong in their own steps. https://design-system.service.gov.uk/components/radios/#known-issues */}
+{/* GOV.UK: «Use branching questions so people only have to answer questions that are relevant», and ask new questions before the user returns to «Check answers». Altinn has replaced «sporvalg» with hiding pages. */}
+
+### Gi hvert valg sitt eget steg
+
+Når brukeren kan velge flere ting som hver krever egne spørsmål, får hvert valg sitt eget steg.
+
+<Canvas
+  of={BetingedeSporsmalStories.FlereSteg}
+  story={{ inline: false, height: '700px' }}
+/>
+
+- Gi stegene samme navn som alternativene, så brukeren kjenner dem igjen.
+- Legg stegene i samme rekkefølge som alternativene, ikke i den rekkefølgen brukeren krysset av.
+- Samle stegene i en gruppe i [`FormNavigation`](/docs/components-formnavigation--docs), også når brukeren bare har valgt ett. Da endrer ikke navigasjonen struktur når brukeren krysser av flere.
+
+### Gi hvert svar sin egen vei
+
+Noen ganger avgjør ett svar hvilket skjema brukeren skal fylle ut. Da får hvert svar sin egen vei.
+
+<Canvas
+  of={BetingedeSporsmalStories.UlikeVeier}
+  story={{ inline: false, height: '700px' }}
+/>
+
+- Still spørsmålet som bestemmer veien i et eget steg, før stegene det påvirker.
+- Vis bare stegene for valgt vei i [`FormNavigation`](/docs/components-formnavigation--docs). Gi gruppen et navn som sier hvilken vei brukeren har valgt.
+- Hvis brukeren endrer svaret, byttes stegene ut. Nye spørsmål skal besvares før brukeren kommer tilbake til oppsummeringen.
+
+## Retningslinjer
+
+### Skjul, ikke deaktiver
+
+Spørsmål som ikke er relevante skal ikke vises. Ikke vis dem som deaktiverte felt.
+
+<HideDontDisable />
+
+Deaktiverte felt er vanskelige å se og kan ikke nås med tastatur. Brukeren forstår heller ikke alltid hvorfor de ikke kan fylle dem ut.
+
+{/* Same advice as for Radio, Checkbox and Select, and at Nav: https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander */}
+
+### Ikke skjul informasjon brukeren trenger for å svare
+
+Det er bare spørsmål som skal vises og skjules ut fra svar. Hjelpetekst og forklaringer som brukeren trenger for å svare, skal alltid være synlige, for eksempel som `description` på feltet. Informasjon som er et resultat av svaret, kan dukke opp etterpå, for eksempel en melding om at brukeren ikke kan gå videre.
+
+### Svar på skjulte spørsmål
+
+Når brukeren endrer et svar slik at et spørsmål ikke lenger er relevant:
+
+- **Behold svaret** mens brukeren fyller ut skjemaet. Bytter brukeren tilbake, står svaret der fortsatt.
+- **Ikke valider** spørsmål som er skjult, eller steg som er fjernet. Feilmeldinger og [`ErrorSummary`](/docs/components-errorsummary--docs) skal bare vise feil i spørsmål brukeren ser.
+- **Ikke send inn** svar på skjulte spørsmål, og ikke vis dem i oppsummeringen.
+
+{/* None of the sources has a common rule for hidden data. We chose to keep the answers because the user then doesn't lose anything by clicking wrong, and we avoid warning before data is deleted (Elmer 4.4). Altinn doesn't validate hidden fields and can remove hidden data on submit, which corresponds to our rule. */}
+
+## Tilgjengelighet
+
+- Plasser nytt innhold rett etter spørsmålet som styrer det. Skjermlesere sier ikke fra når et nytt spørsmål vises, så rekkefølgen er det som gjør at brukeren finner det.
+- Bruk live-region for meldinger og resultater, ikke for nye spørsmål.
+- Ikke flytt fokus når noe nytt vises.
+
+{/* WCAG 3.2.2 On Input: revealing new content is not a change of context, but it can become one if focus is moved. https://www.w3.org/WAI/WCAG22/Understanding/on-input.html */}
+{/* Messages and lookup results are status messages under WCAG 4.1.3. https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html */}
+
+## Kode
+
+- Fjern skjulte spørsmål fra siden med betinget rendering, i stedet for å skjule dem med CSS.
+- Bruk et element med `role="status"` og `aria-live="polite"` som live-region, og la det være på siden hele tiden. Skjermlesere leser bare opp endringer i en live-region som fantes før endringen. Legg `aria-atomic="true"` på regionen hvis hele teksten skal leses opp hver gang.
+- Hold teksten i live-regionen kort og selvforklarende, for eksempel «Skole: Eksempel skole», siden den leses opp uten at brukeren ser hvor den kommer fra.
+- Ikke bruk `aria-expanded` på radioknapper.
+- Send rekkefølgen på stegene til [`useFormNavigation`](/docs/utilities-useformnavigation--docs) med `order`. Ellers havner steg som legges til underveis, bakerst.
+- Bruk `FormNavigation.Group` for steg som hører til samme valg eller vei.
+
+{/* Live region setup follows the screen reader tested FileUpload announcements (branch feat/fileupload-item-improvements, announce.ts): a div with role="status" and aria-live="polite" that exists before the text, and aria-atomic so the whole text is read. <output> has an implicit status role, but we use the explicit one for reliability. */}
+{/* aria-expanded is not allowed on the radio role in WAI-ARIA 1.2, and GOV.UK removes it: https://www.w3.org/TR/wai-aria-1.2/#aria-expanded and https://github.com/alphagov/govuk-frontend/pull/7503 */}
