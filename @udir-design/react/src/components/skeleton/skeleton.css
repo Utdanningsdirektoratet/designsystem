@@ -1,0 +1,10 @@
+/* `Skeleton` sizes itself to a hidden SVG with `width`/`height` attributes, see `Skeleton.tsx` */
+.ds-skeleton {
+  > .uds-skeleton__size {
+    display: block;
+  }
+
+  &.uds-skeleton--full-width {
+    width: 100%;
+  }
+}

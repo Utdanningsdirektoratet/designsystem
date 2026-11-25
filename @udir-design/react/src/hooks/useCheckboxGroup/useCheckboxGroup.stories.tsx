@@ -1,5 +1,6 @@
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button/Button';
 import { Checkbox } from 'src/components/checkbox/Checkbox';
@@ -112,6 +113,16 @@ export const Disabled = meta.story({
 });
 
 export const IndeterminateInTable = meta.story({
+  parameters: {
+    css: css`
+      .checkbox-group-col-1 {
+        width: 1px;
+      }
+      .checkbox-group-col-2 {
+        width: 10em;
+      }
+    `,
+  },
   render(args, context) {
     const { getCheckboxProps } = useCheckboxGroup({
       name: context.id,
@@ -125,56 +136,45 @@ export const IndeterminateInTable = meta.story({
       { id: 4, name: 'Per Nordmann', education: 'Barnehage' },
     ];
     return (
-      <>
-        <style>
-          {`
-        .checkbox-group-col-1 {
-          width: 1px;
-        }
-        .checkbox-group-col-2 {
-          width: 10em;
-        }`}
-        </style>
-        <Table>
-          <colgroup>
-            {/* ensure the first column only takes up the necessary space */}
-            <col className="checkbox-group-col-1" />
-            <col className="checkbox-group-col-2" />
-            <col />
-          </colgroup>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell>
+      <Table>
+        <colgroup>
+          {/* ensure the first column only takes up the necessary space */}
+          <col className="checkbox-group-col-1" />
+          <col className="checkbox-group-col-2" />
+          <col />
+        </colgroup>
+        <Table.Head>
+          <Table.Row>
+            <Table.HeaderCell>
+              <Checkbox
+                aria-label="Velg alle"
+                {...getCheckboxProps({
+                  allowIndeterminate: true,
+                  value: 'all',
+                })}
+              />
+            </Table.HeaderCell>
+            <Table.HeaderCell>Navn</Table.HeaderCell>
+            <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          {people.map((person) => (
+            <Table.Row key={person.name}>
+              <Table.Cell>
                 <Checkbox
-                  aria-label="Velg alle"
-                  {...getCheckboxProps({
-                    allowIndeterminate: true,
-                    value: 'all',
-                  })}
+                  aria-labelledby={`${context.id}-${person.id}-name`}
+                  {...getCheckboxProps(person.id.toString())}
                 />
-              </Table.HeaderCell>
-              <Table.HeaderCell>Navn</Table.HeaderCell>
-              <Table.HeaderCell>Utdanningsnivå</Table.HeaderCell>
+              </Table.Cell>
+              <Table.Cell id={`${context.id}-${person.id}-name`}>
+                {person.name}
+              </Table.Cell>
+              <Table.Cell>{person.education}</Table.Cell>
             </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {people.map((person) => (
-              <Table.Row key={person.name}>
-                <Table.Cell>
-                  <Checkbox
-                    aria-labelledby={`${context.id}-${person.id}-name`}
-                    {...getCheckboxProps(person.id.toString())}
-                  />
-                </Table.Cell>
-                <Table.Cell id={`${context.id}-${person.id}-name`}>
-                  {person.name}
-                </Table.Cell>
-                <Table.Cell>{person.education}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-      </>
+          ))}
+        </Table.Body>
+      </Table>
     );
   },
 });
@@ -193,6 +193,15 @@ export const Controlled = meta.story({
       flexDirection: 'column',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .checkbox-group-controlled-section {
+        display: flex;
+        gap: var(--ds-size-2);
+      }
+      .checkbox-group-controlled-button {
+        width: fit-content;
+      }
+    `,
   },
   render: (args) => {
     const choices: Choices = {
@@ -216,16 +225,6 @@ export const Controlled = meta.story({
 
     return (
       <>
-        <style>
-          {`
-.checkbox-group-controlled-section {
-  display: flex;
-  gap: var(--ds-size-2);
-}
-.checkbox-group-controlled-button {
-  width: fit-content;
-}`}
-        </style>
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           {Object.entries(choices).map(([value, { label }]) => (

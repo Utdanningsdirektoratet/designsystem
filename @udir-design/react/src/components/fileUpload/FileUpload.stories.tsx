@@ -4,6 +4,7 @@ import type { FileRejection, FileWithPath } from 'react-dropzone';
 import { useDropzone } from 'react-dropzone';
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
@@ -31,7 +32,16 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-preview-main {
+        display: flex;
+        gap: var(--ds-size-18);
+        justify-content: center;
+      }
+    `,
+  },
   args: {
     'data-size': 'md',
     label: 'Label',
@@ -56,60 +66,49 @@ export const Preview = meta.story({
         },
       });
     return (
-      <>
-        <style>
-          {`
-        .file-upload-preview-main {
-          display: flex;
-          gap: var(--ds-size-18);
-          justify-content: center;
-        }`}
-        </style>
-        <div className="file-upload-preview-main">
-          <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
-          <FileUpload.Dropzone
-            {...args}
-            inputProps={getInputProps({ ...args.inputProps })}
-            isDragGlobal={isDragGlobal}
-            isDragActive={isDragActive}
-            cardProps={getRootProps()}
-          />
-        </div>
-      </>
+      <div className="file-upload-preview-main">
+        <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
+        <FileUpload.Dropzone
+          {...args}
+          inputProps={getInputProps({ ...args.inputProps })}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
+          cardProps={getRootProps()}
+        />
+      </div>
     );
   },
 });
 
 export const Readonly = meta.story({
+  parameters: {
+    css: css`
+      .file-upload-readonly-main {
+        background: var(--ds-color-neutral-surface-tinted);
+        display: flex;
+        gap: var(--ds-size-12);
+        justify-content: center;
+        padding: var(--ds-size-8);
+        border-radius: var(--ds-border-radius-md);
+      }
+    `,
+  },
   render: (args) => {
     return (
-      <>
-        <style>
-          {`
-.file-upload-readonly-main {
-  background: var(--ds-color-neutral-surface-tinted);
-  display: flex;
-  gap: var(--ds-size-12);
-  justify-content: center;
-  padding: var(--ds-size-8);
-  border-radius: var(--ds-border-radius-md);
-}`}
-        </style>
-        <div className="file-upload-readonly-main">
-          <FileUpload.Trigger
-            {...args}
-            inputProps={{ readOnly: true }}
-            label="Lesemodus"
-            description="Beskrivelse for Trigger"
-          />
-          <FileUpload.Dropzone
-            {...args}
-            inputProps={{ readOnly: true, max: 2 }}
-            label="Lesemodus"
-            description="Beskrivelse for Dropzone"
-          />
-        </div>
-      </>
+      <div className="file-upload-readonly-main">
+        <FileUpload.Trigger
+          {...args}
+          inputProps={{ readOnly: true }}
+          label="Lesemodus"
+          description="Beskrivelse for Trigger"
+        />
+        <FileUpload.Dropzone
+          {...args}
+          inputProps={{ readOnly: true, max: 2 }}
+          label="Lesemodus"
+          description="Beskrivelse for Dropzone"
+        />
+      </div>
     );
   },
 });
@@ -231,18 +230,27 @@ export const ExampleDropZone = meta.story({
 });
 
 export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
-  decorators: [
-    (Story) => (
-      <>
-        <style>{`.uds-file-upload { height: 600px; width: 100%; }`}</style>
-        <Story />
-      </>
-    ),
-  ],
+  parameters: {
+    css: css`
+      .uds-file-upload {
+        height: 600px;
+        width: 100%;
+      }
+    `,
+  },
 });
 
 export const TooManyFiles = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-too-many-files-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: (args) => {
     const [files, setFiles] = useState<File[]>([
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
@@ -265,49 +273,39 @@ export const TooManyFiles = meta.story({
       });
 
     return (
-      <>
-        <style>
-          {`
-        .file-upload-too-many-files-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-too-many-files-main">
-          <FileUpload.Dropzone
-            label="Last opp dokumentasjon"
-            description="Du kan kun laste opp 2 filer."
-            data-testid="dropzone"
-            error={
-              files.length > 2 &&
-              'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
-            }
-            inputProps={getInputProps()}
-            cardProps={getRootProps()}
-            isDragGlobal={isDragGlobal}
-            isDragActive={isDragActive}
-            style={{ maxWidth: '450px', width: '100%' }}
-            {...args}
-          />
-          {files.length > 0 && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg ({files.length}):
-              </Heading>
-              <FileUpload.List>
-                {files.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    onRemove={() => removeFile(file)}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <div className="file-upload-too-many-files-main">
+        <FileUpload.Dropzone
+          label="Last opp dokumentasjon"
+          description="Du kan kun laste opp 2 filer."
+          data-testid="dropzone"
+          error={
+            files.length > 2 &&
+            'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
+          }
+          inputProps={getInputProps()}
+          cardProps={getRootProps()}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
+          style={{ maxWidth: '450px', width: '100%' }}
+          {...args}
+        />
+        {files.length > 0 && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg ({files.length}):
+            </Heading>
+            <FileUpload.List>
+              {files.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </FileUpload.List>
+          </>
+        )}
+      </div>
     );
   },
 });
@@ -319,7 +317,16 @@ const ErrorMessages = new Map<string, string>([
 ]);
 
 export const ExampleTrigger = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-example-trigger-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
@@ -336,36 +343,26 @@ export const ExampleTrigger = meta.story({
     };
 
     return (
-      <>
-        <style>
-          {`
-        .file-upload-example-trigger-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-example-trigger-main">
-          <FileUpload.Trigger
-            inputProps={{
-              accept: 'image/png, image/jpeg',
-            }}
-            onChange={(e) => handleOnChange(e)}
-            data-testid="trigger"
-            {...args}
-          />
-          {file && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg (1):
-              </Heading>
-              <FileUpload.List>
-                <FileUpload.Item file={file} onRemove={() => setFile(null)} />
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <div className="file-upload-example-trigger-main">
+        <FileUpload.Trigger
+          inputProps={{
+            accept: 'image/png, image/jpeg',
+          }}
+          onChange={(e) => handleOnChange(e)}
+          data-testid="trigger"
+          {...args}
+        />
+        {file && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg (1):
+            </Heading>
+            <FileUpload.List>
+              <FileUpload.Item file={file} onRemove={() => setFile(null)} />
+            </FileUpload.List>
+          </>
+        )}
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -389,7 +386,16 @@ export const ExampleTrigger = meta.story({
 });
 
 export const ExampleItems = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-example-items-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: () => {
     const dummyFiles: File[] = [
       new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
@@ -417,58 +423,48 @@ export const ExampleItems = meta.story({
     };
 
     return (
-      <>
-        <style>
-          {`
-        .file-upload-example-items-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-example-items-main">
-          {files.length > 0 && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg ({files.length}):
-              </Heading>
-              <FileUpload.List>
-                {files.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    description={`Filopplasting ${index + 1}`}
-                    readonly={index === 2 && true}
-                    loading={index === 3 && true}
-                    onRemove={() => removeFile(file)}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-          {rejected.length > 0 && (
-            <>
-              <Heading
-                level={3}
-                data-size="2xs"
-                style={{ marginBlockStart: 'var(--ds-size-3)' }}
-              >
-                Vedlegg med feil:
-              </Heading>
-              <FileUpload.List>
-                {rejected.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    onRemove={() => removeRejected(file)}
-                    error={'Filformatet støttes ikke'}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <div className="file-upload-example-items-main">
+        {files.length > 0 && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg ({files.length}):
+            </Heading>
+            <FileUpload.List>
+              {files.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  description={`Filopplasting ${index + 1}`}
+                  readonly={index === 2 && true}
+                  loading={index === 3 && true}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </FileUpload.List>
+          </>
+        )}
+        {rejected.length > 0 && (
+          <>
+            <Heading
+              level={3}
+              data-size="2xs"
+              style={{ marginBlockStart: 'var(--ds-size-3)' }}
+            >
+              Vedlegg med feil:
+            </Heading>
+            <FileUpload.List>
+              {rejected.map((file, index) => (
+                <FileUpload.Item
+                  key={index}
+                  file={file}
+                  onRemove={() => removeRejected(file)}
+                  error={'Filformatet støttes ikke'}
+                />
+              ))}
+            </FileUpload.List>
+          </>
+        )}
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {
@@ -535,7 +531,16 @@ export const ExampleItems = meta.story({
 });
 
 export const Upload = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-upload-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -554,38 +559,28 @@ export const Upload = meta.story({
       }
     };
     return (
-      <>
-        <style>
-          {`
-        .file-upload-upload-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-upload-main">
-          <FileUpload.Trigger
-            label="Last opp rapport"
-            description="Du kan legge ved 1 fil."
-            onChange={handleOnChange}
-            {...args}
-          />
-          {file && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg (1):
-              </Heading>
-              <FileUpload.List>
-                <FileUpload.Item
-                  loading={loading}
-                  file={file}
-                  onRemove={() => setFile(null)}
-                />
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <div className="file-upload-upload-main">
+        <FileUpload.Trigger
+          label="Last opp rapport"
+          description="Du kan legge ved 1 fil."
+          onChange={handleOnChange}
+          {...args}
+        />
+        {file && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg (1):
+            </Heading>
+            <FileUpload.List>
+              <FileUpload.Item
+                loading={loading}
+                file={file}
+                onRemove={() => setFile(null)}
+              />
+            </FileUpload.List>
+          </>
+        )}
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {

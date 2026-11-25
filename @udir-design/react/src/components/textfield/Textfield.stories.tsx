@@ -2,6 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { expect, userEvent, waitFor, within } from 'storybook/test';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button';
 import { Divider } from 'src/components/divider';
@@ -174,23 +175,22 @@ export const Controlled = meta.story({
       gap: 'var(--ds-size-2)',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .textfield-controlled-main {
+        display: flex;
+        gap: var(--ds-size-2);
+        align-items: end;
+        width: 100%;
+      }
+      .textfield-controlled-textfield {
+        flex-grow: 1;
+      }
+    `,
   },
   render: (args) => {
     const [value, setValue] = useState<string>('');
     return (
       <>
-        <style>
-          {`
-        .textfield-controlled-main {
-          display: flex;
-          gap: var(--ds-size-2);
-          align-items: end;
-          width: 100%;
-        }
-        .textfield-controlled-textfield {
-          flex-grow: 1;
-        }`}
-        </style>
         <div className="textfield-controlled-main">
           <Textfield
             className="textfield-controlled-textfield"

@@ -17,6 +17,15 @@
   width: 100%;
 }
 
+.divider {
+  margin: var(--ds-size-4) 0;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+}
+
 .contentSpacing {
   display: flex;
   flex-direction: column;

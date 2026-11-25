@@ -1,0 +1,86 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="components/Server-side rendering og CSP" />
+
+# Server-side rendering og Content Security Policy
+
+Denne siden gjelder deg som lager HTML-en på serveren, for eksempel med Next.js, eller som har en streng Content Security Policy (CSP) i tjenesten din.
+
+## Verdier som settes etter at siden er lastet
+
+Enkelte props som gir komponenten en egen bredde, størrelse eller tekst, blir satt med JavaScript etter at React har tatt over siden i nettleseren (hydrering), og ikke i HTML-en fra serveren. Det gjør at de virker med en streng CSP. [Tabellen under](#sett-faste-verdier-i-ditt-eget-stilark) viser hvilke props det gjelder.
+
+Ved server-side rendering vises siden derfor først med standardverdiene. Når JavaScript har lastet, får komponentene verdiene fra props, og innholdet kan flytte seg. Hvor lenge standardverdiene vises, avhenger av hvor raskt JavaScript lastes og kjøres hos brukeren. Løsninger der HTML-en lages i nettleseren (client-side rendering), merker ikke noe til dette.
+
+### Sett faste verdier i ditt eget stilark
+
+Er verdien den samme hele tiden, kan du sette den i ditt eget stilark i stedet for med prop-en. Da er den riktig fra første visning, også med streng CSP. Bruk prop-en når verdien endrer seg mens siden er i bruk, eller kommer fra data.
+
+| Komponent            | Prop                                                  | I ditt eget stilark                     | Settes på                                   |
+| -------------------- | ----------------------------------------------------- | --------------------------------------- | ------------------------------------------- |
+| `Header`             | `maxWidth` (deprecated)                               | `--udsc-header-max-width`               | `Header` eller lenger ut, f.eks. på `:root` |
+| `Footer`             | `maxWidth` (deprecated)                               | `--udsc-footer-max-width`               | `Footer` eller lenger ut, f.eks. på `:root` |
+| `Logo`, `LogoSymbol` | `size`, `padding`                                     | `--uds-logo-size`, `--uds-logo-padding` | Logoen selv, med `className`                |
+| `DemoBanner`         | `text`                                                | `--udsc-demo-banner-text`               | `DemoBanner` eller lenger ut                |
+| `Skeleton`           | `width`, `height` med prosent, `calc()` eller `var()` | `width`, `height`                       | `Skeleton` selv, med `className`            |
+
+`maxWidth` på `Header` og `Footer` er deprecated. Bredden er som regel den samme på hele siden, så sett den alltid i stilarket.
+
+`width` og `height` på `Skeleton` som tall eller CSS-lengder, for eksempel `40` eller `"5rem"`, er med i HTML-en fra serveren og trenger ingen tilpasning.
+
+For eksempel slik:
+
+```css
+:root {
+  --udsc-header-max-width: 60rem;
+  --udsc-footer-max-width: 60rem;
+}
+
+.min-logo {
+  --uds-logo-size: var(--ds-size-10);
+}
+
+.testmiljo {
+  --udsc-demo-banner-text: 'Testmiljø';
+}
+
+.avatar-skeleton {
+  width: var(--ds-size-10);
+  height: var(--ds-size-10);
+}
+```
+
+```tsx
+<Logo className="min-logo" />
+
+<DemoBanner className="testmiljo">
+  <Header applicationName="Min tjeneste" />
+  <main>…</main>
+</DemoBanner>
+
+<Skeleton variant="circle" className="avatar-skeleton" />
+```
+
+Verdt å vite:
+
+- `--uds-logo-size` og `--uds-logo-padding` må settes på selve logoen. Setter du dem lenger ut, for eksempel på `:root`, bruker logoen fortsatt standardverdiene.
+- En rund `Skeleton` trenger både `width` og `height`. Med bare `width` beholder den standardhøyden.
+- Teksten i `DemoBanner` er en CSS-streng, så den må stå i anførselstegn. Skal teksten variere med språket, se [Slik støtter du flere språk](/docs/components-språkstøtte--docs).
+- Stilene til komponentene ligger i [CSS-lag](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer). CSS som ikke ligger i et lag, vinner over dem uansett spesifisitet, så du trenger ikke mer spesifikke selektorer.
+- Setter du både prop-en og CSS-en, gjelder prop-en når JavaScript har lastet.
+
+## Streng Content Security Policy
+
+Med streng CSP mener vi en policy der `style-src` ikke tillater `'unsafe-inline'`. En slik policy blokkerer `style`-attributter og `<style>`-elementer, men ikke stiler som settes med JavaScript etter at siden er lastet.
+
+Komponentene virker med en slik policy. Den må tillate dette:
+
+- `style-src`: stilsettet `@udir-design/react/style.css`, som lastes som en vanlig CSS-fil. Laster du fonten Inter fra `https://altinncdn.no`, må også den adressen være med.
+- `font-src`: `https://altinncdn.no`, hvis du laster Inter derfra.
+- `img-src`: `data:`. Logoene i `Logo`, `LogoSymbol`, `Header` og `Footer` ligger i koden som `data:`-URL-er.
+
+En [nonce](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/nonce) gjelder bare hele `<style>`- og `<script>`-elementer, ikke `style`-attributter. Den hjelper derfor ikke for stiler i HTML-en fra serveren. Next.js beskriver hvordan du setter opp en CSP, med og uten nonce, i [guiden for Content Security Policy](https://nextjs.org/docs/app/guides/content-security-policy).
+
+### Highcharts
+
+Highcharts legger fargene sine i et `<style>`-element, som en streng CSP blokkerer. [Slik bruker du Highcharts med streng CSP](/docs/utilities-hjelpefunksjoner-for-datavisualisering--docs#med-streng-content-security-policy).

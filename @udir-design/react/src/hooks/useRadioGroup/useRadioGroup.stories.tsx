@@ -1,6 +1,7 @@
 import { expect, userEvent, within } from 'storybook/test';
 import preview from '.storybook/preview';
 import type { DecoratorType } from '.storybook/types';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from 'src/components/button/Button';
 import { Divider } from 'src/components/divider/Divider';
@@ -72,6 +73,12 @@ export const Controlled = meta.story({
       flexDirection: 'column',
     },
     docs: advancedCodeDocs,
+    css: css`
+      .radio-group-controlled-button__group {
+        display: flex;
+        gap: var(--ds-size-2);
+      }
+    `,
   },
   render: (args) => {
     const { value, setValue, getRadioProps } = useRadioGroup({
@@ -79,13 +86,6 @@ export const Controlled = meta.story({
     });
     return (
       <>
-        <style>
-          {`
-        .radio-group-controlled-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-        }`}
-        </style>
         <Fieldset>
           <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
           <Fieldset.Description>

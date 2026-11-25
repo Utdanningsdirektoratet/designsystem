@@ -16,6 +16,7 @@ import { Link } from 'src/components/link';
 import { List } from 'src/components/list';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
+import classes from './TestHeader.module.css';
 
 type Profile = {
   name: string;
@@ -62,20 +63,11 @@ export function TestHeader({ basePath = '' }: Props) {
           onProfileSwitch={setCurrentProfile}
           id="usermenu-mobile"
           data-hide="sm"
-          style={{ marginLeft: 'auto' }}
+          className={classes.userMenu}
         />
         <nav
           aria-labelledby="header-menu-theme1-navigation"
-          style={{
-            display: 'grid',
-            gap: 'var(--ds-size-4)',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(12rem, 1fr))',
-            justifyItems: 'center',
-            margin: '0 auto',
-            maxWidth: '800px',
-            padding: 'var(--ds-size-5) var(--ds-size-15) var(--ds-size-10)',
-            rowGap: 'var(--ds-size-10)',
-          }}
+          className={classes.navigation}
         >
           <h2 className="ds-sr-only" id="header-menu-theme1-navigation">
             Demosider navigasjon
@@ -84,9 +76,7 @@ export function TestHeader({ basePath = '' }: Props) {
             <Heading
               data-size="xs"
               level={3}
-              style={{
-                marginBottom: 'var(--ds-size-3)',
-              }}
+              className={classes.navigationHeading}
             >
               Demosider
             </Heading>
@@ -94,9 +84,7 @@ export function TestHeader({ basePath = '' }: Props) {
               <List.Item>
                 <Link
                   href={`${basePath}/article`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
+                  className={classes.navigationLink}
                 >
                   <ArrowRightIcon aria-hidden />
                   <span>Artikkel</span>
@@ -105,9 +93,7 @@ export function TestHeader({ basePath = '' }: Props) {
               <List.Item>
                 <Link
                   href={`${basePath}/dashboard`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
+                  className={classes.navigationLink}
                 >
                   <ArrowRightIcon aria-hidden />
                   <span>Dashbord</span>
@@ -116,9 +102,7 @@ export function TestHeader({ basePath = '' }: Props) {
               <List.Item>
                 <Link
                   href={`${basePath}/page`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
+                  className={classes.navigationLink}
                 >
                   <ArrowRightIcon aria-hidden />
                   <span>Page</span>
@@ -127,9 +111,7 @@ export function TestHeader({ basePath = '' }: Props) {
               <List.Item>
                 <Link
                   href={`${basePath}/form`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
+                  className={classes.navigationLink}
                 >
                   <ArrowRightIcon aria-hidden />
                   <span>Form</span>
@@ -138,9 +120,7 @@ export function TestHeader({ basePath = '' }: Props) {
               <List.Item>
                 <Link
                   href={`${basePath}/table`}
-                  style={{
-                    textDecoration: 'none',
-                  }}
+                  className={classes.navigationLink}
                 >
                   <ArrowRightIcon aria-hidden />
                   <span>Table</span>
@@ -165,13 +145,13 @@ function UserMenu({
   currentProfile,
   onProfileSwitch,
   id,
-  style,
+  className,
   ...rest
 }: {
   currentProfile: keyof typeof profiles;
   onProfileSwitch: (profile: keyof typeof profiles) => void;
   id: string;
-  style?: React.CSSProperties;
+  className?: string;
   'data-show'?: string;
   'data-hide'?: string;
 }) {
@@ -191,7 +171,7 @@ function UserMenu({
     <>
       <Header.UserButton
         {...rest}
-        style={style}
+        className={className}
         name={profile.name}
         description={profile.description}
         popoverTarget={id}

@@ -6,6 +6,10 @@
   height: fit-content;
   padding: var(--uds-logo-padding);
 
+  &.uds-logo--symbol {
+    --uds-logo-padding: var(--ds-size-3);
+  }
+
   > img {
     height: var(--uds-logo-size);
     width: auto;

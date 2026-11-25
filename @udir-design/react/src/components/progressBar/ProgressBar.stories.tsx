@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { expect, within } from 'storybook/test';
 import { ArrowLeftIcon, ArrowRightIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Button } from 'src/components/button';
 import { Fieldset } from 'src/components/fieldset';
 import { Radio } from 'src/components/radio';
@@ -76,6 +77,34 @@ export const FormExample = meta.story({
     value: 1,
     max: 7,
   },
+  parameters: {
+    css: css`
+      .progress-bar-form-example-main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-6);
+      }
+      .progress-bar-form-example-legend {
+        /* As tall as the ProgressBar, so the bar does not overhang the legend */
+        display: flex;
+        align-items: flex-end;
+        min-height: var(--ds-size-12);
+      }
+      .progress-bar-form-example-progress-bar {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        transform: translateY(calc(var(--ds-size-4) * -1));
+        width: 30%;
+      }
+      .progress-bar-form-example-button__group {
+        display: flex;
+        justify-content: flex-start;
+        gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => {
     const [page, setPage] = useState<number>(1);
     const progressRef = useRef<HTMLDivElement>(null);
@@ -95,98 +124,66 @@ export const FormExample = meta.story({
     };
 
     return (
-      <>
-        <style>
-          {`
-.progress-bar-form-example-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-}
-.progress-bar-form-example-legend {
-  /* As tall as the ProgressBar, so the bar does not overhang the legend */
-  display: flex;
-  align-items: flex-end;
-  min-height: var(--ds-size-12);
-}
-.progress-bar-form-example-progress-bar {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-end: 0;
-  transform: translateY(calc(var(--ds-size-4) * -1));
-  width: 30%;
-}
-.progress-bar-form-example-button__group {
-  display: flex;
-  justify-content: flex-start;
-  gap: var(--ds-size-4);
-}`}
-        </style>
-        <div className="progress-bar-form-example-main">
-          <Fieldset
-            id="rankings"
-            className="progress-bar-form-example-fieldset"
-          >
-            <Fieldset.Legend className="progress-bar-form-example-legend">
-              <Heading level={4}>Skjema</Heading>
-            </Fieldset.Legend>
-            <ProgressBar
-              className="progress-bar-form-example-progress-bar"
-              {...args}
-              tabIndex={-1}
-              ref={progressRef}
-              value={page}
-              aria-label="Skjemafremgang"
-            />
-            <Table border>
-              <Table.Head>
-                <Table.Row>
-                  <Table.HeaderCell>Påstander</Table.HeaderCell>
-                  {DATA_RANKINGS.map((ranking, index) => (
-                    <Table.HeaderCell key={index}>{ranking}</Table.HeaderCell>
-                  ))}
-                </Table.Row>
-              </Table.Head>
-              <Table.Body>
-                {DATA_ASSERTIONS[page - 1].map((assertion, rowIndex) => {
-                  const fieldName = `rankings.${assertion}` as const;
-                  return (
-                    <Table.Row key={rowIndex}>
-                      <Table.Cell>{assertion}</Table.Cell>
+      <div className="progress-bar-form-example-main">
+        <Fieldset id="rankings" className="progress-bar-form-example-fieldset">
+          <Fieldset.Legend className="progress-bar-form-example-legend">
+            <Heading level={4}>Skjema</Heading>
+          </Fieldset.Legend>
+          <ProgressBar
+            className="progress-bar-form-example-progress-bar"
+            {...args}
+            tabIndex={-1}
+            ref={progressRef}
+            value={page}
+            aria-label="Skjemafremgang"
+          />
+          <Table border>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>Påstander</Table.HeaderCell>
+                {DATA_RANKINGS.map((ranking, index) => (
+                  <Table.HeaderCell key={index}>{ranking}</Table.HeaderCell>
+                ))}
+              </Table.Row>
+            </Table.Head>
+            <Table.Body>
+              {DATA_ASSERTIONS[page - 1].map((assertion, rowIndex) => {
+                const fieldName = `rankings.${assertion}` as const;
+                return (
+                  <Table.Row key={rowIndex}>
+                    <Table.Cell>{assertion}</Table.Cell>
 
-                      {DATA_RANKINGS.map((ranking, colIndex) => (
-                        <Table.Cell key={colIndex}>
-                          <Radio
-                            id={`${fieldName}-${ranking}`}
-                            name={fieldName}
-                            aria-label={`${ranking} i påstand ${assertion}`}
-                            value={ranking}
-                          />
-                        </Table.Cell>
-                      ))}
-                    </Table.Row>
-                  );
-                })}
-              </Table.Body>
-            </Table>
-          </Fieldset>
-          <div className="progress-bar-form-example-button__group">
-            {page > 1 && (
-              <Button variant="tertiary" onClick={() => prevPage()}>
-                <ArrowLeftIcon aria-hidden />
-                Forrige
-              </Button>
-            )}
-            {page < 10 && (
-              <Button variant="secondary" onClick={() => nextPage()}>
-                Neste
-                <ArrowRightIcon aria-hidden />
-              </Button>
-            )}
-          </div>
+                    {DATA_RANKINGS.map((ranking, colIndex) => (
+                      <Table.Cell key={colIndex}>
+                        <Radio
+                          id={`${fieldName}-${ranking}`}
+                          name={fieldName}
+                          aria-label={`${ranking} i påstand ${assertion}`}
+                          value={ranking}
+                        />
+                      </Table.Cell>
+                    ))}
+                  </Table.Row>
+                );
+              })}
+            </Table.Body>
+          </Table>
+        </Fieldset>
+        <div className="progress-bar-form-example-button__group">
+          {page > 1 && (
+            <Button variant="tertiary" onClick={() => prevPage()}>
+              <ArrowLeftIcon aria-hidden />
+              Forrige
+            </Button>
+          )}
+          {page < 10 && (
+            <Button variant="secondary" onClick={() => nextPage()}>
+              Neste
+              <ArrowRightIcon aria-hidden />
+            </Button>
+          )}
         </div>
-      </>
+      </div>
     );
   },
 });

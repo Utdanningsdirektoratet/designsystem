@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "oxlint",
     "typecheck": "tsc --build",
-    "pretest:e2e": "pnpm exec playwright install chromium",
+    "pretest:e2e": "pnpm exec playwright install chromium firefox",
     "test:e2e": "playwright test"
   },
   "dependencies": {

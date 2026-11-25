@@ -26,6 +26,23 @@ export type CustomStylesParameters = {
   };
 };
 
+export type StoryCssParameters = {
+  /**
+   * CSS that the story's example needs besides the components' own styling, such as the
+   * layout of the elements around them. Write it with the `css` tag from
+   * `.storybook/utils/css`, so oxfmt formats it.
+   *
+   * Readers should put this CSS in their own CSS file, not in a `<style>` element, which a
+   * strict Content Security Policy blocks. So docs pages show it in its own code block, apart
+   * from the JSX, while the story renders it as a `<style>` element.
+   *
+   * This is a custom parameter, implemented by `withStoryCss.tsx` and by the `Canvas` in
+   * `docs/components/Canvas.tsx`. MDX pages get that `Canvas` through `docs.components`,
+   * even when they import `Canvas` from `@storybook/addon-docs/blocks`.
+   * */
+  css?: string;
+};
+
 export type SnapshotParameters = {
   /**
    * Set to `false` to skip the DOM snapshot that is otherwise taken after every story.

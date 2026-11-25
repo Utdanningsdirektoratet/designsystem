@@ -1,13 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Fill Icons 1`] = `
-<style>
-  .icons-fill-icons-grid{
-  display: flex;
-  flex-wrap: wrap;
-  background: var(--a-gray-900);
-}
-</style>
 <div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -8333,12 +8326,6 @@ exports[`Fill Icons 1`] = `
 `;
 
 exports[`Outline Icons 1`] = `
-<style>
-  .icons-outline-icon-grid{
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>
 <div>
   <svg
     xmlns="http://www.w3.org/2000/svg"

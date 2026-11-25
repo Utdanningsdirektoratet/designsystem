@@ -51,7 +51,7 @@ export const CategorizedSymbols = ({
                         : setSelectedSymbol(symbol);
                     }}
                   >
-                    <Symbol aria-label={symbol.id} size="5rem" />
+                    <Symbol aria-label={symbol.id} />
                   </Button>
                 );
               })}

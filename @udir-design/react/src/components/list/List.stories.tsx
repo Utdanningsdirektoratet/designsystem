@@ -1,4 +1,5 @@
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Link } from '../link/Link';
 import { Heading } from '../typography/heading/Heading';
 import { Prose } from '../typography/prose/Prose';
@@ -134,25 +135,24 @@ const designLinks = [
 ];
 
 export const WithLinks = meta.story({
+  parameters: {
+    css: css`
+      .list-with-links-list-unordered {
+        list-style-type: '';
+        padding: 0;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.list-with-links-list-unordered {
-  list-style-type: '';
-  padding: 0;
-}`}
-      </style>
-      <List.Unordered className="list-with-links-list-unordered" {...args}>
-        {designLinks.map((link) => (
-          <List.Item key={link.href}>
-            <Link href={link.href} target="_blank">
-              {link.text}
-            </Link>
-          </List.Item>
-        ))}
-      </List.Unordered>
-    </>
+    <List.Unordered className="list-with-links-list-unordered" {...args}>
+      {designLinks.map((link) => (
+        <List.Item key={link.href}>
+          <Link href={link.href} target="_blank">
+            {link.text}
+          </Link>
+        </List.Item>
+      ))}
+    </List.Unordered>
   ),
 });
 
@@ -172,26 +172,25 @@ const navLinks = [
 ];
 
 export const AsNav = meta.story({
+  parameters: {
+    css: css`
+      .list-as-nav-list-unordered {
+        list-style-type: '';
+        padding: 0;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.list-as-nav-list-unordered {
-  list-style-type: '';
-  padding: 0;
-}`}
-      </style>
-      <nav aria-label="Snarveier">
-        <List.Unordered className="list-as-nav-list-unordered" {...args}>
-          {navLinks.map((link) => (
-            <List.Item key={link.href}>
-              <Link href={link.href} target="_blank">
-                {link.text}
-              </Link>
-            </List.Item>
-          ))}
-        </List.Unordered>
-      </nav>
-    </>
+    <nav aria-label="Snarveier">
+      <List.Unordered className="list-as-nav-list-unordered" {...args}>
+        {navLinks.map((link) => (
+          <List.Item key={link.href}>
+            <Link href={link.href} target="_blank">
+              {link.text}
+            </Link>
+          </List.Item>
+        ))}
+      </List.Unordered>
+    </nav>
   ),
 });

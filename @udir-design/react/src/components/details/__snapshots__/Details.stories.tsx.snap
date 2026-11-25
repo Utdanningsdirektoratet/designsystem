@@ -164,13 +164,6 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Pseudo States 1`] = `
-<style>
-  .details-example-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-</style>
 <div>
   <label data-size="sm">
     Default

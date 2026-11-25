@@ -39,6 +39,16 @@ vi.mock('@storybook/addon-docs/blocks', async () => {
   };
 });
 
+// The real `StoryCode` imports components through the `src/` path, which only Storybook resolves.
+// `vi.mock` factories are hoisted above the imports, so they import React themselves.
+vi.mock('./StoryCode/StoryCode', async () => {
+  const { createElement } = await import('react');
+  return {
+    StoryCode: ({ css }: { css: string }) =>
+      createElement('pre', { 'data-testid': 'story-code' }, css),
+  };
+});
+
 const story = {
   id: 'components-button--loading',
   title: 'Components/Button',
@@ -205,5 +215,45 @@ describe('global Canvas wrapper', () => {
       '_blank',
       'noopener,noreferrer',
     );
+  });
+
+  describe('for stories with CSS', () => {
+    const css = '.example {\n  display: flex;\n}';
+    beforeEach(() => {
+      mocks.useOf.mockReturnValue({
+        story: { ...story, parameters: { ...story.parameters, css } },
+      });
+    });
+
+    it('replaces Storybook’s code panel with one that also has the CSS', () => {
+      render(<Canvas />);
+      expect(mocks.canvas).toHaveBeenCalledWith(
+        expect.objectContaining({ sourceState: 'none' }),
+      );
+      expect(screen.queryByTestId('story-code')).toBeNull();
+      fireEvent.click(screen.getByRole('button', { name: 'Show code' }));
+      expect(screen.getByTestId('story-code').textContent).toBe(css);
+      fireEvent.click(screen.getByRole('button', { name: 'Hide code' }));
+      expect(screen.queryByTestId('story-code')).toBeNull();
+    });
+
+    it('opens the code panel at once when the source state is shown', () => {
+      render(<Canvas sourceState="shown" />);
+      expect(screen.getByTestId('story-code').textContent).toBe(css);
+    });
+
+    it('has no code panel when the source state is none', () => {
+      render(<Canvas sourceState="none" />);
+      expect(screen.queryByRole('button', { name: 'Show code' })).toBeNull();
+      expect(screen.queryByTestId('story-code')).toBeNull();
+    });
+  });
+
+  it('keeps Storybook’s own code panel for stories without CSS', () => {
+    render(<Canvas />);
+    expect(mocks.canvas).toHaveBeenCalledWith(
+      expect.objectContaining({ sourceState: undefined }),
+    );
+    expect(screen.queryByRole('button', { name: 'Show code' })).toBeNull();
   });
 });

@@ -1,27 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Cards 1`] = `
-<style>
-  .skeleton-cards-main {
-  margin: var(--ds-size-12);
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-}
-.skeleton-cards-button__group {
-  display: flex;
-  justify-content: end;
-}
-.skeleton-cards-card__group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--ds-size-6);
-}
-.skeleton-cards-card-block {
-  display: flex;
-  flex-direction: column;
-}
-</style>
 <div>
   <h3 data-size="lg">
     Elever
@@ -367,25 +346,28 @@ exports[`Children 1`] = `
 `;
 
 exports[`Components 1`] = `
-<style>
-  .skeleton-components-main {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-</style>
 <div>
   <span
     aria-hidden="true"
     data-variant="circle"
-    style="<removed>"
   >
+    <svg
+      width="50px"
+      height="50"
+      aria-hidden="true"
+    >
+    </svg>
   </span>
   <span
     aria-hidden="true"
     data-variant="rectangle"
-    style="<removed>"
   >
+    <svg
+      width="100px"
+      height="50"
+      aria-hidden="true"
+    >
+    </svg>
   </span>
   <p>
     <span
@@ -399,24 +381,17 @@ exports[`Components 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<span
-  aria-hidden="true"
-  style="<removed>"
->
+<span aria-hidden="true">
+  <svg
+    width="200"
+    height="100"
+    aria-hidden="true"
+  >
+  </svg>
 </span>
 `;
 
 exports[`Text 1`] = `
-<style>
-  .skeleton-text-main {
-  display: flex;
-  gap: var(--ds-size-12);
-  margin: var(--ds-size-12);
-}
-.skeleton-text-section {
-  flex: 1 1 200px;
-}
-</style>
 <div>
   <div>
     <h2>
@@ -449,35 +424,15 @@ exports[`Text 1`] = `
 `;
 
 exports[`Usage Example 1`] = `
-<style>
-  .skeleton-usage-example-main {
-  display: flex;
-  gap: var(--ds-size-12);
-  margin: var(--ds-size-12);
-}
-.skeleton-usage-example-section {
-  flex: 1 1 200px;
-}
-.skeleton-usage-example-meta {
-  display: flex;
-  gap: var(--ds-size-2);
-  align-items: center;
-  padding-block: var(--ds-size-1);
-}
-.skeleton-usage-example-image {
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-</style>
 <div>
   <div>
-    <span
-      aria-hidden="true"
-      style="<removed>"
-    >
+    <span aria-hidden="true">
+      <svg
+        width="100%"
+        height="200px"
+        aria-hidden="true"
+      >
+      </svg>
     </span>
     <h2>
       <span
@@ -491,8 +446,13 @@ exports[`Usage Example 1`] = `
       <span
         aria-hidden="true"
         data-variant="circle"
-        style="<removed>"
       >
+        <svg
+          width="40px"
+          height="40px"
+          aria-hidden="true"
+        >
+        </svg>
       </span>
       <span
         aria-hidden="true"

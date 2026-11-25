@@ -79,7 +79,9 @@ const ${variables.componentName} = forwardRef(({size, ...props}: SVGProps<SVGSVG
   const __sizeProps = (() => {
     if (props?.width != null || props?.height != null) return {};
     const v = size ?? (__isWide ? __srcW : __srcH);   // set size based on original aspect ratio
-    return __isWide ? { style: { width: v, height: "auto" } } : { style: { height: v, width: "auto" } }; 
+    // An SVG attribute, not a style: a strict CSP blocks server-rendered style attributes.
+    // The other dimension follows from the viewBox.
+    return __isWide ? { width: v } : { height: v };
   })();
 
 

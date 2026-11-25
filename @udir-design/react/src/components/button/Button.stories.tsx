@@ -11,6 +11,7 @@ import {
   TrashIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { Card } from 'src/components/card';
 import { Tooltip } from 'src/components/tooltip';
@@ -362,37 +363,22 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   render: (args, ctx) => {
     const argsObj = args as object;
     return (
-      <>
-        <style>
-          {`
-.button-example-main {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: inherit;
-  align-items: center;
-  justify-items: center;
-}`}
-        </style>
-        <div className="button-example-main">
-          <Label data-size="sm">Default</Label>
-          {originalStory.input.render?.(argsObj, ctx)}
-          <Label data-size="sm">Hover</Label>
-          {originalStory.input.render?.(
-            { ...argsObj, className: 'hover' },
-            ctx,
-          )}
-          <Label data-size="sm">Pressed</Label>
-          {originalStory.input.render?.(
-            { ...argsObj, className: 'hover active' },
-            ctx,
-          )}
-          <Label data-size="sm">Focused</Label>
-          {originalStory.input.render?.(
-            { ...argsObj, className: 'focusVisible' },
-            ctx,
-          )}
-        </div>
-      </>
+      <div className="button-example-main">
+        <Label data-size="sm">Default</Label>
+        {originalStory.input.render?.(argsObj, ctx)}
+        <Label data-size="sm">Hover</Label>
+        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
+        <Label data-size="sm">Pressed</Label>
+        {originalStory.input.render?.(
+          { ...argsObj, className: 'hover active' },
+          ctx,
+        )}
+        <Label data-size="sm">Focused</Label>
+        {originalStory.input.render?.(
+          { ...argsObj, className: 'focusVisible' },
+          ctx,
+        )}
+      </div>
     );
   },
   args: originalStory.composed.args,
@@ -403,6 +389,15 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
       active: ['.active'],
       focusVisible: ['.focusVisible'],
     },
+    css: css`
+      .button-example-main {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: inherit;
+        align-items: center;
+        justify-items: center;
+      }
+    `,
   },
 }));
 

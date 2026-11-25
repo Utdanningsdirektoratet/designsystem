@@ -8,6 +8,7 @@ import {
   Paragraph,
   Prose,
 } from '@udir-design/react/alpha';
+import styles from './page.module.css';
 
 type DiagnosticEvent = {
   type: string;
@@ -104,7 +105,7 @@ export default function CookieInformationIntegration() {
         data-category-consent="cookie_cat_statistic"
         data-consent-src="/testapp/cookie-information-optional-resource.js"
       />
-      <Prose style={{ marginInline: 'var(--ds-size-2)' }}>
+      <Prose className={styles.page}>
         <Heading level={1}>Cookie Information integration test</Heading>
         <Paragraph>
           This permanent integration page loads the real Cookie Information
@@ -112,13 +113,7 @@ export default function CookieInformationIntegration() {
           when Cookie Information reports a decision.
         </Paragraph>
 
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 'var(--ds-size-3)',
-          }}
-        >
+        <div className={styles.actions}>
           <Button onClick={() => window.renewCookieConsent?.()}>
             Open consent dialog
           </Button>

@@ -13,6 +13,7 @@ import {
 } from '.storybook/decorators/WithInertInitialRender';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Details } from 'src/components/details';
 import { Dialog } from 'src/components/dialog';
@@ -66,6 +67,47 @@ const meta = preview.meta({
 
 export const Preview = meta.story({
   args: {},
+  parameters: {
+    css: css`
+      /* Styles defined in application-specific css */
+      .cookies-buttons {
+        display: flex;
+        gap: var(--ds-size-4);
+        flex-wrap: wrap;
+      }
+      .cookies-details ul {
+        list-style-type: '';
+        padding: 0;
+        margin: 0;
+      }
+      .cookies-details li > strong {
+        font-weight: 600;
+      }
+      .cookie-details-dialog {
+        --dsc-dialog-backdrop-background: transparent;
+      }
+      .cookie-dialog:has(.cookie-details-dialog[open])::before {
+        animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration)
+          ease-in-out;
+        background: var(--dsc-dialog-backdrop-background);
+        content: '';
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cookie-dialog:has(.cookie-details-dialog[open])::before {
+          animation: none;
+        }
+      }
+      @media (max-width: 40rem) {
+        .cookies-buttons > button {
+          flex: 1 1 auto;
+        }
+      }
+    `,
+  },
   render: () => {
     const [open, setOpen] = useState(true);
     const isInert = useIsInert();
@@ -81,46 +123,6 @@ export const Preview = meta.story({
 
     return (
       <>
-        <style>
-          {`
-            /* Styles defined in application-specific css */
-            .cookies-buttons {
-              display: flex;
-              gap: var(--ds-size-4);
-              flex-wrap: wrap;
-            }
-            .cookies-details ul {
-              list-style-type: '';
-              padding: 0;
-              margin: 0;
-            }
-            .cookies-details li > strong {
-              font-weight: 600;
-            }
-            .cookie-details-dialog {
-              --dsc-dialog-backdrop-background: transparent;
-            }
-            .cookie-dialog:has(.cookie-details-dialog[open])::before {
-              animation: ds-dialog-fade-in var(--dsc-dialog-transition-duration) ease-in-out;
-              background: var(--dsc-dialog-backdrop-background);
-              content: '';
-              inset: 0;
-              pointer-events: none;
-              position: absolute;
-              z-index: 1;
-            }
-            @media (prefers-reduced-motion: reduce) {
-              .cookie-dialog:has(.cookie-details-dialog[open])::before {
-                animation: none;
-              }
-            }
-            @media (max-width: 40rem) {
-              .cookies-buttons > button {
-                flex: 1 1 auto;
-              }
-            }
-          `}
-        </style>
         <Dialog
           className="cookie-dialog"
           closeButton={text.declineOptionalAndClose}
@@ -255,6 +257,19 @@ export const Preview = meta.story({
 });
 
 export const NecessaryCookiesDialog = meta.story({
+  parameters: {
+    css: css`
+      /* Styles defined in application-specific css */
+      .cookies-details ul {
+        list-style-type: '';
+        padding: 0;
+        margin: 0;
+      }
+      .cookies-details li > strong {
+        font-weight: 600;
+      }
+    `,
+  },
   render: () => {
     const [open, setOpen] = useState(false);
     const isInert = useIsInert();
@@ -267,19 +282,6 @@ export const NecessaryCookiesDialog = meta.story({
 
     return (
       <>
-        <style>
-          {`
-            /* Styles defined in application-specific css */
-            .cookies-details ul {
-              list-style-type: '';
-              padding: 0;
-              margin: 0;
-            }
-            .cookies-details li > strong {
-              font-weight: 600;
-            }
-          `}
-        </style>
         <Link
           href="#informasjonskapsler"
           onClick={(event) => {

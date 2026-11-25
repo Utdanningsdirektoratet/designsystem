@@ -4,6 +4,7 @@ import {
   HatSchoolIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Badge } from '../badge/Badge';
 import { Dropdown } from '../dropdown/Dropdown';
 import { Link } from '../link/Link';
@@ -133,38 +134,39 @@ export const InDropdown = meta.story({
 });
 
 export const Icons = meta.story({
+  parameters: {
+    css: css`
+      .avatar-icons {
+        display: flex;
+        gap: var(--ds-size-2);
+        flex-direction: column;
+      }
+      .avatar-icons__group {
+        display: flex;
+        align-items: center;
+        gap: var(--ds-size-2);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>{`
-.avatar-icons {
-  display: flex;
-  gap: var(--ds-size-2);
-  flex-direction: column;
-}
-.avatar-icons__group {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
-}`}</style>
-      <div className="avatar-icons">
-        <div className="avatar-icons__group">
-          <Avatar {...args} aria-hidden />
-          <span>Person</span>
-        </div>
-        <div className="avatar-icons__group">
-          <Avatar {...args} aria-hidden>
-            <HatSchoolIcon />
-          </Avatar>
-          <span>Skole</span>
-        </div>
-        <div className="avatar-icons__group">
-          <Avatar {...args} aria-hidden>
-            <BriefcaseIcon />
-          </Avatar>
-          <span>Virksomhet</span>
-        </div>
+    <div className="avatar-icons">
+      <div className="avatar-icons__group">
+        <Avatar {...args} aria-hidden />
+        <span>Person</span>
       </div>
-    </>
+      <div className="avatar-icons__group">
+        <Avatar {...args} aria-hidden>
+          <HatSchoolIcon />
+        </Avatar>
+        <span>Skole</span>
+      </div>
+      <div className="avatar-icons__group">
+        <Avatar {...args} aria-hidden>
+          <BriefcaseIcon />
+        </Avatar>
+        <span>Virksomhet</span>
+      </div>
+    </div>
   ),
 });
 
@@ -172,18 +174,19 @@ export const AsLink = meta.story({
   args: {
     'aria-hidden': true,
   },
+  parameters: {
+    css: css`
+      .avatar-as-link {
+        display: flex;
+        gap: var(--ds-size-2);
+        align-items: center;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>{`
-.avatar-as-link {
-  display: flex;
-  gap: var(--ds-size-2);
-  align-items: center;
-}`}</style>
-      <Link className="avatar-as-link" href="/">
-        <Avatar {...args} />
-        <span>Ola Nordmann</span>
-      </Link>
-    </>
+    <Link className="avatar-as-link" href="/">
+      <Avatar {...args} />
+      <span>Ola Nordmann</span>
+    </Link>
   ),
 });

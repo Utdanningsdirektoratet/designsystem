@@ -5,6 +5,7 @@ import {
   FloppydiskFillIcon,
 } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { Card } from '../card/Card';
@@ -49,17 +50,16 @@ export const Floating = meta.story({
       display: 'flex',
       gap: 'var(--ds-size-6)',
     },
+    css: css`
+      .badge-floating-avatar {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
+    `,
   },
   render: (args) => (
     <>
-      <style>
-        {`
-.badge-floating-avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-}`}
-      </style>
       <Badge.Position placement="top-right">
         <Badge {...args} />
         <EnvelopeClosedFillIcon aria-label="Meldinger" />
@@ -98,20 +98,19 @@ export const Floating = meta.story({
 
 export const CustomPlacement = meta.story({
   args: { 'data-color': 'danger' },
+  parameters: {
+    css: css`
+      .badge-custom-placement-badge {
+        --dsc-badge-top: 16%;
+        --dsc-badge-right: 10%;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.badge-custom-placement-badge {
-  --dsc-badge-top: 16%;
-  --dsc-badge-right: 10%;
-}`}
-      </style>
-      <Badge.Position placement="top-right">
-        <Badge className="badge-custom-placement-badge" {...args} />
-        <EnvelopeClosedFillIcon aria-label="Meldinger" />
-      </Badge.Position>
-    </>
+    <Badge.Position placement="top-right">
+      <Badge className="badge-custom-placement-badge" {...args} />
+      <EnvelopeClosedFillIcon aria-label="Meldinger" />
+    </Badge.Position>
   ),
 });
 
@@ -159,39 +158,38 @@ export const InTabs = meta.story({
 
 export const InButton = meta.story({
   args: { 'data-color': 'danger' },
+  parameters: {
+    css: css`
+      .badge-in-button-main {
+        display: flex;
+        gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.badge-in-button-main {
-  display: flex;
-  gap: var(--ds-size-4);
-}`}
-      </style>
-      <div className="badge-in-button-main">
-        <Button icon variant="tertiary">
-          <Badge.Position>
-            <Badge {...args} count={1000} maxCount={99} aria-hidden />
-            <EnvelopeClosedIcon aria-label="Innboks" />
-          </Badge.Position>
-          <span className="ds-sr-only">1000 uleste</span>
-        </Button>
-        <Button icon variant="tertiary">
-          <Badge.Position>
-            <Badge {...args} count={10} aria-hidden />
-            <Chat2Icon aria-label="Meldinger" />
-          </Badge.Position>
-          <span className="ds-sr-only">10 nye</span>
-        </Button>
-        <Button icon variant="tertiary">
-          <span className="ds-sr-only">Nye</span>
-          <Badge.Position>
-            <Badge {...args} aria-hidden />
-            <Chat2Icon aria-label="meldinger" />
-          </Badge.Position>
-        </Button>
-      </div>
-    </>
+    <div className="badge-in-button-main">
+      <Button icon variant="tertiary">
+        <Badge.Position>
+          <Badge {...args} count={1000} maxCount={99} aria-hidden />
+          <EnvelopeClosedIcon aria-label="Innboks" />
+        </Badge.Position>
+        <span className="ds-sr-only">1000 uleste</span>
+      </Button>
+      <Button icon variant="tertiary">
+        <Badge.Position>
+          <Badge {...args} count={10} aria-hidden />
+          <Chat2Icon aria-label="Meldinger" />
+        </Badge.Position>
+        <span className="ds-sr-only">10 nye</span>
+      </Button>
+      <Button icon variant="tertiary">
+        <span className="ds-sr-only">Nye</span>
+        <Badge.Position>
+          <Badge {...args} aria-hidden />
+          <Chat2Icon aria-label="meldinger" />
+        </Badge.Position>
+      </Button>
+    </div>
   ),
 });
 
@@ -236,111 +234,104 @@ const ColorsMap: {
 };
 
 export const ColorVariants = meta.story({
+  parameters: {
+    css: css`
+      .badge-color-variants-content {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        gap: var(--ds-size-2);
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.badge-color-variants-content {
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  gap: var(--ds-size-2);
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}`}
-      </style>
-      <div className="badge-color-variants-content">
-        {Object.entries(ColorsMap).map(([key, value]) => (
-          <Badge key={key} {...value} count={15} maxCount={9} {...args} />
-        ))}
-      </div>
-    </>
+    <div className="badge-color-variants-content">
+      {Object.entries(ColorsMap).map(([key, value]) => (
+        <Badge key={key} {...value} count={15} maxCount={9} {...args} />
+      ))}
+    </div>
   ),
 });
 
 export const SystemAlerts = meta.story({
+  parameters: {
+    css: css`
+      .badge-system-alerts-main {
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+      }
+      .badge-system-alerts-heading {
+        margin-block-end: var(--ds-size-4);
+      }
+      .badge-system-alerts-details-content {
+        gap: var(--ds-size-4);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .badge-varsel-header {
+        display: flex;
+        justify-content: space-between;
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.badge-system-alerts-main {
-  display: flex;
-  flex-direction: column;
-  width: 30rem;
-}
-.badge-system-alerts-heading {
-  margin-block-end: var(--ds-size-4);
-}
-.badge-system-alerts-details-content {
-  gap: var(--ds-size-4);
-  display: flex;
-  flex-direction: column;
-}`}
-      </style>
-      <div className="badge-system-alerts-main">
-        <Heading className="badge-system-alerts-heading">Systemvarsler</Heading>
-        <Details>
-          <Details.Summary>
-            Kritisk{' '}
-            <Badge count={2} maxCount={9} data-color="danger" {...args} />
-          </Details.Summary>
-          <Details.Content className="badge-system-alerts-details-content">
-            {Array.from({ length: 2 }, (_, i) => (
-              <Varsel key={i} importance="danger" />
-            ))}
-          </Details.Content>
-        </Details>
-        <Details>
-          <Details.Summary>
-            Advarsler{' '}
-            <Badge count={6} maxCount={9} data-color="warning" {...args} />
-          </Details.Summary>
-          <Details.Content className="badge-system-alerts-details-content">
-            {Array.from({ length: 6 }, (_, i) => (
-              <Varsel key={i} importance="warning" />
-            ))}
-          </Details.Content>
-        </Details>
-        <Details>
-          <Details.Summary>
-            Andre hendelser{' '}
-            <Badge count={11} maxCount={9} data-color="info" {...args} />
-          </Details.Summary>
-          <Details.Content className="badge-system-alerts-details-content">
-            {Array.from({ length: 11 }, (_, i) => (
-              <Varsel key={i} importance="info" />
-            ))}
-          </Details.Content>
-        </Details>
-      </div>
-    </>
+    <div className="badge-system-alerts-main">
+      <Heading className="badge-system-alerts-heading">Systemvarsler</Heading>
+      <Details>
+        <Details.Summary>
+          Kritisk <Badge count={2} maxCount={9} data-color="danger" {...args} />
+        </Details.Summary>
+        <Details.Content className="badge-system-alerts-details-content">
+          {Array.from({ length: 2 }, (_, i) => (
+            <Varsel key={i} importance="danger" />
+          ))}
+        </Details.Content>
+      </Details>
+      <Details>
+        <Details.Summary>
+          Advarsler{' '}
+          <Badge count={6} maxCount={9} data-color="warning" {...args} />
+        </Details.Summary>
+        <Details.Content className="badge-system-alerts-details-content">
+          {Array.from({ length: 6 }, (_, i) => (
+            <Varsel key={i} importance="warning" />
+          ))}
+        </Details.Content>
+      </Details>
+      <Details>
+        <Details.Summary>
+          Andre hendelser{' '}
+          <Badge count={11} maxCount={9} data-color="info" {...args} />
+        </Details.Summary>
+        <Details.Content className="badge-system-alerts-details-content">
+          {Array.from({ length: 11 }, (_, i) => (
+            <Varsel key={i} importance="info" />
+          ))}
+        </Details.Content>
+      </Details>
+    </div>
   ),
 });
 
 function Varsel({ importance }: { importance: 'danger' | 'warning' | 'info' }) {
   const tagText = importance === 'danger' ? 'Kritisk' : 'Advarsler';
   return (
-    <>
-      <style>
-        {`
-.badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}`}
-      </style>
-      <Card>
-        <div className="badge-varsel-header">
-          <Heading level={3} data-size="xs">
-            Varsel
-          </Heading>
-          {importance !== 'info' && (
-            <Tag data-color={importance} data-size="sm">
-              {tagText}
-            </Tag>
-          )}
-        </div>
-        <Paragraph>Dette er et varsel.</Paragraph>
-      </Card>
-    </>
+    <Card>
+      <div className="badge-varsel-header">
+        <Heading level={3} data-size="xs">
+          Varsel
+        </Heading>
+        {importance !== 'info' && (
+          <Tag data-color={importance} data-size="sm">
+            {tagText}
+          </Tag>
+        )}
+      </div>
+      <Paragraph>Dette er et varsel.</Paragraph>
+    </Card>
   );
 }

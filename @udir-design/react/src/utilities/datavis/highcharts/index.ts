@@ -20,6 +20,15 @@ import { getCategoricalColors } from '../dataVisualisation';
  * import 'highcharts/i18n/nb-NO'; // Norwegian Bokmål
  * ```
  *
+ * **Content Security Policy:** By default, Highcharts adds its colour variables in a `<style>`
+ * element, which a `style-src` without `'unsafe-inline'` blocks. With such a policy, turn it off
+ * and import the variables as a stylesheet instead:
+ * ```tsx
+ * import 'highcharts/css/highcharts-palette.css';
+ *
+ * Highcharts.setOptions({ ...getHighchartsTheme(), palette: { injectCSS: false } });
+ * ```
+ *
  * @returns Partial Highcharts options object to merge with your chart configuration
  *
  * @example

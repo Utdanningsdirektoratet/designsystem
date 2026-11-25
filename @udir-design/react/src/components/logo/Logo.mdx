@@ -55,3 +55,24 @@ Du finner [nedlastbare filer til favikon på Udir.no](https://www.udir.no/om-udi
 ## Retningslinjer
 
 Les om [retningslinjer for bruk av logo på Udir.no](https://www.udir.no/om-udir/designprofil/logo/).
+
+## Kompatibilitet
+
+### Server-side rendering og Content Security Policy
+
+`size` og `padding` settes med JavaScript etter at siden er lastet. Ved server-side rendering vises logoen derfor med standardverdiene til JavaScript har lastet, og innholdet kan flytte seg. Er verdiene faste, kan du heller sette dem i ditt eget stilark, med en klasse på selve logoen. Det virker også med en streng Content Security Policy:
+
+```css
+.min-logo {
+  --uds-logo-size: var(--ds-size-10);
+  --uds-logo-padding: var(--ds-size-2);
+}
+```
+
+```tsx
+<Logo className="min-logo" />
+```
+
+Variablene må settes på selve logoen. Setter du dem lenger ut, for eksempel på `:root`, bruker logoen fortsatt standardverdiene.
+
+Logoene ligger i koden som `data:`-URL-er, så en Content Security Policy må tillate `data:` i `img-src`. Les mer om [server-side rendering og Content Security Policy](/docs/components-server-side-rendering-og-csp--docs).
