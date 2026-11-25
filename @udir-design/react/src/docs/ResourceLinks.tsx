@@ -6,32 +6,6 @@ import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
 import styles from './ResourceLinks.module.css';
 
-export function ResourceLink({
-  href,
-  illustration,
-  headingLevel,
-  heading,
-  description,
-}: {
-  href: string;
-  illustration: JSX.Element;
-  headingLevel: HeadingProps['level'];
-  heading: string;
-  description: string;
-}) {
-  return (
-    <Card>
-      <Card.Block className={styles.illustration}>{illustration}</Card.Block>
-      <Card.Block>
-        <Heading level={headingLevel}>
-          <a href={href}>{heading}</a>
-        </Heading>
-        <Paragraph>{description}</Paragraph>
-      </Card.Block>
-    </Card>
-  );
-}
-
 export function ResourceLinkHorizontal({
   href,
   icon,
