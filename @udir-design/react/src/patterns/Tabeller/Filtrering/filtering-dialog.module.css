@@ -4,7 +4,16 @@
   margin: var(--ds-size-2);
   display: flex;
   flex-direction: column;
-  gap: var(--ds-size-8);
+  gap: var(--ds-size-5);
+}
+
+.dialog-table-scroll {
+  margin-block-start: var(--ds-size-4);
+  overflow-x: auto;
+
+  > table {
+    min-width: 50rem;
+  }
 }
 
 .dialog-filters-section {
@@ -45,22 +54,12 @@
   white-space: nowrap;
 }
 
-.show-below-mobile {
-  display: table-cell;
-}
-
-.hide-below-mobile,
-.desktop-only {
-  display: none;
-}
-
 .dialog-controls {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--ds-size-4);
-  margin: var(--ds-size-6) var(--ds-size-2);
 }
 
 .dialog-controls-section {
@@ -121,14 +120,6 @@
 }
 
 @container (min-width: 30rem) {
-  .show-below-mobile {
-    display: none;
-  }
-
-  .hide-below-mobile {
-    display: table-cell;
-  }
-
   .dialog-filters-section {
     flex-direction: row;
     flex-wrap: wrap;
@@ -153,10 +144,6 @@
 }
 
 @container (min-width: 50rem) {
-  .desktop-only {
-    display: table-cell;
-  }
-
   .dialog-filters-section {
     flex-direction: row;
     align-items: flex-end;

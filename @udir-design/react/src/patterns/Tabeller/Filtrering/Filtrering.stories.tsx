@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { FilterIcon } from '@udir-design/icons';
 import { withResponsiveDataSize } from '.storybook/decorators/withResponsiveDataSize';
 import preview from '.storybook/preview';
@@ -63,6 +63,7 @@ export const Preview = meta.story({
     const [page, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState<Filters>(initialFilters);
+    const tableCaptionId = useId();
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -116,7 +117,10 @@ export const Preview = meta.story({
     );
 
     return (
-      <div className={previewStyles['preview-main']}>
+      <section
+        className={previewStyles['preview-main']}
+        aria-labelledby={tableCaptionId}
+      >
         <div className={previewStyles['preview-filters-section']}>
           <div className={previewStyles['preview-suggestion-section']}>
             <Field className={previewStyles['preview-suggestion-field']}>
@@ -179,16 +183,18 @@ export const Preview = meta.story({
                 </Suggestion.List>
               </Suggestion>
             </Field>
-            <Field>
-              <Button
-                onClick={() => handleFiltersChange(emptyFilters)}
-                variant="tertiary"
-                data-size="sm"
-                className={previewStyles['preview-clear-filters']}
-              >
-                Fjern filtre
-              </Button>
-            </Field>
+            {hasActiveFilters(filters) && (
+              <Field>
+                <Button
+                  onClick={() => handleFiltersChange(emptyFilters)}
+                  variant="tertiary"
+                  data-size="sm"
+                  className={previewStyles['preview-clear-filters']}
+                >
+                  Fjern filtre
+                </Button>
+              </Field>
+            )}
           </div>
           <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
@@ -215,62 +221,39 @@ export const Preview = meta.story({
           <ActiveFilters filters={filters} onChange={handleFiltersChange} />
         )}
 
-        <Table {...tableProps}>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell>År</Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['show-below-mobile']}>
-                Skole
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Org.nummer
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Skolenavn
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['desktop-only']}>
-                Fylke
-              </Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['desktop-only']}>
-                Kommune
-              </Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell className={previewStyles['hide-below-mobile']}>
-                Systemnavn
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {paginatedData.map((school) => (
-              <Table.Row key={school.id}>
-                <Table.Cell>{school.year}</Table.Cell>
-                <Table.Cell className={previewStyles['show-below-mobile']}>
-                  {school.schoolName}
-                  <br />
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.schoolName}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['desktop-only']}>
-                  {school.county}
-                </Table.Cell>
-                <Table.Cell className={previewStyles['desktop-only']}>
-                  {school.municipality}
-                </Table.Cell>
-                <Table.Cell>
-                  <Status status={school.status} />
-                </Table.Cell>
-                <Table.Cell className={previewStyles['hide-below-mobile']}>
-                  {school.systemName}
-                </Table.Cell>
+        <div className={previewStyles['preview-table-scroll']}>
+          <Table {...tableProps}>
+            <caption id={tableCaptionId} className="ds-sr-only">
+              Skoler
+            </caption>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>År</Table.HeaderCell>
+                <Table.HeaderCell>Org.nummer</Table.HeaderCell>
+                <Table.HeaderCell>Skolenavn</Table.HeaderCell>
+                <Table.HeaderCell>Fylke</Table.HeaderCell>
+                <Table.HeaderCell>Kommune</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Systemnavn</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {paginatedData.map((school) => (
+                <Table.Row key={school.id}>
+                  <Table.Cell>{school.year}</Table.Cell>
+                  <Table.Cell>{school.organizationNumber}</Table.Cell>
+                  <Table.Cell>{school.schoolName}</Table.Cell>
+                  <Table.Cell>{school.county}</Table.Cell>
+                  <Table.Cell>{school.municipality}</Table.Cell>
+                  <Table.Cell>
+                    <Status status={school.status} />
+                  </Table.Cell>
+                  <Table.Cell>{school.systemName}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
 
         <div className={previewStyles['preview-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
@@ -324,7 +307,7 @@ export const Preview = meta.story({
             </Field>
           </div>
         </div>
-      </div>
+      </section>
     );
   },
 });
@@ -342,6 +325,7 @@ export const WithDialog = meta.story({
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState<Filters>(initialFilters);
     const [draftFilters, setDraftFilters] = useState<Filters>(initialFilters);
+    const tableCaptionId = useId();
     const [isMobile, setIsMobile] = useState(
       () => !window.matchMedia('(min-width: 48rem)').matches,
     );
@@ -413,7 +397,10 @@ export const WithDialog = meta.story({
     );
 
     return (
-      <div className={dialogStyles['dialog-main']}>
+      <section
+        className={dialogStyles['dialog-main']}
+        aria-labelledby={tableCaptionId}
+      >
         <div className={dialogStyles['dialog-filters-section']}>
           <Field className={previewStyles['preview-search-field']}>
             <Label>Søk</Label>
@@ -616,75 +603,54 @@ export const WithDialog = meta.story({
                 </Prose>
               </Dialog>
             </Dialog.TriggerContext>
-            <Button
-              onClick={() => handleFiltersChange(emptyFilters)}
-              variant="tertiary"
-              data-size="sm"
-              className={dialogStyles['dialog-clear-filters']}
-            >
-              Fjern filtre
-            </Button>
+            {hasActiveFilters(filters) && (
+              <Button
+                onClick={() => handleFiltersChange(emptyFilters)}
+                variant="tertiary"
+                data-size="sm"
+                className={dialogStyles['dialog-clear-filters']}
+              >
+                Fjern filtre
+              </Button>
+            )}
           </div>
         </div>
 
         <ActiveFilters filters={filters} onChange={handleFiltersChange} />
 
-        <Table {...args}>
-          <Table.Head>
-            <Table.Row>
-              <Table.HeaderCell>År</Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['show-below-mobile']}>
-                Skole
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Org.nummer
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Skolenavn
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['desktop-only']}>
-                Fylke
-              </Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['desktop-only']}>
-                Kommune
-              </Table.HeaderCell>
-              <Table.HeaderCell>Status</Table.HeaderCell>
-              <Table.HeaderCell className={dialogStyles['hide-below-mobile']}>
-                Systemnavn
-              </Table.HeaderCell>
-            </Table.Row>
-          </Table.Head>
-          <Table.Body>
-            {paginatedData.map((school) => (
-              <Table.Row key={school.id}>
-                <Table.Cell>{school.year}</Table.Cell>
-                <Table.Cell className={dialogStyles['show-below-mobile']}>
-                  {school.schoolName}
-                  <br />
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.organizationNumber}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.schoolName}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['desktop-only']}>
-                  {school.county}
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['desktop-only']}>
-                  {school.municipality}
-                </Table.Cell>
-                <Table.Cell>
-                  <Status status={school.status} />
-                </Table.Cell>
-                <Table.Cell className={dialogStyles['hide-below-mobile']}>
-                  {school.systemName}
-                </Table.Cell>
+        <div className={dialogStyles['dialog-table-scroll']}>
+          <Table {...args}>
+            <caption id={tableCaptionId} className="ds-sr-only">
+              Skoler
+            </caption>
+            <Table.Head>
+              <Table.Row>
+                <Table.HeaderCell>År</Table.HeaderCell>
+                <Table.HeaderCell>Org.nummer</Table.HeaderCell>
+                <Table.HeaderCell>Skolenavn</Table.HeaderCell>
+                <Table.HeaderCell>Fylke</Table.HeaderCell>
+                <Table.HeaderCell>Kommune</Table.HeaderCell>
+                <Table.HeaderCell>Status</Table.HeaderCell>
+                <Table.HeaderCell>Systemnavn</Table.HeaderCell>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
+            </Table.Head>
+            <Table.Body>
+              {paginatedData.map((school) => (
+                <Table.Row key={school.id}>
+                  <Table.Cell>{school.year}</Table.Cell>
+                  <Table.Cell>{school.organizationNumber}</Table.Cell>
+                  <Table.Cell>{school.schoolName}</Table.Cell>
+                  <Table.Cell>{school.county}</Table.Cell>
+                  <Table.Cell>{school.municipality}</Table.Cell>
+                  <Table.Cell>
+                    <Status status={school.status} />
+                  </Table.Cell>
+                  <Table.Cell>{school.systemName}</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
 
         <div className={dialogStyles['dialog-controls']}>
           <Pagination aria-label="Sidenavigering" data-size="sm">
@@ -738,7 +704,7 @@ export const WithDialog = meta.story({
             </Field>
           </div>
         </div>
-      </div>
+      </section>
     );
   },
 });
@@ -764,6 +730,10 @@ const initialFilters: Filters = {
   counties: ['Agder', 'Rogaland'],
   municipalities: ['Arendal', 'Kristiansand', 'Sandnes'],
 };
+
+function hasActiveFilters(filters: Filters) {
+  return Object.values(filters).some((values) => values.length > 0);
+}
 
 function getMunicipalities(counties: string[]) {
   return [
