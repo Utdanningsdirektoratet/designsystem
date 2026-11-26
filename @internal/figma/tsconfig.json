@@ -16,5 +16,5 @@
     "tsBuildInfoFile": "../../dist/out-tsc/internal-figma.tsbuildinfo",
     "types": ["node"]
   },
-  "include": ["*.ts", "plugin/*.ts"]
+  "include": ["*.ts", "plugin/*.ts", "fix-plugin/*.ts"]
 }

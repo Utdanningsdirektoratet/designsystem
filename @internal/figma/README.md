@@ -8,6 +8,7 @@ The change guides don't cover everything a release changes. Digdir's 1.23.0 rele
 - `plugin/` is a development plugin that runs the extractor on every page of the open file and saves the result as one `snapshot.json`.
 - `compare-snapshots.ts` verifies saved snapshots and compares them, optionally with the rules in `udir-to-digdir.json` (see [Rules](#rules)).
 - `notes/` has notes for reviews of the comparisons.
+- `fix-plugin/` is a one-off development plugin that fixes bindings to deleted variables and sets code syntax and scopes on variables in Udir's library (see [Fixing the library](#fixing-the-library)).
 
 ## Figma files
 
@@ -124,6 +125,21 @@ Things to keep in mind when reading a comparison:
 - Only modes set explicitly on a layer are recorded. Modes a main component inherits from the frames it sits in on the library page are left out, since instances don't take them along, and so are Figma's team-default modes. A component without an explicit Color mode uses whatever mode the place it's used in has.
 - Page names are compared without leading and trailing spaces, since the libraries differ there (`❖  Checkbox ` and `❖  Checkbox`).
 
+## Fixing the library
+
+`fix-plugin/` makes the changes decided in sections 5 and 6 of `notes/2026-10-designer-review.md`. Unlike the snapshot plugin, it changes the file.
+
+- **Bindings to deleted variables** are rebound: `Semantic/spacing/N` to `Semantic/size/N`, the `label` and `legend/label` texts in `label and description` frames from `Theme/font-weight/medium` to `semibold`, and everything else to the current variable with the same name. `Semantic/border-width/highlight` is unbound, keeping the value the layer has. Rules are in `fix-plugin/main.js`.
+- **Variables** get the code syntax and scopes in `fix-plugin/plan.json`. `fix-plan.ts` makes that file: it takes Digdir's code syntax, translates color names with the rules file's `variableNames` (`brand1` → `support1`), and keeps only CSS variables that exist in Udir's built theme. Scopes are set to Digdir's wherever they differ, including the empty scopes that hide primitives from the variable pickers.
+
+To use it:
+
+1. Build Udir's theme and make the plan: `pnpm turbo @udir-design/theme#build`, then `node @internal/figma/fix-plan.ts @internal/figma/snapshots/digdir/v1.23.0 @internal/figma/snapshots/udir/<latest> @udir-design/theme/dist/index.css`. Commit `plan.json` if it changes.
+2. Build the plugin with `pnpm turbo @internal/figma#build`, and import `@internal/figma/fix-plugin/manifest.json` in the Figma desktop app (Plugins → Development → Import plugin from manifest).
+3. Open Udir's library, run Plugins → Development → Udir library fixes, and press **Preview**. Nothing changes; the table lists what Apply would do, and **Download report.json** gives every change and every binding left alone. In a preview, layers inside instances are listed separately, since some of them will follow their main component once it is fixed.
+4. Press **Apply**. Bindings are fixed on layers outside instances first, then on layers inside instances that still have a deleted binding of their own, so instances don't get new overrides. The plugin marks the run as one undo step, but undoing it hasn't been tried; work on a branch or duplicate of the library to be safe.
+5. Make a new snapshot and compare it with the previous one (`diff`) to check the result.
+
 ## Tests
 
-`pnpm turbo @internal/figma#test:unit` runs the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts` (`snapshot-scripts.test.ts`). `rules.test.ts` checks the rules on small hand-built snapshots. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.
+`pnpm turbo @internal/figma#test:unit` runs the built plugin against a minimal stand-in for the Plugin API, and checks the results with `compare-snapshots.ts` (`snapshot-scripts.test.ts`). `fix-plugin.test.ts` runs the fix plugin against a similar stand-in. `rules.test.ts` checks the rules on small hand-built snapshots. The package's `lint`, `typecheck` and `test:unit` tasks run with the rest of the workspace.

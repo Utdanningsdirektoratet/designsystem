@@ -1,0 +1,2909 @@
+{
+  "variables": [
+    {
+      "label": "Color/background-default",
+      "codeSyntax": "var(--ds-color-background-default)"
+    },
+    {
+      "label": "Color/background-tinted",
+      "codeSyntax": "var(--ds-color-background-tinted)"
+    },
+    {
+      "label": "Color/base-active",
+      "codeSyntax": "var(--ds-color-base-active)"
+    },
+    {
+      "label": "Color/base-contrast-default",
+      "codeSyntax": "var(--ds-color-base-contrast-default)"
+    },
+    {
+      "label": "Color/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-base-contrast-subtle)"
+    },
+    {
+      "label": "Color/base-default",
+      "codeSyntax": "var(--ds-color-base-default)"
+    },
+    {
+      "label": "Color/base-hover",
+      "codeSyntax": "var(--ds-color-base-hover)"
+    },
+    {
+      "label": "Color/border-default",
+      "codeSyntax": "var(--ds-color-border-default)"
+    },
+    {
+      "label": "Color/border-strong",
+      "codeSyntax": "var(--ds-color-border-strong)"
+    },
+    {
+      "label": "Color/border-subtle",
+      "codeSyntax": "var(--ds-color-border-subtle)"
+    },
+    {
+      "label": "Color/surface-active",
+      "codeSyntax": "var(--ds-color-surface-active)"
+    },
+    {
+      "label": "Color/surface-default",
+      "codeSyntax": "var(--ds-color-surface-default)"
+    },
+    {
+      "label": "Color/surface-hover",
+      "codeSyntax": "var(--ds-color-surface-hover)"
+    },
+    {
+      "label": "Color/surface-tinted",
+      "codeSyntax": "var(--ds-color-surface-tinted)"
+    },
+    {
+      "label": "Color/text-default",
+      "codeSyntax": "var(--ds-color-text-default)"
+    },
+    {
+      "label": "Color/text-subtle",
+      "codeSyntax": "var(--ds-color-text-subtle)"
+    },
+    {
+      "label": "Color scheme/udir/accent/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/accent/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/danger/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/focus/inner",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/focus/outer",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/info/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/link/visited",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/neutral/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/success/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support1/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/support2/9",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/1",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/10",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/11",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/12",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/13",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/14",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/15",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/16",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/2",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/3",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/4",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/5",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/6",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/7",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/8",
+      "scopes": []
+    },
+    {
+      "label": "Color scheme/udir/warning/9",
+      "scopes": []
+    },
+    {
+      "label": "Semantic/border-radius/default",
+      "codeSyntax": "var(--ds-border-radius-default)"
+    },
+    {
+      "label": "Semantic/border-radius/full",
+      "codeSyntax": "var(--ds-border-radius-full)"
+    },
+    {
+      "label": "Semantic/border-radius/lg",
+      "codeSyntax": "var(--ds-border-radius-lg)"
+    },
+    {
+      "label": "Semantic/border-radius/md",
+      "codeSyntax": "var(--ds-border-radius-md)"
+    },
+    {
+      "label": "Semantic/border-radius/sm",
+      "codeSyntax": "var(--ds-border-radius-sm)"
+    },
+    {
+      "label": "Semantic/border-radius/xl",
+      "codeSyntax": "var(--ds-border-radius-xl)"
+    },
+    {
+      "label": "Semantic/border-width/default",
+      "codeSyntax": "var(--ds-border-width-default)"
+    },
+    {
+      "label": "Semantic/border-width/focus",
+      "codeSyntax": "var(--ds-border-width-focus)"
+    },
+    {
+      "label": "Semantic/color/accent/background-default",
+      "codeSyntax": "var(--ds-color-accent-background-default)"
+    },
+    {
+      "label": "Semantic/color/accent/background-tinted",
+      "codeSyntax": "var(--ds-color-accent-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/accent/base-active",
+      "codeSyntax": "var(--ds-color-accent-base-active)"
+    },
+    {
+      "label": "Semantic/color/accent/base-contrast-default",
+      "codeSyntax": "var(--ds-color-accent-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/accent/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-accent-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/accent/base-default",
+      "codeSyntax": "var(--ds-color-accent-base-default)"
+    },
+    {
+      "label": "Semantic/color/accent/base-hover",
+      "codeSyntax": "var(--ds-color-accent-base-hover)"
+    },
+    {
+      "label": "Semantic/color/accent/border-default",
+      "codeSyntax": "var(--ds-color-accent-border-default)"
+    },
+    {
+      "label": "Semantic/color/accent/border-strong",
+      "codeSyntax": "var(--ds-color-accent-border-strong)"
+    },
+    {
+      "label": "Semantic/color/accent/border-subtle",
+      "codeSyntax": "var(--ds-color-accent-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/accent/surface-active",
+      "codeSyntax": "var(--ds-color-accent-surface-active)"
+    },
+    {
+      "label": "Semantic/color/accent/surface-default",
+      "codeSyntax": "var(--ds-color-accent-surface-default)"
+    },
+    {
+      "label": "Semantic/color/accent/surface-hover",
+      "codeSyntax": "var(--ds-color-accent-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/accent/surface-tinted",
+      "codeSyntax": "var(--ds-color-accent-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/accent/text-default",
+      "codeSyntax": "var(--ds-color-accent-text-default)"
+    },
+    {
+      "label": "Semantic/color/accent/text-subtle",
+      "codeSyntax": "var(--ds-color-accent-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/danger/background-default",
+      "codeSyntax": "var(--ds-color-danger-background-default)"
+    },
+    {
+      "label": "Semantic/color/danger/background-tinted",
+      "codeSyntax": "var(--ds-color-danger-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/danger/base-active",
+      "codeSyntax": "var(--ds-color-danger-base-active)"
+    },
+    {
+      "label": "Semantic/color/danger/base-contrast-default",
+      "codeSyntax": "var(--ds-color-danger-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/danger/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-danger-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/danger/base-default",
+      "codeSyntax": "var(--ds-color-danger-base-default)"
+    },
+    {
+      "label": "Semantic/color/danger/base-hover",
+      "codeSyntax": "var(--ds-color-danger-base-hover)"
+    },
+    {
+      "label": "Semantic/color/danger/border-default",
+      "codeSyntax": "var(--ds-color-danger-border-default)"
+    },
+    {
+      "label": "Semantic/color/danger/border-strong",
+      "codeSyntax": "var(--ds-color-danger-border-strong)"
+    },
+    {
+      "label": "Semantic/color/danger/border-subtle",
+      "codeSyntax": "var(--ds-color-danger-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/danger/surface-active",
+      "codeSyntax": "var(--ds-color-danger-surface-active)"
+    },
+    {
+      "label": "Semantic/color/danger/surface-default",
+      "codeSyntax": "var(--ds-color-danger-surface-default)"
+    },
+    {
+      "label": "Semantic/color/danger/surface-hover",
+      "codeSyntax": "var(--ds-color-danger-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/danger/surface-tinted",
+      "codeSyntax": "var(--ds-color-danger-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/danger/text-default",
+      "codeSyntax": "var(--ds-color-danger-text-default)"
+    },
+    {
+      "label": "Semantic/color/danger/text-subtle",
+      "codeSyntax": "var(--ds-color-danger-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/focus/inner",
+      "codeSyntax": "var(--ds-color-focus-inner)"
+    },
+    {
+      "label": "Semantic/color/focus/outer",
+      "codeSyntax": "var(--ds-color-focus-outer)"
+    },
+    {
+      "label": "Semantic/color/info/background-default",
+      "codeSyntax": "var(--ds-color-info-background-default)"
+    },
+    {
+      "label": "Semantic/color/info/background-tinted",
+      "codeSyntax": "var(--ds-color-info-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/info/base-active",
+      "codeSyntax": "var(--ds-color-info-base-active)"
+    },
+    {
+      "label": "Semantic/color/info/base-contrast-default",
+      "codeSyntax": "var(--ds-color-info-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/info/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-info-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/info/base-default",
+      "codeSyntax": "var(--ds-color-info-base-default)"
+    },
+    {
+      "label": "Semantic/color/info/base-hover",
+      "codeSyntax": "var(--ds-color-info-base-hover)"
+    },
+    {
+      "label": "Semantic/color/info/border-default",
+      "codeSyntax": "var(--ds-color-info-border-default)"
+    },
+    {
+      "label": "Semantic/color/info/border-strong",
+      "codeSyntax": "var(--ds-color-info-border-strong)"
+    },
+    {
+      "label": "Semantic/color/info/border-subtle",
+      "codeSyntax": "var(--ds-color-info-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/info/surface-active",
+      "codeSyntax": "var(--ds-color-info-surface-active)"
+    },
+    {
+      "label": "Semantic/color/info/surface-default",
+      "codeSyntax": "var(--ds-color-info-surface-default)"
+    },
+    {
+      "label": "Semantic/color/info/surface-hover",
+      "codeSyntax": "var(--ds-color-info-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/info/surface-tinted",
+      "codeSyntax": "var(--ds-color-info-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/info/text-default",
+      "codeSyntax": "var(--ds-color-info-text-default)"
+    },
+    {
+      "label": "Semantic/color/info/text-subtle",
+      "codeSyntax": "var(--ds-color-info-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/neutral/background-default",
+      "codeSyntax": "var(--ds-color-neutral-background-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/background-tinted",
+      "codeSyntax": "var(--ds-color-neutral-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/neutral/base-active",
+      "codeSyntax": "var(--ds-color-neutral-base-active)"
+    },
+    {
+      "label": "Semantic/color/neutral/base-contrast-default",
+      "codeSyntax": "var(--ds-color-neutral-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-neutral-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/neutral/base-default",
+      "codeSyntax": "var(--ds-color-neutral-base-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/base-hover",
+      "codeSyntax": "var(--ds-color-neutral-base-hover)"
+    },
+    {
+      "label": "Semantic/color/neutral/border-default",
+      "codeSyntax": "var(--ds-color-neutral-border-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/border-strong",
+      "codeSyntax": "var(--ds-color-neutral-border-strong)"
+    },
+    {
+      "label": "Semantic/color/neutral/border-subtle",
+      "codeSyntax": "var(--ds-color-neutral-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/neutral/surface-active",
+      "codeSyntax": "var(--ds-color-neutral-surface-active)"
+    },
+    {
+      "label": "Semantic/color/neutral/surface-default",
+      "codeSyntax": "var(--ds-color-neutral-surface-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/surface-hover",
+      "codeSyntax": "var(--ds-color-neutral-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/neutral/surface-tinted",
+      "codeSyntax": "var(--ds-color-neutral-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/neutral/text-default",
+      "codeSyntax": "var(--ds-color-neutral-text-default)"
+    },
+    {
+      "label": "Semantic/color/neutral/text-subtle",
+      "codeSyntax": "var(--ds-color-neutral-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/success/background-default",
+      "codeSyntax": "var(--ds-color-success-background-default)"
+    },
+    {
+      "label": "Semantic/color/success/background-tinted",
+      "codeSyntax": "var(--ds-color-success-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/success/base-active",
+      "codeSyntax": "var(--ds-color-success-base-active)"
+    },
+    {
+      "label": "Semantic/color/success/base-contrast-default",
+      "codeSyntax": "var(--ds-color-success-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/success/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-success-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/success/base-default",
+      "codeSyntax": "var(--ds-color-success-base-default)"
+    },
+    {
+      "label": "Semantic/color/success/base-hover",
+      "codeSyntax": "var(--ds-color-success-base-hover)"
+    },
+    {
+      "label": "Semantic/color/success/border-default",
+      "codeSyntax": "var(--ds-color-success-border-default)"
+    },
+    {
+      "label": "Semantic/color/success/border-strong",
+      "codeSyntax": "var(--ds-color-success-border-strong)"
+    },
+    {
+      "label": "Semantic/color/success/border-subtle",
+      "codeSyntax": "var(--ds-color-success-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/success/surface-active",
+      "codeSyntax": "var(--ds-color-success-surface-active)"
+    },
+    {
+      "label": "Semantic/color/success/surface-default",
+      "codeSyntax": "var(--ds-color-success-surface-default)"
+    },
+    {
+      "label": "Semantic/color/success/surface-hover",
+      "codeSyntax": "var(--ds-color-success-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/success/surface-tinted",
+      "codeSyntax": "var(--ds-color-success-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/success/text-default",
+      "codeSyntax": "var(--ds-color-success-text-default)"
+    },
+    {
+      "label": "Semantic/color/success/text-subtle",
+      "codeSyntax": "var(--ds-color-success-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/support1/background-default",
+      "codeSyntax": "var(--ds-color-support1-background-default)"
+    },
+    {
+      "label": "Semantic/color/support1/background-tinted",
+      "codeSyntax": "var(--ds-color-support1-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/support1/base-active",
+      "codeSyntax": "var(--ds-color-support1-base-active)"
+    },
+    {
+      "label": "Semantic/color/support1/base-contrast-default",
+      "codeSyntax": "var(--ds-color-support1-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/support1/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-support1-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/support1/base-default",
+      "codeSyntax": "var(--ds-color-support1-base-default)"
+    },
+    {
+      "label": "Semantic/color/support1/base-hover",
+      "codeSyntax": "var(--ds-color-support1-base-hover)"
+    },
+    {
+      "label": "Semantic/color/support1/border-default",
+      "codeSyntax": "var(--ds-color-support1-border-default)"
+    },
+    {
+      "label": "Semantic/color/support1/border-strong",
+      "codeSyntax": "var(--ds-color-support1-border-strong)"
+    },
+    {
+      "label": "Semantic/color/support1/border-subtle",
+      "codeSyntax": "var(--ds-color-support1-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/support1/surface-active",
+      "codeSyntax": "var(--ds-color-support1-surface-active)"
+    },
+    {
+      "label": "Semantic/color/support1/surface-default",
+      "codeSyntax": "var(--ds-color-support1-surface-default)"
+    },
+    {
+      "label": "Semantic/color/support1/surface-hover",
+      "codeSyntax": "var(--ds-color-support1-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/support1/surface-tinted",
+      "codeSyntax": "var(--ds-color-support1-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/support1/text-default",
+      "codeSyntax": "var(--ds-color-support1-text-default)"
+    },
+    {
+      "label": "Semantic/color/support1/text-subtle",
+      "codeSyntax": "var(--ds-color-support1-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/support2/background-default",
+      "codeSyntax": "var(--ds-color-support2-background-default)"
+    },
+    {
+      "label": "Semantic/color/support2/background-tinted",
+      "codeSyntax": "var(--ds-color-support2-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/support2/base-active",
+      "codeSyntax": "var(--ds-color-support2-base-active)"
+    },
+    {
+      "label": "Semantic/color/support2/base-contrast-default",
+      "codeSyntax": "var(--ds-color-support2-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/support2/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-support2-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/support2/base-default",
+      "codeSyntax": "var(--ds-color-support2-base-default)"
+    },
+    {
+      "label": "Semantic/color/support2/base-hover",
+      "codeSyntax": "var(--ds-color-support2-base-hover)"
+    },
+    {
+      "label": "Semantic/color/support2/border-default",
+      "codeSyntax": "var(--ds-color-support2-border-default)"
+    },
+    {
+      "label": "Semantic/color/support2/border-strong",
+      "codeSyntax": "var(--ds-color-support2-border-strong)"
+    },
+    {
+      "label": "Semantic/color/support2/border-subtle",
+      "codeSyntax": "var(--ds-color-support2-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/support2/surface-active",
+      "codeSyntax": "var(--ds-color-support2-surface-active)"
+    },
+    {
+      "label": "Semantic/color/support2/surface-default",
+      "codeSyntax": "var(--ds-color-support2-surface-default)"
+    },
+    {
+      "label": "Semantic/color/support2/surface-hover",
+      "codeSyntax": "var(--ds-color-support2-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/support2/surface-tinted",
+      "codeSyntax": "var(--ds-color-support2-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/support2/text-default",
+      "codeSyntax": "var(--ds-color-support2-text-default)"
+    },
+    {
+      "label": "Semantic/color/support2/text-subtle",
+      "codeSyntax": "var(--ds-color-support2-text-subtle)"
+    },
+    {
+      "label": "Semantic/color/warning/background-default",
+      "codeSyntax": "var(--ds-color-warning-background-default)"
+    },
+    {
+      "label": "Semantic/color/warning/background-tinted",
+      "codeSyntax": "var(--ds-color-warning-background-tinted)"
+    },
+    {
+      "label": "Semantic/color/warning/base-active",
+      "codeSyntax": "var(--ds-color-warning-base-active)"
+    },
+    {
+      "label": "Semantic/color/warning/base-contrast-default",
+      "codeSyntax": "var(--ds-color-warning-base-contrast-default)"
+    },
+    {
+      "label": "Semantic/color/warning/base-contrast-subtle",
+      "codeSyntax": "var(--ds-color-warning-base-contrast-subtle)"
+    },
+    {
+      "label": "Semantic/color/warning/base-default",
+      "codeSyntax": "var(--ds-color-warning-base-default)"
+    },
+    {
+      "label": "Semantic/color/warning/base-hover",
+      "codeSyntax": "var(--ds-color-warning-base-hover)"
+    },
+    {
+      "label": "Semantic/color/warning/border-default",
+      "codeSyntax": "var(--ds-color-warning-border-default)"
+    },
+    {
+      "label": "Semantic/color/warning/border-strong",
+      "codeSyntax": "var(--ds-color-warning-border-strong)"
+    },
+    {
+      "label": "Semantic/color/warning/border-subtle",
+      "codeSyntax": "var(--ds-color-warning-border-subtle)"
+    },
+    {
+      "label": "Semantic/color/warning/surface-active",
+      "codeSyntax": "var(--ds-color-warning-surface-active)"
+    },
+    {
+      "label": "Semantic/color/warning/surface-default",
+      "codeSyntax": "var(--ds-color-warning-surface-default)"
+    },
+    {
+      "label": "Semantic/color/warning/surface-hover",
+      "codeSyntax": "var(--ds-color-warning-surface-hover)"
+    },
+    {
+      "label": "Semantic/color/warning/surface-tinted",
+      "codeSyntax": "var(--ds-color-warning-surface-tinted)"
+    },
+    {
+      "label": "Semantic/color/warning/text-default",
+      "codeSyntax": "var(--ds-color-warning-text-default)"
+    },
+    {
+      "label": "Semantic/color/warning/text-subtle",
+      "codeSyntax": "var(--ds-color-warning-text-subtle)"
+    },
+    {
+      "label": "Semantic/link/color/visited",
+      "codeSyntax": "var(--ds-link-color-visited)"
+    },
+    {
+      "label": "Semantic/opacity/disabled",
+      "codeSyntax": "var(--ds-opacity-disabled)"
+    },
+    {
+      "label": "Semantic/size/0",
+      "codeSyntax": "var(--ds-size-0)"
+    },
+    {
+      "label": "Semantic/size/1",
+      "codeSyntax": "var(--ds-size-1)"
+    },
+    {
+      "label": "Semantic/size/10",
+      "codeSyntax": "var(--ds-size-10)"
+    },
+    {
+      "label": "Semantic/size/11",
+      "codeSyntax": "var(--ds-size-11)"
+    },
+    {
+      "label": "Semantic/size/12",
+      "codeSyntax": "var(--ds-size-12)"
+    },
+    {
+      "label": "Semantic/size/13",
+      "codeSyntax": "var(--ds-size-13)"
+    },
+    {
+      "label": "Semantic/size/14",
+      "codeSyntax": "var(--ds-size-14)"
+    },
+    {
+      "label": "Semantic/size/15",
+      "codeSyntax": "var(--ds-size-15)"
+    },
+    {
+      "label": "Semantic/size/18",
+      "codeSyntax": "var(--ds-size-18)"
+    },
+    {
+      "label": "Semantic/size/2",
+      "codeSyntax": "var(--ds-size-2)"
+    },
+    {
+      "label": "Semantic/size/22",
+      "codeSyntax": "var(--ds-size-22)"
+    },
+    {
+      "label": "Semantic/size/26",
+      "codeSyntax": "var(--ds-size-26)"
+    },
+    {
+      "label": "Semantic/size/3",
+      "codeSyntax": "var(--ds-size-3)"
+    },
+    {
+      "label": "Semantic/size/30",
+      "codeSyntax": "var(--ds-size-30)"
+    },
+    {
+      "label": "Semantic/size/4",
+      "codeSyntax": "var(--ds-size-4)"
+    },
+    {
+      "label": "Semantic/size/5",
+      "codeSyntax": "var(--ds-size-5)"
+    },
+    {
+      "label": "Semantic/size/6",
+      "codeSyntax": "var(--ds-size-6)"
+    },
+    {
+      "label": "Semantic/size/7",
+      "codeSyntax": "var(--ds-size-7)"
+    },
+    {
+      "label": "Semantic/size/8",
+      "codeSyntax": "var(--ds-size-8)"
+    },
+    {
+      "label": "Semantic/size/9",
+      "codeSyntax": "var(--ds-size-9)"
+    },
+    {
+      "label": "Size/_size/unit",
+      "scopes": []
+    },
+    {
+      "label": "Size/font-size/1",
+      "codeSyntax": "var(--ds-font-size-1)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/10",
+      "codeSyntax": "var(--ds-font-size-10)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/2",
+      "codeSyntax": "var(--ds-font-size-2)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/3",
+      "codeSyntax": "var(--ds-font-size-3)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/4",
+      "codeSyntax": "var(--ds-font-size-4)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/5",
+      "codeSyntax": "var(--ds-font-size-5)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/6",
+      "codeSyntax": "var(--ds-font-size-6)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/7",
+      "codeSyntax": "var(--ds-font-size-7)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/8",
+      "codeSyntax": "var(--ds-font-size-8)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Size/font-size/9",
+      "codeSyntax": "var(--ds-font-size-9)",
+      "scopes": ["FONT_SIZE"]
+    },
+    {
+      "label": "Theme/color/danger/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/danger/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/focus/inner-color",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/focus/outer-color",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/info/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/link/visited",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/success/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support1/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/support2/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/1",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/10",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/11",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/12",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/13",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/14",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/15",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/16",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/2",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/3",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/4",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/5",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/6",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/7",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/8",
+      "scopes": []
+    },
+    {
+      "label": "Theme/color/warning/9",
+      "scopes": []
+    },
+    {
+      "label": "Theme/font-family",
+      "codeSyntax": "var(--ds-font-family)",
+      "scopes": ["FONT_FAMILY"]
+    },
+    {
+      "label": "Theme/font-weight/medium",
+      "codeSyntax": "var(--ds-font-weight-medium)"
+    },
+    {
+      "label": "Theme/font-weight/regular",
+      "codeSyntax": "var(--ds-font-weight-regular)"
+    },
+    {
+      "label": "Theme/font-weight/semibold",
+      "codeSyntax": "var(--ds-font-weight-semibold)"
+    },
+    {
+      "label": "Typography/udir/font-family",
+      "scopes": []
+    },
+    {
+      "label": "Typography/udir/font-weight/medium",
+      "scopes": []
+    },
+    {
+      "label": "Typography/udir/font-weight/regular",
+      "scopes": []
+    },
+    {
+      "label": "Typography/udir/font-weight/semibold",
+      "scopes": []
+    }
+  ],
+  "skipped": [
+    {
+      "label": "Color scheme/udir/accent/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/accent/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/danger/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/focus/inner",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/focus/outer",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/info/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/link/visited",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/neutral/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/success/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support1/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/support2/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Color scheme/udir/warning/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/0",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/18",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/22",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/26",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/30",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/base",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/mode-font-size",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/step",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Size/_size/unit",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/base",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/border-radius/scale",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/accent/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/danger/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/focus/inner-color",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/focus/outer-color",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/info/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/link/visited",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/neutral/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/success/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support1/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/support2/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/1",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/10",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/11",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/12",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/13",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/14",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/15",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/16",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/2",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/3",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/4",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/5",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/6",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/7",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/8",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Theme/color/warning/9",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Typography/udir/font-family",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Typography/udir/font-weight/medium",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Typography/udir/font-weight/regular",
+      "reason": "Digdir's variable has no code syntax either"
+    },
+    {
+      "label": "Typography/udir/font-weight/semibold",
+      "reason": "Digdir's variable has no code syntax either"
+    }
+  ]
+}

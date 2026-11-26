@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 12px;
+        font:
+          12px/1.5 Inter,
+          system-ui,
+          sans-serif;
+        color: var(--figma-color-text);
+        background: var(--figma-color-bg);
+      }
+      button {
+        font: inherit;
+        padding: 6px 12px;
+        margin-block-end: 8px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td {
+        padding: 2px 4px;
+        vertical-align: top;
+        border-block-end: 1px solid var(--figma-color-border);
+      }
+      td:first-child {
+        text-align: end;
+      }
+      .problems {
+        color: var(--figma-color-text-danger);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Rebinds layers bound to deleted variables, and sets code syntax and scopes
+      on variables (sections 5 and 6 of the review notes). Preview changes
+      nothing; Apply makes the changes listed in the preview.
+    </p>
+    <button id="preview" type="button">Preview</button>
+    <button id="apply" type="button" disabled>Apply</button>
+    <p id="status" role="status"></p>
+    <div id="result" hidden>
+      <table>
+        <tbody id="summary"></tbody>
+      </table>
+      <p class="problems" id="problems"></p>
+      <button id="download" type="button">Download report.json</button>
+    </div>
+    <script>
+      const previewButton = document.getElementById('preview');
+      const applyButton = document.getElementById('apply');
+      const status = document.getElementById('status');
+      const result = document.getElementById('result');
+      const summary = document.getElementById('summary');
+      const problems = document.getElementById('problems');
+      let json = '';
+
+      function start(type) {
+        previewButton.disabled = true;
+        applyButton.disabled = true;
+        result.hidden = true;
+        status.textContent = 'Starting…';
+        parent.postMessage({ pluginMessage: { type } }, '*');
+      }
+      previewButton.addEventListener('click', () => start('preview'));
+      applyButton.addEventListener('click', () => start('apply'));
+
+      window.addEventListener('message', (event) => {
+        const message = event.data.pluginMessage;
+        if (!message) return;
+        if (message.type === 'progress') {
+          status.textContent = message.text;
+        } else if (message.type === 'error') {
+          status.textContent = `Failed: ${message.message}`;
+          previewButton.disabled = false;
+        } else if (message.type === 'done') {
+          const { report, apply } = message;
+          json = JSON.stringify(report, null, 2);
+          const counts = new Map();
+          for (const change of report.changes) {
+            const key = `${change.kind}: ${change.from} → ${change.to}`;
+            const grouped =
+              change.kind === 'code syntax' || change.kind === 'scopes'
+                ? change.kind
+                : key.replace(/fixed value .*/, 'fixed value');
+            counts.set(grouped, (counts.get(grouped) ?? 0) + 1);
+          }
+          summary.replaceChildren(
+            ...[...counts].map(([text, count]) => {
+              const row = document.createElement('tr');
+              for (const value of [count, text]) {
+                const cell = document.createElement('td');
+                cell.textContent = String(value);
+                row.append(cell);
+              }
+              return row;
+            }),
+          );
+          problems.textContent = report.unhandled.length
+            ? `${report.unhandled.length} left alone; see report.json.`
+            : '';
+          status.textContent = apply
+            ? `Applied ${report.changes.length} changes.`
+            : `${report.changes.length} changes to make.`;
+          result.hidden = false;
+          previewButton.disabled = false;
+          applyButton.disabled = apply || report.changes.length === 0;
+        }
+      });
+
+      document.getElementById('download').addEventListener('click', () => {
+        const url = URL.createObjectURL(
+          new Blob([json], { type: 'application/json' }),
+        );
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'report.json';
+        link.click();
+        // Revoking right away can cancel the download in some browsers.
+        setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      });
+    </script>
+  </body>
+</html>
