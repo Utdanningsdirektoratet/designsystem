@@ -1,0 +1,125 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as OppsummeringStories from './Oppsummering.stories';
+
+<Meta of={OppsummeringStories} />
+
+# Oppsummering
+
+Før brukeren sender inn et skjema, skal de få se over svarene en siste gang og kunne rette feil. Oppsummeringen er siste steg før innsending.
+
+## Når bør man følge bruksmønsteret?
+
+Bruk dette mønsteret når
+
+- skjemaet har flere steg eller seksjoner, slik at brukeren ikke ser alle svarene samtidig
+- innsendingen har konsekvenser for brukeren, for eksempel en søknad, og svarene ikke kan endres etterpå
+
+Et kort skjema på én side trenger ikke en egen oppsummering, siden brukeren ser alle svarene før de sender inn. I svært lange skjemaer kan det hjelpe med en oppsummering etter hver del, i tillegg til den siste.
+
+{/* Kilde: GOV.UK check answers anbefaler oppsummering før innsending for små og mellomstore tjenester, og foreslår oppsummering per del i svært store tjenester (bør testes med brukere). https://design-system.service.gov.uk/patterns/check-answers/ */}
+{/* Kilde: WCAG 3.3.4 krever at brukeren kan se over, bekrefte og rette svar (eller angre) før innsending med juridiske eller økonomiske konsekvenser. Oppsummering er teknikk G98. https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html */}
+
+## Oppbygning
+
+Oppsummeringen skal
+
+- bare vise felt som er relevante for brukeren. Spørsmål brukeren aldri fikk, fordi tidligere svar gjorde dem uaktuelle, skal ikke vises.
+- bruke ledeteksten fra skjemaet som tittel på hvert svar
+- vise svarene i samme rekkefølge som i skjemaet
+
+{/* Kilde: Aksel sin oppsummeringsmal har tilbakelenke, overskriften «Oppsummering», en kort veiledning, FormSummary per steg og «Send søknad». GOV.UK: knappen skal si hva den gjør, og siden skal bare vise relevante svar. https://aksel.nav.no/monster-maler/soknadsdialog/oppsummeringsside-for-soknadsdialoger */}
+
+## Bruk FormSummary for vanlige spørsmål
+
+Bruk [`FormSummary`](/docs/components-formsummary--docs) for spørsmål som brukeren svarer på én gang, for eksempel kontaktinformasjon og opplysninger om søknaden. Lag én seksjon per steg i skjemaet, med en lenke som tar brukeren rett til riktig steg.
+
+<Canvas of={OppsummeringStories.EnkeltSkjema} />
+
+## Bruk tabell for repeterende felt
+
+Når brukeren har lagt til flere like elementer, blir `FormSummary` lang og repeterende. Bruk en [tabell](/docs/components-table--docs) med handlinger på hver rad når
+
+- elementene er av samme type
+- alle elementene har de samme feltene, som kan vises som kolonner
+- brukeren må kunne endre eller slette enkeltelementer
+
+I eksempelet under er det seks lærere med fire opplysninger hver. I `FormSummary` ville det blitt seks seksjoner og 24 felt. I tabellen er det seks rader som er enkle å skanne og sammenligne.
+
+<Canvas of={OppsummeringStories.Tabell} />
+
+{/* Kilde: GOV.UK anbefaler summary cards når brukeren skal sjekke flere ting av samme type, og fraråder summary list for tabelldata. Aksel grupperer svar for «Legg til barn» i FormSummary. Vi bruker tabell fordi alle elementene har de samme feltene. https://design-system.service.gov.uk/components/summary-list/ https://aksel.nav.no/komponenter/core/formsummary */}
+
+### Slik bygger du tabellen
+
+- Følg retningslinjene for [`Table`](/docs/components-table--docs), blant annet høyrejusterte tall.
+- Hvis hvert element har mer informasjon enn det som passer i kolonner, bruk [ekspanderende rader](/docs/patterns-tabeller-ekspanderende-rader--docs).
+- Legg handlingene i en egen kolonne til høyre, med skjult overskrift («Handlinger»).
+- Bruk tertiære ikonknapper med [`Tooltip`](/docs/components-tooltip--docs): blyant for «Rediger» og søppelkasse for «Slett». Bruk `danger` på «Slett».
+- Bruk knapper med synlig tekst hvis målgruppen i hovedsak bruker mobil, siden `Tooltip` er lite egnet på berøringsskjermer.
+- Vis en tydelig tekst når tabellen ikke har noen rader, og forklar hvis det kreves minst ett element.
+
+## Slik viser du svarene
+
+- Vis svarene i samme format som brukeren skrev dem inn, for eksempel datoer, beløp og organisasjonsnummer.
+- Har brukeren valgt flere svar på ett spørsmål, vis hvert svar på en egen linje. Ikke bruk punktliste, siden den trekker mer oppmerksomhet enn de andre svarene.
+- Vis vedlegg med filnavnet, slik at brukeren ser hvilken fil som er lastet opp.
+- Lange spørsmål kan kortes ned til en kort ledetekst, så lenge brukeren kjenner igjen spørsmålet.
+
+{/* Kilde: Aksel FormSummary – flere svar vises etter hverandre uten kulepunkter, fordi punktlister tiltrekker mye oppmerksomhet. https://aksel.nav.no/komponenter/core/formsummary */}
+{/* Kilde: GOV.UK check answers – lange spørsmål kan skrives om til korte utsagn, og adresser trenger ikke ledetekst per linje. https://design-system.service.gov.uk/patterns/check-answers/ */}
+
+### Tomme og valgfrie svar
+
+Felt som er relevante, men som brukeren ikke har svart på, skal fortsatt vises. Ellers kan det se ut som noe mangler. `FormSummary` viser en standardtekst for [tomme svar](/docs/components-formsummary--docs#tomme-svar). Bruk samme tekst i tomme tabellceller.
+
+{/* Kilde: GOV.UK viser valgfrie spørsmål uten svar som «Not provided». https://design-system.service.gov.uk/patterns/check-answers/ */}
+
+## Feil og manglende svar
+
+Brukeren må få vite om manglende eller feil svar før de sender inn.
+
+- Vis en [oppsummering av feil](/docs/patterns-skjema-feilmeldinger--docs) like over innsendingsknappen.
+- Hver lenke i feiloppsummeringen skal ta brukeren til riktig steg og felt.
+- Feilen skal forsvinne når den er rettet.
+
+### Feil i FormSummary
+
+Vis feilen ved svaret med `error` på `FormSummary.Field`.
+
+<Canvas of={OppsummeringStories.FormSummaryMedFeil} />
+
+### Feil i tabell
+
+Vis feilen i raden den gjelder. Raden får en lett rød bakgrunn og en rød kant til venstre, og cellen får en kort melding, for eksempel «Mangler fag». Mangler det elementer, vises feilen ved tabellen.
+
+Ta med navnet på elementet i feiloppsummeringen, for eksempel «Ola Berg: Velg hvilket fag læreren skal ta videreutdanning i».
+
+<Canvas of={OppsummeringStories.TabellMedFeil} />
+
+{/* Grunnlag: Rødt i raden og en kort melding i cellen følger Repeterende data, der importerte rader med feil markeres på samme måte. */}
+{/* Kilde: Aksel – feilmeldinger i ErrorSummary skal si hvilket element de gjelder. https://aksel.nav.no/monster-maler/soknadsdialog/monster-for-skjemavalidering */}
+
+## Endring av svar
+
+Svar redigeres i selve skjemaet, ikke i oppsummeringen. Dette gjelder både lenkene i `FormSummary` og «Rediger» i tabellen. Når brukeren velger å redigere et svar
+
+- skal skjemaet være forhåndsutfylt
+- skal brukeren kunne gå rett tilbake til oppsummeringen etter endringen
+- skal nye spørsmål som oppstår på grunn av endringen vises før brukeren kommer tilbake
+
+Bare sletting av et element i en tabell kan skje direkte i oppsummeringen. Be alltid om bekreftelse før noe slettes. Brukeren er langt fra stedet der elementet ble fylt ut, og må gjennom skjemaet igjen for å legge det til på nytt.
+
+{/* Kilde: GOV.UK check answers – forhåndsutfylt skjema, tilbake til oppsummeringen etter endring, og nye spørsmål før retur. https://design-system.service.gov.uk/patterns/check-answers/ */}
+{/* Kilde: WCAG 3.3.4 og teknikk G168 (be om bekreftelse) for handlinger som sletter informasjon. Aksel: «Slett søknaden» skal be om bekreftelse i en modal. https://www.w3.org/WAI/WCAG22/Techniques/general/G168 */}
+{/* Grunnlag: I Repeterende data slettes rader med få felt uten bekreftelse, fordi brukeren er i skjemaet og raskt kan legge dem til igjen. I oppsummeringen er det ikke tilfellet, så vi ber alltid om bekreftelse. */}
+
+## Tilgjengelighet
+
+- Gi siden en tittel som sier hvor brukeren er, for eksempel «Oppsummering – Søknad om videreutdanning».
+- Bruk overskriftsnivåer som følger strukturen.
+- Hver knapp i tabellen må ha et unikt tilgjengelig navn, for eksempel «Rediger Kari Hansen». Legg navnet i skjult tekst (`ds-sr-only`) inni knappen.
+- Gi tabellen et navn med `aria-labelledby` som peker på overskriften over den.
+- Etter sletting forsvinner knappen som hadde fokus. Flytt fokus til overskriften over tabellen, og fortell hva som ble slettet med en `div` med `role="status"` og `aria-live="polite"`, for eksempel «Ola Berg er slettet».
+
+{/* Kilde: WCAG 2.4.2 sidetitler, 1.3.1 overskrifter, 2.4.3 fokusrekkefølge og 4.1.3 statusbeskjeder. https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html */}
+{/* Kilde: GOV.UK legger skjult tekst i «Change»-lenkene slik at hver lenke får et unikt navn. https://design-system.service.gov.uk/patterns/check-answers/ */}
