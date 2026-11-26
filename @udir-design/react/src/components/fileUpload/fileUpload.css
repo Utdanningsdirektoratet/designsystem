@@ -8,8 +8,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Slipp filen her';
   --udsc-fileUpload-dropFiles-active-text: 'Slipp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Laster opp...';
+  --udsc-fileUpload-loading-text: 'Laster opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern filen';
+  --udsc-fileUpload-removed-text: 'er fjernet';
+  --udsc-fileUpload-downloadFile-text: 'Last ned filen';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikke lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -22,8 +25,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Slepp fila her';
   --udsc-fileUpload-dropFiles-active-text: 'Slepp filen(e) her';
   --udsc-fileUpload-or-text: 'eller';
-  --udsc-fileUpload-uploading-text: 'Lastar opp...';
+  --udsc-fileUpload-loading-text: 'Lastar opp...';
   --udsc-fileUpload-removeFile-text: 'Fjern fila';
+  --udsc-fileUpload-removed-text: 'er fjerna';
+  --udsc-fileUpload-downloadFile-text: 'Last ned fila';
+  --udsc-fileUpload-invalid-text: 'ugyldig';
   --udsc-fileUpload-disabled-text-line-one: 'Du kan ikkje lenger';
   --udsc-fileUpload-disabled-text-line-two: 'laste opp filer';
 }
@@ -36,8 +42,11 @@
   --udsc-fileUpload-dropFile-active-text: 'Drop the file here';
   --udsc-fileUpload-dropFiles-active-text: 'Drop the files here';
   --udsc-fileUpload-or-text: 'or';
-  --udsc-fileUpload-uploading-text: 'Uploading...';
+  --udsc-fileUpload-loading-text: 'Uploading...';
   --udsc-fileUpload-removeFile-text: 'Remove file';
+  --udsc-fileUpload-removed-text: 'removed';
+  --udsc-fileUpload-downloadFile-text: 'Download file';
+  --udsc-fileUpload-invalid-text: 'invalid';
   --udsc-fileUpload-disabled-text-line-one: 'You can no longer';
   --udsc-fileUpload-disabled-text-line-two: 'upload files';
 }
@@ -52,8 +61,37 @@
   width: fit-content;
   height: fit-content;
 
-  > input {
-    display: none;
+  /*
+  * The file input is the interactive control: it covers the drop zone (or the
+  * trigger button) as a transparent overlay, so clicks, drops and focus all
+  * land on a real form control. The button inside is presentational.
+  */
+  input[type='file'] {
+    position: absolute;
+    inset: 0;
+    /* `ds-input` is here for the readonly lock on the label, and it sizes the
+       input like a text field. The overlay is sized by `inset` instead. */
+    height: auto;
+    width: auto;
+    margin: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: inherit;
+    /* Screen readers read the input by the text the browser draws in it, cut
+       off to fit: VoiceOver on iOS read Safari's "No files selected" on the
+       trigger button as "N", and NVDA in Firefox read a long file name as
+       "eksempel...navn.csv". The input is invisible, so the text may be as
+       small as it takes to fit whole. */
+    font-size: 1px;
+  }
+
+  &:has(input[type='file']:focus-visible) {
+    > .ds-card,
+    .uds-file-upload__trigger > .ds-button {
+      box-shadow: var(--dsc-focus-boxShadow);
+      outline: var(--dsc-focus-outline);
+      outline-offset: var(--ds-border-width-focus);
+    }
   }
 
   /* Loading state */
@@ -69,6 +107,7 @@
     flex-direction: column;
   }
   > .ds-card {
+    position: relative;
     margin-block-start: var(--ds-size-2);
     width: 100%;
     flex-basis: 100%;
@@ -79,6 +118,13 @@
     gap: var(--ds-size-2);
     --dsc-card-border-style: dashed;
     --dsc-card-border-color: var(--ds-color-border-strong);
+  }
+
+  /* Positioning context for the trigger's input overlay */
+  > .uds-file-upload__trigger {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
   }
 
   &[data-drag-global]:not([data-drag-active]),
@@ -131,6 +177,31 @@
         color: var(--dsc-button-color--hover);
       }
     }
+
+    /* The whole zone shows hover, with the button in its hover state inside
+       it. Not while a file is dragged, which has states of its own. */
+    &:not([data-drag-global], [data-drag-active]) > .ds-card:hover {
+      background: var(--ds-color-neutral-surface-hover);
+    }
+
+    /* The input lies over the trigger's button, so the button is never
+       hovered or pressed itself. Its states follow the trigger instead, as
+       `.ds-button`'s own do. */
+    > .uds-file-upload__trigger {
+      cursor: pointer;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover > .ds-button {
+          background: var(--dsc-button-background--hover);
+          color: var(--dsc-button-color--hover);
+        }
+      }
+
+      &:active > .ds-button {
+        background: var(--dsc-button-background--active);
+        color: var(--dsc-button-color--active);
+      }
+    }
   }
 
   &:has(label:hover) {
@@ -150,7 +221,7 @@
   }
 
   /* Trigger texts */
-  > .ds-button::after {
+  > .uds-file-upload__trigger > .ds-button::after {
     content: var(--udsc-fileUpload-button-text);
   }
 
@@ -218,6 +289,10 @@
       &[data-invalid] {
         --dsc-card-border-color: var(--ds-color-danger-border-strong);
       }
+
+      &[data-valid] {
+        --dsc-card-border-color: var(--ds-color-success-border-strong);
+      }
     }
   }
 
@@ -251,7 +326,7 @@
       }
     }
 
-    .uds-file-upload__item-error > p {
+    .uds-file-upload__item-message > p {
       font-size: var(--ds-font-size-minus-1);
     }
   }
@@ -259,15 +334,81 @@
 
 /* FileUpload.Item */
 .uds-file-upload__item {
-  word-break: break-all;
+  /* Descriptions and messages are prose and break between words like other
+     text, but a word longer than the line, such as an address, breaks within
+     it rather than running into the buttons or out of the card. */
+  overflow-wrap: anywhere;
+  position: relative;
 
-  [data-tooltip] {
+  /* While `loading` hides the button that had focus, the row's hidden file
+     name and loading text take focus, or the row itself when it is not
+     loading. The ring goes on the row either way, the same as Digdir's
+     `ds-focus`. */
+  &:focus-visible,
+  &:has(> .uds-file-upload__item-focus:focus-visible) {
+    box-shadow: var(--dsc-focus-boxShadow);
+    outline: var(--dsc-focus-outline);
+    outline-offset: var(--ds-border-width-focus);
+  }
+
+  /* Invisible but as big as the row, rather than `.ds-sr-only`: TalkBack
+     draws its frame around the element itself, and around `.ds-sr-only` it
+     drew a dot above the spinner. */
+  .uds-file-upload__item-focus {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* A long file name has nowhere to break, so it may break anywhere. An
+     invalid name is a `div`; at the width of its text, screen readers frame
+     it as they do the other names. */
+  .uds-file-upload__item-name {
+    word-break: break-all;
+    width: fit-content;
+  }
+
+  /* A number and its unit, such as "844 KB", stay on one line. */
+  .uds-file-upload__file-size {
+    white-space: nowrap;
+  }
+
+  /* Two classes, to win over Digdir's `[data-tooltip]` reset on the button. */
+  .uds-file-upload__delete-button {
     --ds-tooltip: var(--udsc-fileUpload-removeFile-text);
   }
 
-  /* Uploading text in the paragraph after link */
-  &[aria-busy='true'] .ds-link + .ds-paragraph::before {
-    content: var(--udsc-fileUpload-uploading-text);
+  .uds-file-upload__download-button {
+    --ds-tooltip: var(--udsc-fileUpload-downloadFile-text);
+  }
+
+  /* The default text while loading. On the empty element, so that a
+     `loadingText` takes its place rather than landing next to it. */
+  &[data-loading] .uds-file-upload__item-description:empty::before {
+    content: var(--udsc-fileUpload-loading-text);
+  }
+
+  /* Text for screen readers only, within visible text: the file name before
+     a message, and "ugyldig" after the file name. Visually hidden like
+     `.ds-sr-only`, but kept in the line instead of taken out of it with
+     `position: absolute`: NVDA in Firefox read it as a stop of its own. */
+  .uds-file-upload__hidden-text {
+    display: inline-block;
+    width: 1px;
+    /* With `overflow: hidden` its baseline is its bottom edge, which would
+       lift it above the text and make the line taller. */
+    vertical-align: top;
+    margin-inline-end: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    /* `pre` rather than `nowrap`, so the space after the file name is kept
+       at the end of the box. */
+    white-space: pre;
+  }
+  .uds-file-upload__item-invalid::before {
+    content: ', ' var(--udsc-fileUpload-invalid-text);
   }
 }
 
@@ -275,10 +416,21 @@
   display: flex;
   align-items: center;
   width: 100%;
+  /* As tall as a button, so a row without buttons, such as one that is
+     loading, is as tall as the rest, and does not grow when its buttons come
+     back. */
+  min-block-size: var(--ds-size-12);
+  /* The row is the item's first child except while the hidden focus element
+     comes before it, when Digdir's spacing between card children would push
+     it down. */
+  margin-block-start: 0;
+}
 
-  > .ds-button {
-    margin-inline-start: auto;
-  }
+.uds-file-upload__item-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
+  margin-inline-start: auto;
 }
 
 .uds-file-upload__item-icon > svg {
@@ -294,19 +446,25 @@
   flex: 1;
 }
 
-.uds-file-upload__item-error {
+.uds-file-upload__item-description {
+  color: var(--ds-color-neutral-text-subtle);
+  font-size: var(--ds-font-size-minus-1);
+}
+
+.uds-file-upload__item-message {
   margin-block-start: 0;
 
-  > p {
-    padding-inline-start: calc(
+  > .ds-validation-message {
+    /* Smaller than the icon on a field message, which stands beside a whole
+       field rather than inside a row. */
+    --dsc-validation-message-icon-size: 1em;
+
+    /* Lines the message up with the file name, past the file type icon. */
+    margin-inline-start: calc(
       var(--udsc-fileUpload-item-icon-size) +
         var(--udsc-fileUpload-item-icon-gap)
     );
-    color: var(--ds-color-danger-text-subtle);
-    display: flex;
-    gap: var(--ds-size-2);
     margin-block-start: var(--ds-size-1);
-    align-items: center;
   }
 }
 
@@ -314,11 +472,8 @@
 .uds-file-upload__list[data-variant='compact'] .uds-file-upload__item-content {
   display: flex;
   align-items: center;
-  gap: var(--ds-size-3);
+  /* Space beside the file name, but none below it: a description that wraps
+     onto a line of its own sits right under the name, as in `default`. */
+  gap: 0 var(--ds-size-3);
   flex-wrap: wrap;
-
-  > .ds-paragraph {
-    color: var(--ds-color-neutral-text-subtle);
-    white-space: nowrap;
-  }
 }
