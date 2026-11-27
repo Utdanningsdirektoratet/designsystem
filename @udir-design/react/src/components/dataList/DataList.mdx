@@ -1,0 +1,161 @@
+import { Meta, Controls, Canvas } from '@storybook/addon-docs/blocks';
+
+import * as DataListStories from './DataList.stories';
+
+<Meta of={DataListStories} />
+
+# DataList
+
+`DataList` viser data som en liste med flere verdier per oppføring. Det som ville vært en rad i en tabell, blir en oppføring i listen, med verdiene etter hverandre. Bruk `DataList` når hver oppføring har flere verdier, men det viktigste er å finne og åpne én bestemt oppføring, og ikke å sammenligne verdier på tvers av oppføringene.
+
+Ikke forveksle `DataList` med HTML-elementet `<datalist>`, som gir forslag i tekstfelt.
+
+**Passer til å**
+
+- vise en oversikt over for eksempel saker, læreplaner, eksamener eller skoler, der brukeren skal finne og åpne én oppføring
+- vise data på små skjermer
+
+**Passer ikke til å**
+
+- sammenligne verdier på tvers av mange rader – bruk heller [`Table`](/docs/components-table--docs)
+- vise en vanlig punktliste med tekst – bruk heller [`List`](/docs/components-list--docs)
+
+## Slik bruker du DataList
+
+<Canvas of={DataListStories.Preview} withToolbar />
+<Controls of={DataListStories.Preview} />
+
+```tsx
+import { Heading, Link, Tag } from '@udir-design/react';
+import { DataList } from '@udir-design/react/alpha';
+
+<>
+  <Heading level={2} id="oppgaver">
+    Oppgaver
+  </Heading>
+  <DataList aria-labelledby="oppgaver">
+    <DataList.Item>
+      <DataList.Row>
+        <DataList.Title>
+          <Link href="/oppgaver/1">Oppdater personvernerklæringen</Link>
+        </DataList.Title>
+        <DataList.Value label="Status">
+          <Tag data-color="info">Pågår</Tag>
+        </DataList.Value>
+        <DataList.Value>Innmeldt 13. november</DataList.Value>
+      </DataList.Row>
+      <DataList.Row>
+        <DataList.Value label="Prioritet">
+          <Tag>Lav</Tag>
+        </DataList.Value>
+        <DataList.Value label="Type">Innhold</DataList.Value>
+        <DataList.Value>Endret av Markus</DataList.Value>
+      </DataList.Row>
+      <DataList.Aside>
+        <DataList.Value label="Id">#1</DataList.Value>
+      </DataList.Aside>
+    </DataList.Item>
+  </DataList>
+</>;
+```
+
+### Subkomponenter
+
+Subkomponentene bestemmer oppsettet, og du bestemmer hva som står i dem.
+
+- `DataList.Item` er én oppføring i listen.
+- `DataList.Row` er en linje med verdier. Verdiene skilles med `·` og brytes til neste linje når det ikke er plass.
+- `DataList.Title` er tittelen på oppføringen. Den er en overskrift, med `level={3}` som standard.
+- `DataList.Value` er én verdi, for eksempel tekst eller en `Tag`. Med `label` får verdien en ledetekst som bare skjermlesere leser opp.
+- `DataList.Aside` legges til høyre i oppføringen, eller under radene når det er lite plass. Bruk den til for eksempel et id-nummer, knapper eller lenker.
+
+Du kan også legge et element foran radene i `DataList.Item`, for eksempel en `Checkbox`.
+
+## Eksempler
+
+### Klikkbare oppføringer
+
+Oppføringene er ikke klikkbare som standard, og har da ingen hover-effekt. En lenke i `DataList.Title` er bare en vanlig lenke.
+
+Legg til `clickable` på `DataList.Item` for å gjøre hele oppføringen klikkbar. Da følger et klikk hvor som helst på oppføringen lenken i tittelen, og oppføringen får hover-effekt. Lenken må finnes når oppføringen vises første gang. Dette fungerer på samme måte som [lenkekort med `Card`](/docs/components-card--docs#lenkekort).
+
+```tsx
+<DataList.Item clickable>
+  <DataList.Row>
+    <DataList.Title>
+      <Link href="/laereplaner/MAT01-05">
+        Læreplan i matematikk 1.–10. trinn
+      </Link>
+    </DataList.Title>
+  </DataList.Row>
+</DataList.Item>
+```
+
+I eksempelet under er hver oppføring en læreplan som lenker til læreplanen.
+
+<Canvas of={DataListStories.ClickableRows} />
+
+### Med handlinger
+
+Knapper og lenker i `DataList.Aside` fungerer som vanlig, også når oppføringen har `clickable`. I eksempelet under kan brukeren åpne en eksamen, eller laste ned oppgaven og sensorveiledningen direkte.
+
+Når knappene har synlig tekst, kan du legge til en skjult tekst med klassen `ds-sr-only` som sier hvilken oppføring de gjelder. Start navnet med den synlige teksten, slik at brukere av talestyring kan si det de ser.
+
+<Canvas of={DataListStories.WithActions} />
+
+### Velge oppføringer
+
+Legg en `Checkbox` først i `DataList.Item` for å la brukeren velge oppføringer. Gi avkrysningsboksen et navn med `aria-label` som sier hvilken oppføring den gjelder, for eksempel «Velg Ammerud skole». Valgte oppføringer får en annen bakgrunnsfarge.
+
+Gi `DataList.Item` `data-clickdelegatefor` med id-en til avkrysningsboksen, så kan brukeren klikke hvor som helst på oppføringen. En oppføring kan bare sende klikk videre til ett element, så bruk enten `clickable` eller `data-clickdelegatefor`, ikke begge.
+
+I eksempelet under velger brukeren skoler som har rapportert.
+
+<Canvas of={DataListStories.Selectable} />
+
+### Smal plass
+
+Når det ikke er plass til alle verdiene på én linje, brytes de til neste linje. Når listen er smalere enn 30rem, blir luften rundt innholdet mindre, radene får mer luft mellom seg, og `DataList.Aside` flyttes under radene, slik at verdiene får hele bredden.
+
+Det er bredden på listen som avgjør dette, ikke bredden på skjermen. Derfor kan ikke listen bli bredere av innholdet sitt. Plasserer du listen i et element som bare blir så bredt som innholdet, for eksempel med `width: fit-content` eller i en vannrett flexboks, må du gi listen en bredde.
+
+<Canvas of={DataListStories.Wrapping} />
+
+### Mye innhold
+
+Lange titler, mange verdier og lengre tekst brytes over flere linjer. Bruk gjerne flere `DataList.Row` for å dele opp innholdet, som i høringene under.
+
+<Canvas of={DataListStories.MuchContent} />
+
+### Liste eller tabell
+
+`DataList` kan vise de samme dataene som en `Table`. Valg av visning og sidenavigering legger du rundt listen selv. Eksempelet under viser de samme skolene som mønsteret for [filtrering av tabeller](/docs/patterns-tabeller-filtrering--docs).
+
+<Canvas of={DataListStories.ListOrTable} />
+
+## Retningslinjer
+
+- Plasser listen rett under en overskrift som sier hva listen viser. Gi `DataList.Title` nivået under denne overskriften.
+- Ha bare én lenke i tittelen. Andre handlinger og lenker legger du i `DataList.Aside`.
+- Vis de samme verdiene i samme rekkefølge i alle oppføringene. Da er listen lett å skumme, selv om den ikke har kolonner.
+- Legg de viktigste verdiene, for eksempel status, på første rad.
+- Vis en tekst i stedet for listen når den er tom, for eksempel «Ingen oppgaver».
+
+## Tekst i DataList
+
+Tittelen skal skille oppføringen fra de andre oppføringene i listen. Bruk navnet brukeren kjenner oppføringen ved, som navnet på skolen eller tittelen på saken.
+
+Hold verdiene korte. Fordi `label` ikke vises, må verdiene gi mening for de som ser dem. Ta med et ord som forklarer verdien når den ikke forklarer seg selv, for eksempel «Endret 27. november» i stedet for bare «27. november», og «Org.nr. 974760673» i stedet for bare «974760673». Verdier som en status i en `Tag` forklarer seg selv for de som ser dem, men trenger `label` for skjermlesere.
+
+Skriv like verdier på samme måte i alle oppføringene, for eksempel datoer.
+
+## Tilgjengelighet
+
+- Listen er en `<ul>` med `role="list"`, slik at skjermlesere leser opp hvor mange oppføringer den har.
+- Gi listen et navn med `aria-labelledby` som peker på overskriften over listen. Ikke alle skjermlesere leser opp navn på lister, så overskriften må stå der uansett.
+- Titlene er overskrifter, så brukere av skjermleser kan hoppe mellom oppføringene.
+- Bruk `label` på `DataList.Value` når verdien ikke forklarer seg selv, for eksempel `Status` foran «Pågår». `label` erstatter kolonneoverskriften du ville hatt i en tabell. Dette gjelder også verdier i `DataList.Aside`, for eksempel `label="Id"` foran «#1».
+- Skillene `·` mellom verdiene leses opp som en kort pause, slik at verdiene ikke flyter sammen.
+- Gi knapper og lenker navn som sier hvilken oppføring de gjelder, for eksempel «Slett oppgave #1» og ikke bare «Slett». Da er navnene unike når skjermleseren viser alle knappene på siden.
+- Lenken i tittelen kan nås med tastaturet. Med `clickable` sendes klikk på resten av oppføringen videre til lenken. Knapper, lenker og skjemaelementer i oppføringen fungerer som vanlig.
+- Valgte oppføringer vises med avkrysningsboksen, ikke bare med bakgrunnsfargen. Det gjør at valget også synes i Windows høykontrastmodus.

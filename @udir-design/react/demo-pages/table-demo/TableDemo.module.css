@@ -82,6 +82,12 @@
   }
 }
 
+.tableActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-size-4);
+}
+
 .tableSearch {
   width: 16.25rem;
 }
@@ -130,4 +136,11 @@
 
 .row > :nth-child(7) {
   width: 2.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  margin-block: var(--ds-size-4) var(--ds-size-6);
 }

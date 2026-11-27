@@ -20,6 +20,14 @@ import {
   ChipRadio,
   ChipRemovable,
 } from 'src/components/chip';
+import {
+  DataList,
+  DataListAside,
+  DataListItem,
+  DataListRow,
+  DataListTitle,
+  DataListValue,
+} from 'src/components/dataList';
 import { DemoBanner } from 'src/components/demoBanner';
 import {
   Details,
@@ -196,6 +204,19 @@ export function cspDemoComponents(props: CspDemoProps) {
         </BreadcrumbsItem>
       </BreadcrumbsList>
     </Breadcrumbs>
+  );
+  const dataList = (
+    <DataList aria-label="Oppføringer">
+      <DataListItem clickable>
+        <DataListRow>
+          <DataListTitle>
+            <a href="#oppforing">Tittel</a>
+          </DataListTitle>
+          <DataListValue label="Status">Aktiv</DataListValue>
+        </DataListRow>
+        <DataListAside>#1</DataListAside>
+      </DataListItem>
+    </DataList>
   );
   const card = (
     <Card data-color="accent" variant="tinted">
@@ -472,6 +493,12 @@ export function cspDemoComponents(props: CspDemoProps) {
       </ChipRadio>
     ),
     ChipRemovable: <ChipRemovable>Fjern</ChipRemovable>,
+    DataList: dataList,
+    DataListAside: dataList,
+    DataListItem: dataList,
+    DataListRow: dataList,
+    DataListTitle: dataList,
+    DataListValue: dataList,
     DemoBanner: <DemoBanner text={props.bannerText}>Innhold</DemoBanner>,
     Details: details,
     DetailsContent: details,

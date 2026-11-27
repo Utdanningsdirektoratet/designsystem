@@ -46,37 +46,62 @@ exports[`Table Story 1`] = `
           </label>
         </div>
       </fieldset>
-      <ds-suggestion
-        data-sr-added="La til"
-        data-sr-clear="Fjern tekst"
-        data-sr-empty="Ingen valgte"
-        data-sr-found="Naviger til venstre for å finne %d valgte"
-        data-sr-invalid="Ugyldig valg"
-        data-sr-items="Valgte"
-        data-sr-of="av"
-        data-sr-plural="%d forslag"
-        data-sr-remove="Trykk for å fjerne"
-        data-sr-removed="Fjernet"
-        data-sr-singular="%d forslag"
-        data-sr-toggle="Valg"
-      >
-        <input
-          aria-label="Søk"
-          placeholder="Søk"
-          autocomplete="off"
-          type="search"
-          value
-          name="search"
+      <div>
+        <ds-suggestion
+          data-sr-added="La til"
+          data-sr-clear="Fjern tekst"
+          data-sr-empty="Ingen valgte"
+          data-sr-found="Naviger til venstre for å finne %d valgte"
+          data-sr-invalid="Ugyldig valg"
+          data-sr-items="Valgte"
+          data-sr-of="av"
+          data-sr-plural="%d forslag"
+          data-sr-remove="Trykk for å fjerne"
+          data-sr-removed="Fjernet"
+          data-sr-singular="%d forslag"
+          data-sr-toggle="Valg"
         >
-        <button
-          hidden
-          type="reset"
-          aria-label="Fjern tekst"
-          aria-hidden="false"
-          tabindex="-1"
+          <input
+            aria-label="Søk"
+            placeholder="Søk"
+            autocomplete="off"
+            type="search"
+            value
+            name="search"
+          >
+          <button
+            hidden
+            type="reset"
+            aria-label="Fjern tekst"
+            aria-hidden="false"
+            tabindex="-1"
+          >
+          </button>
+        </ds-suggestion>
+        <fieldset
+          aria-label="Visning"
+          data-variant="secondary"
+          focusgroup="radiogroup"
         >
-        </button>
-      </ds-suggestion>
+          <label data-variant="tertiary">
+            <input
+              type="radio"
+              value="tabell"
+              checked
+              name="togglegroup-name-<generated>"
+            >
+            Tabell
+          </label>
+          <label data-variant="tertiary">
+            <input
+              type="radio"
+              value="liste"
+              name="togglegroup-name-<generated>"
+            >
+            Liste
+          </label>
+        </fieldset>
+      </div>
     </div>
     <div>
       <table data-border="true">

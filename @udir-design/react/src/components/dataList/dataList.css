@@ -1,0 +1,176 @@
+.uds-data-list {
+  /* Room around each `·` separator between values in a row */
+  --udsc-dataList-separator-width: var(--ds-size-6);
+
+  margin: 0;
+  padding: 0;
+  /* Lets the items adapt to the width of the list, not the viewport */
+  container-type: inline-size;
+}
+
+/* Each item is its own `.ds-card`. Dropping the border between them and
+   rounding only the outer corners makes the items read as one card divided by
+   lines, like the `compact` variant of `FileUpload.List`. */
+.uds-data-list__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  border-radius: 0;
+
+  &:not(:first-child) {
+    border-block-start-width: 0;
+  }
+
+  &:first-child {
+    border-start-start-radius: var(--dsc-card-border-radius);
+    border-start-end-radius: var(--dsc-card-border-radius);
+  }
+
+  &:last-child {
+    border-end-start-radius: var(--dsc-card-border-radius);
+    border-end-end-radius: var(--dsc-card-border-radius);
+  }
+
+  /* Removes the spacing `.ds-card` adds between its children */
+  --dsc-card-content-margin-block: 0;
+
+  > .uds-data-list__row {
+    grid-column: 2;
+  }
+
+  > .uds-data-list__row + .uds-data-list__row {
+    margin-block-start: var(--ds-size-2);
+  }
+
+  /* The aside and any leading element (such as a checkbox) span all rows. The
+     span is larger than the number of rows needed; the unused implicit rows
+     have no content and no row gap, so they take up no space. */
+  > :not(.uds-data-list__row) {
+    grid-row: 1 / span 20;
+  }
+
+  > :not(.uds-data-list__row, .uds-data-list__aside) {
+    grid-column: 1;
+    margin-inline-end: var(--ds-size-4);
+  }
+
+  > .uds-data-list__aside {
+    grid-column: 3;
+    margin-inline-start: var(--ds-size-4);
+  }
+
+  /* Selected, when a leading checkbox is checked */
+  &:has(
+    > :checked,
+    > :not(.uds-data-list__row, .uds-data-list__aside) :checked
+  ) {
+    --dsc-card-background: var(--ds-color-surface-tinted);
+  }
+}
+
+.uds-data-list__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: var(--ds-size-2);
+  min-height: var(--ds-size-8);
+
+  /* Every value starts with a separator. Moving the row back by the width of
+     one separator and clipping that area hides the separator of the first value
+     on each line, including lines created by wrapping. Only the outer part of
+     the area is clipped, so focus outlines of the first value stay visible. */
+  --_udsc-dataList-clip: calc(
+    var(--udsc-dataList-separator-width) / 2 + 0.25em
+  );
+  margin-inline-start: calc(-1 * var(--udsc-dataList-separator-width));
+  clip-path: inset(-100vmax -100vmax -100vmax var(--_udsc-dataList-clip));
+
+  /* `inset()` has no logical version */
+  &:dir(rtl) {
+    clip-path: inset(-100vmax var(--_udsc-dataList-clip) -100vmax -100vmax);
+  }
+
+  /* The separator hangs in the padding, so text that wraps inside a value
+     lines up with its first line instead of with the separator. */
+  > * {
+    padding-inline-start: var(--udsc-dataList-separator-width);
+  }
+
+  /* Screen readers get a comma instead of the dot, so they pause between
+     values like they would between table cells. The first value in a row gets
+     no alt text, so it is not added to the accessible name of the title. */
+  > ::before {
+    content: '·';
+    content: '·' / ', ';
+    display: inline-block;
+    width: var(--udsc-dataList-separator-width);
+    margin-inline-start: calc(-1 * var(--udsc-dataList-separator-width));
+    text-align: center;
+  }
+
+  > :first-child::before {
+    content: '·' / '';
+  }
+}
+
+.uds-data-list__title {
+  font: inherit;
+  font-weight: var(--ds-font-weight-medium);
+
+  /* Underlined like links in `Card` headings, since each item is a card. The
+     focus style and colour are for plain `<a>` tags; `Link` has its own. */
+  a {
+    @composes ds-focus from '@digdir/designsystemet-css/base.css';
+    color: inherit;
+    text-decoration-thickness: var(--dsc-card-link-text-decoration-thickness);
+    text-underline-offset: var(--dsc-card-link-text-decoration-offset);
+
+    /* The focus outline replaces the underline, as for `Link` */
+    &:focus-visible {
+      text-decoration: none;
+    }
+  }
+}
+
+/* `Card` only thickens the underline of headings placed directly in the card,
+   and the title is inside a row. The click delegation adds
+   `:click-delegate-hover` to the link while the pointer is over the item.
+   `:hover` is needed because the thickness above also overrides the hover style
+   of `Link`. */
+@media (hover: hover) and (pointer: fine) {
+  .uds-data-list__title a:is(:hover, .\:click-delegate-hover) {
+    text-decoration-thickness: var(
+      --dsc-card-link-text-decoration-thickness--hover
+    );
+  }
+}
+
+.uds-data-list__aside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-size-2);
+  min-height: var(--ds-size-8);
+  font-variant-numeric: tabular-nums;
+}
+
+/* In narrow lists, the content gets the full width and the aside moves below
+   it, so ids and buttons do not squeeze the values into a thin column. */
+@container (width < 30rem) {
+  .uds-data-list__item {
+    --dsc-card-padding: var(--ds-size-5);
+
+    /* Wrapped values make each row several lines tall, so the rows need more
+       space between them to stay apart. */
+    > .uds-data-list__row + .uds-data-list__row {
+      margin-block-start: var(--ds-size-4);
+    }
+
+    > .uds-data-list__aside {
+      grid-column: 2 / -1;
+      grid-row: auto;
+      margin-inline-start: 0;
+      margin-block-start: var(--ds-size-4);
+    }
+  }
+}

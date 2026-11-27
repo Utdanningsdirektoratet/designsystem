@@ -1,0 +1,1762 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Clickable Rows 1`] = `
+<div data-size="auto">
+  <ul
+    role="list"
+    aria-label="Læreplaner"
+  >
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#MAT01-05"
+            id="<generated>"
+          >
+            Læreplan i matematikk 1.–10. trinn
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Gjeldende
+          </span>
+        </span>
+        <span>
+          <span>
+            Læreplankode:
+          </span>
+          MAT01-05
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Fagtype:
+          </span>
+          Fellesfag
+        </span>
+        <span>
+          <span>
+            Nivå:
+          </span>
+          Grunnskolen
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#ENG01-04"
+            id="<generated>"
+          >
+            Læreplan i engelsk
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Gjeldende
+          </span>
+        </span>
+        <span>
+          <span>
+            Læreplankode:
+          </span>
+          ENG01-04
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Fagtype:
+          </span>
+          Fellesfag
+        </span>
+        <span>
+          <span>
+            Nivå:
+          </span>
+          Grunnskolen og videregående
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#NAT01-04"
+            id="<generated>"
+          >
+            Læreplan i naturfag
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Gjeldende
+          </span>
+        </span>
+        <span>
+          <span>
+            Læreplankode:
+          </span>
+          NAT01-04
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Fagtype:
+          </span>
+          Fellesfag
+        </span>
+        <span>
+          <span>
+            Nivå:
+          </span>
+          Grunnskolen og videregående
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#NOR01-06"
+            id="<generated>"
+          >
+            Læreplan i norsk
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="neutral">
+            Utgått
+          </span>
+        </span>
+        <span>
+          <span>
+            Læreplankode:
+          </span>
+          NOR01-06
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Fagtype:
+          </span>
+          Fellesfag
+        </span>
+        <span>
+          <span>
+            Nivå:
+          </span>
+          Grunnskolen og videregående
+        </span>
+        <span>
+          Erstattet av NOR01-07
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List Or Table 1`] = `
+<div data-size="auto">
+  <div style="<removed>">
+    <fieldset
+      aria-label="Visning"
+      data-variant="secondary"
+      focusgroup="radiogroup"
+      style="<removed>"
+    >
+      <label data-variant="tertiary">
+        <input
+          type="radio"
+          value="liste"
+          checked
+          name="togglegroup-name-<generated>"
+        >
+        Liste
+      </label>
+      <label data-variant="tertiary">
+        <input
+          type="radio"
+          value="tabell"
+          name="togglegroup-name-<generated>"
+        >
+        Tabell
+      </label>
+    </fieldset>
+    <p
+      aria-live="polite"
+      data-size="sm"
+    >
+      Viser 6–10 av 10 skoler
+    </p>
+    <ul
+      role="list"
+      aria-label="Skoler som har rapportert"
+    >
+      <li data-clickdelegatefor="<generated>">
+        <div>
+          <h3>
+            <a
+              href="#skole-66666666"
+              id="<generated>"
+            >
+              Marienlyst skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="danger">
+              Avvist
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2026
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 66666666
+          </span>
+        </div>
+      </li>
+      <li data-clickdelegatefor="<generated>">
+        <div>
+          <h3>
+            <a
+              href="#skole-77777777"
+              id="<generated>"
+            >
+              Ryenberget skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="danger">
+              Avvist
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2025
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 77777777
+          </span>
+        </div>
+      </li>
+      <li data-clickdelegatefor="<generated>">
+        <div>
+          <h3>
+            <a
+              href="#skole-88888888"
+              id="<generated>"
+            >
+              Nordberg skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="info">
+              Behandles
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2025
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 88888888
+          </span>
+        </div>
+      </li>
+      <li data-clickdelegatefor="<generated>">
+        <div>
+          <h3>
+            <a
+              href="#skole-99999999"
+              id="<generated>"
+            >
+              Bryn skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="danger">
+              Avvist
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2025
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 99999999
+          </span>
+        </div>
+      </li>
+      <li data-clickdelegatefor="<generated>">
+        <div>
+          <h3>
+            <a
+              href="#skole-00000000"
+              id="<generated>"
+            >
+              Brynseng skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="success">
+              Ferdig
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2025
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 00000000
+          </span>
+        </div>
+      </li>
+    </ul>
+    <ds-pagination
+      aria-label="Sidenavigering for skoler"
+      role="navigation"
+    >
+      <ul>
+        <li>
+          <button
+            type="button"
+            aria-label="Forrige side"
+            aria-hidden="false"
+          >
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            aria-label="Side 1"
+          >
+            1
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            aria-label="Side 2"
+            aria-current="true"
+          >
+            2
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            aria-label="Neste side"
+            aria-hidden="true"
+          >
+          </button>
+        </li>
+      </ul>
+    </ds-pagination>
+  </div>
+</div>
+`;
+
+exports[`Much Content 1`] = `
+<div data-size="auto">
+  <ul
+    role="list"
+    aria-label="Høringer"
+  >
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#hoering-2026-1234"
+            id="<generated>"
+          >
+            Høring om endringer i forskrift til opplæringslova om standpunktvurdering, eksamen og klagebehandling for elever som bytter skole i løpet av skoleåret
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Åpen
+          </span>
+        </span>
+        <span>
+          Høringsfrist 15. januar 2027
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Type:
+          </span>
+          Forskriftsendring
+        </span>
+        <span>
+          <span>
+            Tema:
+          </span>
+          Vurdering og eksamen
+        </span>
+        <span>
+          <span>
+            Målgruppe:
+          </span>
+          Skoleeiere, skoleledere, lærere og elevorganisasjoner
+        </span>
+        <span>
+          Publisert 13. november 2026
+        </span>
+        <span>
+          Kontaktperson Markus Johannessen-Bergstrøm
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Sammendrag:
+          </span>
+          Elever som bytter skole midt i skoleåret får i dag ikke alltid med seg vurderingene fra forrige skole. Vi foreslår at halvårsvurderinger, underveisvurderinger og fritak skal følge eleven til den nye skolen, og at fristene for klage regnes fra da eleven fikk vurderingen.
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Emner:
+          </span>
+          <span style="<removed>">
+            <span>
+              Standpunkt
+            </span>
+            <span>
+              Eksamen
+            </span>
+            <span>
+              Klage
+            </span>
+            <span>
+              Skolebytte
+            </span>
+          </span>
+        </span>
+      </div>
+      <div>
+        <span>
+          Sak 2026/1234
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Last ned høringsnotatet for sak 2026/1234"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned høringsnotatet for sak 2026/1234"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Få varsler om sak 2026/1234"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Få varsler om sak 2026/1234"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12.75 2.5a.75.75 0 0 0-1.5 0v1.273c-2.222.14-3.655.92-4.499 2.186-.887 1.33-1.001 3.04-1.001 4.541v3c0 .809-.424 1.92-.92 2.915a18 18 0 0 1-.936 1.641l-.014.022-.004.006A.75.75 0 0 0 4.5 19.25h4.338a3.25 3.25 0 0 0 6.324 0H19.5a.75.75 0 0 0 .624-1.166l-.004-.006-.014-.022-.06-.091c-.05-.081-.125-.2-.215-.35-.18-.301-.42-.722-.66-1.2-.497-.994-.921-2.106-.921-2.915v-3c0-1.501-.114-3.21-1.001-4.541-.844-1.266-2.277-2.046-4.499-2.186zM12 5.25c-2.345 0-3.436.694-4.001 1.541-.613.92-.749 2.21-.749 3.709v3c0 1.191-.576 2.58-1.08 3.585q-.178.358-.349.665H18.18a19 19 0 0 1-.35-.665c-.503-1.006-1.079-2.394-1.079-3.585v-3c0-1.499-.136-2.79-.749-3.709C15.436 5.944 14.345 5.25 12 5.25m-1.237 14.487a1.8 1.8 0 0 1-.344-.487h3.162a1.75 1.75 0 0 1-1.581 1 1.75 1.75 0 0 1-1.237-.513"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#hoering-2026-1187"
+            id="<generated>"
+          >
+            Høring om nye læreplaner i kroppsøving
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Åpen
+          </span>
+        </span>
+        <span>
+          Høringsfrist 1. februar 2027
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Type:
+          </span>
+          Læreplan
+        </span>
+        <span>
+          Publisert 2. november 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          Sak 2026/1187
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Last ned høringsnotatet for sak 2026/1187"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned høringsnotatet for sak 2026/1187"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Få varsler om sak 2026/1187"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Få varsler om sak 2026/1187"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12.75 2.5a.75.75 0 0 0-1.5 0v1.273c-2.222.14-3.655.92-4.499 2.186-.887 1.33-1.001 3.04-1.001 4.541v3c0 .809-.424 1.92-.92 2.915a18 18 0 0 1-.936 1.641l-.014.022-.004.006A.75.75 0 0 0 4.5 19.25h4.338a3.25 3.25 0 0 0 6.324 0H19.5a.75.75 0 0 0 .624-1.166l-.004-.006-.014-.022-.06-.091c-.05-.081-.125-.2-.215-.35-.18-.301-.42-.722-.66-1.2-.497-.994-.921-2.106-.921-2.915v-3c0-1.501-.114-3.21-1.001-4.541-.844-1.266-2.277-2.046-4.499-2.186zM12 5.25c-2.345 0-3.436.694-4.001 1.541-.613.92-.749 2.21-.749 3.709v3c0 1.191-.576 2.58-1.08 3.585q-.178.358-.349.665H18.18a19 19 0 0 1-.35-.665c-.503-1.006-1.079-2.394-1.079-3.585v-3c0-1.499-.136-2.79-.749-3.709C15.436 5.944 14.345 5.25 12 5.25m-1.237 14.487a1.8 1.8 0 0 1-.344-.487h3.162a1.75 1.75 0 0 1-1.581 1 1.75 1.75 0 0 1-1.237-.513"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#hoering-2026-0954"
+            id="<generated>"
+          >
+            Høring om endringer i rammeplanen for SFO
+          </a>
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="neutral">
+            Avsluttet
+          </span>
+        </span>
+        <span>
+          Høringsfrist 1. oktober 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Type:
+          </span>
+          Rammeplan
+        </span>
+        <span>
+          Publisert 20. juni 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          Sak 2026/0954
+        </span>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Last ned høringsnotatet for sak 2026/0954"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Last ned høringsnotatet for sak 2026/0954"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+        <button
+          data-icon="true"
+          data-variant="tertiary"
+          type="button"
+          data-size="sm"
+          data-tooltip="Få varsler om sak 2026/0954"
+          data-placement="top"
+          data-autoplacement="true"
+          aria-label="Få varsler om sak 2026/0954"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12.75 2.5a.75.75 0 0 0-1.5 0v1.273c-2.222.14-3.655.92-4.499 2.186-.887 1.33-1.001 3.04-1.001 4.541v3c0 .809-.424 1.92-.92 2.915a18 18 0 0 1-.936 1.641l-.014.022-.004.006A.75.75 0 0 0 4.5 19.25h4.338a3.25 3.25 0 0 0 6.324 0H19.5a.75.75 0 0 0 .624-1.166l-.004-.006-.014-.022-.06-.091c-.05-.081-.125-.2-.215-.35-.18-.301-.42-.722-.66-1.2-.497-.994-.921-2.106-.921-2.915v-3c0-1.501-.114-3.21-1.001-4.541-.844-1.266-2.277-2.046-4.499-2.186zM12 5.25c-2.345 0-3.436.694-4.001 1.541-.613.92-.749 2.21-.749 3.709v3c0 1.191-.576 2.58-1.08 3.585q-.178.358-.349.665H18.18a19 19 0 0 1-.35-.665c-.503-1.006-1.079-2.394-1.079-3.585v-3c0-1.499-.136-2.79-.749-3.709C15.436 5.944 14.345 5.25 12 5.25m-1.237 14.487a1.8 1.8 0 0 1-.344-.487h3.162a1.75 1.75 0 0 1-1.581 1 1.75 1.75 0 0 1-1.237-.513"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Preview 1`] = `
+<div data-size="auto">
+  <ul
+    role="list"
+    aria-label="Oppgaver"
+  >
+    <li>
+      <div>
+        <h3>
+          Oppdater personvernerklæringen
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="info">
+            Pågår
+          </span>
+        </span>
+        <span>
+          Innmeldt 13. november
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Prioritet:
+          </span>
+          <span data-color="neutral">
+            Lav
+          </span>
+        </span>
+        <span>
+          <span>
+            Type:
+          </span>
+          Innhold
+        </span>
+        <span>
+          Endret 27. november
+        </span>
+        <span>
+          Endret av Markus
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Id:
+          </span>
+          #1
+        </span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>
+          Feil i utregning av karaktersnitt
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="neutral">
+            Ny
+          </span>
+        </span>
+        <span>
+          Innmeldt 14. november
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Prioritet:
+          </span>
+          <span data-color="danger">
+            Høy
+          </span>
+        </span>
+        <span>
+          <span>
+            Type:
+          </span>
+          Feil
+        </span>
+        <span>
+          Endret 14. november
+        </span>
+        <span>
+          Endret av Ingrid
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Id:
+          </span>
+          #2
+        </span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>
+          Legg til eksport til Excel
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="info">
+            Pågår
+          </span>
+        </span>
+        <span>
+          Innmeldt 15. november
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Prioritet:
+          </span>
+          <span data-color="warning">
+            Middels
+          </span>
+        </span>
+        <span>
+          <span>
+            Type:
+          </span>
+          Forbedring
+        </span>
+        <span>
+          Endret 26. november
+        </span>
+        <span>
+          Endret av Markus
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Id:
+          </span>
+          #3
+        </span>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3>
+          Tekstene på forsiden er utdaterte
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Ferdig
+          </span>
+        </span>
+        <span>
+          Innmeldt 18. november
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Prioritet:
+          </span>
+          <span data-color="neutral">
+            Lav
+          </span>
+        </span>
+        <span>
+          <span>
+            Type:
+          </span>
+          Innhold
+        </span>
+        <span>
+          Endret 22. november
+        </span>
+        <span>
+          Endret av Sara
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Id:
+          </span>
+          #4
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Selectable 1`] = `
+<div data-size="auto">
+  <ul
+    role="list"
+    aria-label="Skoler som har rapportert"
+  >
+    <li data-clickdelegatefor="datalist-velg-skole-11111111">
+      <ds-field data-clickdelegatefor="datalist-velg-skole-11111111">
+        <input
+          id="datalist-velg-skole-11111111"
+          aria-label="Velg Abildsø skole"
+          type="checkbox"
+          value="11111111"
+          name="valgte-skoler"
+        >
+      </ds-field>
+      <div>
+        <h3>
+          Abildsø skole
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Ferdig
+          </span>
+        </span>
+        <span>
+          <span>
+            År:
+          </span>
+          2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Kommune:
+          </span>
+          Oslo
+        </span>
+        <span>
+          <span>
+            System:
+          </span>
+          Brukerstøtte
+        </span>
+      </div>
+      <div>
+        <span>
+          Org.nr. 11111111
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="datalist-velg-skole-22222222">
+      <ds-field data-clickdelegatefor="datalist-velg-skole-22222222">
+        <input
+          id="datalist-velg-skole-22222222"
+          aria-label="Velg Ammerud skole"
+          type="checkbox"
+          value="22222222"
+          name="valgte-skoler"
+        >
+      </ds-field>
+      <div>
+        <h3>
+          Ammerud skole
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="success">
+            Ferdig
+          </span>
+        </span>
+        <span>
+          <span>
+            År:
+          </span>
+          2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Kommune:
+          </span>
+          Oslo
+        </span>
+        <span>
+          <span>
+            System:
+          </span>
+          Brukerstøtte
+        </span>
+      </div>
+      <div>
+        <span>
+          Org.nr. 22222222
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="datalist-velg-skole-33333333">
+      <ds-field data-clickdelegatefor="datalist-velg-skole-33333333">
+        <input
+          id="datalist-velg-skole-33333333"
+          aria-label="Velg Apalløkka skole"
+          type="checkbox"
+          value="33333333"
+          name="valgte-skoler"
+        >
+      </ds-field>
+      <div>
+        <h3>
+          Apalløkka skole
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="info">
+            Behandles
+          </span>
+        </span>
+        <span>
+          <span>
+            År:
+          </span>
+          2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Kommune:
+          </span>
+          Oslo
+        </span>
+        <span>
+          <span>
+            System:
+          </span>
+          Brukerstøtte
+        </span>
+      </div>
+      <div>
+        <span>
+          Org.nr. 33333333
+        </span>
+      </div>
+    </li>
+    <li data-clickdelegatefor="datalist-velg-skole-44444444">
+      <ds-field data-clickdelegatefor="datalist-velg-skole-44444444">
+        <input
+          id="datalist-velg-skole-44444444"
+          aria-label="Velg Høyenhall skole"
+          type="checkbox"
+          value="44444444"
+          name="valgte-skoler"
+        >
+      </ds-field>
+      <div>
+        <h3>
+          Høyenhall skole
+        </h3>
+        <span>
+          <span>
+            Status:
+          </span>
+          <span data-color="info">
+            Behandles
+          </span>
+        </span>
+        <span>
+          <span>
+            År:
+          </span>
+          2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Kommune:
+          </span>
+          Oslo
+        </span>
+        <span>
+          <span>
+            System:
+          </span>
+          Brukerstøtte
+        </span>
+      </div>
+      <div>
+        <span>
+          Org.nr. 44444444
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`With Actions 1`] = `
+<div data-size="auto">
+  <ul
+    role="list"
+    aria-label="Eksamensoppgaver"
+  >
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#eksamen-MAT0010"
+            id="<generated>"
+          >
+            Matematikk
+          </a>
+        </h3>
+        <span>
+          <span>
+            Fagkode:
+          </span>
+          MAT0010
+        </span>
+        <span>
+          Vår 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Trinn:
+          </span>
+          10. trinn
+        </span>
+        <span>
+          <span>
+            Varighet:
+          </span>
+          5 timer
+        </span>
+      </div>
+      <div>
+        <a
+          href="#MAT0010-oppgave.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Oppgave
+          <span>
+            for MAT0010 Matematikk
+          </span>
+        </a>
+        <a
+          href="#MAT0010-sensorveiledning.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Sensorveiledning
+          <span>
+            for MAT0010 Matematikk
+          </span>
+        </a>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#eksamen-MAT1021"
+            id="<generated>"
+          >
+            Matematikk 1T
+          </a>
+        </h3>
+        <span>
+          <span>
+            Fagkode:
+          </span>
+          MAT1021
+        </span>
+        <span>
+          Vår 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Trinn:
+          </span>
+          Vg1 studieforberedende
+        </span>
+        <span>
+          <span>
+            Varighet:
+          </span>
+          5 timer
+        </span>
+      </div>
+      <div>
+        <a
+          href="#MAT1021-oppgave.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Oppgave
+          <span>
+            for MAT1021 Matematikk 1T
+          </span>
+        </a>
+        <a
+          href="#MAT1021-sensorveiledning.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Sensorveiledning
+          <span>
+            for MAT1021 Matematikk 1T
+          </span>
+        </a>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#eksamen-ENG1007"
+            id="<generated>"
+          >
+            Engelsk
+          </a>
+        </h3>
+        <span>
+          <span>
+            Fagkode:
+          </span>
+          ENG1007
+        </span>
+        <span>
+          Vår 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Trinn:
+          </span>
+          Vg1 studieforberedende
+        </span>
+        <span>
+          <span>
+            Varighet:
+          </span>
+          5 timer
+        </span>
+      </div>
+      <div>
+        <a
+          href="#ENG1007-oppgave.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Oppgave
+          <span>
+            for ENG1007 Engelsk
+          </span>
+        </a>
+        <a
+          href="#ENG1007-sensorveiledning.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Sensorveiledning
+          <span>
+            for ENG1007 Engelsk
+          </span>
+        </a>
+      </div>
+    </li>
+    <li data-clickdelegatefor="<generated>">
+      <div>
+        <h3>
+          <a
+            href="#eksamen-NOR1211"
+            id="<generated>"
+          >
+            Norsk hovedmål
+          </a>
+        </h3>
+        <span>
+          <span>
+            Fagkode:
+          </span>
+          NOR1211
+        </span>
+        <span>
+          Vår 2026
+        </span>
+      </div>
+      <div>
+        <span>
+          <span>
+            Trinn:
+          </span>
+          Vg3 studieforberedende
+        </span>
+        <span>
+          <span>
+            Varighet:
+          </span>
+          5 timer
+        </span>
+      </div>
+      <div>
+        <a
+          href="#NOR1211-oppgave.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Oppgave
+          <span>
+            for NOR1211 Norsk hovedmål
+          </span>
+        </a>
+        <a
+          href="#NOR1211-sensorveiledning.pdf"
+          download
+          data-variant="tertiary"
+          data-size="sm"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            fill="none"
+            viewbox="0 0 24 24"
+            focusable="false"
+            role="img"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 2.75a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3.5a.75.75 0 0 1 .75-.75M4.75 15.5a.75.75 0 0 0-1.5 0V19c0 .966.784 1.75 1.75 1.75h14A1.75 1.75 0 0 0 20.75 19v-3.5a.75.75 0 0 0-1.5 0V19a.25.25 0 0 1-.25.25H5a.25.25 0 0 1-.25-.25z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          Sensorveiledning
+          <span>
+            for NOR1211 Norsk hovedmål
+          </span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Wrapping 1`] = `
+<div data-size="auto">
+  <div style="<removed>">
+    <ul
+      role="list"
+      aria-label="Skoler som har rapportert"
+    >
+      <li>
+        <div>
+          <h3>
+            <a href="#skole-11111111">
+              Abildsø skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="success">
+              Ferdig
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2026
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 11111111
+          </span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>
+            <a href="#skole-22222222">
+              Ammerud skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="success">
+              Ferdig
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2026
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 22222222
+          </span>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>
+            <a href="#skole-33333333">
+              Apalløkka skole
+            </a>
+          </h3>
+          <span>
+            <span>
+              Status:
+            </span>
+            <span data-color="info">
+              Behandles
+            </span>
+          </span>
+          <span>
+            <span>
+              År:
+            </span>
+            2026
+          </span>
+        </div>
+        <div>
+          <span>
+            <span>
+              Kommune:
+            </span>
+            Oslo
+          </span>
+          <span>
+            <span>
+              System:
+            </span>
+            Brukerstøtte
+          </span>
+        </div>
+        <div>
+          <span>
+            Org.nr. 33333333
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
