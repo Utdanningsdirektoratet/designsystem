@@ -5,12 +5,14 @@ import { Alert } from 'src/components/alert';
 import { Avatar } from 'src/components/avatar';
 import { Checkbox } from 'src/components/checkbox';
 import { Chip } from 'src/components/chip';
+import { DataList } from 'src/components/dataList';
 import { Divider } from 'src/components/divider';
 import { ErrorSummary } from 'src/components/errorSummary';
 import { Fieldset } from 'src/components/fieldset';
 import { Search } from 'src/components/search';
 import { Table } from 'src/components/table';
 import { Tag } from 'src/components/tag';
+import { ToggleGroup } from 'src/components/toggleGroup';
 import { Heading } from 'src/components/typography/heading';
 import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
 import classes from './TableDemo.module.css';
@@ -31,6 +33,7 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
   const [students, setStudents] = useState<Student[]>(STUDENTS);
   const [showErrorSummary, setShowErrorSummary] = useState(false);
   const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
+  const [view, setView] = useState('tabell');
   const levels = ['Barnehage', 'Grunnskole', 'Videregående'];
 
   // Merge selected students from different pages.
@@ -135,93 +138,154 @@ export const TableDemo = ({ ...props }: TableDemoProps) => {
               ))}
             </div>
           </Fieldset>
-          <Search className={classes.tableSearch}>
-            <Search.Input
-              name="search"
-              aria-label="Søk"
-              placeholder="Søk"
-              value={searchQuery}
-              autoComplete="off"
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setCurrentPage(1);
-              }}
-            />
-            <Search.Clear onClick={() => setSearchQuery('')} />
-          </Search>
+          <div className={classes.tableActions}>
+            <Search className={classes.tableSearch}>
+              <Search.Input
+                name="search"
+                aria-label="Søk"
+                placeholder="Søk"
+                value={searchQuery}
+                autoComplete="off"
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setCurrentPage(1);
+                }}
+              />
+              <Search.Clear onClick={() => setSearchQuery('')} />
+            </Search>
+            <ToggleGroup aria-label="Visning" value={view} onChange={setView}>
+              <ToggleGroup.Item value="tabell">Tabell</ToggleGroup.Item>
+              <ToggleGroup.Item value="liste">Liste</ToggleGroup.Item>
+            </ToggleGroup>
+          </div>
         </div>
-        <div className={classes.tableContainer}>
-          <Table border className={classes.table}>
-            <Table.Head>
-              <Table.Row className={classes.row}>
-                <Table.HeaderCell>
-                  <Checkbox
-                    id="checkbox-select-all"
-                    aria-label="Select all"
-                    {...getCheckboxProps({
-                      allowIndeterminate: true,
-                      value: 'all',
-                    })}
-                  />
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  sort={sortField === 'name' ? sortDirection : 'none'}
-                  onClick={() => handleSort('name')}
-                >
-                  Navn
-                </Table.HeaderCell>
-                <Table.HeaderCell
-                  sort={sortField === 'educationLevel' ? sortDirection : 'none'}
-                  onClick={() => handleSort('educationLevel')}
-                >
-                  Utdanningsnivå
-                </Table.HeaderCell>
-                <Table.HeaderCell>Sist endret</Table.HeaderCell>
-                <Table.HeaderCell>Telefon</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
-                <Table.HeaderCell>Slett</Table.HeaderCell>
-              </Table.Row>
-            </Table.Head>
-            <Table.Body>
+        {view === 'liste' ? (
+          <div className={classes.list}>
+            <Checkbox
+              id="checkbox-select-all"
+              label="Velg alle på siden"
+              {...getCheckboxProps({
+                allowIndeterminate: true,
+                value: 'all',
+              })}
+            />
+            <DataList aria-label="Elever">
               {currentUsers.map((student) => (
-                <Table.Row className={classes.row} key={student.id}>
-                  <Table.Cell>
-                    <Checkbox
-                      id={'checkbox-' + student.id}
-                      aria-label={'Check ' + student.name}
-                      {...getCheckboxProps({
-                        value: student.id.toString(),
-                      })}
-                      checked={selectedStudentIds.includes(
-                        student.id.toString(),
-                      )}
-                    />
-                  </Table.Cell>
-                  <Table.Cell>
-                    <div className={classes.student}>
-                      <Avatar aria-label={student.name} />
-                      {student.name}
-                    </div>
-                  </Table.Cell>
-                  <Table.Cell>{student.educationLevel}</Table.Cell>
-                  <Table.Cell>{student.edited}</Table.Cell>
-                  <Table.Cell>{student.phone}</Table.Cell>
-                  <Table.Cell>
-                    <Tag data-color={tagColor(student.status)}>
-                      {student.status}
-                    </Tag>
-                  </Table.Cell>
-                  <Table.Cell>
+                <DataList.Item
+                  key={student.id}
+                  data-clickdelegatefor={'checkbox-' + student.id}
+                >
+                  <Checkbox
+                    id={'checkbox-' + student.id}
+                    aria-label={'Velg ' + student.name}
+                    {...getCheckboxProps({
+                      value: student.id.toString(),
+                    })}
+                    checked={selectedStudentIds.includes(student.id.toString())}
+                  />
+                  <DataList.Row>
+                    <DataList.Title>{student.name}</DataList.Title>
+                    <DataList.Value label="Status">
+                      <Tag data-color={tagColor(student.status)}>
+                        {student.status}
+                      </Tag>
+                    </DataList.Value>
+                  </DataList.Row>
+                  <DataList.Row>
+                    <DataList.Value label="Utdanningsnivå">
+                      {student.educationLevel}
+                    </DataList.Value>
+                    <DataList.Value>
+                      Sist endret {student.edited}
+                    </DataList.Value>
+                    <DataList.Value>Tlf. {student.phone}</DataList.Value>
+                  </DataList.Row>
+                  <DataList.Aside>
                     <DeleteDialog
                       student={student}
                       handleDelete={handleDelete}
                     />
-                  </Table.Cell>
-                </Table.Row>
+                  </DataList.Aside>
+                </DataList.Item>
               ))}
-            </Table.Body>
-          </Table>
-        </div>
+            </DataList>
+          </div>
+        ) : (
+          <div className={classes.tableContainer}>
+            <Table border className={classes.table}>
+              <Table.Head>
+                <Table.Row className={classes.row}>
+                  <Table.HeaderCell>
+                    <Checkbox
+                      id="checkbox-select-all"
+                      aria-label="Select all"
+                      {...getCheckboxProps({
+                        allowIndeterminate: true,
+                        value: 'all',
+                      })}
+                    />
+                  </Table.HeaderCell>
+                  <Table.HeaderCell
+                    sort={sortField === 'name' ? sortDirection : 'none'}
+                    onClick={() => handleSort('name')}
+                  >
+                    Navn
+                  </Table.HeaderCell>
+                  <Table.HeaderCell
+                    sort={
+                      sortField === 'educationLevel' ? sortDirection : 'none'
+                    }
+                    onClick={() => handleSort('educationLevel')}
+                  >
+                    Utdanningsnivå
+                  </Table.HeaderCell>
+                  <Table.HeaderCell>Sist endret</Table.HeaderCell>
+                  <Table.HeaderCell>Telefon</Table.HeaderCell>
+                  <Table.HeaderCell>Status</Table.HeaderCell>
+                  <Table.HeaderCell>Slett</Table.HeaderCell>
+                </Table.Row>
+              </Table.Head>
+              <Table.Body>
+                {currentUsers.map((student) => (
+                  <Table.Row className={classes.row} key={student.id}>
+                    <Table.Cell>
+                      <Checkbox
+                        id={'checkbox-' + student.id}
+                        aria-label={'Check ' + student.name}
+                        {...getCheckboxProps({
+                          value: student.id.toString(),
+                        })}
+                        checked={selectedStudentIds.includes(
+                          student.id.toString(),
+                        )}
+                      />
+                    </Table.Cell>
+                    <Table.Cell>
+                      <div className={classes.student}>
+                        <Avatar aria-label={student.name} />
+                        {student.name}
+                      </div>
+                    </Table.Cell>
+                    <Table.Cell>{student.educationLevel}</Table.Cell>
+                    <Table.Cell>{student.edited}</Table.Cell>
+                    <Table.Cell>{student.phone}</Table.Cell>
+                    <Table.Cell>
+                      <Tag data-color={tagColor(student.status)}>
+                        {student.status}
+                      </Tag>
+                    </Table.Cell>
+                    <Table.Cell>
+                      <DeleteDialog
+                        student={student}
+                        handleDelete={handleDelete}
+                      />
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+            </Table>
+          </div>
+        )}
         <div className={classes.tableFooter}>
           <ExportDialog handleExport={handleExport} />
           <PaginationControls
