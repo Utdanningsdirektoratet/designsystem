@@ -135,7 +135,6 @@ document.getElementById('btn-accept-all').addEventListener('click', () => {
 });
 
 if (necessaryOnly) {
-  cookieDialogClose.setAttribute('aria-label', translate('closeDialog'));
   necessaryExplanation.hidden = true;
   detailsTrigger.hidden = true;
   detailsHeading.remove();
@@ -161,6 +160,9 @@ if (necessaryOnly) {
 // --- Show/Hide banner ---
 
 let manualOpenRequested = false;
+// The checkbox states when the user opened the dialog from the footer link, so closing it can
+// cancel the renewal. Null when Cookie Information opened it because there is no valid consent.
+let decisionsBeforeRenewal = null;
 
 // oxlint-disable-next-line no-unused-vars -- Consumer-owned controls invoke this function by name.
 function renewCookieConsent() {
@@ -170,10 +172,17 @@ function renewCookieConsent() {
 
 // oxlint-disable-next-line no-unused-vars -- Cookie Information invokes this configured callback by name.
 function showCookieBanner() {
-  const shouldOpen = !necessaryOnly || manualOpenRequested;
+  const openedByUser = manualOpenRequested;
   manualOpenRequested = false;
-  if (!shouldOpen) return;
+  if (necessaryOnly && !openedByUser) return;
 
+  decisionsBeforeRenewal = openedByUser
+    ? Array.from(optionalCategories, (checkbox) => [checkbox, checkbox.checked])
+    : null;
+  cookieDialogClose.setAttribute(
+    'aria-label',
+    translate(openedByUser ? 'closeDialog' : 'declineOptionalAndClose'),
+  );
   document.documentElement.classList.add('no-scroll');
   cookieDialog.showModal();
 }
@@ -183,15 +192,21 @@ function hideCookieBanner() {
   cookieDialog.close();
 }
 
-// Optional-cookie configurations store rejection before Cookie Information closes the dialog.
+// Closing an automatically opened dialog stores rejection before Cookie Information closes it.
+// Closing a dialog the user opened from the footer link keeps the stored consent.
 // oxlint-disable-next-line no-unused-vars -- Inline template controls invoke this function by name.
 function handleCookieDialogDismissal() {
-  if (necessaryOnly) {
-    cookieDialog.close();
+  if (decisionsBeforeRenewal === null) {
+    CookieInformation.declineAllCategories();
     return;
   }
 
-  CookieInformation.declineAllCategories();
+  // Cookie Information keeps checkbox changes until the next submit, so undo them.
+  decisionsBeforeRenewal.forEach(([checkbox, checked]) => {
+    checkbox.checked = checked;
+    CookieInformation.changeCategoryConsentDecision(checkbox.name, checked);
+  });
+  cookieDialog.close();
 }
 
 cookieDialog.addEventListener('cancel', (event) => {
