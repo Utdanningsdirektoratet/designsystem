@@ -1,9 +1,10 @@
 /**
  * Utilities for working with data visualisation colors from the design system.
- * These functions return CSS custom property references.
- *
- * @requires @udir-design/theme/datavis.css must be imported in your application
+ * `getCategoricalColors` returns CSS custom property references and requires
+ * `@udir-design/theme/datavis.css`; the sequential generators return hex values.
  */
+
+import { sequential } from '@udir-design/tokens/datavis-light.json';
 
 /**
  * Gets the categorical color palette for data visualisation.
@@ -28,27 +29,10 @@ export function getCategoricalColors(): readonly string[] {
 }
 
 /**
- * Gets the sequential monochromatic color palette for data visualisation.
- * Returns CSS variable references.
- *
- * @deprecated Use {@link generateSequentialMonochromaticColors} instead.
- * The CSS variables referenced by this function will be removed in a future version.
- *
- * @returns Array of 8 CSS variable references from light to dark
- */
-export function getSequentialMonochromaticColors(): readonly string[] {
-  return Array.from(
-    { length: 8 },
-    (_, i) => `var(--uds-data-color-sequential-monochromatic-${i + 1})`,
-  );
-}
-
-/**
  * Anchor hex values for the monochromatic palette (light mode).
- * These mirror --uds-data-color-sequential-monochromatic-1 and -8.
  */
-const MONOCHROMATIC_HEX_START = '#7edfae';
-const MONOCHROMATIC_HEX_END = '#0b1e15';
+const MONOCHROMATIC_HEX_START = sequential.monochromatic.min;
+const MONOCHROMATIC_HEX_END = sequential.monochromatic.max;
 
 function hexToRgb(hex: string): [number, number, number] {
   const n = parseInt(hex.slice(1), 16);
@@ -188,10 +172,10 @@ function interpolateOklabMultiStop(
  *
  * @example
  * ```tsx
- * import { generateSequentialMonochromaticColors } from '@udir-design/react/alpha/utilities';
+ * import { generateSequentialMonochromaticColors } from '@udir-design/react/beta/utilities';
  *
  * const colors = generateSequentialMonochromaticColors(10);
- * // ['#5ba27e', '#519470', ..., '#0b1e15']
+ * // ['#7edfae', '#70c79b', ..., '#0b1e15']
  * ```
  */
 export function generateSequentialMonochromaticColors(
@@ -210,30 +194,15 @@ export function generateSequentialMonochromaticColors(
   );
 }
 
-/**
- * Gets the sequential divergent color palette for data visualisation.
- * Returns CSS variable references.
- *
- * @deprecated Use {@link generateSequentialDivergentColors} instead.
- * The CSS variables referenced by this function will be removed in a future version.
- *
- * @returns Array of 7 CSS variable references
- */
-export function getSequentialDivergentColors(): readonly string[] {
-  return Array.from(
-    { length: 7 },
-    (_, i) => `var(--uds-data-color-sequential-divergent-${i + 1})`,
-  );
-}
-
 /*
  * Anchor hex values for the divergent palette (light mode).
  * Green arm keys go from darkest to lightest; blue arm from lightest to darkest.
  * The neutral center is shared by both arms.
  */
-const DIVERGENT_GREEN_KEYS = ['#1e422f', '#36674e', '#5ba27e'] as const;
-const DIVERGENT_NEUTRAL = '#dedede';
-const DIVERGENT_BLUE_KEYS = ['#6c7c94', '#485970', '#2e3c51'] as const;
+const { divergent } = sequential;
+const DIVERGENT_GREEN_KEYS = [divergent[1], divergent[2], divergent[3]];
+const DIVERGENT_NEUTRAL = divergent[4];
+const DIVERGENT_BLUE_KEYS = [divergent[5], divergent[6], divergent[7]];
 
 function isOdd(count: number): boolean {
   // This rejects all non-odd and non-integer numbers
@@ -252,7 +221,7 @@ function isOdd(count: number): boolean {
  *
  * @example
  * ```tsx
- * import { generateSequentialDivergentColors } from '@udir-design/react/alpha/utilities';
+ * import { generateSequentialDivergentColors } from '@udir-design/react/beta/utilities';
  *
  * const colors = generateSequentialDivergentColors(11);
  * // ['#1e422f', ..., '#dedede', ..., '#2e3c51']

@@ -1,17 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Button 1`] = `
-<style>
-  .chip-button-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-button-button__group {
-  display: flex;
-  gap: var(--ds-size-2);
-}
-</style>
 <div>
   <ds-suggestion
     data-sr-added="La til"
@@ -61,17 +50,6 @@ exports[`Button 1`] = `
 `;
 
 exports[`Checkbox 1`] = `
-<style>
-  .chip-checkbox-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-checkbox-checkbox {
-  display: flex;
-  gap: var(--ds-size-1);
-}
-</style>
 <div>
   <p>
     Vis data for
@@ -212,17 +190,6 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Radio 1`] = `
-<style>
-  .chip-radio-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}
-.chip-radio-radio__group {
-  display: flex;
-  gap: var(--ds-size-1);
-}
-</style>
 <div>
   <p>
     Vis data for

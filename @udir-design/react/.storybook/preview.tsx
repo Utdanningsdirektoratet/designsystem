@@ -8,6 +8,8 @@ import storybookAddonPseudoStates from 'storybook-addon-pseudo-states';
 import type { PreviewAddon } from 'storybook/internal/csf';
 import { INITIAL_VIEWPORTS, type ViewportMap } from 'storybook/viewport';
 import { sourceCodeToolbarAddon } from './addons/sourceCodeToolbar';
+import { withDocumentTitle } from './decorators/withDocumentTitle';
+import { withStoryCss } from './decorators/withStoryCss';
 import { docsParameters } from './docs/parameters';
 import { testLifecycleHooks } from './preview-test';
 import type {
@@ -15,6 +17,7 @@ import type {
   ComponentOriginParameters,
   CustomStylesParameters,
   SnapshotParameters,
+  StoryCssParameters,
 } from './types';
 import { argTypesEnhancer } from './utils/argTypesEnhancer';
 import { CustomStylesDecorator } from './utils/customStylesDecorator';
@@ -79,7 +82,9 @@ export default definePreview({
     viewport: { value: 'desktop' },
   },
 
-  decorators: [CustomStylesDecorator],
+  // `withStoryCss` comes after `CustomStylesDecorator`, so it wraps it: the `<style>` element
+  // renders outside the decorator element that the story snapshots are taken from.
+  decorators: [CustomStylesDecorator, withDocumentTitle, withStoryCss],
 
   addons: [
     addonA11y(),
@@ -94,7 +99,8 @@ interface CustomTypes {
   parameters: ComponentOriginParameters &
     CustomStylesParameters &
     ChromaticParameters &
-    SnapshotParameters;
+    SnapshotParameters &
+    StoryCssParameters;
 }
 function customParametersAddon(): PreviewAddon<CustomTypes> {
   return {};

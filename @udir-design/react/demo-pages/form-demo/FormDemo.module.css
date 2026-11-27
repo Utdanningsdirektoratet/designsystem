@@ -101,3 +101,20 @@
     display: none;
   }
 }
+
+.navigationDialog {
+  width: fit-content;
+  min-width: 20rem;
+}
+
+.deliverDialog {
+  width: fit-content;
+}
+
+.secondaryAction {
+  flex: 1;
+}
+
+.primaryAction {
+  flex: 2;
+}

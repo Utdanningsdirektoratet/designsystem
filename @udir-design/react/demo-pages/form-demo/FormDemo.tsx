@@ -80,7 +80,27 @@ const FormSchema = z.object({
   ageGroup: z.string().refine((v) => v !== 'blank', {
     message: 'Velg en aldersgruppe',
   }),
-  documentation: z.array(z.instanceof(File)).min(1, 'Last opp dokumentasjon'),
+  // The field holds every file the user tried to attach, failures included,
+  // the same way a text field holds text that does not pass validation. Drop
+  // them here and nothing can validate them, and the user loses them when they
+  // leave the page.
+  //
+  // `loading` is deliberately not here: an upload in progress belongs to the
+  // page doing it, not to the form. Remembering it would leave a file stuck
+  // uploading for good if the user left the page part way through.
+  documentation: z
+    .array(
+      z.object({
+        id: z.string(),
+        file: z.instanceof(File),
+        error: z.string().optional(),
+      }),
+    )
+    .min(1, 'Last opp dokumentasjon')
+    .refine((entries) => entries.every(({ error }) => !error), {
+      message:
+        'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.',
+    }),
   addition: z.string().optional(),
 });
 
@@ -249,7 +269,7 @@ export const FormDemo = ({
             <Dialog
               closedby="any"
               ref={dialogMobileRef}
-              style={{ width: 'fit-content', minWidth: '20rem' }}
+              className={classes.navigationDialog}
             >
               <Heading level={2}>Skjemanavigasjon</Heading>
               {formNavigationContent}
@@ -274,7 +294,7 @@ export const FormDemo = ({
                   <Button
                     variant="secondary"
                     onClick={prev}
-                    style={{ flex: 1 }}
+                    className={classes.secondaryAction}
                   >
                     <ArrowLeftIcon aria-hidden />
                     Forrige
@@ -284,7 +304,7 @@ export const FormDemo = ({
                   <Button
                     variant="secondary"
                     onClick={next}
-                    style={{ flex: 1 }}
+                    className={classes.secondaryAction}
                   >
                     Neste
                     <ArrowRightIcon aria-hidden />
@@ -292,7 +312,10 @@ export const FormDemo = ({
                 )}
                 {id === 'deliver' &&
                   (!isSubmitSuccessful ? (
-                    <Button style={{ flex: 2 }} onClick={onDeliver}>
+                    <Button
+                      className={classes.primaryAction}
+                      onClick={onDeliver}
+                    >
                       Send inn skjema
                       <PaperplaneIcon aria-hidden />
                     </Button>
@@ -300,7 +323,7 @@ export const FormDemo = ({
                     <Button
                       variant="secondary"
                       onClick={next}
-                      style={{ flex: 1 }}
+                      className={classes.secondaryAction}
                     >
                       Neste
                       <ArrowRightIcon aria-hidden />
@@ -310,7 +333,7 @@ export const FormDemo = ({
               <Dialog
                 closeButton={false}
                 ref={dialogDeliverRef}
-                style={{ width: 'fit-content' }}
+                className={classes.deliverDialog}
               >
                 <Dialog.Block className={classes.dialog}>
                   <Heading data-size="xs">
@@ -320,11 +343,15 @@ export const FormDemo = ({
                     <Button
                       onClick={() => dialogDeliverRef.current?.close()}
                       variant="secondary"
-                      style={{ flex: 1 }}
+                      className={classes.secondaryAction}
                     >
                       Avbryt
                     </Button>
-                    <Button autoFocus type="submit" style={{ flex: 2 }}>
+                    <Button
+                      autoFocus
+                      type="submit"
+                      className={classes.primaryAction}
+                    >
                       Send inn
                       <PaperplaneIcon aria-hidden />
                     </Button>

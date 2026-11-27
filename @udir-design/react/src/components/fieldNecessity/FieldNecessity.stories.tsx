@@ -1,4 +1,5 @@
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { useCheckboxGroup } from 'src/hooks/useCheckboxGroup';
@@ -25,118 +26,113 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
+  parameters: {
+    css: css`
+      .field-necessity-preview-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-preview-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
+    <FieldNecessity
+      className="field-necessity-preview-field-necessity"
+      {...args}
+    >
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Mellomnavn</span>} />
+      <Textfield label={<span>Etternavn</span>} required />
+    </FieldNecessity>
+  ),
+});
+
+export const Outline = meta.story({
+  args: { variant: 'outline' },
+  parameters: {
+    css: css`
+      .field-necessity-outline-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
+  render: (args) => (
+    <Card variant="tinted">
       <FieldNecessity
-        className="field-necessity-preview-field-necessity"
+        className="field-necessity-outline-field-necessity"
         {...args}
       >
         <Textfield label={<span>Fornavn</span>} required />
         <Textfield label={<span>Mellomnavn</span>} />
         <Textfield label={<span>Etternavn</span>} required />
       </FieldNecessity>
-    </>
-  ),
-});
-
-export const Outline = meta.story({
-  args: { variant: 'outline' },
-  render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-outline-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
-      <Card variant="tinted">
-        <FieldNecessity
-          className="field-necessity-outline-field-necessity"
-          {...args}
-        >
-          <Textfield label={<span>Fornavn</span>} required />
-          <Textfield label={<span>Mellomnavn</span>} />
-          <Textfield label={<span>Etternavn</span>} required />
-        </FieldNecessity>
-      </Card>
-    </>
+    </Card>
   ),
 });
 
 export const Readonly = meta.story({
+  parameters: {
+    css: css`
+      .field-necessity-readonly-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-readonly-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
-      <FieldNecessity
-        className="field-necessity-readonly-field-necessity"
-        {...args}
-      >
-        <Textfield label={<span>Fornavn</span>} required readOnly />
-        <Textfield label={<span>Mellomnavn</span>} readOnly />
-        <Textfield label={<span>Etternavn</span>} required readOnly />
-      </FieldNecessity>
-    </>
+    <FieldNecessity
+      className="field-necessity-readonly-field-necessity"
+      {...args}
+    >
+      <Textfield label={<span>Fornavn</span>} required readOnly />
+      <Textfield label={<span>Mellomnavn</span>} readOnly />
+      <Textfield label={<span>Etternavn</span>} required readOnly />
+    </FieldNecessity>
   ),
 });
 
 export const AllRequired = meta.story({
+  parameters: {
+    css: css`
+      .field-necessity-all-required-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-all-required-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
-      <FieldNecessity
-        className="field-necessity-all-required-field-necessity"
-        {...args}
-      >
-        <Textfield label={<span>Fornavn</span>} required />
-        <Textfield label={<span>Etternavn</span>} required />
-      </FieldNecessity>
-    </>
+    <FieldNecessity
+      className="field-necessity-all-required-field-necessity"
+      {...args}
+    >
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Etternavn</span>} required />
+    </FieldNecessity>
   ),
 });
 
 export const AllOptional = meta.story({
+  parameters: {
+    css: css`
+      .field-necessity-all-optional-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-all-optional-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
-      <FieldNecessity
-        className="field-necessity-all-optional-field-necessity"
-        {...args}
-      >
-        <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
-        <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
-      </FieldNecessity>
-    </>
+    <FieldNecessity
+      className="field-necessity-all-optional-field-necessity"
+      {...args}
+    >
+      <Textfield multiline label={<span>Hva synes du om skjemaet?</span>} />
+      <Textfield multiline label={<span>Har du noen andre innspill?</span>} />
+    </FieldNecessity>
   ),
 });
 
@@ -254,32 +250,31 @@ export const IndividualCheckboxes = meta.story({
 });
 
 export const ManualSummaryPlacement = meta.story({
+  parameters: {
+    css: css`
+      .field-necessity-manual-summary-placement-field-necessity {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--ds-size-4);
+      }
+    `,
+  },
   render: (args) => (
-    <>
-      <style>
-        {`
-.field-necessity-manual-summary-placement-field-necessity {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--ds-size-4);
-}`}
-      </style>
-      <FieldNecessity
-        className="field-necessity-manual-summary-placement-field-necessity"
-        {...args}
-      >
-        <Heading level={2} data-size="md">
-          Kontaktinformasjon
-        </Heading>
-        <Paragraph>
-          Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
-        </Paragraph>
-        <FieldNecessity.Summary />
-        <Textfield label={<span>Fornavn</span>} required />
-        <Textfield label={<span>Etternavn</span>} required />
-        <Textfield label={<span>E-postadresse</span>} required />
-      </FieldNecessity>
-    </>
+    <FieldNecessity
+      className="field-necessity-manual-summary-placement-field-necessity"
+      {...args}
+    >
+      <Heading level={2} data-size="md">
+        Kontaktinformasjon
+      </Heading>
+      <Paragraph>
+        Vi trenger å vite hvordan vi kan kontakte deg i etterkant av søknaden.
+      </Paragraph>
+      <FieldNecessity.Summary />
+      <Textfield label={<span>Fornavn</span>} required />
+      <Textfield label={<span>Etternavn</span>} required />
+      <Textfield label={<span>E-postadresse</span>} required />
+    </FieldNecessity>
   ),
 });
 

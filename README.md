@@ -185,8 +185,6 @@ Vi bruker [Turborepo](https://turbo.build/) for task-orkestrering og caching av 
 
 I CI bruker vi GitHub Actions Cache for å dele cache mellom kjøringer. Release-workflowen bygger alltid fra scratch uten cache for å garantere at publiserte pakker ikke er påvirket av eventuell cache poisoning.
 
-Hvis du har `AZURE_STORAGE_CONNECTION_STRING` eller `NX_KEY` i din lokale `.env.local` kan du fjerne disse, siden de ikke lenger er i bruk.
-
 ### Sjekke at oppsettet funker
 
 Kjør `pnpm i && pnpm dev`. Dersom dette kjører uten problemer, og du får opp Storybook i nettleseren, er alt som det skal.
@@ -205,6 +203,7 @@ Monorepoet vårt består av
 - [`@udir-design/icons`](./@udir-design/icons/): Ikonbibliotek for bruk med React
 - [`@udir-design/react`](./@udir-design/react/): Komponentbibliotek for bruk med React, og dokumentasjon for designsystemet.
 - [`@internal/*`](./@internal/): Interne pakker og konfigurasjon som brukes i utviklingen av designsystemet, men ikke publiseres på npm.
+- [`apps/*`](./apps/): Interne applikasjoner, for eksempel [`illustrations`](./apps/illustrations/) som viser illustrasjonsgalleriet.
 - [`test-apps/*`](./test-apps/): Ulike demo-applikasjoner for å teste at bibliotekene fungerer i forskjellige kontekster.
 
 Avhengighetsforholdene kan illustreres slik:
@@ -222,6 +221,7 @@ flowchart-elk BT
   subgraph apps [demo-applikasjoner]
     vite(test-apps/vite):::app
     nextjs(test-apps/nextjs):::app
+    illustrations("apps/illustrations"):::app
   end
 
   %% dependencies
@@ -231,6 +231,8 @@ flowchart-elk BT
   react --> icons
   vite --> react
   nextjs --> react
+  illustrations --> react
+  illustrations --> icons
 
   %% styling
   classDef default fill:#303030,stroke:#7e7e7e,color:#fff
@@ -389,9 +391,11 @@ De vanligste kommandoene har snarveier i rot `package.json`:
 | ---------------------- | ----------------------------------------- |
 | `pnpm dev`             | Start Storybook med typedoc i watch-modus |
 | `pnpm build`           | Lint, typesjekk, test og bygg alle pakker |
-| `pnpm build:storybook` | Bygg Storybook                            |
+| `pnpm build:storybook` | Bygg Storybook med søkeindeks             |
 | `pnpm build:docs`      | Bygg Storybook + typedoc                  |
 | `pnpm test:storybook`  | Kjør Storybook-tester                     |
+
+Søket i Storybook bruker en søkeindeks som bare bygges av `pnpm build:storybook`, ved at hver dokumentasjonsside vises i en nettleser med Playwright. Når du kjører `pnpm dev`, søker du i indeksen fra siste bygg. For å oppdatere den, kjør `pnpm build:storybook` og last inn Storybook på nytt i nettleseren.
 
 Les mer i [Turborepo-dokumentasjonen](https://turbo.build/docs).
 
@@ -442,7 +446,7 @@ pnpm test:storybook:update
 Smoketesten bruker [Playwright](https://playwright.dev/) til å bygge og starte Next.js-appen (`test-apps/nextjs`) og besøke alle demosider i Chromium.
 
 ```bash
-pnpm nx test:e2e test-app-nextjs
+pnpm turbo test-app-nextjs#test:e2e
 ```
 
 I CI kjøres denne automatisk på pull requests som påvirker `test-app-nextjs` eller dens avhengigheter (`@udir-design/react`, `@udir-design/theme`, `@udir-design/icons`, `@udir-design/symbols`).
@@ -791,7 +795,7 @@ Vi må også sørge for at versjonen av avhengigheten `@types/node` samsvarer me
 
 #### Fikse sikkerhetsadvarsler
 
-Se en liste over sikkerhetsadvarsler med
+Når Dependabot finner nye sårbarheter i avhengighetene, kommer det et varsel i Slack. Alle åpne varsler ligger under [Security → Dependabot](https://github.com/Utdanningsdirektoratet/designsystem/security/dependabot), og du kan også se dem lokalt med
 
 ```sh
 pnpm audit
@@ -805,6 +809,8 @@ Vi kan da be `pnpm` overstyre installerte transitive avhengigheter:
 pnpm audit --fix
 pnpm install
 ```
+
+Dersom en sårbarhet ikke kan fikses, må vi vurdere om den faktisk kan utnyttes hos oss. At det ikke finnes noen fiks, er ikke i seg selv en grunn til å avvise varselet. Kommer vi fram til at den ikke kan utnyttes, for eksempel fordi bare byggeverktøy bruker pakken og den bare får input fra vår egen konfigurasjon, avviser vi varselet i GitHub med begrunnelsen. Legg da også ID-en (`GHSA-…`) til under `audit.ignore` i `pnpm-workspace.yaml` med samme begrunnelse, slik at `pnpm audit` ignorerer den.
 
 ## Hvordan oppdatere symboler
 

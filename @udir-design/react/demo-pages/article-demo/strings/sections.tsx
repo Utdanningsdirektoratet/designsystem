@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link } from 'src/components/link';
 import { List } from 'src/components/list';
+import classes from '../ArticleDemo.module.css';
 
 interface HeadingMeta {
   size: 'xs' | 'sm' | 'md' | 'lg';
@@ -103,12 +104,7 @@ export const section5: SectionItem[] = [
       id: 'useful-links',
     },
     paragraph: (
-      <List.Unordered
-        style={{
-          listStyle: 'none',
-          padding: 0,
-        }}
-      >
+      <List.Unordered className={classes.linkList}>
         <List.Item>
           <Link
             href="https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/"

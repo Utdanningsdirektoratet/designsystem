@@ -10,7 +10,7 @@ import { Label } from 'src/components/typography/label';
 import { Paragraph } from 'src/components/typography/paragraph';
 import { useDebounceCallback } from 'src/utilities/useDebounceCallback';
 import { ColorTokensTable } from '../color/color-table';
-import allDatavisTokens from '../design-tokens/color-datavis.json';
+import datavisTokens from '../design-tokens/color-datavis.json';
 import colorTokens from '../design-tokens/color.json';
 import semanticTokens from '../design-tokens/semantic.json';
 import sizeTokens from '../design-tokens/size.json';
@@ -22,8 +22,6 @@ import type { PreviewToken } from '../types';
 import { TypographyTable } from '../typography/typography-table';
 import { has, includes, pick } from '../utilities/search-utitilites';
 import classes from './token-list.module.css';
-
-const datavisTokens = { categorical: allDatavisTokens.categorical };
 
 const tokenSearchFilter = (token: PreviewToken, searchValue: string) =>
   `${token.variable}${token.value}`
@@ -219,11 +217,7 @@ import '@udir-design/theme';`}
       <div className={classes.tokens}>
         {showColors && (
           <>
-            <Heading
-              level={2}
-              data-size="lg"
-              id={labels['token-preview']['colors'] + 'heading'}
-            >
+            <Heading level={2} data-size="lg" id="farger">
               {labels['token-preview']['colors']}
             </Heading>
             <Paragraph>{labels['token-preview'].color.description}</Paragraph>
@@ -237,11 +231,7 @@ import '@udir-design/theme';`}
         )}
         {showDatavis && (
           <>
-            <Heading
-              level={2}
-              data-size="lg"
-              id={labels['token-preview']['datavisHeading'] + 'heading'}
-            >
+            <Heading level={2} data-size="lg" id="farger-for-datavisualisering">
               {labels['token-preview']['datavisHeading']}
             </Heading>
             <Paragraph>{labels['token-preview'].datavis.description}</Paragraph>
@@ -281,11 +271,7 @@ import '@udir-design/theme/datavis.css';`}
 
         {showTypography && (
           <>
-            <Heading
-              level={2}
-              data-size="lg"
-              id={labels['token-preview'].typography + 'heading'}
-            >
+            <Heading level={2} data-size="lg" id="typografi">
               {labels['token-preview'].typography}
             </Heading>
             <div className={classes.section}>
@@ -295,11 +281,7 @@ import '@udir-design/theme/datavis.css';`}
         )}
         {showSemantic && (
           <>
-            <Heading
-              level={2}
-              data-size="lg"
-              id={labels['token-preview'].semantic + 'heading'}
-            >
+            <Heading level={2} data-size="lg" id="semantiske">
               {labels['token-preview'].semantic}
             </Heading>
             <Paragraph>{labels['token-preview'].size.description}</Paragraph>

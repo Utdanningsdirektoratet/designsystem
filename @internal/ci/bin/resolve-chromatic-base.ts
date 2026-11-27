@@ -42,7 +42,7 @@
  * Diagnostics go to stderr so they don't pollute the captured stdout.
  */
 
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 /** Write to stderr so diagnostics appear in CI logs without affecting captured stdout. */
 function log(msg: string) {
@@ -59,70 +59,93 @@ const MAX_CANDIDATES = Number(
   process.env['CHROMATIC_BASE_MAX_CANDIDATES'] || '5',
 );
 
+/** The fields this script uses from a workflow run in the GitHub API. */
 interface WorkflowRun {
   id: number;
   head_sha: string;
-  path: string;
   name: string;
 }
 
-interface Job {
-  name: string;
-  conclusion: string | null;
+/** Calls the GitHub REST API through the `gh` CLI and returns the parsed JSON. */
+function ghApi(path: string) {
+  // Capture stderr so gh's complaints end up in the thrown error.
+  return JSON.parse(
+    execFileSync('gh', ['api', path], { encoding: 'utf8', stdio: 'pipe' }),
+  );
 }
 
-function gh<T>(pathAndQuery: string): T {
-  const out = execSync(`gh api "${pathAndQuery}"`, {
-    encoding: 'utf-8',
-    stdio: ['ignore', 'pipe', 'pipe'],
-  });
-  return JSON.parse(out) as T;
+/** Runs git and returns its output without the trailing newline. */
+function git(args: string[]): string {
+  return execFileSync('git', args, { encoding: 'utf8', stdio: 'pipe' }).trim();
 }
 
-function headSha(): string {
-  return execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
-}
-
-function commitExists(sha: string): boolean {
+/**
+ * Runs a git command that answers a yes/no question with its exit code: 0 for
+ * yes, 1 for no. Throws if git fails in any other way.
+ */
+function gitAnswers(args: string[]): boolean {
   try {
-    execSync(`git cat-file -e "${sha}^{commit}"`, { stdio: 'ignore' });
+    git(args);
     return true;
-  } catch {
-    return false;
+  } catch (error) {
+    if (error instanceof Error && 'status' in error && error.status === 1) {
+      return false;
+    }
+    throw error;
   }
 }
 
-function isAncestorOfHead(sha: string): boolean {
+/** Recent completed workflow runs on the branch, newest first. */
+function listRuns(): WorkflowRun[] {
+  const branch = encodeURIComponent(BRANCH);
   try {
-    execSync(`git merge-base --is-ancestor ${sha} HEAD`, { stdio: 'ignore' });
-    return true;
-  } catch {
-    return false;
+    const { workflow_runs: runs } = ghApi(
+      `/repos/${REPO}/actions/runs?branch=${branch}&status=completed&per_page=${MAX_RUNS}`,
+    );
+    if (
+      !Array.isArray(runs) ||
+      !runs.every(
+        (run) =>
+          typeof run?.id === 'number' &&
+          typeof run.head_sha === 'string' &&
+          typeof run.name === 'string',
+      )
+    ) {
+      throw new Error(
+        'The response has no "workflow_runs" list with id, head_sha and name',
+      );
+    }
+    return runs;
+  } catch (cause) {
+    throw new Error('Could not list workflow runs', { cause });
   }
 }
 
-/** Number of commits between `sha` (exclusive) and HEAD. Lower == closer to HEAD. */
-function distanceToHead(sha: string): number {
-  try {
-    const out = execSync(`git rev-list --count ${sha}..HEAD`, {
-      encoding: 'utf-8',
-    });
-    return Number(out.trim());
-  } catch {
-    return Number.POSITIVE_INFINITY;
-  }
-}
-
+/** Whether the workflow run has a Chromatic job that succeeded. */
 function chromaticSucceeded(runId: number): boolean {
   try {
-    const data = gh<{ jobs: Job[] }>(
+    const { jobs } = ghApi(
       `/repos/${REPO}/actions/runs/${runId}/jobs?per_page=100`,
     );
-    return (data.jobs ?? []).some(
-      (j) => JOB_PATTERN.test(j.name) && j.conclusion === 'success',
+    if (
+      !Array.isArray(jobs) ||
+      !jobs.every(
+        (job) =>
+          typeof job?.name === 'string' &&
+          (typeof job.conclusion === 'string' || job.conclusion === null),
+      )
+    ) {
+      throw new Error(
+        'The response has no "jobs" list with name and conclusion',
+      );
+    }
+    return jobs.some(
+      (job) => JOB_PATTERN.test(job.name) && job.conclusion === 'success',
     );
-  } catch {
-    return false;
+  } catch (cause) {
+    throw new Error(`Could not list the jobs of workflow run ${runId}`, {
+      cause,
+    });
   }
 }
 
@@ -134,61 +157,79 @@ function resolveBase(): string {
     return FALLBACK;
   }
 
-  let runs: WorkflowRun[];
-  try {
-    const data = gh<{ workflow_runs: WorkflowRun[] }>(
-      `/repos/${REPO}/actions/runs?branch=${encodeURIComponent(
-        BRANCH,
-      )}&status=completed&per_page=${MAX_RUNS}`,
-    );
-    runs = data.workflow_runs ?? [];
-  } catch (err) {
-    log(`Could not list workflow runs: ${(err as Error).message}`);
-    return FALLBACK;
-  }
-
-  const head = headSha();
-  const candidates: string[] = [];
+  const runs = listRuns();
+  const head = git(['rev-parse', 'HEAD']);
 
   // Runs come back newest-first. A single commit can have several runs (e.g. the
   // CI run plus unrelated ones on the same SHA), so we must not dedupe by SHA
   // before confirming the Chromatic job — otherwise a non-Chromatic run could
   // mask the CI run on the same commit. We only skip a SHA once it's a candidate.
-  for (const run of runs) {
-    if (candidates.length >= MAX_CANDIDATES) break;
-    const sha = run.head_sha;
-    if (!sha || sha === head || candidates.includes(sha)) continue;
-    if (!commitExists(sha)) continue;
-    if (!isAncestorOfHead(sha)) continue;
-    if (!chromaticSucceeded(run.id)) continue;
-    log(
-      `Ancestor with successful Chromatic build: ${sha} (run ${run.id} — ${run.name}).`,
-    );
-    candidates.push(sha);
-  }
+  // The chain is lazy: each run is checked after the previous match was added,
+  // and git and gh are no longer called once there are enough candidates.
+  const candidates = new Set<string>();
+  runs
+    .values()
+    .filter((run) => run.head_sha !== head && !candidates.has(run.head_sha))
+    // Keep commits that are in the local clone (rev-parse exits 1 without a
+    // message if not) and are ancestors of HEAD (merge-base exits 1 if not).
+    .filter((run) =>
+      gitAnswers([
+        'rev-parse',
+        '--verify',
+        '--quiet',
+        `${run.head_sha}^{commit}`,
+      ]),
+    )
+    .filter((run) =>
+      gitAnswers(['merge-base', '--is-ancestor', run.head_sha, 'HEAD']),
+    )
+    .filter((run) => chromaticSucceeded(run.id))
+    .take(MAX_CANDIDATES)
+    .forEach((run) => {
+      log(
+        `Ancestor with successful Chromatic build: ${run.head_sha} (run ${run.id} — ${run.name}).`,
+      );
+      candidates.add(run.head_sha);
+    });
 
-  if (candidates.length === 0) {
+  if (candidates.size === 0) {
     log(
       `No ancestor commit with a successful Chromatic build found; using fallback "${FALLBACK}".`,
     );
     return FALLBACK;
   }
 
-  // Pick the ancestor closest to HEAD (the commit Chromatic will baseline against).
-  let best = candidates[0]!;
-  let bestDistance = distanceToHead(best);
-  for (const sha of candidates.slice(1)) {
-    const distance = distanceToHead(sha);
-    if (distance < bestDistance) {
-      best = sha;
-      bestDistance = distance;
-    }
-  }
+  // Pick the ancestor closest to HEAD (the commit Chromatic will baseline
+  // against), i.e. with the fewest commits between it and HEAD. On a tie, the
+  // first one found wins.
+  const closest = candidates
+    .values()
+    .map((sha) => ({
+      sha,
+      distance: Number(git(['rev-list', '--count', `${sha}..HEAD`])),
+    }))
+    .reduce((best, next) => (next.distance < best.distance ? next : best));
 
   log(
-    `Using ${best} as dependency-diff base (${bestDistance} commit(s) behind HEAD).`,
+    `Using ${closest.sha} as dependency-diff base (${closest.distance} commit(s) behind HEAD).`,
   );
-  return best;
+  return closest.sha;
 }
 
-process.stdout.write(resolveBase());
+/**
+ * Resolves the base, or falls back to `FALLBACK` if anything fails: a full
+ * Chromatic comparison is the safe default, so this never fails the pipeline.
+ */
+function resolveBaseOrFallback(): string {
+  try {
+    return resolveBase();
+  } catch (error) {
+    log(
+      `Could not resolve the dependency-diff base; using fallback "${FALLBACK}".`,
+    );
+    console.error(error);
+    return FALLBACK;
+  }
+}
+
+process.stdout.write(resolveBaseOrFallback());

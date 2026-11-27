@@ -6,6 +6,7 @@ import cssnano from 'cssnano';
 import postcss from 'postcss';
 import easyImport from 'postcss-easy-import';
 import nesting from 'postcss-nesting';
+import svgo from 'postcss-svgo';
 import pkg from './package.json' with { type: 'json' };
 
 const dependencies = Object.keys({
@@ -32,6 +33,9 @@ export default {
     postcssComposes(),
     inlineIconColors(),
     nesting,
+    // cssnano stopped running SVGO in v9.8.0. It must run after
+    // `inlineIconColors()`, which fills in colors in the data URIs.
+    svgo(),
     cssnano({ preset: 'default' }),
     autoprefixer,
   ],

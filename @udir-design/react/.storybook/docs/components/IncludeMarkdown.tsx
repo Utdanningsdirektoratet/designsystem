@@ -4,14 +4,13 @@ import {
   Source,
   type SourceProps,
 } from '@storybook/addon-docs/blocks';
+import { slug } from 'github-slugger';
 import { toHtml } from 'hast-util-to-html';
 import type { Heading, Root, RootContent, Text } from 'mdast';
 import { toHast } from 'mdast-util-to-hast';
 import { applyTo, dropWhile, pipe, takeWhile } from 'ramda';
 import { Fragment, useMemo } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import remarkHeadingId from 'remark-heading-id';
-import type { RemarkHeadingIdOptions } from 'remark-heading-id';
 import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
@@ -34,9 +33,7 @@ export const IncludeMarkdown: React.FC<Props> = ({
     () =>
       unified()
         .use(remarkParse)
-        .use(remarkHeadingId, {
-          defaults: true,
-        } satisfies RemarkHeadingIdOptions)
+        .use(remarkSlugHeadings)
         .use(remarkGetSection, { sectionId })
         .use(remarkIncreaseHeadingDepth, { increaseBy: increaseHeadingDepthBy })
         .use(remarkGithubAlert)
@@ -48,6 +45,8 @@ export const IncludeMarkdown: React.FC<Props> = ({
   return (
     <Markdown
       options={{
+        // Match the ids that `sectionId` and the surrounding MDX headings use.
+        slugify: slugifyHeading,
         overrides: {
           ...componentOverrides,
           pre: ({ children }: React.HTMLAttributes<HTMLPreElement>) => {
@@ -85,10 +84,43 @@ export const IncludeMarkdown: React.FC<Props> = ({
   );
 };
 
+/**
+ * Slugifies heading text with GitHub's rules, which Storybook also uses for
+ * MDX headings (through `rehype-slug`). Passed to markdown-to-jsx as the
+ * `slugify` option, whose default would transliterate letters such as `ø`, so
+ * a heading's `sectionId` is also its anchor. Don't pass `slug` directly:
+ * markdown-to-jsx calls it with its default slugifier as the second argument,
+ * which `slug` reads as `maintainCase`.
+ */
+function slugifyHeading(text: string): string {
+  return slug(text);
+}
+
 declare module 'mdast' {
   export interface HeadingData {
     id: string;
   }
+}
+
+/** Concatenates the text in an mdast node, like `Node.textContent`. */
+function nodeText(node: { value?: unknown; children?: unknown[] }): string {
+  if (typeof node.value === 'string') return node.value;
+  return (node.children ?? [])
+    .map((child) => nodeText(child as Parameters<typeof nodeText>[0]))
+    .join('');
+}
+
+/**
+ * Sets `data.id` on each top-level heading to the id that markdown-to-jsx
+ * renders, so `remarkGetSection` finds sections by their anchor.
+ */
+function remarkSlugHeadings() {
+  return function (tree: Root): void {
+    for (const node of tree.children) {
+      if (node.type !== 'heading') continue;
+      node.data = { ...node.data, id: slugifyHeading(nodeText(node)) };
+    }
+  };
 }
 
 interface RemarkGetSectionOptions {

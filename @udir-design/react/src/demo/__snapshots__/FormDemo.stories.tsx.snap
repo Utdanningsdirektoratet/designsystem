@@ -94,7 +94,6 @@ exports[`Form Page 2 1`] = `
       data-modal="true"
       id="<generated>"
       closedby="any"
-      style="<removed>"
     >
       <button
         data-icon="true"
@@ -561,7 +560,6 @@ exports[`Form Page 2 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -584,7 +582,6 @@ exports[`Form Page 2 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           Neste
           <svg
@@ -609,7 +606,6 @@ exports[`Form Page 2 1`] = `
         data-placement="center"
         data-modal="true"
         id="<generated>"
-        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -619,14 +615,10 @@ exports[`Form Page 2 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="<removed>"
             >
               Avbryt
             </button>
-            <button
-              type="submit"
-              style="<removed>"
-            >
+            <button type="submit">
               Send inn
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -749,7 +741,6 @@ exports[`Form Page 3 1`] = `
       data-modal="true"
       id="<generated>"
       closedby="any"
-      style="<removed>"
     >
       <button
         data-icon="true"
@@ -836,32 +827,22 @@ exports[`Form Page 3 1`] = `
       </h2>
       <div>
       </div>
-      <div>
-        <label
-          id="<generated>-label"
-          for="<generated>-button"
-        >
+      <ds-field>
+        <label for="documentation">
           <span>
             Last opp dokumentasjon
           </span>
         </label>
         <div
           data-field="description"
-          id="<generated>-description"
+          id="<generated>"
         >
           Du kan laste opp filer i PDF-format. Filer kan være opptil 25 MB.
         </div>
         <div role="presentation">
           <div>
           </div>
-          <button
-            data-variant="secondary"
-            type="button"
-            id="<generated>-button"
-            aria-labelledby="<generated>-label"
-            aria-describedby="<generated>-description"
-            aria-label="Velg filer"
-          >
+          <span data-variant="secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -880,18 +861,17 @@ exports[`Form Page 3 1`] = `
               >
               </path>
             </svg>
-          </button>
+          </span>
+          <input
+            accept="application/pdf"
+            multiple
+            required
+            id="documentation"
+            type="file"
+            aria-describedby="<generated>"
+          >
         </div>
-        <input
-          accept="application/pdf"
-          multiple
-          tabindex="-1"
-          required
-          id="dokumentasjon-dropzone"
-          type="file"
-          style="<removed>"
-        >
-      </div>
+      </ds-field>
       <ds-field>
         <label for="addition">
           <span>
@@ -916,7 +896,6 @@ exports[`Form Page 3 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -939,7 +918,6 @@ exports[`Form Page 3 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           Neste
           <svg
@@ -964,7 +942,6 @@ exports[`Form Page 3 1`] = `
         data-placement="center"
         data-modal="true"
         id="<generated>"
-        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -974,14 +951,10 @@ exports[`Form Page 3 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="<removed>"
             >
               Avbryt
             </button>
-            <button
-              type="submit"
-              style="<removed>"
-            >
+            <button type="submit">
               Send inn
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1104,7 +1077,6 @@ exports[`Form Page 4 1`] = `
       data-modal="true"
       id="<generated>"
       closedby="any"
-      style="<removed>"
     >
       <button
         data-icon="true"
@@ -1196,7 +1168,6 @@ exports[`Form Page 4 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1216,10 +1187,7 @@ exports[`Form Page 4 1`] = `
           </svg>
           Forrige
         </button>
-        <button
-          type="button"
-          style="<removed>"
-        >
+        <button type="button">
           Send inn skjema
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1245,7 +1213,6 @@ exports[`Form Page 4 1`] = `
         data-placement="center"
         data-modal="true"
         id="<generated>"
-        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1255,14 +1222,10 @@ exports[`Form Page 4 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="<removed>"
             >
               Avbryt
             </button>
-            <button
-              type="submit"
-              style="<removed>"
-            >
+            <button type="submit">
               Send inn
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1385,7 +1348,6 @@ exports[`Form Page 5 1`] = `
       data-modal="true"
       id="<generated>"
       closedby="any"
-      style="<removed>"
     >
       <button
         data-icon="true"
@@ -1484,7 +1446,6 @@ exports[`Form Page 5 1`] = `
         data-placement="center"
         data-modal="true"
         id="<generated>"
-        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1494,14 +1455,10 @@ exports[`Form Page 5 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="<removed>"
             >
               Avbryt
             </button>
-            <button
-              type="submit"
-              style="<removed>"
-            >
+            <button type="submit">
               Send inn
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1624,7 +1581,6 @@ exports[`Form Story 1`] = `
       data-modal="true"
       id="<generated>"
       closedby="any"
-      style="<removed>"
     >
       <button
         data-icon="true"
@@ -1810,7 +1766,6 @@ exports[`Form Story 1`] = `
         <button
           data-variant="secondary"
           type="button"
-          style="<removed>"
         >
           Neste
           <svg
@@ -1835,7 +1790,6 @@ exports[`Form Story 1`] = `
         data-placement="center"
         data-modal="true"
         id="<generated>"
-        style="<removed>"
       >
         <div>
           <h2 data-size="xs">
@@ -1845,14 +1799,10 @@ exports[`Form Story 1`] = `
             <button
               data-variant="secondary"
               type="button"
-              style="<removed>"
             >
               Avbryt
             </button>
-            <button
-              type="submit"
-              style="<removed>"
-            >
+            <button type="submit">
               Send inn
               <svg
                 xmlns="http://www.w3.org/2000/svg"

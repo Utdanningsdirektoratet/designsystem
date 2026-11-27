@@ -45,9 +45,30 @@ Du kan bygge opp komponenter og seksjoner på siden ved å bruke disse varianten
 
 ### Skalering av komponenten
 
-Alle varianter av `Skeleton` har `height`- og `width`-props, som kan brukes til å sette størrelsen manuelt. Du kan oppgi størrelser i `px`, `%`, eller andre enheter som kan settes direkte på style-attributtet.
+Alle varianter av `Skeleton` har `height`- og `width`-props, som kan brukes til å sette størrelsen manuelt. Tall blir piksler, og du kan også oppgi andre CSS-lengder, for eksempel `"5rem"`, eller prosent.
 For `variant="text"` holder det ofte å sette kun `width` til omtrent antall bokstaver du forventer, siden høyden skaleres automatisk etter tekstinnholdet.
 
 `Skeleton` vil også tilpasse seg etter `children` som du sender inn til komponenten, men barna vises ikke som selvstendige `Skeleton`-elementer. I stedet vises ett stort `Skeleton` med høyde og bredde som tilsvarer summen av alle barn.
 
 <Canvas of={SkeletonStories.Children} />
+
+## Kompatibilitet
+
+### Server-side rendering og Content Security Policy
+
+`width` og `height` som tall eller CSS-lengder, for eksempel `40` eller `"5rem"`, er med i HTML-en fra serveren. De virker også med en streng Content Security Policy.
+
+Prosent, `calc()` og `var()` settes derimot med JavaScript etter at siden er lastet. Det samme gjelder `width` og `height` på en `Skeleton` med eget innhold eller `asChild`. Ved server-side rendering vises `Skeleton` da med standardstørrelsen til JavaScript har lastet, og innholdet kan flytte seg. I disse tilfellene kan du heller sette størrelsen med en klasse i ditt eget stilark:
+
+```css
+.halv-bredde {
+  width: 50%;
+  height: var(--ds-size-8);
+}
+```
+
+```tsx
+<Skeleton className="halv-bredde" />
+```
+
+En rund `Skeleton` trenger både `width` og `height` i stilarket. Med bare `width` beholder den standardhøyden. Les mer om [server-side rendering og Content Security Policy](/docs/components-server-side-rendering-og-csp--docs).

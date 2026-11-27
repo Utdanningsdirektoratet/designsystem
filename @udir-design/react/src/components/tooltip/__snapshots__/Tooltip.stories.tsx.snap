@@ -1,12 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Aria 1`] = `
-<style>
-  .tooltip-aria-main {
-  display: flex;
-  gap: var(--ds-size-2);
-}
-</style>
 <div>
   <button
     data-icon="true"
@@ -48,12 +42,6 @@ exports[`Aria 1`] = `
 `;
 
 exports[`Placement 1`] = `
-<style>
-  .tooltip-placement-main {
-  display: flex;
-  gap: var(--ds-size-2);
-}
-</style>
 <div>
   <button
     data-icon="true"

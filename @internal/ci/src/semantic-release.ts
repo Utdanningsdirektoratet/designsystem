@@ -95,8 +95,6 @@ function buildEnv(
 // ─── Semantic-release configuration ──────────────────────────────────────────
 
 /**
- * The `branches` array maps directly from the former `defaultReleaseConfigs`.
- *
  * semantic-release matches the current git branch against this list and
  * determines the channel, pre-release identifier, etc. automatically.
  *
@@ -112,6 +110,18 @@ const branches: BranchSpec[] = [
   // Stable latest channel (`false` = default dist-tag, i.e. @latest on npm)
   { name: 'release/latest', channel: false },
 ];
+
+/**
+ * Determine the version bump from conventional commits.
+ * Default rules: feat→minor, fix/perf/revert→patch, BREAKING CHANGE→major.
+ */
+export const commitAnalyzerConfig = { preset: 'conventionalcommits' };
+
+/**
+ * Generate release notes with custom writerOpts that add commit body text
+ * below each entry.
+ */
+export const releaseNotesConfig = { preset: 'conventionalcommits', writerOpts };
 
 function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {
   let publishCmd: string | undefined;
@@ -135,20 +145,11 @@ function buildSemanticReleaseConfig(options: SemanticReleaseOptions): Options {
     // Allow overriding the repository URL (e.g. for local E2E testing)
     ...(options.repositoryUrl ? { repositoryUrl: options.repositoryUrl } : {}),
     plugins: [
-      // 1. Determine the version bump from conventional commits.
-      //    Default rules: feat→minor, fix/perf/revert→patch,
-      //    BREAKING CHANGE→major.
-      ['@semantic-release/commit-analyzer', { preset: 'conventionalcommits' }],
+      // 1. Determine the version bump.
+      ['@semantic-release/commit-analyzer', commitAnalyzerConfig],
 
-      // 2. Generate release notes — built-in plugin with custom writerOpts
-      //    that adds commit body text below each entry.
-      [
-        '@semantic-release/release-notes-generator',
-        {
-          preset: 'conventionalcommits',
-          writerOpts,
-        },
-      ],
+      // 2. Generate release notes.
+      ['@semantic-release/release-notes-generator', releaseNotesConfig],
 
       // 3. Sync the resolved version to every publishable package.json
       //    and optionally stage-publish to npm.

@@ -5,13 +5,11 @@ import {
   TS_TSX_FILES,
   coreRulesForTypeScript,
   noUnusedVars,
+  rootOptions,
 } from './oxlint.shared.ts';
 
 export default defineConfig({
-  options: {
-    typeAware: true,
-    denyWarnings: true,
-  },
+  options: rootOptions,
   // Built-in plugins enabled repo-wide. `oxc` adds Oxlint-specific rules that
   // have no ESLint counterpart; its correctness rules fire automatically via
   // `categories.correctness` below, and a few high-value non-correctness rules

@@ -2,7 +2,6 @@ import './progressBar.css';
 import '@u-elements/u-progress';
 import type { Size } from '@digdir/designsystemet-types';
 import type { Color } from '@digdir/designsystemet-types';
-import { UHTMLProgressShadowRoot } from '@u-elements/u-progress';
 import cl from 'clsx/lite';
 import type { AriaRole, HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
@@ -88,9 +87,9 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
           max={max}
           aria-hidden="true"
           aria-label="..." // only because ARC Toolkit reports empty label as an error, but this will never be read
-          // Ensure shadow dom is server rendered
-          // see https://u-elements.github.io/u-elements/elements/u-progress#server-side-rendering
-          dangerouslySetInnerHTML={{ __html: UHTMLProgressShadowRoot }}
+          // No server-rendered shadow root (`UHTMLProgressShadowRoot`): a strict CSP blocks its
+          // `<style>`, and u-progress then skips adopting its own stylesheet, so no bar is drawn.
+          // The element creates its shadow root when it upgrades.
         />
       </div>
     );

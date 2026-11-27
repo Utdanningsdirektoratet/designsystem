@@ -1,0 +1,13 @@
+.storyCode {
+  margin-block-end: 40px;
+}
+
+/* Storybook's canvas toolbar keeps its 40px bottom margin when the code panel is closed */
+:global(.sbdocs-preview-actions):has(+ .storyCode) {
+  margin-block-end: 8px;
+}
+
+/* As in Storybook's props table, which otherwise lets the tabs fill the available height */
+.tabs {
+  height: fit-content;
+}

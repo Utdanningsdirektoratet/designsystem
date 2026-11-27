@@ -12,8 +12,7 @@
  * Called by `@semantic-release/exec` in the `prepare` lifecycle step.
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
-import fg from 'fast-glob';
+import { globSync, readFileSync, writeFileSync } from 'node:fs';
 
 const version = process.argv[2];
 if (!version) {
@@ -21,17 +20,15 @@ if (!version) {
   process.exit(1);
 }
 
-const packageJsonPaths = fg.sync('@udir-design/*/package.json');
+// glob returns the files in directory order; sort so the output is stable
+const packages = globSync('@udir-design/*/package.json')
+  .toSorted()
+  .map((path) => ({ path, pkg: JSON.parse(readFileSync(path, 'utf-8')) }))
+  .filter(({ pkg }) => pkg.publishConfig); // skip non-publishable packages
 
-let updated = 0;
-for (const path of packageJsonPaths) {
-  const pkg = JSON.parse(readFileSync(path, 'utf-8'));
-  if (!pkg.publishConfig) continue; // skip non-publishable packages
-  const previous = pkg.version;
-  pkg.version = version;
-  writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n');
-  console.log(`  ${pkg.name}: ${previous} → ${version}`);
-  updated++;
+for (const { path, pkg } of packages) {
+  writeFileSync(path, JSON.stringify({ ...pkg, version }, null, 2) + '\n');
+  console.log(`  ${pkg.name}: ${pkg.version} → ${version}`);
 }
 
-console.log(`\nUpdated ${updated} package(s) to version ${version}`);
+console.log(`\nUpdated ${packages.length} package(s) to version ${version}`);

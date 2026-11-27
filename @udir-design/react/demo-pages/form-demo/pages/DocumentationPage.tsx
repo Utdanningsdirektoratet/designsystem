@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import type { FileRejection, FileWithPath } from 'react-dropzone';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
 import { Field } from 'src/components/field';
@@ -8,42 +7,55 @@ import { FileUpload } from 'src/components/fileUpload';
 import { Textarea } from 'src/components/textarea';
 import { Heading } from 'src/components/typography/heading';
 import { Label } from 'src/components/typography/label';
+import type { FileUploadEntry } from 'src/hooks/useFileUpload';
+import { useFileUpload } from 'src/hooks/useFileUpload';
 import type { FormValues, PageProps } from '../FormDemo';
 
 export const DocumentationPage = ({
   isSubmitSuccessful,
   showErrors,
 }: PageProps) => {
-  const { register, setValue, watch, formState } = useFormContext<FormValues>();
-
-  const [rejected, setRejected] = useState<FileRejection[]>([]);
-  const uploadedFiles = watch('documentation');
+  const { register, setValue, getValues, formState } =
+    useFormContext<FormValues>();
   const errors = showErrors ? formState.errors : {};
 
-  const removeFile = (fileToRemove: File) => {
-    setValue(
-      'documentation',
-      uploadedFiles.filter((file) => file !== fileToRemove),
-      { shouldValidate: true },
-    );
-  };
-
-  const removeRejected = (rejectedToRemove: FileWithPath) => {
-    setRejected((prevFile) =>
-      prevFile.filter(({ file }) => file.name !== rejectedToRemove.name),
-    );
-  };
+  // The whole list lives in the form, so validation can see the files that
+  // failed and the user still has them after visiting another page.
+  const onEntriesChange = useCallback(
+    (entries: FileUploadEntry[]) =>
+      setValue(
+        'documentation',
+        // Whether a file is uploading right now is not something the form
+        // should remember; see the schema.
+        entries.map(({ loading: _, ...entry }) => entry),
+        { shouldValidate: true },
+      ),
+    [setValue],
+  );
+  const { entries, files, add, addRejected, remove } = useFileUpload({
+    initialEntries: getValues('documentation'),
+    onEntriesChange,
+  });
 
   const { getRootProps, getInputProps, isDragGlobal, isDragActive } =
     useDropzone({
-      onDropAccepted: (file) => {
-        setValue('documentation', [...uploadedFiles, ...file], {
-          shouldValidate: true,
-        });
+      onDropAccepted: (accepted) => {
+        const { duplicates } = add(accepted);
+        // The hook spots them; the wording is ours.
+        addRejected(
+          duplicates.map((file) => ({
+            file,
+            error: 'Filen er allerede lagt til',
+          })),
+        );
       },
-      onDropRejected: (rej) => {
-        setRejected((prev) => [...prev, ...rej]);
-      },
+      onDropRejected: (rejections) =>
+        addRejected(
+          rejections.map(({ file, errors }) => ({
+            file,
+            error: ErrorMessages.get(errors[0].code) ?? errors[0].message,
+          })),
+        ),
       maxSize: 25000000,
       multiple: true,
       accept: {
@@ -66,43 +78,28 @@ export const DocumentationPage = ({
             required: true,
             readOnly: isSubmitSuccessful,
           }),
-          id: 'dokumentasjon-dropzone',
+          // The error summary links to `#<field name>` and focuses the
+          // control with that id, so it has to match the name in the schema.
+          id: 'documentation',
         }}
+        files={files}
         isDragActive={isDragActive}
         isDragGlobal={isDragGlobal}
         error={errors.documentation?.message}
       />
-      {uploadedFiles.length > 0 && (
+      {entries.length > 0 && (
         <>
           <Heading level={3} data-size="2xs">
-            Vedlegg ({uploadedFiles.length}):
+            {`Vedlegg (${entries.length}):`}
           </Heading>
 
           <FileUpload.List>
-            {uploadedFiles.map((file, index) => (
+            {entries.map(({ id, file, error }) => (
               <FileUpload.Item
-                key={index}
+                key={id}
                 file={file}
-                onRemove={() => removeFile(file)}
-              />
-            ))}
-          </FileUpload.List>
-        </>
-      )}
-
-      {rejected.length > 0 && (
-        <>
-          <Heading level={3} data-size="2xs">
-            Vedlegg med feil:
-          </Heading>
-
-          <FileUpload.List>
-            {rejected.map(({ file, errors }, index) => (
-              <FileUpload.Item
-                key={index}
-                file={file}
-                onRemove={() => removeRejected(file)}
-                error={ErrorMessages.get(errors[0].code)}
+                error={error}
+                onRemove={() => remove(id)}
               />
             ))}
           </FileUpload.List>

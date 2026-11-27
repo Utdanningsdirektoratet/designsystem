@@ -1,16 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Color Variants 1`] = `
-<style>
-  .badge-color-variants-content {
-  display: grid;
-  grid-template-columns: repeat(4, 60px);
-  gap: var(--ds-size-2);
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-</style>
 <div>
   <span
     data-count="9+"
@@ -71,12 +61,6 @@ exports[`Color Variants 1`] = `
 `;
 
 exports[`Custom Placement 1`] = `
-<style>
-  .badge-custom-placement-badge {
-  --dsc-badge-top: 16%;
-  --dsc-badge-right: 10%;
-}
-</style>
 <span
   data-overlap="rectangle"
   data-placement="top-right"
@@ -105,13 +89,6 @@ exports[`Custom Placement 1`] = `
 `;
 
 exports[`Floating 1`] = `
-<style>
-  .badge-floating-avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-}
-</style>
 <span
   data-overlap="rectangle"
   data-placement="top-right"
@@ -263,12 +240,6 @@ exports[`Floating 1`] = `
 `;
 
 exports[`In Button 1`] = `
-<style>
-  .badge-in-button-main {
-  display: flex;
-  gap: var(--ds-size-4);
-}
-</style>
 <div>
   <button
     data-icon="true"
@@ -465,21 +436,6 @@ exports[`Status 1`] = `
 `;
 
 exports[`System Alerts 1`] = `
-<style>
-  .badge-system-alerts-main {
-  display: flex;
-  flex-direction: column;
-  width: 30rem;
-}
-.badge-system-alerts-heading {
-  margin-block-end: var(--ds-size-4);
-}
-.badge-system-alerts-details-content {
-  gap: var(--ds-size-4);
-  display: flex;
-  flex-direction: column;
-}
-</style>
 <div>
   <h2>
     Systemvarsler
@@ -494,12 +450,6 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -516,12 +466,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -550,12 +494,6 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -572,12 +510,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -594,12 +526,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -616,12 +542,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -638,12 +558,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -660,12 +574,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -694,12 +602,6 @@ exports[`System Alerts 1`] = `
       </span>
     </summary>
     <div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -710,12 +612,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -726,12 +622,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -742,12 +632,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -758,12 +642,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -774,12 +652,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -790,12 +662,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -806,12 +672,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -822,12 +682,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -838,12 +692,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">
@@ -854,12 +702,6 @@ exports[`System Alerts 1`] = `
           Dette er et varsel.
         </p>
       </div>
-      <style>
-        .badge-varsel-header {
-  display: flex;
-  justify-content: space-between;
-}
-      </style>
       <div>
         <div>
           <h3 data-size="xs">

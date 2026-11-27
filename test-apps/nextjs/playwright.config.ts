@@ -13,6 +13,12 @@ export default defineConfig({
       name: 'chromium',
       use: { browserName: 'chromium' },
     },
+    {
+      // Each browser engine enforces a CSP with its own code, so check the CSP in a second one
+      name: 'firefox',
+      use: { browserName: 'firefox' },
+      testMatch: 'csp.spec.ts',
+    },
   ],
   webServer: {
     command: 'next start',

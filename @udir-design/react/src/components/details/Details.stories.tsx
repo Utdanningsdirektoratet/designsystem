@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { expect, userEvent } from 'storybook/test';
 import { ChevronDownUpIcon, ChevronUpDownIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { makeStoryTransformer } from '.storybook/utils/makeStoryTransformer';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Button } from '../button/Button';
@@ -333,30 +334,17 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
   render: (args, ctx) => {
     const argsObj = args as object;
     return (
-      <>
-        <style>
-          {`
-.details-example-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-4);
-}`}
-        </style>
-        <div className="details-example-main">
-          <Label data-size="sm">Default</Label>
-          {originalStory.input.render?.(args, ctx)}
-          <Label data-size="sm">Hover</Label>
-          {originalStory.input.render?.(
-            { ...argsObj, className: 'hover' },
-            ctx,
-          )}
-          <Label data-size="sm">Focused</Label>
-          {originalStory.input.render?.(
-            { ...argsObj, className: 'focusVisible' },
-            ctx,
-          )}
-        </div>
-      </>
+      <div className="details-example-main">
+        <Label data-size="sm">Default</Label>
+        {originalStory.input.render?.(args, ctx)}
+        <Label data-size="sm">Hover</Label>
+        {originalStory.input.render?.({ ...argsObj, className: 'hover' }, ctx)}
+        <Label data-size="sm">Focused</Label>
+        {originalStory.input.render?.(
+          { ...argsObj, className: 'focusVisible' },
+          ctx,
+        )}
+      </div>
     );
   },
   args: originalStory.composed.args,
@@ -366,6 +354,13 @@ const makePseudoStatesStory = makeStoryTransformer((originalStory) => ({
       hover: ['.hover > summary'],
       focusVisible: ['.focusVisible > summary'],
     },
+    css: css`
+      .details-example-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-4);
+      }
+    `,
   },
 }));
 

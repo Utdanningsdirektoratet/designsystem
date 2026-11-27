@@ -62,13 +62,6 @@ exports[`Format 1`] = `
 
 exports[`Position 1`] = `
 <div style="<removed>">
-  <style>
-    .field-position-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-2);
-}
-  </style>
   <div>
     <ds-field
       data-position="end"

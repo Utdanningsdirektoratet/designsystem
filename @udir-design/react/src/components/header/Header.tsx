@@ -2,8 +2,8 @@ import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
 import { forwardRef } from 'react';
 import type { HTMLAttributes } from 'react';
-import type { CSSProperties } from 'react';
 import { useScrollDirection } from '../../utilities/useScrollDirection';
+import { useStyleProperties } from '../../utilities/useStyleProperties';
 import { Logo } from '../logo';
 import { LogoSymbol } from '../logo';
 import { Heading } from '../typography/heading';
@@ -23,6 +23,8 @@ export type HeaderProps = HTMLAttributes<HTMLElement> & {
    * The maximum width of the header content.
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
    * @default '80rem'
+   * @deprecated Set `--udsc-header-max-width` in your CSS instead. This prop is applied after
+   * hydration, so server-rendered pages show the default width until then.
    */
   maxWidth?: string;
   /**
@@ -46,18 +48,22 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
     children,
     className,
     href = '/',
-    maxWidth = '80rem',
+    // oxlint-disable-next-line typescript/no-deprecated -- Still supported until it is removed
+    maxWidth,
     sticky = true,
     variant = 'default',
     ...rest
   },
-  ref,
+  forwardedRef,
 ) {
   const { dir, isAtTop } = useScrollDirection();
   const dataScrollDirection = sticky ? dir : undefined;
   const dataTop = sticky ? isAtTop : undefined;
   const isMain = applicationName === 'Utdanningsdirektoratet';
   const LogoContainer = href !== null ? 'a' : 'div';
+  const ref = useStyleProperties(forwardedRef, {
+    '--udsc-header-max-width': maxWidth,
+  });
 
   return (
     <header
@@ -65,15 +71,14 @@ export const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
       ref={ref}
       data-scroll-direction={dataScrollDirection}
       data-top={dataTop}
-      style={{ '--udsc-header-max-width': maxWidth } as CSSProperties}
       {...rest}
     >
       <div>
         <LogoContainer href={href as string} className="uds-header__logo">
           {isMain ? (
-            <Logo padding="0" variant={variant} />
+            <Logo variant={variant} />
           ) : (
-            <LogoSymbol padding="0" variant={variant} />
+            <LogoSymbol variant={variant} />
           )}
           {!isMain && (
             <Heading data-size="xs" asChild>

@@ -18,7 +18,7 @@ const template = {
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: '`pnpm audit` rapporterer disse sikkerhetsadvarslene:',
+        text: '<https://github.com/Utdanningsdirektoratet/designsystem/security/dependabot|Dependabot> har funnet nye sikkerhetsadvarsler:',
       },
     },
     {
@@ -30,7 +30,7 @@ const template = {
       elements: [
         {
           type: 'mrkdwn',
-          text: 'Følg <https://github.com/Utdanningsdirektoratet/designsystem?tab=readme-ov-file#fikse-sikkerhetsadvarsler|disse instruksene> for å bli kvitt disse meldingene.',
+          text: 'Følg <https://github.com/Utdanningsdirektoratet/designsystem?tab=readme-ov-file#fikse-sikkerhetsadvarsler|disse instruksene> for å fikse eller avvise dem.',
         },
       ],
     },

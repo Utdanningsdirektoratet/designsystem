@@ -76,7 +76,7 @@ export const ArticleDemo = () => {
           </Heading>
           <ContentSection section={sectionHeader} />
           <div className={classes.headingWrapper}>
-            <Divider style={{ margin: 'var(--ds-size-4) 0' }} />
+            <Divider className={classes.divider} />
             <div className={classes.dividerWrapper}>
               <Paragraph data-size="sm">
                 ARTIKKEL | Sist endret: 01.01.2024
@@ -93,7 +93,7 @@ export const ArticleDemo = () => {
               </Link>
             </div>
 
-            <Divider style={{ margin: 'var(--ds-size-4) 0' }} />
+            <Divider className={classes.divider} />
           </div>
           <TableOfContents
             data-color="accent"

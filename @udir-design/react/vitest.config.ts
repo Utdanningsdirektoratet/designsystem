@@ -50,16 +50,25 @@ export default defineConfig({
         },
       },
       {
+        // Server rendering, so no browser
+        test: {
+          name: 'ssr',
+          environment: 'node',
+          include: ['src/**/*.ssr.spec.tsx'],
+          alias: viteConfig.resolve?.alias,
+        },
+      },
+      {
         test: {
           name: 'unit',
-          exclude: ['.storybook/**/*.node.spec.ts'],
+          exclude: ['.storybook/**/*.node.spec.ts', 'src/**/*.ssr.spec.tsx'],
           browser: {
             enabled: true,
             instances: [{ browser: 'chromium' }],
             provider: playwright(),
             headless: true,
+            screenshotFailures: false,
           },
-          setupFiles: ['./vitest.setup.ts'],
           include: [
             'src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
             // the snapshot serializer lives next to the Storybook config it serves
@@ -84,6 +93,7 @@ export default defineConfig({
             instances: [{ browser: 'chromium' }],
             provider: playwright(),
             headless: true,
+            screenshotFailures: false,
           },
           setupFiles: ['./.storybook/vitest.setup.ts'],
           snapshotSerializers: ['./.storybook/story-snapshot-serializer.ts'],

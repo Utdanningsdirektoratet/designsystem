@@ -9,23 +9,21 @@ const iconsDir = path.resolve(
   './node_modules/@navikt/aksel-icons/dist/svg',
 );
 const outputDir = path.resolve(import.meta.dirname, './dist/css');
-try {
-  await mkdir(outputDir, { recursive: true });
-} catch {
-  // Ignore if the directory already exists
-}
+await mkdir(outputDir, { recursive: true });
 
 const svgFilePaths = (await readdir(iconsDir)).filter((file) =>
   file.endsWith('.svg'),
 );
 
-for (const svgPath of svgFilePaths) {
-  const svgContent = await readFile(path.resolve(iconsDir, svgPath), 'utf-8');
-  const iconName = camelcase(path.basename(svgPath, '.svg'), {
-    preserveConsecutiveUppercase: true,
-  });
-  const cssContent = `:root { 
+await Promise.all(
+  svgFilePaths.map(async (svgPath) => {
+    const svgContent = await readFile(path.resolve(iconsDir, svgPath), 'utf-8');
+    const iconName = camelcase(path.basename(svgPath, '.svg'), {
+      preserveConsecutiveUppercase: true,
+    });
+    const cssContent = `:root { 
   --uds-icon-${iconName}: url("data:image/svg+xml,${encodeURIComponent(svgContent)}"); 
 }`;
-  await writeFile(path.join(outputDir, `${iconName}.css`), cssContent);
-}
+    await writeFile(path.join(outputDir, `${iconName}.css`), cssContent);
+  }),
+);

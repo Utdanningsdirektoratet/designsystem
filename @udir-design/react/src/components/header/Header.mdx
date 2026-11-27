@@ -337,6 +337,21 @@ Bruk [`<nav>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Eleme
 
 Se meny-eksemplene for hvordan dette kan gjøres i praksis.
 
+Bruker du egne lister i `Header`, skal du bruke `list-style-type: ''` i stedet for `list-style: none` for å skjule listemarkørene. Se [dokumentasjon for å skjule kulepunkter i `List`](/docs/components-list--docs#skjule-kulepunkter).
+
 ## Kompatibilitet
 
 `Header.Menu` bruker [`Popover`](/docs/components-popover--docs) under panseret, se [dokumentasjon om kompatibilitet med Popover](/docs/components-popover--docs#kompatibilitet) for å sørge for at det fungerer som forventet i din applikasjon. Det gjelder også ved bruk av [`Dropdown`](/docs/components-dropdown--docs).
+
+### Server-side rendering og Content Security Policy
+
+Sett bredden på innholdet i ditt eget stilark. Da er den riktig fra første visning, også ved server-side rendering og med en streng Content Security Policy. Bruker du samme bredde i `Footer`, kan du sette begge på samme sted:
+
+```css
+:root {
+  --udsc-header-max-width: 60rem;
+  --udsc-footer-max-width: 60rem;
+}
+```
+
+`maxWidth` er deprecated og kan bli fjernet i en senere versjon. Prop-en settes med JavaScript etter at siden er lastet, så ved server-side rendering vises `Header` med standardbredden til JavaScript har lastet, og innholdet kan flytte seg. Les mer om [server-side rendering og Content Security Policy](/docs/components-server-side-rendering-og-csp--docs).

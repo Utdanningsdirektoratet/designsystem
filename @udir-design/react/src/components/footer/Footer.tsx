@@ -1,7 +1,8 @@
 import type { Size } from '@digdir/designsystemet-types';
 import cl from 'clsx/lite';
-import type { CSSProperties, HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';
+import { useStyleProperties } from '../../utilities/useStyleProperties';
 import './footer.css';
 import { Logo } from '../logo';
 
@@ -11,6 +12,8 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
    * Can be any valid CSS width value, e.g. `1280px`, `100%`, etc.
    * Should be the same as for header content.
    * @default '80rem'
+   * @deprecated Set `--udsc-footer-max-width` in your CSS instead. This prop is applied after
+   * hydration, so server-rendered pages show the default width until then.
    */
   maxWidth?: string;
   /**
@@ -25,20 +28,20 @@ export type FooterProps = HTMLAttributes<HTMLElement> & {
 };
 
 export const Footer = forwardRef<HTMLElement, FooterProps>(function Footer(
-  { children, className, maxWidth = '80rem', variant = 'default', ...rest },
-  ref,
+  // oxlint-disable-next-line typescript/no-deprecated -- Still supported until it is removed
+  { children, className, maxWidth, variant = 'default', ...rest },
+  forwardedRef,
 ) {
+  const ref = useStyleProperties(forwardedRef, {
+    '--udsc-footer-max-width': maxWidth,
+  });
+
   return (
-    <footer
-      className={cl(`uds-footer`, className)}
-      ref={ref}
-      style={{ '--udsc-footer-max-width': maxWidth } as CSSProperties}
-      {...rest}
-    >
+    <footer className={cl(`uds-footer`, className)} ref={ref} {...rest}>
       <div>
         {children}
         <a href="https://udir.no" className="uds-footer__logo">
-          <Logo variant={variant} padding="0" />
+          <Logo variant={variant} />
         </a>
       </div>
     </footer>

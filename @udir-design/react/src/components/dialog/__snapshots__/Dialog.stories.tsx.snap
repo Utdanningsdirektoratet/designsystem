@@ -78,15 +78,6 @@ exports[`Custom Close Button 1`] = `
 `;
 
 exports[`Dialog Non Modal 1`] = `
-<style>
-  .dialog-non-modal-field {
-  width: 400px;
-}
-.dialog-non-modal-dialog {
-   width: 300px;
-   left: 65%;
-}
-</style>
 <ds-field>
   <label for="<generated>">
     Besvarelse
@@ -147,13 +138,6 @@ exports[`Dialog Non Modal 1`] = `
 `;
 
 exports[`Dialog With Form 1`] = `
-<style>
-  .dialog-with-form-button__group {
-          display: flex;
-          gap: var(--ds-size-2);
-          margin-top: var(--ds-size-4);
-        }
-</style>
 <button
   type="button"
   aria-haspopup="dialog"
@@ -217,11 +201,6 @@ exports[`Dialog With Form 1`] = `
 `;
 
 exports[`Dialog With Max Width 1`] = `
-<style>
-  .dialog-with-max-width-dialog {
-  max-width: 1200px;
-}
-</style>
 <button
   data-variant="secondary"
   type="button"
@@ -304,15 +283,6 @@ exports[`Dialog With Open Prop 1`] = `
 `;
 
 exports[`Dialog With Suggestion 1`] = `
-<style>
-  .dialog-with-suggestion-dialog {
-  overflow: visible;
-}
-.dialog-with-suggestion-dialog-block {
-   display: flex;
-   gap: var(--ds-size-2);
-}
-</style>
 <button
   data-variant="secondary"
   type="button"
@@ -510,22 +480,6 @@ exports[`Dialog With Suggestion 1`] = `
 `;
 
 exports[`Drawer 1`] = `
-<style>
-  .dialog-drawer-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.dialog-drawer-radio__group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-size-5);
-  margin-bottom: var(--ds-size-4);
-}
-.dialog-drawer-dialog {
-  z-index: 10;
-}
-</style>
 <div>
   <ds-field data-clickdelegatefor="modal-checkbox">
     <input
@@ -653,11 +607,6 @@ exports[`Drawer 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<style>
-  .dialog-preview-dialog {
-  z-index: 10;
-}
-</style>
 <button
   type="button"
   aria-haspopup="dialog"

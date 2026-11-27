@@ -28,6 +28,9 @@ jobs:
           fetch-depth: 0
 
       - uses: ./.github/actions/pnpm-setup
+        with:
+          # The search index is built by rendering the docs pages in Chromium.
+          playwright-deps: true
 
       - name: Build storybook
         run: pnpm turbo run build:docs --filter=@udir-design/react
@@ -68,7 +71,7 @@ jobs:
 
       - name: Publish Storybook to Chromatic (TurboSnap)
         if: steps.diff_runtime_deps.outputs.deps_changed != 'true'
-        uses: chromaui/action@38afd264ef2241136f12d039093c2724748bec08 # v18.11.0
+        uses: chromaui/action@9cb4d65a86fe1c4c67a76a8d90f35a51a118e55f # v18.15.1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}
@@ -87,11 +90,13 @@ jobs:
             @udir-design/react/.storybook/addons/**
             @udir-design/react/.storybook/types/**
             @udir-design/react/.storybook/data/**
+            @udir-design/react/.storybook/search/**
             @udir-design/react/.storybook/utils/argTypesEnhancer.ts
             @udir-design/react/.storybook/utils/sourceCodeUrl.ts
             @udir-design/react/.storybook/utils/sourceTransformers.ts
             @udir-design/react/.storybook/utils/makeStoryTransformer.ts
             @udir-design/react/.storybook/utils/createTierIndexers.ts
+            @udir-design/react/.storybook/utils/sidebarLabels.ts
             @udir-design/react/.storybook/story-snapshot-serializer.ts
             @udir-design/react/.storybook/preview-test.ts
             @udir-design/react/.storybook/decorators/WithInertInitialRender.tsx
@@ -99,7 +104,7 @@ jobs:
 
       - name: Publish Storybook to Chromatic (full build)
         if: steps.diff_runtime_deps.outputs.deps_changed == 'true'
-        uses: chromaui/action@38afd264ef2241136f12d039093c2724748bec08 # v18.11.0
+        uses: chromaui/action@9cb4d65a86fe1c4c67a76a8d90f35a51a118e55f # v18.15.1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ${{ env.CHROMATIC_WORKING_DIR }}

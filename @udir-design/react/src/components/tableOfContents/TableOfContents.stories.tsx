@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { expect, within } from 'storybook/test';
 import { withScrollHashBehavior } from '.storybook/decorators/withScrollHashBehavior';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
 import { Heading } from 'src/components/typography/heading';
 import { Paragraph } from 'src/components/typography/paragraph';
@@ -44,44 +45,43 @@ export const Preview = meta.story({
     ],
     'data-color': 'neutral',
   },
+  parameters: {
+    css: css`
+      .table-of-contents-preview-main {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-5);
+      }
+      .table-of-contents-preview-table-of-contents {
+        width: 450px;
+      }
+    `,
+  },
   render: (args) => {
     return (
-      <>
-        <style>
-          {`
-.table-of-contents-preview-main {
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-5);
-}
-.table-of-contents-preview-table-of-contents {
-  width: 450px;
-}`}
-        </style>
-        <div className="table-of-contents-preview-main">
-          <TableOfContents
-            className="table-of-contents-preview-table-of-contents"
-            {...args}
-            data-testid="table-of-contents"
-          />
-          <Heading id="forste-overskrift" level={2} data-size="md">
-            Første overskrift (h2)
-          </Heading>
-          <Heading id="forste-underoverskrift" level={3} data-size="sm">
-            Første underoverskrift (h3)
-          </Heading>
-          <Heading id="andre-underoverskrift" level={3} data-size="sm">
-            Andre underoverskrift (h3)
-          </Heading>
-          <Heading id="andre-overskrift" level={2} data-size="md">
-            Andre overskrift (h2)
-          </Heading>
-          <Heading id="tredje-overskrift" level={2} data-size="md">
-            Tredje overskrift (h2)
-          </Heading>
-        </div>
-      </>
+      <div className="table-of-contents-preview-main">
+        <TableOfContents
+          className="table-of-contents-preview-table-of-contents"
+          {...args}
+          data-testid="table-of-contents"
+        />
+        <Heading id="forste-overskrift" level={2} data-size="md">
+          Første overskrift (h2)
+        </Heading>
+        <Heading id="forste-underoverskrift" level={3} data-size="sm">
+          Første underoverskrift (h3)
+        </Heading>
+        <Heading id="andre-underoverskrift" level={3} data-size="sm">
+          Andre underoverskrift (h3)
+        </Heading>
+        <Heading id="andre-overskrift" level={2} data-size="md">
+          Andre overskrift (h2)
+        </Heading>
+        <Heading id="tredje-overskrift" level={2} data-size="md">
+          Tredje overskrift (h2)
+        </Heading>
+      </div>
     );
   },
   play: async ({ canvasElement, step }) => {

@@ -1,18 +1,36 @@
-import type { ChangeEvent } from 'react';
-import { useState } from 'react';
-import type { FileRejection, FileWithPath } from 'react-dropzone';
+import type { ChangeEvent, SubmitEvent } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
+import { NotePencilIcon } from '@udir-design/icons';
 import preview from '.storybook/preview';
+import { css } from '.storybook/utils/css';
 import { expectLanguageVariables } from '.storybook/utils/expectLanguageVariables';
 import { advancedCodeDocs } from '.storybook/utils/sourceTransformers';
+import { Alert } from 'src/components/alert';
+import { Button } from 'src/components/button';
+import { Checkbox } from 'src/components/checkbox';
+import { Dialog } from 'src/components/dialog';
+import { Textfield } from 'src/components/textfield';
 import { Heading } from 'src/components/typography/heading';
+import { Label } from 'src/components/typography/label';
+import { useFileUpload } from 'src/hooks/useFileUpload';
+import { downloadFile } from 'src/utilities/file/downloadFile';
+// `?no-inline`: smaller than Vite's inline limit, so a build would otherwise
+// turn it into a `data:` URL, which browsers do not open from a link.
+import vitnemalUrl from '../../../public/files/vitnemal.pdf?no-inline';
 import { Prose } from '../typography/prose';
 import { FileUploadDropzone } from './docs/FakeFileUploadDropzone';
 import { FileUploadItem } from './docs/FakeFileUploadItem';
 import { FileUploadList } from './docs/FakeFileUploadList';
 import { FileUploadTrigger } from './docs/FakeFileUploadTrigger';
-import { FileUpload } from './index';
+import { FileMeta } from './types';
+import {
+  FileUpload,
+  FileUploadDownloadButton,
+  FileUploadFileSize,
+  FileUploadItemButton,
+} from './index';
 
 const meta = preview.meta({
   component: FileUploadTrigger,
@@ -20,6 +38,9 @@ const meta = preview.meta({
     'FileUpload.Dropzone': FileUploadDropzone,
     'FileUpload.List': FileUploadList,
     'FileUpload.Item': FileUploadItem,
+    'FileUpload.FileSize': FileUploadFileSize,
+    'FileUpload.DownloadButton': FileUploadDownloadButton,
+    'FileUpload.ItemButton': FileUploadItemButton,
   },
   tags: ['udir'],
   parameters: {
@@ -31,7 +52,16 @@ const meta = preview.meta({
 });
 
 export const Preview = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-preview-main {
+        display: flex;
+        gap: var(--ds-size-18);
+        justify-content: center;
+      }
+    `,
+  },
   args: {
     'data-size': 'md',
     label: 'Label',
@@ -56,161 +86,176 @@ export const Preview = meta.story({
         },
       });
     return (
-      <>
-        <style>
-          {`
-        .file-upload-preview-main {
-          display: flex;
-          gap: var(--ds-size-18);
-          justify-content: center;
-        }`}
-        </style>
-        <div className="file-upload-preview-main">
-          <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
-          <FileUpload.Dropzone
-            {...args}
-            inputProps={getInputProps({ ...args.inputProps })}
-            isDragGlobal={isDragGlobal}
-            isDragActive={isDragActive}
-            cardProps={getRootProps()}
-          />
-        </div>
-      </>
+      <div className="file-upload-preview-main">
+        <FileUpload.Trigger {...args} inputProps={{ ...args.inputProps }} />
+        <FileUpload.Dropzone
+          {...args}
+          inputProps={getInputProps({ ...args.inputProps })}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
+          cardProps={getRootProps()}
+        />
+      </div>
     );
   },
 });
 
 export const Readonly = meta.story({
+  parameters: {
+    css: css`
+      .file-upload-readonly-main {
+        background: var(--ds-color-neutral-surface-tinted);
+        display: flex;
+        gap: var(--ds-size-12);
+        justify-content: center;
+        padding: var(--ds-size-8);
+        border-radius: var(--ds-border-radius-md);
+      }
+    `,
+  },
   render: (args) => {
     return (
-      <>
-        <style>
-          {`
-.file-upload-readonly-main {
-  background: var(--ds-color-neutral-surface-tinted);
-  display: flex;
-  gap: var(--ds-size-12);
-  justify-content: center;
-  padding: var(--ds-size-8);
-  border-radius: var(--ds-border-radius-md);
-}`}
-        </style>
-        <div className="file-upload-readonly-main">
-          <FileUpload.Trigger
-            {...args}
-            inputProps={{ readOnly: true }}
-            label="Lesemodus"
-            description="Beskrivelse for Trigger"
-          />
-          <FileUpload.Dropzone
-            {...args}
-            inputProps={{ readOnly: true, max: 2 }}
-            label="Lesemodus"
-            description="Beskrivelse for Dropzone"
-          />
-        </div>
-      </>
+      <div className="file-upload-readonly-main">
+        <FileUpload.Trigger
+          {...args}
+          inputProps={{ readOnly: true }}
+          label="Lesemodus"
+          description="Beskrivelse for Trigger"
+        />
+        <FileUpload.Dropzone
+          {...args}
+          inputProps={{ readOnly: true, max: 2 }}
+          label="Lesemodus"
+          description="Beskrivelse for Dropzone"
+        />
+      </div>
     );
   },
 });
 
+/** One row in the attachment list, whatever happened to it. */
+type Entry = { id: string; file: File; loading?: boolean; error?: string };
+
 export const ExampleDropZone = meta.story({
-  parameters: {
-    customStyles: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 'var(--ds-size-3)',
-    },
-    docs: advancedCodeDocs,
-  },
+  parameters: { docs: advancedCodeDocs },
   render: (args) => {
-    const [files, setFiles] = useState<File[]>([]);
-    const [rejected, setRejected] = useState<FileRejection[]>([]);
+    // Accepted and rejected files go in the same list: to the user they are
+    // both files that were dropped, and one of them did not work. The id is per
+    // attempt rather than per file, since the same file can be dropped twice.
+    const [entries, setEntries] = useState<Entry[]>([]);
+    // One number for both the limit and the description, so they agree.
+    const maxSize = 512 * 1024;
 
-    const removeFile = (fileToRemove: File) => {
-      setFiles((prevItems) =>
-        prevItems.filter((file) => file !== fileToRemove),
-      );
-    };
-
-    const removeRejected = (rejectedToRemove: FileWithPath) => {
-      setRejected((prevFile) =>
-        prevFile.filter(({ file }) => file.name !== rejectedToRemove.name),
-      );
+    const removeEntry = (idToRemove: string) => {
+      setEntries((prev) => prev.filter(({ id }) => id !== idToRemove));
     };
 
     const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
       useDropzone({
-        onDropAccepted: (file) => {
-          setFiles((prev) => [...prev, ...file]);
-        },
-        onDropRejected: (rej) => {
-          setRejected((prev) => [...prev, ...rej]);
-        },
-        maxSize: 5242880,
+        onDropAccepted: (files) =>
+          setEntries((prev) => [
+            ...prev,
+            ...files.map((file) => ({ id: crypto.randomUUID(), file })),
+          ]),
+        onDropRejected: (rejections) =>
+          setEntries((prev) => [
+            ...prev,
+            ...rejections.map(({ file, errors }) => ({
+              id: crypto.randomUUID(),
+              file,
+              error: ErrorMessages.get(errors[0].code),
+            })),
+          ]),
+        maxSize,
         accept: {
           'application/pdf': [],
         },
       });
 
+    const valid = entries.filter(({ error }) => !error);
+
+    // The field is the only part of this that a screen reader reads out, and
+    // there is one slot, so the messages have to share it.
+    const fieldError =
+      (entries.some(({ error }) => error) &&
+        'Noen av vedleggene har feil. Feilen står på vedlegget det gjelder.') ||
+      (valid.length > 2 && 'Du har lastet opp for mange filer.');
+
     return (
-      <>
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
         <FileUpload.Dropzone
           label="Last opp dokumentasjon"
-          description="Du kan laste opp filer i PDF-format. Filer kan være opptil 0.5 MB."
+          description={
+            <>
+              Du kan laste opp filer i PDF-format. Filer kan være opptil{' '}
+              <FileUpload.FileSize size={maxSize} />.
+            </>
+          }
           inputProps={getInputProps({ multiple: true })}
+          files={valid.map(({ file }) => file)}
           isDragGlobal={isDragGlobal}
           isDragActive={isDragActive}
           data-testid="dropzone"
-          error={files.length > 2 && 'Du har lastet opp for mange filer.'}
+          error={fieldError}
           cardProps={getRootProps()}
           {...args}
         />
-        {files.length > 0 && (
+        {entries.length > 0 && (
           <>
             <Heading level={3} data-size="2xs">
-              Vedlegg ({files.length}):
+              {`Vedlegg (${entries.length}):`}
             </Heading>
             <FileUpload.List>
-              {files.map((file, index) => (
+              {entries.map(({ id, file, error }) => (
                 <FileUpload.Item
-                  key={index}
+                  key={id}
                   file={file}
-                  onRemove={() => removeFile(file)}
+                  error={error}
+                  onRemove={() => removeEntry(id)}
                 />
               ))}
             </FileUpload.List>
           </>
         )}
-        {rejected.length > 0 && (
-          <>
-            <Heading level={3} data-size="2xs">
-              Vedlegg med feil:
-            </Heading>
-            <FileUpload.List>
-              {rejected.map(({ file, errors }, index) => (
-                <FileUpload.Item
-                  key={index}
-                  file={file}
-                  onRemove={() => removeRejected(file)}
-                  error={ErrorMessages.get(errors[0].code)}
-                />
-              ))}
-            </FileUpload.List>
-          </>
-        )}
-      </>
+      </form>
     );
   },
+});
+
+export const ExampleDropZone_Test = ExampleDropZone.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const dropzone = canvas.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.pdf', {
       type: 'application/pdf',
     });
 
     await step('Elements should exist', async () => {
       await expect(dropzone).toBeTruthy();
+    });
+
+    await step('Input covers the card, so the whole card is clickable', () => {
+      const card = canvas.querySelector('.ds-card') as HTMLElement;
+      const cardRect = card.getBoundingClientRect();
+      const inputRect = dropzone.getBoundingClientRect();
+      const border = parseFloat(getComputedStyle(card).borderTopWidth);
+
+      // `inset: 0` resolves against the padding box, so the overlay is inset by
+      // the card's border on each side.
+      expect(inputRect.height).toBeGreaterThanOrEqual(
+        cardRect.height - border * 2,
+      );
+      expect(inputRect.width).toBeGreaterThanOrEqual(
+        cardRect.width - border * 2,
+      );
     });
 
     await step('File can be uploaded', async () => {
@@ -231,26 +276,35 @@ export const ExampleDropZone = meta.story({
 });
 
 export const ExampleDropzoneWithExplicitSize = ExampleDropZone.extend({
-  decorators: [
-    (Story) => (
-      <>
-        <style>{`.uds-file-upload { height: 600px; width: 100%; }`}</style>
-        <Story />
-      </>
-    ),
-  ],
+  parameters: {
+    css: css`
+      .uds-file-upload {
+        height: 600px;
+        width: 100%;
+      }
+    `,
+  },
 });
 
 export const TooManyFiles = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-too-many-files-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: (args) => {
-    const [files, setFiles] = useState<File[]>([
-      new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(3000)], 'eksempel2.docx'),
-      new File(['abc'.repeat(1000000)], 'eksempel3.png'),
+    const [files, setFiles] = useState<FileMeta[]>([
+      { size: 300000, name: 'eksempel1.pdf' },
+      { size: 9000, name: 'eksempel2.docx' },
+      { size: 3000000, name: 'eksempel3.png' },
     ]);
 
-    const removeFile = (fileToRemove: File) => {
+    const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
         prevItems.filter((file) => file !== fileToRemove),
       );
@@ -258,56 +312,44 @@ export const TooManyFiles = meta.story({
 
     const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
       useDropzone({
-        onDropAccepted: (file) => {
-          setFiles((prev) => [...prev, ...file]);
-        },
+        onDropAccepted: (files) => setFiles((prev) => [...prev, ...files]),
         multiple: true,
       });
 
     return (
-      <>
-        <style>
-          {`
-        .file-upload-too-many-files-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-too-many-files-main">
-          <FileUpload.Dropzone
-            label="Last opp dokumentasjon"
-            description="Du kan kun laste opp 2 filer."
-            data-testid="dropzone"
-            error={
-              files.length > 2 &&
-              'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
-            }
-            inputProps={getInputProps()}
-            cardProps={getRootProps()}
-            isDragGlobal={isDragGlobal}
-            isDragActive={isDragActive}
-            style={{ maxWidth: '450px', width: '100%' }}
-            {...args}
-          />
-          {files.length > 0 && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg ({files.length}):
-              </Heading>
-              <FileUpload.List>
-                {files.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    onRemove={() => removeFile(file)}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <form className="file-upload-too-many-files-main">
+        <FileUpload.Dropzone
+          label="Last opp dokumentasjon"
+          description="Du kan kun laste opp 2 filer."
+          data-testid="dropzone"
+          error={
+            files.length > 2 &&
+            'Du har lastet opp for mange filer. Fjern noen for å kunne sende inn skjemaet.'
+          }
+          inputProps={getInputProps()}
+          cardProps={getRootProps()}
+          isDragGlobal={isDragGlobal}
+          isDragActive={isDragActive}
+          style={{ maxWidth: '450px', width: '100%' }}
+          {...args}
+        />
+        {files.length > 0 && (
+          <>
+            <Heading level={3} data-size="2xs">
+              {`Vedlegg (${files.length}):`}
+            </Heading>
+            <FileUpload.List>
+              {files.map((file) => (
+                <FileUpload.Item
+                  key={fileId(file)}
+                  file={file}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </FileUpload.List>
+          </>
+        )}
+      </form>
     );
   },
 });
@@ -319,7 +361,16 @@ const ErrorMessages = new Map<string, string>([
 ]);
 
 export const ExampleTrigger = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-example-trigger-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   args: {
     label: 'Last opp profilbilde',
     description: 'Du kan laste opp filer i PNG- og JPEG-format.',
@@ -336,41 +387,37 @@ export const ExampleTrigger = meta.story({
     };
 
     return (
-      <>
-        <style>
-          {`
-        .file-upload-example-trigger-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-example-trigger-main">
-          <FileUpload.Trigger
-            inputProps={{
-              accept: 'image/png, image/jpeg',
-            }}
-            onChange={(e) => handleOnChange(e)}
-            data-testid="trigger"
-            {...args}
-          />
-          {file && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg (1):
-              </Heading>
-              <FileUpload.List>
-                <FileUpload.Item file={file} onRemove={() => setFile(null)} />
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <form className="file-upload-example-trigger-main">
+        <FileUpload.Trigger
+          inputProps={{
+            accept: 'image/png, image/jpeg',
+          }}
+          files={file ? [file] : []}
+          onChange={(e) => handleOnChange(e)}
+          data-testid="trigger"
+          {...args}
+        />
+        {file && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg (1):
+            </Heading>
+            <FileUpload.List>
+              <FileUpload.Item file={file} onRemove={() => setFile(null)} />
+            </FileUpload.List>
+          </>
+        )}
+      </form>
     );
   },
+});
+
+export const ExampleTrigger_Test = ExampleTrigger.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = canvasElement as HTMLElement;
     const trigger = canvas.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'eksempel1.png', {
       type: 'image/png',
     });
@@ -388,89 +435,180 @@ export const ExampleTrigger = meta.story({
   },
 });
 
+export const TriggerPseudoStates = meta.story({
+  parameters: {
+    pseudo: {
+      // The input lies over the button, so the states are on the trigger and
+      // the input rather than on the button itself.
+      hover: ['.hover .uds-file-upload__trigger'],
+      active: ['.active .uds-file-upload__trigger'],
+      focusVisible: ['.focusVisible input'],
+    },
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, auto)',
+        gap: 'var(--ds-size-6)',
+        alignItems: 'end',
+      }}
+    >
+      {[
+        ['Default', ''],
+        ['Hover', 'hover'],
+        ['Pressed', 'hover active'],
+        ['Focused', 'focusVisible'],
+      ].map(([state, className]) => (
+        <div key={state}>
+          <Label data-size="sm">{state}</Label>
+          <FileUpload.Trigger label="Last opp" className={className} />
+        </div>
+      ))}
+    </div>
+  ),
+});
+
+export const DropzonePseudoStates = meta.story({
+  parameters: {
+    pseudo: {
+      // The input lies over the card, so the states are on the card and the
+      // input rather than on the button inside.
+      hover: ['.hover .ds-card'],
+      focusVisible: ['.focusVisible input'],
+    },
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, minmax(0, 24rem))',
+        gap: 'var(--ds-size-6)',
+      }}
+    >
+      {(
+        [
+          ['Default', {}],
+          ['Hover', { className: 'hover' }],
+          ['Focused', { className: 'focusVisible' }],
+          ['Dragging over the window', { isDragGlobal: true }],
+          [
+            'Dragging over the zone',
+            { isDragGlobal: true, isDragActive: true },
+          ],
+        ] as const
+      ).map(([state, props]) => (
+        <div key={state}>
+          <Label data-size="sm">{state}</Label>
+          <FileUpload.Dropzone label="Last opp dokumentasjon" {...props} />
+        </div>
+      ))}
+    </div>
+  ),
+});
+
 export const ExampleItems = meta.story({
-  parameters: { docs: advancedCodeDocs },
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-example-items-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: () => {
-    const dummyFiles: File[] = [
-      new File(['abc'.repeat(100000)], 'eksempel1.pdf'),
-      new File(['abc'.repeat(10000)], 'eksempel2.docx'),
-      new File(['abc'.repeat(1000000)], 'eksempel3.png'),
-      new File(['abc'.repeat(123000)], 'eksempel4.pdf'),
-    ];
-    const dummyRejected: File[] = [
-      new File(['abc'.repeat(288000)], 'eksempel5.tsx'),
+    type FileInfo = FileMeta & {
+      id: string;
+      href?: string;
+      readonly?: boolean;
+      loading?: boolean;
+      description?: string;
+      error?: string;
+    };
+    const dummyFiles: FileInfo[] = [
+      {
+        size: 300000,
+        name: 'eksempel1.pdf',
+        id: 'eksempel1',
+        description: 'Filopplasting 1',
+      },
+      {
+        size: 30000,
+        name: 'eksempel2.docx',
+        id: 'eksempel2',
+        description: 'Filopplasting 2',
+      },
+      {
+        size: 3000000,
+        name: 'eksempel3.png',
+        id: 'eksempel3',
+        href: '/eksempel3.png',
+        description: 'Filopplasting 3',
+        readonly: true,
+      },
+      {
+        size: 369000,
+        name: 'eksempel4.pdf',
+        id: 'eksempel4',
+        description: 'Filopplasting 4',
+        loading: true,
+      },
+      {
+        size: 864000,
+        name: 'eksempel5.tsx',
+        id: 'eksempel5',
+        description: 'Filopplasting 5',
+        error: 'Filformatet støttes ikke',
+      },
     ];
 
-    const [files, setFiles] = useState<File[]>(dummyFiles);
-    const [rejected, setRejected] = useState<File[]>(dummyRejected);
+    const [files, setFiles] = useState<FileInfo[]>(dummyFiles);
 
-    const removeFile = (fileToRemove: File) => {
+    const removeFile = (fileToRemove: FileMeta) => {
       setFiles((prevItems) =>
         prevItems.filter((file) => file !== fileToRemove),
       );
     };
 
-    const removeRejected = (rejectedToRemove: File) => {
-      setRejected((prevFile) =>
-        prevFile.filter((file) => file.name !== rejectedToRemove.name),
-      );
-    };
-
     return (
-      <>
-        <style>
-          {`
-        .file-upload-example-items-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-example-items-main">
-          {files.length > 0 && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg ({files.length}):
-              </Heading>
-              <FileUpload.List>
-                {files.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    description={`Filopplasting ${index + 1}`}
-                    readonly={index === 2 && true}
-                    loading={index === 3 && true}
-                    onRemove={() => removeFile(file)}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-          {rejected.length > 0 && (
-            <>
-              <Heading
-                level={3}
-                data-size="2xs"
-                style={{ marginBlockStart: 'var(--ds-size-3)' }}
-              >
-                Vedlegg med feil:
-              </Heading>
-              <FileUpload.List>
-                {rejected.map((file, index) => (
-                  <FileUpload.Item
-                    key={index}
-                    file={file}
-                    onRemove={() => removeRejected(file)}
-                    error={'Filformatet støttes ikke'}
-                  />
-                ))}
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <div className="file-upload-example-items-main">
+        {files.length > 0 && (
+          <>
+            <Heading level={3} data-size="2xs">
+              {`Vedlegg (${files.length}):`}
+            </Heading>
+            <FileUpload.List>
+              {files.map((file) => (
+                <FileUpload.Item
+                  key={file.id}
+                  file={file}
+                  href={file.href}
+                  description={
+                    file.description ? (
+                      <>
+                        {`${file.description} (`}
+                        <FileUpload.FileSize size={file.size} />)
+                      </>
+                    ) : undefined
+                  }
+                  readonly={file.readonly}
+                  loading={file.loading}
+                  error={file.error}
+                  onRemove={() => removeFile(file)}
+                />
+              ))}
+            </FileUpload.List>
+          </>
+        )}
+      </div>
     );
   },
+});
+
+export const ExampleItems_Test = ExampleItems.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -493,15 +631,9 @@ export const ExampleItems = meta.story({
       await expect(removeButtons).toHaveLength(3);
     });
 
-    await step('Loading item shows a spinner', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
-    });
-
-    await step('Loading item has aria-busy set', async () => {
-      const busyItem = canvasElement.querySelector('[aria-busy="true"]');
-      await expect(busyItem).toBeInTheDocument();
+    await step('Loading item is marked as loading', async () => {
+      const loadingItem = canvasElement.querySelector('[data-loading]');
+      await expect(loadingItem).toBeInTheDocument();
     });
 
     await step('Error item is marked as invalid', async () => {
@@ -510,13 +642,16 @@ export const ExampleItems = meta.story({
     });
 
     await step('Description is shown for normal items', async () => {
-      await expect(canvas.getByText('Filopplasting 1')).toBeInTheDocument();
+      await expect(
+        canvas.getByText('Filopplasting 1', { exact: false }),
+      ).toBeInTheDocument();
     });
 
-    await step('Files are exposed as lists of cards', async () => {
-      const [files, rejected] = canvas.getAllByRole('list');
-      await expect(within(files).getAllByRole('listitem')).toHaveLength(4);
-      await expect(within(rejected).getAllByRole('listitem')).toHaveLength(1);
+    await step('Files are exposed as one list of cards', async () => {
+      // Files that failed sit alongside the rest: to the user they are all
+      // files that were attached, and one of them has something wrong with it.
+      const files = canvas.getByRole('list');
+      await expect(within(files).getAllByRole('listitem')).toHaveLength(5);
 
       /* Both variants render the same cards; the compact variant only
          collapses them together in CSS. */
@@ -534,8 +669,696 @@ export const ExampleItems = meta.story({
   },
 });
 
-export const Upload = meta.story({
+export const ItemLink = meta.story({
   parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 629 }}
+          href={vitnemalUrl}
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDescription = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description="Vitnemål fra videregående skole"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDescriptionWithFileSize = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description={
+            <>
+              <FileUpload.FileSize size={300000} />
+              {' · '}
+              <span>Endret 23. april 2026</span>
+            </>
+          }
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemWithoutDescription = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          description={null}
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemError = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'notat.txt', size: 2000 }}
+          error="Filformatet støttes ikke"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemSuccess = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'kandidatliste.csv', size: 12000 }}
+          success="Filen er lastet opp"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemLoading = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'vitnemal.pdf', size: 300000 }}
+          loading
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemLoadingText = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={{ name: 'kandidatliste.csv', size: 12000 }}
+          loading
+          loadingText="Sjekker innholdet…"
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemRemoveButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const [files, setFiles] = useState([
+      { id: 'soknad', name: 'soknad.pdf', size: 300000 },
+    ]);
+
+    return (
+      <FileUpload.List>
+        {files.map((file) => (
+          <FileUpload.Item
+            key={file.id}
+            file={file}
+            onRemove={() =>
+              setFiles((prev) => prev.filter(({ id }) => id !== file.id))
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemDownloadButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const [entries, setEntries] = useState(() => [
+      {
+        id: 'soknad',
+        file: new File([new Uint8Array(300000)], 'soknad.pdf', {
+          type: 'application/pdf',
+        }),
+      },
+    ]);
+
+    return (
+      <FileUpload.List>
+        {entries.map(({ id, file }) => (
+          <FileUpload.Item
+            key={id}
+            file={file}
+            onRemove={() =>
+              setEntries((prev) => prev.filter((entry) => entry.id !== id))
+            }
+            actions={
+              <FileUpload.DownloadButton
+                fileName={file.name}
+                onClick={() => downloadFile(file)}
+              />
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemReadonly = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const file = new File([new Uint8Array(300000)], 'vedtak.pdf', {
+      type: 'application/pdf',
+    });
+
+    return (
+      <FileUpload.List>
+        <FileUpload.Item
+          file={file}
+          readonly
+          onRemove={() => {}}
+          actions={
+            <FileUpload.DownloadButton
+              fileName={file.name}
+              onClick={() => downloadFile(file)}
+            />
+          }
+        />
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemActions = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = {
+      id: string;
+      file: File;
+      readonly?: boolean;
+      loading?: boolean;
+    };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      { id: 'soknad', file: pdf('soknad.pdf') },
+      { id: 'vedtak', file: pdf('vedtak.pdf'), readonly: true },
+      { id: 'vedlegg', file: pdf('vedlegg.pdf'), loading: true },
+    ]);
+    const [downloaded, setDownloaded] = useState<string[]>([]);
+
+    const download = ({ id, file }: Entry) => {
+      downloadFile(file);
+      // The click is yours to see, for example when the user has to open
+      // the file before it counts.
+      setDownloaded((prev) => [...prev, id]);
+    };
+
+    return (
+      <FileUpload.List>
+        {entries.map((entry) => (
+          <FileUpload.Item
+            key={entry.id}
+            file={entry.file}
+            readonly={entry.readonly}
+            loading={entry.loading}
+            description={
+              downloaded.includes(entry.id) ? (
+                <>
+                  <FileUpload.FileSize size={entry.file.size} />, lastet ned
+                </>
+              ) : undefined
+            }
+            actions={
+              <FileUpload.DownloadButton
+                fileName={entry.file.name}
+                onClick={() => download(entry)}
+              />
+            }
+            onRemove={() =>
+              setEntries((prev) => prev.filter(({ id }) => id !== entry.id))
+            }
+          />
+        ))}
+      </FileUpload.List>
+    );
+  },
+});
+
+export const ItemActions_Test = ItemActions.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step('Each button says which file it acts on', async () => {
+      await expect(
+        canvas.getByRole('button', { name: 'Last ned filen soknad.pdf' }),
+      ).toBeInTheDocument();
+      await expect(
+        canvas.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      ).toBeInTheDocument();
+    });
+
+    await step('A readonly file keeps the actions it was given', async () => {
+      await expect(
+        canvas.getByRole('button', { name: 'Last ned filen vedtak.pdf' }),
+      ).toBeInTheDocument();
+      await expect(
+        canvas.queryByRole('button', { name: 'Fjern filen vedtak.pdf' }),
+      ).not.toBeInTheDocument();
+    });
+
+    await step('A file that is loading has no actions', async () => {
+      await expect(
+        canvas.queryByRole('button', { name: /vedlegg\.pdf/ }),
+      ).not.toBeInTheDocument();
+    });
+
+    await step('Removing a file takes it out of the list', async () => {
+      await userEvent.click(
+        canvas.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      );
+      await expect(canvas.queryByText('soknad.pdf')).not.toBeInTheDocument();
+    });
+  },
+});
+
+export const CustomItemButton = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = { id: string; file: File; description?: string };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      {
+        id: 'vitnemal',
+        file: pdf('vitnemal.pdf'),
+        description: 'Vitnemål fra videregående skole',
+      },
+      { id: 'attest', file: pdf('attest.pdf') },
+    ]);
+    const [editing, setEditing] = useState<Entry>();
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const edit = (entry: Entry) => {
+      setEditing(entry);
+      dialogRef.current?.showModal();
+    };
+
+    const save = (event: SubmitEvent<HTMLFormElement>) => {
+      const value = new FormData(event.currentTarget).get('description');
+      const description = typeof value === 'string' ? value.trim() : '';
+      setEntries((prev) =>
+        prev.map((entry) =>
+          entry.id === editing?.id
+            ? { ...entry, description: description || undefined }
+            : entry,
+        ),
+      );
+    };
+
+    return (
+      <>
+        <FileUpload.List>
+          {entries.map((entry) => (
+            <FileUpload.Item
+              key={entry.id}
+              file={entry.file}
+              description={
+                entry.description ? (
+                  <>
+                    {`${entry.description} (`}
+                    <FileUpload.FileSize size={entry.file.size} />)
+                  </>
+                ) : undefined
+              }
+              actions={
+                <FileUpload.ItemButton
+                  icon={<NotePencilIcon aria-hidden />}
+                  tooltip="Beskriv filen"
+                  fileName={entry.file.name}
+                  onClick={() => edit(entry)}
+                />
+              }
+              onRemove={() =>
+                setEntries((prev) => prev.filter(({ id }) => id !== entry.id))
+              }
+            />
+          ))}
+        </FileUpload.List>
+        <Dialog ref={dialogRef} closedby="any">
+          {/* `method="dialog"` closes the dialog when the form is sent, and
+              the browser then hands focus back to the button that opened it. */}
+          <form
+            method="dialog"
+            onSubmit={save}
+            style={{ display: 'grid', gap: 'var(--ds-size-4)' }}
+          >
+            <Heading>Beskriv filen {editing?.file.name}</Heading>
+            <Textfield
+              // A new field for every file, so it starts out with its text.
+              key={editing?.id}
+              name="description"
+              label="Beskrivelse"
+              description={'For eksempel "Vitnemål" eller "Legeerklæring"'}
+              defaultValue={editing?.description}
+            />
+            <div style={{ display: 'flex', gap: 'var(--ds-size-2)' }}>
+              <Button type="submit">Lagre</Button>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => dialogRef.current?.close()}
+              >
+                Avbryt
+              </Button>
+            </div>
+          </form>
+        </Dialog>
+      </>
+    );
+  },
+});
+
+export const CustomItemButton_Test = CustomItemButton.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step(
+      'The button is named by its tooltip and the file it acts on',
+      async () => {
+        await expect(
+          await canvas.findByRole('button', {
+            name: 'Beskriv filen attest.pdf',
+          }),
+        ).toBeInTheDocument();
+      },
+    );
+
+    await step('The button sits before the delete button', async () => {
+      const [first, second] = canvas.getAllByRole('button', {
+        name: /attest\.pdf$/,
+      });
+      await expect(first).toHaveAccessibleName('Beskriv filen attest.pdf');
+      await expect(second).toHaveAccessibleName('Fjern filen attest.pdf');
+    });
+
+    await step(
+      'A saved description is shown on the file, and focus is back on the button',
+      async () => {
+        const button = canvas.getByRole('button', {
+          name: 'Beskriv filen attest.pdf',
+        });
+        await userEvent.click(button);
+
+        const dialog = await canvas.findByRole('dialog');
+        await expect(within(dialog).getByRole('heading')).toHaveTextContent(
+          'Beskriv filen attest.pdf',
+        );
+        await userEvent.type(
+          within(dialog).getByLabelText('Beskrivelse'),
+          'Attest fra arbeidsgiver',
+        );
+        await userEvent.click(
+          within(dialog).getByRole('button', { name: 'Lagre' }),
+        );
+
+        await expect(
+          await canvas.findByText(/Attest fra arbeidsgiver/),
+        ).toBeVisible();
+        await waitFor(() => expect(button).toHaveFocus());
+      },
+    );
+  },
+});
+
+/**
+ * Buttons whose action takes a while, such as fetching the file from the server
+ * before it is downloaded, or deleting it there. The file is `loading`
+ * meanwhile, which hides its buttons: focus moves to the file itself, and back
+ * to the button when it is done. For testing with a screen reader.
+ *
+ * A deletion that fails is reported next to the list rather than as an `error`
+ * on the file: nothing is wrong with the file, so it should not be read as
+ * invalid or keep the form from being sent.
+ */
+export const SlowItemActions = meta.story({
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+    const [files, setFiles] = useState(() =>
+      ['soknad.pdf', 'vitnemal.pdf', 'attest.pdf'].map(pdf),
+    );
+    const [busy, setBusy] = useState<{ name: string; text: string }>();
+    const [fail, setFail] = useState(false);
+    const [failed, setFailed] = useState<string>();
+    const [failedUnread, setFailedUnread] = useState(false);
+    const lastAction = useRef(0);
+
+    const slowly = async (file: File, text: string) => {
+      const action = ++lastAction.current;
+      setFailed(undefined);
+      setBusy({ name: file.name, text });
+      await delay(3000);
+      setBusy(undefined);
+      return action;
+    };
+    const remove = async (file: File) => {
+      const action = await slowly(file, 'Sletter filen…');
+      if (!fail) {
+        setFiles((prev) => prev.filter((f) => f !== file));
+        return;
+      }
+      /* Shown as loading ends, but kept from screen readers until focus is
+         back on the button, which FileUpload moves there just after loading
+         ends: VoiceOver on iOS cut an alert that came sooner off to read the
+         button. The alert cuts off the name of the button instead, which the
+         user has just pressed. Not if it has been pressed again meanwhile. */
+      setFailed(file.name);
+      setFailedUnread(true);
+      await delay(1000);
+      if (action === lastAction.current) setFailedUnread(false);
+    };
+
+    return (
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        {/* Stands in for the server refusing, which a real page does not get
+            to decide. */}
+        <Checkbox
+          label="La slettingen feile"
+          checked={fail}
+          onChange={(e) => setFail(e.target.checked)}
+        />
+        <FileUpload.Trigger label="Last opp dokumentasjon" />
+        {files.length > 0 && (
+          <FileUpload.List>
+            {files.map((file) => (
+              <FileUpload.Item
+                key={file.name}
+                file={file}
+                loading={busy?.name === file.name}
+                loadingText={busy?.name === file.name ? busy.text : undefined}
+                actions={
+                  <FileUpload.DownloadButton
+                    fileName={file.name}
+                    onClick={() => void slowly(file, 'Henter filen…')}
+                  />
+                }
+                onRemove={() => void remove(file)}
+              />
+            ))}
+          </FileUpload.List>
+        )}
+        {/* On the page before the message, so screen readers notice it arrive.
+            As wide as the files at most, which `FileUpload.List` sets. */}
+        <div role="alert" style={{ maxWidth: '30rem' }}>
+          {failed && (
+            /* A new element when it is to be read, since Safari on macOS did
+               not announce the alert when only `aria-hidden` was removed,
+               until the user moved the mouse or VoiceOver. */
+            <Alert
+              key={failedUnread ? 'unread' : 'read'}
+              data-color="danger"
+              aria-hidden={failedUnread || undefined}
+            >
+              {`Kunne ikke slette ${failed}. Prøv igjen.`}
+            </Alert>
+          )}
+        </div>
+      </form>
+    );
+  },
+});
+
+/** While a modal dialog is open, the rest of the page is inert, and a
+    screen reader hears only what is announced inside the dialog. */
+export const ItemsInDialog = meta.story({
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+
+    type Entry = { id: string; file: File; error?: string };
+    const [entries, setEntries] = useState<Entry[]>(() => [
+      { id: 'soknad', file: pdf('soknad.pdf') },
+      { id: 'vitnemal', file: pdf('vitnemal.pdf') },
+    ]);
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const add = (e: ChangeEvent<HTMLElement>) => {
+      const input = e.target as HTMLInputElement;
+      const added = Array.from(input.files ?? [], (file) => ({
+        id: fileId(file),
+        file,
+        error:
+          file.type === 'application/pdf'
+            ? undefined
+            : 'Filformatet støttes ikke',
+      }));
+      setEntries((prev) => [...prev, ...added]);
+      input.value = '';
+    };
+
+    return (
+      <>
+        <Button onClick={() => dialogRef.current?.showModal()}>
+          Legg ved dokumentasjon
+        </Button>
+        <Dialog ref={dialogRef} closedby="any">
+          {/* A form, so that focus moves to the upload field when the last
+              file is removed, see "Fokus" in the docs. */}
+          <form style={{ display: 'grid', gap: 'var(--ds-size-4)' }}>
+            <Heading>Legg ved dokumentasjon</Heading>
+            <FileUpload.Trigger
+              label="Last opp filer"
+              description="Du kan laste opp filer i PDF-format."
+              inputProps={{ multiple: true }}
+              files={entries
+                .filter(({ error }) => !error)
+                .map(({ file }) => file)}
+              onChange={add}
+            />
+            <FileUpload.List>
+              {entries.map((entry) => (
+                <FileUpload.Item
+                  key={entry.id}
+                  file={entry.file}
+                  error={entry.error}
+                  onRemove={() =>
+                    setEntries((prev) =>
+                      prev.filter(({ id }) => id !== entry.id),
+                    )
+                  }
+                />
+              ))}
+            </FileUpload.List>
+          </form>
+        </Dialog>
+      </>
+    );
+  },
+});
+
+export const ItemsInDialog_Test = ItemsInDialog.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(
+      canvas.getByRole('button', { name: 'Legg ved dokumentasjon' }),
+    );
+    const dialog = within(canvas.getByRole('dialog'));
+
+    await step('A removal is announced inside the dialog', async () => {
+      await userEvent.click(
+        dialog.getByRole('button', { name: 'Fjern filen soknad.pdf' }),
+      );
+      await waitFor(
+        () =>
+          expect(dialog.getByRole('status')).toHaveTextContent(
+            'soknad.pdf er fjernet',
+          ),
+        { timeout: 2000 },
+      );
+    });
+
+    await step(
+      'Removing the last file moves focus to the upload field, and is announced',
+      async () => {
+        await userEvent.click(
+          dialog.getByRole('button', { name: 'Fjern filen vitnemal.pdf' }),
+        );
+        await waitFor(() =>
+          expect(dialog.getByLabelText('Last opp filer')).toHaveFocus(),
+        );
+        await waitFor(
+          () =>
+            expect(dialog.getByRole('status')).toHaveTextContent(
+              'vitnemal.pdf er fjernet',
+            ),
+          { timeout: 2000 },
+        );
+      },
+    );
+
+    await step(
+      'The message on a file just added is announced inside the dialog',
+      async () => {
+        await userEvent.upload(
+          dialog.getByLabelText('Last opp filer'),
+          new File(['tekst'], 'notat.txt', { type: 'text/plain' }),
+        );
+        await waitFor(
+          () =>
+            expect(dialog.getByRole('status')).toHaveTextContent(
+              'notat.txt: Filformatet støttes ikke.',
+            ),
+          { timeout: 2000 },
+        );
+      },
+    );
+  },
+});
+
+export const Upload = meta.story({
+  parameters: {
+    docs: advancedCodeDocs,
+    css: css`
+      .file-upload-upload-main {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ds-size-3);
+      }
+    `,
+  },
   render: (args) => {
     const [file, setFile] = useState<File | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -554,43 +1377,38 @@ export const Upload = meta.story({
       }
     };
     return (
-      <>
-        <style>
-          {`
-        .file-upload-upload-main {
-          display: flex;
-          flex-direction: column;
-          gap: var(--ds-size-3);
-        }`}
-        </style>
-        <div className="file-upload-upload-main">
-          <FileUpload.Trigger
-            label="Last opp rapport"
-            description="Du kan legge ved 1 fil."
-            onChange={handleOnChange}
-            {...args}
-          />
-          {file && (
-            <>
-              <Heading level={3} data-size="2xs">
-                Vedlegg (1):
-              </Heading>
-              <FileUpload.List>
-                <FileUpload.Item
-                  loading={loading}
-                  file={file}
-                  onRemove={() => setFile(null)}
-                />
-              </FileUpload.List>
-            </>
-          )}
-        </div>
-      </>
+      <form className="file-upload-upload-main">
+        <FileUpload.Trigger
+          label="Last opp rapport"
+          description="Du kan legge ved 1 fil."
+          onChange={handleOnChange}
+          {...args}
+        />
+        {file && (
+          <>
+            <Heading level={3} data-size="2xs">
+              Vedlegg (1):
+            </Heading>
+            <FileUpload.List>
+              <FileUpload.Item
+                loading={loading}
+                file={file}
+                onRemove={() => setFile(null)}
+              />
+            </FileUpload.List>
+          </>
+        )}
+      </form>
     );
   },
+});
+
+export const Upload_Test = Upload.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
     const fileInput = canvasElement.querySelector('input') as HTMLInputElement;
+    // must be a File object, not FileMeta
     const dummyFile = new File(['abc'.repeat(100000)], 'rapport.pdf', {
       type: 'application/pdf',
     });
@@ -613,10 +1431,10 @@ export const Upload = meta.story({
       await expect(within(list).getAllByRole('listitem')).toHaveLength(1);
     });
 
-    await step('Item shows loading spinner after upload', async () => {
-      await expect(
-        canvas.getByRole('img', { name: 'spinner' }),
-      ).toBeInTheDocument();
+    await step('Item is loading after upload', async () => {
+      await expect(canvas.getByRole('listitem')).toHaveAttribute(
+        'data-loading',
+      );
     });
   },
 });
@@ -627,34 +1445,37 @@ export const CompactList = meta.story({
     'data-size': 'md',
   },
   render: (args) => {
-    const dummyFiles = [
-      { file: new File(['abc'.repeat(100000)], 'kandidat-12.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-13.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-14.pdf') },
-      { file: new File(['abc'.repeat(100000)], 'kandidat-15.pdf') },
+    type FileInfo = FileMeta & { id: string; error?: string };
+    const dummyFiles: FileInfo[] = [
+      { size: 300000, name: 'kandidat-12.pdf', id: 'kandidat-12' },
+      { size: 300000, name: 'kandidat-13.pdf', id: 'kandidat-13' },
+      { size: 300000, name: 'kandidat-14.pdf', id: 'kandidat-14' },
+      { size: 300000, name: 'kandidat-15.pdf', id: 'kandidat-15' },
       {
-        file: new File(['abc'.repeat(288000)], 'kandidat-16.tsx'),
+        size: 864000,
+        name: 'kandidat-16.tsx',
+        id: 'kandidat-16',
         error: 'Filformatet støttes ikke',
       },
     ];
 
     const [files, setFiles] = useState(dummyFiles);
 
-    const removeFile = (fileToRemove: File) => {
-      setFiles((prev) => prev.filter(({ file }) => file !== fileToRemove));
+    const removeFile = (fileToRemove: FileMeta) => {
+      setFiles((prev) => prev.filter((file) => file !== fileToRemove));
     };
 
     return (
       <Prose>
         <Heading level={3} data-size="2xs">
-          Vedlegg ({files.length}):
+          {`Vedlegg (${files.length}):`}
         </Heading>
         <FileUpload.List variant="compact" data-size={args['data-size']}>
-          {files.map(({ file, error }, index) => (
+          {files.map((file) => (
             <FileUpload.Item
-              key={index}
+              key={file.id}
               file={file}
-              error={error}
+              error={file.error}
               onRemove={() => removeFile(file)}
             />
           ))}
@@ -662,6 +1483,10 @@ export const CompactList = meta.story({
       </Prose>
     );
   },
+});
+
+export const CompactList_Test = CompactList.extend({
+  parameters: { chromatic: { disableSnapshot: true }, snapshot: false },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
 
@@ -692,12 +1517,483 @@ export const CompactList = meta.story({
       },
     );
 
+    await step('Only the file name breaks mid-word', async () => {
+      /* A long file name has nowhere to break; a message is prose and should
+         not be chopped in the middle of a word. */
+      const wordBreak = (el: Element) => getComputedStyle(el).wordBreak;
+
+      await expect(wordBreak(canvas.getByText('kandidat-16.tsx'))).toBe(
+        'break-all',
+      );
+      await expect(
+        wordBreak(canvas.getByText('Filformatet støttes ikke')),
+      ).not.toBe('break-all');
+    });
+
+    await step('A file with an error is named as invalid', async () => {
+      /* The text is generated content, so it is invisible to Chromatic and
+         absent from the dom snapshot. A screen reader reads it with the file
+         name, which is the only way to tell a failed row apart while browsing
+         the list, so it has to sit inside the name element. */
+      const markerIn = (name: string) =>
+        canvas.getByText(name).querySelector('.uds-file-upload__item-invalid');
+
+      const marker = markerIn('kandidat-16.tsx');
+      await expect(marker).not.toBeNull();
+      await expect(
+        getComputedStyle(marker as Element, '::before').content,
+      ).toContain('ugyldig');
+
+      await expect(markerIn('kandidat-12.pdf')).toBeNull();
+    });
+
     await step('Clicking remove deletes the file from the list', async () => {
       const [removeButton] = canvas.getAllByRole('button');
       await userEvent.click(removeButton);
       await expect(
         canvas.queryByText('kandidat-12.pdf'),
       ).not.toBeInTheDocument();
+    });
+  },
+});
+
+/** Every state of an item, in both list variants, to compare them in one
+    view. */
+export const ItemStates = meta.story({
+  parameters: { snapshot: false },
+  render: () => {
+    const pdf = (name: string) =>
+      new File([new Uint8Array(300000)], name, { type: 'application/pdf' });
+    const size = <FileUpload.FileSize size={300000} />;
+    const download = (file: File) => (
+      <FileUpload.DownloadButton
+        fileName={file.name}
+        onClick={() => downloadFile(file)}
+      />
+    );
+    const remove = () => {};
+
+    const items = (
+      <>
+        <FileUpload.Item
+          file={pdf('soknad.pdf')}
+          description={size}
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('vitnemal.pdf')}
+          href={vitnemalUrl}
+          description={size}
+        />
+        <FileUpload.Item file={pdf('vedlegg.pdf')} loading />
+        <FileUpload.Item
+          file={pdf('kandidatliste.csv')}
+          loading
+          loadingText="Sjekker innholdet…"
+        />
+        <FileUpload.Item
+          file={pdf('attest.pdf')}
+          description={null}
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('notat.txt')}
+          error="Filformatet støttes ikke"
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('karakterer.csv')}
+          success="Filen er lastet opp"
+          onRemove={remove}
+        />
+        <FileUpload.Item
+          file={pdf('vedtak.pdf')}
+          readonly
+          onRemove={remove}
+          actions={download(pdf('vedtak.pdf'))}
+        />
+        <FileUpload.Item
+          file={pdf('legeerklaering.pdf')}
+          description="Legeerklæring"
+          onRemove={remove}
+          actions={
+            <>
+              <FileUpload.ItemButton
+                icon={<NotePencilIcon aria-hidden />}
+                tooltip="Beskriv filen"
+                fileName="legeerklaering.pdf"
+                onClick={() => {}}
+              />
+              {download(pdf('legeerklaering.pdf'))}
+            </>
+          }
+        />
+        <FileUpload.Item
+          file={pdf(
+            'et-svaert-langt-filnavn-som-ikke-har-plass-paa-en-linje-2026.pdf',
+          )}
+          description="Vitnemål fra videregående skole, med karakterer fra alle tre årene"
+          error="Filen er for stor. Den kan være opptil 2 MB."
+          onRemove={remove}
+        />
+      </>
+    );
+
+    return (
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 30rem))',
+          gap: 'var(--ds-size-8)',
+          alignItems: 'start',
+        }}
+      >
+        {(['default', 'compact'] as const).map((variant) => (
+          <section key={variant} aria-label={variant}>
+            <Heading level={3} data-size="2xs">
+              {variant}
+            </Heading>
+            <FileUpload.List variant={variant}>{items}</FileUpload.List>
+          </section>
+        ))}
+      </div>
+    );
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    for (const variant of ['default', 'compact']) {
+      await step(
+        `A file without buttons is as tall as one with them in ${variant}`,
+        async () => {
+          const list = within(
+            canvas.getByRole('region', { name: variant }),
+          ).getByRole('list');
+          /* Inside the borders: in `compact`, only the first file has a top
+             border. */
+          const height = (name: string) =>
+            within(list).getByText(name).closest('li')?.clientHeight;
+
+          const withButton = height('soknad.pdf');
+          await expect(height('vitnemal.pdf')).toBe(withButton);
+          await expect(height('vedlegg.pdf')).toBe(withButton);
+          await expect(height('kandidatliste.csv')).toBe(withButton);
+        },
+      );
+    }
+  },
+});
+
+/** Stands in for a server that takes its time. */
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const UploadAndValidate = meta.story({
+  parameters: { docs: advancedCodeDocs },
+  render: function UploadAndValidate() {
+    const { entries, files, add, addRejected, update, remove, hasErrors } =
+      useFileUpload();
+    const [reject, setReject] = useState(false);
+    const [validatingId, setValidatingId] = useState<string>();
+    const [approvedId, setApprovedId] = useState<string>();
+    /* What the first check read out of the file. The second check repeats it
+       in its own text, so the row keeps saying it while that one runs. */
+    const [found, setFound] = useState<{ id: string; text: string }>();
+
+    const rejectRef = useRef(reject);
+    rejectRef.current = reject;
+    const handled = useRef(new Set<string>());
+
+    const handle = useCallback(
+      async (id: string) => {
+        update(id, { loading: true });
+
+        // Two waits, because the user is told a different thing during each:
+        // first the file is on its way, then the server is reading it.
+        // The cheap check first: is this the right shape of file at all.
+        await delay(500);
+
+        // What it found stays on the row while the slower check runs, so the
+        // user is not left watching a spinner that says nothing.
+        setFound({ id, text: 'Antall elever: 412' });
+        setValidatingId(id);
+        await delay(700);
+        setValidatingId(undefined);
+
+        if (rejectRef.current) {
+          update(id, {
+            loading: undefined,
+            error: 'Filen mangler kolonnen "kandidatnummer".',
+          });
+        } else {
+          update(id, { loading: undefined });
+          setApprovedId(id);
+        }
+      },
+      [update],
+    );
+
+    /* Only a file that is on its own is worth sending: with more than one
+       attached the user has to settle which it is first. Removing the others
+       later brings the one that is left here. A file that was turned away,
+       such as one of the wrong type, is not sent at all. `handled` is what
+       ends the effect: it runs on a change to `entries` and itself changes
+       `entries`. */
+    useEffect(() => {
+      const [only] = entries;
+      if (entries.length !== 1 || only.error || handled.current.has(only.id))
+        return;
+      handled.current.add(only.id);
+      void handle(only.id);
+    }, [entries, handle]);
+
+    const { getRootProps, getInputProps, isDragActive, isDragGlobal } =
+      useDropzone({
+        multiple: false,
+        accept: { 'text/csv': ['.csv'] },
+        onDropAccepted: (accepted) => add(accepted),
+        onDropRejected: (rejections) => {
+          const isSurplus = (codes: string[]) =>
+            codes.includes('too-many-files');
+
+          // `multiple: false` keeps the first file and turns the rest away as
+          // surplus. They are still files the user attached, so they go in the
+          // list beside the one that was kept, and the field says there are
+          // too many.
+          add(
+            rejections
+              .filter(({ errors }) => isSurplus(errors.map((e) => e.code)))
+              .map(({ file }) => file),
+          );
+
+          // A file that fails on its own merits carries its own reason.
+          addRejected(
+            rejections
+              .filter(({ errors }) => !isSurplus(errors.map((e) => e.code)))
+              .map(({ file, errors }) => ({
+                file,
+                error:
+                  errors[0].code === 'file-invalid-type'
+                    ? 'Filformatet støttes ikke'
+                    : errors[0].message,
+              })),
+          );
+        },
+      });
+
+    return (
+      <form
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'var(--ds-size-3)',
+        }}
+      >
+        {/* Stands in for the server's verdict, which a real page does not get
+            to decide. */}
+        <Checkbox
+          label={<span>La valideringen avvise filen</span>}
+          checked={reject}
+          disabled={entries.length > 0}
+          onChange={(e) => setReject(e.target.checked)}
+        />
+
+        {/* The field stays where it is once a file is attached, rather than
+            being hidden or set readonly. It is still the field the user
+            wants, and what it says follows from the list. */}
+        <FileUpload.Dropzone
+          label="Last opp kandidatliste"
+          description="Du kan laste opp én fil i CSV-format."
+          cardProps={getRootProps()}
+          inputProps={getInputProps()}
+          files={files}
+          isDragActive={isDragActive}
+          isDragGlobal={isDragGlobal}
+          /* Both are read off the list, so neither can outlive what it says.
+             An attempt that was turned away does not make the field invalid
+             when the file already attached is perfectly good. */
+          error={
+            (entries.length > 1 &&
+              'Du kan bare legge ved én fil. Fjern dem du ikke vil bruke.') ||
+            (hasErrors && 'Noe må rettes. Feilen står på filen det gjelder.')
+          }
+        />
+
+        {entries.length > 0 && (
+          <FileUpload.List>
+            {entries.map(({ id, file, loading, error }) => {
+              const read = id === found?.id ? found.text : undefined;
+
+              return (
+                <FileUpload.Item
+                  key={id}
+                  file={file}
+                  loading={loading}
+                  error={error}
+                  onRemove={() => {
+                    remove(id);
+                    if (id === approvedId) setApprovedId(undefined);
+                    if (id === found?.id) setFound(undefined);
+                  }}
+                  description={read}
+                  /* The default says the file is on its way, which stops being
+                     true once the server has it. The busy text also carries
+                     what the first check found, so the row does not drop it
+                     for the length of the second one. */
+                  loadingText={
+                    read && id === validatingId
+                      ? `${read}, sjekker innholdet…`
+                      : undefined
+                  }
+                  success={
+                    id === approvedId ? 'Filen er lastet opp' : undefined
+                  }
+                />
+              );
+            })}
+          </FileUpload.List>
+        )}
+      </form>
+    );
+  },
+});
+
+export const UploadAndValidate_Test = UploadAndValidate.extend({
+  parameters: {
+    // The flow is timed, so neither snapshot would be stable; the assertions
+    // are what this story is for.
+    chromatic: { disableSnapshot: true },
+    snapshot: false,
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    const input = () =>
+      canvasElement.querySelector('input[type="file"]') as HTMLInputElement;
+    const rows = () => canvas.queryAllByRole('listitem');
+    const message = () =>
+      rows()[0].querySelector('.uds-file-upload__item-message > p') as Element;
+    const busyText = () =>
+      rows()[0].querySelector('.uds-file-upload__item-description') as Element;
+    const csv = (name = 'kandidater.csv') =>
+      new File(['kandidatnummer\n1'], name, { type: 'text/csv' });
+    const tooMany =
+      'Du kan bare legge ved én fil. Fjern dem du ikke vil bruke.';
+    const remove = (index: number) =>
+      userEvent.click(
+        canvas.getAllByRole('button', { name: /^Fjern filen / })[index],
+      );
+
+    await step('Two files at once both land in the list', async () => {
+      // `multiple: false` makes react-dropzone turn away everything past the
+      // first file, so without `onDropRejected` the rest would vanish without
+      // a word.
+      const data = new DataTransfer();
+      data.items.add(csv('kandidater-a.csv'));
+      data.items.add(csv('kandidater-b.csv'));
+      // `DragEvent.dataTransfer` is readonly, so it has to be built with the
+      // event rather than assigned onto a fired one.
+      canvasElement.querySelector('.uds-file-upload .ds-card')?.dispatchEvent(
+        new DragEvent('drop', {
+          bubbles: true,
+          cancelable: true,
+          dataTransfer: data,
+        }),
+      );
+
+      await waitFor(() => expect(rows()).toHaveLength(2));
+      await expect(canvas.getByText(tooMany)).toBeVisible();
+      // Neither is worth sending until the user has settled which it is.
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
+      await expect(rows()[1]).not.toHaveAttribute('data-loading');
+    });
+
+    await step('Removing one starts the file that is left', async () => {
+      await remove(0);
+
+      await expect(rows()).toHaveLength(1);
+      await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
+      // Longer than the whole flow, which outlasts waitFor's default.
+      // What the first check read is carried by the second one's text, so
+      // the row keeps saying it rather than going blank for the duration.
+      await waitFor(
+        () =>
+          expect(busyText()).toHaveTextContent(
+            'Antall elever: 412, sjekker innholdet…',
+          ),
+        { timeout: 3000 },
+      );
+      await waitFor(
+        () => expect(canvas.getByText('Filen er lastet opp')).toBeVisible(),
+        { timeout: 3000 },
+      );
+      await expect(rows()[0]).toHaveAttribute('data-valid');
+      // The hook the card border hangs off, mirroring `data-invalid`.
+      const card = getComputedStyle(rows()[0]);
+      await expect(card.getPropertyValue('--dsc-card-border-color')).toBe(
+        card.getPropertyValue('--ds-color-success-border-strong'),
+      );
+      // Drives the icon and the colour of the message.
+      await expect(message()).toHaveAttribute('data-color', 'success');
+    });
+
+    await step('A file too many leaves the approved one alone', async () => {
+      await userEvent.upload(input(), csv('kandidater-c.csv'));
+
+      await expect(rows()).toHaveLength(2);
+      await expect(canvas.getByText(tooMany)).toBeVisible();
+      // The verdict already given still stands.
+      await expect(canvas.getByText('Filen er lastet opp')).toBeVisible();
+    });
+
+    await step('And removing it settles the field again', async () => {
+      await remove(1);
+
+      await expect(rows()).toHaveLength(1);
+      await expect(canvas.queryByText(tooMany)).not.toBeInTheDocument();
+      // Not sent a second time: it was handled when it was first alone.
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
+      await expect(canvas.getByText('Filen er lastet opp')).toBeVisible();
+    });
+
+    await step('A rejected file gives the reason on the file', async () => {
+      await remove(0);
+      await userEvent.click(canvas.getByRole('checkbox'));
+      await userEvent.upload(input(), csv());
+
+      await waitFor(
+        () =>
+          expect(
+            canvas.getByText('Filen mangler kolonnen "kandidatnummer".'),
+          ).toBeVisible(),
+        { timeout: 3000 },
+      );
+      // The field says that something needs looking at, the file says what.
+      await expect(
+        canvas.getByText('Noe må rettes. Feilen står på filen det gjelder.'),
+      ).toBeVisible();
+      // No `data-color` is the danger default.
+      await expect(message()).not.toHaveAttribute('data-color');
+    });
+
+    await step('A file of the wrong type is not sent', async () => {
+      await remove(0);
+      // Dropped rather than uploaded, since `userEvent.upload` leaves out
+      // files that `accept` does not allow.
+      const data = new DataTransfer();
+      data.items.add(new File(['tekst'], 'notat.txt', { type: 'text/plain' }));
+      canvasElement.querySelector('.uds-file-upload .ds-card')?.dispatchEvent(
+        new DragEvent('drop', {
+          bubbles: true,
+          cancelable: true,
+          dataTransfer: data,
+        }),
+      );
+
+      await waitFor(() =>
+        expect(canvas.getByText('Filformatet støttes ikke')).toBeVisible(),
+      );
+      // Sent, it would be loading for the length of both checks.
+      await delay(300);
+      await expect(rows()[0]).not.toHaveAttribute('data-loading');
     });
   },
 });
@@ -717,11 +2013,18 @@ export const Translations = Preview.extend({
         '--udsc-fileUpload-dropFile-active-text',
         '--udsc-fileUpload-dropFiles-active-text',
         '--udsc-fileUpload-or-text',
-        '--udsc-fileUpload-uploading-text',
+        '--udsc-fileUpload-loading-text',
         '--udsc-fileUpload-removeFile-text',
+        '--udsc-fileUpload-removed-text',
+        '--udsc-fileUpload-downloadFile-text',
+        '--udsc-fileUpload-invalid-text',
         '--udsc-fileUpload-disabled-text-line-one',
         '--udsc-fileUpload-disabled-text-line-two',
       ],
     );
   },
 });
+
+function fileId(file: FileMeta & { lastModified?: number }) {
+  return `${file.name}-${file.size}-${file.lastModified ?? ''}`;
+}

@@ -1,33 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Article 1`] = `
-<style>
-  .tag-article-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.tag-article-main {
-  display: flex;
-  gap: 10px;
-  margin-top: var(--ds-size-4);
-  margin-bottom: var(--ds-size-3);
-}
-.tag-article-div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: var(--ds-size-2);
-}
-.tag-article-list {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-}
-</style>
 <div>
   <img
     data-chromatic="ignore"
@@ -75,6 +48,54 @@ exports[`Article 1`] = `
 </div>
 `;
 
+exports[`As Button 1`] = `
+<button
+  type="button"
+  data-variant="outline"
+  data-color="accent"
+>
+  Barnehage
+</button>
+<button
+  type="button"
+  data-variant="outline"
+  data-color="support1"
+>
+  Grunnskole
+</button>
+<button
+  type="button"
+  data-variant="outline"
+  data-color="support2"
+>
+  Videregående
+</button>
+`;
+
+exports[`As Link 1`] = `
+<a
+  href="/"
+  data-variant="outline"
+  data-color="accent"
+>
+  Barnehage
+</a>
+<a
+  href="/"
+  data-variant="outline"
+  data-color="support1"
+>
+  Grunnskole
+</a>
+<a
+  href="/"
+  data-variant="outline"
+  data-color="support2"
+>
+  Videregående
+</a>
+`;
+
 exports[`Colors 1`] = `
 <span data-color="neutral">
   neutral
@@ -91,14 +112,6 @@ exports[`Colors 1`] = `
 `;
 
 exports[`Icon 1`] = `
-<style>
-  .tag-icon-tag {
-  padding-inline-start: var(--ds-size-1);
-}
-.tag-icon-icon {
-  margin-inline-end: var(--ds-size-1);
-}
-</style>
 <span>
   <svg
     xmlns="http://www.w3.org/2000/svg"

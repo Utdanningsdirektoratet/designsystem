@@ -1,15 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Headings 1`] = `
-<style>
-  .prose-headings-main {
-  display: flex;
-  justify-content: center;
-}
-.prose-headings-prose {
-  max-width: 50rem;
-}
-</style>
 <div>
   <div>
     <h1 data-size="2xl">
@@ -59,15 +50,6 @@ exports[`Headings 1`] = `
 `;
 
 exports[`Preview 1`] = `
-<style>
-  .prose-preview-main {
-  display: flex;
-  justify-content: center;
-}
-.prose-preview-prose {
-  max-width: 50rem;
-}
-</style>
 <div>
   <div>
     <div data-color="info">
@@ -368,14 +350,6 @@ exports[`Preview 1`] = `
 `;
 
 exports[`With Dialog 1`] = `
-<style>
-  .prose-with-dialog-prose {
-  max-width: 50rem;
-}
-.prose-with-dialog-dialog {
-  z-index: 10;
-}
-</style>
 <div>
   <button
     type="button"
@@ -416,16 +390,6 @@ exports[`With Dialog 1`] = `
 `;
 
 exports[`With Popover 1`] = `
-<style>
-  .prose-with-popover-prose {
-  max-width: 50rem;
-}
-.prose-with-popover-button__group {
-  display: flex;
-  gap: var(--ds-size-2);
-  margin-top: var(--ds-size-4);
-}
-</style>
 <div>
   <button
     data-variant="tertiary"

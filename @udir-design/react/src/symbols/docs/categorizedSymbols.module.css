@@ -15,6 +15,13 @@
   gap: var(--ds-size-4);
   align-items: center;
   margin-top: var(--ds-size-10);
+
+  /* Wins over Designsystemet's icon size in `Button`, which also wins over `size`. The symbol
+     keeps its aspect ratio inside the square. */
+  & button svg {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .noResults {

@@ -122,21 +122,13 @@ exports[`Mobile Viewport 1`] = `
 `;
 
 exports[`Placement With Header 1`] = `
-<style>
-  .breadcrumbs-content {
-  max-width: 80rem;
-  margin: var(--ds-size-4) auto 0;
-  padding: 0 var(--ds-size-5);
-}
-</style>
 <header
   data-scroll-direction="up"
   data-top="true"
-  style="<removed>"
 >
   <div>
     <a href="/">
-      <div style="<removed>">
+      <div>
         <img
           alt="Utdanningsdirektoratet"
           role="img"

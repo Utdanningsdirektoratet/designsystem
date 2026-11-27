@@ -30,6 +30,8 @@ function MyComponent() {
 }
 ```
 
+`size` setter bredden på brede symboler og høyden på høye symboler. CSS som setter `width` eller `height` på `svg`-elementet, overstyrer `size`.
+
 ## Ta i bruk uten React
 
 SVG-filene er mulig å importere og bruke fra vanlig HTML og CSS dersom du bruker en bundler som kan resolve npm imports.

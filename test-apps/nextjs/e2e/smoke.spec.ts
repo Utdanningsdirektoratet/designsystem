@@ -1,17 +1,5 @@
 import { expect, test } from 'playwright/test';
-
-const basePath = '/testapp';
-
-// Keep this list in sync with the routes in src/app/
-const routes = [
-  '/',
-  '/article',
-  '/cookie-information',
-  '/dashboard',
-  '/form',
-  '/page',
-  '/table',
-];
+import { basePath, routes } from './routes';
 
 for (const route of routes) {
   test(`smoke: ${route} renders without errors`, async ({ page }) => {

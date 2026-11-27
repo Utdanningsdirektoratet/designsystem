@@ -1,32 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form Example 1`] = `
-<style>
-  .progress-bar-form-example-main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-6);
-}
-.progress-bar-form-example-legend {
-  /* As tall as the ProgressBar, so the bar does not overhang the legend */
-  display: flex;
-  align-items: flex-end;
-  min-height: var(--ds-size-12);
-}
-.progress-bar-form-example-progress-bar {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-end: 0;
-  transform: translateY(calc(var(--ds-size-4) * -1));
-  width: 30%;
-}
-.progress-bar-form-example-button__group {
-  display: flex;
-  justify-content: flex-start;
-  gap: var(--ds-size-4);
-}
-</style>
 <div>
   <fieldset
     id="rankings"
@@ -59,17 +33,6 @@ exports[`Form Example 1`] = `
         aria-valuenow="14"
         style="<removed>"
       >
-        <template shadowrootmode="open">
-          <slot>
-          </slot>
-          <style>
-            :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
-:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
-:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
-@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
-@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-          </style>
-        </template>
       </u-progress>
     </div>
     <table data-border="true">
@@ -251,17 +214,6 @@ exports[`Percentage 1`] = `
     aria-valuenow="20"
     style="<removed>"
   >
-    <template shadowrootmode="open">
-      <slot>
-      </slot>
-      <style>
-        :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
-:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
-:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
-@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
-@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-      </style>
-    </template>
   </u-progress>
 </div>
 `;
@@ -283,17 +235,6 @@ exports[`Preview 1`] = `
     aria-valuenow="30"
     style="<removed>"
   >
-    <template shadowrootmode="open">
-      <slot>
-      </slot>
-      <style>
-        :host(:not([hidden])) { box-sizing: border-box; border: 1px solid; display: inline-block; height: .5em; width: 10em; overflow: hidden }
-:host::before { content: ''; display: block; height: 100%; background: currentColor; width: var(--percentage, 0%); transition: width .2s }
-:host(:not([value])) { background: linear-gradient(90deg,currentColor 25%, transparent 50%, currentColor 75%) 50%/400% }
-@media (prefers-reduced-motion: no-preference) { :host { animation: indeterminate 2s linear infinite }  }
-@keyframes indeterminate { from { background-position-x: 100% } to { background-position-x: 0 } }
-      </style>
-    </template>
   </u-progress>
 </div>
 `;

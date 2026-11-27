@@ -1,20 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Checkbox 1`] = `
-<style>
-  .input-checkbox-main {
-  display: grid;
-  gap: 2rem;
-}
-.input-checkbox-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-.input-checkbox-heading {
-  grid-column: 1 / -1;
-}
-</style>
 <div>
   <div data-size="sm">
     <h2 data-size="2xs">
@@ -446,14 +432,6 @@ exports[`Checkbox 1`] = `
 `;
 
 exports[`Controlled 1`] = `
-<style>
-  .input-controlled-main {
-          display: flex;
-          gap: var(--ds-size-2);
-          align-items: end;
-          width: 100%;
-        }
-</style>
 <div>
   <div>
     <ds-field>
@@ -529,18 +507,6 @@ exports[`Preview 1`] = `
 `;
 
 exports[`Radio 1`] = `
-<style>
-  .input-radio-main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-radio-heading {
-  grid-column: 1 / -1;
-  margin-top: 16px;
-}
-</style>
 <div data-size="sm">
   <h2 data-size="2xs">
     Small
@@ -829,21 +795,6 @@ exports[`Radio 1`] = `
 `;
 
 exports[`Switch 1`] = `
-<style>
-  .input-switch-main {
-  display: grid;
-  gap: 2rem;
-}
-.input-switch-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-switch-heading {
-  grid-column: 1 / -1;
-}
-</style>
 <div>
   <div data-size="sm">
     <h2 data-size="2xs">
@@ -1083,17 +1034,6 @@ exports[`Switch 1`] = `
 `;
 
 exports[`Text 1`] = `
-<style>
-  .input-text-main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  max-width: 90vw;
-}
-.input-text-heading {
-  grid-column: 1 / -1;
-}
-</style>
 <div data-size="sm">
   <h2 data-size="2xs">
     Small

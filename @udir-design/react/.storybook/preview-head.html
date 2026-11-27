@@ -22,4 +22,39 @@
 />
 <script>
   document.documentElement.lang = 'nb';
+
+  // Forward ⌘K / Ctrl+K to the manager frame so Pagefind's modal opens
+  // instead of Storybook's "Find components"
+  document.addEventListener(
+    'keydown',
+    (e) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.parent.postMessage('pagefind:open', window.location.origin);
+      }
+    },
+    { capture: true },
+  );
+</script>
+<!--
+  Storybook names the page after the story id as it selects a story, and a
+  screen reader reads every new title: "components bindestrek fileupload
+  bindestrek bindestrek …" before the name `withDocumentTitle` gives it. Leave
+  out that step, so the page goes straight from "Storybook" to the story's name.
+-->
+<script>
+  (() => {
+    const title = Object.getOwnPropertyDescriptor(Document.prototype, 'title');
+    Object.defineProperty(document, 'title', {
+      configurable: true,
+      get() {
+        return title.get.call(this);
+      },
+      set(value) {
+        if (value === new URLSearchParams(location.search).get('id')) return;
+        title.set.call(this, value);
+      },
+    });
+  })();
 </script>
