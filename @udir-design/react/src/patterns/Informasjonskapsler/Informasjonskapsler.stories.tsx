@@ -110,6 +110,7 @@ export const Preview = meta.story({
   },
   render: () => {
     const [open, setOpen] = useState(true);
+    const [openedFromLink, setOpenedFromLink] = useState(false);
     const isInert = useIsInert();
     const locale = getPageLocale();
     const content = localizedExampleData[locale];
@@ -125,7 +126,9 @@ export const Preview = meta.story({
       <>
         <Dialog
           className="cookie-dialog"
-          closeButton={text.declineOptionalAndClose}
+          closeButton={
+            openedFromLink ? text.closeDialog : text.declineOptionalAndClose
+          }
           open={open}
           onClose={() => setOpen(false)}
           {...(isInert && { inert: true })}
@@ -227,7 +230,10 @@ export const Preview = meta.story({
         {open ? null : (
           <Button
             variant="tertiary"
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpenedFromLink(true);
+              setOpen(true);
+            }}
             aria-haspopup="dialog"
           >
             {text.renewConsent}

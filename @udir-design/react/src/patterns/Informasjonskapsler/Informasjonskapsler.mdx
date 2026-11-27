@@ -35,9 +35,12 @@ Knappene i dialogen skal være tydelige valgalternativer for brukeren. Valgene s
 - **Godta valgte** – Gir brukeren mulighet til å skille mellom statistiske og funksjonelle informasjonskapsler hvis tjenesten har begge typer. Dette valget henger sammen med hva brukeren har huket av over.
 - **Avvis valgfrie** – Avviser alle informasjonskapsler som ikke er nødvendige for at tjenesten skal fungere.
 
-Dialogen skal også inneholde et lukkekryss. Når brukeren lukker dialogen med lukkekrysset eller Escape-tasten, skal det lagres at brukeren har avvist valgfrie informasjonskapsler. Dette skal ha samme virkning som knappen **Avvis valgfrie**.
-
 Legg en lenke med teksten "Informasjonskapsler" i bunnfeltet. Brukeren skal senere kunne åpne dialogen og endre samtykket ved å følge denne lenken.
+
+Dialogen skal også ha et lukkekryss. Hva lukkekrysset og Escape-tasten gjør, avhenger av hvordan dialogen ble åpnet:
+
+- **Dialogen åpnes automatisk** fordi brukeren ikke har et gyldig samtykke: Lukking lagrer at brukeren har avvist valgfrie informasjonskapsler, akkurat som knappen **Avvis valgfrie**. Lukkekrysset skal ha den tilgjengelige teksten "Avvis valgfrie og lukk dialogvindu".
+- **Brukeren åpner dialogen fra lenken i bunnfeltet:** Lukking avbryter. Samtykket brukeren har fra før, gjelder fortsatt, og endringer i avmerkingsboksene lagres ikke. Lukkekrysset skal ha den tilgjengelige teksten "Lukk dialogvindu".
 
 ## Kun nødvendige informasjonskapsler
 

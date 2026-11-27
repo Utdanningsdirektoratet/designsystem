@@ -282,10 +282,6 @@ describe('Cookie Information template', () => {
       'aria-labelledby',
       'cookie-dialog-heading',
     );
-    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
-      'aria-label',
-      'Lukk dialogvindu',
-    );
     expect(getElementById(document, 'necessary-explanation').hidden).toBe(true);
     expect(getElementById(document, 'cookie-details-trigger').hidden).toBe(
       true,
@@ -480,10 +476,55 @@ describe('Cookie Information template', () => {
     const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
 
     templateWindow.renewCookieConsent();
+    expect(getElementById(document, 'cookie-dialog-close')).toHaveAttribute(
+      'aria-label',
+      'Lukk dialogvindu',
+    );
     getElementById(document, 'btn-close').click();
 
     expect(dialog.open).toBe(false);
     expect(cookieInformation.declineAllCategories).not.toHaveBeenCalled();
+  });
+
+  it('keeps the stored consent when the user closes the dialog opened from the footer link', async () => {
+    const { cookieInformation, templateWindow } = await renderTemplate();
+    const { document } = templateWindow;
+    const dialog = getElementById<HTMLDialogElement>(document, 'cookie-dialog');
+    const closeButton = getElementById(document, 'cookie-dialog-close');
+    const checkbox = getElementById<HTMLInputElement>(
+      document,
+      'cookie_cat_functional',
+    );
+
+    templateWindow.renewCookieConsent();
+    expect(closeButton).toHaveAttribute('aria-label', 'Lukk dialogvindu');
+    checkbox.click();
+    closeButton.click();
+
+    expect(dialog.open).toBe(false);
+    expect(checkbox.checked).toBe(false);
+    expect(
+      cookieInformation.changeCategoryConsentDecision,
+    ).toHaveBeenLastCalledWith('cookie_cat_functional', false);
+    expect(cookieInformation.declineAllCategories).not.toHaveBeenCalled();
+    expect(cookieInformation.submitConsent).not.toHaveBeenCalled();
+  });
+
+  it('records rejection again when Cookie Information opens the dialog after a cancelled renewal', async () => {
+    const { cookieInformation, templateWindow } = await renderTemplate();
+    const { document } = templateWindow;
+    const closeButton = getElementById(document, 'cookie-dialog-close');
+
+    templateWindow.renewCookieConsent();
+    closeButton.click();
+    templateWindow.showCookieBanner();
+
+    expect(closeButton).toHaveAttribute(
+      'aria-label',
+      'Avvis valgfrie og lukk dialogvindu',
+    );
+    closeButton.click();
+    expect(cookieInformation.declineAllCategories).toHaveBeenCalledOnce();
   });
 
   it.each<
